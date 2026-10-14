@@ -87,6 +87,11 @@ button:disabled {
 
 .opcion.fallada { text-decoration: line-through; }
 
+.opcion.correcta:disabled, .opcion.fallada:disabled {
+  color: var(--tinta);
+  border-color: var(--tinta);
+}
+
 .accion { font-weight: 800; }
 
 .explicacion {
