@@ -13,10 +13,10 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - Las carpetas vacías de `editorial/` (`contenido/`, `fuentes/`, `posts/`) no se versionan hasta que tengan ficheros; no se les añade `.gitkeep` por ser territorio de Cowork.
 - `docs/diseno-plan.md` escrito y aprobado por el autor: acento amarillo marcador `#f2c200` (siempre de fondo, nunca como texto), tipografía Archivo, solo modo claro, fallo marcado con tachado en lugar de rojo.
 - `shared/base.css` con los tokens del plan, opciones, progreso en casillas, cifra con pasada del marcador y recibo.
-- `shared/cierre.js`: `cerrar({ juego, puntuacion, total, nivel, cuadricula, fuente }, contenedor)` pinta puntuación, recibo en texto plano y botón "Copiar resultado". Commit local, sin push.
+- `shared/cierre.js`: `cerrar({ juego, puntuacion, total, nivel, cuadricula, fuente }, contenedor)` pinta puntuación, recibo en texto plano y botón "Copiar resultado".
+- GitHub Pages activado por el autor; añadido `.nojekyll` en la raíz.
 
 **Falta**
-- Activar GitHub Pages: lo hace el autor a mano.
 - Plantilla de juego y prueba de `cierre.js` en navegador (375 px y 1280 px): esperan al contenido de A1 en `editorial/contenido/a01-quiz-sistema-electoral.md`.
 - Variante de afinidad en `cierre.js`: se añade al construir M8 (A14).
 - Scraping de llamadas al orden sobre la XV (entrega del 19 oct).
