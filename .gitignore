@@ -1,0 +1,25 @@
+# R
+.Rhistory
+.RData
+.Rapp.history
+.Rproj.user/
+.httr-oauth
+
+# Temporales
+*.tmp
+*.bak
+*.swp
+*~
+~$*
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Node (por si se usa un servidor local)
+node_modules/
