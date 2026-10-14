@@ -10,7 +10,19 @@
   --raya: #bdbdbd;
   --marcador: #f2c200;
 
-  /* TODO colores de partido (--pp, --psoe, --vox, --sumar, …): falta fijar la paleta de referencia */
+  /* Colores de partido: Plantilla:Color político de es.wikipedia, ver data/SOURCES.md */
+  --pp: #1E4B8F;
+  --psoe: #FF0000;
+  --vox: #63BE21;
+  --sumar: #E51C55;
+  --podemos: #9370DB;
+  --erc: #FFB32E;
+  --junts: #20C0C2;
+  --bildu: #00D0B6;
+  --pnv: #008000;
+  --bng: #ADCFEF;
+  --cc: #FFD700;
+  --upn: #2A52BE;
 
   --fuente: Archivo, system-ui, sans-serif;
   --titular: 2rem;
