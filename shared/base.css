@@ -1,0 +1,151 @@
+/* Plan en docs/diseno-plan.md. Archivo se carga con <link> en cada página:
+   https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap */
+
+:root {
+  color-scheme: light;
+
+  --papel: #ffffff;
+  --tinta: #000000;
+  --lapiz: #575757;
+  --raya: #bdbdbd;
+  --marcador: #f2c200;
+
+  /* TODO colores de partido (--pp, --psoe, --vox, --sumar, …): falta fijar la paleta de referencia */
+
+  --fuente: Archivo, system-ui, sans-serif;
+  --titular: 2rem;
+  --cuerpo: 1.125rem;
+  --etiqueta: 0.875rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 1.5rem 16px 3rem;
+  background: var(--papel);
+  color: var(--tinta);
+  font: 400 var(--cuerpo)/1.45 var(--fuente);
+}
+
+main { max-width: 38em; }
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: var(--titular);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--tinta); }
+
+.etiqueta, .fuente {
+  font-size: var(--etiqueta);
+  color: var(--lapiz);
+}
+
+button {
+  font: inherit;
+  color: var(--tinta);
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+  border-radius: 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  color: var(--lapiz);
+  border-color: var(--raya);
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 3px solid var(--tinta);
+  outline-offset: 2px;
+}
+
+.opciones {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.opcion { text-align: left; }
+
+.opcion.seleccionada {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.opcion.correcta {
+  background: var(--marcador);
+  color: var(--tinta);
+}
+
+.opcion.fallada { text-decoration: line-through; }
+
+.accion { font-weight: 800; }
+
+.explicacion {
+  border-top: 1px solid var(--tinta);
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.progreso {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 0.25rem;
+}
+
+.casilla {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid var(--tinta);
+}
+
+.casilla.acierto { background: var(--marcador); }
+.casilla.fallo { background: var(--raya); }
+
+.cifra {
+  margin: 0.5rem 0 1rem;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.marca {
+  position: relative;
+  isolation: isolate;
+  padding: 0 0.1em;
+}
+
+.marca::before {
+  content: "";
+  position: absolute;
+  inset: 0.1em 0;
+  z-index: -1;
+  background: var(--marcador);
+  transform-origin: left;
+  animation: pasada 600ms ease-out;
+}
+
+@keyframes pasada {
+  from { transform: scaleX(0); }
+}
+
+.recibo {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid var(--tinta);
+  white-space: pre-line;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marca::before { animation: none; }
+}
