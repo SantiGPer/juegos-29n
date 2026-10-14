@@ -331,6 +331,6 @@ Un juego al día a hora fija. Bingo la víspera de cada debate y Quién dijo qu�
 - [ ] Rango de legislaturas del Crispómetro (todas o desde la VIII), a decidir con el dato.
 - [ ] Lista definitiva de métricas de A6 y de mapas de A7.
 - [ ] Nombre de la serie y nombre propio de cada juego.
-- [ ] Si hay imagen de resultado generada en el navegador o solo texto copiable.
+- [x] Si hay imagen de resultado generada en el navegador o solo texto copiable. → Solo texto copiable (2026-10-14).
 
 **Criterio de corte:** si a una semana del 13-N un juego de precampaña no está listo, entra el suplente de la reserva de coste más bajo en su lugar, no se acelera el pendiente.
