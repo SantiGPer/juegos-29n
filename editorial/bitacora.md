@@ -24,6 +24,7 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - `shared/base.css`: `--ucd: #197E36`, de la misma revisión 173877042 de la plantilla («UCD / Unión de Centro Democrático»); fila añadida en `SOURCES.md`.
 - `juegos/a01-quiz-sistema-electoral/data.json` regenerado desde el contenido definitivo: nuevo orden, pregunta 8 nueva, preguntas antiguas de 350 diputados y 15 días fuera, y fuente general actualizada. He comprobado que cada texto aparece literal en el markdown. Carga bien en el navegador.
 - `CLAUDE.md`: `R/04_diputados.R` sale del árbol y entra `R/cotejo_a01_boe.R`; `presidentes.json` en la tabla de datos; `diputados_xv.json` pasa a la reserva.
+- Push hecho: A1 con el contenido definitivo ya está en Pages.
 
 **Falta**
 - A12 jugable con M1 pistas progresivas (entrega del 26-oct).
