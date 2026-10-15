@@ -2,6 +2,28 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-15 — A3: llamadas al orden de la XV con la unidad decidida
+
+**Hecho**
+- `editorial/fuentes/a03-ejemplos-llamadas.md`, encargado por el autor: cinco fragmentos literales con diario, sesión y página.
+- `R/05_llamadas_al_orden.R` → `data/llamadas_al_orden.json`, con las decisiones del 15-10:
+  - Unidad: acto de llamada pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria.
+  - Fuera avisos, menciones a llamadas previas, retiradas y Diputación Permanente (decisión del autor en sesión).
+  - Caché de PDF fuera del repo (`tools::R_user_dir("juegos29n", "cache")`).
+- Resultado XV: **81 llamadas en 199 sesiones plenarias** (200 diarios). 42 de la presidenta Armengol y 39 del vicepresidente Rodríguez Gómez de Celis (ninguna de las demás vicepresidencias). Ordinal: 65 «primera», 8 «segunda», 8 sin ordinal.
+- Cada acto lleva diario, sesión, fecha ISO, página del Diario, presidencia y cargo, destinatario tal como lo nombra la Presidencia, ordinal, número de coincidencias fusionadas y fragmento.
+- Validación: solo hay 12 fusiones de repeticiones en toda la XV (no llegan a las 20 de la muestra), así que las he revisado todas a mano. Con la regla tal como estaba escrita, 10 eran correctas y 2 no: Conde Bajén (DS 87, pág. 18) y De Rosa Torner (DS 127, pág. 49) juntaban una «primera» y una «segunda» llamada, porque entre ellas solo se nombra al mismo diputado. He añadido una condición: **si cambia el ordinal, es un acto nuevo**. Con ella, las 12 fusiones resultantes son correctas: misma llamada repetida, mismo destinatario, mismo o ningún ordinal. El conteo pasa de 79 a 81.
+- `data/SOURCES.md`: entrada del JSON; los colores quedan con el criterio de color vigente y Junts `#20C0C2`.
+
+**Falta**
+- Ver si las legislaturas anteriores tienen el mismo patrón de URL y formato de PDF, para fijar el rango del Crispómetro.
+- `legislaturas.json` (presidencia y partido por legislatura) para la pantalla final de A3.
+- CC y ERC frente al marcador: al diseñar A5 y A7, según lo decidido.
+
+**Dudas para el autor**
+- Confirmar la condición añadida a la regla de fusión (un cambio de ordinal abre acto nuevo). Sin ella saldrían 79 llamadas en vez de 81.
+- `destinatario` es el vocativo literal («Señor Hernando», «Señoría»); en 6 actos no hay vocativo cerca. Si A3 necesita grupo parlamentario por llamada, habría que cruzarlo a mano o con `diputados_xv.json`. La ficha actual no lo pide.
+
 ## 2026-10-14 (2) — cierre.js, M1 + A1, colores de partido, primer scraping de llamadas al orden
 
 **Hecho**

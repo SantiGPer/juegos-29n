@@ -22,4 +22,12 @@
 | `--cc` | CC / Coalición Canaria | `#FFD700` |
 | `--upn` | UPN / Unión del Pueblo Navarro | `#2A52BE` |
 
-La plantilla tiene entradas fechadas para PP (2008-2022: `#1D84CE`) y EH Bildu (2012-2023: `#C4D600`); aquí se usa la vigente. Para Junts tiene dos valores (ver bitácora del 14-10-2026).
+Se usa siempre el color vigente de cada partido, en todas las legislaturas (decisión del 15-10-2026), aunque la plantilla tenga entradas fechadas (PP 2008-2022 `#1D84CE`, EH Bildu 2012-2023 `#C4D600`). Para Junts la plantilla tiene «JxCat» `#EE5976` y «Junts» `#20C0C2`; se usa `#20C0C2` por decisión del autor.
+
+## `llamadas_al_orden.json`
+
+- Script: `R/05_llamadas_al_orden.R`.
+- Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno y Diputación Permanente, XV legislatura, en PDF: `https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-<n>.PDF`.
+- PDF descargados el 14-10-2026; búsqueda de diarios nuevos repetida el 15-10-2026. Diarios del 1 al 210, sin los números 23, 41, 137 y 163, que no existen en el servidor.
+- Se usan los 200 diarios de sesión plenaria (199 sesiones plenarias distintas); los 6 de la Diputación Permanente quedan fuera.
+- Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de repeticiones (bitácora del 15-10-2026).
