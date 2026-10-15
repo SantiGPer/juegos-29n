@@ -1,0 +1,134 @@
+{
+  "fuente": "La Moncloa (relación y biografías de los presidentes del Gobierno); BOE (reales decretos de nombramiento y cese); CIDOB (biografías y cronología de gobiernos)",
+  "consulta": "2026-10-15",
+  "corte": "2026-11-29",
+  "criterios": {
+    "inicio": "Promesa o juramento del cargo ante el Rey.",
+    "fin": "Toma de posesión del sucesor.",
+    "edad": "Años cumplidos en la fecha de inicio.",
+    "tiempo": "Años y meses completos, sin redondear."
+  },
+  "presidentes": [
+    {
+      "id": "suarez",
+      "nombre": "Adolfo Suárez González",
+      "opcion": "Suárez",
+      "partido": "ucd",
+      "nacimiento": "1932-09-25",
+      "inicio": "1976-07-05",
+      "referencia": 1977,
+      "fin": "1981-02-26",
+      "pistas": [
+        "Tenía 44 años al tomar posesión por primera vez.",
+        "Estuvo 4 años y 7 meses en el cargo.",
+        "Licenciado en Derecho por Salamanca y doctor en Derecho por la Complutense.",
+        "Nació en la provincia de Ávila.",
+        "UCD, 1977."
+      ],
+      "nota": "El Rey le nombró presidente en julio de 1976, antes de las primeras elecciones democráticas. El juego cuenta su edad y su año desde las elecciones del 15 de junio de 1977, que ganó al frente de UCD; el tiempo en el cargo sí incluye el año anterior.",
+      "fuente": "La Moncloa (biografía; RD 1561/1976 y RD 681/1979); BOE núm. 49, de 26-02-1981 (RD 249/1981, cese); CIDOB (biografía)."
+    },
+    {
+      "id": "calvo-sotelo",
+      "nombre": "Leopoldo Calvo-Sotelo y Bustelo",
+      "opcion": "Calvo-Sotelo",
+      "partido": "ucd",
+      "nacimiento": "1926-04-14",
+      "inicio": "1981-02-26",
+      "fin": "1982-12-02",
+      "pistas": [
+        "Tenía 54 años al tomar posesión por primera vez.",
+        "Estuvo 1 año y 9 meses en el cargo.",
+        "Ingeniero de Caminos, Canales y Puertos.",
+        "Nació en la provincia de Madrid.",
+        "UCD, 1981."
+      ],
+      "fuente": "La Moncloa (biografía); BOE núm. 49, de 26-02-1981 (RD 250/1981, nombramiento); CIDOB (cronología de gobiernos); Enciclopèdia Catalana (fecha de nacimiento)."
+    },
+    {
+      "id": "gonzalez",
+      "nombre": "Felipe González Márquez",
+      "opcion": "González",
+      "partido": "psoe",
+      "nacimiento": "1942-03-05",
+      "inicio": "1982-12-02",
+      "fin": "1996-05-05",
+      "pistas": [
+        "Tenía 40 años al tomar posesión por primera vez.",
+        "Estuvo 13 años y 5 meses en el cargo.",
+        "Licenciado en Derecho por la Universidad de Sevilla; abogado laboralista.",
+        "Nació en la provincia de Sevilla.",
+        "PSOE, 1982."
+      ],
+      "fuente": "La Moncloa (biografía; RD 3285/1982); CIDOB (biografía)."
+    },
+    {
+      "id": "aznar",
+      "nombre": "José María Aznar López",
+      "opcion": "Aznar",
+      "partido": "pp",
+      "nacimiento": "1953-02-25",
+      "inicio": "1996-05-05",
+      "fin": "2004-04-17",
+      "pistas": [
+        "Tenía 43 años al tomar posesión por primera vez.",
+        "Estuvo 7 años y 11 meses en el cargo.",
+        "Licenciado en Derecho por la Complutense; inspector de Finanzas del Estado.",
+        "Nació en la provincia de Madrid.",
+        "PP, 1996."
+      ],
+      "fuente": "La Moncloa (RD 757/1996); BOE de 05-05-1996; CIDOB (biografía)."
+    },
+    {
+      "id": "zapatero",
+      "nombre": "José Luis Rodríguez Zapatero",
+      "opcion": "Rodríguez Zapatero",
+      "partido": "psoe",
+      "nacimiento": "1960-08-04",
+      "inicio": "2004-04-17",
+      "fin": "2011-12-21",
+      "pistas": [
+        "Tenía 43 años al tomar posesión por primera vez.",
+        "Estuvo 7 años y 8 meses en el cargo.",
+        "Licenciado en Derecho por la Universidad de León, donde fue profesor de Derecho Constitucional.",
+        "Nació en la provincia de Valladolid.",
+        "PSOE, 2004."
+      ],
+      "fuente": "La Moncloa (biografía; RD 552/2004); CIDOB (biografía)."
+    },
+    {
+      "id": "rajoy",
+      "nombre": "Mariano Rajoy Brey",
+      "opcion": "Rajoy",
+      "partido": "pp",
+      "nacimiento": "1955-03-27",
+      "inicio": "2011-12-21",
+      "fin": "2018-06-02",
+      "pistas": [
+        "Tenía 56 años al tomar posesión por primera vez.",
+        "Estuvo 6 años y 5 meses en el cargo.",
+        "Licenciado en Derecho por la Universidad de Santiago; registrador de la propiedad.",
+        "Nació en la provincia de A Coruña.",
+        "PP, 2011."
+      ],
+      "fuente": "La Moncloa (biografía; RD 1822/2011 y RD 353/2018); CIDOB (biografía)."
+    },
+    {
+      "id": "sanchez",
+      "nombre": "Pedro Sánchez Pérez-Castejón",
+      "opcion": "Sánchez",
+      "partido": "psoe",
+      "nacimiento": "1972-02-29",
+      "inicio": "2018-06-02",
+      "fin": null,
+      "pistas": [
+        "Tenía 46 años al tomar posesión por primera vez.",
+        "Estuvo 8 años y 5 meses en el cargo (contados hasta el 29 de noviembre de 2026).",
+        "Licenciado en Ciencias Económicas y Empresariales; doctor en Economía.",
+        "Nació en la provincia de Madrid.",
+        "PSOE, 2018."
+      ],
+      "fuente": "La Moncloa (biografía; RD 354/2018, de 1 de junio); CIDOB (biografía)."
+    }
+  ]
+}
