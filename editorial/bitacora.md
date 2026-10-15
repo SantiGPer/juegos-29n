@@ -21,7 +21,7 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - CC y ERC frente al marcador: al diseñar A5 y A7, según lo decidido.
 
 **Dudas para el autor**
-- Confirmar la condición añadida a la regla de fusión (un cambio de ordinal abre acto nuevo). Sin ella saldrían 79 llamadas en vez de 81.
+- ~~Confirmar la condición añadida a la regla de fusión (un cambio de ordinal abre acto nuevo).~~ Confirmada por el autor el 15-10-2026: el conteo de la XV queda en 81.
 - `destinatario` es el vocativo literal («Señor Hernando», «Señoría»); en 6 actos no hay vocativo cerca. Si A3 necesita grupo parlamentario por llamada, habría que cruzarlo a mano o con `diputados_xv.json`. La ficha actual no lo pide.
 
 ## 2026-10-14 (2) — cierre.js, M1 + A1, colores de partido, primer scraping de llamadas al orden
