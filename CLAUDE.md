@@ -42,10 +42,10 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 01_resultados_2023.R
 │   ├── 02_legislaturas.R
 │   ├── 03_actividad_parlamentaria.R
-│   ├── 04_diputados.R
 │   ├── 05_llamadas_al_orden.R
 │   ├── 06_cis_postelectoral.R
-│   └── 07_programas.R    # pesos temáticos para A14
+│   ├── 07_programas.R    # pesos temáticos para A14
+│   └── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # fichas completas, calendario, reserva
 │   ├── diseno.md         # reglas visuales: lista negra de estética IA y dirección inicial
@@ -110,7 +110,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 - **B1 Quién dijo qué** (M1). Día siguiente a cada debate: atribuir frases + tema más repetido con recuento.
 - **B2 Bingo del debate** (estático). Cartón de 16-25 casillas publicado la víspera; al día siguiente, marcado con lo ocurrido.
 
-**Reserva:** mitos electorales V/F, titular a medio, Politle, léxico del Congreso (descalificativos de todos los grupos + cifra a estimar), artículo censurado, dibuja la curva, proximidad semántica.
+**Reserva:** mitos electorales V/F, titular a medio, Politle, léxico del Congreso (descalificativos de todos los grupos + cifra a estimar), artículo censurado, dibuja la curva, proximidad semántica. Datos en reserva: `diputados_xv.json` (sin script mientras no lo use un juego).
 
 **Descartados:** afinidad por votaciones reales, predicción del 29-N, coste de ir separados, última papeleta, forma gobierno, encuestas en vivo.
 
@@ -121,7 +121,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral) | A7, A9, A11 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, A11, plan B A14 |
-| `diputados_xv.json` | Datos abiertos del Congreso | Ninguno desde el 15-10 (A12 ya no lo usa) |
+| `presidentes.json` | La Moncloa y BOE; siete fichas a mano, sin script | A12 |
 | `llamadas_al_orden.json` | Diario de Sesiones (regex: "le llamo al orden", "retire esa expresión"); ParlaMint-ES para texto limpio de legislaturas anteriores | A3 |
 | `cis_postelectoral_2023.json` | CIS, microdato | A8 |
 | `renta_prov.json` | INE | A7 |
