@@ -7,6 +7,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 - **100 % estático.** Sin backend, sin cuentas, sin almacenar respuestas. Todo corre en el navegador. Si una idea necesita servidor, se descarta.
 - **Un juego = una pantalla.** Interfaz mínima tipo Wordle / Connections / Higher or Lower. Funciona en móvil primero.
 - **Todo juego termina en un cierre comparable:** puntuación (juegos de acierto/error) o afinidad con un partido (juegos de opinión). Nunca termina "en nada".
+- **Una sola edición por juego.** La serie no repite juegos: cada uno se publica una vez. Rejugar solo dentro de la misma edición (p. ej., el presidente aleatorio de A12). B1 y B2 son una pieza por debate, con contenido propio, y no cuentan como repetición.
 - **Resultado compartible:** texto copiable para LinkedIn (cuadrícula de emojis donde aplique). Imagen generada en navegador solo si sobra tiempo.
 - **El dato manda.** Cada cifra sale de una fuente pública citada en `data/SOURCES.md`. Se mide a todos los grupos con el mismo método aunque el foco editorial sea uno. Nunca inventar ni redondear datos: si falta, se deja un `TODO` visible.
 - **Sin fotos de agencia ni marcas ajenas.** "Wordle" es marca del NYT: cada juego lleva nombre propio.
@@ -71,14 +72,15 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 
 | Motor | Qué hace | Juegos |
 | --- | --- | --- |
-| M1 quiz | N preguntas, explicación, puntuación; variantes "ordena" y "pistas progresivas" | A1, A2, A4, A13, B1 |
+| M1 quiz | N preguntas, explicación, puntuación; variantes "ordena" y "pistas progresivas" | A1, A2, A4, A12, B1 |
 | M2 estimación | Deslizadores / entrada numérica; error respecto a la referencia | A8 |
 | M3 gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | A5, A6, A7 |
 | M4 más-o-menos | Rondas de comparar dos cifras, cadena "mayor o menor", ordenar seis ítems; racha y ranking final | A3, A11 |
 | M5 D'Hondt | Reparto provincial a partir de votos con reglas editables | A9 |
 | M6 agrupar | 16 ítems en 4 grupos de 4; 4 fallos; cuadrícula de colores | A10 |
-| M7 atributos | Adivinar un ítem; feedback ✓/✗ y ↑↓ por atributo; autocompletado | A12 |
+| M7 atributos | Adivinar un ítem; feedback ✓/✗ y ↑↓ por atributo; autocompletado | Sin uso desde el 15-10 (A12 pasa a M1) |
 | M8 afinidad | El usuario ordena ítems; Spearman con el perfil de cada partido | A14 |
+| M9 rosco | Una definición por letra en círculo; respuesta escrita con variantes aceptadas; pasar y volver | A13 |
 
 Cada motor expone una función `iniciar(config, contenedor)` y delega el final en `shared/cierre.js`. El contenido del juego vive en JSON, nunca en el JS del motor.
 
@@ -97,10 +99,10 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 - **A7 ¿Qué mapa es este?** (medio). Mapas provinciales sin leyenda (voto PP, Vox, PSOE, abstención, voto por correo, renta). Cierre: aciertos.
 - **A8 Demografía del voto** (medio). Estimar voto por edad, sexo y hábitat vs. postelectoral CIS 2023. Cierre: error medio.
 - **A9 Mismo voto, otras reglas** (medio). Resultado real 2023 con circunscripción única, autonómica, barrera 5 %. El usuario predice ganador/perdedor por regla. Cierre: aciertos.
-- **A10 Agrupar 16** (muy bajo). Nombres, leyes, lemas, fechas en 4 grupos de 4 con grupos trampa. Varias ediciones. Cierre: resuelto + fallos.
+- **A10 Agrupar 16** (muy bajo). Nombres, leyes, lemas, fechas en 4 grupos de 4 con grupos trampa. Una sola edición. Cierre: resuelto + fallos.
 - **A11 Más o menos / Ordena** (muy bajo). 10 rondas sobre las tablas de A6 y A7. Cierre: puntuación.
-- **A12 Diputadle** (medio). Adivinar un diputado de la XV: partido, provincia, edad ↑↓, legislaturas ↑↓, sexo. Cierre: intentos.
-- **A13 Pistas progresivas** (bajo). 5 pistas por ítem (año, ministerio, votación, frase, dato), sin imágenes. Cierre: puntos por pistas no usadas.
+- **A12 Presidentle** (bajo). M1 pistas progresivas. Adivinar uno de los 7 presidentes del Gobierno (siempre visibles como opciones) con 5 pistas: edad en la primera toma de posesión, tiempo en el cargo, formación, provincia de nacimiento, partido y año. Una ronda por partida con presidente aleatorio. Suárez desde 1977 (nota sobre 1976); tiempo en años y meses, Sánchez con corte el 29-11-2026. Datos: siete fichas a mano (La Moncloa y BOE). Cierre: 5 a 1 puntos según la pista; 0 si se agotan.
+- **A13 Rosco del politólogo** (bajo-medio). Motor nuevo M9. Una definición por letra (empieza por o contiene; Ñ, K, W, X, Y por "contiene") con vocabulario electoral, político y de ciencia política, cada una con fuente. Cronómetro opcional que elige el jugador al empezar. Cierre: aciertos sobre el total de letras + rosco compartible.
 - **A14 Ordena las prioridades** (motor muy bajo, datos medio). Único juego de opinión. El usuario ordena 8 temas; Spearman contra el perfil de cada programa del 29-N. Perfil = proporción de medidas numeradas por tema (capítulo + reclasificación LLM, validada con muestra manual y con conteo léxico). Cierre: "tu agenda se parece a la de X" (saliencia, no posición). Plan B: programas 2023 (Manifesto Project) o iniciativas por tema de la XV.
 
 **Campaña (motor listo antes; contenido en 24-48 h)**
@@ -119,7 +121,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral) | A7, A9, A11 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, A11, plan B A14 |
-| `diputados_xv.json` | Datos abiertos del Congreso | A12 |
+| `diputados_xv.json` | Datos abiertos del Congreso | Ninguno desde el 15-10 (A12 ya no lo usa) |
 | `llamadas_al_orden.json` | Diario de Sesiones (regex: "le llamo al orden", "retire esa expresión"); ParlaMint-ES para texto limpio de legislaturas anteriores | A3 |
 | `cis_postelectoral_2023.json` | CIS, microdato | A8 |
 | `renta_prov.json` | INE | A7 |
@@ -133,10 +135,10 @@ Cada script de R escribe un único JSON y anota fuente, URL y fecha en `data/SOU
 | Fecha | Entrega |
 | --- | --- |
 | 19 oct | Repo en Pages con índice, plantilla y `cierre.js`; scraping de llamadas al orden funcionando sobre la XV |
-| 26 oct | M1, M4, M6, M8; A1, A2, A10, A13 jugables; llamadas al orden de todas las legislaturas del rango |
-| 2 nov | JSON base listos; A3, A4, A11 jugables (7 en total) |
+| 26 oct | M1, M4, M6, M8; A1, A2, A10, A12 jugables; llamadas al orden de todas las legislaturas del rango |
+| 2 nov | JSON base listos; M9; A3, A4, A11, A13 jugables (8 en total) |
 | 6 nov | **Corte:** lo que no esté encaminado se sustituye por un suplente de la reserva |
-| 9 nov | M3, mapa SVG, M2, M7; A5, A6, A7, A8, A12 jugables (12 en total) |
+| 9 nov | M3, mapa SVG, M2; A5, A6, A7, A8 jugables (12 en total) |
 | 12 nov | M5 y A9; A14 con programas; plantillas B1/B2; QA en móvil de los 13; reparto de días fijado |
 | 13–27 nov | Un juego al día a hora fija. Bingo la víspera de cada debate, Quién dijo qué al día siguiente |
 
