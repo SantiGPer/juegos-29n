@@ -2,6 +2,25 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-15 (2) — CLAUDE.md al día con las decisiones del 15-10
+
+**Hecho**
+- `CLAUDE.md` alineado con `docs/documento-base.md` y `editorial/decisiones.md` (commit `9034224`):
+  - Principios: una sola edición por juego; solo se rejuega dentro de la misma edición; B1 y B2, una pieza por debate.
+  - Motores: M1 sirve a A12; M7 sin uso; nuevo M9 rosco para A13.
+  - Juegos: A10 con una sola edición; A12 Presidentle (M1 pistas progresivas, 7 presidentes, una ronda aleatoria); A13 Rosco del politólogo (M9).
+  - Datos: `diputados_xv.json` ya no lo usa ningún juego.
+  - Calendario: 26-oct A1, A2, A10, A12; 2-nov M9 y A3, A4, A11, A13 (8); 9-nov A5, A6, A7, A8 (12), sin M7.
+- Borrada la carpeta `Claude outputs/` de la raíz (copia idéntica de `docs/maquetas/maqueta-disposicion-v6.html`).
+- Commit de los cambios del autor en `docs/` y `editorial/`, maquetas incluidas.
+
+**Falta**
+- Nada pendiente de esta tarea.
+
+**Dudas para el autor**
+- `R/04_diputados.R` sigue en el árbol del repo de `CLAUDE.md` aunque ningún juego lo usa: ¿se borra o se guarda para la reserva?
+- Las fichas de presidentes de A12 se hacen a mano: ¿van en `data/` con entrada en `SOURCES.md` (mi propuesta, por el principio de fuente citada) o en el `data.json` del juego?
+
 ## 2026-10-15 — A3: llamadas al orden de la XV con la unidad decidida
 
 **Hecho**

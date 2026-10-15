@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cercanía v4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --fuente: Archivo, system-ui, sans-serif; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+.intro b { color:var(--tinta); }
+h2 { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3 { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.f { width:100%; max-width:375px; border:1px solid var(--raya); padding:1.25rem 16px 1.5rem; }
+.et { font-size:.875rem; color:var(--lapiz); }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; }
+.notas li { margin-bottom:.3rem; }
+.pista { display:flex; flex-wrap:wrap; gap:6px 3px; margin:.25rem 0 .75rem; }
+.celda { width:22px; height:22px; border:1px solid var(--tinta); display:grid; place-items:center; position:relative; background:var(--papel); }
+.celda.a { background:var(--marcador); }
+.celda.x { background:var(--raya); }
+.celda .medio { position:absolute; left:0; right:0; bottom:0; height:50%; background:var(--marcador); border-top:1px solid var(--tinta); }
+.celda svg { position:relative; display:block; }
+.leyenda { display:flex; gap:1rem; flex-wrap:wrap; font-size:.875rem; color:var(--lapiz); margin:0 0 1rem; }
+.leyenda span { display:inline-flex; gap:.4rem; align-items:center; }
+.recibo { margin:0; padding:.75rem 1rem; border:1px solid var(--tinta); white-space:pre-line; font-size:1rem; }
+table.intentos { border-collapse:separate; border-spacing:3px; font-size:.75rem; }
+.intentos th { font-weight:400; color:var(--lapiz); text-align:left; padding:0 2px; }
+.intentos td { width:58px; height:46px; border:1px solid var(--tinta); text-align:center; vertical-align:middle; padding:2px; line-height:1.15; position:relative; background:var(--papel); }
+.intentos td.a { background:var(--marcador); }
+.intentos td .medio { position:absolute; left:0; right:0; bottom:0; height:50%; background:var(--marcador); border-top:1px solid var(--tinta); }
+.intentos td span { position:relative; display:inline-flex; gap:3px; align-items:center; }
+.intentos td.nom { width:auto; border:0; text-align:left; font-size:.875rem; }
+.chip { display:inline-block; width:12px; height:12px; vertical-align:-1px; margin-right:3px; }
+.dist { display:block; font-weight:800; font-size:.7rem; }
+.estim { font-size:1rem; }
+.regla { position:relative; height:40px; margin:1.5rem 0 .25rem; border-bottom:1px solid var(--tinta); }
+.regla .tu, .regla .real { position:absolute; bottom:-1px; width:3px; }
+.regla .tu { height:28px; background:var(--tinta); opacity:.45; }
+.regla .real { height:40px; background:var(--tinta); }
+.regla .hueco { position:absolute; bottom:8px; height:12px; }
+.eje { display:flex; justify-content:space-between; font-size:.75rem; color:var(--lapiz); }
+.muestra { display:inline-block; width:18px; height:18px; border:1px solid var(--tinta); position:relative; vertical-align:-4px; }
+table.resumen { border-collapse:collapse; font-size:.875rem; width:100%; max-width:52em; }
+.resumen th, .resumen td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.resumen th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Cercanía, segunda vuelta</h1>
+<p class="intro"><b>Por qué no funcionaba el amarillo pálido:</b> pedía aprender un código (dos tonos casi iguales, uno significa «cerca») y en móvil apenas se distinguen. Lo intuitivo no necesita leyenda. Abajo hay dos alternativas que se explican solas, cada una apoyada en algo que el jugador ya entiende.</p>
+<p class="intro">Valores inventados para la maqueta.</p>
+
+<h2>A. Medio relleno: «medio punto»</h2>
+<p class="porque">La celda se llena según lo que vale la respuesta: entera si es exacta, hasta la mitad si es casi, vacía si es un fallo. Es la lógica de una barra de energía o de un vaso medio lleno, y no hace falta leyenda. Además coincide con la puntuación: si «casi» vale medio punto, la celda muestra exactamente eso.</p>
+<div class="fila">
+<div>
+<h3>A2 · Cronología, 12 hitos</h3>
+<div class="f">
+  <span class="et">Puntos</span>
+  <div class="pista" id="pA"></div>
+  <div class="leyenda"><span><i class="muestra" style="background:var(--marcador)"></i>en su sitio (1)</span><span><i class="muestra"><i class="medio" style="position:absolute;left:0;right:0;bottom:0;height:50%;background:var(--marcador);border-top:1px solid #000"></i></i>a un puesto (½)</span></div>
+  <div class="recibo">Juegos 29N, día 2
+Cronología de la legislatura
+8,5/12
+🟨🟨⬜⬜🟨🟨🟨⬜🟨⬜🟨⬜</div>
+</div>
+<ul class="notas"><li>Funciona igual en cualquier juego con puntuación parcial (A2, A5, A8): la celda se llena en proporción a los puntos.</li><li>Necesita una regla de puntuación que hay que decidir en contenido, por ejemplo «a un puesto = ½».</li><li>En el recibo no hay emoji de medio cuadrado, así que sigue en 🟨⬜ y la nota (8,5) cuenta los medios puntos. La otra opción sería 🟧, pero vuelve a pedir una leyenda.</li></ul>
+</div>
+<div>
+<h3>A12 · Diputadle con medio relleno</h3>
+<div class="f"><table class="intentos" id="tA"></table></div>
+<ul class="notas"><li>Edad a 5 años o menos, o legislaturas a una o menos: media celda y flecha.</li><li>La flecha dice hacia dónde ir; el relleno dice si ya estás cerca.</li></ul>
+</div>
+</div>
+
+<h2>B. Distancia escrita: «te faltó tanto»</h2>
+<p class="porque">En vez de codificar el «casi», se dice: la celda o el intento muestra la distancia («±1 puesto», «+3 años», «4 puntos de más»). Es lo más explícito posible. Encaja con la serie, porque el dato manda: el jugador aprende la cifra real además de su error.</p>
+<div class="fila">
+<div>
+<h3>A2 · Cronología con distancia</h3>
+<div class="f">
+  <span class="et">Puntos</span>
+  <div class="pista" id="pB"></div>
+  <p class="et" style="margin:0 0 1rem">El número dice cuántos puestos te desviaste. Vacía sin número: fallo lejano.</p>
+  <div class="recibo">Juegos 29N, día 2
+Cronología de la legislatura
+7/12
+🟨🟨⬜⬜🟨🟨🟨⬜🟨⬜🟨⬜</div>
+</div>
+<ul class="notas"><li>No cambia la puntuación: sigue siendo binaria y el recibo no necesita un emoji nuevo.</li><li>En 22 px el número entra justo (cifras de casillas a 1 px). En las celdas de A12 hay sitio de sobra.</li></ul>
+</div>
+<div>
+<h3>A8 · Estimación, tras revelar</h3>
+<div class="f estim">
+  <p style="margin:0">Porcentaje de ejemplo en un grupo de edad</p>
+  <div class="regla" id="regla"></div>
+  <div class="eje"><span>0 %</span><span>50 %</span><span>100 %</span></div>
+  <p style="margin:1rem 0 0"><b>Te quedaste a 7 puntos.</b> Dijiste 31 %; el dato es 38 %.</p>
+</div>
+<ul class="notas"><li>En los juegos de estimación, la distancia es el resultado: se escribe en una frase y el hueco entre tu marca (trama) y el dato (sólido) se pinta en marcador.</li></ul>
+</div>
+</div>
+
+<h2>Mi recomendación</h2>
+<table class="resumen">
+<tr><th>Juego</th><th>Qué usar</th><th>Por qué</th></tr>
+<tr><td>A2, A5 (puntuación parcial)</td><td>A, medio relleno</td><td>La celda muestra el valor de la respuesta; no hay que aprender nada</td></tr>
+<tr><td>A12 (pistas para el siguiente intento)</td><td>A + flecha</td><td>El relleno avisa de que estás cerca y la flecha indica la dirección</td></tr>
+<tr><td>A8, A6 (estimación)</td><td>B, distancia escrita</td><td>El error es la puntuación: se dice en una frase, con el hueco en marcador</td></tr>
+<tr><td>Recibo</td><td>🟨⬜ siempre, nota con decimal</td><td>Sin un emoji que obligue a explicar nada; la nota «8,5/12» ya dice que hubo medios puntos</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110"};
+const px = (s, p) => `<span style="display:inline-flex;gap:${p}px">${[...s].map(c => `<span style="display:grid;grid-template-columns:repeat(5,${p}px);grid-auto-rows:${p}px;gap:0">${[...D[c]].map(b => `<i style="background:${b === "1" ? "#000" : "transparent"}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s) => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1"/>` : "")).join("")}</svg>`;
+const G = {
+  a: [".......","......X",".....X.","X...X..",".X.X...","..X....","......."],
+  x: [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."],
+  up: ["...X...","..XXX..",".XXXXX.","...X...","...X...","...X...","......."],
+  dn: ["...X...","...X...","...X...",".XXXXX.","..XXX..","...X...","......."]
+};
+const est = [..."aamxaaamaxam"];
+document.getElementById("pA").innerHTML = est.map(e => `<span class="celda ${e === "m" ? "" : e}">${e === "m" ? '<i class="medio"></i>' : svg(G[e], 2)}</span>`).join("");
+const dist = ["", "", "1", "", "", "", "", "1", "", "", "", "2"];
+document.getElementById("pB").innerHTML = est.map((e, k) => e === "a" ? `<span class="celda a">${svg(G.a, 2)}</span>` : `<span class="celda">${dist[k] ? px(dist[k], 2) : svg(G.x, 2)}</span>`).join("");
+
+const C = { PP: "#1E4B8F", PSOE: "#FF0000" };
+const chip = k => `<i class="chip" style="background:${C[k]}"></i>`;
+const filas = [
+  ["Diputado A", ["x", chip("PP") + "PP"], ["x", "Prov. 1"], ["m", "52", "up"], ["x", "2", "up"], ["a", "H"]],
+  ["Diputado B", ["a", chip("PSOE") + "PSOE"], ["x", "Prov. 2"], ["a", "57"], ["m", "4", "up"], ["a", "H"]]
+];
+document.getElementById("tA").innerHTML = `<tr><th></th><th>Partido</th><th>Provincia</th><th>Edad</th><th>Legisl.</th><th>Sexo</th></tr>` +
+  filas.map(([n, ...cs]) => `<tr><td class="nom">${n}</td>${cs.map(([e, t, f]) => `<td class="${e === "a" ? "a" : ""}">${e === "m" ? '<i class="medio"></i>' : ""}<span>${t}${f ? " " + svg(G[f], 2) : ""}</span></td>`).join("")}</tr>`).join("");
+
+const tu = 31, real = 38;
+document.getElementById("regla").innerHTML = `<svg width="0" height="0" style="position:absolute"><defs><pattern id="tr" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2"/><rect x="2" y="2" width="2" height="2"/></pattern></defs></svg>
+<span class="hueco" style="left:${tu}%;width:${real - tu}%;background:var(--marcador)"></span>
+<svg class="tu" style="left:${tu}%;opacity:1;background:none;width:6px;height:28px;position:absolute;bottom:-1px"><rect width="6" height="28" fill="url(#tr)"/></svg>
+<span class="real" style="left:${real}%"></span>`;
+</script>
+</body>
+</html>

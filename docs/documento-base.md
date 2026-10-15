@@ -30,7 +30,7 @@ Sánchez convocó el 5 de octubre elecciones generales para el 29 de noviembre t
 | Fecha | Hito | Implicación para la serie |
 | --- | --- | --- |
 | 16 oct | Fin de plazo para comunicar coaliciones | Se cierra el mapa de candidaturas |
-| 21–26 oct | Presentación de candidaturas | Listas definitivas; datos para Diputadle de la nueva legislatura no aplican (se usa la XV) |
+| 21–26 oct | Presentación de candidaturas | Listas definitivas |
 | finales oct – inicios nov | Publicación de programas electorales | Datos para "Ordena las prioridades" |
 | 13 nov, 00:00 | Inicio de campaña | Juego 1 |
 | 16 nov (propuesta) | Primer cara a cara Sánchez–Feijóo (Mediaset) | Bingo del debate la víspera; "Quién dijo qué" el 17 |
@@ -57,16 +57,17 @@ El coste se concentra en el primer juego de cada tipo; a partir de ahí, cada ju
 
 | Motor | Qué hace | Coste técnico | Juegos que lo usan |
 | --- | --- | --- | --- |
-| M1 Quiz | N preguntas, puntuación, explicación por pregunta, nivel final; variantes "ordena" y "pistas progresivas" | Bajo | A1, A2, A4, A13, B1 |
+| M1 Quiz | N preguntas, puntuación, explicación por pregunta, nivel final; variantes "ordena" y "pistas progresivas" | Bajo | A1, A2, A4, A12, B1 |
 | M2 Estimación | Deslizadores o entrada numérica, error respecto a la referencia | Bajo-medio | A8 |
 | M3 Gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | Medio | A5, A6, A7 |
 | M4 Más o menos / ordena | Rondas de comparar dos cifras, cadena "mayor o menor", ordenar seis ítems; racha y ranking final | Muy bajo | A3, A11 |
 | M5 D'Hondt | Reparto provincial a partir de votos, con parámetros editables | Medio | A9 |
 | M6 Agrupar | 16 ítems en 4 grupos de 4, intentos limitados, cuadrícula de colores | Muy bajo | A10 |
-| M7 Atributos | Adivinar un ítem; cada intento devuelve atributos ✓/✗ y ↑↓ | Medio | A12 |
+| M7 Atributos | Adivinar un ítem; cada intento devuelve atributos ✓/✗ y ↑↓ | Medio | Sin uso desde el 15-10-2026 (A12 pasa a M1) |
 | M8 Afinidad por rangos | El usuario ordena ítems; correlación de Spearman con el perfil de cada partido | Muy bajo | A14 |
+| M9 Rosco | Una definición por letra en círculo; respuesta escrita con variantes aceptadas; pasar y volver | Bajo-medio | A13 |
 
-M1, M4, M6 y M8 son triviales; M3 y M7 son los que más interfaz piden; M5 solo se justifica porque A9 reutiliza el mapa y los datos provinciales de A7.
+M1, M4, M6 y M8 son triviales; M3 es el que más interfaz pide; M5 solo se justifica porque A9 reutiliza el mapa y los datos provinciales de A7.
 
 ## Juegos a construir antes del 13-N
 
@@ -152,7 +153,7 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 - **Idea:** 16 nombres, leyes, lemas o fechas que agrupar en 4 grupos de 4 por partido, legislatura, ministerio o tipo de norma, con grupos trampa (un ministro que lo fue con dos partidos).
 - **Mecánica:** M6, 4 fallos permitidos, cuadrícula de colores compartible.
 - **Cierre:** resuelto o no, y número de fallos.
-- **Datos:** 16 ítems por edición; varias ediciones listas permiten repetir en campaña.
+- **Datos:** 16 ítems, una sola edición (la serie no repite juegos).
 - **Coste:** muy bajo.
 
 ### A11 · Más o menos / Ordena
@@ -163,21 +164,34 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 - **Datos:** reutiliza las tablas de A6 y A7.
 - **Coste:** muy bajo.
 
-### A12 · Diputadle
+### A12 · Presidentle
 
-- **Idea:** adivinar un diputado de la XV legislatura; cada intento devuelve partido ✓/✗, provincia, edad ↑↓, legislaturas ↑↓, sexo.
-- **Mecánica:** M7 con autocompletado sobre la lista de 350.
-- **Cierre:** número de intentos, cuadrícula compartible.
-- **Datos:** fichero de diputados (datos abiertos del Congreso).
-- **Coste:** medio.
+*Sustituye a Diputadle (cambio del autor, 15-10-2026): adivinar a uno de los 350 diputados exigía demasiado conocimiento; los presidentes del Gobierno son reconocibles para el público general.*
 
-### A13 · Pistas progresivas
+- **Idea:** adivinar un presidente del Gobierno de la democracia (Suárez, Calvo-Sotelo, González, Aznar, Rodríguez Zapatero, Rajoy, Sánchez) con pistas que se revelan de la menos a la más reveladora.
+- **Pistas, en este orden:** 1) edad al tomar posesión por primera vez; 2) tiempo total en el cargo; 3) formación (estudios); 4) provincia de nacimiento; 5) partido y año de la primera toma de posesión.
+- **Mecánica:** M1 variante "pistas progresivas". Los siete nombres están siempre visibles como opciones; cada intento fallido revela la pista siguiente. Acertar con la pista 1 vale 5 puntos y con la pista 5, 1 punto; agotar las pistas, 0.
+- **Cierre:** puntuación y cuadrícula compartible de cinco casillas, una por pista: las usadas hasta acertar y las que sobraron.
+- **Datos:** siete fichas hechas a mano: fecha de nacimiento, fechas de toma de posesión y cese, estudios, provincia de nacimiento y partido. Fuentes: La Moncloa (relación de presidentes del Gobierno) y los reales decretos de nombramiento y cese en el BOE.
+- **Coste:** bajo. Sin motor nuevo y sin datos que procesar.
+- **Decidido (15-10-2026):**
+  - Una ronda por partida. El presidente se elige al azar entre los siete en cada partida, para poder volver a jugar.
+  - Se cuenta siempre desde la toma de posesión tras unas elecciones. En Suárez, la referencia es 1977 y no su nombramiento de julio de 1976; el juego lo explica en una nota aclaratoria.
+  - Tiempo en el cargo en años y meses, sin redondear. En Sánchez, con corte el 29-11-2026, y así se indica en la pista.
+  - Absorbe la mecánica de la antigua A13 (Pistas progresivas), que se sustituye por el Rosco electoral.
 
-- **Idea:** adivinar una ley, un político o un acontecimiento con cinco pistas que se revelan una a una (año, ministerio, votación, frase, dato).
-- **Mecánica:** M1 variante; menos pistas usadas, más puntos.
-- **Cierre:** puntuación.
-- **Datos:** cinco pistas por ítem, sin imágenes.
-- **Coste:** bajo. Comodín para días de poco tiempo.
+### A13 · Rosco del politólogo
+
+*Sustituye a Pistas progresivas (cambio del autor, 15-10-2026). Las pistas progresivas se integran en A12 Presidentle, que usa su mecánica.*
+
+- **Idea:** un rosco de letras al estilo del concurso de televisión: una definición por letra y una palabra que empieza por esa letra o, en las letras difíciles, la contiene. Vale vocabulario electoral, político y de ciencia política (D'Hondt, investidura, moción de censura, polarización, clivaje…).
+- **Mecánica:** motor propio (M9). Las letras forman un círculo; se muestra la definición de la letra activa y se escribe la respuesta. "Pasar" deja la letra para la siguiente vuelta. La comprobación no distingue mayúsculas ni tildes y acepta las variantes que lista el contenido ("D'Hondt", "Dhondt").
+- **Cierre:** aciertos sobre el total de letras y el rosco como cuadrícula compartible (🟨 acierto, ⬜ fallo o sin responder).
+- **Gesto memorable:** el rosco que se va marcando con el marcador letra a letra.
+- **Datos:** ninguno externo. Cada definición lleva fuente (LOREG, Constitución, Reglamento del Congreso, diccionario de la RAE o manual de ciencia política citado).
+- **Coste:** bajo-medio. Motor nuevo pero sencillo; el contenido es redacción.
+- **Neutralidad:** ningún término exclusivo de un partido; si aparece un concepto asociado a un bloque ideológico, que tenga contrapeso en el mismo rosco.
+- **Decidido (15-10-2026):** nombre "Rosco del politólogo"; las letras difíciles (Ñ, K, W, X, Y) entran por "contiene"; el jugador elige al empezar si juega con cronómetro o sin él; una sola edición.
 
 ### A14 · Ordena las prioridades
 
@@ -198,7 +212,7 @@ Dependen de hechos que aún no han ocurrido; el motor y la plantilla quedan list
 - **Mecánica:** M1; 10 frases más una pregunta de tema.
 - **Cierre:** puntuación.
 - **Datos:** transcripción o resumen del debate; recuento de términos por candidato.
-- **Cuándo:** 17 de noviembre si el cara a cara es el 16; se repite tras cada debate de RTVE.
+- **Cuándo:** 17 de noviembre si el cara a cara es el 16; una pieza nueva tras cada debate de RTVE. Cada debate tiene contenido propio y no cuenta como repetición (decisión del 15-10-2026).
 - **Coste:** 2-3 horas de contenido por debate.
 
 ### B2 · Bingo del debate
@@ -240,7 +254,8 @@ Todas públicas. Cada JSON del repositorio cita su fuente y su fecha de descarga
 | Resultados 2023 por provincia (votos, escaños, abstención, voto por correo, CERA) | Ministerio del Interior (infoelectoral) | A7, A9, A11 | Descarga y limpieza en R |
 | Composición del Congreso por legislatura (I–XV) | Congreso de los Diputados; Wikipedia como contraste | A5 | Tratamiento manual de coaliciones |
 | Actividad parlamentaria (plenos, iniciativas por grupo, decretos, leyes, preguntas) | Datos abiertos del Congreso | A6, A11, plan B de A14 | Selección de métricas |
-| Fichero de diputados de la XV legislatura (grupo, circunscripción, edad, sexo, legislaturas) | Datos abiertos del Congreso | A12 | Limpieza; autocompletado |
+| Presidentes del Gobierno desde 1976 (nacimiento, toma de posesión y cese, estudios, provincia, partido) | La Moncloa; BOE (reales decretos de nombramiento y cese) | A12 | Siete fichas a mano |
+| Fichero de diputados de la XV legislatura (grupo, circunscripción) | Datos abiertos del Congreso | Opcional: grupo parlamentario por llamada en A3 | Limpieza |
 | Llamadas al orden, retiradas de palabras, expulsiones | Diario de Sesiones (PDF/HTML) vía regex; ParlaMint-ES (CLARIN) para legislaturas anteriores con texto limpio | A3, reserva Léxico | Scraping y parseo; el mayor riesgo de retraso |
 | Postelectoral 2023 (voto por edad, sexo, hábitat) | CIS, microdato | A8 | Procesamiento en R |
 | Renta media por provincia | INE | A7 | Descarga directa |
@@ -256,9 +271,9 @@ Orden de producción, de lo que más riesgo tiene a lo que menos. Las fases son 
 
 1. **Datos de mayor riesgo primero.** Scraping y parseo del Diario de Sesiones para las llamadas al orden (A3). Es el único dato que puede no estar a tiempo y no depende de la actualidad.
 2. **Infraestructura.** Repositorio, GitHub Pages, estilo común, pantalla de cierre con texto compartible, formato de los JSON.
-3. **Motores triviales y sus juegos.** M1 (A1, A2, A4, A13), M4 (A3, A11), M6 (A10), M8 (A14, con datos de 2023 o de A6 como relleno provisional). Con esto hay ya siete u ocho juegos publicables.
-4. **Datos base en R.** Resultados 2023 por provincia, composición por legislatura, actividad parlamentaria, fichero de diputados, postelectoral CIS.
-5. **Motores de interfaz.** M3 con hemiciclo (A5) y gráfico (A6); mapa SVG (A7); M7 (A12); M2 (A8).
+3. **Motores triviales y sus juegos.** M1 (A1, A2, A4, A12), M9 rosco (A13), M4 (A3, A11), M6 (A10), M8 (A14, con datos de 2023 o de A6 como relleno provisional). Con esto hay ya siete u ocho juegos publicables.
+4. **Datos base en R.** Resultados 2023 por provincia, composición por legislatura, actividad parlamentaria, fichas de presidentes del Gobierno, postelectoral CIS.
+5. **Motores de interfaz.** M3 con hemiciclo (A5) y gráfico (A6); mapa SVG (A7); M2 (A8).
 6. **M5 D'Hondt** (A9), reutilizando mapa y datos provinciales.
 7. **Plantillas de campaña.** B1 y B2 listas con contenido de prueba.
 8. **Datos tardíos.** Pesos temáticos de los programas del 29-N en cuanto se publiquen (A14).
@@ -280,36 +295,36 @@ Entrega Oct 19, 2026: repositorio publicado en GitHub Pages con índice, plantil
 
 ### Semana 2 · 20–26 octubre · Motores simples y primeros juegos
 
-Entrega Oct 26, 2026: cuatro juegos jugables (A1, A2, A10, A13) y datos del Crispómetro completos para todas las legislaturas del rango elegido.
+Entrega Oct 26, 2026: cuatro juegos jugables (A1, A2, A10, A12) y datos del Crispómetro completos para todas las legislaturas del rango elegido.
 
 - [ ] M1 quiz con variantes ordenar y pistas progresivas
 - [ ] M4 más o menos / cadena / ordena
 - [ ] M6 agrupar 16
 - [ ] M8 afinidad por rangos (con datos provisionales de 2023)
-- [ ] Contenido de A1, A2, A10 (dos o tres ediciones) y A13
+- [ ] Contenido de A1, A2 y A10 (una edición cada uno)
+- [ ] Fichas de presidentes del Gobierno y A12 Presidentle jugable (M1 pistas progresivas)
 - [ ] Llamadas al orden de todas las legislaturas y decisión del rango (A3)
 
-### Semana 3 · 27 octubre – 2 noviembre · Datos base y tres juegos más
+### Semana 3 · 27 octubre – 2 noviembre · Datos base y cuatro juegos más
 
-Entrega Nov 2, 2026: JSON base listos y siete juegos jugables en total (A3, A4, A11 nuevos); textos de LinkedIn de los siete redactados.
+Entrega Nov 2, 2026: JSON base listos y ocho juegos jugables en total (A3, A4, A11, A13 nuevos); textos de LinkedIn de los ocho redactados.
 
 - [ ] Resultados 2023 por provincia (Interior) y renta (INE)
 - [ ] Composición del Congreso por legislatura con coaliciones resueltas
 - [ ] Actividad parlamentaria: métricas elegidas (A6) y tablas para A11
-- [ ] Fichero de diputados de la XV (A12)
+- [ ] M9 rosco y contenido de A13 Rosco del politólogo (una edición)
 - [ ] Postelectoral CIS 2023 por edad, sexo y hábitat (A8)
 - [ ] A3 Crispómetro jugable con presidencias y partidos en la pantalla final
 - [ ] A4 Promesas y A11 Más o menos jugables
 
 ### Semana 4 · 3–9 noviembre · Motores de interfaz
 
-La semana más cargada. Corte el Nov 6, 2026: lo que no esté encaminado ese día se sustituye por un suplente de la reserva. Entrega Nov 9, 2026: doce juegos jugables (A5, A6, A7, A8, A12 nuevos).
+La semana más cargada. Corte el Nov 6, 2026: lo que no esté encaminado ese día se sustituye por un suplente de la reserva. Entrega Nov 9, 2026: doce juegos jugables (A5, A6, A7, A8 nuevos).
 
 - [ ] M3 con hemiciclo SVG (A5) y gráfico de barras rellenable (A6)
 - [ ] Mapa provincial SVG y A7
 - [ ] M2 deslizadores y A8
-- [ ] M7 atributos con autocompletado y A12
-- [ ] Textos de LinkedIn de los cinco
+- [ ] Textos de LinkedIn de los cuatro
 
 ### Semana 5 · 10–12 noviembre · Cierre y QA
 

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maqueta arcade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&family=Jersey+10&family=Silkscreen&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --papel: #ffffff; --tinta: #000000; --lapiz: #575757; --raya: #bdbdbd; --marcador: #f2c200;
+  --fuente: Archivo, system-ui, sans-serif;
+  --pixel: "Jersey 10", monospace;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 2rem 16px 4rem; background: var(--papel); color: var(--tinta); font: 400 1rem/1.45 var(--fuente); }
+.envoltura { max-width: 1240px; margin: 0 auto; }
+.envoltura > h1 { font-size: 2rem; font-weight: 800; margin: 0 0 .5rem; line-height: 1.1; }
+.envoltura > p { max-width: 44em; color: var(--lapiz); margin: 0 0 2.5rem; }
+h2 { font-size: 1.25rem; font-weight: 800; margin: 3rem 0 1rem; }
+.fila { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 375px), 375px)); gap: 2rem; align-items: start; }
+.col h3 { font-size: .875rem; font-weight: 800; margin: 0 0 .5rem; }
+.notas { font-size: .875rem; color: var(--lapiz); margin: .75rem 0 0; padding-left: 1.1em; }
+.notas li { margin-bottom: .25rem; }
+
+/* Marco de móvil: reproduce base.css a 375 px */
+.f { width: 100%; max-width: 375px; min-height: 640px; border: 1px solid var(--raya); padding: 1.5rem 16px 2rem; font-size: 1.125rem; }
+.f h1 { margin: 0 0 1rem; font-size: 2rem; font-weight: 800; line-height: 1.1; }
+.f p { margin: 0 0 1rem; }
+.f a { color: var(--tinta); }
+.et { font-size: .875rem; color: var(--lapiz); }
+.f button { font: inherit; color: var(--tinta); background: var(--papel); border: 1px solid var(--tinta); border-radius: 0; padding: .75rem 1rem; width: 100%; text-align: left; }
+.f button.accion { width: auto; font-weight: 800; }
+.opciones { display: grid; gap: .5rem; margin: 0 0 1.5rem; }
+.correcta { background: var(--marcador) !important; }
+.fallada { text-decoration: line-through; }
+.explicacion { border-top: 1px solid var(--tinta); padding-top: 1rem; margin-bottom: 1.5rem; }
+.progreso { display: flex; gap: 4px; margin-bottom: .25rem; }
+.casilla { width: 1rem; height: 1rem; border: 1px solid var(--tinta); }
+.casilla.a { background: var(--marcador); }
+.casilla.x { background: var(--raya); }
+.cifra { margin: .5rem 0 1rem; font-size: 4rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.marca { background: linear-gradient(var(--marcador), var(--marcador)) 0 .1em / 100% calc(100% - .2em) no-repeat; padding: 0 .1em; }
+.recibo { margin: 0 0 1rem; padding: 1rem; border: 1px solid var(--tinta); white-space: pre-line; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.tab { font-variant-numeric: tabular-nums; }
+
+/* Nivel 1 */
+.hud { display: flex; justify-content: space-between; align-items: baseline; margin: .25rem 0 1.25rem; font-size: .875rem; color: var(--lapiz); }
+.hud b { color: var(--tinta); font-weight: 800; font-size: 1.125rem; font-variant-numeric: tabular-nums; }
+.lista { list-style: none; padding: 0; margin: 1.5rem 0 0; border-top: 1px solid var(--tinta); }
+.lista li { display: grid; grid-template-columns: 4.5rem 1fr; gap: .5rem; padding: .6rem 0; border-bottom: 1px solid var(--raya); font-size: 1rem; }
+.lista .d { color: var(--lapiz); font-variant-numeric: tabular-nums; }
+.lista .cerrada { color: var(--lapiz); }
+.lista .hoy a { font-weight: 800; background: var(--marcador); text-decoration: none; padding: 0 .15em; }
+
+/* Nivel 2 */
+.px { font-family: var(--pixel); line-height: 1; }
+.hud2 { display: flex; justify-content: space-between; align-items: end; margin: .25rem 0 1.25rem; }
+.hud2 .et { display: block; margin-bottom: .1rem; }
+.hud2 .px { font-size: 2.25rem; }
+.f .progreso.g .casilla { width: 1.25rem; height: 1.25rem; }
+.digitos { display: inline-flex; gap: calc(var(--p) * 1.2); align-items: end; }
+.digito { display: grid; grid-template-columns: repeat(3, var(--p)); grid-auto-rows: var(--p); gap: calc(var(--p) * .18); }
+.digito i { display: block; }
+.digito i.on { background: var(--tinta); }
+.banda { padding: calc(var(--p) * .6); background: var(--marcador); display: inline-flex; }
+.icono { display: inline-block; vertical-align: middle; }
+.niveles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 1.25rem 0 1.25rem; }
+.nivel { aspect-ratio: 1; border: 1px solid var(--tinta); display: grid; place-items: center; font-family: var(--pixel); font-size: 1.75rem; }
+.nivel.hoy { background: var(--marcador); outline: 3px solid var(--tinta); outline-offset: 2px; }
+.nivel.cerrado { border-color: var(--raya); }
+.ficha { border-top: 1px solid var(--tinta); padding-top: 1rem; }
+.ficha .px { font-size: 1.5rem; }
+
+/* Muestrario */
+.muestras { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 2rem; }
+.muestra { border-top: 1px solid var(--tinta); padding-top: .75rem; }
+.muestra .grande { font-size: 4rem; line-height: 1; margin: .5rem 0; }
+.iconos { display: flex; gap: 2rem; flex-wrap: wrap; align-items: end; }
+.iconos figure { margin: 0; font-size: .875rem; color: var(--lapiz); }
+.iconos figcaption { margin-top: .4rem; }
+.decidir { max-width: 44em; padding-left: 1.2em; }
+.decidir li { margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Maqueta: toque arcade</h1>
+<p>Misma base aprobada (papel, tinta, marcador, Archivo, radio 0). Tres columnas por pantalla: lo que hay hoy, nivel 1 (guiño) y nivel 2 (píxel con función). Marcos a 375 px. Los textos y el orden de juegos son ilustrativos.</p>
+
+<h2>Pantalla de juego (A1, pregunta 3 respondida)</h2>
+<div class="fila">
+
+<div class="col"><h3>Actual</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <div class="progreso"><span class="casilla a"></span><span class="casilla a"></span><span class="casilla x"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span></div>
+  <p class="et">3 de 10</p>
+  <p>¿Cuántos diputados elige Soria?</p>
+  <div class="opciones"><button>1</button><button class="correcta">2</button><button class="fallada">3</button></div>
+  <div class="explicacion"><p>Explicación en dos frases.</p><p class="et">Fuente: LOREG, art. 162</p></div>
+  <button class="accion">Siguiente pregunta</button>
+</div></div>
+
+<div class="col"><h3>Nivel 1 · guiño</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <p class="et" style="margin:-.5rem 0 0">Pantalla 1 de 15</p>
+  <div class="hud"><span>Pregunta <b>3</b>/10</span><span>Aciertos <b>2</b></span></div>
+  <div class="progreso"><span class="casilla a"></span><span class="casilla a"></span><span class="casilla x"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span></div>
+  <p style="margin-top:1rem">¿Cuántos diputados elige Soria?</p>
+  <div class="opciones"><button>1</button><button class="correcta">2</button><button class="fallada">3</button></div>
+  <div class="explicacion"><p>Explicación en dos frases.</p><p class="et">Fuente: LOREG, art. 162</p></div>
+  <button class="accion">Siguiente pregunta</button>
+</div>
+<ul class="notas"><li>Marcador de partida arriba (pregunta y aciertos), en Archivo tabular.</li><li>«Pantalla 1 de 15» sitúa el juego en la serie.</li></ul></div>
+
+<div class="col"><h3>Nivel 2 · píxel con función</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <div class="hud2">
+    <div><span class="et">Pantalla</span><span class="px">1/15</span></div>
+    <div><span class="et">Pregunta</span><span class="px">3/10</span></div>
+    <div style="text-align:right"><span class="et">Aciertos</span><span class="px">02</span></div>
+  </div>
+  <div class="progreso g"><span class="casilla a"></span><span class="casilla a"></span><span class="casilla x"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span><span class="casilla"></span></div>
+  <p style="margin-top:1rem">¿Cuántos diputados elige Soria?</p>
+  <div class="opciones"><button>1</button><button class="correcta">2</button><button class="fallada">3</button></div>
+  <div class="explicacion"><p>Explicación en dos frases.</p><p class="et">Fuente: LOREG, art. 162</p></div>
+  <button class="accion">Siguiente pregunta</button>
+</div>
+<ul class="notas"><li>Cifras del marcador en fuente de píxel (Jersey 10). Solo cifras, nunca texto.</li><li>Casillas algo mayores: se leen como píxeles.</li></ul></div>
+</div>
+
+<h2>Cierre</h2>
+<div class="fila">
+
+<div class="col"><h3>Actual</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <p class="cifra"><span class="marca">7</span> de 10</p>
+  <p class="et">[nivel según contenido]</p>
+  <div class="recibo">Quiz del sistema electoral
+13-11-2026
+7/10
+🟨🟨⬜🟨🟨🟨⬜🟨🟨⬜
+santigper.github.io/juegos-29n/</div>
+  <button class="accion">Copiar resultado</button>
+  <p class="et" style="margin-top:1.5rem">Fuente de los datos: LOREG</p>
+  <p><a href="#">Más juegos de la serie</a></p>
+</div></div>
+
+<div class="col"><h3>Nivel 1 · guiño</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <p class="et" style="margin:-.5rem 0 1rem">Fin de la partida</p>
+  <p class="cifra"><span class="marca">7</span> de 10</p>
+  <p class="et">[nivel según contenido]</p>
+  <div class="recibo">Juegos 29N, pantalla 1 de 15
+Quiz del sistema electoral
+7/10
+🟨🟨⬜🟨🟨🟨⬜🟨🟨⬜
+santigper.github.io/juegos-29n/</div>
+  <button class="accion">Copiar resultado</button>
+  <p class="et" style="margin-top:1.5rem">Fuente de los datos: LOREG</p>
+  <p>Pantalla 2: se abre el 14 de noviembre.<br><a href="#">Ver todas las pantallas</a></p>
+</div>
+<ul class="notas"><li>El recibo dice qué pantalla es: invita a seguir la serie.</li><li>Cierre con la siguiente pantalla en vez de «Más juegos».</li></ul></div>
+
+<div class="col"><h3>Nivel 2 · píxel con función</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <p class="et" style="margin:-.5rem 0 1rem">Fin de la partida</p>
+  <p style="margin:0 0 1rem;display:flex;align-items:end;gap:14px"><span class="banda"><span class="digitos" data-px="7" style="--p:13px"></span></span><span class="digitos" data-px="/10" style="--p:7px"></span></p>
+  <p class="et">[nivel según contenido]</p>
+  <div class="recibo">Juegos 29N, pantalla 1 de 15
+Quiz del sistema electoral
+7/10
+🟨🟨⬜🟨🟨🟨⬜🟨🟨⬜
+santigper.github.io/juegos-29n/</div>
+  <button class="accion">Copiar resultado</button>
+  <p class="et" style="margin-top:1.5rem">Fuente de los datos: LOREG</p>
+  <p><span class="icono" data-icono="candado" data-s="2"></span> Pantalla 2: se abre el 14 de noviembre.<br><a href="#">Ver todas las pantallas</a></p>
+</div>
+<ul class="notas"><li>La cifra final está dibujada con casillas: la misma unidad del progreso y de la cuadrícula del recibo.</li><li>El marcador sigue siendo el fondo detrás de la tinta; la pasada de izquierda a derecha se mantiene.</li></ul></div>
+</div>
+
+<h2>Índice de la serie (simulado el 15 de noviembre)</h2>
+<div class="fila">
+
+<div class="col"><h3>Nivel 1 · lista de pantallas</h3>
+<div class="f">
+  <h1>Juegos de campaña 29N</h1>
+  <p>Un juego al día del 13 al 27 de noviembre. Cada pantalla se abre a su hora.</p>
+  <ul class="lista">
+    <li><span class="d">13 nov</span><a href="#">Quiz del sistema electoral</a></li>
+    <li><span class="d">14 nov</span><a href="#">Cronología de la legislatura</a></li>
+    <li class="hoy"><span class="d">15 nov</span><a href="#">Crispómetro</a></li>
+    <li class="cerrada"><span class="d">16 nov</span><span>Pantalla 4</span></li>
+    <li class="cerrada"><span class="d">17 nov</span><span>Pantalla 5</span></li>
+    <li class="cerrada"><span class="d">18 nov</span><span>Pantalla 6</span></li>
+    <li class="cerrada"><span class="d">…</span><span>hasta la pantalla 15</span></li>
+  </ul>
+</div>
+<ul class="notas"><li>Las pantallas futuras no desvelan el nombre.</li><li>La de hoy, con el marcador.</li></ul></div>
+
+<div class="col"><h3>Nivel 2 · selector de pantallas</h3>
+<div class="f">
+  <h1>Juegos de campaña 29N</h1>
+  <p>Un juego al día del 13 al 27 de noviembre.</p>
+  <div class="niveles" id="niveles"></div>
+  <div class="ficha">
+    <span class="et">Pantalla de hoy, 15 de noviembre</span>
+    <p style="font-weight:800;font-size:1.5rem;line-height:1.15;margin:.25rem 0 1rem">Crispómetro</p>
+    <button class="accion">Jugar</button>
+  </div>
+</div>
+<ul class="notas"><li>15 casillas = 15 días. Abiertas con borde de tinta, la de hoy con marcador, cerradas en raya con candado.</li><li>Pulsar una abierta cambia la ficha de abajo. Es el gesto memorable del índice.</li><li>Marcar «jugadas» exigiría guardar en el navegador del usuario: decisión aparte.</li></ul></div>
+</div>
+
+<h2>Muestrario</h2>
+<div class="muestras">
+  <div class="muestra"><span class="et">A. Jersey 10 (Google Fonts)</span><div class="grande px">7/10</div><span class="et">Píxel de marcador deportivo: encaja con el doble sentido de «marcador».</span></div>
+  <div class="muestra"><span class="et">B. Silkscreen (Google Fonts)</span><div class="grande" style="font-family:Silkscreen;font-size:3rem;margin:1rem 0">7/10</div><span class="et">Más ancha y más «consola». Se ve más en la web.</span></div>
+  <div class="muestra"><span class="et">C. Cifras de casillas (sin fuente)</span><div style="margin:.75rem 0"><span class="digitos" data-px="7/10" style="--p:9px"></span></div><span class="et">Dibujadas en rejilla de 3×5. Cero dependencias y la más propia.</span></div>
+</div>
+
+<h3 style="margin:2.5rem 0 1rem;font-size:.875rem;font-weight:800">Iconos propios en rejilla de 10×10 (tamaño real y ×4)</h3>
+<div class="iconos" id="iconos"></div>
+
+<h2>Qué hay que decidir</h2>
+<ol class="decidir">
+  <li>Nivel: 1, 2 o 2 recortado (por ejemplo, el selector de pantallas sin la fuente de píxel).</li>
+  <li>Si es el 2: cifras A, B o C. Mi recomendación es C para la cifra final y el índice, y A para el marcador de partida. Si se quiere una sola regla, C en todo.</li>
+  <li>Vocabulario: «pantalla» para cada juego de la serie y «partida» para cada vez que se juega.</li>
+  <li>Inventario de iconos: urna, papeleta, escaño y candado como punto de partida, con un máximo de 8.</li>
+</ol>
+</div>
+
+<script>
+const D = {"0":"111101101101111","1":"010110010010111","2":"111001111100111","3":"111001111001111","4":"101101111001001","5":"111100111001111","6":"111100111101111","7":"111001001010010","8":"111101111101111","9":"111101111001111","/":"001001010100100"};
+document.querySelectorAll("[data-px]").forEach(el => {
+  el.innerHTML = [...el.dataset.px].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("");
+});
+
+const I = {
+  urna: ["..XXXXXX..","..X....X..","..X.XX.X..","XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X........X","X........X","XXXXXXXXXX"],
+  papeleta: ["XXXXXXXXXX","X........X","X.X....X.X","X..X..X..X","X...XX...X","X...XX...X","X..X..X..X","X.X....X.X","X........X","XXXXXXXXXX"],
+  "escaño": ["..XXXXXX..","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".XXXXXXXX.",".X......X.",".X......X.",".X......X."],
+  candado: ["...XXXX...","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".X..XX..X.",".X..XX..X.",".X......X.",".XXXXXXXX."]
+};
+const svg = (n, s, color = "#000") => `<svg width="${10*s}" height="${10*s}" viewBox="0 0 10 10" shape-rendering="crispEdges" aria-label="${n}">${I[n].flatMap((r, y) => [...r].map((c, x) => c === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${color}"/>` : "")).join("")}</svg>`;
+document.querySelectorAll("[data-icono]").forEach(el => el.innerHTML = svg(el.dataset.icono, +el.dataset.s, "#575757"));
+document.getElementById("iconos").innerHTML = Object.keys(I).map(n => `<figure>${svg(n, 2)} ${svg(n, 4)}<figcaption>${n}</figcaption></figure>`).join("");
+
+document.getElementById("niveles").innerHTML = Array.from({length: 15}, (_, i) => i + 1).map(n =>
+  n < 3 ? `<span class="nivel">${n}</span>` :
+  n === 3 ? `<span class="nivel hoy">${n}</span>` :
+  `<span class="nivel cerrado">${svg("candado", 2, "#bdbdbd")}</span>`).join("");
+</script>
+</body>
+</html>

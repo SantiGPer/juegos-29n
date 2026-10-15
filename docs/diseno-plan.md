@@ -82,3 +82,25 @@ Comparado con lo que saldría por defecto en "una página de quiz genérica":
 | Emojis como iconos de estado | Cuadrados de CSS en pantalla; emojis solo en el texto copiado | Lista negra: emojis como iconografía; en el texto plano son el único medio |
 
 Riesgo detectado y cambiado: había planteado el amarillo como color de texto para la cifra final; no pasa AA sobre blanco (≈1,6:1), así que el marcador va siempre de fondo detrás de tinta.
+
+## Ampliación arcade (aprobada por el autor el 15-10-2026)
+
+Detalle en `editorial/decisiones.md` (15-10-2026) y en `docs/maquetas/maqueta-arcade-v2.html`. Esta ampliación sustituye lo siguiente del plan en diez líneas:
+
+- **Punto 4.** Las cifras de juego ya no van en Archivo: se dibujan con casillas en una rejilla de 5×7. Archivo sigue siendo la única fuente.
+- **Punto 7.** La fila de casillas pasa a ser la pista con tic y aspa, cursor de píxeles y puntos a dos dígitos.
+- **Punto 9.** El gesto del marcador se mantiene; se añade el «+1» al acertar, que es la única animación más, y responde a una acción del usuario.
+- **Índice.** Pasa a ser un selector de 15 días con una ficha de instrucciones.
+- **Iconos.** Cinco iconos propios en rejilla de 10×10; nunca emojis en pantalla.
+
+Revisión contra la lista negra: sin fuente de píxel, sin neón, sin CRT, sin parpadeos y sin copy de recreativa. El píxel sale de la casilla que ya existía.
+
+## Paleta ampliada (aprobada por el autor el 15-10-2026)
+
+Detalle en `editorial/decisiones.md` (15-10-2026) y `docs/maquetas/maqueta-paleta-v5.html` (variante A).
+
+- **Senado `#dcc7a1`**: segundo papel, el de la papeleta sepia del Senado. Se usa en los días cerrados, en las superficies de la serie y en la vista previa. Nunca de fondo de página ni en gráficos con colores de partido.
+- **Señal `#ff5f1f`**: solo el relleno del bocadillo de debate, con contorno en tinta.
+- Tokens nuevos en `:root`: `--senado` y `--senal`.
+
+Revisión contra la lista negra: ni crema de fondo, ni serif, ni terracota. Los dos colores nuevos tienen un papel y un motivo.

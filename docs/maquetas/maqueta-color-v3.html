@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maqueta color v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --papel: #ffffff; --tinta: #000000; --lapiz: #575757; --raya: #bdbdbd;
+  --marcador: #f2c200; --cerca: #fae28c;
+  --pp: #1E4B8F; --psoe: #FF0000; --vox: #63BE21; --sumar: #E51C55;
+  --fuente: Archivo, system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 2rem 16px 4rem; background: var(--papel); color: var(--tinta); font: 400 1rem/1.45 var(--fuente); }
+.envoltura { max-width: 1240px; margin: 0 auto; }
+.envoltura > h1 { font-size: 2rem; font-weight: 800; margin: 0 0 .5rem; line-height: 1.1; }
+.intro { max-width: 46em; color: var(--lapiz); margin: 0 0 1rem; }
+.intro b { color: var(--tinta); }
+h2 { font-size: 1.25rem; font-weight: 800; margin: 3.5rem 0 .4rem; }
+.porque { max-width: 46em; margin: 0 0 1.25rem; color: var(--lapiz); font-size: .95rem; }
+h3 { font-size: .875rem; font-weight: 800; margin: 0 0 .5rem; }
+.fila { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 375px), 375px)); gap: 2rem; align-items: start; }
+.notas { font-size: .875rem; color: var(--lapiz); margin: 0; padding-left: 1.1em; max-width: 375px; align-self: center; }
+.notas li { margin-bottom: .35rem; }
+.f { width: 100%; max-width: 375px; border: 1px solid var(--raya); padding: 1.25rem 16px 1.5rem; font-size: 1.125rem; }
+.f h1 { margin: 0 0 1rem; font-size: 2rem; font-weight: 800; line-height: 1.1; }
+.f p { margin: 0 0 1rem; }
+.et { font-size: .875rem; color: var(--lapiz); }
+.recibo { margin: 1rem 0 0; padding: .75rem 1rem; border: 1px solid var(--tinta); white-space: pre-line; font-size: 1rem; }
+button.accion { font: inherit; font-weight: 800; color: var(--tinta); background: var(--papel); border: 1px solid var(--tinta); border-radius: 0; padding: .75rem 1rem; }
+
+/* Pista */
+.pista { display: flex; flex-wrap: wrap; row-gap: 6px; margin: .25rem 0 .5rem; }
+.celda { width: 22px; height: 22px; border: 1px solid var(--tinta); display: grid; place-items: center; margin-right: 3px; }
+.celda.a { background: var(--marcador); }
+.celda.c { background: var(--cerca); }
+.celda.x { background: var(--raya); }
+.celda.une { margin-left: -4px; border-left-color: var(--marcador); width: 26px; }
+.celda.une::before { content: ""; }
+.leyenda { display: flex; gap: 1rem; flex-wrap: wrap; font-size: .875rem; color: var(--lapiz); margin: .5rem 0 0; }
+.leyenda span { display: inline-flex; gap: .4rem; align-items: center; }
+
+/* Barras */
+.barras { display: grid; grid-template-columns: 3.2rem 1fr; gap: 4px .5rem; align-items: center; font-size: .875rem; margin: .5rem 0 1rem; }
+.barras .sig { font-weight: 800; }
+.barra { height: 14px; display: block; }
+.par { display: grid; gap: 3px; }
+.eje { font-size: .75rem; color: var(--lapiz); }
+
+/* Diputadle */
+table.intentos { border-collapse: separate; border-spacing: 3px; font-size: .75rem; margin: .5rem 0 0; }
+.intentos th { font-weight: 400; color: var(--lapiz); text-align: left; padding: 0 2px; }
+.intentos td { width: 58px; height: 46px; border: 1px solid var(--tinta); text-align: center; vertical-align: middle; padding: 2px; line-height: 1.15; }
+.intentos td.a { background: var(--marcador); }
+.intentos td.c { background: var(--cerca); }
+.intentos td.x { background: var(--papel); }
+.intentos td.nom { width: auto; border: 0; text-align: left; font-size: .875rem; padding-right: 6px; }
+.chip { display: inline-block; width: 12px; height: 12px; vertical-align: -1px; margin-right: 3px; }
+
+/* Afinidad */
+.afin { margin: .25rem 0 1rem; }
+.afin .banda { display: inline-block; font-size: 2rem; font-weight: 800; line-height: 1; padding: .2em .25em; }
+.cuarteto { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: .5rem; }
+.cuarteto .banda { font-size: 1.5rem; font-weight: 800; padding: .15em .25em; display: inline-block; }
+.cuarteto small { display: block; font-size: .75rem; color: var(--lapiz); margin-top: .25rem; }
+
+/* Selector */
+.niveles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 1rem 0 1.25rem; }
+.nivel { aspect-ratio: 1; border: 1px solid var(--tinta); display: grid; place-items: center; position: relative; }
+.nivel.hoy { background: var(--marcador); border-width: 3px; }
+.nivel.cerrado { border-color: var(--raya); }
+.nivel .esq { position: absolute; top: 3px; right: 3px; line-height: 0; }
+.digitos { display: inline-flex; gap: var(--p); align-items: end; }
+.digito { display: grid; grid-template-columns: repeat(5, var(--p)); grid-auto-rows: var(--p); gap: 1px; }
+.digito i.on { background: currentColor; }
+.ficha { border-top: 1px solid var(--tinta); padding-top: 1rem; }
+.ficha h2 { margin: .2rem 0 .5rem; font-size: 1.5rem; }
+.ficha .texto { font-size: 1rem; }
+.extra { display: flex; gap: .6rem; align-items: start; font-size: .875rem; border: 1px solid var(--tinta); padding: .6rem .75rem; margin: 0 0 1rem; }
+
+table.resumen { border-collapse: collapse; font-size: .875rem; width: 100%; max-width: 52em; }
+.resumen th, .resumen td { text-align: left; padding: .5rem .75rem .5rem 0; border-bottom: 1px solid var(--raya); vertical-align: top; }
+.resumen th { border-bottom-color: var(--tinta); }
+.muestra { display: inline-block; width: 18px; height: 18px; border: 1px solid var(--tinta); vertical-align: -4px; }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Maqueta color v3</h1>
+<p class="intro"><b>La regla de partida:</b> el color solo entra cuando codifica algo que hoy no se ve. He encontrado cuatro cosas mudas en la serie. Cada una recibe un tratamiento distinto, así que el color varía de un día a otro porque cambia el dato, no porque cambie el decorado. El marco común (papel, tinta, marcador y Archivo) no se toca.</p>
+<p class="intro">Todos los valores, nombres de diputados y resultados son inventados para la maqueta.</p>
+
+<h2>1. Cercanía: el marcador gana un segundo tono</h2>
+<p class="porque">Hoy una respuesta solo está bien o mal. En la cronología (A2), los hemiciclos (A5), la estimación (A8) o Diputadle (A12) existe el «casi». Si no se ve, el jugador no sabe si va por buen camino. Un marcador más pálido dice «cerca» sin inventar un color nuevo: es el mismo fluorescente pasado con menos tinta.</p>
+<div class="fila">
+<div>
+<h3>Pista de A2: 12 hitos colocados</h3>
+<div class="f">
+  <p class="et" style="margin:0">Puntos</p>
+  <div class="pista" id="pistaA2"></div>
+  <div class="leyenda"><span><i class="muestra" style="background:var(--marcador)"></i>en su sitio</span><span><i class="muestra" style="background:var(--cerca)"></i>a un puesto</span><span><i class="muestra" style="background:var(--raya)"></i>lejos</span></div>
+  <div class="recibo">Juegos 29N, día 2
+Cronología de la legislatura
+7/12
+🟨🟨🟧⬜🟨🟨🟨🟧🟨⬜🟨🟧</div>
+</div>
+</div>
+<ul class="notas">
+  <li>Cerca = <code>#fae28c</code>, el marcador aclarado. Lleva su propio glifo (dos puntos de píxel), así que no depende solo del tono.</li>
+  <li>En el recibo, «cerca» es 🟧. No hay emoji amarillo pálido; el naranja es el vecino más próximo y fuera de la pantalla no choca con ningún partido.</li>
+  <li>Solo existe en los juegos con puntuación parcial. A1 sigue siendo binario.</li>
+</ul>
+</div>
+
+<h2>2. Racha: los aciertos seguidos se sueldan</h2>
+<p class="porque">En la pista, tres aciertos seguidos o tres aciertos sueltos se ven igual, y en el Crispómetro y en Más o menos (motor M4) la racha es la puntuación. Si las celdas consecutivas se unen en un bloque, el jugador ve crecer su racha. Cada partida deja además una forma distinta, que es la variedad que buscabas en las cuadrículas.</p>
+<div class="fila">
+<div>
+<h3>Misma puntuación, dos partidas</h3>
+<div class="f">
+  <p class="et" style="margin:0">Partida A: racha de 5</p>
+  <div class="pista" id="rachaA"></div>
+  <p class="et" style="margin:1rem 0 0">Partida B: racha de 2</p>
+  <div class="pista" id="rachaB"></div>
+</div>
+</div>
+<ul class="notas">
+  <li>No añade color: une las celdas y quita el borde interior.</li>
+  <li>Se aplica en todos los juegos con pista. En M4, la racha más larga también sale en la ficha y en el cierre.</li>
+</ul>
+</div>
+
+<h2>3. Tu respuesta frente al dato: trama de píxeles</h2>
+<p class="porque">En los juegos de dibujar o estimar (A5, A6 y A8) conviven tu respuesta y el dato real. Hoy no había forma de distinguirlas sin un segundo color. La propuesta es una trama al 50 %, como los grises de las consolas de 8 bits, en el mismo color que el dato real. Así se mantiene el color de partido y se lee en un vistazo cuál es tu respuesta y cuál el dato.</p>
+<div class="fila">
+<div>
+<h3>A6 · barras por grupo, tras revelar</h3>
+<div class="f">
+  <p style="font-size:1rem;margin-bottom:.25rem">Métrica de ejemplo por grupo</p>
+  <div class="barras" id="barras"></div>
+  <div class="leyenda"><span id="legTu"></span><span id="legReal"></span></div>
+</div>
+</div>
+<ul class="notas">
+  <li>La trama es un patrón SVG de 2×2 px, no un degradado.</li>
+  <li>Aquí entra el color de partido, porque las barras codifican partido. Con tinta en lugar de color funciona igual en las métricas generales.</li>
+  <li>Mientras el jugador dibuja, solo existe la trama. El sólido aparece al revelar, con la única pasada del marcador como gesto.</li>
+</ul>
+</div>
+
+<h2>4. Cuando la respuesta es un partido, el partido pone el color</h2>
+<p class="porque">Es la fuente de color más honesta de la serie: aparece cuando el dato es un partido y en ningún otro momento. En A14 el resultado es un partido, así que su color sustituye al marcador en la banda final: cada jugador ve un cierre distinto. En A12, una pastilla de color identifica el partido del diputado que has probado. Si acertaste o no, lo sigue diciendo el marcador.</p>
+<div class="fila">
+<div>
+<h3>A12 · Diputadle, tres intentos</h3>
+<div class="f" style="font-size:1rem">
+  <table class="intentos" id="intentos"></table>
+  <div class="leyenda" style="margin-top:.75rem"><span><i class="muestra" style="background:var(--marcador)"></i>igual</span><span><i class="muestra" style="background:var(--cerca)"></i>cerca (±5 años / ±1)</span><span>flecha: el suyo es mayor o menor</span></div>
+</div>
+</div>
+<div>
+<h3>A14 · cierre de afinidad</h3>
+<div class="f">
+  <p class="et" style="margin:0 0 .5rem">Fin de la partida</p>
+  <p style="margin:0 0 .5rem">Tu agenda se parece a la de</p>
+  <div class="afin" id="afin"></div>
+  <p class="et">Variantes, con el color de texto elegido por contraste:</p>
+  <div class="cuarteto" id="cuarteto"></div>
+</div>
+</div>
+<ul class="notas">
+  <li>Texto sobre color de partido: tinta o papel, el que más contraste dé. Mínimo 4,5:1 o, en titulares de 24 px o más en negrita, 3:1.</li>
+  <li>Con esta regla se cierra el problema de CC y ERC: en las pantallas con colores de partido, el marcador nunca entra en el gráfico. El acierto se lee en la pista y en las celdas, nunca dentro de un mapa o un hemiciclo.</li>
+</ul>
+</div>
+
+<h2>5. Días de debate en el selector</h2>
+<p class="porque">El bingo de la víspera y «Quién dijo qué» al día siguiente son contenido extra con fecha. Si no se ve en el selector, se pierde. Un bocadillo de píxeles en la esquina de la casilla avisa de que ese día hay algo más. El icono está en tinta: no hace falta color.</p>
+<div class="fila">
+<div>
+<h3>Selector, simulado el 15 de noviembre (víspera del cara a cara)</h3>
+<div class="f">
+  <div class="niveles" id="niveles"></div>
+  <div class="ficha">
+    <span class="et">Hoy, 15 de noviembre</span>
+    <h2>Crispómetro</h2>
+    <p class="texto">¿Más o menos llamadas al orden que en la legislatura anterior? Encadena aciertos. Al primer fallo, se acabó la racha.</p>
+    <div class="extra"><span id="bocaFicha"></span><span><b>Además, bingo del debate.</b> El cartón de mañana ya está aquí. Táchalo durante el cara a cara.</span></div>
+    <button class="accion">Jugar</button>
+  </div>
+</div>
+</div>
+<ul class="notas">
+  <li>El bocadillo se ve también en los días cerrados: las fechas de los debates son públicas y anunciarlas crea expectativa.</li>
+  <li>Las fechas son ilustrativas: el cara a cara está propuesto para el 16 y faltan los debates de RTVE.</li>
+  <li>Es un sexto icono para el inventario: bocadillo.</li>
+</ul>
+</div>
+
+<h2>Qué decidir</h2>
+<table class="resumen">
+<tr><th></th><th>Propuesta</th><th>Qué hace visible</th><th>Coste</th></tr>
+<tr><td>1</td><td>Tono «cerca» <code>#fae28c</code> con glifo propio; 🟧 en el recibo</td><td>El «casi» en A2, A5, A8 y A12</td><td>Bajo</td></tr>
+<tr><td>2</td><td>Aciertos seguidos soldados en la pista</td><td>La racha</td><td>Muy bajo</td></tr>
+<tr><td>3</td><td>Trama de píxeles al 50 % para la respuesta del jugador</td><td>Tu respuesta frente al dato</td><td>Bajo</td></tr>
+<tr><td>4</td><td>Color de partido como resultado (A14) e identificador (A12), con texto elegido por contraste. El marcador nunca dentro de gráficos con colores de partido</td><td>El partido; resuelve CC y ERC</td><td>Bajo</td></tr>
+<tr><td>5</td><td>Bocadillo de debate en el selector y aviso en la ficha</td><td>El contenido extra de campaña</td><td>Muy bajo</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "#000") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+const G = {
+  a: [".......","......X",".....X.","X...X..",".X.X...","..X....","......."],
+  x: [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."],
+  c: [".......",".......",".......","XX...XX","XX...XX",".......","......."],
+  up: ["...X...","..XXX..",".XXXXX.","...X...","...X...","...X...","......."],
+  dn: ["...X...","...X...","...X...",".XXXXX.","..XXX..","...X...","......."],
+  candado: ["...XXXX...","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".X..XX..X.",".X..XX..X.",".X......X.",".XXXXXXXX."],
+  boca: ["XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX","..XX......","..X.......","..........."]
+};
+G.boca[9] = "..........";
+
+const pista = est => est.map((e, k) => `<span class="celda ${e}${e === "a" && est[k-1] === "a" ? " une" : ""}">${e ? svg(G[e], 2) : ""}</span>`).join("");
+document.getElementById("pistaA2").innerHTML = pista([..."aacxaaacaxac"]);
+document.getElementById("rachaA").innerHTML = pista([..."xaaaaaxaax"].map(c => c));
+document.getElementById("rachaB").innerHTML = pista([..."aaxaaxaaxa"]);
+
+/* Trama */
+const C = { PP: "#1E4B8F", PSOE: "#FF0000", Vox: "#63BE21", Sumar: "#E51C55" };
+const trama = (id, c) => `<svg width="0" height="0" style="position:absolute"><defs><pattern id="${id}" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="${c}"/><rect x="2" y="2" width="2" height="2" fill="${c}"/></pattern></defs></svg>`;
+const barra = (w, fill) => `<svg class="barra" width="${w}%" height="14" style="width:${w}%"><rect width="100%" height="14" fill="${fill}"/></svg>`;
+const V = [["PP", 44, 37], ["PSOE", 30, 34], ["Vox", 12, 18], ["Sumar", 14, 11]];
+document.getElementById("barras").innerHTML = Object.entries(C).map(([k, c]) => trama("t" + k, c)).join("") +
+  V.map(([k, tu, real]) => `<span class="sig">${k}</span><span class="par">${barra(tu, `url(#t${k})`)}${barra(real, C[k])}</span>`).join("") +
+  `<span></span><span class="eje">Arriba tu respuesta (trama), abajo el dato (sólido)</span>`;
+document.getElementById("legTu").innerHTML = `${trama("tLeg", "#000")}<svg width="18" height="18"><rect width="18" height="18" fill="url(#tLeg)" stroke="#000"/></svg> tu respuesta`;
+document.getElementById("legReal").innerHTML = `<i class="muestra" style="background:#000"></i> dato real`;
+
+/* Contraste */
+const lum = h => { const [r, g, b] = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126*r + .7152*g + .0722*b; };
+const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + .05) / (y + .05); };
+const texto = c => ratio(c, "#ffffff") >= ratio(c, "#000000") ? "#ffffff" : "#000000";
+document.getElementById("afin").innerHTML = `<span class="banda" style="background:${C.Sumar};color:${texto(C.Sumar)}">Sumar</span><p class="et" style="margin-top:.75rem">[Coeficiente y los dos partidos siguientes, en una línea]</p>`;
+document.getElementById("cuarteto").innerHTML = Object.entries(C).map(([k, c]) => `<div><span class="banda" style="background:${c};color:${texto(c)}">${k}</span><small>${texto(c) === "#ffffff" ? "papel" : "tinta"}, ${ratio(c, texto(c)).toFixed(1)}:1</small></div>`).join("");
+
+/* Diputadle */
+const chip = k => `<i class="chip" style="background:${C[k]}"></i>`;
+const filas = [
+  ["Diputado A", ["x", chip("PP") + "PP"], ["x", "Prov. 1"], ["c", "52", "up"], ["x", "2", "up"], ["a", "H"]],
+  ["Diputado B", ["a", chip("PSOE") + "PSOE"], ["c", "Prov. 2"], ["a", "57"], ["c", "4", "up"], ["a", "H"]],
+  ["Diputado C", ["a", chip("PSOE") + "PSOE"], ["a", "Prov. 3"], ["a", "57"], ["a", "5"], ["a", "H"]]
+];
+document.getElementById("intentos").innerHTML = `<tr><th></th><th>Partido</th><th>Provincia</th><th>Edad</th><th>Legisl.</th><th>Sexo</th></tr>` +
+  filas.map(([n, ...cs]) => `<tr><td class="nom">${n}</td>${cs.map(([e, t, f]) => `<td class="${e}">${t}${f ? "<br>" + svg(G[f], 2) : ""}</td>`).join("")}</tr>`).join("");
+
+/* Selector */
+const deb = new Set([3, 5]);
+document.getElementById("niveles").innerHTML = Array.from({length: 15}, (_, i) => i + 1).map(n =>
+  `<span class="nivel${n === 3 ? " hoy" : n > 3 ? " cerrado" : ""}">${n <= 3 ? px(String(n), 3) : svg(G.candado, 2, "#bdbdbd")}${deb.has(n) ? `<span class="esq">${svg(G.boca, 1.4, n > 3 ? "#575757" : "#000")}</span>` : ""}</span>`).join("");
+document.getElementById("bocaFicha").innerHTML = svg(G.boca, 2);
+</script>
+</body>
+</html>

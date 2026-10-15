@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paleta v5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#ffffff; --tinta:#000000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --senado:#dcc7a1; --senal:#ff5f1f; --fuente: Archivo, system-ui, sans-serif; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+.intro b { color:var(--tinta); }
+h2 { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3 { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; }
+.notas li { margin-bottom:.3rem; }
+
+.paleta { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,190px),1fr)); gap:1rem; max-width:1000px; }
+.tinte { border-top:1px solid var(--tinta); padding-top:.5rem; font-size:.875rem; }
+.tinte .m { height:72px; border:1px solid var(--tinta); margin-bottom:.5rem; }
+.tinte b { display:block; }
+.tinte span { color:var(--lapiz); display:block; }
+.tinte.nueva .m { outline:3px solid var(--tinta); outline-offset:3px; }
+
+.f { width:100%; max-width:375px; border:1px solid var(--raya); padding:1.5rem 16px 1.75rem; font-size:1.125rem; }
+.f h1 { margin:0 0 .5rem; font-size:2rem; font-weight:800; line-height:1.1; }
+.et { font-size:.875rem; color:var(--lapiz); }
+.niveles { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin:1.25rem 0 6px; }
+.nivel { aspect-ratio:1; border:1px solid var(--tinta); display:grid; place-items:center; position:relative; background:var(--papel); }
+.nivel.hoy { background:var(--marcador); border-width:3px; }
+.nivel.cerrado { background:var(--senado); border-color:var(--senado); }
+.nivel.senal { background:var(--senal); border-color:var(--tinta); }
+.nivel .esq { position:absolute; top:3px; right:3px; line-height:0; }
+.urna29 { display:flex; align-items:center; justify-content:space-between; gap:.75rem; background:var(--tinta); color:var(--papel); padding:.7rem .9rem; margin:0 0 1.5rem; }
+.urna29 b { font-size:1.125rem; }
+.urna29 span { font-size:.875rem; }
+.ficha { border-top:1px solid var(--tinta); padding-top:1rem; }
+.ficha h2 { margin:.2rem 0 .5rem; font-size:1.5rem; line-height:1.15; }
+.ficha .texto { font-size:1rem; margin:0 0 1rem; }
+.reglas { list-style:none; padding:0; margin:0 0 1.25rem; font-size:.875rem; }
+.reglas li { display:flex; gap:.6rem; align-items:center; padding:.2rem 0; }
+.extra { display:flex; gap:.6rem; align-items:start; font-size:.875rem; padding:.6rem .75rem; margin:0 0 1rem; border:1px solid var(--tinta); }
+.extra.senal { background:var(--senal); }
+button.accion { font:inherit; font-weight:800; color:var(--tinta); background:var(--papel); border:1px solid var(--tinta); border-radius:0; padding:.75rem 1rem; }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+.og { width:100%; max-width:375px; aspect-ratio:1200/630; border:1px solid var(--raya); position:relative; overflow:hidden; background:var(--papel); padding:16px 18px; display:flex; flex-direction:column; justify-content:space-between; }
+.og h4 { margin:0; font-size:1.5rem; font-weight:800; line-height:1.05; max-width:9em; }
+.og .tira { display:flex; gap:3px; }
+.og .tira i { width:15px; height:15px; border:1px solid var(--tinta); display:block; }
+.og .pie { display:flex; justify-content:space-between; align-items:end; font-size:.8rem; }
+
+table.resumen { border-collapse:collapse; font-size:.875rem; width:100%; max-width:52em; }
+.resumen th, .resumen td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.resumen th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Paleta de la serie</h1>
+<p class="intro"><b>El problema:</b> en España casi cada tono saturado tiene dueño. Rojo, azul, verde, morado, magenta, turquesa y amarillo son de algún partido. Un color de serie elegido «porque queda bien» puede leerse como un guiño partidista.</p>
+<p class="intro"><b>La salida:</b> sacar el color del material electoral, que es de todos. El 29N se vota con dos papeletas: la del Congreso, blanca, y la del Senado, de color sepia (RD 605/1999). La serie ya era papel y tinta. Ahora tiene dos papeles, y el segundo trae calidez sin bando.</p>
+
+<h2>Paleta</h2>
+<div class="paleta">
+  <div class="tinte"><div class="m" style="background:#fff"></div><b>Congreso <code>#ffffff</code></b><span>Fondo. La papeleta blanca.</span></div>
+  <div class="tinte"><div class="m" style="background:#000"></div><b>Tinta <code>#000000</code></b><span>Texto, bordes, bloque del 29N.</span></div>
+  <div class="tinte"><div class="m" style="background:var(--marcador)"></div><b>Marcador <code>#f2c200</code></b><span>Hoy y acierto. Sin cambios.</span></div>
+  <div class="tinte nueva"><div class="m" style="background:var(--senado)"></div><b>Senado <code>#dcc7a1</code> (nuevo)</b><span>Segundo papel: lo que está por llegar (días cerrados) y las superficies de la serie (vista previa, recuadros).</span></div>
+  <div class="tinte nueva"><div class="m" style="background:var(--senal)"></div><b>Señal <code>#ff5f1f</code> (opcional)</b><span>Solo para los días de debate. Es el único acento vivo nuevo.</span></div>
+</div>
+<ul class="notas" style="max-width:46em">
+  <li>El tono sepia no está fijado en hexadecimal por ninguna norma: <code>#dcc7a1</code> es una aproximación que conviene ajustar con una papeleta real delante.</li>
+  <li>No es el clúster «crema + serif + terracota» de la lista negra. No va de fondo de página, no hay serif ni terracota, y es un tono medio con nombre y motivo.</li>
+  <li>Senado y Señal solo viven en el marco de la serie (índice, ficha, vista previa). Igual que el marcador, nunca entran en un gráfico con colores de partido.</li>
+</ul>
+
+<h2>Índice, dos variantes</h2>
+<p class="porque">Simulado el 14 de noviembre. El cara a cara sería el 16, con bingo la víspera (15) y «Quién dijo qué» al día siguiente (17).</p>
+<div class="fila">
+<div>
+<h3>A. Dos papeletas (sepia)</h3>
+<div class="f" id="idxA"></div>
+<ul class="notas"><li>Los días cerrados son papeletas sin usar. La rejilla gana cuerpo de color sin perder sobriedad.</li><li>El bloque negro del 29N cierra la rejilla como el último nivel: «a votar». Es el destino de toda la serie.</li></ul>
+</div>
+<div>
+<h3>B. Dos papeletas y señal de debate</h3>
+<div class="f" id="idxB"></div>
+<ul class="notas"><li>Los días de debate se encienden en naranja señal, también si están cerrados. Se ven desde lejos y crean expectativa.</li><li>El naranja convive con el amarillo y el sepia en la misma familia cálida, así que no rompe la paleta.</li><li>Riesgo: el naranja fue el color de Ciudadanos. Solo coincide con un color de partido en el hemiciclo de legislaturas pasadas (A5), donde la regla ya impide que aparezca.</li></ul>
+</div>
+</div>
+
+<h2>Vista previa al compartir (1200×630)</h2>
+<p class="porque">Es donde el color más rinde: en el muro de LinkedIn decide si alguien pulsa. Lleva la misma rejilla de días, así que cada día la imagen cambia sola: un día más en marcador y uno menos en sepia.</p>
+<div class="fila">
+<div><h3>A</h3><div class="og" id="ogA"></div></div>
+<div><h3>B</h3><div class="og" id="ogB"></div></div>
+</div>
+
+<h2>Qué decidir</h2>
+<table class="resumen">
+<tr><th></th><th>Propuesta</th><th>Recomendación</th></tr>
+<tr><td>1</td><td>Sepia Senado <code>#dcc7a1</code> como segundo papel: días cerrados, superficies de la serie y vista previa</td><td>Sí</td></tr>
+<tr><td>2</td><td>Bloque negro «29 de noviembre» al final del selector, con la urna</td><td>Sí</td></tr>
+<tr><td>3</td><td>Naranja señal <code>#ff5f1f</code> para los días de debate</td><td>Sí, si quieres un acento vivo. Si no, A ya mejora mucho el índice</td></tr>
+<tr><td>4</td><td>Vista previa por día con la rejilla de días</td><td>Sí (imagen estática por día, generada fuera del navegador)</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","9":"01110100011000101111000010001001100"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "#000") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+const I = {
+  candado: ["...XXXX...","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".X..XX..X.",".X..XX..X.",".X......X.",".XXXXXXXX."],
+  boca: ["XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX","..XX......","..X.......",".........."],
+  urna: ["..XXXXXX..","..X....X..","..X.XX.X..","XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X........X","X........X","XXXXXXXXXX"],
+  papeleta: ["XXXXXXXX..","X......XX.","X......X.X","X.XXXX.XXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX"]
+};
+const HOY = 2, DEB = new Set([3, 5]);
+
+const indice = senal => {
+  const casillas = Array.from({length: 15}, (_, i) => i + 1).map(n => {
+    const deb = DEB.has(n), abierta = n <= HOY;
+    const cls = n === HOY ? "hoy" : abierta ? "" : senal && deb ? "senal" : "cerrado";
+    const dentro = abierta ? px(String(n), 3) : svg(I.candado, 2, senal && deb ? "#000" : "#575757");
+    const esq = deb ? `<span class="esq">${svg(I.boca, 1.4, "#000")}</span>` : "";
+    return `<span class="nivel ${cls}">${dentro}${esq}</span>`;
+  }).join("");
+  return `<h1>Juegos de campaña 29N</h1><p class="et">Un juego al día del 13 al 27 de noviembre.</p>
+  <div class="niveles">${casillas}</div>
+  <div class="urna29"><span style="display:flex;gap:.6rem;align-items:center">${svg(I.urna, 2, "#fff")}<b>29 de noviembre</b></span><span>A votar</span></div>
+  <div class="ficha"><span class="et">Hoy, 14 de noviembre</span><h2>Cronología de la legislatura</h2>
+  <p class="texto">Doce momentos de la legislatura, desordenados. Ponlos en su sitio antes de que la memoria haga campaña.</p>
+  <ul class="reglas"><li>${svg(I.papeleta, 2)}<span>12 hitos</span></li><li>${svg(I.urna, 2)}<span>1 punto por hito en su sitio</span></li></ul>
+  <div class="extra${senal ? " senal" : ""}">${svg(I.boca, 2)}<span><b>Mañana, bingo del debate.</b> El cartón sale la víspera del cara a cara.</span></div>
+  <button class="accion">Jugar</button></div>`;
+};
+document.getElementById("idxA").innerHTML = indice(false);
+document.getElementById("idxB").innerHTML = indice(true);
+
+const og = senal => {
+  const tira = Array.from({length: 15}, (_, i) => i + 1).map(n => {
+    const c = n === HOY ? "var(--marcador)" : n < HOY ? "#fff" : senal && DEB.has(n) ? "var(--senal)" : "var(--senado)";
+    return `<i style="background:${c};border-color:${n > HOY && !(senal && DEB.has(n)) ? "var(--senado)" : "#000"}"></i>`;
+  }).join("") + `<i style="background:#000"></i>`;
+  return `<h4>Juegos de campaña 29N</h4><div class="tira">${tira}</div><div class="pie"><span><b>Día 2.</b> Cronología de la legislatura</span>${svg(I.urna, 3)}</div>`;
+};
+document.getElementById("ogA").innerHTML = og(false);
+document.getElementById("ogB").innerHTML = og(true);
+</script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disposición v6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --senado:#dcc7a1; --senal:#ff5f1f; --fuente: Archivo, system-ui, sans-serif;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+.intro b { color:var(--tinta); }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; }
+.notas li { margin-bottom:.3rem; }
+
+/* Marco: 375 × 560, la zona visible aproximada dentro del navegador de LinkedIn en un móvil pequeño */
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; position:relative; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4) calc(var(--s3) + env(safe-area-inset-bottom)); display:flex; gap:var(--s3); align-items:center; }
+.barra .que { flex:1; font-size:.875rem; line-height:1.25; min-width:0; }
+.barra .que b { display:block; font-size:1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.btn { font:inherit; font-weight:800; min-height:52px; padding:0 var(--s5); border:1px solid var(--tinta); border-radius:0; background:var(--papel); color:var(--tinta); }
+.btn.ancho { width:100%; }
+.btn.jugar { background:var(--marcador); }
+.btn.off { color:var(--lapiz); border-color:var(--raya); }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s4); }
+
+/* Índice */
+.f h1 { font-size:1.75rem; font-weight:800; line-height:1.1; margin:0 0 var(--s1); }
+.niveles { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin:var(--s5) 0 6px; }
+.nivel { aspect-ratio:1; border:1px solid var(--tinta); display:grid; place-items:center; position:relative; background:var(--papel); }
+.nivel.hoy { background:var(--marcador); }
+.nivel.elegido { border-width:3px; }
+.nivel.cerrado { background:var(--senado); border-color:var(--senado); }
+.nivel .esq { position:absolute; top:3px; right:3px; line-height:0; }
+.ficha { margin-top:var(--s5); border-top:1px solid var(--tinta); padding-top:var(--s4); }
+.ficha h2 { font-size:1.375rem; margin:var(--s1) 0 var(--s2); line-height:1.15; }
+.reglas { list-style:none; padding:0; margin:0; font-size:.875rem; }
+.reglas li { display:flex; gap:var(--s3); align-items:center; padding:var(--s1) 0; }
+
+/* Juego */
+.cab { display:flex; justify-content:space-between; align-items:start; gap:var(--s3); }
+.cab .nombre { font-size:1rem; font-weight:800; line-height:1.2; }
+.puntos { text-align:right; flex:none; }
+.pista { display:flex; flex-wrap:wrap; gap:3px; margin:var(--s3) 0 var(--s5); }
+.celda { width:22px; height:22px; border:1px solid var(--tinta); display:grid; place-items:center; }
+.celda.a { background:var(--marcador); }
+.celda.x { background:var(--raya); }
+.celda.actual { border-width:3px; }
+.pregunta { font-size:1.375rem; font-weight:800; line-height:1.2; margin:0 0 var(--s4); }
+.opciones { display:grid; gap:var(--s2); }
+.op { font:inherit; text-align:left; min-height:52px; padding:var(--s3) var(--s4); border:1px solid var(--tinta); background:var(--papel); }
+.op.sel { background:var(--tinta); color:var(--papel); }
+.op.ok { background:var(--marcador); }
+.op.ko { text-decoration:line-through; }
+.expl { border-top:1px solid var(--tinta); margin-top:var(--s5); padding-top:var(--s4); font-size:1rem; }
+
+/* Ordenar */
+.orden { list-style:none; margin:0; padding:0; border-top:1px solid var(--tinta); }
+.orden li { display:flex; align-items:center; gap:var(--s3); border-bottom:1px solid var(--raya); padding:var(--s1) 0; font-size:1rem; line-height:1.25; }
+.orden li.cogido { background:var(--marcador); }
+.orden .n { width:1.5rem; color:var(--lapiz); font-variant-numeric:tabular-nums; flex:none; }
+.orden .t { flex:1; }
+.mover { display:flex; flex:none; }
+.mover button { width:44px; height:44px; border:1px solid var(--tinta); background:var(--papel); display:grid; place-items:center; padding:0; margin-left:-1px; }
+
+/* Cierre */
+.final { display:flex; align-items:end; gap:14px; margin:var(--s2) 0 var(--s3); }
+.banda { padding:5px; background:var(--marcador); display:inline-flex; }
+.recibo { border:1px solid var(--tinta); padding:var(--s3) var(--s4); white-space:pre-line; font-size:1rem; margin:var(--s5) 0; }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+.zonas { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,300px),1fr)); gap:1.5rem 2rem; max-width:1000px; }
+.zona { border-top:1px solid var(--tinta); padding-top:.6rem; font-size:.95rem; }
+.zona b { display:block; margin-bottom:.25rem; }
+.zona p { color:var(--lapiz); margin:0; }
+table.esc { border-collapse:collapse; font-size:.875rem; max-width:46em; width:100%; }
+.esc th, .esc td { text-align:left; padding:.45rem .75rem .45rem 0; border-bottom:1px solid var(--raya); }
+.esc th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Disposición para móvil</h1>
+<p class="intro"><b>Punto de partida:</b> la mayoría llegará desde LinkedIn o X, con una mano y dentro del navegador de la app. En un móvil pequeño quedan unos 560 px visibles de alto. Los marcos miden exactamente eso (375 × 560) y se puede hacer scroll dentro.</p>
+<p class="intro"><b>Tres principios:</b> la acción principal siempre al alcance del pulgar; lo que hace falta para decidir, visible sin scroll; y la jerarquía cambia con la fase del juego: grande al empezar y al terminar, compacta mientras se juega.</p>
+
+<h2 class="sec">Las tres zonas de cada pantalla</h2>
+<div class="zonas">
+  <div class="zona"><b>1. Cabecera compacta</b><p>Mientras se juega: nombre del juego en pequeño a la izquierda, puntos a la derecha y la pista debajo. Unos 70 px. No es fija: se va con el scroll para devolver altura al juego.</p></div>
+  <div class="zona"><b>2. Zona de juego</b><p>La pregunta en 22 px negrita, que es lo que se lee. Opciones de 52 px de alto como mínimo, separadas 8 px: dedo cómodo, sin toques errados.</p></div>
+  <div class="zona"><b>3. Barra de acción fija abajo</b><p>Un único botón principal a todo el ancho en la zona del pulgar. Cambia de verbo según la fase (Responder, Siguiente pregunta, Ver resultado, Copiar resultado). Respeta el área segura del iPhone.</p></div>
+</div>
+
+<h2 class="sec">Recorrido completo</h2>
+<div class="fila">
+
+<div><h3 class="sec">1. Índice</h3>
+<div class="f" id="indice">
+  <div class="cuerpo">
+    <h1>Juegos de campaña 29N</h1>
+    <p class="et">Un juego al día del 13 al 27 de noviembre.</p>
+    <div class="niveles" id="niveles"></div>
+    <div class="ficha" id="ficha"></div>
+  </div>
+  <div class="barra"><div class="que" id="barraQue"></div><button class="btn jugar">Jugar</button></div>
+</div>
+<ul class="notas"><li>La rejilla va arriba: es la navegación de la serie y cabe entera sin scroll.</li><li>La barra dice qué día y qué juego has elegido. Al tocar otra casilla cambia la barra, así que el efecto se ve aunque la ficha quede por debajo del pliegue.</li><li>La ficha, para quien quiera leer las reglas antes de jugar.</li></ul>
+</div>
+
+<div><h3 class="sec">2. Pregunta</h3>
+<div class="f">
+  <div class="cuerpo">
+    <div class="cab"><span class="nombre">Quiz del sistema electoral</span><span class="puntos"><span class="et" style="display:block;font-size:.75rem">Puntos</span><span id="p1"></span></span></div>
+    <div class="pista" id="pista1"></div>
+    <p class="pregunta">¿Cuántos diputados elige Soria?</p>
+    <div class="opciones"><button class="op">1</button><button class="op sel">2</button><button class="op">3</button><button class="op">4</button></div>
+  </div>
+  <div class="barra"><button class="btn ancho">Responder</button></div>
+</div>
+<ul class="notas"><li>Pregunta y opciones caben en la primera vista, incluso con cuatro opciones.</li><li>Tocar elige y «Responder» confirma. En móvil los toques errados son frecuentes y la respuesta no se puede deshacer, así que el segundo toque se queda.</li><li>Sin elección, el botón aparece apagado: borde raya y texto lápiz.</li></ul>
+</div>
+
+<div><h3 class="sec">3. Respondida</h3>
+<div class="f">
+  <div class="cuerpo">
+    <div class="cab"><span class="nombre">Quiz del sistema electoral</span><span class="puntos"><span class="et" style="display:block;font-size:.75rem">Puntos</span><span id="p2"></span></span></div>
+    <div class="pista" id="pista2"></div>
+    <p class="pregunta">¿Cuántos diputados elige Soria?</p>
+    <div class="opciones"><button class="op">1</button><button class="op ok">2</button><button class="op">3</button><button class="op">4</button></div>
+    <div class="expl"><p>Explicación en dos frases.</p><p class="et" style="margin:0">Fuente: LOREG, art. 162</p></div>
+  </div>
+  <div class="barra"><button class="btn ancho">Siguiente pregunta</button></div>
+</div>
+<ul class="notas"><li>La explicación aparece bajo las opciones y la página baja lo justo para mostrarla (scroll suave; instantáneo con movimiento reducido).</li><li>El botón no se mueve de sitio: el pulgar ya está ahí.</li></ul>
+</div>
+
+<div><h3 class="sec">4. Ordenar (A2, A14)</h3>
+<div class="f">
+  <div class="cuerpo">
+    <div class="cab"><span class="nombre">Cronología de la legislatura</span></div>
+    <p class="pregunta" style="margin-top:var(--s4)">Ordena de más antiguo a más reciente</p>
+    <ol class="orden" id="orden"></ol>
+  </div>
+  <div class="barra"><button class="btn ancho">Comprobar orden</button></div>
+</div>
+<ul class="notas"><li>Sin arrastrar: en móvil, arrastrar choca con el scroll y con los gestos del navegador de LinkedIn.</li><li>Cada fila tiene dos botones de 44 px con triángulos de píxeles (subir y bajar). La fila que se mueve se ilumina en marcador un instante.</li><li>Arrastrar queda como extra en escritorio, sin ser necesario.</li></ul>
+</div>
+
+<div><h3 class="sec">5. Cierre</h3>
+<div class="f">
+  <div class="cuerpo">
+    <h1 style="font-size:1.75rem">Quiz del sistema electoral</h1>
+    <p class="et" style="margin:0">Fin de la partida</p>
+    <div class="final" id="final"></div>
+    <div class="pista" id="pista3" style="margin-bottom:var(--s3)"></div>
+    <p class="et">[nivel según contenido]</p>
+    <div class="recibo">Juegos 29N, día 1
+Quiz del sistema electoral
+7/10
+🟨🟨⬜🟨🟨🟨⬜🟨🟨⬜
+santigper.github.io/juegos-29n/</div>
+    <p class="et">Fuente de los datos: LOREG</p>
+    <p style="font-size:1rem"><a href="#" style="color:#000">Todos los juegos</a></p>
+  </div>
+  <div class="barra"><button class="btn ancho">Copiar resultado</button></div>
+</div>
+<ul class="notas"><li>Vuelve la jerarquía grande: es el momento de la captura de pantalla.</li><li>Cifra, pista y recibo caben en la primera vista; «Copiar resultado» queda bajo el pulgar.</li><li>Tras copiar, el botón dice «Copiado» durante dos segundos. Si el portapapeles falla, «Selecciona y copia el texto».</li></ul>
+</div>
+</div>
+
+<h2 class="sec">Escala de espacios</h2>
+<p class="porque">Una sola escala de múltiplos de 4 para todo. El ritmo vertical sale de ella, no de valores sueltos por componente.</p>
+<table class="esc">
+<tr><th>Token</th><th>px</th><th>Uso</th></tr>
+<tr><td>--s1</td><td>4</td><td>Entre etiqueta y su valor</td></tr>
+<tr><td>--s2</td><td>8</td><td>Entre opciones; entre casillas de la rejilla (6 px, excepción)</td></tr>
+<tr><td>--s3</td><td>12</td><td>Relleno de la barra; cabecera a pista</td></tr>
+<tr><td>--s4</td><td>16</td><td>Margen lateral; pregunta a opciones</td></tr>
+<tr><td>--s5</td><td>24</td><td>Entre bloques de una pantalla</td></tr>
+<tr><td>--s6</td><td>32</td><td>Antes de una sección nueva (ficha)</td></tr>
+</table>
+
+<h2 class="sec">Reglas para Code</h2>
+<ol class="porque" style="padding-left:1.2em">
+  <li><b>Móvil primero:</b> se diseña a 375 px y se comprueba a 320 px (sin scroll horizontal) y a 375 × 560.</li>
+  <li><b>Barra de acción fija</b> por debajo de 768 px de ancho, con <code>env(safe-area-inset-bottom)</code>. A partir de 768 px deja de ser fija y va tras el contenido.</li>
+  <li><b>Escritorio:</b> la columna de 38 em se centra en la ventana; el texto sigue alineado a la izquierda.</li>
+  <li><b>Objetivos táctiles</b> de 44 px como mínimo; opciones y botón principal de 52 px.</li>
+  <li><b>Alturas:</b> <code>dvh</code> en lugar de <code>vh</code>, por las barras del navegador de las apps.</li>
+  <li><b>Teclado</b> (A12, autocompletado): campo arriba, sugerencias justo debajo y sin barra fija mientras el teclado está abierto.</li>
+  <li><b>Ordenar</b> con botones de subir y bajar, sin arrastre obligatorio.</li>
+  <li><b>Cabecera compacta</b> mientras se juega; título grande solo en el índice y en el cierre.</li>
+</ol>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","7":"11111000010001000100010000100001000","/":"00001000010001000100010001000010000"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "#000", fill) => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : v === "o" && fill ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${fill}"/>` : "")).join("")}</svg>`;
+const I = {
+  candado: ["...XXXX...","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".X..XX..X.",".X..XX..X.",".X......X.",".XXXXXXXX."],
+  boca: ["XXXXXXXXXX","XooooooooX","XoXXXXXXoX","XooooooooX","XoXXXXoooX","XooooooooX","XXXXXXXXXX","..XX......","..X.......",".........."],
+  urna: ["..XXXXXX..","..X....X..","..X.XX.X..","XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X........X","X........X","XXXXXXXXXX"],
+  papeleta: ["XXXXXXXX..","X......XX.","X......X.X","X.XXXX.XXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX"],
+  tic: [".......","......X",".....X.","X...X..",".X.X...","..X....","......."],
+  aspa: [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."],
+  sube: ["...X...","..XXX..",".XXXXX.","XXXXXXX"],
+  baja: ["XXXXXXX",".XXXXX.","..XXX..","...X..."]
+};
+/* Índice */
+const J = {1: ["Quiz del sistema electoral", "Diez preguntas sobre las reglas con las que se reparten 350 escaños.", [["papeleta","10 preguntas"],["urna","1 punto por acierto"]]],
+           2: ["Cronología de la legislatura", "Doce momentos de la legislatura, desordenados. Ponlos en su sitio antes de que la memoria haga campaña.", [["papeleta","12 hitos"],["urna","1 punto por hito en su sitio"]]]};
+const HOY = 2, DEB = new Set([3, 5]);
+const elige = n => {
+  const [t, x, r] = J[n];
+  document.getElementById("barraQue").innerHTML = `<span class="et">${n === HOY ? "Hoy" : "Día " + n}</span><b>${t}</b>`;
+  document.getElementById("ficha").innerHTML = `<span class="et">${12 + n} de noviembre</span><h2>${t}</h2><p style="font-size:1rem">${x}</p><ul class="reglas">${r.map(([i, s]) => `<li>${svg(I[i], 2)}<span>${s}</span></li>`).join("")}</ul>`;
+  document.querySelectorAll(".nivel[data-n]").forEach(b => b.classList.toggle("elegido", +b.dataset.n === n));
+};
+document.getElementById("niveles").innerHTML = Array.from({length: 15}, (_, i) => i + 1).map(n =>
+  `<span class="nivel ${n === HOY ? "hoy" : n > HOY ? "cerrado" : ""}" ${n <= HOY ? `data-n="${n}" role="button" tabindex="0"` : ""}>${n <= HOY ? px(String(n), 3) : svg(I.candado, 2, "#575757")}${DEB.has(n) ? `<span class="esq">${svg(I.boca, 1.4, "#000", "#ff5f1f")}</span>` : ""}</span>`).join("");
+document.querySelectorAll(".nivel[data-n]").forEach(b => b.onclick = () => elige(+b.dataset.n));
+elige(HOY);
+
+/* Juego */
+const pista = (e, i) => e.map((v, k) => `<span class="celda ${v}${k === i ? " actual" : ""}">${v === "a" ? svg(I.tic, 2) : v === "x" ? svg(I.aspa, 2) : ""}</span>`).join("");
+document.getElementById("pista1").innerHTML = pista(["a","a","x","","","","","","",""], 3);
+document.getElementById("pista2").innerHTML = pista(["a","a","x","a","","","","","",""], 3);
+document.getElementById("pista3").innerHTML = pista(["a","a","x","a","a","a","x","a","a","x"], -1);
+document.getElementById("p1").innerHTML = px("02", 3);
+document.getElementById("p2").innerHTML = px("03", 3);
+document.getElementById("final").innerHTML = `<span class="banda">${px("7", 8)}</span>${px("/10", 4)}`;
+
+/* Ordenar */
+const H = ["Hito de ejemplo A", "Hito de ejemplo B, con un texto algo más largo que ocupa dos líneas", "Hito de ejemplo C", "Hito de ejemplo D", "Hito de ejemplo E", "Hito de ejemplo F"];
+document.getElementById("orden").innerHTML = H.map((h, k) => `<li class="${k === 1 ? "cogido" : ""}"><span class="n">${k + 1}</span><span class="t">${h}</span><span class="mover"><button aria-label="Subir">${svg(I.sube, 2)}</button><button aria-label="Bajar">${svg(I.baja, 2)}</button></span></li>`).join("");
+</script>
+</body>
+</html>

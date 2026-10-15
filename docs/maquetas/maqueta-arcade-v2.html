@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maqueta arcade v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --papel: #ffffff; --tinta: #000000; --lapiz: #575757; --raya: #bdbdbd; --marcador: #f2c200;
+  --fuente: Archivo, system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; padding: 2rem 16px 4rem; background: var(--papel); color: var(--tinta); font: 400 1rem/1.45 var(--fuente); }
+.envoltura { max-width: 1240px; margin: 0 auto; }
+.envoltura > h1 { font-size: 2rem; font-weight: 800; margin: 0 0 .5rem; line-height: 1.1; }
+.envoltura > p { max-width: 44em; color: var(--lapiz); margin: 0 0 1rem; }
+h2 { font-size: 1.25rem; font-weight: 800; margin: 3rem 0 1rem; }
+h3 { font-size: .875rem; font-weight: 800; margin: 0 0 .5rem; }
+.fila { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 375px), 375px)); gap: 2rem; align-items: start; }
+.notas { font-size: .875rem; color: var(--lapiz); margin: .75rem 0 0; padding-left: 1.1em; max-width: 375px; }
+.notas li { margin-bottom: .3rem; }
+.demo { display: flex; gap: .5rem; margin-top: .75rem; flex-wrap: wrap; }
+.demo button { font: inherit; font-size: .875rem; background: var(--papel); color: var(--lapiz); border: 1px dashed var(--lapiz); border-radius: 0; padding: .35rem .6rem; cursor: pointer; }
+
+/* Marco de móvil */
+.f { width: 100%; max-width: 375px; min-height: 620px; border: 1px solid var(--raya); padding: 1.5rem 16px 2rem; font-size: 1.125rem; }
+.f h1 { margin: 0 0 1rem; font-size: 2rem; font-weight: 800; line-height: 1.1; }
+.f p { margin: 0 0 1rem; }
+.f a { color: var(--tinta); }
+.et { font-size: .875rem; color: var(--lapiz); }
+.f button { font: inherit; color: var(--tinta); background: var(--papel); border: 1px solid var(--tinta); border-radius: 0; padding: .75rem 1rem; width: 100%; text-align: left; cursor: pointer; }
+.f button.accion { width: auto; font-weight: 800; }
+.f button:focus-visible, .nivel:focus-visible { outline: 3px solid var(--tinta); outline-offset: 2px; }
+.opciones { display: grid; gap: .5rem; margin: 0 0 1.5rem; }
+.correcta { background: var(--marcador) !important; }
+.fallada { text-decoration: line-through; }
+.explicacion { border-top: 1px solid var(--tinta); padding-top: 1rem; margin-bottom: 1.5rem; }
+.recibo { margin: 0 0 1rem; padding: 1rem; border: 1px solid var(--tinta); white-space: pre-line; font-size: 1rem; font-variant-numeric: tabular-nums; }
+
+/* Cifras de casillas */
+.digitos { display: inline-flex; gap: var(--p); align-items: end; vertical-align: bottom; }
+.digito { display: grid; grid-template-columns: repeat(5, var(--p)); grid-auto-rows: var(--p); gap: 1px; }
+.digito i.on { background: currentColor; }
+.banda { padding: calc(var(--p) * .6); background: var(--marcador); display: inline-flex; }
+
+/* Marcador de partida */
+.hud { display: flex; justify-content: space-between; align-items: end; gap: 12px; margin: 0 0 1.5rem; }
+.pista { position: relative; padding-bottom: 15px; }
+.celdas { display: grid; grid-template-columns: repeat(10, 22px); gap: 3px; }
+.celda { width: 22px; height: 22px; border: 1px solid var(--tinta); display: grid; place-items: center; }
+.celda.a { background: var(--marcador); }
+.celda.x { background: var(--raya); }
+.celda.actual { border-width: 3px; }
+.celda svg { display: block; }
+.cursor { position: absolute; bottom: 0; transition: left 160ms steps(4); }
+.puntos { text-align: right; position: relative; }
+.puntos .et { display: block; margin-bottom: 4px; }
+.mas { position: absolute; right: 0; top: -14px; opacity: 0; color: var(--tinta); }
+.mas.ve { animation: sube 700ms steps(6) forwards; }
+@keyframes sube { 0% { opacity: 1; transform: translateY(6px); } 70% { opacity: 1; transform: translateY(-4px); } 100% { opacity: 0; transform: translateY(-6px); } }
+
+/* Selector */
+.niveles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 1.25rem 0 1.5rem; }
+.nivel { aspect-ratio: 1; border: 1px solid var(--tinta); display: grid; place-items: center; background: var(--papel); color: var(--tinta); cursor: pointer; padding: 0; }
+.nivel.hoy { background: var(--marcador); }
+.nivel.elegido { border-width: 3px; }
+.nivel.cerrado { border-color: var(--raya); cursor: default; }
+.ficha { border-top: 1px solid var(--tinta); padding-top: 1rem; }
+.ficha h2 { margin: .2rem 0 .6rem; font-size: 1.5rem; line-height: 1.15; }
+.ficha .texto { font-size: 1rem; margin: 0 0 1rem; }
+.reglas { list-style: none; padding: 0; margin: 0 0 1.25rem; font-size: .875rem; }
+.reglas li { display: flex; gap: .6rem; align-items: center; padding: .2rem 0; }
+
+/* Cierre */
+.final { display: flex; align-items: end; gap: 14px; margin: 0 0 1rem; }
+
+/* Muestrario */
+.muestras { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 2rem; }
+.muestra { border-top: 1px solid var(--tinta); padding-top: .75rem; font-size: .875rem; }
+.muestra p { color: var(--lapiz); }
+.iconos { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: end; margin: .75rem 0; }
+.iconos figure { margin: 0; color: var(--lapiz); }
+.vidas { display: flex; gap: 6px; align-items: center; margin: .75rem 0 .25rem; }
+table.voc { border-collapse: collapse; font-size: .875rem; width: 100%; max-width: 44em; }
+.voc th, .voc td { text-align: left; padding: .45rem .75rem .45rem 0; border-bottom: 1px solid var(--raya); vertical-align: top; }
+.voc th { border-bottom-color: var(--tinta); }
+.decidir { max-width: 44em; padding-left: 1.2em; }
+.decidir li { margin-bottom: .5rem; }
+@media (prefers-reduced-motion: reduce) { .mas.ve { animation: none; opacity: 0; } .cursor { transition: none; } }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Maqueta arcade v2</h1>
+<p>Nivel 2 sin «pantalla». Todas las cifras de juego se dibujan con casillas, así que no hace falta una segunda fuente: solo Archivo. Las tres primeras piezas se pueden usar: pulsa las casillas del selector y los botones discontinuos bajo la partida.</p>
+<p>Los textos de las fichas son ilustrativos. El texto final lo redactamos en contenido.</p>
+
+<h2>1. Selector de días</h2>
+<div class="fila">
+<div>
+<h3>Índice, simulado el 15 de noviembre</h3>
+<div class="f">
+  <h1>Juegos de campaña 29N</h1>
+  <p class="et" style="margin-top:-.5rem">Un juego al día del 13 al 27 de noviembre.</p>
+  <div class="niveles" id="niveles"></div>
+  <div class="ficha" id="ficha"></div>
+</div>
+</div>
+<ul class="notas" style="align-self:center">
+  <li>Casilla de hoy en marcador. Las abiertas, con borde de tinta. Las cerradas, en raya con candado. La que eliges engorda el borde a 3 px, el mismo gesto que la pregunta en curso.</li>
+  <li>La ficha funciona como la tarjeta de instrucciones de una recreativa: título, dos frases con tono y dos reglas con icono (cuántos ítems, cómo se puntúa). Encima del botón, como pedías.</li>
+  <li>El botón dice «Jugar». Si el juego ya pasó, «Jugar el del 14».</li>
+  <li>Los nombres de los días futuros no se desvelan.</li>
+</ul>
+</div>
+
+<h2>2. Marcador de partida</h2>
+<div class="fila">
+<div>
+<h3>Juego, pregunta en curso</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <div class="hud">
+    <div class="pista"><div class="celdas" id="celdas"></div><span class="cursor" id="cursor"></span></div>
+    <div class="puntos"><span class="et">Puntos</span><span id="puntos"></span><span class="mas" id="mas"></span></div>
+  </div>
+  <p>¿Cuántos diputados elige Soria?</p>
+  <div class="opciones"><button>1</button><button>2</button><button>3</button></div>
+  <button class="accion">Responder</button>
+</div>
+<div class="demo"><button data-d="a">Simular acierto</button><button data-d="x">Simular fallo</button><button data-d="r">Reiniciar</button></div>
+</div>
+<ul class="notas" style="align-self:center">
+  <li><b>Pista de 10 celdas.</b> Acierto: marcador con un tic de píxeles. Fallo: raya con un aspa, como un voto nulo. Pendiente: vacía. En curso: borde de 3 px.</li>
+  <li><b>Cursor de jugador.</b> Un triángulo de píxeles bajo la celda en curso. Avanza a saltos (steps), no se desliza: así se mueven las cosas en una recreativa.</li>
+  <li><b>Puntos</b> en cifras de casillas, a dos dígitos («02»). Al acertar sale un «+1» que sube y se apaga a saltos. Es una animación que responde a una acción. Con movimiento reducido no aparece.</li>
+  <li>La cuadrícula del recibo sigue siendo 🟨⬜: la pista es su versión en pantalla.</li>
+</ul>
+</div>
+
+<h2>3. Cierre</h2>
+<div class="fila">
+<div>
+<h3>Fin de la partida</h3>
+<div class="f">
+  <h1>Quiz del sistema electoral</h1>
+  <p class="et" style="margin:-.5rem 0 1rem">Fin de la partida</p>
+  <div class="final"><span class="banda"><span class="digitos" data-px="7" style="--p:8px"></span></span><span class="digitos" data-px="/10" style="--p:4px"></span></div>
+  <div class="celdas" id="celdasFin" style="margin-bottom:1rem"></div>
+  <p class="et">[nivel según contenido]</p>
+  <div class="recibo">Juegos 29N, día 1
+Quiz del sistema electoral
+7/10
+🟨🟨⬜🟨🟨🟨⬜🟨🟨⬜
+santigper.github.io/juegos-29n/</div>
+  <button class="accion">Copiar resultado</button>
+  <p class="et" style="margin-top:1.5rem">Fuente de los datos: LOREG</p>
+  <p style="display:flex;gap:.5rem;align-items:center"><span data-icono="candado" data-s="2" data-c="#575757"></span><span>Mañana, otro juego.</span></p>
+  <p><a href="#">Todos los juegos</a></p>
+</div>
+</div>
+<ul class="notas" style="align-self:center">
+  <li>La pista queda congelada bajo la cifra: es el «acta» de la partida.</li>
+  <li>Sin «pantalla»: el recibo dice «día 1».</li>
+  <li>El candado anuncia el siguiente juego sin desvelarlo.</li>
+</ul>
+</div>
+
+<h2>4. Detalles</h2>
+<div class="muestras">
+  <div class="muestra">
+    <h3>Iconos (rejilla de 10×10)</h3>
+    <div class="iconos" id="iconos"></div>
+    <p>Dónde van: <b>papeleta</b> y <b>urna</b> en las reglas de la ficha (ítems y puntuación). <b>Candado</b> en los días cerrados y en el cierre. <b>Nula</b> en las vidas perdidas. <b>Urna</b> como favicon. <b>Escaño</b> en reserva para A5 y A12. Nunca como adorno ni en botones.</p>
+  </div>
+  <div class="muestra">
+    <h3>Vidas en Agrupar 16 (4 fallos)</h3>
+    <div class="vidas" id="vidas"></div>
+    <p>Cuatro papeletas. Cada fallo convierte una en nula. Es más claro que un contador y no hace falta explicarlo.</p>
+  </div>
+  <div class="muestra">
+    <h3>Favicon y pestaña</h3>
+    <div class="iconos" id="favicon"></div>
+    <p>Urna en tinta sobre papel, a 16 y 32 px. Es la firma de la serie en la pestaña y en la vista previa de enlaces.</p>
+  </div>
+</div>
+
+<h2>5. Vocabulario de juego</h2>
+<table class="voc">
+<tr><th>Palabra</th><th>Dónde</th><th>Por qué no distrae</th></tr>
+<tr><td>Partida, Fin de la partida</td><td>Cierre de todos los juegos</td><td>Es lo que el usuario está haciendo</td></tr>
+<tr><td>Puntos</td><td>Marcador de juegos de acierto</td><td>Sustituye a «3 de 10», que ya da la pista</td></tr>
+<tr><td>Racha</td><td>A3 y A11 (motor M4)</td><td>El motor ya funciona por racha</td></tr>
+<tr><td>Vidas</td><td>A10 (4 fallos)</td><td>Nombra una regla que ya existe</td></tr>
+<tr><td>Intentos</td><td>A12</td><td>Ídem</td></tr>
+<tr><td>Nivel</td><td>Cierre de A1</td><td>Ya estaba previsto («nota + nivel»)</td></tr>
+</table>
+<p class="et" style="max-width:44em;margin-top:.75rem">Fuera: «Game over», «Insert coin», «Player 1», «High score». Son la versión disfraz. Tampoco «récord», porque exigiría guardar datos.</p>
+
+<h2>Qué hay que decidir</h2>
+<ol class="decidir">
+  <li>Marcador de partida: pista con tic y aspa, cursor de píxeles y «+1» animado. ¿Todo, o sin el «+1»?</li>
+  <li>Cifras de casillas en todas las cifras de juego (puntos, cifra final, selector), con Archivo como única fuente.</li>
+  <li>Ficha del selector: título, dos frases y dos reglas con icono, sobre «Jugar».</li>
+  <li>Iconos: urna, papeleta, nula, candado y escaño, con los usos de arriba. Favicon de urna.</li>
+  <li>Vocabulario de la tabla.</li>
+</ol>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100","/":"00001000010001000100010001000010000","+":"00000001000010011111001000010000000"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+document.querySelectorAll("[data-px]").forEach(el => el.outerHTML = px(el.dataset.px, parseFloat(el.style.getPropertyValue("--p"))));
+
+const I = {
+  urna: ["..XXXXXX..","..X....X..","..X.XX.X..","XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X........X","X........X","XXXXXXXXXX"],
+  papeleta: ["XXXXXXXX..","X......XX.","X......X.X","X.XXXX.XXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX"],
+  nula: ["XXXXXXXXXX","X........X","X.X....X.X","X..X..X..X","X...XX...X","X...XX...X","X..X..X..X","X.X....X.X","X........X","XXXXXXXXXX"],
+  "escaño": ["..XXXXXX..","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".XXXXXXXX.",".X......X.",".X......X.",".X......X."],
+  candado: ["...XXXX...","..X....X..","..X....X..","..X....X..",".XXXXXXXX.",".X......X.",".X..XX..X.",".X..XX..X.",".X......X.",".XXXXXXXX."]
+};
+const G = {
+  tic: [".......","......X",".....X.","X...X..",".X.X...","..X....","......."],
+  aspa: [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."],
+  cursor: ["..X..",".XXX.","XXXXX"]
+};
+const svg = (m, s, c = "#000") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+document.querySelectorAll("[data-icono]").forEach(el => el.innerHTML = svg(I[el.dataset.icono], +el.dataset.s, el.dataset.c));
+document.getElementById("iconos").innerHTML = Object.keys(I).map(n => `<figure>${svg(I[n], 3)}<figcaption>${n}</figcaption></figure>`).join("");
+document.getElementById("favicon").innerHTML = `<figure>${svg(I.urna, 1.6)}<figcaption>16</figcaption></figure><figure>${svg(I.urna, 3.2)}<figcaption>32</figcaption></figure>`;
+document.getElementById("vidas").innerHTML = [0,0,0,1].map(n => svg(n ? I.nula : I.papeleta, 3, n ? "#bdbdbd" : "#000")).join("") + `<span class="et" style="margin-left:.5rem">3 vidas</span>`;
+
+/* Selector */
+const J = {
+  1: { t: "Quiz del sistema electoral", x: "Diez preguntas sobre las reglas con las que se reparten 350 escaños. Nada de trampas: solo la ley electoral, que ya tiene bastante.", r: [["papeleta", "10 preguntas"], ["urna", "1 punto por acierto"]] },
+  2: { t: "Cronología de la legislatura", x: "Doce momentos de la legislatura, desordenados. Ponlos en su sitio antes de que la memoria haga campaña.", r: [["papeleta", "12 hitos"], ["urna", "1 punto por hito en su sitio"]] },
+  3: { t: "Crispómetro", x: "¿Más o menos llamadas al orden que en la legislatura anterior? Encadena aciertos. Al primer fallo, se acabó la racha.", r: [["papeleta", "1 legislatura por ronda"], ["urna", "Gana la racha más larga"]] }
+};
+const HOY = 3, dia = n => `${12 + n} de noviembre`;
+const ficha = n => {
+  document.getElementById("ficha").innerHTML = `<span class="et">${n === HOY ? "Hoy" : "El"}, ${dia(n)}</span><h2>${J[n].t}</h2><p class="texto">${J[n].x}</p><ul class="reglas">${J[n].r.map(([i, t]) => `<li>${svg(I[i], 2)}<span>${t}</span></li>`).join("")}</ul><button class="accion">${n === HOY ? "Jugar" : "Jugar el del " + (12 + n)}</button>`;
+  document.querySelectorAll(".nivel").forEach(b => b.classList.toggle("elegido", +b.dataset.n === n));
+};
+document.getElementById("niveles").innerHTML = Array.from({length: 15}, (_, i) => i + 1).map(n =>
+  n <= HOY ? `<button class="nivel${n === HOY ? " hoy" : ""}" data-n="${n}" aria-label="${dia(n)}">${px(String(n), 3)}</button>`
+           : `<span class="nivel cerrado" aria-label="${dia(n)}, cerrado">${svg(I.candado, 2, "#bdbdbd")}</span>`).join("");
+document.querySelectorAll("button.nivel").forEach(b => b.onclick = () => ficha(+b.dataset.n));
+ficha(HOY);
+
+/* Marcador */
+const celdas = (est, i) => est.map((e, k) => `<span class="celda ${e}${k === i ? " actual" : ""}">${e === "a" ? svg(G.tic, 2) : e === "x" ? svg(G.aspa, 2) : ""}</span>`).join("");
+let est = ["a", "a", "x", "", "", "", "", "", "", ""], i = 3;
+const pinta = () => {
+  document.getElementById("celdas").innerHTML = celdas(est, i);
+  document.getElementById("cursor").innerHTML = svg(G.cursor, 2);
+  document.getElementById("cursor").style.left = `${Math.min(i, 9) * 25 + 6}px`;
+  document.getElementById("puntos").innerHTML = px(String(est.filter(e => e === "a").length).padStart(2, "0"), 3);
+};
+document.querySelectorAll(".demo button").forEach(b => b.onclick = () => {
+  if (b.dataset.d === "r") { est = Array(10).fill(""); i = 0; return pinta(); }
+  if (i > 9) return;
+  est[i++] = b.dataset.d;
+  pinta();
+  if (b.dataset.d === "a") { const m = document.getElementById("mas"); m.innerHTML = px("+1", 2); m.classList.remove("ve"); void m.offsetWidth; m.classList.add("ve"); }
+});
+pinta();
+document.getElementById("celdasFin").innerHTML = celdas(["a","a","x","a","a","a","x","a","a","x"], -1);
+</script>
+</body>
+</html>
