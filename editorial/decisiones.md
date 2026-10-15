@@ -15,3 +15,10 @@ Log fechado de decisiones sustantivas del autor. Claude Code lo lee al empezar c
 - A1: borrador-plantilla en editorial/contenido/a01-quiz-sistema-electoral.md (10 preguntas + niveles del cierre). Contenido provisional: solo sirve para montar la plantilla M1 y probar cierre.js. Las preguntas definitivas se deciden entre autor y Cowork (nivel y gancho) y se verifican contra el BOE.
 - Incidencia cierre.js: pasar juego, nivel y fuente con textContent en vez de interpolarlos en innerHTML, y mostrar "Selecciona y copia el texto" si falla el portapapeles.
 - M1: opciones barajadas en pantalla; el fichero de contenido guarda la correcta por letra.
+
+## 2026-10-15
+
+- Crispómetro (A3): unidad = acto de llamada al orden. Se fusionan las repeticiones de la fórmula dentro de 150 caracteres solo si entre ellas no se nombra a otro diputado; validar con una muestra manual de 20 fusiones antes de cerrar el conteo. No cuentan avisos ("no me haga llamarle al orden") ni menciones a llamadas previas. Ejemplos en editorial/fuentes/a03-ejemplos-llamadas.md.
+- Crispómetro (A3): las retiradas de expresiones ("retire esa expresión") no entran en la métrica.
+- Colores de partido: siempre el color vigente de cada partido, en todas las legislaturas. Junts = #20C0C2.
+- Colores de CC y ERC próximos al marcador: se resuelve al diseñar A5 y A7.
