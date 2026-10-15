@@ -1,35 +1,20 @@
 # A1 · Quiz del sistema electoral
 
-Estado: **plantilla provisional** (2026-10-14). Solo sirve para que Code monte M1 y pruebe `cierre.js`. Las preguntas definitivas están por decidir con el autor (nivel de dificultad y gancho).
+Estado: **definitivo, pendiente de cotejo literal en el BOE** (2026-10-15). Sustituye a la plantilla provisional del 14-10. Code puede regenerar `data.json` ya; si el cotejo cambia algo, será la redacción y no la respuesta.
 
-- Motor: M1 (opción múltiple, explicación tras cada respuesta)
-- Preguntas: 10, en este orden
+- Motor: M1 (opción múltiple, explicación tras cada respuesta, opciones barajadas en pantalla)
+- Preguntas: 10, en este orden y con curva 3-4-3:
+  - fáciles: 1-3
+  - medias: 4-7
+  - difíciles: 8-10
 - Cierre: puntuación sobre 10 + etiqueta de nivel
-- Fuente general del juego: Constitución Española (1978) y Ley Orgánica 5/1985, del Régimen Electoral General (LOREG), texto consolidado en el BOE
+- Fuente general: Constitución Española; Ley Orgánica 5/1985, del Régimen Electoral General (LOREG), texto consolidado del BOE (última actualización: 02-07-2026); Real Decreto 806/2026 de convocatoria. Verificación en `editorial/fuentes/a01-quiz.md`.
 
 Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos frases) / fuente.
 
 ---
 
 ## 1
-
-**Pregunta:** ¿Cuántos diputados tiene el Congreso?
-
-**Opciones:**
-- a) 300
-- b) 350
-- c) 400
-- d) 450
-
-**Correcta:** b
-
-**Explicación:** La Constitución fija una horquilla de entre 300 y 400 diputados. La LOREG la concreta en 350.
-
-**Fuente:** Constitución Española, art. 68.1; LOREG, art. 162.1.
-
----
-
-## 2
 
 **Pregunta:** ¿Cuántos diputados tiene garantizados cada provincia antes de repartir el resto por población?
 
@@ -41,13 +26,67 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 **Correcta:** c
 
-**Explicación:** Cada provincia parte con dos diputados (Ceuta y Melilla, con uno) y solo el resto se reparte según población. Por eso en las provincias pequeñas un escaño cuesta muchos menos habitantes que en Madrid o Barcelona.
+**Explicación:** Cada provincia parte con dos diputados (Ceuta y Melilla, con uno) y solo el resto se reparte según población. Por eso Soria elige dos diputados y Madrid, treinta y ocho.
 
-**Fuente:** LOREG, art. 162.2 y 162.3.
+**Fuente:** LOREG, art. 162.2 y 162.3; Real Decreto 806/2026, anexo.
+
+---
+
+## 2
+
+**Pregunta:** ¿Hasta qué día se puede pedir el voto por correo para el 29 de noviembre?
+
+**Opciones:**
+- a) 9 de noviembre
+- b) 19 de noviembre
+- c) 25 de noviembre
+- d) 28 de noviembre
+
+**Correcta:** b
+
+**Explicación:** La ley fija el plazo hasta el décimo día anterior a la votación, que este año cae en el 19 de noviembre. El 25 es otra fecha: el último día para enviar el sobre desde Correos.
+
+**Fuente:** LOREG, art. 72; La Moncloa, nota de prensa del Ministerio del Interior, 14-10-2026.
 
 ---
 
 ## 3
+
+**Pregunta:** ¿Desde qué día no se puede publicar ninguna encuesta electoral antes del 29 de noviembre?
+
+**Opciones:**
+- a) 13 de noviembre, inicio de la campaña
+- b) 22 de noviembre
+- c) 24 de noviembre
+- d) 28 de noviembre, jornada de reflexión
+
+**Correcta:** c
+
+**Explicación:** La ley prohíbe publicar y difundir sondeos durante los cinco días anteriores al de la votación: del 24 al 28 de noviembre. Hacerlos no está prohibido; publicarlos, sí.
+
+**Fuente:** LOREG, art. 69.7.
+
+---
+
+## 4
+
+**Pregunta:** Respecto a 2023, una provincia gana un diputado el 29-N y otra lo pierde. ¿Cuáles?
+
+**Opciones:**
+- a) Gana Madrid y pierde Cádiz
+- b) Gana Madrid y pierde Barcelona
+- c) Gana Málaga y pierde Asturias
+- d) Ninguna: el reparto es idéntico al de 2023
+
+**Correcta:** a
+
+**Explicación:** El reparto de escaños se recalcula en cada convocatoria según la población: Madrid pasa de 37 a 38 diputados y Cádiz, de 9 a 8. Las otras cincuenta circunscripciones eligen los mismos que en 2023.
+
+**Fuente:** Real Decreto 806/2026, de 5 de octubre, anexo; Real Decreto 400/2023, de 29 de mayo, anexo.
+
+---
+
+## 5
 
 **Pregunta:** Para optar a escaño en el Congreso, una candidatura necesita al menos el 3 % de…
 
@@ -65,25 +104,25 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 ---
 
-## 4
+## 6
 
-**Pregunta:** En el reparto por D'Hondt, dos candidaturas empatan en el cociente que decide el último escaño. ¿Quién se lo lleva?
+**Pregunta:** Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?
 
 **Opciones:**
-- a) La que tiene más votos en total en la circunscripción
-- b) La que encabeza un candidato de más edad
-- c) Se decide por sorteo
-- d) La que obtuvo más escaños en las elecciones anteriores
+- a) Perdieron el derecho de voto en las generales
+- b) Ya no tienen que solicitar previamente el voto
+- c) Solo pueden votar presencialmente en el consulado
+- d) Eligen sus propios diputados en una circunscripción exterior
 
-**Correcta:** a
+**Correcta:** b
 
-**Explicación:** El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.
+**Explicación:** La reforma suprimió el llamado voto rogado, que obligaba a pedir el voto antes de cada elección. Ahora la documentación se envía de oficio a los inscritos en el CERA.
 
-**Fuente:** LOREG, art. 163.1.
+**Fuente:** Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG (art. 75).
 
 ---
 
-## 5
+## 7
 
 **Pregunta:** En una provincia peninsular se eligen cuatro senadores. ¿A cuántos puede votar cada elector?
 
@@ -101,75 +140,39 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 ---
 
-## 6
+## 8
 
-**Pregunta:** Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?
+**Pregunta:** Un partido que no obtuvo escaño en ninguna Cámara en 2023 quiere presentarse por Madrid. ¿Qué necesita?
 
 **Opciones:**
-- a) Perdieron el derecho de voto en las generales
-- b) Ya no tienen que solicitar previamente el voto
-- c) Solo pueden votar presencialmente en el consulado
-- d) Eligen sus propios diputados en una circunscripción exterior
+- a) Nada: basta con registrar la candidatura
+- b) Firmas de al menos el 0,1 % de los electores de la circunscripción
+- c) Firmas de al menos el 1 % de los electores de la circunscripción
+- d) Un depósito que se devuelve si obtiene escaño
 
 **Correcta:** b
 
-**Explicación:** La reforma suprimió el llamado voto rogado, que obligaba a pedir el voto antes de cada elección. Ahora la documentación se envía de oficio a los inscritos en el CERA.
+**Explicación:** Desde 2011, los partidos sin representación en las elecciones anteriores deben reunir firmas del 0,1 % del censo de cada circunscripción en la que se presentan. Cada elector solo puede avalar una candidatura.
 
-**Fuente:** Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG.
-
----
-
-## 7
-
-**Pregunta:** ¿Hasta cuándo se puede solicitar el voto por correo?
-
-**Opciones:**
-- a) Hasta el día anterior a la votación
-- b) Hasta el quinto día anterior a la votación
-- c) Hasta el décimo día anterior a la votación
-- d) Hasta el inicio de la campaña electoral
-
-**Correcta:** c
-
-**Explicación:** La solicitud se puede presentar desde la convocatoria hasta el décimo día anterior a la votación. Para el 29 de noviembre, el plazo termina el 19 [VERIFICAR fecha exacta con el calendario electoral de la JEC].
-
-**Fuente:** LOREG, art. 72.
-
----
-
-## 8
-
-**Pregunta:** ¿Durante cuántos días antes de la votación está prohibido publicar encuestas electorales en España?
-
-**Opciones:**
-- a) 1
-- b) 3
-- c) 5
-- d) 7
-
-**Correcta:** c
-
-**Explicación:** Durante los cinco días anteriores a la votación no se pueden publicar ni difundir sondeos por ningún medio de comunicación. La ley no impide hacerlos, solo publicarlos.
-
-**Fuente:** LOREG, art. 69.7.
+**Fuente:** LOREG, art. 169.3.
 
 ---
 
 ## 9
 
-**Pregunta:** ¿Cuántos días dura la campaña electoral?
+**Pregunta:** En el reparto por D'Hondt, dos candidaturas empatan en el cociente que decide el último escaño. ¿Quién se lo lleva?
 
 **Opciones:**
-- a) 10
-- b) 15
-- c) 21
-- d) 30
+- a) La que tiene más votos en total en la circunscripción
+- b) La que encabeza un candidato de más edad
+- c) Se decide por sorteo
+- d) La que obtuvo más escaños en las elecciones anteriores
 
-**Correcta:** b
+**Correcta:** a
 
-**Explicación:** La campaña dura quince días y termina a las cero horas del día anterior a la votación, que es la jornada de reflexión. Esta serie publica un juego por cada uno de esos quince días.
+**Explicación:** El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.
 
-**Fuente:** LOREG, art. 51.
+**Fuente:** LOREG, art. 163.1.c.
 
 ---
 
@@ -199,10 +202,3 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 | 4–6 | Lector de la papeleta |
 | 7–8 | Interventor de mesa |
 | 9–10 | Junta Electoral Central |
-
-## Pendiente antes de publicar
-
-- Verificar cada artículo contra el texto consolidado del BOE (vigente a noviembre de 2026) y anotar la fecha de consulta en `editorial/fuentes/a01.md`.
-- Pregunta 7: fijar la fecha límite real del voto por correo para el 29-N.
-- Valorar si se sustituye alguna pregunta fácil (1, 9) por otra de Senado o de listas cerradas.
-- Orden de las opciones: decidir si se barajan en pantalla (instrucción para Code).
