@@ -1,20 +1,49 @@
 {
   "juego": "Quiz del sistema electoral",
-  "fuente": "Constitución Española (1978) y Ley Orgánica 5/1985, del Régimen Electoral General (LOREG), texto consolidado en el BOE",
+  "fuente": "Constitución Española; Ley Orgánica 5/1985, del Régimen Electoral General (LOREG), texto consolidado del BOE (última actualización: 02-07-2026); Real Decreto 806/2026 de convocatoria",
   "preguntas": [
-    {
-      "pregunta": "¿Cuántos diputados tiene el Congreso?",
-      "opciones": { "a": "300", "b": "350", "c": "400", "d": "450" },
-      "correcta": "b",
-      "explicacion": "La Constitución fija una horquilla de entre 300 y 400 diputados. La LOREG la concreta en 350.",
-      "fuente": "Constitución Española, art. 68.1; LOREG, art. 162.1."
-    },
     {
       "pregunta": "¿Cuántos diputados tiene garantizados cada provincia antes de repartir el resto por población?",
       "opciones": { "a": "Ninguno", "b": "1", "c": "2", "d": "3" },
       "correcta": "c",
-      "explicacion": "Cada provincia parte con dos diputados (Ceuta y Melilla, con uno) y solo el resto se reparte según población. Por eso en las provincias pequeñas un escaño cuesta muchos menos habitantes que en Madrid o Barcelona.",
-      "fuente": "LOREG, art. 162.2 y 162.3."
+      "explicacion": "Cada provincia parte con dos diputados (Ceuta y Melilla, con uno) y solo el resto se reparte según población. Por eso Soria elige dos diputados y Madrid, treinta y ocho.",
+      "fuente": "LOREG, art. 162.2 y 162.3; Real Decreto 806/2026, anexo."
+    },
+    {
+      "pregunta": "¿Hasta qué día se puede pedir el voto por correo para el 29 de noviembre?",
+      "opciones": {
+        "a": "9 de noviembre",
+        "b": "19 de noviembre",
+        "c": "25 de noviembre",
+        "d": "28 de noviembre"
+      },
+      "correcta": "b",
+      "explicacion": "La ley fija el plazo hasta el décimo día anterior a la votación, que este año cae en el 19 de noviembre. El 25 es otra fecha: el último día para enviar el sobre desde Correos.",
+      "fuente": "LOREG, art. 72; La Moncloa, nota de prensa del Ministerio del Interior, 14-10-2026."
+    },
+    {
+      "pregunta": "¿Desde qué día no se puede publicar ninguna encuesta electoral antes del 29 de noviembre?",
+      "opciones": {
+        "a": "13 de noviembre, inicio de la campaña",
+        "b": "22 de noviembre",
+        "c": "24 de noviembre",
+        "d": "28 de noviembre, jornada de reflexión"
+      },
+      "correcta": "c",
+      "explicacion": "La ley prohíbe publicar y difundir sondeos durante los cinco días anteriores al de la votación: del 24 al 28 de noviembre. Hacerlos no está prohibido; publicarlos, sí.",
+      "fuente": "LOREG, art. 69.7."
+    },
+    {
+      "pregunta": "Respecto a 2023, una provincia gana un diputado el 29-N y otra lo pierde. ¿Cuáles?",
+      "opciones": {
+        "a": "Gana Madrid y pierde Cádiz",
+        "b": "Gana Madrid y pierde Barcelona",
+        "c": "Gana Málaga y pierde Asturias",
+        "d": "Ninguna: el reparto es idéntico al de 2023"
+      },
+      "correcta": "a",
+      "explicacion": "El reparto de escaños se recalcula en cada convocatoria según la población: Madrid pasa de 37 a 38 diputados y Cádiz, de 9 a 8. Las otras cincuenta circunscripciones eligen los mismos que en 2023.",
+      "fuente": "Real Decreto 806/2026, de 5 de octubre, anexo; Real Decreto 400/2023, de 29 de mayo, anexo."
     },
     {
       "pregunta": "Para optar a escaño en el Congreso, una candidatura necesita al menos el 3 % de…",
@@ -29,25 +58,6 @@
       "fuente": "LOREG, art. 163.1.a."
     },
     {
-      "pregunta": "En el reparto por D'Hondt, dos candidaturas empatan en el cociente que decide el último escaño. ¿Quién se lo lleva?",
-      "opciones": {
-        "a": "La que tiene más votos en total en la circunscripción",
-        "b": "La que encabeza un candidato de más edad",
-        "c": "Se decide por sorteo",
-        "d": "La que obtuvo más escaños en las elecciones anteriores"
-      },
-      "correcta": "a",
-      "explicacion": "El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.",
-      "fuente": "LOREG, art. 163.1."
-    },
-    {
-      "pregunta": "En una provincia peninsular se eligen cuatro senadores. ¿A cuántos puede votar cada elector?",
-      "opciones": { "a": "1", "b": "2", "c": "3", "d": "4" },
-      "correcta": "c",
-      "explicacion": "Es un sistema de voto limitado: se marcan hasta tres nombres para cuatro puestos. Por eso lo habitual es que el partido más votado saque tres senadores y el segundo, uno.",
-      "fuente": "Constitución Española, art. 69.2; LOREG, art. 166.1.a."
-    },
-    {
       "pregunta": "Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?",
       "opciones": {
         "a": "Perdieron el derecho de voto en las generales",
@@ -57,33 +67,38 @@
       },
       "correcta": "b",
       "explicacion": "La reforma suprimió el llamado voto rogado, que obligaba a pedir el voto antes de cada elección. Ahora la documentación se envía de oficio a los inscritos en el CERA.",
-      "fuente": "Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG."
+      "fuente": "Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG (art. 75)."
     },
     {
-      "pregunta": "¿Hasta cuándo se puede solicitar el voto por correo?",
+      "pregunta": "En una provincia peninsular se eligen cuatro senadores. ¿A cuántos puede votar cada elector?",
+      "opciones": { "a": "1", "b": "2", "c": "3", "d": "4" },
+      "correcta": "c",
+      "explicacion": "Es un sistema de voto limitado: se marcan hasta tres nombres para cuatro puestos. Por eso lo habitual es que el partido más votado saque tres senadores y el segundo, uno.",
+      "fuente": "Constitución Española, art. 69.2; LOREG, art. 166.1.a."
+    },
+    {
+      "pregunta": "Un partido que no obtuvo escaño en ninguna Cámara en 2023 quiere presentarse por Madrid. ¿Qué necesita?",
       "opciones": {
-        "a": "Hasta el día anterior a la votación",
-        "b": "Hasta el quinto día anterior a la votación",
-        "c": "Hasta el décimo día anterior a la votación",
-        "d": "Hasta el inicio de la campaña electoral"
+        "a": "Nada: basta con registrar la candidatura",
+        "b": "Firmas de al menos el 0,1 % de los electores de la circunscripción",
+        "c": "Firmas de al menos el 1 % de los electores de la circunscripción",
+        "d": "Un depósito que se devuelve si obtiene escaño"
       },
-      "correcta": "c",
-      "explicacion": "La solicitud se puede presentar desde la convocatoria hasta el décimo día anterior a la votación. Para el 29 de noviembre, el plazo termina el 19 [VERIFICAR fecha exacta con el calendario electoral de la JEC].",
-      "fuente": "LOREG, art. 72."
-    },
-    {
-      "pregunta": "¿Durante cuántos días antes de la votación está prohibido publicar encuestas electorales en España?",
-      "opciones": { "a": "1", "b": "3", "c": "5", "d": "7" },
-      "correcta": "c",
-      "explicacion": "Durante los cinco días anteriores a la votación no se pueden publicar ni difundir sondeos por ningún medio de comunicación. La ley no impide hacerlos, solo publicarlos.",
-      "fuente": "LOREG, art. 69.7."
-    },
-    {
-      "pregunta": "¿Cuántos días dura la campaña electoral?",
-      "opciones": { "a": "10", "b": "15", "c": "21", "d": "30" },
       "correcta": "b",
-      "explicacion": "La campaña dura quince días y termina a las cero horas del día anterior a la votación, que es la jornada de reflexión. Esta serie publica un juego por cada uno de esos quince días.",
-      "fuente": "LOREG, art. 51."
+      "explicacion": "Desde 2011, los partidos sin representación en las elecciones anteriores deben reunir firmas del 0,1 % del censo de cada circunscripción en la que se presentan. Cada elector solo puede avalar una candidatura.",
+      "fuente": "LOREG, art. 169.3."
+    },
+    {
+      "pregunta": "En el reparto por D'Hondt, dos candidaturas empatan en el cociente que decide el último escaño. ¿Quién se lo lleva?",
+      "opciones": {
+        "a": "La que tiene más votos en total en la circunscripción",
+        "b": "La que encabeza un candidato de más edad",
+        "c": "Se decide por sorteo",
+        "d": "La que obtuvo más escaños en las elecciones anteriores"
+      },
+      "correcta": "a",
+      "explicacion": "El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.",
+      "fuente": "LOREG, art. 163.1.c."
     },
     {
       "pregunta": "Si ningún candidato logra la investidura, ¿cuándo se disuelven las Cortes y se convocan nuevas elecciones?",
