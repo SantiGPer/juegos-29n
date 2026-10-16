@@ -2,13 +2,14 @@ const fecha = () =>
   new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replaceAll('/', '-');
 
 export function cerrar({ juego, puntuacion, total, nivel, cuadricula, fuente }, contenedor) {
-  const texto = [juego, fecha(), `${puntuacion}/${total}`, cuadricula, location.origin + location.pathname]
+  const resultado = total === undefined ? puntuacion : `${puntuacion}/${total}`;
+  const texto = [juego, fecha(), resultado, cuadricula, location.origin + location.pathname]
     .filter(Boolean)
     .join('\n');
 
   contenedor.innerHTML = `
     <h1></h1>
-    <p class="cifra"><span class="marca">${puntuacion}</span> de ${total}</p>
+    <p class="cifra${total === undefined ? ' palabra' : ''}"><span class="marca"></span>${total === undefined ? '' : ` de ${total}`}</p>
     <p class="nivel"></p>
     <p class="recibo"></p>
     <p><button class="accion">Copiar resultado</button></p>
@@ -17,6 +18,7 @@ export function cerrar({ juego, puntuacion, total, nivel, cuadricula, fuente }, 
 
   const pinta = (selector, valor) => { contenedor.querySelector(selector).textContent = valor; };
   pinta('h1', juego);
+  pinta('.marca', puntuacion);
   pinta('.nivel', nivel ?? '');
   pinta('.recibo', texto);
   pinta('.fuente', `Fuente: ${fuente}`);
