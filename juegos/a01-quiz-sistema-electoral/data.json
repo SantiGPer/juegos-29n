@@ -55,7 +55,7 @@
       },
       "correcta": "a",
       "explicacion": "La barrera se mide en cada provincia y sobre los votos válidos, que incluyen el voto en blanco. En la práctica solo pesa en las circunscripciones grandes: en las pequeñas, el umbral real para sacar escaño es muy superior al 3 %.",
-      "fuente": "LOREG, art. 163.1.a."
+      "fuente": "LOREG, arts. 163.1.a y 96.5."
     },
     {
       "pregunta": "Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?",
@@ -98,7 +98,7 @@
       },
       "correcta": "a",
       "explicacion": "El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.",
-      "fuente": "LOREG, art. 163.1.c."
+      "fuente": "LOREG, art. 163.1.d."
     },
     {
       "pregunta": "Si ningún candidato logra la investidura, ¿cuándo se disuelven las Cortes y se convocan nuevas elecciones?",

@@ -67,7 +67,13 @@ Versión vigente publicada el 20-06-1985 (BOE-A-1985-11672).
 
 > a) No se tienen en cuenta aquellas candidaturas que no hubieran obtenido, al menos, el 3 por 100 de los votos válidos emitidos en la circunscripción.
 
-### LOREG, art. 163.1.c (pregunta 9)
+### LOREG, art. 96.5 (pregunta 5)
+
+Versión vigente publicada el 29-01-2011 (BOE-A-2011-1639).
+
+> 5. Se considera voto en blanco, pero válido, el sobre que no contenga papeleta y, además, en las elecciones para el Senado, las papeletas que no contengan indicación a favor de ninguno de los candidatos.
+
+### LOREG, art. 163.1.c (pregunta 9, cita anterior al 16-10)
 
 Versión vigente publicada el 20-06-1985 (BOE-A-1985-11672).
 
