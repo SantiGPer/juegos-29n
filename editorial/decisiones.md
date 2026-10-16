@@ -130,3 +130,31 @@ Log fechado de decisiones sustantivas del autor. Claude Code lo lee al empezar c
 - A12: actualizar en `data/presidentes.json` la pista 3 de González.
 - A2: ordenar por rondas de 4 hitos, que el jugador ordena del más antiguo al más reciente. Puntuación por hito: 1 punto en la posición exacta dentro de la ronda, ½ a una posición de distancia y 0 en otro caso. Con esto se confirma la regla provisional de cercanía para A2.
 - A2: además de los 12 hitos fijos, entran cuatro: convocatoria (05-10-2026), incendios, Podemos deja Sumar (05-12-2023) y Ábalos en prisión (27-11-2025). Borrador en editorial/contenido/a02-cronologia-legislatura.md (16 hitos en 4 rondas, pendiente de revisión del autor).
+- A2 (corrige la línea anterior): 3 rondas de 4, con 12 hitos en total y puntuación sobre 12. Sale la antigua ronda 3: Podemos deja Sumar, la carta de los cinco días, Las Médulas y la moción por la cuestión de confianza.
+- Criterio de fecha para los incendios, si vuelven a entrar en algún juego: la de la declaración del incendio.
+- A2: la pista de partida tiene 12 celdas, una por hito, en tres grupos de cuatro. Hito en su posición exacta: celda en marcador. A una posición: medio relleno (½). Resto: vacía. Excepción a la regla general de una celda por ronda.
+- A2: contenido cerrado en editorial/contenido/a02-cronologia-legislatura.md (12 hitos, 3 rondas). Encargo para Code: pasarlo a juegos/a02-cronologia-legislatura/data.json y montar el juego sobre M1 variante ordenar, con las reglas de puntuación y pista de partida del 16-10.
+- A10: edición cerrada en editorial/contenido/a10-agrupar-16.md, con cuatro grupos:
+  1. Presidieron el Congreso.
+  2. Leyes conocidas por el apellido de su ministro, solo leyes completas: Corcuera, Aído, Wert y Celaá. Sinde queda fuera.
+  3. Fueron ministros de Educación.
+  4. Perdieron al menos una votación de investidura.
+  
+  Nivel aprobado. Wert, Celaá y Rajoy encajan en dos grupos, pero la solución es única.
+- A10, encargo para Code: pasar el contenido a juegos/a10-agrupar-16/data.json y montar el juego sobre M6, con 4 vidas (icono «nula») y el cierre resuelto/no resuelto más el número de fallos.
+- A3, rango: de la VIII a la XV (8 legislaturas, 7 decisiones en la cadena). Las legislaturas I–VII solo se añaden si superan una validación manual del OCR: en una muestra de 20 sesiones de I–VII leídas a mano, el script debe encontrar al menos el 95 % de las llamadas al orden que encuentre la lectura manual. Si no llega, quedan fuera y el juego lo explica en una nota metodológica.
+- A3: la cifra de la XV queda en 83 llamadas en 203 sesiones plenarias, porque se incorporan las cuatro sesiones publicadas en partes. Sustituye a 81/199.
+- A3, pantalla final: el partido de cada presidencia del Congreso es el de su grupo parlamentario. Batet figura como PSOE, con color PSOE; su afiliación al PSC queda anotada en el JSON. El mismo criterio vale para Pons y para el resto.
+- legislaturas.json conserva la Constituyente, por si la usa A5; A3 no la muestra.
+
+### Encargos para Code (2026-10-16, tarde)
+
+- A3, en este orden:
+  1. Pasar a R/05 el bucle por legislaturas y el lector por columnas de los PDF `PL_`.
+  2. Descargar y contar XI–XIV.
+  3. Descargar y contar VIII–X, con muestra manual de validación: precisión de la fórmula y de la atribución a la Presidencia.
+  4. Denominador exacto de sesiones plenarias por legislatura, con el mismo criterio que en la XV.
+  5. Tabla final en la bitácora.
+- A3, validación del OCR de I–VII: muestra de 20 sesiones leídas a mano frente al conteo del script, con el umbral del 95 % fijado arriba. Solo después de cerrar VIII–XV.
+- A12, A2 y A10 jugables para el 26-oct, con el contenido de editorial/contenido/.
+- Capturas a 375 px: usar la emulación de viewport de Playwright (el Chromium preinstalado) en lugar del tamaño de ventana de Chrome headless.

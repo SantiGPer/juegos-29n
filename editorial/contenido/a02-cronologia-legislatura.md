@@ -1,11 +1,12 @@
 # A2 · Cronología de la legislatura
 
-Estado: **borrador para revisión del autor** (2026-10-16). Hay varios hitos con [VERIFICAR] o [FUENTE PENDIENTE] y dos dudas al final.
+Estado: **cerrado** (2026-10-16). Listo para que Code lo pase a JSON. Fuentes primarias del Congreso (Diarios de Sesiones) por enlazar en la verificación.
 
 - Motor: M1, variante ordenar (dos botones de 44 px por fila con triángulos para subir y bajar; arrastrar nunca es obligatorio)
-- 16 hitos de la XV legislatura en 4 rondas de 4 (ver la duda 1). Las rondas van de más a menos separación entre fechas.
+- 12 hitos de la XV legislatura en 3 rondas de 4. Las rondas van de más a menos separación entre fechas.
 - En cada ronda los cuatro hitos salen barajados; el jugador los ordena del más antiguo al más reciente y pulsa «Comprobar orden». Al comprobar se muestra la fecha de cada hito y su explicación.
-- Puntuación por hito: 1 si está en su posición exacta dentro de la ronda, ½ si queda a una posición, 0 en otro caso. Total sobre 16.
+- Puntuación por hito: 1 si está en su posición exacta dentro de la ronda, ½ si queda a una posición, 0 en otro caso. Total sobre 12.
+- Pista de partida: 12 celdas, una por hito, en tres grupos de cuatro (exacto = marcador; a una posición = medio relleno; resto = vacía).
 - Recibo: una casilla por hito, cuatro por línea (🟨 exacto, ⬜ resto). La nota lleva decimal.
 - Fuente general: Diario de Sesiones del Congreso, BOE, La Moncloa y prensa citada en cada hito. Verificación en `editorial/fuentes/a02-cronologia.md`.
 
@@ -22,13 +23,13 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ### La dana arrasa la provincia de Valencia
 - **Fecha:** 29-10-2024
-- **Explicación:** Las inundaciones dejaron 229 muertos según el balance oficial. La gestión de la emergencia enfrentó al Gobierno central y a la Generalitat Valenciana.
-- **Fuente:** El Progreso, 07-10-2026 (balance de la legislatura). [VERIFICAR cifra con fuente oficial]
+- **Explicación:** Las inundaciones dejaron 229 muertos, 221 de ellos en la Comunitat Valenciana. La gestión de la emergencia enfrentó al Gobierno central y a la Generalitat Valenciana.
+- **Fuente:** La Moncloa, balance de datos de la dana del 26-11-2024, 12:00 h.
 
 ### Apagón en toda la península
 - **Fecha:** 28-04-2025
-- **Explicación:** Un cero eléctrico dejó sin luz a la España peninsular durante horas. Fue el primer apagón total del sistema en su historia.
-- **Fuente:** Red Eléctrica de España. [FUENTE PENDIENTE: informe oficial]
+- **Explicación:** A las 12:33 un cero eléctrico dejó sin luz a la España peninsular, y también a Portugal. Fue el primero en la historia del sistema peninsular.
+- **Fuente:** Diari de Tarragona, 2026, «Qué produjo el apagón» (recoge los informes del MITECO, Red Eléctrica, ENTSO-E y CNMC).
 
 ### Entrada masiva de migrantes en Ceuta
 - **Fecha:** 30-07-2026
@@ -39,13 +40,13 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ### Feijóo pierde su investidura
 - **Fecha:** 29-09-2023
-- **Explicación:** En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.
-- **Fuente:** Diario de Sesiones del Congreso, 29-09-2023. [VERIFICAR recuento 172-177]
+- **Explicación:** En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes, con un voto nulo. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.
+- **Fuente:** Diario de Sesiones del Congreso, 29-09-2023; RTVC, 29-09-2023.
 
 ### El Congreso aprueba definitivamente la amnistía
 - **Fecha:** 30-05-2024
 - **Explicación:** El Congreso levantó el veto del Senado y aprobó la ley con mayoría absoluta. Se publicó como Ley Orgánica 1/2024, de 10 de junio.
-- **Fuente:** Diario de Sesiones del Congreso, 30-05-2024; BOE, 11-06-2024.
+- **Fuente:** Diario de Sesiones del Congreso, 30-05-2024; Menorca.info, 30-05-2024; BOE, 11-06-2024 (LO 1/2024).
 
 ### Dimite Santos Cerdán
 - **Fecha:** 12-06-2025
@@ -57,29 +58,7 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 - **Explicación:** PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Sánchez anunció elecciones.
 - **Fuente:** Civio, 02-10-2026.
 
-## Ronda 3
-
-### Podemos deja el grupo de Sumar
-- **Fecha:** 05-12-2023
-- **Explicación:** Sus cinco diputados pasaron al Grupo Mixto menos de tres semanas después de la investidura. La coalición de Gobierno perdió así votos seguros en el Congreso.
-- **Fuente:** Wikipedia, XV legislatura de España (cronología). [FUENTE PENDIENTE: Congreso, composición de grupos]
-
-### Sánchez se toma cinco días para pensar si sigue
-- **Fecha:** 24-04-2024
-- **Explicación:** Lo anunció en una carta a la ciudadanía tras la apertura de diligencias contra su esposa. El 29 de abril comunicó que seguía.
-- **Fuente:** La Moncloa, 24-04-2024 y 29-04-2024.
-
-### El fuego llega a Las Médulas
-- **Fecha:** [VERIFICAR día exacto, agosto de 2025]
-- **Explicación:** La oleada de incendios del noroeste alcanzó el paraje, patrimonio mundial. Entre 2025 y 2026 se encadenaron los dos peores veranos de incendios de la década.
-- **Fuente:** Diario de León, 05-09-2025. [VERIFICAR] La explicación se ajusta con el dato del MITECO.
-
-### El Congreso pide a Sánchez una cuestión de confianza
-- **Fecha:** 25-06-2026
-- **Explicación:** Salió adelante una moción del PP que pedía su dimisión o una cuestión de confianza, con los votos de PP, Vox y Junts. No era vinculante y el Gobierno no la atendió.
-- **Fuente:** El Independiente, 25-06-2026; Deia, 25-06-2026.
-
-## Ronda 4 — un mes entre hitos
+## Ronda 3 — un mes entre hitos
 
 ### Junts rompe con el PSOE
 - **Fecha:** 27-10-2025
@@ -88,8 +67,8 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ### El Supremo condena al fiscal general del Estado
 - **Fecha:** 20-11-2025
-- **Explicación:** Álvaro García Ortiz fue condenado por revelación de datos e inhabilitado. Fue la primera condena de un fiscal general en ejercicio.
-- **Fuente:** The Objective, 20-11-2025; Maldita, 21-11-2025.
+- **Explicación:** Álvaro García Ortiz fue condenado por revelación de datos e inhabilitado. Dimitió tras conocerse el fallo.
+- **Fuente:** The Objective, 20-11-2025; Maldita, 21-11-2025; elDiario.es (dimisión).
 
 ### Ábalos entra en prisión provisional
 - **Fecha:** 27-11-2025
@@ -102,10 +81,3 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 - **Fuente:** La Moncloa, 05-10-2026; Real Decreto 806/2026.
 
 ---
-
-## Dudas para el autor
-
-1. **Elegiste 3 rondas de 4 y los cuatro hitos opcionales, así que salen 16 hitos.** Lo he montado en 4 rondas de 4. Si prefieres 3 rondas, sobran cuatro; mis candidatos a salir serían Podemos, Ábalos, Las Médulas y la moción.
-2. **Incendios.** El MITECO da menos superficie quemada en 2026 que en 2025 (−13,8 % a mitad de agosto), así que el verano «peor» fue el de 2025. He atado el hito a Las Médulas en 2025; falta el día exacto.
-
-Para Code: la pista de partida pasa de una celda por ronda a una por hito (16, agrupadas de cuatro en cuatro). Confírmalo antes de pasarlo a decisiones.
