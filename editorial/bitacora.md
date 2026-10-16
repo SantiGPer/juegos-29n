@@ -2,6 +2,57 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-16 — A3: sondeo de legislaturas, legislaturas.json y sesiones de la XV que faltaban; correcciones de A1 y A12
+
+**Hecho**
+- A1: cita literal del art. 96.5 en `editorial/fuentes/a01-cotejo-boe.md` («Se considera voto en blanco, pero válido, el sobre que no contenga papeleta…») y 163.1.d como fuente de la pregunta 9 (el 163.1.c queda marcado como cita anterior). `data.json` regenerado con las fuentes corregidas de las preguntas 5 y 9; coincide literalmente con el contenido.
+- A12: pista 3 de González en `data/presidentes.json` → «…; abogado.»
+- **A3, XV: faltaban cuatro sesiones.** Los diarios 23, 41, 137 y 163 no estaban como `DSCD-15-PL-<n>.PDF`, sino como `DSCD-15-PL-<n>-C1.PDF`, y son las sesiones plenarias 21, 39, 132 y 157. `R/05_llamadas_al_orden.R` ahora prueba las partes `-C1`, `-C2`… cuando falta el diario entero.
+  - He comprobado que cada `-C1` está completo: el sumario no cita páginas más allá del fichero.
+  - Resultado: **XV = 83 llamadas en 203 sesiones plenarias** (antes, 81 en 199). Las dos nuevas son «Señor Conde, le llamo al orden por primera vez» (22-05-2024) y «Señor Sánchez, le llamo al orden por primera vez» (17-09-2025). Ninguna es una fusión, así que la revisión manual de las 12 fusiones sigue valiendo.
+  - El denominador 203 son las sesiones 1 a 203, todas consecutivas. El diario 9 (constitución de la Diputación Permanente) lleva en portada «Sesión plenaria núm. 1», pero no suma.
+- A3: `R/02_legislaturas.R` → `data/legislaturas.json`, de la Constituyente a la XV: presidencia del Congreso, partido, fechas y actas de elección de congreso.es. Fuente: el anexo de Wikipedia, en una revisión fijada. Contraste con la portada de los diarios de la muestra («PRESIDENCIA DE…»): coinciden todas las legislaturas muestreadas (de la I a la XIII y la XV; la XIV no se pudo mirar porque las descargas eran páginas de bloqueo).
+- A3: sondeo de los Diarios de Sesiones del Pleno de la I a la XIV. Por legislatura, he buscado el último diario (HEAD) y he descargado el de mitad de legislatura y los tres últimos.
+
+| Leg. | Patrón de URL | Diarios | Texto | Presidencia distinguible | Fórmula vista en la muestra | Sesión plenaria más alta vista |
+| --- | --- | --- | --- | --- | --- | --- |
+| XIV | `DSCD-14-PL-<n>.PDF` | 275 | sin mirar (descarga bloqueada) | — | — | — |
+| XIII | ídem | 15 | nativo, una columna, limpio | sí | «le llamo al orden» | — |
+| XII | ídem | 186 | nativo, una columna, limpio | sí | «le llamo al orden» | 176 (diario 184) |
+| XI | ídem | 15 | nativo, una columna, limpio | sí | (no sale en la muestra) | 13 (diario 14) |
+| X | `PL_001`–`PL_053` y `DSCD-10-PL-54`–`315` | 315 | primer tramo a dos columnas; segundo sin mirar | sí | (no sale) | 50 (diario 53) |
+| IX | `PL_<nnn>.PDF` | 279 | nativo, dos columnas | sí | (no sale) | 131 (diario 140) |
+| VIII | ídem | 315 | nativo, dos columnas | sí | (no sale) | 147 (diario 158) |
+| VII | ídem | 310 | nativo, dos columnas | sí | (no sale) | 295 (diario 308) |
+| VI | ídem | 286 | nativo, dos columnas | sí | «Señorías, les llamo al orden» | 138 (diario 143) |
+| V | ídem | 197 | capa OCR, dos columnas, errores sueltos («ALB:tSTUR MARIN») | sí | «Le llamo al orden, señor Albistur» | 193 (diario 195) |
+| IV | ídem | 265 | capa OCR, dos columnas | sí | (no sale) | 257 (diario 263) |
+| III | ídem | 208 | capa OCR, dos columnas | sí | solo una mención («la Presidencia nos llamaría al orden») | 199 (diario 206) |
+| II | ídem | 281 | capa OCR, dos columnas | sí | (no sale) | 281 (= nº de diario) |
+| I | ídem | 255 | capa OCR, dos columnas, letras espaciadas («L A N D E L I N O») | sí | (no sale) | 255 (= nº de diario) |
+
+  - «Diarios» es el número del último diario, incluidos los de la Diputación Permanente; los huecos sueltos no están descontados. La columna «Sesión plenaria» es la más alta que aparece en la muestra, **no** el denominador. El denominador exacto exige descargar la legislatura entera, como en la XV.
+  - Todas las legislaturas tienen capa de texto (la proporción de palabras comunes, unos 0,37, es igual a la de la XV), así que no hace falta pasar OCR. De la I a la V es un OCR antiguo con errores que pueden romper algún nombre o alguna fórmula.
+  - **Problema técnico de I a X (formato `PL_`):** son dos columnas y `pdf_text` mezcla las dos en cada línea. Lo he resuelto en una prueba leyendo las coordenadas de cada palabra (`pdf_data`) y cortando por el hueco central: el texto sale ordenado («El señor VICEPRESIDENTE (Beviá Pastor): Le llamo al orden, señor Albistur.»). Los sumarios con líneas de puntos siguen saliendo revueltos, pero no afectan.
+  - Que la fórmula no salga en la muestra no quiere decir nada: son 4 diarios por legislatura y en la XV sale una llamada cada 2,4 sesiones.
+  - ParlaMint-ES cubre sobre todo de 2015 a mediados de 2022 (según la documentación general de ParlaMint; el rango exacto del corpus español no lo he confirmado). Solapa con XI–XIV, que ya salen limpias en PDF, y no sirve de recambio para I–X.
+- Servidor del Congreso: a más de una petición por segundo bloquea durante varios minutos y responde con páginas de bloqueo de unos 440 bytes **con estado 200**. Ahora la descarga comprueba que el fichero empieza por `%PDF` y va a una petición cada 2–4 s.
+
+**Estimación antes del 26-oct** (a ~15 PDF por minuto, el ritmo que el servidor tolera):
+- XI–XIV: 491 diarios, unos 35 min de descarga. Mismo formato que la XV y el script vale tal cual. **Seguro**, con validación incluida en una sesión.
+- VIII–X: 909 diarios, aproximadamente 1 h. Hay que pasar a `R/05` el lector por columnas y validar con una muestra manual (precisión de la fórmula y de la atribución a la Presidencia). **Probable**, en una o dos sesiones.
+- I–VII: 1.802 diarios, unas 2 h y varios GB (los de I–V pesan de 2 a 9 MB). Lector por columnas más OCR antiguo: la exhaustividad depende de cuántas fórmulas rompa el OCR y habría que medirla a mano. **Posible**, pero con menos garantías y quizá con nota metodológica.
+
+**Falta**
+- Que el autor fije el rango; después, descargar y contar las legislaturas de ese rango.
+- Pasar a `R/05` el lector por columnas y el bucle por legislaturas (ahora tiene `leg <- 15` fijo).
+
+**Dudas para el autor**
+- Rango del Crispómetro (todas o desde la VIII) con la tabla de arriba. Desde la VIII la calidad es homogénea (texto nativo); de la I a la VII hay OCR antiguo.
+- La cifra confirmada de la XV cambia de 81/199 a **83/203** por las cuatro sesiones publicadas en partes. ¿De acuerdo con dar por buena la nueva?
+- `legislaturas.json`: Wikipedia pone a Batet como **PSC** (fue elegida por el Grupo Socialista). ¿En la pantalla final va PSC o PSOE? ¿Y con qué color?
+- `legislaturas.json` incluye la Constituyente («C»). Si el rango empieza en la I o en la VIII, sobra; la dejo por si A5 la usa.
+
 ## 2026-10-15 (3) — Encargos del 15-10: cotejo legal de A1, presidentes.json, color de UCD y data.json de A1
 
 **Hecho**
