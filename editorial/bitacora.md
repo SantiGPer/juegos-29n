@@ -2,6 +2,29 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-16 (2) — M1 ordenar y pistas, M6 agrupar; A2, A10 y A12 jugables
+
+**Hecho** (plan confirmado por el autor: motores y juegos sobre el `base.css` actual; el paso al diseño arcade va después)
+- `shared/motores/quiz.js` (M1) elige variante con `variante` en la configuración: `opciones` (la de A1, sin cambios de comportamiento), `ordenar` y `pistas`.
+  - **ordenar (A2):** rondas de hitos barajados; cada fila tiene dos botones de 44 px con triángulos de píxeles para subir y bajar. La fila movida se ilumina un instante en marcador y el foco sigue a la fila. Al pulsar «Comprobar orden», la ronda se muestra en orden cronológico con fecha, explicación, fuente y una casilla por hito: marcador si está en su sitio, medio relleno si está a una posición, vacía en otro caso. Nota con decimal («4,5 de 12»). Recibo con 🟨⬜, cuatro por línea.
+  - **pistas (A12):** presidente al azar; los siete botones siempre visibles en el orden del contenido. Cada fallo tacha la opción y revela la pista siguiente. Puntos = pistas que quedaban, incluida la que lo resolvió (de 5 a 1; 0 si se agotan). La pista de partida tiene cinco celdas: aspa por fallo y marcador por cada punto. Al terminar se ven las cinco pistas, el nombre completo, la nota (Suárez) y la fuente. El color del partido solo aparece como muestra junto a la pista 5. Etiqueta «Pista N de 5» y «Fin de la partida».
+- `shared/motores/agrupar.js` (M6, A10): rejilla de 4×4 barajada; se marcan cuatro ítems y se pulsa «Comprobar». Cuatro vidas con los iconos papeleta y nula de la maqueta. Un grupo acertado sale en un bloque de marcador con su nombre, ítems y explicación; la fuente de cada grupo solo aparece al terminar, para no empujar la rejilla. Si se pierde, los grupos sin resolver se muestran con borde. Cierre: «Resuelto» o «No resuelto», número de fallos y recibo con una fila por intento.
+- Compartido nuevo: `shared/util.js` (`el`, `baraja`, `casillas`) y `shared/iconos.js` (papeleta, nula y triángulos, de la maqueta arcade). `cierre.js` acepta un resultado sin total («Resuelto») y una puntuación con decimal. `base.css`: medio relleno, filas para ordenar, rejilla de 16, bloques de grupo, vidas, pistas y muestra de partido.
+- Juegos: `juegos/a02-cronologia-legislatura/`, `juegos/a10-agrupar-16/` y `juegos/a12-presidentle/` (este lee `data/presidentes.json`). Los `data.json` de A2 y A10 copian literalmente el contenido; en A2 las fechas van en ISO para poder ordenarlas y en pantalla salen como en el contenido.
+- Pruebas: arnés propio en el scratchpad (sin dependencias nuevas) que carga cada juego en un iframe, lo recorre entero pulsando botones y registra errores de JS y scroll horizontal. A1, A2, A10 y A12 terminan sin errores y sin scroll horizontal a 375 px. Capturas a 375 y 1280 px revisadas contra la lista negra. He comprobado a mano la puntuación de A2 en tres órdenes al azar.
+
+**Falta**
+- Paso 3 del plan: llevar `base.css` y los motores al diseño arcade (marcador de partida con tic, aspa y cursor, cifras de casillas, barra de acción fija, «Juegos 29N, día N» en el recibo, «Fin de la partida» en el cierre).
+- Los juegos nuevos no están enlazados en `index.html`. La serie se va descubriendo y el índice pasará a ser el selector de días.
+
+**Dudas para el autor**
+- A10, recibo: una fila por intento con un color por grupo, por orden de dificultad (🟨🟩🟦🟪). Ningún documento fija esos colores; es lo que da sentido a «una fila por intento». ¿Valen, o prefieres otra codificación?
+- A10: tras un intento fallido se desmarcan los cuatro ítems (así no se puede gastar dos vidas con el mismo intento) y sale «No es un grupo.». No hay aviso de «a uno de distancia» porque el contenido no lo pide.
+- A2: un hito con 0 puntos queda en celda vacía, igual que uno pendiente, como dice la decisión del 16-10. En la pista de partida no se distinguen hasta que avanza la ronda.
+- Pendientes de verificación según las propias fichas de fuentes de Cowork, aunque el contenido está cerrado:
+  - A2: la fila del apagón dice «[FUENTE PENDIENTE]», pero el contenido cita el Diari de Tarragona. Faltan además la cifra oficial de la dana y el Diario de Sesiones y el BOE de la amnistía.
+  - A10: falta la fuente del Congreso de Posada y los enlaces del BOE de las cuatro leyes.
+
 ## 2026-10-16 — A3: sondeo de legislaturas, legislaturas.json y sesiones de la XV que faltaban; correcciones de A1 y A12
 
 **Hecho**
