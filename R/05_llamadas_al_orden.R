@@ -9,19 +9,30 @@ leg <- 15
 cache <- file.path(tools::R_user_dir("juegos29n", "cache"), "ds", leg)
 dir.create(cache, recursive = TRUE, showWarnings = FALSE)
 
-url_ds <- \(n) sprintf("https://www.congreso.es/public_oficiales/L%d/CONG/DS/PL/DSCD-%d-PL-%d.PDF", leg, leg, n)
+url_ds <- \(n, parte = "") sprintf("https://www.congreso.es/public_oficiales/L%d/CONG/DS/PL/DSCD-%d-PL-%d%s.PDF", leg, leg, n, parte)
 
-# El servidor devuelve 403 sin User-Agent de navegador
-descarga <- \(n) {
-  f <- file.path(cache, basename(url_ds(n)))
+# El servidor devuelve 403 sin User-Agent de navegador, y a veces una página de bloqueo con estado 200
+descarga_url <- \(u) {
+  f <- file.path(cache, basename(u))
   if (file.exists(f)) return(f)
   tryCatch({
-    httr2::request(url_ds(n)) |>
+    httr2::request(u) |>
       httr2::req_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64)") |>
+      httr2::req_throttle(rate = 1 / 2, realm = "congreso") |>
       httr2::req_retry(max_tries = 3) |>
       httr2::req_perform(path = f)
+    stopifnot(readBin(f, "raw", 4) == charToRaw("%PDF"))
     f
   }, error = \(e) { unlink(f); NA_character_ })
+}
+
+# Las sesiones largas se publican partidas (DSCD-15-PL-23-C1.PDF, -C2…) en lugar del diario entero
+descarga <- \(n) {
+  f <- descarga_url(url_ds(n))
+  if (!is.na(f)) return(f)
+  partes <- character()
+  while (!is.na(p <- descarga_url(url_ds(n, str_c("-C", length(partes) + 1))))) partes <- c(partes, p)
+  partes
 }
 
 # La numeración tiene huecos: se para tras diez números seguidos sin diario
@@ -30,8 +41,8 @@ n <- 1
 fallos <- 0
 while (fallos < 10) {
   f <- descarga(n)
-  fallos <- if (is.na(f)) fallos + 1 else 0
-  ficheros <- c(ficheros, na.omit(f))
+  fallos <- if (length(f) == 0) fallos + 1 else 0
+  ficheros <- c(ficheros, f)
   n <- n + 1
 }
 
@@ -56,7 +67,8 @@ lee <- \(f) {
   marcas <- str_locate_all(texto, pagina)[[1]][, 1]
   ini <- str_locate_all(texto, orador)[[1]]
   tibble(
-    diario = as.integer(str_extract(basename(f), "\\d+(?=\\.PDF)")),
+    diario = as.integer(str_match(basename(f), "PL-(\\d+)")[, 2]),
+    parte = basename(f),
     sesion = sesion,
     fecha = fecha_iso(str_match(hojas[1], "celebrada el \\w+ (\\d{1,2} de \\w+ de \\d{4})")[, 2]),
     preside = str_to_title(str_match(hojas[1], "PRESIDENCIA DE (?:LA EXCMA\\. SRA\\. D\\.ª|EL EXCMO\\. SR\\. D\\.) (.+?) Sesión")[, 2]),
@@ -66,9 +78,14 @@ lee <- \(f) {
   )
 }
 
-# Solo sesiones plenarias: los diarios de la Diputación Permanente no llevan número de sesión plenaria
+# Solo sesiones plenarias: los diarios de la Diputación Permanente no llevan número de sesión plenaria.
+# Las partes -C2… de un diario toman la sesión, fecha y presidencia de la primera.
 intervenciones <- map(ficheros, lee, .progress = TRUE) |>
   list_rbind() |>
+  arrange(diario, parte) |>
+  group_by(diario) |>
+  fill(sesion, fecha, preside) |>
+  ungroup() |>
   filter(!is.na(sesion)) |>
   mutate(id = row_number())
 

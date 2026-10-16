@@ -2,11 +2,11 @@
   "legislatura": "XV",
   "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
   "url": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/",
-  "consulta": "2026-10-15",
+  "consulta": "2026-10-16",
   "metodo": "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria. Repeticiones de la fórmula a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos, menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente.",
-  "diarios": 200,
-  "sesiones_plenarias": 199,
-  "llamadas": 81,
+  "diarios": 204,
+  "sesiones_plenarias": 203,
+  "llamadas": 83,
   "actos": [
     {
       "diario": 16,
@@ -79,6 +79,18 @@
       "ordinal": null,
       "coincidencias": 1,
       "fragmento": "diputados, por favor, guarden silencio y dejen… (Protestas.—Aplausos.—El señor De Olano Vela pronuncia palabras que no se perciben). Señor De Olano, por favor, le llamo al orden. Silencio, por favor. Señores diputados, vamos a continuar"
+    },
+    {
+      "diario": 41,
+      "sesion": 39,
+      "fecha": "2024-05-22",
+      "pagina": 22,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Conde",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Conde, le llamo al orden por primera vez. Silencio. Tiene la palabra el señor Errejó"
     },
     {
       "diario": 43,
@@ -775,6 +787,18 @@
       "ordinal": "primera",
       "coincidencias": 1,
       "fragmento": "Un momento, señoría. Señor Abrines, le llamo al orden por primera vez. Conténgase y mantenga el respeto que merec"
+    },
+    {
+      "diario": 137,
+      "sesion": 132,
+      "fecha": "2025-09-17",
+      "pagina": 90,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sánchez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "señor ministro. Ruego respeto a la Cámara. (Un señor diputado pronuncia palabras que no se perciben). No sé quién es el que está gritando, pero… Señor Sánchez, le llamo al orden por primera vez. Y no se puede insultar en esta Cámara, si"
     },
     {
       "diario": 138,

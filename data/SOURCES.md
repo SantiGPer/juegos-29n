@@ -31,8 +31,8 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 
 - Script: `R/05_llamadas_al_orden.R`.
 - Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno y Diputación Permanente, XV legislatura, en PDF: `https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-<n>.PDF`.
-- PDF descargados el 14-10-2026; búsqueda de diarios nuevos repetida el 15-10-2026. Diarios del 1 al 210, sin los números 23, 41, 137 y 163, que no existen en el servidor.
-- Se usan los 200 diarios de sesión plenaria (199 sesiones plenarias distintas); los 6 de la Diputación Permanente quedan fuera.
+- PDF descargados el 14-10-2026; búsqueda de diarios nuevos repetida el 15 y el 16-10-2026. Diarios del 1 al 210. Los números 23, 41, 137 y 163 no están como `DSCD-15-PL-<n>.PDF`, sino como `DSCD-15-PL-<n>-C1.PDF` (sesiones plenarias 21, 39, 132 y 157). Se añadieron el 16-10-2026; antes faltaban en el conteo.
+- Se usan los 204 diarios de sesión plenaria (203 sesiones plenarias distintas: los diarios 1 y 9 llevan los dos «Sesión plenaria núm. 1»). Los 6 de la Diputación Permanente quedan fuera.
 - Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de repeticiones (bitácora del 15-10-2026).
 
 ## `legislaturas.json`
