@@ -35,6 +35,14 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Se usan los 200 diarios de sesión plenaria (199 sesiones plenarias distintas); los 6 de la Diputación Permanente quedan fuera.
 - Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de repeticiones (bitácora del 15-10-2026).
 
+## `legislaturas.json`
+
+- Script: `R/02_legislaturas.R`.
+- Fuente: Wikipedia en español, [Anexo:Presidentes del Congreso de los Diputados](https://es.wikipedia.org/wiki/Anexo:Presidentes_del_Congreso_de_los_Diputados), revisión fijada [175471021](https://es.wikipedia.org/w/index.php?title=Anexo:Presidentes_del_Congreso_de_los_Diputados&oldid=175471021), sección «Periodo democrático» y tabla de Felipe VI. Consultada el 16-10-2026.
+- Cada fila guarda las actas de elección de la presidencia en congreso.es que cita Wikipedia (Constituyente a XII). XIII, XIV y XV citan prensa, no actas del Congreso, y quedan con la lista vacía.
+- Partido tal como lo da la fuente: Batet figura como PSC.
+- Contraste con la fuente primaria: la portada de cada Diario de Sesiones del Pleno («PRESIDENCIA DE…»), revisada en la muestra del sondeo de A3 (bitácora del 16-10-2026).
+
 ## `presidentes.json`
 
 - Sin script: siete fichas hechas a mano, copiadas de `editorial/contenido/a12-presidentle.md` (pistas, nota y fuente) y de `editorial/fuentes/a12-presidentes.md` (fechas). Juego: A12 Presidentle.
