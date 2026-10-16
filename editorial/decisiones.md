@@ -105,3 +105,28 @@ Log fechado de decisiones sustantivas del autor. Claude Code lo lee al empezar c
   - LOREG: 69.7, 72, 75.1, 162.2, 162.3, 163.1.a, 163.1.c, 166.1.a y 169.3.
   - Constitución: 69.2, 99.3 y 99.5.
 - Cotejo legal de A1, salida: escribir la cita literal de cada artículo en editorial/fuentes/a01-cotejo-boe.md, con la URL y la fecha de descarga. No se tocan las preguntas: cualquier discrepancia se anota en la bitácora como duda para el autor. Los textos descargados no se versionan (caché fuera del repo, como los PDF del Diario).
+
+## 2026-10-16
+
+- A1, pregunta 9: la fuente es LOREG art. 163.1.d (desempate de cocientes), no el 163.1.c. Corregido en el contenido.
+- A1, pregunta 5: la fuente pasa a «LOREG, arts. 163.1.a y 96.5» (el 96.5 dice que el voto en blanco es válido). Corregido en el contenido.
+- A12, pista 3: González, «Licenciado en Derecho por la Universidad de Sevilla; abogado» (se quita «laboralista»). Aznar se queda con «inspector de Finanzas del Estado».
+- Calendario: A3 Crispómetro se publica el primer día de campaña (13-N), como gancho de la serie. Pasa a ser la prioridad de datos.
+- Índice: el texto de la ficha de cada día se escribe al cerrar cada juego, no antes.
+- Calendario: el reparto de los 15 días se ajusta conforme haya juegos terminados; no se fija por adelantado.
+
+### Encargos para Code (2026-10-16)
+
+- A3, prioridad: comprobar los Diarios de Sesiones del Pleno de las legislaturas anteriores a la XV, de la XIV hacia atrás, hasta donde se pueda. Por legislatura:
+  - si existe el patrón de URL y cuántos diarios hay;
+  - si el texto sale limpio, o es escaneado y necesita OCR;
+  - si se distinguen las intervenciones de la Presidencia;
+  - si la fórmula «llamo al orden» aparece igual;
+  - el número de sesiones plenarias (el denominador).
+  
+  Donde el PDF no sirva, valorar ParlaMint-ES. Con eso, una tabla en la bitácora para que el autor fije el rango (todas o desde la VIII), y una estimación de cuántas legislaturas se pueden contar antes del 26-oct. No se decide el rango en Code.
+- A3: preparar `legislaturas.json` con la presidencia del Congreso y su partido por legislatura, para la pantalla final.
+- A1: añadir al cotejo (`editorial/fuentes/a01-cotejo-boe.md`) la cita literal del art. 96.5 de la LOREG y regenerar el `data.json` con las fuentes corregidas de las preguntas 5 y 9.
+- A12: actualizar en `data/presidentes.json` la pista 3 de González.
+- A2: ordenar por rondas de 4 hitos, que el jugador ordena del más antiguo al más reciente. Puntuación por hito: 1 punto en la posición exacta dentro de la ronda, ½ a una posición de distancia y 0 en otro caso. Con esto se confirma la regla provisional de cercanía para A2.
+- A2: además de los 12 hitos fijos, entran cuatro: convocatoria (05-10-2026), incendios, Podemos deja Sumar (05-12-2023) y Ábalos en prisión (27-11-2025). Borrador en editorial/contenido/a02-cronologia-legislatura.md (16 hitos en 4 rondas, pendiente de revisión del autor).

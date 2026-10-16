@@ -38,5 +38,4 @@ Comprobación de sensibilidad: ningún tiempo cambia de mes si se usa la fecha d
 
 - La Moncloa solo da el año de nacimiento, salvo en Sánchez. Las fechas completas salen de CIDOB y de la Enciclopèdia Catalana, que coinciden con el año de La Moncloa.
 - La biografía de Calvo-Sotelo en La Moncloa dice «toma de posesión: marzo de 1981», pero el BOE (RD de 25-02) y CIDOB (promesa el 26-02) dan febrero. Se usa febrero; el tiempo en el cargo no cambia.
-- «Inspector de Finanzas del Estado» (Aznar): CIDOB habla de la oposición al cuerpo de inspectores de Finanzas del Estado. Antes de publicar, contrastar el nombre exacto del cuerpo.
-- «Abogado laboralista» (González): no está en el texto de La Moncloa ni en el extracto de CIDOB. Si no se confirma, la pista se queda en «Licenciado en Derecho por la Universidad de Sevilla».
+- Pista 3, decisión del autor (16-10-2026): González, «abogado»; Aznar, «inspector de Finanzas del Estado». Se descarta «abogado laboralista».

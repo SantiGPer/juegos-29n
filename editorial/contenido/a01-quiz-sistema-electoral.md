@@ -100,7 +100,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 **Explicación:** La barrera se mide en cada provincia y sobre los votos válidos, que incluyen el voto en blanco. En la práctica solo pesa en las circunscripciones grandes: en las pequeñas, el umbral real para sacar escaño es muy superior al 3 %.
 
-**Fuente:** LOREG, art. 163.1.a.
+**Fuente:** LOREG, arts. 163.1.a y 96.5.
 
 ---
 
@@ -172,7 +172,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 **Explicación:** El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.
 
-**Fuente:** LOREG, art. 163.1.c.
+**Fuente:** LOREG, art. 163.1.d.
 
 ---
 

@@ -1,6 +1,6 @@
 # A12 · Presidentle
 
-Estado: **cerrado** (2026-10-15). Listo para que Code lo pase a `data/presidentes.json`. En la pista 3 de González, «abogado laboralista» está pendiente de cotejo (ver fuentes).
+Estado: **cerrado** (2026-10-15). Listo para que Code lo pase a `data/presidentes.json`.
 
 - Motor: M1, variante pistas progresivas
 - Opciones fijas, siempre visibles y en este orden: Suárez, Calvo-Sotelo, González, Aznar, Rodríguez Zapatero, Rajoy, Sánchez
@@ -47,7 +47,7 @@ Formato fijo de las pistas:
 
 - **Pista 1:** Tenía 40 años al tomar posesión por primera vez.
 - **Pista 2:** Estuvo 13 años y 5 meses en el cargo.
-- **Pista 3:** Licenciado en Derecho por la Universidad de Sevilla; abogado laboralista.
+- **Pista 3:** Licenciado en Derecho por la Universidad de Sevilla; abogado.
 - **Pista 4:** Nació en la provincia de Sevilla.
 - **Pista 5:** PSOE, 1982.
 - **Fuente:** La Moncloa (biografía; RD 3285/1982); CIDOB (biografía).
