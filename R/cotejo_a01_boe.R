@@ -34,22 +34,31 @@ normas <- tibble(
     url = str_c("https://www.boe.es/buscar/act.php?id=", id)
   )
 
+# Numeración de preguntas del contenido del 16-10-2026 (tarde). Las citas que ya no usa ninguna
+# pregunta se conservan como «fuera desde el 16-10».
 citas <- tribble(
   ~corto,  ~bloque,                 ~articulo, ~apartado, ~letra, ~preguntas,
-  "LOREG", "asesentaynueve",        "69",      "7",       NA,     "3",
-  "LOREG", "asetentaydos",          "72",      NA,        NA,     "2",
-  "LOREG", "asetentaycinco",        "75",      "1",       NA,     "6",
-  "LOREG", "acientosesentaydos",    "162",     "2",       NA,     "1",
-  "LOREG", "acientosesentaydos",    "162",     "3",       NA,     "1",
-  "LOREG", "acientosesentaytres",   "163",     "1",       "a",    "5",
-  "LOREG", "anoventayseis",         "96",      "5",       NA,     "5",
-  "LOREG", "acientosesentaytres",   "163",     "1",       "c",    "9, cita anterior al 16-10",
-  "LOREG", "acientosesentaytres",   "163",     "1",       "d",    "9",
-  "LOREG", "acientosesentayseis",   "166",     "1",       "a",    "7",
-  "LOREG", "acientosesentaynueve",  "169",     "3",       NA,     "8",
+  "CE",    "a68",                   "68",      "1",       NA,     "1",
+  "LOREG", "acientosesentaydos",    "162",     "1",       NA,     "1",
+  "LOREG", "acientosesentaydos",    "162",     "2",       NA,     "2",
+  "LOREG", "acientosesentaydos",    "162",     "3",       NA,     "2",
+  "LOREG", "acincuentayuno",        "51",      NA,        NA,     "4",
+  "CE",    "a68",                   "68",      "3",       NA,     "5",
+  "LOREG", "acientosesentaytres",   "163",     "1",       "a",    "5 y 6",
+  "LOREG", "anoventayseis",         "96",      "5",       NA,     "6",
   "CE",    "a69",                   "69",      "2",       NA,     "7",
+  "LOREG", "acientosesentayseis",   "166",     "1",       NA,     "7",
+  "LOREG", "asetentaycinco",        "75",      "1",       NA,     "8",
+  "LOREG", "aveinticinco",          "25",      "1",       NA,     "9",
+  "LOREG", "aveintiseis",           "26",      "2",       NA,     "9",
+  "LOREG", "aveintisiete",          "27",      NA,        NA,     "9",
   "CE",    "a99",                   "99",      "3",       NA,     "10",
-  "CE",    "a99",                   "99",      "5",       NA,     "10"
+  "LOREG", "asesentaynueve",        "69",      "7",       NA,     "fuera desde el 16-10",
+  "LOREG", "asetentaydos",          "72",      NA,        NA,     "fuera desde el 16-10",
+  "LOREG", "acientosesentaytres",   "163",     "1",       "c",    "fuera desde el 16-10",
+  "LOREG", "acientosesentaytres",   "163",     "1",       "d",    "fuera desde el 16-10",
+  "LOREG", "acientosesentaynueve",  "169",     "3",       NA,     "fuera desde el 16-10",
+  "CE",    "a99",                   "99",      "5",       NA,     "fuera desde el 16-10"
 )
 
 # Párrafos de la versión vigente del bloque, sin título ni notas al pie.
@@ -93,7 +102,7 @@ resultado <- citas |>
 stopifnot(all(lengths(resultado$texto) > 0))
 
 seccion <- \(ref, preguntas, version, texto) str_c(
-  "### ", ref, " (pregunta ", preguntas, ")\n\n",
+  "### ", ref, if_else(str_starts(preguntas, "fuera"), str_c(" (", preguntas, ")"), str_c(" (pregunta", if_else(str_detect(preguntas, " y "), "s ", " "), preguntas, ")")), "\n\n",
   "Versión vigente publicada el ", fecha_es(version$fecha), " (", version$norma, ").\n\n",
   str_c("> ", texto, collapse = "\n>\n"), "\n"
 )
