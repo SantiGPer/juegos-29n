@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Prueba: M1 ordenar</title>
+</head>
+<body>
+<!-- Juega partidas de A2 con el motor real y comprueba que la lista resuelta de cada ronda
+     sale ordenada por fecha y con los hitos del data.json. Resultado en el título y en <pre>.
+     Uso: servir la raíz del repo y abrir /pruebas/ordenar.html (o chrome --headless --dump-dom). -->
+<main hidden></main>
+<pre id="log"></pre>
+<script type="module">
+import { iniciar } from '../shared/motores/quiz.js';
+
+const datos = await fetch('../juegos/a02-cronologia-legislatura/data.json').then(r => r.json());
+const main = document.querySelector('main');
+const iso = es => es.split('-').reverse().join('-');
+window.scrollTo = () => {};
+
+const partida = () => {
+  iniciar(datos, main);
+  return datos.rondas.map((r, n) => {
+    main.querySelector('.accion').click();
+    const fechas = [...main.querySelectorAll('.orden.resuelta .etiqueta')].map(p => iso(p.textContent));
+    const esperadas = r.hitos.map(h => h.fecha).sort();
+    main.querySelector('.accion').click();
+    return fechas.join() === esperadas.join() ? null : `ronda ${n + 1}: ${fechas.join(' ')} ≠ ${esperadas.join(' ')}`;
+  }).filter(Boolean);
+};
+
+const fallos = Array.from({ length: 100 }, partida).flat();
+document.querySelector('#log').textContent = fallos.length ? fallos.join('\n') : '100 partidas: todas las rondas resueltas en orden de fecha';
+document.title = fallos.length ? 'FALLO' : 'OK';
+</script>
+</body>
+</html>

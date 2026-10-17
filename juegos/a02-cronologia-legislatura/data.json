@@ -7,61 +7,67 @@
     {
       "hitos": [
         {
-          "texto": "Sánchez, investido presidente",
-          "fecha": "2023-11-16",
-          "explicacion": "Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.",
-          "fuente": "Diario de Sesiones del Congreso, 16-11-2023."
-        },
-        {
-          "texto": "La dana arrasa la provincia de Valencia",
-          "fecha": "2024-10-29",
-          "explicacion": "Las inundaciones dejaron 229 muertos, 221 de ellos en la Comunitat Valenciana. La gestión de la emergencia enfrentó al Gobierno central y a la Generalitat Valenciana.",
-          "fuente": "La Moncloa, balance de datos de la dana del 26-11-2024, 12:00 h."
-        },
-        {
-          "texto": "Apagón en toda la península",
-          "fecha": "2025-04-28",
-          "explicacion": "A las 12:33 un cero eléctrico dejó sin luz a la España peninsular, y también a Portugal. Fue el primero en la historia del sistema peninsular.",
-          "fuente": "Diari de Tarragona, 2026, «Qué produjo el apagón» (recoge los informes del MITECO, Red Eléctrica, ENTSO-E y CNMC)."
-        },
-        {
-          "texto": "Entrada masiva de migrantes en Ceuta",
-          "fecha": "2026-07-30",
-          "explicacion": "Decenas de miles de personas entraron en Ceuta en dos días, el 30 y el 31 de julio. El 25 de agosto el Gobierno declaró una situación de interés para la seguridad nacional.",
-          "fuente": "El Progreso, 07-10-2026; El Español, 26-08-2026."
-        }
-      ]
-    },
-    {
-      "hitos": [
-        {
           "texto": "Feijóo pierde su investidura",
           "fecha": "2023-09-29",
           "explicacion": "En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes, con un voto nulo. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.",
           "fuente": "Diario de Sesiones del Congreso, 29-09-2023; RTVC, 29-09-2023."
         },
         {
-          "texto": "El Congreso aprueba definitivamente la amnistía",
-          "fecha": "2024-05-30",
-          "explicacion": "El Congreso levantó el veto del Senado y aprobó la ley con mayoría absoluta. Se publicó como Ley Orgánica 1/2024, de 10 de junio.",
-          "fuente": "Diario de Sesiones del Congreso, 30-05-2024; Menorca.info, 30-05-2024; BOE, 11-06-2024 (LO 1/2024)."
+          "texto": "PP y PSOE pactan la renovación del CGPJ",
+          "fecha": "2024-06-25",
+          "explicacion": "El acuerdo se firmó en Bruselas, con mediación de la Comisión Europea, y desbloqueó un órgano con el mandato caducado desde 2018. Los nuevos vocales se eligieron en julio.",
+          "fuente": "Orain, 25-06-2024; RTVC, 25-06-2024; texto del acuerdo publicado por Newtral."
         },
         {
-          "texto": "Dimite Santos Cerdán",
-          "fecha": "2025-06-12",
-          "explicacion": "El secretario de Organización del PSOE dejó el cargo tras un informe de la Guardia Civil que le vinculaba con el cobro de comisiones. Era el número tres del partido.",
-          "fuente": "El Progreso, 07-10-2026."
+          "texto": "El Constitucional avala la amnistía",
+          "fecha": "2025-06-26",
+          "explicacion": "El pleno declaró constitucional la ley en lo esencial, con votos particulares en contra. Había pasado algo más de un año desde su aprobación en el Congreso.",
+          "fuente": "RTVC, 26-06-2025; Diario Constitucional, 27-06-2025."
+        },
+        {
+          "texto": "El Congreso tumba el decreto antidesahucios",
+          "fecha": "2026-02-26",
+          "explicacion": "PP, Vox y Junts derogaron el Real Decreto-ley 2/2026, que prorrogaba la suspensión de desahucios de familias vulnerables (177 votos en contra, 172 a favor). Era la segunda vez en un mes que caía la moratoria.",
+          "fuente": "BOE, 28-02-2026 (BOE-A-2026-4667); Idealista, 26-02-2026."
+        }
+      ]
+    },
+    {
+      "hitos": [
+        {
+          "texto": "Sánchez, investido presidente",
+          "fecha": "2023-11-16",
+          "explicacion": "Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.",
+          "fuente": "Diario de Sesiones del Congreso, 16-11-2023."
+        },
+        {
+          "texto": "Podemos deja el grupo de Sumar",
+          "fecha": "2023-12-05",
+          "explicacion": "Sus cinco diputados pasaron al Grupo Mixto menos de tres semanas después de la investidura. La coalición de Gobierno perdió así votos seguros en el Congreso.",
+          "fuente": "Wikipedia, XV legislatura de España (cronología); El Salto, «Podemos oficializa su ruptura con Sumar y pasa al Grupo Mixto»."
         },
         {
           "texto": "El Congreso tumba los decretos de vivienda",
           "fecha": "2026-10-02",
           "explicacion": "PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Sánchez anunció elecciones.",
           "fuente": "Civio, 02-10-2026."
+        },
+        {
+          "texto": "Sánchez anuncia elecciones para el 29 de noviembre",
+          "fecha": "2026-10-05",
+          "explicacion": "Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.",
+          "fuente": "La Moncloa, 05-10-2026; Real Decreto 806/2026."
         }
       ]
     },
     {
       "hitos": [
+        {
+          "texto": "España reconoce el Estado de Palestina",
+          "fecha": "2024-05-28",
+          "explicacion": "El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Sánchez lo anunció en una declaración institucional.",
+          "fuente": "La Moncloa, declaración institucional y rueda de prensa del Consejo de Ministros, 28-05-2024."
+        },
         {
           "texto": "Junts rompe con el PSOE",
           "fecha": "2025-10-27",
@@ -69,22 +75,16 @@
           "fuente": "Orain, 27-10-2025."
         },
         {
-          "texto": "El Supremo condena al fiscal general del Estado",
-          "fecha": "2025-11-20",
-          "explicacion": "Álvaro García Ortiz fue condenado por revelación de datos e inhabilitado. Dimitió tras conocerse el fallo.",
-          "fuente": "The Objective, 20-11-2025; Maldita, 21-11-2025; elDiario.es (dimisión)."
+          "texto": "Mazón anuncia su dimisión",
+          "fecha": "2025-11-03",
+          "explicacion": "Dejó la presidencia de la Generalitat Valenciana un año después de la dana. Le sucedió Juanfran Pérez Llorca, investido con los votos de PP y Vox.",
+          "fuente": "Maldita, 03-11-2025; RTVC, 03-11-2025; El Debate, 07-11-2025 (cese en el BOE)."
         },
         {
-          "texto": "Ábalos entra en prisión provisional",
-          "fecha": "2025-11-27",
-          "explicacion": "El juez del Supremo le envió a prisión junto a Koldo García por riesgo de fuga. Ábalos fue ministro de Transportes y secretario de Organización del PSOE.",
-          "fuente": "Orain, 27-11-2025; elDiario.es."
-        },
-        {
-          "texto": "Sánchez anuncia elecciones para el 29 de noviembre",
-          "fecha": "2026-10-05",
-          "explicacion": "Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.",
-          "fuente": "La Moncloa, 05-10-2026; Real Decreto 806/2026."
+          "texto": "Elecciones en Extremadura",
+          "fecha": "2025-12-21",
+          "explicacion": "Las ganó el PP de María Guardiola sin mayoría absoluta, con Vox como socio necesario. El PSOE se hundió en uno de sus feudos históricos.",
+          "fuente": "El Salto, 21-12-2025; El Debate, 21-12-2025."
         }
       ]
     }
