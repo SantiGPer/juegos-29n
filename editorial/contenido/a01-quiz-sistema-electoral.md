@@ -1,20 +1,36 @@
 # A1 · Quiz del sistema electoral
 
-Estado: **definitivo, pendiente de cotejo literal en el BOE** (2026-10-15). Sustituye a la plantilla provisional del 14-10. Code puede regenerar `data.json` ya; si el cotejo cambia algo, será la redacción y no la respuesta.
+Estado: **definitivo, selección del autor** (2026-10-16). Preguntas elegidas por el autor del catálogo `editorial/catalogos/a01-catalogo.md`: 1, 2, 5, 7, 8, 17, 25, 27, 28 y 34. Pendiente el cotejo literal de los artículos nuevos.
 
-- Motor: M1 (opción múltiple, explicación tras cada respuesta, opciones barajadas en pantalla)
-- Preguntas: 10, en este orden y con curva 3-4-3:
-  - fáciles: 1-3
-  - medias: 4-7
-  - difíciles: 8-10
+- Motor: M1 (opción múltiple, explicación tras cada respuesta, opciones barajadas en pantalla; las preguntas, en orden fijo)
+- Preguntas: 10, siempre en el orden de este fichero (decisión del autor, 16-10).
+- Dificultad: tres fáciles (1, 2, 4), cinco medias (3, 5, 6, 7, 8) y dos difíciles (9, 10); la mesa y la investidura se plantean en su versión difícil.
 - Cierre: puntuación sobre 10 + etiqueta de nivel
-- Fuente general: Constitución Española; Ley Orgánica 5/1985, del Régimen Electoral General (LOREG), texto consolidado del BOE (última actualización: 02-07-2026); Real Decreto 806/2026 de convocatoria. Verificación en `editorial/fuentes/a01-quiz.md`.
+- Fuente general: Constitución Española y LOREG, textos consolidados del BOE.
 
 Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos frases) / fuente.
 
 ---
 
 ## 1
+
+**Pregunta:** ¿Cuántos diputados tiene el Congreso?
+
+**Opciones:**
+- a) 300
+- b) 350
+- c) 400
+- d) 450
+
+**Correcta:** b
+
+**Explicación:** La Constitución fija una horquilla de entre 300 y 400 diputados. La LOREG la concreta en 350.
+
+**Fuente:** Constitución Española, art. 68.1; LOREG, art. 162.1.
+
+---
+
+## 2
 
 **Pregunta:** ¿Cuántos diputados tiene garantizados cada provincia antes de repartir el resto por población?
 
@@ -32,43 +48,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 ---
 
-## 2
-
-**Pregunta:** ¿Hasta qué día se puede pedir el voto por correo para el 29 de noviembre?
-
-**Opciones:**
-- a) 9 de noviembre
-- b) 19 de noviembre
-- c) 25 de noviembre
-- d) 28 de noviembre
-
-**Correcta:** b
-
-**Explicación:** La ley fija el plazo hasta el décimo día anterior a la votación, que este año cae en el 19 de noviembre. El 25 es otra fecha: el último día para enviar el sobre desde Correos.
-
-**Fuente:** LOREG, art. 72; La Moncloa, nota de prensa del Ministerio del Interior, 14-10-2026.
-
----
-
 ## 3
-
-**Pregunta:** ¿Desde qué día no se puede publicar ninguna encuesta electoral antes del 29 de noviembre?
-
-**Opciones:**
-- a) 13 de noviembre, inicio de la campaña
-- b) 22 de noviembre
-- c) 24 de noviembre
-- d) 28 de noviembre, jornada de reflexión
-
-**Correcta:** c
-
-**Explicación:** La ley prohíbe publicar y difundir sondeos durante los cinco días anteriores al de la votación: del 24 al 28 de noviembre. Hacerlos no está prohibido; publicarlos, sí.
-
-**Fuente:** LOREG, art. 69.7.
-
----
-
-## 4
 
 **Pregunta:** Respecto a 2023, una provincia gana un diputado el 29-N y otra lo pierde. ¿Cuáles?
 
@@ -86,7 +66,43 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 ---
 
+## 4
+
+**Pregunta:** ¿Cuántos días dura la campaña electoral?
+
+**Opciones:**
+- a) 10
+- b) 15
+- c) 21
+- d) 30
+
+**Correcta:** b
+
+**Explicación:** La campaña dura quince días y termina a las cero horas del día anterior a la votación, que es la jornada de reflexión. Esta serie publica un juego por cada uno de esos quince días.
+
+**Fuente:** LOREG, art. 51.
+
+---
+
 ## 5
+
+**Pregunta:** ¿Qué exige la Constitución al sistema electoral del Congreso?
+
+**Opciones:**
+- a) Que sea mayoritario
+- b) Que siga criterios de representación proporcional
+- c) Que reparta los escaños con el método D'Hondt
+- d) Una barrera mínima del 3 %
+
+**Correcta:** b
+
+**Explicación:** La Constitución solo exige criterios de representación proporcional en cada circunscripción. El método D'Hondt y la barrera del 3 % los fija la LOREG, que se puede cambiar sin reformar la Constitución.
+
+**Fuente:** Constitución Española, art. 68.3; LOREG, art. 163.1.
+
+---
+
+## 6
 
 **Pregunta:** Para optar a escaño en el Congreso, una candidatura necesita al menos el 3 % de…
 
@@ -101,24 +117,6 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 **Explicación:** La barrera se mide en cada provincia y sobre los votos válidos, que incluyen el voto en blanco. En la práctica solo pesa en las circunscripciones grandes: en las pequeñas, el umbral real para sacar escaño es muy superior al 3 %.
 
 **Fuente:** LOREG, arts. 163.1.a y 96.5.
-
----
-
-## 6
-
-**Pregunta:** Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?
-
-**Opciones:**
-- a) Perdieron el derecho de voto en las generales
-- b) Ya no tienen que solicitar previamente el voto
-- c) Solo pueden votar presencialmente en el consulado
-- d) Eligen sus propios diputados en una circunscripción exterior
-
-**Correcta:** b
-
-**Explicación:** La reforma suprimió el llamado voto rogado, que obligaba a pedir el voto antes de cada elección. Ahora la documentación se envía de oficio a los inscritos en el CERA.
-
-**Fuente:** Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG (art. 75).
 
 ---
 
@@ -142,55 +140,55 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 ## 8
 
-**Pregunta:** Un partido que no obtuvo escaño en ninguna Cámara en 2023 quiere presentarse por Madrid. ¿Qué necesita?
+**Pregunta:** Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?
 
 **Opciones:**
-- a) Nada: basta con registrar la candidatura
-- b) Firmas de al menos el 0,1 % de los electores de la circunscripción
-- c) Firmas de al menos el 1 % de los electores de la circunscripción
-- d) Un depósito que se devuelve si obtiene escaño
+- a) Perdieron el derecho de voto en las generales
+- b) Ya no tienen que solicitar previamente el voto
+- c) Solo pueden votar presencialmente en el consulado
+- d) Eligen sus propios diputados en una circunscripción exterior
 
 **Correcta:** b
 
-**Explicación:** Desde 2011, los partidos sin representación en las elecciones anteriores deben reunir firmas del 0,1 % del censo de cada circunscripción en la que se presentan. Cada elector solo puede avalar una candidatura.
+**Explicación:** La reforma suprimió el llamado voto rogado, que obligaba a pedir el voto antes de cada elección. Ahora la documentación se envía de oficio a los inscritos en el CERA.
 
-**Fuente:** LOREG, art. 169.3.
+**Fuente:** Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG (art. 75).
 
 ---
 
 ## 9
 
-**Pregunta:** En el reparto por D'Hondt, dos candidaturas empatan en el cociente que decide el último escaño. ¿Quién se lo lleva?
+**Pregunta:** ¿Entre quiénes se sortean los miembros de una mesa electoral?
 
 **Opciones:**
-- a) La que tiene más votos en total en la circunscripción
-- b) La que encabeza un candidato de más edad
-- c) Se decide por sorteo
-- d) La que obtuvo más escaños en las elecciones anteriores
+- a) Entre todos los electores de la sección
+- b) Entre los electores de la sección menores de 70 años que sepan leer y escribir
+- c) Entre los voluntarios inscritos en el ayuntamiento
+- d) Entre los electores de la sección con estudios universitarios
 
-**Correcta:** a
+**Correcta:** b
 
-**Explicación:** El empate de cocientes se resuelve a favor de la candidatura con más votos totales. Solo si también empatan en votos se recurre al sorteo para el primer empate, y los siguientes se alternan.
+**Explicación:** La mesa, con un presidente y dos vocales, se sortea entre los censados de la sección menores de 70 años que sepan leer y escribir; al presidente se le exige además una titulación mínima. El cargo es obligatorio.
 
-**Fuente:** LOREG, art. 163.1.d.
+**Fuente:** LOREG, arts. 25.1, 26.2 y 27.
 
 ---
 
 ## 10
 
-**Pregunta:** Si ningún candidato logra la investidura, ¿cuándo se disuelven las Cortes y se convocan nuevas elecciones?
+**Pregunta:** Si el candidato no logra la mayoría absoluta en la primera votación de investidura, ¿qué pasa?
 
 **Opciones:**
-- a) Tras tres votaciones fallidas
-- b) Un mes después de la primera votación
-- c) Dos meses después de la primera votación
-- d) Cuando lo decida el Rey tras consultar a los grupos
+- a) Se vota de nuevo 48 horas después y basta la mayoría simple
+- b) Se vota de nuevo una semana después y sigue haciendo falta la absoluta
+- c) El Rey propone de inmediato a otro candidato
+- d) Se convocan elecciones
 
-**Correcta:** c
+**Correcta:** a
 
-**Explicación:** Si en dos meses desde la primera votación nadie obtiene la confianza del Congreso, el Rey disuelve ambas Cámaras y convoca elecciones. En la primera votación se exige mayoría absoluta y, en la segunda, cuarenta y ocho horas después, basta la simple.
+**Explicación:** La segunda votación llega cuarenta y ocho horas después y en ella basta con más síes que noes. Solo si también fracasa se tramitan nuevas propuestas.
 
-**Fuente:** Constitución Española, art. 99.3 y 99.5.
+**Fuente:** Constitución Española, art. 99.3.
 
 ---
 

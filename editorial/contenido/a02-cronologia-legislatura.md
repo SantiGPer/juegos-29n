@@ -1,6 +1,6 @@
 # A2 · Cronología de la legislatura
 
-Estado: **cerrado** (2026-10-16). Listo para que Code lo pase a JSON. Fuentes primarias del Congreso (Diarios de Sesiones) por enlazar en la verificación.
+Estado: **selección del autor** (2026-10-16), hitos 2, 5, 6, 13, 16, 21, 24, 25, 29, 31, 36 y 37 de `editorial/catalogos/a02-catalogo.md`. Reparto en rondas propuesto por Cowork y aprobado por el autor. Cerrado.
 
 - Motor: M1, variante ordenar (dos botones de 44 px por fila con triángulos para subir y bajar; arrastrar nunca es obligatorio)
 - 12 hitos de la XV legislatura en 3 rondas de 4. Las rondas van de más a menos separación entre fechas.
@@ -14,70 +14,68 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ---
 
-## Ronda 1 — un año entre hitos
-
-### Sánchez, investido presidente
-- **Fecha:** 16-11-2023
-- **Explicación:** Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.
-- **Fuente:** Diario de Sesiones del Congreso, 16-11-2023.
-
-### La dana arrasa la provincia de Valencia
-- **Fecha:** 29-10-2024
-- **Explicación:** Las inundaciones dejaron 229 muertos, 221 de ellos en la Comunitat Valenciana. La gestión de la emergencia enfrentó al Gobierno central y a la Generalitat Valenciana.
-- **Fuente:** La Moncloa, balance de datos de la dana del 26-11-2024, 12:00 h.
-
-### Apagón en toda la península
-- **Fecha:** 28-04-2025
-- **Explicación:** A las 12:33 un cero eléctrico dejó sin luz a la España peninsular, y también a Portugal. Fue el primero en la historia del sistema peninsular.
-- **Fuente:** Diari de Tarragona, 2026, «Qué produjo el apagón» (recoge los informes del MITECO, Red Eléctrica, ENTSO-E y CNMC).
-
-### Entrada masiva de migrantes en Ceuta
-- **Fecha:** 30-07-2026
-- **Explicación:** Decenas de miles de personas entraron en Ceuta en dos días, el 30 y el 31 de julio. El 25 de agosto el Gobierno declaró una situación de interés para la seguridad nacional.
-- **Fuente:** El Progreso, 07-10-2026; El Español, 26-08-2026.
-
-## Ronda 2
+## Ronda 1 — más de un año entre hitos
 
 ### Feijóo pierde su investidura
 - **Fecha:** 29-09-2023
 - **Explicación:** En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes, con un voto nulo. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.
 - **Fuente:** Diario de Sesiones del Congreso, 29-09-2023; RTVC, 29-09-2023.
 
-### El Congreso aprueba definitivamente la amnistía
-- **Fecha:** 30-05-2024
-- **Explicación:** El Congreso levantó el veto del Senado y aprobó la ley con mayoría absoluta. Se publicó como Ley Orgánica 1/2024, de 10 de junio.
-- **Fuente:** Diario de Sesiones del Congreso, 30-05-2024; Menorca.info, 30-05-2024; BOE, 11-06-2024 (LO 1/2024).
+### PP y PSOE pactan la renovación del CGPJ
+- **Fecha:** 25-06-2024
+- **Explicación:** El acuerdo se firmó en Bruselas, con mediación de la Comisión Europea, y desbloqueó un órgano con el mandato caducado desde 2018. Los nuevos vocales se eligieron en julio.
+- **Fuente:** Orain, 25-06-2024; RTVC, 25-06-2024; texto del acuerdo publicado por Newtral.
 
-### Dimite Santos Cerdán
-- **Fecha:** 12-06-2025
-- **Explicación:** El secretario de Organización del PSOE dejó el cargo tras un informe de la Guardia Civil que le vinculaba con el cobro de comisiones. Era el número tres del partido.
-- **Fuente:** El Progreso, 07-10-2026.
+### El Constitucional avala la amnistía
+- **Fecha:** 26-06-2025
+- **Explicación:** El pleno declaró constitucional la ley en lo esencial, con votos particulares en contra. Había pasado algo más de un año desde su aprobación en el Congreso.
+- **Fuente:** RTVC, 26-06-2025; Diario Constitucional, 27-06-2025.
+
+### El Congreso tumba el decreto antidesahucios
+- **Fecha:** 26-02-2026
+- **Explicación:** PP, Vox y Junts derogaron el Real Decreto-ley 2/2026, que prorrogaba la suspensión de desahucios de familias vulnerables (177 votos en contra, 172 a favor). Era la segunda vez en un mes que caía la moratoria.
+- **Fuente:** BOE, 28-02-2026 (BOE-A-2026-4667); Idealista, 26-02-2026.
+
+## Ronda 2 — parejas cercanas, lejos entre sí
+
+### Sánchez, investido presidente
+- **Fecha:** 16-11-2023
+- **Explicación:** Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.
+- **Fuente:** Diario de Sesiones del Congreso, 16-11-2023.
+
+### Podemos deja el grupo de Sumar
+- **Fecha:** 05-12-2023
+- **Explicación:** Sus cinco diputados pasaron al Grupo Mixto menos de tres semanas después de la investidura. La coalición de Gobierno perdió así votos seguros en el Congreso.
+- **Fuente:** Wikipedia, XV legislatura de España (cronología); El Salto, «Podemos oficializa su ruptura con Sumar y pasa al Grupo Mixto».
 
 ### El Congreso tumba los decretos de vivienda
 - **Fecha:** 02-10-2026
 - **Explicación:** PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Sánchez anunció elecciones.
 - **Fuente:** Civio, 02-10-2026.
 
-## Ronda 3 — un mes entre hitos
+### Sánchez anuncia elecciones para el 29 de noviembre
+- **Fecha:** 05-10-2026
+- **Explicación:** Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.
+- **Fuente:** La Moncloa, 05-10-2026; Real Decreto 806/2026.
+
+## Ronda 3 — semanas entre hitos
+
+### España reconoce el Estado de Palestina
+- **Fecha:** 28-05-2024
+- **Explicación:** El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Sánchez lo anunció en una declaración institucional.
+- **Fuente:** La Moncloa, declaración institucional y rueda de prensa del Consejo de Ministros, 28-05-2024.
 
 ### Junts rompe con el PSOE
 - **Fecha:** 27-10-2025
 - **Explicación:** Puigdemont anunció que su partido pasaba a la oposición. Sin sus siete votos, el Gobierno perdió la mayoría de la investidura.
 - **Fuente:** Orain, 27-10-2025.
 
-### El Supremo condena al fiscal general del Estado
-- **Fecha:** 20-11-2025
-- **Explicación:** Álvaro García Ortiz fue condenado por revelación de datos e inhabilitado. Dimitió tras conocerse el fallo.
-- **Fuente:** The Objective, 20-11-2025; Maldita, 21-11-2025; elDiario.es (dimisión).
+### Mazón anuncia su dimisión
+- **Fecha:** 03-11-2025
+- **Explicación:** Dejó la presidencia de la Generalitat Valenciana un año después de la dana. Le sucedió Juanfran Pérez Llorca, investido con los votos de PP y Vox.
+- **Fuente:** Maldita, 03-11-2025; RTVC, 03-11-2025; El Debate, 07-11-2025 (cese en el BOE).
 
-### Ábalos entra en prisión provisional
-- **Fecha:** 27-11-2025
-- **Explicación:** El juez del Supremo le envió a prisión junto a Koldo García por riesgo de fuga. Ábalos fue ministro de Transportes y secretario de Organización del PSOE.
-- **Fuente:** Orain, 27-11-2025; elDiario.es.
-
-### Sánchez anuncia elecciones para el 29 de noviembre
-- **Fecha:** 05-10-2026
-- **Explicación:** Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.
-- **Fuente:** La Moncloa, 05-10-2026; Real Decreto 806/2026.
-
----
+### Elecciones en Extremadura
+- **Fecha:** 21-12-2025
+- **Explicación:** Las ganó el PP de María Guardiola sin mayoría absoluta, con Vox como socio necesario. El PSOE se hundió en uno de sus feudos históricos.
+- **Fuente:** El Salto, 21-12-2025; El Debate, 21-12-2025.

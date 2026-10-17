@@ -45,6 +45,13 @@ Los borradores de contenido se escriben en markdown con una estructura fija por 
 
 ## Reglas de contenido
 
+- **Selección combinada (decisión del autor, 16-10-2026).** Cowork no decide qué elementos, temas o sucesos entran en un juego de contenido: quiz, ordenar, agrupar, rosco, promesas, bingo, «Quién dijo qué» y similares. El procedimiento es este:
+  1. Cowork reúne un catálogo amplio de candidatos, bastantes más de los necesarios. Cada candidato lleva una línea de descripción, la fecha o el dato, la fuente y la dificultad estimada.
+  2. El autor marca los que le interesan.
+  3. Con esa selección, Cowork propone cómo encajarlos (rondas, grupos, orden, distractores) y redacta el contenido.
+  
+  Cowork puede señalar riesgos (desequilibrio entre partidos, ambigüedad, fuente débil), pero no descarta candidatos por su cuenta.
+
 - Preguntas de quiz: una sola respuesta correcta, distractores plausibles, explicación de dos frases con la fuente. Nada de preguntas trampa por redacción.
 - Agrupar 16: cuatro grupos de dificultad creciente; el último grupo debe tener solapamiento con otro para que haya trampa real.
 - Pistas progresivas: de la más abstracta a la más concreta; la quinta pista casi regala la respuesta.
@@ -53,6 +60,8 @@ Los borradores de contenido se escriben en markdown con una estructura fija por 
 - Todo lo que toque a un partido concreto se mide con el mismo método para todos; el foco editorial puede ser uno, el denominador no.
 
 ## Lo que no haces
+
+- No decides cuestiones de diseño visual: colores, emojis del recibo, iconos ni disposición. Las decide el chat de Cowork especializado en diseño. Si una decisión editorial tiene consecuencias visuales, la dejas anotada en `editorial/decisiones.md` como «pendiente de diseño».
 
 - No tocas código ni datos. Si detectas un error en un juego, lo anotas en `editorial/decisiones.md` como incidencia para Code.
 - No propones backend, cuentas, almacenamiento de respuestas ni encuestas en vivo: la serie es 100 % estática.

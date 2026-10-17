@@ -100,7 +100,11 @@ Revisión contra la lista negra: sin fuente de píxel, sin neón, sin CRT, sin p
 Detalle en `editorial/decisiones.md` (15-10-2026) y `docs/maquetas/maqueta-paleta-v5.html` (variante A).
 
 - **Senado `#dcc7a1`**: segundo papel, el de la papeleta sepia del Senado. Se usa en los días cerrados, en las superficies de la serie y en la vista previa. Nunca de fondo de página ni en gráficos con colores de partido.
-- **Señal `#ff5f1f`**: solo el relleno del bocadillo de debate, con contorno en tinta.
+- **Señal `#ff5f1f`**: el relleno del bocadillo de debate, con contorno en tinta, y el color del grupo 3 de A10 (excepción aprobada el 16-10-2026). Nada más.
 - Tokens nuevos en `:root`: `--senado` y `--senal`.
 
 Revisión contra la lista negra: ni crema de fondo, ni serif, ni terracota. Los dos colores nuevos tienen un papel y un motivo.
+
+## Colores de grupo de A10 (aprobado por el autor el 16-10-2026)
+
+Los cuatro grupos usan la paleta de la serie, de más fácil a más difícil: marcador 🟨, senado 🟫, señal 🟧 y tinta ⬛. No se usan tonos de partido. Los tokens van en `:root` como `--grupo-1` a `--grupo-4`. Detalle en `editorial/decisiones.md`, 16-10-2026 (diseño).

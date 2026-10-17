@@ -158,3 +158,56 @@ Log fechado de decisiones sustantivas del autor. Claude Code lo lee al empezar c
 - A3, validación del OCR de I–VII: muestra de 20 sesiones leídas a mano frente al conteo del script, con el umbral del 95 % fijado arriba. Solo después de cerrar VIII–XV.
 - A12, A2 y A10 jugables para el 26-oct, con el contenido de editorial/contenido/.
 - Capturas a 375 px: usar la emulación de viewport de Playwright (el Chromium preinstalado) en lugar del tamaño de ventana de Chrome headless.
+- Incidencia A2 (16-10, pendiente de captura del autor): en una partida de prueba, el autor vio en la ronda 2, después de pulsar «Comprobar orden», la solución con los ítems 2 y 3 invertidos. Cowork ha revisado el contenido, el data.json y el motor (`ordenar` en shared/motores/quiz.js) y no encuentra la causa: el orden correcto sale de ordenar por fecha y los datos están bien. Encargo para Code:
+  - intentar reproducirlo, incluida una versión antigua en caché de Pages;
+  - añadir una comprobación automática de que la lista resuelta de cada ronda sale ordenada por fecha;
+  - anotar el resultado en la bitácora.
+- Método de contenido: en los juegos de contenido (quiz, ordenar, agrupar, rosco, promesas, bingo, «Quién dijo qué» y similares), Cowork presenta un catálogo amplio de candidatos y el autor elige cuáles entran. Cowork no decide la selección. El procedimiento está en editorial/COWORK.md.
+- A1, selección del autor sobre el catálogo (editorial/catalogos/a01-catalogo.md): 1, 2, 7, 8, 17, 18, 25, 27, 28 y 34 (corregida por el autor: entra la 28, días de campaña, y sale la 19, senadores autonómicos). Sustituye a la selección del 15-10. Salen los ganchos del 29-N (escaños de Madrid y Cádiz, voto por correo, veda de encuestas), el desempate de D'Hondt, las firmas y la repetición electoral. La curva pasa a 4-4-2 (cuatro fáciles, cuatro medias, dos difíciles); la mesa electoral y la investidura se plantean en su versión difícil (requisitos del sorteo; segunda votación a las 48 horas). Niveles del cierre sin cambios.
+- A1, encargo para Code:
+  - regenerar juegos/a01-quiz-sistema-electoral/data.json desde el contenido nuevo;
+  - ampliar el cotejo literal (editorial/fuentes/a01-cotejo-boe.md) con los artículos nuevos: CE 68.1 y 68.3, y LOREG 51, 162.1, 166.1, 25.1, 26.2 y 27;
+  - anotar en la bitácora cualquier discrepancia; no se tocan las preguntas.
+- A1 (corrige la selección anterior): sale la 18 del catálogo (Senado, votar a candidatos de partidos distintos) y entra la 5 (Madrid gana un escaño y Cádiz lo pierde). Selección final: 1, 2, 5, 7, 8, 17, 25, 27, 28 y 34. Ya no hay curva de dificultad fija.
+- A1: las preguntas salen en el orden fijo del fichero de contenido; solo se barajan las opciones. (El autor descartó el orden aleatorio de las preguntas el mismo 16-10: no hay encargo para Code sobre esto.)
+- A2, selección del autor sobre el catálogo (editorial/catalogos/a02-catalogo.md): 2, 5, 6, 13, 16, 21, 24, 25, 29, 31, 36 y 37. Sustituye a la selección anterior. Sale la aprobación de la amnistía (14) y entran las elecciones en Extremadura (29).
+- A2, rondas aprobadas:
+  - Ronda 1: Feijóo, CGPJ, el Constitucional avala la amnistía y el decreto antidesahucios.
+  - Ronda 2: investidura de Sánchez, Podemos, decretos de vivienda y anuncio de elecciones.
+  - Ronda 3: Palestina, Junts, Mazón y Extremadura.
+- A2, encargo para Code: regenerar juegos/a02-cronologia-legislatura/data.json desde el contenido nuevo.
+- A10, selección del autor sobre el catálogo (editorial/catalogos/a10-catalogo.md): grupos A (presidieron el Congreso), J (apodos de leyes), H (ministros que después presidieron su comunidad) y D (perdieron una votación de investidura). Ítems:
+  - A: Armengol, Pastor, Posada, Bono.
+  - J: Mordaza, Wert, Solo sí es sí, Zerolo.
+  - H: Aguirre, Cascos, Montilla, Illa.
+  - D: Calvo-Sotelo, Zapatero, Rajoy, Feijóo.
+  
+  Sustituye a la edición del 16-10 por la mañana.
+- A10, encargo para Code: regenerar juegos/a10-agrupar-16/data.json desde el contenido nuevo, con el orden de dificultad A, J, H, D.
+- A10: el recibo lleva un color por grupo, en excepción al 🟨⬜ del resto de la serie. Qué colores o emojis concretos son y cómo encajan con la paleta lo decide el chat de Cowork de diseño, no el editorial. Hasta entonces, M6 mantiene 🟨🟩🟦🟪 como provisional.
+
+## 2026-10-16 (diseño)
+
+- Diseño, A10: color por grupo tomado de la paleta propia de la serie, de más fácil a más difícil. No se usan emojis ni tonos de partido: 🟩, 🟦, 🟪 y 🟥 leerían un grupo como «el del PP», «el de Vox», etc.
+  - Grupo 1: marcador `#f2c200`, 🟨.
+  - Grupo 2: senado `#dcc7a1`, 🟫.
+  - Grupo 3: señal `#ff5f1f`, 🟧.
+  - Grupo 4: tinta `#000000`, ⬛.
+  - El orden es el de dificultad del contenido (A10: 1 A, 2 J, 3 H, 4 D).
+- Diseño: excepción a la regla de señal. Además del relleno del bocadillo, señal se usa solo como color del grupo 3 de A10. Ningún otro juego ni elemento la usa.
+- Diseño, A10, encargo para Code:
+  - **Tokens.** En `shared/base.css`, `--grupo-1: var(--marcador)`, `--grupo-2: var(--senado)`, `--grupo-3: var(--senal)` y `--grupo-4: var(--tinta)`. Si `--senado` y `--senal` no existen aún, se crean con los valores de arriba. Solo los usa M6.
+  - **Recibo.** En `shared/motores/agrupar.js`, `emoji = ['🟨', '🟫', '🟧', '⬛']`, que sustituye al provisional 🟨🟩🟦🟪. Se mantiene una fila por intento.
+  - **Grupo resuelto.** Bloque con fondo del color de su grupo, sin borde. En los grupos 1 a 3, todo el texto del bloque (nombre, ítems, explicación y fuente) va en tinta; en el grupo 4 va en papel. Contrastes: tinta sobre marcador ≈ 11:1, sobre senado ≈ 12:1 y sobre señal ≈ 6,9:1; papel sobre tinta 21:1.
+  - **Grupo sin resolver** al perder: se mantiene en papel con borde de 1 px tinta y lleva delante del nombre una muestra cuadrada de su color (0,8 em, borde de 1 px tinta, la misma pieza que `.muestra-partido`). Así el recibo se puede leer contra la pantalla.
+  - **Rejilla en juego.** Sin colores de grupo mientras se juega: los ítems siguen en papel y el seleccionado se invierte a tinta.
+  - Captura a 375 px con los cuatro grupos resueltos y con una partida perdida, revisada contra la lista negra antes del commit.
+- A4, ámbito: solo promesas del Gobierno: programas de PSOE y Sumar de 2023, acuerdo de coalición y acuerdos de investidura.
+- A4, definiciones aprobadas:
+  - **Cumplida:** se aprobó la norma o se ejecutó la medida.
+  - **Bloqueada:** una votación del Congreso la tumbó, documentada con fecha y resultado.
+  - **Incumplida:** no se aprobó y no hubo votación en contra.
+- A4: las promesas cumplidas a medias no entran.
+- A4: reparto equilibrado de respuestas, unas cuatro de cada tipo.
+- A4, selección del autor sobre el catálogo (editorial/catalogos/a04-catalogo.md): 1, 4, 6, 7, 8, 10, 11, 12, 13, 15, 22 y 26. Borrador en editorial/contenido/a04-promesas-2023.md.
+- A4, propuesta de Cowork pendiente de confirmar: las opciones no se barajan (Cumplida, Incumplida, Bloqueada, siempre en ese orden).
