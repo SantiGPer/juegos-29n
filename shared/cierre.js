@@ -1,31 +1,41 @@
-const fecha = () =>
-  new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }).replaceAll('/', '-');
+import { icono } from './iconos.js';
+import { accion, celdas, cifra, el, monta } from './util.js';
 
-export function cerrar({ juego, puntuacion, total, nivel, cuadricula, fuente }, contenedor) {
+// pista: { estados, porGrupo } de la partida, que queda fija bajo la cifra
+export function cerrar({ juego, dia, puntuacion, total, nivel, cuadricula, fuente, pista }, contenedor) {
   const resultado = total === undefined ? puntuacion : `${puntuacion}/${total}`;
-  const texto = [juego, fecha(), resultado, cuadricula, location.origin + location.pathname]
+  const texto = [`Juegos 29N, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
     .filter(Boolean)
     .join('\n');
 
-  contenedor.innerHTML = `
-    <h1></h1>
-    <p class="cifra${total === undefined ? ' palabra' : ''}"><span class="marca"></span>${total === undefined ? '' : ` de ${total}`}</p>
-    <p class="nivel"></p>
-    <p class="recibo"></p>
-    <p><button class="accion">Copiar resultado</button></p>
-    <p class="fuente"></p>
-    <p><a href="../../">Más juegos de la serie</a></p>`;
+  const final = total === undefined
+    ? el('p', { className: 'cifra palabra' }, el('span', { className: 'marca', textContent: puntuacion }))
+    : el('div', { className: 'final' },
+      el('span', { className: 'banda' }, cifra(String(puntuacion), 8)),
+      cifra(`/${total}`, 4),
+      el('span', { className: 'oculto', textContent: `${puntuacion} de ${total}` }));
 
-  const pinta = (selector, valor) => { contenedor.querySelector(selector).textContent = valor; };
-  pinta('h1', juego);
-  pinta('.marca', puntuacion);
-  pinta('.nivel', nivel ?? '');
-  pinta('.recibo', texto);
-  pinta('.fuente', `Fuente: ${fuente}`);
+  const manana = el('p', { className: 'manana' }, el('span'), 'Mañana, otro juego.');
+  manana.firstChild.innerHTML = icono('candado', 2, 'var(--lapiz)');
 
-  const boton = contenedor.querySelector('button');
-  boton.onclick = () => Promise.resolve()
+  const copiar = accion('Copiar resultado', () => Promise.resolve()
     .then(() => navigator.clipboard.writeText(texto))
-    .then(() => { boton.textContent = 'Resultado copiado'; })
-    .catch(() => { boton.textContent = 'Selecciona y copia el texto'; });
+    .then(() => {
+      copiar.textContent = 'Copiado';
+      setTimeout(() => { copiar.textContent = 'Copiar resultado'; }, 2000);
+    })
+    .catch(() => { copiar.textContent = 'Selecciona y copia el texto'; }));
+
+  monta(contenedor, [
+    el('h1', { textContent: juego }),
+    el('p', { className: 'etiqueta', textContent: 'Fin de la partida' }),
+    final,
+    ...(pista ? [celdas(pista.estados, [], pista.porGrupo)] : []),
+    ...(nivel ? [el('p', { className: 'etiqueta', textContent: nivel })] : []),
+    el('p', { className: 'recibo', textContent: texto }),
+    el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
+    manana,
+    el('p', {}, el('a', { href: '../../', textContent: 'Todos los juegos' })),
+  ], copiar);
+  scrollTo(0, 0);
 }

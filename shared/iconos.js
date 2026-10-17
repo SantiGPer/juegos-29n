@@ -2,6 +2,10 @@
 const matrices = {
   papeleta: ['XXXXXXXX..', 'X......XX.', 'X......X.X', 'X.XXXX.XXX', 'X........X', 'X.XXXXXX.X', 'X........X', 'X.XXXX...X', 'X........X', 'XXXXXXXXXX'],
   nula: ['XXXXXXXXXX', 'X........X', 'X.X....X.X', 'X..X..X..X', 'X...XX...X', 'X...XX...X', 'X..X..X..X', 'X.X....X.X', 'X........X', 'XXXXXXXXXX'],
+  urna: ['..XXXXXX..', '..X....X..', '..X.XX.X..', 'XXXXXXXXXX', 'X........X', 'X.XXXXXX.X', 'X........X', 'X........X', 'X........X', 'XXXXXXXXXX'],
+  candado: ['...XXXX...', '..X....X..', '..X....X..', '..X....X..', '.XXXXXXXX.', '.X......X.', '.X..XX..X.', '.X..XX..X.', '.X......X.', '.XXXXXXXX.'],
+  tic: ['.......', '......X', '.....X.', 'X...X..', '.X.X...', '..X....', '.......'],
+  aspa: ['.......', '.X...X.', '..X.X..', '...X...', '..X.X..', '.X...X.', '.......'],
   subir: ['..X..', '.XXX.', 'XXXXX'],
   bajar: ['XXXXX', '.XXX.', '..X..'],
 };

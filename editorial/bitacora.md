@@ -2,6 +2,39 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-17 (2) — Paso 1 del orden de trabajo: base.css y motores al diseño arcade
+
+**Hecho** (plan confirmado por el autor)
+- `shared/base.css`:
+  - Tokens `--s1…--s6`, título a 1.75 rem y pregunta a 1.375 rem en 800.
+  - Tres zonas: `.cuerpo` y `.barra`. La barra va fija abajo (sticky, con `env(safe-area-inset-bottom)`). Desde 768 px va tras el contenido y la columna de 38 em se centra.
+  - Opciones de 52 px separadas 8 px.
+- `shared/util.js`:
+  - `monta()` (cuerpo + barra) y `accion()`.
+  - `muestra()`: scroll suave hasta la explicación, instantáneo con movimiento reducido.
+  - `cifra()`: cifras de casillas en 5×7, con coma para el medio punto de A2 («01,5»).
+  - `celdas()`: pista de 22 px con tic y aspa de píxeles, medio relleno y celda en curso con borde de 3 px.
+  - `marcador()`: cabecera compacta con nombre, puntos a dos dígitos y pista, cursor de píxeles que salta con `steps()` y «+N» al sumar (oculto con movimiento reducido).
+- `shared/iconos.js`: tic, aspa, urna y candado. `shared/urna.svg` es el favicon de todas las páginas, y se añade `viewport-fit=cover`.
+- `shared/motores/quiz.js` (opciones, ordenar y pistas) y `agrupar.js` usan las tres zonas. El botón principal no cambia de sitio, solo de verbo, y va apagado sin elección. En A2, las cuatro celdas de la ronda en curso llevan el borde de 3 px; en A12, la celda de la pista vigente.
+- `shared/cierre.js`:
+  - «Fin de la partida» y cifra de casillas sobre banda de marcador, con la pista fija debajo (las palabras de A10 siguen con la pasada de marcador).
+  - El recibo empieza por «Juegos 29N, día N» y lleva el enlace sin `https://`.
+  - «Copiado» durante 2 s.
+  - Candado con «Mañana, otro juego.» y enlace «Todos los juegos».
+- Pruebas: arnés en iframe (fuera del repo) que juega partidas enteras. A1, A2, A10 y A12 terminan sin errores de JS ni scroll horizontal a 320, 375 y 1280 px. Capturas a 375 × 560 y 1280 revisadas contra la lista negra: sin sombras, radios, degradados, flechas ni eyebrows. A 320 px, la pista de A2 parte en dos líneas por tramos y el cursor sigue a la celda.
+
+**Falta**
+- Paso 2: portada común `shared/portada.js` (G1) en A1, A2, A10 y A12.
+- Paso 3: cambios de A2, A10 (corazones) y A12.
+- El índice sigue siendo la lista provisional; el selector de días va cuando haya fichas.
+
+**Dudas para el autor**
+- **Día N del recibo.** El reparto de días no está fijado (decisión del 16-10), así que el recibo dice «Juegos 29N, día TODO». Los motores leen un campo `dia` del `data.json` (en A12, de `game.js`): basta con añadirlo cuando se fije el reparto.
+- **A10 sin pista ni puntos.** Su cabecera lleva vidas en lugar de puntos y celdas, porque «puntos» no nombra ninguna regla de A10.
+- **«+N» en A2 y A12.** El «+1» aparece como «+1,5» en A2 (suma de la ronda) y como «+5» en A12 (puntos al acertar). ¿Vale, o en esos juegos se quita?
+- **Recibo de A2.** Las celdas de medio punto salen como ⬜ en el recibo (regla 🟨⬜ con la nota decimal), pero en pantalla se ven medio llenas.
+
 ## 2026-10-17 — A3: VIII a XV contadas y validadas; encargos nuevos del 16-10 en A1, A2 y A10
 
 **Hecho: A3**

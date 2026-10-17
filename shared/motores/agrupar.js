@@ -1,12 +1,12 @@
 import { cerrar } from '../cierre.js';
 import { icono } from '../iconos.js';
-import { baraja, el } from '../util.js';
+import { accion, baraja, el, monta } from '../util.js';
 
 // Recibo: una fila por intento, con el grupo de cada ítem marcado (grupos en orden de dificultad;
 // marcador, senado, señal y tinta, como --grupo-1…4 en base.css)
 const emoji = ['🟨', '🟫', '🟧', '⬛'];
 
-export function iniciar({ juego, fuente, vidas, grupos }, contenedor) {
+export function iniciar({ juego, dia, fuente, vidas, grupos }, contenedor) {
   const grupoDe = new Map(grupos.flatMap((g, i) => g.items.map(item => [item, i])));
   let restantes = baraja([...grupoDe.keys()]);
   const resueltos = [];
@@ -20,6 +20,7 @@ export function iniciar({ juego, fuente, vidas, grupos }, contenedor) {
 
   const final = () => cerrar({
     juego,
+    dia,
     puntuacion: completo() ? 'Resuelto' : 'No resuelto',
     nivel: fallos === 0 ? 'Sin fallos' : `${fallos} ${fallos === 1 ? 'fallo' : 'fallos'}`,
     cuadricula: intentos.map(fila => fila.map(item => emoji[grupoDe.get(item)]).join('')).join('\n'),
@@ -58,15 +59,15 @@ export function iniciar({ juego, fuente, vidas, grupos }, contenedor) {
     const iconos = el('span');
     iconos.innerHTML = Array.from({ length: vidas }, (_, i) => i < quedan ? icono('papeleta', 2) : icono('nula', 2, 'var(--raya)')).join('');
 
-    const boton = el('button', { className: 'accion', textContent: terminada() ? 'Ver resultado' : 'Comprobar' });
+    const boton = terminada() ? accion('Ver resultado', final) : accion('Comprobar', comprobar);
     boton.disabled = !terminada() && marcados.length < 4;
-    boton.onclick = terminada() ? final : comprobar;
 
     const sinResolver = grupos.map((_, i) => i).filter(i => !resueltos.includes(i));
 
-    contenedor.replaceChildren(
-      el('h1', { textContent: juego }),
-      el('p', { className: 'vidas' }, iconos, el('span', { className: 'etiqueta', textContent: `${quedan} ${quedan === 1 ? 'vida' : 'vidas'}` })),
+    monta(contenedor, [
+      el('header', { className: 'cab' }, el('div', { className: 'cab-fila' },
+        el('h1', { className: 'nombre', textContent: juego }),
+        el('p', { className: 'vidas' }, iconos, el('span', { className: 'etiqueta', textContent: `${quedan} ${quedan === 1 ? 'vida' : 'vidas'}` })))),
       ...resueltos.map(i => bloque(i, false)),
       ...(terminada()
         ? sinResolver.map(i => bloque(i, true))
@@ -82,7 +83,7 @@ export function iniciar({ juego, fuente, vidas, grupos }, contenedor) {
           return b;
         }))]),
       el('p', { className: 'etiqueta', ariaLive: 'polite', textContent: aviso }),
-      el('p', {}, boton));
+    ], boton);
   };
 
   pinta();
