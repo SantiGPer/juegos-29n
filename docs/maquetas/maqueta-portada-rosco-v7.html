@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portada y rosco v7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --senado:#dcc7a1; --senal:#ff5f1f; --fuente: Archivo, system-ui, sans-serif;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; }
+.notas li { margin-bottom:.3rem; }
+
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; position:relative; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; gap:var(--s3); }
+.btn { font:inherit; font-weight:800; min-height:52px; padding:0 var(--s5); border:1px solid var(--tinta); border-radius:0; background:var(--papel); color:var(--tinta); }
+.btn.ancho { flex:1; }
+.btn.jugar { background:var(--marcador); }
+.btn.sec { font-weight:400; }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s4); }
+.f h1 { font-size:1.75rem; font-weight:800; line-height:1.1; margin:var(--s1) 0 var(--s3); }
+.reglas { list-style:none; padding:0; margin:var(--s5) 0; font-size:1rem; border-top:1px solid var(--tinta); }
+.reglas li { display:flex; gap:var(--s3); align-items:center; padding:var(--s3) 0; border-bottom:1px solid var(--raya); }
+.reglas li svg { flex:none; }
+.cab { display:flex; justify-content:space-between; align-items:center; gap:var(--s3); }
+.cab .nombre { font-size:1rem; font-weight:800; }
+
+/* Rosco */
+.rosco { position:relative; width:252px; height:252px; margin:var(--s3) auto var(--s4); }
+.letra { position:absolute; width:24px; height:24px; margin:-12px 0 0 -12px; border:1px solid var(--tinta); display:grid; place-items:center; font-size:.875rem; font-weight:800; background:var(--papel); }
+.letra.a { background:var(--marcador); }
+.letra.x { background:var(--raya); }
+.letra.p { background:var(--senado); border-color:var(--senado); }
+.letra.actual { border-width:3px; }
+.centro { position:absolute; inset:44px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:6px; }
+.centro .grande { font-size:3.25rem; font-weight:800; line-height:1; }
+.tira { display:grid; grid-template-columns:repeat(14, 1fr); gap:2px; margin:var(--s3) 0 var(--s4); }
+.tira .letra { position:static; width:auto; height:22px; margin:0; font-size:.6875rem; }
+.tira .letra.actual { border-width:2px; }
+.pista { font-size:1.0625rem; line-height:1.35; margin:0 0 var(--s3); }
+.pista b { font-size:1.375rem; }
+.campo { display:flex; gap:var(--s2); }
+.campo input { flex:1; min-width:0; font:inherit; font-size:1.125rem; min-height:52px; padding:0 var(--s3); border:1px solid var(--tinta); border-radius:0; outline:none; }
+.campo input:focus { outline:3px solid var(--tinta); outline-offset:-3px; }
+.campo .btn { padding:0 var(--s4); }
+.era { font-size:.875rem; margin:var(--s2) 0 0; }
+.era b { background:var(--raya); padding:0 .2em; }
+.teclado { flex:none; height:240px; background:#d1d3d9; display:grid; place-items:center; color:#555; font-size:.875rem; border-top:1px solid #aaa; }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+/* Vidas */
+.vidasfila { display:flex; align-items:center; gap:6px; margin:var(--s3) 0; }
+.vidasfila .et { margin-left:var(--s2); }
+.rejilla { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+.rejilla span { min-height:52px; border:1px solid var(--tinta); display:grid; place-items:center; font-size:.875rem; text-align:center; padding:2px; }
+.muestras { display:flex; gap:2rem; flex-wrap:wrap; align-items:end; }
+.muestras figure { margin:0; font-size:.875rem; color:var(--lapiz); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Portada, rosco y vidas</h1>
+<p class="intro">Marcos de 375 × 560, la zona visible dentro de la app de LinkedIn en un móvil pequeño. El teclado aparece simulado en gris. Los textos son ilustrativos: el contenido final llega de editorial.</p>
+
+<h2 class="sec">1. Portada común (G1)</h2>
+<p class="porque">Es la misma pieza para todos los juegos y la ficha del índice reutilizada: quien llega desde LinkedIn sabe de qué va el juego antes de empezar. Se monta como componente compartido, igual que el cierre.</p>
+<div class="fila">
+<div><h3 class="sec">A1 · Quiz</h3>
+<div class="f" id="portadaA1"></div></div>
+<div><h3 class="sec">A13 · Rosco, sin reloj</h3>
+<div class="f" id="portadaA13"></div>
+<ul class="notas">
+  <li>Orden: juego y día, título, dos frases con tono, reglas con icono y fuente general. «Jugar» va en la barra, en marcador.</li>
+  <li>Las reglas pasan a una lista con rayas finas: se leen de un vistazo y admiten una tercera regla si hace falta (aquí, «Pasar»).</li>
+  <li>Sin imágenes ni ilustración: el juego empieza al pulsar.</li>
+</ul></div>
+</div>
+
+<h2 class="sec">2. Rosco (A13)</h2>
+<p class="porque">El problema del móvil es el teclado, que se come casi la mitad de la pantalla. El rosco cambia de forma según esté o no escribiendo el jugador.</p>
+<div class="fila">
+<div><h3 class="sec">a · Sin teclado</h3>
+<div class="f" id="r1"></div></div>
+<div><h3 class="sec">b · Escribiendo</h3>
+<div class="f" id="r2"></div></div>
+<div><h3 class="sec">c · Tras un fallo</h3>
+<div class="f" id="r3"></div></div>
+<div><h3 class="sec">d · Solo quedan pasadas</h3>
+<div class="f" id="r4"></div>
+<ul class="notas">
+  <li><b>a.</b> El rosco completo, con los aciertos en el centro (solo ahí; en la cabecera aparecen cuando el rosco se pliega) en cifras de casillas y la letra actual en grande. La pista y el campo quedan debajo y el campo se activa al tocarlo.</li>
+  <li><b>b.</b> Con el teclado abierto, el rosco se pliega en una tira de 27 casillas en dos filas, con los mismos estados. Quedan visibles la letra, la pista, el campo y los dos botones.</li>
+  <li><b>c.</b> Tras fallar, sale la respuesta en una línea («Era: …») y el rosco avanza solo a la letra siguiente. El teclado no se cierra.</li>
+  <li><b>d.</b> Cuando solo quedan letras pasadas, aparece «Terminar» junto a «Pasar».</li>
+  <li>Estados: pendiente en papel, acierto en marcador, fallo en raya, pasada en senado (lo que está por llegar), actual con borde de 3 px.</li>
+  <li>El campo no corrige ni pone mayúsculas, e Intro responde.</li>
+</ul></div>
+</div>
+
+<h2 class="sec">3. Vidas con corazones (A10)</h2>
+<p class="porque">Corazones de píxel en rejilla de 9×8, el icono de vida más reconocible del arcade. El rojo clásico no es posible porque es color de partido, así que van en la paleta de la serie. Hay dos variantes. Al fallar, el corazón se vacía en dos saltos (steps), una animación que responde a la acción del jugador; con movimiento reducido cambia sin animación.</p>
+<div class="fila">
+<div><h3 class="sec">A · Tinta (recomendada)</h3>
+<div class="f" style="height:auto" id="vA"></div></div>
+<div><h3 class="sec">B · Marcador con contorno</h3>
+<div class="f" style="height:auto" id="vB"></div></div>
+</div>
+<div class="muestras" style="margin-top:1.5rem" id="corazones"></div>
+<ul class="notas" style="max-width:46em">
+  <li>La A es sobria y clásica (corazones negros de consola portátil) y no compite con los colores de grupo de A10.</li>
+  <li>La B es más viva, pero el marcador ya significa «acierto» y es el color del grupo 1: en una pantalla con bloques de grupo amarillos, los corazones amarillos se confunden con ellos.</li>
+  <li>Sustituyen a las papeletas y a la papeleta nula, que dejan de usarse en A10. Los corazones quedan como icono de vida para cualquier juego futuro con vidas.</li>
+</ul>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100","/":"00001000010001000100010001000010000"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "#000", fill) => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : v === "o" && fill ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${fill}"/>` : "")).join("")}</svg>`;
+const I = {
+  papeleta: ["XXXXXXXX..","X......XX.","X......X.X","X.XXXX.XXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX"],
+  urna: ["..XXXXXX..","..X....X..","..X.XX.X..","XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X........X","X........X","XXXXXXXXXX"],
+  pasar: ["..........","...X......","...XX.....","XXXXXX....","XXXXXXX...","XXXXXX....","...XX.....","...X......",".........."," ........."],
+  lleno: [".XX...XX.","XXXX.XXXX","XXXXXXXXX","XXXXXXXXX",".XXXXXXX.","..XXXXX..","...XXX...","....X...."],
+  vacio: [".XX...XX.","X..X.X..X","X...X...X","X.......X",".X.....X.","..X...X..","...X.X...","....X...."],
+  mitad: [".XX...XX.","X..X.XXXX","X...XXXXX","X....XXXX",".X...XXX.","..X..XX..","...X.X...","....X...."],
+  llenoB: [".XX...XX.","XooX.XooX","XoooXoooX","XoooooooX",".XoooooX.","..XoooX..","...XoX...","....X...."]
+};
+I.pasar[9] = "..........";
+
+/* Portadas */
+const portada = (dia, titulo, texto, reglas, fuente) => `<div class="cuerpo">
+  <span class="et">Juegos 29N, día ${dia}</span>
+  <h1>${titulo}</h1>
+  <p style="font-size:1.0625rem">${texto}</p>
+  <ul class="reglas">${reglas.map(([i, t]) => `<li>${svg(I[i], 2)}<span>${t}</span></li>`).join("")}</ul>
+  <p class="et">${fuente}</p>
+</div><div class="barra"><button class="btn ancho jugar">Jugar</button></div>`;
+document.getElementById("portadaA1").innerHTML = portada(1, "Quiz del sistema electoral",
+  "Diez preguntas sobre las reglas con las que se reparten 350 escaños. Nada de trampas: solo la ley electoral, que ya tiene bastante.",
+  [["papeleta", "10 preguntas, tres o cuatro opciones"], ["urna", "1 punto por acierto"]], "Datos: Constitución Española y LOREG.");
+document.getElementById("portadaA13").innerHTML = portada(9, "Rosco del politólogo",
+  "Veintisiete letras, veintisiete conceptos de ciencia política. Si dudas, pasa: la letra vuelve en la siguiente vuelta.",
+  [["papeleta", "Una definición por letra"], ["urna", "1 punto por acierto, sobre 27"], ["pasar", "«Pasar» deja la letra para después"]], "Fuentes: DLE y manuales de ciencia política citados en cada letra.");
+
+/* Rosco */
+const AB = [..."ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"];
+const est = (o) => AB.map((l, i) => o[i] ?? "");
+const circulo = (e, act, aciertos) => {
+  const n = AB.length, R = 111, c = 126;
+  return `<div class="rosco">${AB.map((l, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / n; return `<span class="letra ${e[i]}${i === act ? " actual" : ""}" style="left:${c + R * Math.cos(a)}px;top:${c + R * Math.sin(a)}px">${l}</span>`; }).join("")}
+  <div class="centro"><span class="grande">${AB[act]}</span><span class="et">Aciertos</span>${px(String(aciertos).padStart(2, "0"), 3)}</div></div>`;
+};
+const tira = (e, act) => `<div class="tira">${AB.map((l, i) => `<span class="letra ${e[i]}${i === act ? " actual" : ""}">${l}</span>`).join("")}</div>`;
+const cab = (aciertos, conPuntos = true) => `<div class="cab"><span class="nombre">Rosco del politólogo</span>${conPuntos ? `<span>${px(String(aciertos).padStart(2, "0"), 2)}</span>` : ""}</div>`;
+const campo = (valor, botones) => `<div class="campo"><input value="${valor}" placeholder="Respuesta" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send"><button class="btn">Responder</button></div><div style="display:flex;gap:8px;margin-top:8px">${botones}</div>`;
+const E1 = est({0: "a", 1: "a", 2: "a", 3: "x", 4: "p"});
+
+document.getElementById("r1").innerHTML = `<div class="cuerpo">${cab(3, false)}${circulo(E1, 5, 3)}
+  <p class="pista">Empieza por la <b>F</b>, grado de dispersión del voto o de los escaños entre muchos partidos.</p>
+  ${campo("", `<button class="btn sec" style="flex:1">Pasar</button>`)}</div>`;
+
+document.getElementById("r2").innerHTML = `<div class="cuerpo" style="padding-top:12px">${cab(3)}${tira(E1, 5)}
+  <p class="pista">Empieza por la <b>F</b>, grado de dispersión del voto o de los escaños entre muchos partidos.</p>
+  ${campo("fragmenta", `<button class="btn sec" style="flex:1;min-height:44px">Pasar</button>`)}</div><div class="teclado">teclado</div>`;
+
+const E3 = est({0: "a", 1: "a", 2: "a", 3: "x", 4: "p", 5: "x"});
+document.getElementById("r3").innerHTML = `<div class="cuerpo" style="padding-top:12px">${cab(3)}${tira(E3, 6)}
+  <p class="era">Era: <b>fragmentación</b></p>
+  <p class="pista" style="margin-top:8px">Empieza por la <b>G</b>, grupo parlamentario en el que acaban los diputados que no pueden formar uno propio ni se integran en otro.</p>
+  ${campo("", `<button class="btn sec" style="flex:1;min-height:44px">Pasar</button>`)}</div><div class="teclado">teclado</div>`;
+
+const E4 = AB.map((_, i) => [4, 11, 19].includes(i) ? "p" : [3, 8, 15, 22].includes(i) ? "x" : "a");
+document.getElementById("r4").innerHTML = `<div class="cuerpo">${cab(20, false)}${circulo(E4, 4, 20)}
+  <p class="pista">Empieza por la <b>E</b>, asiento de los parlamentarios en la Cámara.</p>
+  ${campo("", `<button class="btn sec" style="flex:1">Pasar</button><button class="btn sec" style="flex:1">Terminar</button>`)}</div>`;
+
+/* Vidas */
+const a10 = (lleno, vacio, extra) => `<div class="cuerpo"><div class="cab"><span class="nombre">Agrupar 16</span></div>
+  <div class="vidasfila">${svg(I[lleno], 3, "#000", extra)}${svg(I[lleno], 3, "#000", extra)}${svg(I[lleno], 3, "#000", extra)}${svg(I.vacio, 3, "#bdbdbd")}<span class="et">3 vidas</span></div>
+  <div class="rejilla">${["Wert","Calvo-Sotelo","Mordaza","Illa","Bono","Zapatero","Posada","Cascos"].map(t => `<span>${t}</span>`).join("")}</div></div>`;
+document.getElementById("vA").innerHTML = a10("lleno", "vacio");
+document.getElementById("vB").innerHTML = a10("llenoB", "vacio", "#f2c200");
+document.getElementById("corazones").innerHTML = [
+  ["lleno", "A, vida", "#000"], ["mitad", "salto intermedio", "#000"], ["vacio", "vida perdida", "#bdbdbd"], ["llenoB", "B, vida", "#000", "#f2c200"]
+].map(([k, t, c, f]) => `<figure>${svg(I[k], 5, c, f)}<figcaption>${t}</figcaption></figure>`).join("");
+</script>
+</body>
+</html>

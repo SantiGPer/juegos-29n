@@ -210,4 +210,84 @@ Log fechado de decisiones sustantivas del autor. Claude Code lo lee al empezar c
 - A4: las promesas cumplidas a medias no entran.
 - A4: reparto equilibrado de respuestas, unas cuatro de cada tipo.
 - A4, selección del autor sobre el catálogo (editorial/catalogos/a04-catalogo.md): 1, 4, 6, 7, 8, 10, 11, 12, 13, 15, 22 y 26. Borrador en editorial/contenido/a04-promesas-2023.md.
-- A4, propuesta de Cowork pendiente de confirmar: las opciones no se barajan (Cumplida, Incumplida, Bloqueada, siempre en ese orden).
+
+
+## 2026-10-17
+
+- A4: sale el salario mínimo al 60 % del salario medio (6 del catálogo), porque el Gobierno aún lo presenta como objetivo. Entra la ley de paridad (2). Selección final: 1, 2, 4, 7, 8, 10, 11, 12, 13, 15, 22 y 26. Reparto: 4 cumplidas, 4 bloqueadas y 4 incumplidas.
+- A4: las opciones no se barajan. Van siempre en el orden Cumplida, Incumplida, Bloqueada en el Congreso.
+- A4, encargo para Code (comprobaciones; el resultado se anota en editorial/fuentes/a04-promesas.md y las discrepancias en la bitácora, sin tocar el contenido):
+  1. Texto literal del acuerdo PSOE-Sumar del 24-10-2023 sobre el impuesto a las energéticas, para confirmar que la promesa era mantenerlo.
+  2. Origen de la promesa de reformar el art. 49 de la Constitución: programa del PSOE de 2023, acuerdo PSOE-Sumar o anuncio del Gobierno en diciembre de 2023. Cita literal.
+  3. Origen de la promesa de la ley de paridad y alcance de la LO 2/2024: listas electorales, consejos de administración y otros órganos. Cita literal del BOE.
+  4. Después, montar A4 en juegos/a04-promesas-2023/ con M1 y las opciones en orden fijo, a partir de editorial/contenido/a04-promesas-2023.md.
+- A13, términos elegidos por el autor (una palabra por letra): Abstención, Bisagra (sustituye a Bancada, 17-10), Clivaje, D'Hondt, Escaño, Fragmentación, Grupo Mixto, Hare, Investidura, Junta Electoral, Think tank, LOREG, Mitin, Nulo, Señoría, Oligarquía, Plurinominal, Quórum, Referéndum, Senado, Tránsfuga, Urna, Volatilidad, Swing voter, Extraparlamentario, Mayoría y Zarzuela.
+- A13: las pistas siguen la fórmula del concurso: «Empieza por la X, …» o «Contiene la X, …».
+- A13: pistas revisadas por el autor (17-10). Recortó C, E, F, N, O, P, R, V y W, y las demás quedan como las redactó Cowork, incluidas D, J, S y Z. No hay un criterio general de recorte: cada pista se decide una a una. Contenido en editorial/contenido/a13-rosco-politologo.md.
+- A13, encargo para Code: montar el motor M9 y A13 a partir de ese contenido (entrega del 2-nov). Antes, comprobar dos fuentes:
+  - la acepción política de «bisagra» en el DLE;
+  - la edición del manual de Nohlen citado para Hare.
+  
+  Las discrepancias se anotan en la bitácora.
+
+## 2026-10-17 (diseño y jugabilidad de los juegos cerrados)
+
+Revisión de A1, A2, A4, A10, A12 y A13 hecha por el autor con el chat de diseño. Referencias: docs/maquetas/maqueta-disposicion-v6.html y docs/maquetas/maqueta-portada-rosco-v7.html.
+
+### G · Común a todos los juegos
+- G1, portada: componente compartido nuevo (`shared/portada.js`, en paralelo a `cierre.js`) que se muestra al entrar en cualquier juego.
+  - Contenido, en este orden: «Juegos 29N, día N» (etiqueta), título (1.75 rem, 800), dos frases (1.0625 rem), lista de reglas con icono de 10×10 a la izquierda (dos o tres reglas, separadas por rayas de 1 px raya, con borde superior tinta) y fuente general (etiqueta, lápiz).
+  - Botón «Jugar» en marcador, en la barra fija.
+  - El texto de cada portada llega en el contenido de cada juego con los campos `portada.texto` y `portada.reglas` (icono y texto). Es el mismo texto que la ficha del índice.
+- G2: el paso de base.css y los motores al diseño arcade sigue pendiente (marcador de partida con tic, aspa y cursor, cifras de casillas, barra de acción fija, cabecera compacta, «+1», «Juegos 29N, día N» en el recibo). Va antes de seguir puliendo juegos sueltos.
+
+### A1 · Quiz
+- Sin cambios.
+
+### A2 · Cronología
+- A2.1: «Más antiguo» encima de la lista y «Más reciente» debajo, en etiqueta (lápiz).
+- A2.2: la etiqueta de ronda incluye el criterio de la ronda: «Ronda 1 de 3. Más de un año entre hitos». El texto sale del título de ronda del contenido.
+- A2.3: ronda resuelta compacta. Por hito, en orden cronológico: casilla de puntos, fecha y texto del hito; si no está en su sitio, «Tu posición: 3.º» en lápiz. La explicación y la fuente van plegadas en un `<details>` con el texto «Ver explicación».
+
+### A10 · Agrupar 16
+- A10.1: mientras se juega, cada grupo resuelto se muestra compacto: nombre e ítems sobre el color de su grupo. La explicación y la fuente de los cuatro grupos se ven al terminar la partida.
+- A10.2: botón secundario «Barajar», que reordena los ítems sin resolver. Va junto a «Comprobar», en la barra, con estilo secundario (papel, peso 400).
+- A10.3: si se repite una combinación de cuatro ya fallada, sale «Ya lo has probado.» y no se gasta vida.
+- A10.4: con menos de cuatro ítems marcados, el botón principal está apagado y dice «Marca 4 (N de 4)»; con cuatro marcados pasa a «Comprobar».
+- A10.5, vidas con corazones de píxel (variante A), en rejilla de 9×8, SVG con crispEdges, a escala 3:
+  - vida: corazón relleno en tinta; vida perdida: solo el contorno, en raya.
+  - Al fallar, el corazón pasa por un fotograma intermedio de medio vacío (dos saltos, steps). Con prefers-reduced-motion cambia sin animación.
+  - Sustituyen a los iconos papeleta y nula en A10. Los corazones quedan en `shared/iconos.js` como icono de vida para cualquier juego con vidas.
+  - Matrices en la maqueta v7: `lleno`, `mitad` y `vacio`.
+
+### A12 · Presidentle
+- A12.1: las siete opciones en dos columnas (rejilla de 2, separación de 8 px y altura mínima de 52 px; los nombres largos pueden partir en dos líneas).
+- A12.2: la pista recién revelada en negrita y en tinta; las anteriores en peso 400 y lápiz.
+
+### A4 · Promesas
+- A4.1: las tres opciones van en una fila de tres botones iguales, siempre en el mismo orden (Cumplida, Incumplida, Bloqueada) y con altura mínima de 52 px. En pantalla, la opción c se rotula «Bloqueada»; en la explicación se mantiene «Bloqueada en el Congreso».
+- A4.2: la promesa se muestra como tarjeta de texto (1.375 rem, 800), con su origen encima en etiqueta («Acuerdo PSOE-Sumar», «Programa de Sumar 2023»…). El origen llega en un campo nuevo `origen` del contenido.
+- A4.3: el cierre añade, bajo la nota, un desglose de aciertos por tipo de respuesta correcta: «Cumplidas 3 de 4», «Incumplidas 4 de 4», «Bloqueadas 2 de 4». Una línea por tipo, con cifras tabulares.
+
+### A13 · Rosco
+- A13.0: sin reloj. Se elimina el cronómetro opcional.
+- A13.1, dos formas según el teclado:
+  - Sin teclado: rosco circular de 252 px, con casillas de 24 px por letra; en el centro, la letra actual (3.25 rem, 800) y los aciertos en cifras de casillas. Debajo, la pista («Empieza por la **F**, …», con la letra en 1.375 rem), el campo y los botones.
+  - Con el campo enfocado (teclado abierto): el rosco se pliega en una tira de 27 casillas en dos filas (14 + 13) y los aciertos pasan a la cabecera.
+  - La barra fija no se muestra en este juego. Los botones van pegados al campo: «Responder» a la derecha del campo y «Pasar» debajo, a todo el ancho.
+- A13.2, estados de letra: pendiente en papel con borde tinta; acierto en marcador; fallo en raya; pasada en senado (fondo y borde); actual con borde de 3 px.
+- A13.3: campo con `autocapitalize="off"`, `autocorrect="off"`, `spellcheck="false"` y `enterkeyhint="send"`; Intro responde.
+- A13.4: tras un fallo aparece «Era: <respuesta>» con la respuesta sobre raya y el juego avanza solo a la siguiente letra sin cerrar el teclado.
+- A13.5: cuando solo quedan letras pasadas, aparece «Terminar» junto a «Pasar». Al terminar, las pasadas cuentan como no respondidas.
+- A13.6, cierre:
+  - Rosco circular completo con el estado final de cada letra: acierto en marcador, fallo en raya, sin responder en senado. Es el resumen del resultado, encima de la nota «N de 27».
+  - Tocar una letra del rosco del cierre muestra debajo su pista, su respuesta y su fuente.
+  - Recibo: 27 casillas en tres filas de 9 (🟨 acierto, ⬜ fallo o sin responder).
+
+### Encargo para Code, orden de trabajo (2026-10-17)
+1. Pasar `shared/base.css` y los motores al diseño arcade aprobado (decisiones de diseño del 15 y del 16-10; maquetas v2, v3, v5 y v6 en docs/maquetas/). Incluye barra de acción fija, cabecera compacta, marcador de partida, cifras de casillas, colores senado y señal, «+1», recibo con «Juegos 29N, día N» y cierre con «Fin de la partida».
+2. Portada común `shared/portada.js` (G1), montada en A1, A2, A10 y A12. Mientras falte el texto de portada en el contenido, deja `TODO` visible.
+3. Cambios de los juegos montados: A2 (A2.1 a A2.3), A10 (A10.1 a A10.5, con corazones) y A12 (A12.1 y A12.2).
+4. A4 y A13, cuando su contenido esté completo (A4 necesita el campo `origen`; A13 tiene dos fuentes por verificar).
+
+Tras cada paso: capturas a 375 × 560 y a 1280, revisión contra la lista negra, commit y entrada en la bitácora. No hagas push sin confirmación del autor.

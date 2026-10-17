@@ -1,6 +1,6 @@
 # A4 · Promesas de 2023
 
-Estado: **selección del autor** (2026-10-16): 1, 4, 6, 7, 8, 10, 11, 12, 13, 15, 22 y 26 de `editorial/catalogos/a04-catalogo.md`. Queda una pregunta abierta ([DECIDIR], salario mínimo) y hay que verificar el origen de dos promesas.
+Estado: **selección del autor cerrada** (2026-10-17): 1, 2, 4, 7, 8, 10, 11, 12, 13, 15, 22 y 26 de `editorial/catalogos/a04-catalogo.md`. Sale el salario mínimo (6) y entra la ley de paridad (2). Las comprobaciones pendientes se han encargado a Code.
 
 - Ámbito: solo promesas del Gobierno: programas de PSOE y Sumar de 2023, acuerdo de coalición y acuerdos de investidura.
 - Definiciones:
@@ -8,7 +8,7 @@ Estado: **selección del autor** (2026-10-16): 1, 4, 6, 7, 8, 10, 11, 12, 13, 15
   - **Bloqueada:** una votación del Congreso la tumbó; se documenta con la fecha y el resultado.
   - **Incumplida:** no se aprobó y no hubo votación en contra.
 - Las promesas cumplidas a medias no entran.
-- Reparto de respuestas: 4 cumplidas, 4 bloqueadas y 4 incumplidas, alternadas.
+- Reparto de respuestas: 4 cumplidas, 4 bloqueadas y 4 incumplidas, en un orden sin patrón repetido (c a a b c c b a c b b a).
 - Motor: M1, tres opciones fijas y siempre en el mismo orden (a Cumplida, b Incumplida, c Bloqueada). En este juego las opciones no se barajan.
 - Cierre: puntuación sobre 12.
 
@@ -52,6 +52,23 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ## 3
 
+**Pregunta:** Poder hablar catalán, euskera y gallego en el Congreso
+
+**Opciones:**
+- a) Cumplida
+- b) Incumplida
+- c) Bloqueada en el Congreso
+
+**Correcta:** a
+
+**Explicación:** El Congreso aprobó el 21-09-2023 la reforma de su Reglamento que lo permite. Formaba parte del acuerdo con ERC y Junts para elegir la Mesa de la Cámara.
+
+**Fuente:** Acuerdo para la Mesa del Congreso, agosto de 2023; The Objective, 21-09-2023.
+
+---
+
+## 4
+
 **Pregunta:** Derogar o reformar la «ley mordaza»
 
 **Opciones:**
@@ -67,7 +84,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ---
 
-## 4
+## 5
 
 **Pregunta:** Mantener el impuesto a las energéticas
 
@@ -84,41 +101,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ---
 
-## 5
-
-**Pregunta:** Poder hablar catalán, euskera y gallego en el Congreso
-
-**Opciones:**
-- a) Cumplida
-- b) Incumplida
-- c) Bloqueada en el Congreso
-
-**Correcta:** a
-
-**Explicación:** El Congreso aprobó el 21-09-2023 la reforma de su Reglamento que lo permite. Formaba parte del acuerdo con ERC y Junts para elegir la Mesa de la Cámara.
-
-**Fuente:** Acuerdo para la Mesa del Congreso, agosto de 2023; The Objective, 21-09-2023.
-
----
-
 ## 6
-
-**Pregunta:** Aprobar el Estatuto del Becario
-
-**Opciones:**
-- a) Cumplida
-- b) Incumplida
-- c) Bloqueada en el Congreso
-
-**Correcta:** b
-
-**Explicación:** El proyecto llegó al Congreso en marzo de 2026 y no terminó su tramitación antes de la disolución. No hubo votación en contra.
-
-**Fuente:** El Español, 06-10-2026; Newtral, Pactocheck.
-
----
-
-## 7
 
 **Pregunta:** Delegar a Cataluña las competencias de inmigración
 
@@ -132,6 +115,23 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 **Explicación:** La proposición de ley pactada con Junts cayó el 23-09-2025 en su primer trámite: 177 votos en contra (PP, Vox, UPN, Podemos y dos diputados del grupo de Sumar) y 173 a favor.
 
 **Fuente:** Acuerdo PSOE-Junts; Infobae, 23-09-2025.
+
+---
+
+## 7
+
+**Pregunta:** Aprobar el Estatuto del Becario
+
+**Opciones:**
+- a) Cumplida
+- b) Incumplida
+- c) Bloqueada en el Congreso
+
+**Correcta:** b
+
+**Explicación:** El proyecto llegó al Congreso en marzo de 2026 y no terminó su tramitación antes de la disolución. No hubo votación en contra.
+
+**Fuente:** El Español, 06-10-2026; Newtral, Pactocheck.
 
 ---
 
@@ -154,23 +154,6 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ## 9
 
-**Pregunta:** Aprobar un nuevo modelo de financiación autonómica
-
-**Opciones:**
-- a) Cumplida
-- b) Incumplida
-- c) Bloqueada en el Congreso
-
-**Correcta:** b
-
-**Explicación:** El Consejo de Política Fiscal y Financiera aprobó el modelo el 04-09-2026, con más de dos años de retraso, pero la ley no llegó a votarse. No hubo votación que lo tumbara.
-
-**Fuente:** El Español, 06-10-2026.
-
----
-
-## 10
-
 **Pregunta:** Prorrogar la suspensión de desahucios de familias vulnerables
 
 **Opciones:**
@@ -186,24 +169,24 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ---
 
-## 11
+## 10
 
-**Pregunta:** Llevar el salario mínimo al 60 % del salario medio
+**Pregunta:** Aprobar un nuevo modelo de financiación autonómica
 
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
 - c) Bloqueada en el Congreso
 
-**Correcta:** a
+**Correcta:** b
 
-**Explicación:** [DECIDIR: el Gobierno lo presenta todavía como objetivo en la nota del SMI de 2026 (1.221 euros), así que no está claro que esté cumplida.]
+**Explicación:** El Consejo de Política Fiscal y Financiera aprobó el modelo el 04-09-2026, con más de dos años de retraso, pero la ley no llegó a votarse. No hubo votación que lo tumbara.
 
-**Fuente:** La Moncloa, 20-02-2026; Real Decreto 126/2026.
+**Fuente:** El Español, 06-10-2026.
 
 ---
 
-## 12
+## 11
 
 **Pregunta:** Que el catalán sea lengua oficial de la UE
 
@@ -219,4 +202,19 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 **Fuente:** Acuerdo PSOE-Junts; El Español, 06-10-2026.
 
 ---
+
+## 12
+
+**Pregunta:** Aprobar una ley de representación paritaria entre mujeres y hombres
+
+**Opciones:**
+- a) Cumplida
+- b) Incumplida
+- c) Bloqueada en el Congreso
+
+**Correcta:** a
+
+**Explicación:** Se aprobó como Ley Orgánica 2/2024, de 1 de agosto. Exige una presencia equilibrada de mujeres y hombres en las listas electorales, en los consejos de administración de grandes empresas y en otros órganos.
+
+**Fuente:** BOE (LO 2/2024); Junta Electoral Central, reformas de la LOREG; Newtral, Pactocheck. [VERIFICAR origen de la promesa y alcance en consejos de administración]
 

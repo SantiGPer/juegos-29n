@@ -3,7 +3,7 @@
 Estado: **cerrado, selección del autor** (2026-10-16). Grupos A, H, J y D de `editorial/catalogos/a10-catalogo.md`; ítems propuestos por Cowork y validados por el autor (J con Wert; D con Zapatero). Edición única.
 
 - Motor: M6. 16 ítems barajados en una rejilla de 4×4; nombres de grupo ocultos hasta resolverlos. El jugador marca cuatro y pulsa «Comprobar».
-- Vidas: 4. Cada fallo anula una papeleta (icono «nula»). No hay aviso de «te falta uno».
+- Vidas: 4, con corazones de píxel. Cada fallo vacía un corazón (decisión de diseño del 17-10-2026). No hay aviso de «te falta uno».
 - Cierre: resuelto o no y número de fallos.
 - Orden de dificultad, que fija el color del grupo en pantalla y en el recibo: 1 A 🟨 marcador, 2 J 🟫 senado, 3 H 🟧 señal, 4 D ⬛ tinta (decisión de diseño del 16-10-2026).
 - Trampas (cada una cuesta como mucho una vida):
