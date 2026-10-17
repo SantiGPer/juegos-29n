@@ -2,8 +2,9 @@ import { cerrar } from '../cierre.js';
 import { icono } from '../iconos.js';
 import { baraja, el } from '../util.js';
 
-// Recibo: una fila por intento, con el grupo de cada ítem marcado (grupos en orden de dificultad)
-const emoji = ['🟨', '🟩', '🟦', '🟪'];
+// Recibo: una fila por intento, con el grupo de cada ítem marcado (grupos en orden de dificultad;
+// marcador, senado, señal y tinta, como --grupo-1…4 en base.css)
+const emoji = ['🟨', '🟫', '🟧', '⬛'];
 
 export function iniciar({ juego, fuente, vidas, grupos }, contenedor) {
   const grupoDe = new Map(grupos.flatMap((g, i) => g.items.map(item => [item, i])));
@@ -40,8 +41,14 @@ export function iniciar({ juego, fuente, vidas, grupos }, contenedor) {
     pinta();
   };
 
-  const bloque = (i, perdido) => el('div', { className: `grupo${perdido ? ' perdido' : ''}` },
-    el('p', { className: 'hito', textContent: grupos[i].nombre }),
+  // Resuelto: fondo del color del grupo. Perdido: papel, con una muestra del color para leer el recibo.
+  const bloque = (i, perdido) => el('div', {
+    className: `grupo g${i + 1}${perdido ? ' perdido' : ''}`,
+    style: perdido ? '' : `background: var(--grupo-${i + 1})`,
+  },
+    el('p', { className: 'hito' },
+      ...(perdido ? [el('span', { className: 'muestra-partido', style: `background: var(--grupo-${i + 1})` })] : []),
+      grupos[i].nombre),
     el('p', { textContent: grupos[i].items.join(', ') }),
     el('p', { className: 'etiqueta', textContent: grupos[i].explicacion }),
     ...(terminada() ? [el('p', { className: 'fuente', textContent: `Fuente: ${grupos[i].fuente}` })] : []));

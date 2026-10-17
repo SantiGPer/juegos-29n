@@ -9,6 +9,14 @@
   --lapiz: #575757;
   --raya: #bdbdbd;
   --marcador: #f2c200;
+  --senado: #dcc7a1;
+  --senal: #ff5f1f;
+
+  /* Grupos de M6, de más fácil a más difícil (decisión de diseño del 16-10-2026) */
+  --grupo-1: var(--marcador);
+  --grupo-2: var(--senado);
+  --grupo-3: var(--senal);
+  --grupo-4: var(--tinta);
 
   /* Colores de partido: Plantilla:Color político de es.wikipedia, ver data/SOURCES.md */
   --pp: #1E4B8F;
@@ -228,7 +236,6 @@ button:disabled {
 .grupo {
   margin: 0 0 6px;
   padding: 0.75rem;
-  background: var(--marcador);
 }
 
 .grupo.perdido {
@@ -237,7 +244,9 @@ button:disabled {
 }
 
 .grupo p { margin-bottom: 0.25rem; }
-.grupo .etiqueta, .grupo .fuente { color: var(--tinta); }
+.grupo .etiqueta, .grupo .fuente { color: inherit; }
+.grupo.g4:not(.perdido) { color: var(--papel); }
+.grupo .muestra-partido { margin-right: 0.4em; }
 
 .cifra {
   margin: 0.5rem 0 1rem;
