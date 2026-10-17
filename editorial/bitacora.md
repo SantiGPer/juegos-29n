@@ -35,6 +35,26 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - **«+N» en A2 y A12.** El «+1» aparece como «+1,5» en A2 (suma de la ronda) y como «+5» en A12 (puntos al acertar). ¿Vale, o en esos juegos se quita?
 - **Recibo de A2.** Las celdas de medio punto salen como ⬜ en el recibo (regla 🟨⬜ con la nota decimal), pero en pantalla se ven medio llenas.
 
+**Hecho: comprobaciones de fuentes de A4 y A13** (encargos del 17-10)
+- Resultado de A4 en `editorial/fuentes/a04-promesas.md`, con citas literales y URL. Las fuentes las buscó un agente en la web y las citas llevan su URL; yo no he vuelto a abrir cada documento. El PDF del acuerdo PSOE-Sumar consultado es la copia que aloja el PSC.
+- No se ha tocado el contenido de A4 ni el de A13.
+
+**Dudas para el autor (A4)**
+- **P5, energéticas.** Confirmada. El acuerdo (pág. 38) dice «Revisaremos los gravámenes sobre la banca y las empresas energéticas con el objetivo de readaptarlos y mantenerlos». La fuente «[VERIFICAR literal]» puede pasar a «Acuerdo PSOE-Sumar, 24-10-2023, pág. 38».
+- **P8, art. 49.** La promesa estaba en el programa del PSOE 2023 y en el acuerdo PSOE-Sumar (pág. 24: «Culminaremos la reforma del artículo 49 de la Constitución para suprimir el término “disminuidos”…»). El pacto con el PP de diciembre de 2023 fue la vía para cumplirla, no su origen. Propuesta: citar el acuerdo PSOE-Sumar como origen y el BOE-A-2024-3099 como cumplimiento. La página del programa del PSOE no se ha podido leer, porque psoe.es está bloqueado (`TODO`).
+- **P12, paridad.**
+  - Origen: acuerdo PSOE-Sumar, pág. 34. El proyecto anterior decayó con la disolución de 2023, y su visto bueno fue el 23-05-2023, no en 2022.
+  - Discrepancia en la explicación: dice «consejos de administración de grandes empresas», pero la LO 2/2024 lo exige a las sociedades cotizadas y a las entidades de interés público de más de 250 trabajadores, no a todas las grandes empresas.
+  - Identificador del BOE: BOE-A-2024-15936.
+  - Además de listas y consejos, la ley alcanza al Gobierno, los órganos constitucionales, la AGE y los jurados de premios. Los colegios profesionales no tienen cuota obligatoria.
+
+**Dudas para el autor (A13)**
+- **Bisagra.** El DLE no tiene acepción política de «bisagra»; sus tres acepciones son de herraje, zapatería y encuadernación. Lo que existe es la forma compleja «partido bisagra», definida s. v. «partido»: «partido político minoritario que funciona entre otros dos mayores asegurando con su apoyo la función del que gobierna». La fuente correcta sería «DLE, s. v. «partido» (partido bisagra)». ¿Se mantiene «Bisagra» como respuesta principal?
+- **Hare.**
+  - Ediciones de Nohlen, «Sistemas electorales y partidos políticos»: 1.ª en UNAM-FCE, 1994 (en acceso abierto); 2.ª en FCE, 1998; 3.ª en FCE, 2004; y una edición revisada en Tirant lo Blanch, 2022.
+  - La 1.ª trata el «método de Hare (impulsado por Thomas Hare)» en la p. 70.
+  - Nohlen no dice que Hare fuera «abogado inglés». Hace falta otra fuente para ese dato de la pista o recortarlo.
+
 ## 2026-10-17 — A3: VIII a XV contadas y validadas; encargos nuevos del 16-10 en A1, A2 y A10
 
 **Hecho: A3**
