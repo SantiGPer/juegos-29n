@@ -1,14 +1,2414 @@
 {
-  "legislatura": "XV",
   "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
-  "url": "https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/",
-  "consulta": "2026-10-16",
+  "url": "https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/",
+  "consulta": "2026-10-17",
   "metodo": "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria. Repeticiones de la fórmula a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos, menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente.",
-  "diarios": 204,
-  "sesiones_plenarias": 203,
-  "llamadas": 83,
+  "legislaturas": [
+    {
+      "legislatura": "VIII",
+      "diarios": 288,
+      "sesiones_plenarias": 288,
+      "llamadas": 40
+    },
+    {
+      "legislatura": "IX",
+      "diarios": 262,
+      "sesiones_plenarias": 262,
+      "llamadas": 4
+    },
+    {
+      "legislatura": "X",
+      "diarios": 293,
+      "sesiones_plenarias": 293,
+      "llamadas": 64
+    },
+    {
+      "legislatura": "XI",
+      "diarios": 13,
+      "sesiones_plenarias": 13,
+      "llamadas": 2
+    },
+    {
+      "legislatura": "XII",
+      "diarios": 176,
+      "sesiones_plenarias": 176,
+      "llamadas": 23
+    },
+    {
+      "legislatura": "XIII",
+      "diarios": 9,
+      "sesiones_plenarias": 9,
+      "llamadas": 0
+    },
+    {
+      "legislatura": "XIV",
+      "diarios": 262,
+      "sesiones_plenarias": 262,
+      "llamadas": 48
+    },
+    {
+      "legislatura": "XV",
+      "diarios": 204,
+      "sesiones_plenarias": 203,
+      "llamadas": 90
+    }
+  ],
   "actos": [
     {
+      "legislatura": "VIII",
+      "diario": 53,
+      "sesion": 49,
+      "fecha": "2004-11-30",
+      "pagina": 2537,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Aragonés",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Silencio, por favor. Al señor Aragonés le llamo al orden, y lamento hacerlo, porque me había prometido no hacerlo. ("
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 53,
+      "sesion": 49,
+      "fecha": "2004-11-30",
+      "pagina": 2537,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Hernando",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "a todos. Es una ley básica del Parlamento. (Protestas.—Rumores.—El señor Hernando Fraile: El señor Blanco ha llamado bocazas a otro diputado.) Señor Hernando, le llamo al orden. (El señor Hernando Fraile: A mí sí, pero al señor Blanco n"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 53,
+      "sesion": 49,
+      "fecha": "2004-11-30",
+      "pagina": 2537,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Hernando",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "or Blanco ha llamado bocazas a otro diputado.) Señor Hernando, le llamo al orden. (El señor Hernando Fraile: A mí sí, pero al señor Blanco no.) Señor Hernando, le llamo al orden por segunda vez. (Rumores.—El señor Atencia Robledo: ¡Qué c"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 58,
+      "sesion": 54,
+      "fecha": "2004-12-14",
+      "pagina": 2749,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Mancha",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Mancha, le llamo al orden por primera vez. Le ruego que guarde silencio. (Rumores.) S"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 68,
+      "sesion": 63,
+      "fecha": "2005-02-08",
+      "pagina": 3239,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "venciones escuetas y precisas al principio de la intervención. Si por ese método pretende usted alterar otra vez los criterios establecidos por la Presidencia, le llamo por primera vez al orden. Puede usted hacerlo al principio de la intervención de una"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 68,
+      "sesion": 63,
+      "fecha": "2005-02-08",
+      "pagina": 3239,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Le llamo por segunda vez al orden y le advierto que, si le llamo una tercera vez, le retiraré"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 72,
+      "sesion": 67,
+      "fecha": "2005-02-24",
+      "pagina": 3431,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": null,
+      "coincidencias": 2,
+      "fragmento": "es son los criterios de la Presidencia. No puede estar usted permanentemente porfiando públicamente con la Presidencia en este Congreso y en un tema como este. Le llamo al orden. ¡Respete los criterios de la Presidencia, se lo ruego por favor! ¡Le llamo al orden! 24 DE FEBRERO DE 2005.—N ÚM . 72"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 73,
+      "sesion": 68,
+      "fecha": "2005-03-08",
+      "pagina": 3493,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Esteban",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Esteban, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 73,
+      "sesion": 68,
+      "fecha": "2005-03-08",
+      "pagina": 3493,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Esteban",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señor Esteban, le llamo al orden por segunda vez. C ONGRESO"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 77,
+      "sesion": 72,
+      "fecha": "2005-03-16",
+      "pagina": 3706,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Pujalte",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Silencio, por favor. (Continúan las protestas.) Señor Pujalte, le llamo al orden por primera vez. Señor presidente, adelante."
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 83,
+      "sesion": 78,
+      "fecha": "2005-04-20",
+      "pagina": 4042,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Madero",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor presidente, un momento. (Pausa.) Señor Madero, le llamo al orden, y lo lamento mucho. No se viene al hemiciclo a generar est"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 83,
+      "sesion": 78,
+      "fecha": "2005-04-20",
+      "pagina": 4042,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "o lamento mucho. No se viene al hemiciclo a generar este tipo de pequeños incidentes. Sigan con atención el debate de unos y de otros. (Continúan los rumores.) Le llamo al orden por segunda vez. A la siguiente le pediré que se ausente de"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 84,
+      "sesion": 79,
+      "fecha": "2005-04-21",
+      "pagina": 4150,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Si no lo retira le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 86,
+      "sesion": 81,
+      "fecha": "2005-04-27",
+      "pagina": 4216,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Trillo",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "Les ruego silencio, por favor. Señor Trillo, le llamo al orden. (Protestas.—Rumores.) Señor Trillo, le llamo al orden por segunda vez. Usted debería dar ejemplo. (Continúan los"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 140,
+      "sesion": 132,
+      "fecha": "2005-12-21",
+      "pagina": 7090,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Martínez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Martínez-Pujalte, pare usted ya. (El señor Martínez-Pujalte López pronuncia palabras que no se perciben.) Señor Martínez-Pujalte, lo lamento, le llamo al orden por primera vez. Pare ya. (Aplausos.—Pausa) Continúe."
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 159,
+      "sesion": 148,
+      "fecha": "2006-03-15",
+      "pagina": 7941,
+      "presidencia": "Chacón i Piqueras",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señor Padilla",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "señor ministro el que responde. (El señor Padilla Carballada pronuncia palabras que no se perciben.) Por favor, señor Padilla, lleva usted toda la tarde igual. Le llamo por primera vez al orden. Señorías, seguimos con esta interpelación. Adelante, señor"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 163,
+      "sesion": 152,
+      "fecha": "2006-03-23",
+      "pagina": 8123,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Siéntese y no altere el orden. Le llamo al orden. (El señor Martínez-Pujalte López: Llámeme al orden lo que"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 163,
+      "sesion": 152,
+      "fecha": "2006-03-23",
+      "pagina": 8123,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Pujalte",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señor Pujalte, le llamo al orden por segunda vez. (Rumores.) Señor Arias Cañete, por favor."
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 175,
+      "sesion": 164,
+      "fecha": "2006-05-11",
+      "pagina": 8777,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Martínez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Por favor, señor Martínez- Pujalte, le ruego mantenga silencio. Le llamo al orden por primera vez, señor Martínez-Pujalte, y lamento hacerlo"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 175,
+      "sesion": 164,
+      "fecha": "2006-05-11",
+      "pagina": 8777,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Pujalte",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "Damos por concluido este punto del orden del día. (El señor Martínez-Pujalte López: Señor ministro, que nos detienen.) Señor Pujalte, le llamo al orden por segunda vez. Le llamo al orden por segunda vez. (Rumores.—El señor Martínez-Pujalte López:"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 175,
+      "sesion": 164,
+      "fecha": "2006-05-11",
+      "pagina": 8778,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Pujalte",
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "vez le invitaré a abandonar el hemiciclo. (Rumores.) Quiero que lo tenga usted en cuenta. (El señor Martínez-Pujalte López: La policía.) Señor Pujalte, le llamo al orden por tercera vez. Abandone el hemiciclo. (Aplausos.—Protesta"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 179,
+      "sesion": 168,
+      "fecha": "2006-05-23",
+      "pagina": 8978,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Atencia",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "de 2006.—Núm. 179 ser. Señor Atencia, le ruego que no insulte al presidente; se lo ruego. (Rumores.—El señor Atencia Robledo: No es un insulto.) Señor Atencia, le llamo al orden por primera vez, no lo olvide. Solo pido el mínimo respeto"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 227,
+      "sesion": 210,
+      "fecha": "2007-01-15",
+      "pagina": 11560,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Michavila",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Perdone. Señor Michavila, deje de molestar. Señor Michavila, le llamo al orden por primera vez. Deje de molestar. (El señor Michavila Núñe"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 227,
+      "sesion": 210,
+      "fecha": "2007-01-15",
+      "pagina": 11560,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Michavila",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "vila, deje de molestar. Señor Michavila, le llamo al orden por primera vez. Deje de molestar. (El señor Michavila Núñez pronuncia palabras que no se perciben.) Le llamo al orden por segunda vez. Si tuviera que llamarle al orden por terce"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 245,
+      "sesion": 227,
+      "fecha": "2007-03-28",
+      "pagina": 12330,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señora López",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "muy difícil dirigir estas sesiones en estas condiciones. (La señora López i Chamosa señala con el dedo los bancos del Grupo Popular.) ¡Señora López i Chamosa, le llamo al orden! Continúe, señor ministro, por favor."
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 247,
+      "sesion": 229,
+      "fecha": "2007-04-17",
+      "pagina": 12432,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Le llamo al orden por primera vez. Si desea crear hoy un conflicto, lo tendrá"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 251,
+      "sesion": 233,
+      "fecha": "2007-04-25",
+      "pagina": 12607,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Vázquez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "to lo puede pedir usted y ya sabe cuál es el trámite. Pasamos al siguiente punto del orden del día. (La señora Vázquez Blanco: Esto no es así.) Señora Vázquez, le llamo al orden. Respete la decisión del presidente, es usted muy reinciden"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 251,
+      "sesion": 233,
+      "fecha": "2007-04-25",
+      "pagina": 12608,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Vázquez",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "le estoy diciendo que se lo ruego, solo eso, es un ruego que le hago. (La señora Vázquez Blanco pronuncia palabras que no se perciben.) Señora Vázquez, le llamo al orden por segunda vez, le llamo al orden por segunda vez. Quiero decirle que si tuviera que llamarle"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 259,
+      "sesion": 241,
+      "fecha": "2007-05-31",
+      "pagina": 12978,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Martínez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "a tarea única y exclusiva del presidente. Llamamos a votación. (El señor Martínez-Pujalte López: No me haga gestos. Gestos los justos.) Señor Martínez-Pujalte, le llamo al orden. Es el presidente el que dirige los debates, no los diputad"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 264,
+      "sesion": 246,
+      "fecha": "2007-06-20",
+      "pagina": 13197,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Martínez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "llamarle al orden inmediatamente. Respete usted a quien está en el uso de la palabra. (El señor Martínez-Pujalte López pronuncia palabras que no se perciben.) Le llamo al orden por primera vez, señor Martínez-Pujalte. ¡Ya está bien! Con"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 266,
+      "sesion": 248,
+      "fecha": "2007-06-26",
+      "pagina": 13325,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Martínez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "?) Se lo ruego por favor. No puede desde la escalera hacer el comentario que ha hecho. (El señor Martínez-Pujalte López pronuncia palabras que no se perciben.) Le llamo al orden, señor diputado. Es lamentable esta forma de conducirse tod"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 266,
+      "sesion": 248,
+      "fecha": "2007-06-26",
+      "pagina": 13325,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Martínez",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "aga el favor de estarse tranquilo. Continúe, señora diputada. (El señor Martínez- Pujalte López pronuncia palabras que no se perciben.) Señor Martínez-Pujalte, le llamo al orden por segunda vez en esta sesión. Si tuviera que hacerlo una"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 283,
+      "sesion": 261,
+      "fecha": "2007-09-19",
+      "pagina": 13956,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Ayala",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Ayala, señor Ayala, le llamo al orden directamente. Hay que respetar a quien está en el uso de la"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 291,
+      "sesion": 269,
+      "fecha": "2007-10-16",
+      "pagina": 14326,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señora García",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "nte difícil es para que haya aquí optimismo de todas las partes. (Rumores.—La señora García-Hierro Caraballo vuelve a pronunciar palabras que no se perciben.) ¡La llamo al orden, señora Hierro! ¡No trate usted así al presidente! (Una señ"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 296,
+      "sesion": 274,
+      "fecha": "2007-10-31",
+      "pagina": 14629,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Hermosín",
+      "ordinal": null,
+      "coincidencias": 2,
+      "fragmento": "Señora Hermosín, señor Cuesta, les ruego que respeten a quien está en el uso de la palabra. (Protestas.) Señora Hermosín, la llamo al orden. No tiene usted ningún derecho a molestar al orador y no moleste. (Rumores.—La señora Hermosín Bono: No estoy molestando.) La llamo al orden. Eso provoca reacciones inevitablemente en el hemiciclo y e"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 296,
+      "sesion": 274,
+      "fecha": "2007-10-31",
+      "pagina": 14683,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Fernández",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Fernández Díaz, le llamo al orden, no moleste y no grite. Respete a quien está en el uso de l"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 303,
+      "sesion": 281,
+      "fecha": "2007-11-27",
+      "pagina": 15115,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Padilla",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "rdone. Ahora he identificado la voz —no siempre la puedo identificar—, y era usted, señor Padilla. Le ruego que no moleste al orador. (Rumores.) Señor Padilla, le llamo al orden y espero no tener que hacerlo más veces a lo largo de esta"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 303,
+      "sesion": 281,
+      "fecha": "2007-11-27",
+      "pagina": 15116,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Padilla",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Gracias. Grupo Socialista. Señor De la Encina, por favor. (El señor Padilla Carballada: ¿Qué es esto?) Señor Padilla, le llamo al orden por segunda vez. Esto me parece un juego escolar. Le advier"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 304,
+      "sesion": 282,
+      "fecha": "2007-11-28",
+      "pagina": 15139,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Martínez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Martínez-Pujalte, le llamo directamente al orden. Cuando ha intervenido el señor Fernández Díaz ha tenido un"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 304,
+      "sesion": 282,
+      "fecha": "2007-11-28",
+      "pagina": 15139,
+      "presidencia": "Manuel Marín González",
+      "cargo": "Presidencia",
+      "destinatario": "señor Fernández",
+      "ordinal": null,
+      "coincidencias": 2,
+      "fragmento": "directamente al orden. Cuando ha intervenido el señor Fernández Díaz ha tenido unas condiciones de debate aceptables. ¡Usted no grita! Se lo digo muy en serio. Le llamo directamente al orden. ¡Usted no grita! Respeten a quien esté en el uso de la palabra, como se ha respetado al señor Fernández Díaz. Usted no grita y le llamo directamente al orden. Continúe, señora ministra."
+    },
+    {
+      "legislatura": "IX",
+      "diario": 74,
+      "sesion": 69,
+      "fecha": "2009-04-01",
+      "pagina": 30,
+      "presidencia": "Cunillera i Mestres",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora Villalobos",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "¡Señora Villalobos, la llamo al orden por primera vez! Repito, por la que se reconocen y amplían"
+    },
+    {
+      "legislatura": "IX",
+      "diario": 178,
+      "sesion": 169,
+      "fecha": "2010-07-14",
+      "pagina": 17,
+      "presidencia": "José Bono Martínez",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Madero",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "r es usando la palabra y no impidiendo que el orador pueda organizar su discurso. (El señor Madero Jarabo pronuncia palabras que no se perciben.) Señor Madero, le llamo al orden por primera vez. Adelante, señor presidente del Gobierno."
+    },
+    {
+      "legislatura": "IX",
+      "diario": 233,
+      "sesion": 221,
+      "fecha": "2011-03-22",
+      "pagina": 12,
+      "presidencia": "José Bono Martínez",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Tarno",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "Señor Tarno, le llamo al orden. (El señor Tarno Blanco pronuncia palabras que no se perciben al bajar de la Presidencia.) Señor Tarno, le llamo por segunda vez al orden. Siéntese, señor Tardà. Del mismo modo que con el señor Est"
+    },
+    {
+      "legislatura": "IX",
+      "diario": 256,
+      "sesion": 244,
+      "fecha": "2011-06-28",
+      "pagina": 18,
+      "presidencia": "José Bono Martínez",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "A la próxima le llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 12,
+      "sesion": 11,
+      "fecha": "2012-02-21",
+      "pagina": 4,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "s.—Rumores.) Les ruego, señores diputados, que eviten toda manifestación. Por tanto, tienen que quitar esos papeles que han sacado delante de ustedes. (Pausa.) Les llamo al orden por primera vez. (Rumores.) Les ruego que quiten esos papel"
+    },
+    {
+      "legislatura": "X",
+      "diario": 12,
+      "sesion": 11,
+      "fecha": "2012-02-21",
+      "pagina": 17,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Jordà",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Jordà, la llamo por primera vez al orden. La señora JORDÀ I ROURA: Señor presidente, es que las enmi"
+    },
+    {
+      "legislatura": "X",
+      "diario": 38,
+      "sesion": 37,
+      "fecha": "2012-06-12",
+      "pagina": 28,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora diputada",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora diputada, le llamo al orden por primera vez. Si no se centra usted en el tema del debat"
+    },
+    {
+      "legislatura": "X",
+      "diario": 45,
+      "sesion": 44,
+      "fecha": "2012-06-27",
+      "pagina": 5,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "No podrá usted hablar hasta que no retiren esa pancarta sus compañeros de grupo. Les llamo al orden por primera vez. Continúe."
+    },
+    {
+      "legislatura": "X",
+      "diario": 45,
+      "sesion": 44,
+      "fecha": "2012-06-27",
+      "pagina": 47,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Villarrubia",
+      "ordinal": "primera",
+      "coincidencias": 2,
+      "fragmento": "Señor Villarrubia, le llamo al orden por primera vez. Es asombroso que usted se comporte así, siendo quien es. La primera vez que le llamo al orden. (El señor Villarrubia Mediavilla: No tiene razón; la prime"
+    },
+    {
+      "legislatura": "X",
+      "diario": 76,
+      "sesion": 72,
+      "fecha": "2012-11-28",
+      "pagina": 29,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Campos",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Un momento, señora ministra. Señor Campos, le llamo al orden. Continúe, señora ministra. La señora MINISTRA DE SANIDAD,"
+    },
+    {
+      "legislatura": "X",
+      "diario": 91,
+      "sesion": 85,
+      "fecha": "2013-02-20",
+      "pagina": 63,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Coscubiela",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Ya ha pasado su frase. Señor Coscubiela, le llamo al orden porque está usted riéndose del... No, termine, venga."
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 20,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Tardà",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Tardà, le llamo al orden por primera vez. El señor TARDÀ I COMA: (Continúa su interv"
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 20,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "alabra y el presidente, sin debate, le podrá imponer la sanción de no asistir al resto de la sesión». Entonces, usted ha sido llamado al orden por primera vez. Le llamo al orden por segunda vez y le advierto de que si tengo que volvérsel"
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 20,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Pues le llamo al orden por segunda vez. El señor TARDÀ I COMA: (Continúa su interv"
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 20,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Le llamo al orden por tercera vez. No tiene usted la palabra y le ruego que a"
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Le llamo al orden por segunda vez. Si vuelve a incumplir el Reglamento le ten"
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor diputado",
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Señor diputado, le llamo al orden por tercera vez y le ruego que abandone la tribuna. (Así lo"
+    },
+    {
+      "legislatura": "X",
+      "diario": 103,
+      "sesion": 97,
+      "fecha": "2013-04-11",
+      "pagina": 55,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "señor Ruiz",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "a palabra. (El señor Ruiz Llamas: Que sea respetuoso también el que habla). Silencio, se lo pido. (El señor Ruiz Llamas pronuncia palabras que no se perciben). Le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 109,
+      "sesion": 103,
+      "fecha": "2013-05-07",
+      "pagina": 63,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Álvarez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Perdón, señora diputada. Señora Álvarez, le llamo al orden por primera vez. (Protestas)."
+    },
+    {
+      "legislatura": "X",
+      "diario": 129,
+      "sesion": 122,
+      "fecha": "NA-NA-NA",
+      "pagina": 5,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "«Gobierno dimisión, elecciones ya».—Rumores y protestas). Señores parlamentarios del Grupo de La Izquierda Plural, les ruego que retiren sus carteles. (Pausa). Les llamo al orden por primera vez. (Rumores). Por parte del secretario primer"
+    },
+    {
+      "legislatura": "X",
+      "diario": 129,
+      "sesion": 122,
+      "fecha": "NA-NA-NA",
+      "pagina": 5,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Les llamo al orden por segunda vez. (Pausa.—Varios señores diputados: ¡Ahhh.—P"
+    },
+    {
+      "legislatura": "X",
+      "diario": 129,
+      "sesion": 122,
+      "fecha": "NA-NA-NA",
+      "pagina": 14,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Baldoví",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Baldoví, le llamo al orden por primera vez por no ceñirse a la cuestión. Le he dejado"
+    },
+    {
+      "legislatura": "X",
+      "diario": 129,
+      "sesion": 122,
+      "fecha": "NA-NA-NA",
+      "pagina": 14,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Baldoví",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señor Baldoví, le llamo al orden por segunda vez. Como inmediatamente no hable usted de la L"
+    },
+    {
+      "legislatura": "X",
+      "diario": 132,
+      "sesion": 124,
+      "fecha": "2013-08-01",
+      "pagina": 26,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "señor Coscubiela",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Vuelvo a decirle, señor Coscubiela, que no puede ofender. Les llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 132,
+      "sesion": 124,
+      "fecha": "2013-08-01",
+      "pagina": 50,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora González",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora González Veracruz, le ruego silencio y la llamo al orden. (Rumores). Continúe, señor presidente."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 24,
+      "presidencia": "Villalobos Talero",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Yuste",
+      "ordinal": "primera",
+      "coincidencias": 2,
+      "fragmento": "Señor Yuste, le llamo al orden. Hasta ahora ha intervenido usted explicando su posición respecto de la proposición de ley del Grupo Vasco. Esto ya no lo es. Por lo tanto, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 35,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Tiene usted que hablar de lo que está en el orden del día; de eso es de lo que debe usted hablar, si no lo hace, la llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 35,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora García",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora García Álvarez, la llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 35,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora García",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señora García Álvarez, la llamo al orden por segunda vez. Sabe usted las consecuencias si la llamara"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 36,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora García",
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Señora García Álvarez, la llamo al orden por tercera vez y le ruego que abandone la tribuna."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sixto",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Sixto, ha tenido un buen comienzo pero vuelve usted a lo que ya estábamos tratando. O sea, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "e saltado el llamamiento a la cuestión precisamente porque lo que usted dice es un camino que ya han seguido sus compañeros, pero en fin, le vuelvo a decir que le llamo al orden una primera vez pero es por apartarse de la cuestión. Si vo"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Le llamo al orden por tercera vez. Tiene usted que abandonar la tribuna."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 46,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Trevín",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Trevín, le recuerdo lo que vamos haciendo durante toda la tarde y le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 52,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Garzón",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Garzón, ha tenido usted un comienzo brillante, pero ya está entrando por el camino habitual. Le llamo al orden por primera vez por apartarse de la cuestión, no por el con"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 52,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Le llamo al orden por segunda vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 52,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora Vázquez, no siga usted por ese camino porque le tendré que llamar al orden, cosa que me duele personalmente, pero la llamo al orden. (Rumores)."
+    },
+    {
+      "legislatura": "X",
+      "diario": 145,
+      "sesion": 136,
+      "fecha": "2013-10-10",
+      "pagina": 9,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Errekondo",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Errekondo, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 147,
+      "sesion": 138,
+      "fecha": "2013-10-16",
+      "pagina": 31,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sicilia",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Por favor, señor ministro. Señor Sicilia, le llamo al orden por primera vez. (Rumores.—Un señor diputado: ¡Muy bien!)."
+    },
+    {
+      "legislatura": "X",
+      "diario": 163,
+      "sesion": 154,
+      "fecha": "2013-12-10",
+      "pagina": 49,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Campos",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Campos, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 168,
+      "sesion": 159,
+      "fecha": "2013-12-19",
+      "pagina": 86,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sixto",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Sixto, le llamo al orden por primera vez. Señor Merino."
+    },
+    {
+      "legislatura": "X",
+      "diario": 172,
+      "sesion": 161,
+      "fecha": "2014-01-22",
+      "pagina": 60,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Martín",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Perdón, señora vicepresidenta. Señora Martín González, la llamo al orden. Continúe."
+    },
+    {
+      "legislatura": "X",
+      "diario": 175,
+      "sesion": 163,
+      "fecha": "2014-02-12",
+      "pagina": 6,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "rotestas.—Varios señores diputados: ¡Fuera, fuera!). Silencio. No pueden ustedes tener esos carteles puestos ahí, así que les ruego que los guarden. (Rumores). Les llamo al orden por primera vez, les ruego que guarden los carteles. (Conti"
+    },
+    {
+      "legislatura": "X",
+      "diario": 175,
+      "sesion": 163,
+      "fecha": "2014-02-12",
+      "pagina": 6,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "les puestos ahí, así que les ruego que los guarden. (Rumores). Les llamo al orden por primera vez, les ruego que guarden los carteles. (Continúan los rumores). Les llamo al orden por segunda vez; procedería a expulsarles si no los bajan."
+    },
+    {
+      "legislatura": "X",
+      "diario": 189,
+      "sesion": 177,
+      "fecha": "2014-03-19",
+      "pagina": 18,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Un momento, señora ministra. Ruego silencio y le llamo al orden por primera vez, señor Pezzi. Se lo ruego. Siga usted, seño"
+    },
+    {
+      "legislatura": "X",
+      "diario": 204,
+      "sesion": 192,
+      "fecha": "2014-06-11",
+      "pagina": 14,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "señor Lara",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Perdón, señor Lara. Señores del Grupo de La Izquierda Plural, les llamo al orden por primera vez para que retiren los carteles. (Continúan l"
+    },
+    {
+      "legislatura": "X",
+      "diario": 212,
+      "sesion": 199,
+      "fecha": "2014-07-10",
+      "pagina": 61,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "señoría",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "prohibidos, considero que este hecho no ha distraído a sus señorías y que cada uno ha votado lo quería. Por lo tanto, la votación es válida. Ahora les ruego y les llamo al orden por primera vez para que retiren los carteles. (Pausa). Les"
+    },
+    {
+      "legislatura": "X",
+      "diario": 212,
+      "sesion": 199,
+      "fecha": "2014-07-10",
+      "pagina": 61,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "cada uno ha votado lo quería. Por lo tanto, la votación es válida. Ahora les ruego y les llamo al orden por primera vez para que retiren los carteles. (Pausa). Les llamo al orden por segunda vez y, si no los retiran, les tendré que expuls"
+    },
+    {
+      "legislatura": "X",
+      "diario": 232,
+      "sesion": 217,
+      "fecha": "2014-10-21",
+      "pagina": 24,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora López",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "¡Señora López i Chamosa, la llamo al orden por segunda vez! La próxima vez la echo del Pleno, sintiénd"
+    },
+    {
+      "legislatura": "X",
+      "diario": 240,
+      "sesion": 225,
+      "fecha": "2014-11-18",
+      "pagina": 43,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Conde",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Un momento, señor diputado. Señor Conde, le llamo al orden por primera vez. (Rumores). Continúe."
+    },
+    {
+      "legislatura": "X",
+      "diario": 248,
+      "sesion": 233,
+      "fecha": "2014-12-11",
+      "pagina": 78,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "azas. (Aplausos.—Las señoras y los señores diputados del Grupo Parlamentario de IU, ICV-EUiA, CHA: La Izquierda Plural continúan de pie con la mordaza puesta). Les llamo al orden por primera vez y les reitero la petición: quítense esas mo"
+    },
+    {
+      "legislatura": "X",
+      "diario": 248,
+      "sesion": 233,
+      "fecha": "2014-12-11",
+      "pagina": 78,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "dazas. (Las señoras y los señores diputados del Grupo Parlamentario de IU, ICV-EUiA, CHA: La Izquierda Plural continúan de pie con la mordaza puesta.—Rumores). Les llamo al orden por segunda vez. (Las señoras y los señores diputados del G"
+    },
+    {
+      "legislatura": "X",
+      "diario": 262,
+      "sesion": 245,
+      "fecha": "2015-02-24",
+      "pagina": 26,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Ramón",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Ramón, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 262,
+      "sesion": 245,
+      "fecha": "2015-02-24",
+      "pagina": 27,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Pezzi",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Pezzi, retire usted esa bandera. (Protestas.—Aplausos). Le llamo al orden por primera vez. (El señor Pezzi Cereto continúa exhibiendo"
+    },
+    {
+      "legislatura": "X",
+      "diario": 262,
+      "sesion": 245,
+      "fecha": "2015-02-24",
+      "pagina": 27,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Pezzi",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "estas.—Aplausos). Le llamo al orden por primera vez. (El señor Pezzi Cereto continúa exhibiendo la bandera de la Comunidad Autónoma de Andalucía). Señor Pezzi, le llamo al orden por segunda vez. (Protestas.—Aplausos). La próxima vez va u"
+    },
+    {
+      "legislatura": "X",
+      "diario": 266,
+      "sesion": 249,
+      "fecha": "2015-03-11",
+      "pagina": 9,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora López",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Gracias, señor presidente. (La señora López i Chamosa pronuncia palabras que no se perciben.—Rumores y protestas). Señora López i Chamosa, le llamo al orden por primera vez. (Rumores). — DEL DIPUTADO DON ANTONIO HERN"
+    },
+    {
+      "legislatura": "X",
+      "diario": 276,
+      "sesion": 259,
+      "fecha": "2015-04-28",
+      "pagina": 11,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Coscubiela",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Coscubiela, le voy a cortar porque está usted secundado. Tienen ustedes que retirar esos papeles. Les llamo al orden por primera vez; retiren los papeles. (Las señoras y los se"
+    },
+    {
+      "legislatura": "X",
+      "diario": 276,
+      "sesion": 259,
+      "fecha": "2015-04-28",
+      "pagina": 11,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "retiren los papeles. (Las señoras y los señores diputados del Grupo Parlamentario de IU, ICV-EUiA, CHA: La Izquierda Plural continúan mostrando los carteles). Les llamo al orden por segunda vez. Si no los retiran, tendré que expulsarles."
+    },
+    {
+      "legislatura": "X",
+      "diario": 280,
+      "sesion": 263,
+      "fecha": "2015-05-13",
+      "pagina": 63,
+      "presidencia": "Villalobos Talero",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Tardà",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "recogidas las palabras que ha vertido usted porque le he quitado la voz. Lo siento, señor Tardà, utilice un lenguaje más presentable. (Protestas). Señor Tardà, le llamo al orden. Por segunda vez; a la tercera abandona usted el Pleno. (El"
+    },
+    {
+      "legislatura": "X",
+      "diario": 289,
+      "sesion": 272,
+      "fecha": "2015-06-17",
+      "pagina": 13,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Esteban",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Esteban, le llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 301,
+      "sesion": 282,
+      "fecha": "2015-08-25",
+      "pagina": 20,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora López",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora López i Chamosa, la llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 306,
+      "sesion": 286,
+      "fecha": "2015-09-16",
+      "pagina": 113,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Álvarez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Álvarez-Arenas, la llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "X",
+      "diario": 306,
+      "sesion": 286,
+      "fecha": "2015-09-16",
+      "pagina": 115,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sicilia",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Vamos a continuar. (El señor Sicilia Alférez pronuncia palabras que no se perciben). Señor Sicilia, le llamo al orden por primera vez. (Protestas). Y, como siga así le voy a lla"
+    },
+    {
+      "legislatura": "X",
+      "diario": 309,
+      "sesion": 289,
+      "fecha": "2015-10-01",
+      "pagina": 14,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "En ese caso le llamo al orden por tercera vez y le expulso de la tribuna. Bájese de la tr"
+    },
+    {
+      "legislatura": "X",
+      "diario": 311,
+      "sesion": 291,
+      "fecha": "2015-10-14",
+      "pagina": 16,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Ramón",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora Ramón, le llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 311,
+      "sesion": 291,
+      "fecha": "2015-10-14",
+      "pagina": 29,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora López",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora López i Chamosa, la llamo al orden."
+    },
+    {
+      "legislatura": "X",
+      "diario": 312,
+      "sesion": 292,
+      "fecha": "2015-10-20",
+      "pagina": 16,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "señor Tardà",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "lo traduce. Tiene usted que hablar en castellano. (El señor Tardà i Coma pronuncia palabras que no se perciben). No, no, tiene usted que hablar en castellano y le llamo al orden por primera vez. Debe usted emplear el castellano. Es la no"
+    },
+    {
+      "legislatura": "XI",
+      "diario": 4,
+      "sesion": 4,
+      "fecha": "2016-03-04",
+      "pagina": 21,
+      "presidencia": "Patxi López Álvarez",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Tardà",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "una falsedad!). Señor Tardà, siéntese y guarde silencio si no quiere que le llame al orden. (El señor Tardà i Coma: ¡Por favor, deme la palabra!). Señor Tardà, le llamo al orden por primera vez. (El señor Tardà i Coma: ¡Le exigimos que n"
+    },
+    {
+      "legislatura": "XI",
+      "diario": 4,
+      "sesion": 4,
+      "fecha": "2016-03-04",
+      "pagina": 21,
+      "presidencia": "Patxi López Álvarez",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Tardà",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "señor Tardà i Coma: ¡Le exigimos que nos dé la palabra!—Varios señores diputados del Grupo Parlamentario de Esquerra Republicana se ponen de pie). Señor Tardà, le llamo al orden por primera vez. Siéntese. (El señor Tardà i Coma: ¡Le pedi"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 10,
+      "sesion": 9,
+      "fecha": "2016-10-20",
+      "pagina": 4,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Iglesias",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "ue tiene la Presidencia de la Cámara de aplicarlo. Por eso continúo con el orden del día. (El señor Iglesias Turrión: El Parlamento de Panamá). Señor Iglesias, le llamo al orden. (Rumores). Señorías, al tener dichas iniciativas carácter"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 13,
+      "sesion": 12,
+      "fecha": "2016-10-27",
+      "pagina": 95,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "señor Iglesias",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Iglesias, señor Iglesias, no tiene la palabra y le llamo al orden."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 13,
+      "sesion": 12,
+      "fecha": "2016-10-27",
+      "pagina": 95,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Iglesias",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Iglesias, le llamo al orden. (Aplausos en los bancos del Grupo Parlamentario Popular en"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 29,
+      "sesion": 27,
+      "fecha": "2017-02-14",
+      "pagina": 63,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Mayoral",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "(El señor Mayoral Perales pronuncia palabras que no se perciben). Señor Mayoral. ¡Señor Mayoral! (El señor Mayoral Perales continúa hablando). ¡Señor Mayoral, le llamo al orden! Adelante, señoría."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 39,
+      "sesion": 37,
+      "fecha": "2017-03-16",
+      "pagina": 25,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Delgado",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "señor Delgado Ramos: ¡Mire por allí!). Señor Delgado, yo miro a toda la Cámara. (El señor Delgado Ramos pronuncia palabras que no se perciben). Señor Delgado, le llamo al orden. Continúe, señor Barrachina."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 82,
+      "sesion": 78,
+      "fecha": "2017-10-17",
+      "pagina": 46,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señoría",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "tran carteles en los que se lee: Libertad presos políticos. Sánchez. Cuixart). Les ruego a sus señorías que retiren los carteles, por favor. (Pausa). Señorías, les llamo al orden. Señora Ciuró i Buldó… TOMA EN CONSIDERACIÓN DE PROPOSICION"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 83,
+      "sesion": 79,
+      "fecha": "2017-10-18",
+      "pagina": 15,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señoría",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "103 del Reglamento—, si no les llamaré al orden y me veré obligada a aplicar el Reglamento conforme al artículo 103. (Pausa). Señorías, se lo digo una vez más, les llamo ahora al orden; retiren los carteles, señorías. (Pausa). Señorías, les llamo por segunda vez al orden. (Rumores). Señorías, guarden silencio. Señorías, les recue"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 85,
+      "sesion": 81,
+      "fecha": "2017-10-24",
+      "pagina": 38,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Rufián",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "o. Muchas gracias. (Aplausos—El señor Rufián Romero muestra dos carteles). Señor Rufián, su tiempo se ha terminado, también el tiempo de estar en la tribuna, y le llamo al orden. (Rumores). Silencio, señorías. (Pausa). Por el Grupo"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 93,
+      "sesion": 89,
+      "fecha": "2017-11-23",
+      "pagina": 25,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Rodríguez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Un segundo, señor Maroto. Señora Rodríguez, le llamo al orden por las expresiones que está diciendo, pero no solamente po"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 110,
+      "sesion": 105,
+      "fecha": "2018-03-15",
+      "pagina": 24,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Chiquillo",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Un segundo, señorías. Señor Chiquillo, le llamo al orden. Continúe, señoría."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 121,
+      "sesion": 116,
+      "fecha": "2018-05-21",
+      "pagina": 25,
+      "presidencia": "Navarro Garzón",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora diputada",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora diputada, la llamo al orden."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 125,
+      "sesion": 120,
+      "fecha": "2018-05-30",
+      "pagina": 22,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Mayoral",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Un momento. Señor ministro, un segundo, por favor. Señor Mayoral, le llamo al orden. Continúe, señor ministro."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 125,
+      "sesion": 120,
+      "fecha": "2018-05-30",
+      "pagina": 22,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Mayoral",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Silencio, por favor. ¡Silencio! Señor Mayoral, le llamo al orden por segunda vez. Señor ministro."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 135,
+      "sesion": 130,
+      "fecha": "2018-07-04",
+      "pagina": 19,
+      "presidencia": "Prendes Prendes",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Mayoral",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "plausos.—Protestas.—El señor Mayoral Perales: ¡Claro que sí, a ver si pones orden!). Silencio. (El señor Mayoral Perales: ¿No te da vergüenza?). Señor Mayoral, le llamo al orden por primera vez. No le voy a consentir ni una salida de ton"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 138,
+      "sesion": 133,
+      "fecha": "2018-07-17",
+      "pagina": 21,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Hernando",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Hernando, le llamo al orden."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 147,
+      "sesion": 140,
+      "fecha": "2018-09-13",
+      "pagina": 16,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "señoría",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Silencio, señorías. Saben que me gusta poco llamar uno a uno al orden, pero doña Ángeles, le llamo al orden. También por los gestos se puede llamar al orden. Continúe,"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 151,
+      "sesion": 144,
+      "fecha": "2018-09-25",
+      "pagina": 17,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Cantó",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "¡Señor Cantó!, ¡señor Cantó! Señor Cantó, le llamo al orden. (El señor Cantó García del Moral: Me ha interpelado). Señor Cantó, le llamo al orden por segunda vez y le anuncio que le puedo expulsar del hemi"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 156,
+      "sesion": 149,
+      "fecha": "2018-10-17",
+      "pagina": 40,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Elorza",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Silencio. Silencio, señorías. Silencio. ¡Señor Elorza! (El señor Elorza González: ¿Qué?). Señor Elorza, le llamo al orden. (El señor Sahuquillo García: ¡Sí, claro!—Un señor diputado"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 156,
+      "sesion": 149,
+      "fecha": "2018-10-17",
+      "pagina": 40,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Zaragoza",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "ñor Sahuquillo García: ¡Sí, claro!—Un señor diputado: ¡Siempre del mismo lado!—El señor Zaragoza Alonso pronuncia palabras que no se perciben). Señor Zaragoza, le llamo al orden. (El señor Zaragoza Alonso pronuncia palabras que no se perciben). Señor Zaragoza, le llamo al orden por segunda vez y le anuncio que si le tengo que llamar al"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 167,
+      "sesion": 160,
+      "fecha": "2018-11-21",
+      "pagina": 16,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Rufián",
+      "ordinal": null,
+      "coincidencias": 2,
+      "fragmento": "¡Señor Rufián! ¡Señor Rufián, le llamo al orden! Señor Rufián, le llamo al orden porque mientras está el orador en el uso de la palabra no s"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 167,
+      "sesion": 160,
+      "fecha": "2018-11-21",
+      "pagina": 16,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Rufián",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señor Rufián, le llamo al orden por segunda vez y le recuerdo que si le llamo por tercera v"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 170,
+      "sesion": 163,
+      "fecha": "2018-12-12",
+      "pagina": 86,
+      "presidencia": "Navarro Garzón",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora diputada",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "¡Señora diputada, la llamo al orden!"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 170,
+      "sesion": 163,
+      "fecha": "2018-12-12",
+      "pagina": 86,
+      "presidencia": "Navarro Garzón",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora diputada",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "¡Señora diputada, la llamo al orden! Señora ministra, tiene la palabra."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 42,
+      "sesion": 39,
+      "fecha": "2020-09-09",
+      "pagina": 48,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señor Asarta",
+      "ordinal": null,
+      "coincidencias": 2,
+      "fragmento": "que los intervinientes lo hagan como lo ha hecho su portavoz, con tranquilidad y escuchándoles. (El señor Asarta Cuevas pronuncia palabras que no se perciben). Le llamo al orden, señor Asarta. (El señor Asarta Cuevas pronuncia palabras que no se perciben). Le llamo al orden, señor Asarta. Le pido que se tranquilice y se modere. (Pau"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 42,
+      "sesion": 39,
+      "fecha": "2020-09-09",
+      "pagina": 48,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "No tiene la palabra. Le llamo al orden por primera vez, señoría. Modérese, siéntese y tranquilíces"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 53,
+      "sesion": 50,
+      "fecha": "2020-10-15",
+      "pagina": 33,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Gutiérrez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señor Gutiérrez, le llamo al orden. Señorías, guarden silencio, como todos los demás portavoce"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 53,
+      "sesion": 50,
+      "fecha": "2020-10-15",
+      "pagina": 81,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Guijarro",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Silencio, por favor. Silencio. Señor Guijarro, por favor. Señor Guijarro, le llamo al orden por primera vez. (El señor Guijarro García: Siempre igual,"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 76,
+      "sesion": 72,
+      "fecha": "2021-02-03",
+      "pagina": 7,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Postigo",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "¡Señor Postigo Quintana, le llamo al orden!"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 84,
+      "sesion": 80,
+      "fecha": "2021-03-09",
+      "pagina": 62,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Cabezón",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Gracias, señora Bueno. (Pausa.—Una trabajadora del servicio de limpieza procede a desinfectar la tribuna de oradores.—Fuertes rumores). Señor Cabezón, lo llamo al orden. En turno de fijación de posiciones, por el Grupo Parlament"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 87,
+      "sesion": 83,
+      "fecha": "2021-03-16",
+      "pagina": 53,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sánchez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "te para que continuemos con el debate, por favor. (El señor Sánchez del Real, señalando otros escaños del hemiciclo: Dígaselo a ellos). Señor Sánchez del Real, le llamo al orden por primera vez. En turno de fijación de posiciones, por el"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 90,
+      "sesion": 86,
+      "fecha": "2021-03-23",
+      "pagina": 47,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Espinosa",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "inosa de los Monteros, siéntese, por favor. (El señor Espinosa de los Monteros: No me siento, exijo contestar a las alusiones). Señor Espinosa de los Monteros, le llamo al orden por primera vez. Siéntese, por favor. (El señor Espinosa de"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 91,
+      "sesion": 87,
+      "fecha": "2021-03-24",
+      "pagina": 55,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Uriarte",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "estas de la señora Uriarte Bengoechea). Señora Uriarte, por favor. (La señora Uriarte Bengoechea continúa hablando desde su escaño). Señora Uriarte, por favor, la llamo al orden por primera vez. — DEL GRUPO PARLAMENTARIO POPULAR EN EL CO"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 97,
+      "sesion": 93,
+      "fecha": "2021-04-21",
+      "pagina": 41,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señor Figaredo",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "alabra. (El señor Espinosa de los Monteros de Simón pronuncia palabras que no se perciben.—El señor Simancas Simancas: ¡Gamberro!). Un momento, señor Figaredo. Le llamo al orden por primera vez. (El señor Figaredo Álvarez-Sala, ya en la"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 97,
+      "sesion": 93,
+      "fecha": "2021-04-21",
+      "pagina": 41,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "rden por primera vez. (El señor Figaredo Álvarez-Sala, ya en la tribuna, se dirige al señor vicepresidente). Estoy hablando a su compañero portavoz de bancada. Le llamo al orden por primera vez por un insulto grave a la Presidencia. (Pau"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 123,
+      "sesion": 117,
+      "fecha": "2021-09-21",
+      "pagina": 10,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Sánchez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Un segundo, señoría. Señor Sánchez García, le llamo al orden y le pido que retire lo que acaba de decir. (Un señor diput"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 123,
+      "sesion": 117,
+      "fecha": "2021-09-21",
+      "pagina": 10,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señoría",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "Señoría, le llamo al orden por segunda vez. Le reitero que retire lo que acaba de decir; dígame simplemente sí o no. Por segunda vez, le llamo al orden."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 123,
+      "sesion": 117,
+      "fecha": "2021-09-21",
+      "pagina": 10,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Por tercera vez le llamo al orden. Desaloje usted el hemiciclo, por favor. (Aplausos.—Pausa)."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 156,
+      "sesion": 149,
+      "fecha": "2022-02-03",
+      "pagina": 72,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora Angulo",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Un segundo, señora Berja. Señora Angulo, la llamo al orden por primera vez. Mientras usted ha intervenido no la ha int"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 174,
+      "sesion": 167,
+      "fecha": "2022-03-30",
+      "pagina": 99,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Angulo",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "¡Silencio, por favor! ¡Señora Angulo, silencio! (La señora Angulo Romero: ¡Si es que no contesta!—Rumores). ¡Señora Angulo, la llamo al orden! (Un señor diputado: ¡Por fin, por fin!—Continúan los rumor"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 175,
+      "sesion": 168,
+      "fecha": "2022-03-31",
+      "pagina": 52,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señoría",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señorías, por favor, silencio. Les llamo al orden. Votaremos en cinco minutos. Les advierto que, puesto que h"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 181,
+      "sesion": 174,
+      "fecha": "2022-04-28",
+      "pagina": 22,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Tarno",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Blanco: ¡Indecentes! ¡Con los ERE habéis robado a los andaluces!—El señor Herrero Bono: ¡Habéis saqueado Andalucía!—Fuertes protestas). Señor Tarno, ¡silencio! Lo llamo al orden. (Protestas). Señor Hispán, silencio. Señor Suárez, ¡silenc"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 184,
+      "sesion": 177,
+      "fecha": "2022-05-11",
+      "pagina": 19,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Matarí",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Muchas gracias, señora ministra. Señor Matarí, le llamo al orden por primera vez por reiteración. Por favor, conténgase en l"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 184,
+      "sesion": 177,
+      "fecha": "2022-05-11",
+      "pagina": 24,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora Beltrán",
+      "ordinal": "primera",
+      "coincidencias": 3,
+      "fragmento": "Señor ministro, un momento, por favor. Señora Beltrán, la llamo al orden. (Un señor diputado: ¡Ahora te callarás!). Señora Beltrán, la llamo al orden, conténgase y, por favor, guarde silencio. (Rumores). Señora Beltrán, la llamo al orden por primera vez. (Rumores). Señor ministro. El señor MINIST"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 186,
+      "sesion": 179,
+      "fecha": "2022-05-17",
+      "pagina": 17,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Mayoral",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "í!). Señor Mayoral, le pido silencio por favor. (El señor Mayoral Perales: ¡Que haya orden en la sala! ¡Ya está bien de provocaciones, hombre!). Señor Mayoral, le llamo al orden. ¡Silencio, por favor! (El señor Mayoral Perales: ¡Muy bien"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 193,
+      "sesion": 186,
+      "fecha": "2022-06-09",
+      "pagina": 93,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "por favor. (El señor Espinosa de los Monteros de Simón: Es de un sectarismo atroz lo que usted ha dicho.—Protestas). Siéntese, por favor. ¡Siéntese, por favor! Le llamo al orden por primera vez. (El señor Espinosa de los Monteros de Simó"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 193,
+      "sesion": 186,
+      "fecha": "2022-06-09",
+      "pagina": 93,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señor Espinosa",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "éntese, por favor. ¡Siéntese, por favor! Le llamo al orden por primera vez. (El señor Espinosa de los Monteros de Simón: Es de un sectarismo atroz.—Protestas). Le llamo al orden por primera vez. Señoría, siéntese. Por el Grupo Parlamenta"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 194,
+      "sesion": 187,
+      "fecha": "2022-06-21",
+      "pagina": 5,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "que todos los que estamos aquí la podamos entender, le ruego que continúe con la norma, y la norma es que utilice el castellano en su intervención, por favor. La llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 194,
+      "sesion": 187,
+      "fecha": "2022-06-21",
+      "pagina": 5,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "ecisamente porque el Reglamento no establece el uso de las lenguas cooficiales. Además, el artículo 3 de la Constitución española es muy claro en este sentido. La llamo al orden por segunda vez y le advierto de que, si hay una tercera oc"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 194,
+      "sesion": 187,
+      "fecha": "2022-06-21",
+      "pagina": 5,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señoría",
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Señoría, un momento. La llamo por tercera vez al orden. Por tanto, abandone la tribuna. He intentado hacerle ver,"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 194,
+      "sesion": 187,
+      "fecha": "2022-06-21",
+      "pagina": 7,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señor Rego",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Un segundo, señor Rego. Le llamo por segunda vez al orden. Le advierto de que, con una tercera llamada al orden, desg"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 194,
+      "sesion": 187,
+      "fecha": "2022-06-21",
+      "pagina": 11,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "n sabe usted, y aun sabiéndolo continúa con esta dinámica, le advierto lo mismo que les he dicho antes a sus compañeras y compañeros diputados que han hablado. Le llamo al orden por segunda vez. Tal y como establece el Reglamento, con un"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 197,
+      "sesion": 190,
+      "fecha": "2022-06-28",
+      "pagina": 61,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "señora Carvalho",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señora Carvalho, ¡silencio, por favor! (La señora Carvalho Dantas: No es teatro, es asesinato). La llamo al orden, señora Carvalho, por primera vez. ¡Silencio! (Rumores)."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 205,
+      "sesion": 197,
+      "fecha": "2022-09-13",
+      "pagina": 60,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señora Calvo, le vuelvo a decir que no entre en polémica con la Presidencia. No tiene usted la palabra para entrar en polémica con la Presidencia y la llamo al orden por segunda vez. No me obligue, por favor, a llamarla por t"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 205,
+      "sesion": 197,
+      "fecha": "2022-09-13",
+      "pagina": 60,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Calvo",
+      "ordinal": "tercera",
+      "coincidencias": 1,
+      "fragmento": "Señora Calvo, la llamo al orden por tercera vez y, por tanto, le pido, por favor, que aband"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 208,
+      "sesion": 200,
+      "fecha": "2022-09-20",
+      "pagina": 32,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señoría",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señoría, le llamo por segunda vez al orden, ya sabe usted las consecuencias que ello conlleva. Por tan"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 213,
+      "sesion": 205,
+      "fecha": "2022-09-29",
+      "pagina": 15,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señora Vázquez",
+      "ordinal": "primera",
+      "coincidencias": 2,
+      "fragmento": "todos los días varias veces. (Aplausos.—Rumores.—La señora Vázquez Blanco: Pido que se lea un papel. Pido que se lea la instrucción). Siéntese, señora Vázquez, la llamo al orden por primera vez. La llamo al orden por primera vez. Siéntese, por favor. Siéntese, señoría. (R"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 224,
+      "sesion": 216,
+      "fecha": "2022-11-23",
+      "pagina": 18,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Mateu",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "eñor ministro. (Denegación.—Rumores). Silencio, por favor. Señor Mateu, silencio. (El señor Mateu Istúriz: ¡Pero si estaba hablando él!— Rumores). Señor Mateu, le llamo al orden. Sección 23, Pasamos al debate de la sección 23, Ministerio"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 224,
+      "sesion": 216,
+      "fecha": "2022-11-23",
+      "pagina": 103,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "que retire la alusión que ha referido a la ministra relativa a su relación personal con Pablo Iglesias. (Denegaciones). Será retirado del Diario de Sesiones, y la llamo al orden por primera vez. (Aplausos.—Protestas). Por favor. (Continú"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 225,
+      "sesion": 217,
+      "fecha": "2022-11-24",
+      "pagina": 50,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor De Olano",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "ue escuchemos al portavoz que lo está haciendo en estos momentos. Se lo ruego, señorías. (El señor De Olano Vela: ¡Que suba Guijarro!—Rumores). Señor De Olano, le llamo al orden por primera vez."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 227,
+      "sesion": 219,
+      "fecha": "2022-11-29",
+      "pagina": 35,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Por primera vez la llamo al orden. Si se lo tengo que llamar tres veces, le quitaré la palabr"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 228,
+      "sesion": 220,
+      "fecha": "2022-11-30",
+      "pagina": 24,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Callejas",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Callejas, le llamo al orden, por primera vez. (Rumores). Pido silencio, por favor. Seño"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 232,
+      "sesion": 224,
+      "fecha": "2022-12-14",
+      "pagina": 17,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Cantera",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Cantera, silencio, por favor. (Protestas). Silencio. (La señora Cantera de Castro pronuncia palabras que no se perciben). ¡Señora Cantera, la llamo al orden por primera vez! ¡Silencio! (Pausa). Señor ministro de la P"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 234,
+      "sesion": 226,
+      "fecha": "2022-12-15",
+      "pagina": 17,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Garcés",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "¡Señor Garcés, le llamo al orden por primera vez! (Protestas). El señor ASENS LLODRÀ: Señora"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 239,
+      "sesion": 230,
+      "fecha": "2023-01-24",
+      "pagina": 108,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor De Olano",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor De Olano, le llamo al orden por primera vez. Señor De Olano, le pido silencio."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 240,
+      "sesion": 231,
+      "fecha": "2023-02-07",
+      "pagina": 30,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora Dantas",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señoría, un segundo. Discúlpeme. Señora Dantas, le llamo al orden por primera vez. No reitere, por favor, y no insista en lo"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 241,
+      "sesion": 232,
+      "fecha": "2023-02-08",
+      "pagina": 57,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señora Carvalho",
+      "ordinal": "segunda",
+      "coincidencias": 2,
+      "fragmento": "Un segundo, señor Serrada. Señora Carvalho, la llamo al orden por segunda vez y tengo que advertirle de que al ser la segunda vez que la llamo al orden en esta sesión plenaria, si tengo que hacerlo una tercera v"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 242,
+      "sesion": 233,
+      "fecha": "2023-02-09",
+      "pagina": 51,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Ley de Cooperación para el Desarrollo Sostenible y la Solidaridad Global. Por tanto le ruego que vaya a la cuestión. (Continúan las protestas). Silencio. Le llamo al orden por primera vez. (Dirigiéndose a la bancada del Grupo Parla"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 242,
+      "sesion": 233,
+      "fecha": "2023-02-09",
+      "pagina": 51,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señoría",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señoría, un momento, por favor. Le llamo por segunda vez al orden, según el artículo 102, para que se atenga a la cuestión. ("
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 253,
+      "sesion": 244,
+      "fecha": "2023-03-15",
+      "pagina": 36,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "Señor Matarí",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señor Matarí, le llamo al orden por primera vez. No esté permanentemente interrumpiendo a l"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 256,
+      "sesion": 247,
+      "fecha": "2023-03-22",
+      "pagina": 25,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Sánchez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Tiene la palabra el candidato a la Presidencia del Gobierno. (El señor Sánchez del Real: ¡Los del Ramsés!—Protestas). ¡Señor Sánchez del Real, le llamo al orden! El señor CANDIDATO A LA PRESIDENCIA DEL GOBIERNO (Tam"
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 261,
+      "sesion": 252,
+      "fecha": "2023-04-19",
+      "pagina": 41,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "cargo": "Vicepresidencia",
+      "destinatario": "señor Guijarro",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "baje el tono de voz, no hace falta gritar. Si usted quiere pedir la palabra, el Reglamento se lo permite. (El señor Guijarro García: ¡Usted no ha hecho nada!). Le llamo al orden por primera vez. Cállese, por favor. El Reglamento le permi"
+    },
+    {
+      "legislatura": "XV",
       "diario": 16,
       "sesion": 15,
       "fecha": "2024-01-10",
@@ -21,6 +2421,7 @@
       "fragmento": "Un momento, señoría. Señor Palencia Rubio, le llamo al orden por primera vez y le advierto de que si le llamo dos veces"
     },
     {
+      "legislatura": "XV",
       "diario": 24,
       "sesion": 22,
       "fecha": "2024-02-21",
@@ -33,6 +2434,7 @@
       "fragmento": "Por favor, señor diputado. Le llamo al orden. (Varias señoras y señores diputados: ¡Qué poca vergüenza!)"
     },
     {
+      "legislatura": "XV",
       "diario": 27,
       "sesion": 25,
       "fecha": "2024-02-28",
@@ -45,6 +2447,7 @@
       "fragmento": "¡Señor diputado! ¡Señor diputado! Le llamo al orden, señor Sánchez. (Un señor diputado: ¡Sinvergüenza!—Una seño"
     },
     {
+      "legislatura": "XV",
       "diario": 27,
       "sesion": 25,
       "fecha": "2024-02-28",
@@ -57,6 +2460,7 @@
       "fragmento": "¡Señor diputado! ¡Señor diputado! Le llamo al orden, señor Sánchez. (Un señor diputado: ¡Sinvergüenza!—Una señora diputada: ¡A tu casa!). Por primera vez le llamo al orden, señor Sánchez. (El señor Sánchez García: Contención, ningu"
     },
     {
+      "legislatura": "XV",
       "diario": 28,
       "sesion": 26,
       "fecha": "2024-02-29",
@@ -69,6 +2473,7 @@
       "fragmento": "palabra. Aténgase al Reglamento de la Cámara, que usted tiene la obligación de darme la palabra, señora Armengol. He sido aludido directamente). Señor Tellado, le llamo al orden porque ningún diputado puede hacer uso de la palabra si no"
     },
     {
+      "legislatura": "XV",
       "diario": 34,
       "sesion": 32,
       "fecha": "2024-03-20",
@@ -81,6 +2486,7 @@
       "fragmento": "diputados, por favor, guarden silencio y dejen… (Protestas.—Aplausos.—El señor De Olano Vela pronuncia palabras que no se perciben). Señor De Olano, por favor, le llamo al orden. Silencio, por favor. Señores diputados, vamos a continuar"
     },
     {
+      "legislatura": "XV",
       "diario": 41,
       "sesion": 39,
       "fecha": "2024-05-22",
@@ -93,6 +2499,7 @@
       "fragmento": "Señor Conde, le llamo al orden por primera vez. Silencio. Tiene la palabra el señor Errejó"
     },
     {
+      "legislatura": "XV",
       "diario": 43,
       "sesion": 41,
       "fecha": "2024-05-28",
@@ -105,6 +2512,7 @@
       "fragmento": "Un momento, señoría. Señor Tellado, le llamo al orden por primera vez. (El señor Tellado Filgueira: Es que se est"
     },
     {
+      "legislatura": "XV",
       "diario": 43,
       "sesion": 41,
       "fecha": "2024-05-28",
@@ -117,6 +2525,7 @@
       "fragmento": "se está pasando). Y le advierto que, según el artículo 104, si le tengo que llamar al orden tres veces le expulsaré del hemiciclo. (Rumores.―Aplausos). Así que le llamo al orden por primera vez. Continúe, señoría."
     },
     {
+      "legislatura": "XV",
       "diario": 43,
       "sesion": 41,
       "fecha": "2024-05-28",
@@ -129,6 +2538,7 @@
       "fragmento": "Un momento, señoría. Señor Conde, es usted muy reiterativo, mucho, así que le llamo al orden por primera vez. Continúe."
     },
     {
+      "legislatura": "XV",
       "diario": 45,
       "sesion": 43,
       "fecha": "2024-05-30",
@@ -141,6 +2551,7 @@
       "fragmento": "ar y a otros se nos amordaza!―La señora vicepresidenta primera del Gobierno y ministra de Hacienda (Montero Cuadrado): ¡No tienes la palabra!). Señor Figaredo, le llamo al orden por primera vez. Por favor, guarde el orden. (Varios señore"
     },
     {
+      "legislatura": "XV",
       "diario": 45,
       "sesion": 43,
       "fecha": "2024-05-30",
@@ -153,6 +2564,7 @@
       "fragmento": "Señor Mariscal… (continúan las protestas). Señor Mariscal, le llamo al orden por primera vez. (El señor Sánchez García: Dale la palabra"
     },
     {
+      "legislatura": "XV",
       "diario": 45,
       "sesion": 43,
       "fecha": "2024-05-30",
@@ -165,6 +2577,7 @@
       "fragmento": "Dale la palabra a Pisarello otra vez.—Rumores). Señor Rallo, tiene la palabra. (El señor Sánchez García pronuncia palabras que no se perciben). Señor Sánchez, le llamo al orden por primera vez. Señor Rallo, tiene la palabra."
     },
     {
+      "legislatura": "XV",
       "diario": 50,
       "sesion": 48,
       "fecha": "2024-06-19",
@@ -177,6 +2590,7 @@
       "fragmento": "Señor García, le llamo al orden por primera vez. Continúe, señor ministro. El señor MINISTR"
     },
     {
+      "legislatura": "XV",
       "diario": 55,
       "sesion": 53,
       "fecha": "2024-07-04",
@@ -189,6 +2603,7 @@
       "fragmento": "ado pronuncia palabras que no se perciben.—Protestas.—Un señor diputado: ¡Qué vergüenza!—Rumores.—Un señor diputado: ¿Quién ha sido el valiente?). Señor Belda, le llamo al orden por primera vez; y no vuelva a repetir esos improperios, po"
     },
     {
+      "legislatura": "XV",
       "diario": 57,
       "sesion": 55,
       "fecha": "2024-07-17",
@@ -201,6 +2616,7 @@
       "fragmento": "Señora Moraleja, la llamo al orden por primera vez. Ruego silencio. (Protestas). Ruego silenci"
     },
     {
+      "legislatura": "XV",
       "diario": 60,
       "sesion": 57,
       "fecha": "2024-09-10",
@@ -213,6 +2629,7 @@
       "fragmento": "dido a una dictadura.—Rumores). Le ruego el mínimo de educación posible en esta Cámara parlamentaria. (El señor Tellado Filgueira: Pues llámeme al orden). Pues le llamo al orden por primera vez, señor Tellado. (Rumores.—El señor Sánchez"
     },
     {
+      "legislatura": "XV",
       "diario": 61,
       "sesion": 58,
       "fecha": "2024-09-11",
@@ -225,6 +2642,7 @@
       "fragmento": "residenta, está abusando de su cargo). Pasamos al siguiente punto del orden del día, relativo… (El señor Tellado Filgueira: Señora presidenta…). Señor Tellado, le llamo al orden por primera vez. Siéntese y deje de interrumpir la sesión p"
     },
     {
+      "legislatura": "XV",
       "diario": 61,
       "sesion": 58,
       "fecha": "2024-09-11",
@@ -237,6 +2655,7 @@
       "fragmento": "ta, por favor. (El señor Tellado Filgueira, señalando el Reglamento: Este es el Reglamento). Le tengo que advertir, señor Tellado, de que es la segunda vez que le llamo al orden porque ayer ya tuve que llamarle al orden por increpar a lo"
     },
     {
+      "legislatura": "XV",
       "diario": 63,
       "sesion": 60,
       "fecha": "2024-09-18",
@@ -249,6 +2668,7 @@
       "fragmento": "as que no se perciben señalando hacia los escaños del Grupo Parlamentario Socialista). Por favor, señor Hernando, respeto a la Cámara. (Continúan los rumores). Le llamo al orden por primera vez. Señor ministro, cuando usted quiera."
     },
     {
+      "legislatura": "XV",
       "diario": 65,
       "sesion": 62,
       "fecha": "2024-09-25",
@@ -261,6 +2681,7 @@
       "fragmento": "a bancada del Gobierno, ha estado en absoluto silencio. Usted no para de interrumpir a la señora vicepresidenta, no para de interrumpir. (Aplausos). Por tanto, le llamo por primera vez al orden, y ya sabe usted que a la tercera deja de asistir a la sesi"
     },
     {
+      "legislatura": "XV",
       "diario": 65,
       "sesion": 62,
       "fecha": "2024-09-25",
@@ -273,6 +2694,7 @@
       "fragmento": "¡Dé la palabra! ¡Ya está bien, hombre!—Un señor diputado: Dadle una tila). Señor Noriega Gómez, aparte de pedirle que no se altere, no hace falta gritar tanto, le llamo al orden por primera vez. Le llamo al orden. (El señor Tellado Filgueira continúa pidiendo la palabra)."
     },
     {
+      "legislatura": "XV",
       "diario": 66,
       "sesion": 63,
       "fecha": "2024-09-26",
@@ -285,6 +2707,7 @@
       "fragmento": "Señorías, señor Conde, le llamo la atención y le llamo al orden por primera vez. (El señor Conde Bajén: Gracias, señor pres"
     },
     {
+      "legislatura": "XV",
       "diario": 67,
       "sesion": 64,
       "fecha": "2024-10-08",
@@ -297,6 +2720,7 @@
       "fragmento": "Gracias. (Protestas.—El señor Sáez Alonso-Muñumer: ¡Es una vergüenza esto! ¡Es una vergüenza lo que hace!). Señoría, le llamo al orden. Le llamo al orden por primera vez. (Protestas.—El señor Sáez Alonso- Muñumer"
     },
     {
+      "legislatura": "XV",
       "diario": 67,
       "sesion": 64,
       "fecha": "2024-10-08",
@@ -309,6 +2733,7 @@
       "fragmento": "residencia. (Protestas.—El señor Sáez Alonso-Muñumer pronuncia palabras que no se perciben mientras indica el número cuatro con los dedos de su mano). Señoría, le llamo al orden por segunda vez advirtiéndole de que si le llamo una tercer"
     },
     {
+      "legislatura": "XV",
       "diario": 67,
       "sesion": 64,
       "fecha": "2024-10-08",
@@ -321,6 +2746,7 @@
       "fragmento": "or De Olano, serénese. (Rumores.— Protestas.—El señor De Olano Vela: Llámele la atención como se la llama a mis compañeros). Serénese. Le ruego que se serene y le llamo por primera vez al orden, ¿de acuerdo? Le llamo al orden por primera vez. (Continúan las protestas). Serénense, seño"
     },
     {
+      "legislatura": "XV",
       "diario": 67,
       "sesion": 64,
       "fecha": "2024-10-08",
@@ -333,6 +2759,7 @@
       "fragmento": "Un momento, señoría. Señor Tellado, le llamo al orden por primera vez por llamar «la mafia» a esta Presidencia. No se lo voy a admitir. Le llamo al orden por primera vez. Si usted lo reitera, le tendré que volver"
     },
     {
+      "legislatura": "XV",
       "diario": 67,
       "sesion": 64,
       "fecha": "2024-10-08",
@@ -345,6 +2772,7 @@
       "fragmento": "abras que no se perciben). Señoría, no se puede permitir que usted utilice esos términos en esta sede. No es adecuado y así lo establece el Reglamento, así que le llamo por primera vez al orden. (El señor Tellado Filgueira hace gestos negativos con la c"
     },
     {
+      "legislatura": "XV",
       "diario": 68,
       "sesion": 65,
       "fecha": "2024-10-09",
@@ -357,6 +2785,7 @@
       "fragmento": "io. Un momento, señor presidente Silencio, por favor. Señoras y señores diputados, un poco de respeto a la Cámara y al decoro parlamentario. Señor Conde Bajén, le llamo al orden por primera vez."
     },
     {
+      "legislatura": "XV",
       "diario": 70,
       "sesion": 67,
       "fecha": "2024-10-15",
@@ -369,6 +2798,7 @@
       "fragmento": "alabra el señor Pagès i Massó, por un tiempo de siete minutos. Cuando quiera. (El señor Hernando Fraile pronuncia palabras que no se perciben). Señor Hernando, le llamo al orden por primera vez. El señor PAGÈS I MASSÓ: Bona tarda, senyor"
     },
     {
+      "legislatura": "XV",
       "diario": 73,
       "sesion": 70,
       "fecha": "2024-10-23",
@@ -381,6 +2811,7 @@
       "fragmento": "l ministro de la Presidencia, Justicia y Relaciones con las Cortes… (El señor Tellado Filgueira: ¡Qué escándalo! ¡Qué vergüenza de presidenta!). Señor Tellado, le llamo al orden por primera vez. … sobre su responsabilidad en los múltiple"
     },
     {
+      "legislatura": "XV",
       "diario": 81,
       "sesion": 78,
       "fecha": "2024-11-20",
@@ -393,6 +2824,7 @@
       "fragmento": "Señor Flores. (Continúan las protestas). Señores diputados, por favor, si me dejan hablar. (Continúan las protestas). Señor Flores, le llamo al orden. Está en uso de la palabra el ministro de Presidencia, por"
     },
     {
+      "legislatura": "XV",
       "diario": 81,
       "sesion": 78,
       "fecha": "2024-11-20",
@@ -405,6 +2837,7 @@
       "fragmento": "Muchas gracias, señor ministro. Señor Hernando, le llamo al orden por primera vez. (Una señora diputada: ¡Encima!). Por favor"
     },
     {
+      "legislatura": "XV",
       "diario": 82,
       "sesion": 79,
       "fecha": "2024-11-21",
@@ -417,6 +2850,7 @@
       "fragmento": "Un momento, señoría. Señor Argüelles, le llamo al orden por primera vez. Queda usted advertido de que le llamo al orden por primera vez por reiteración, y usted y yo sabemos por q"
     },
     {
+      "legislatura": "XV",
       "diario": 82,
       "sesion": 79,
       "fecha": "2024-11-21",
@@ -429,6 +2863,7 @@
       "fragmento": "Señora Sánchez Torregrosa, la llamo al orden por primera vez. (El señor Tellado Filgueira pronuncia pala"
     },
     {
+      "legislatura": "XV",
       "diario": 82,
       "sesion": 79,
       "fecha": "2024-11-21",
@@ -441,6 +2876,7 @@
       "fragmento": "Señora Sánchez Torregrosa, la llamo al orden por primera vez. (El señor Tellado Filgueira pronuncia palabras que no se perciben). Señor Tellado, le llamo al orden por primera vez. (Protestas). Por el Grupo Parlamentario Po"
     },
     {
+      "legislatura": "XV",
       "diario": 87,
       "sesion": 84,
       "fecha": "2024-12-11",
@@ -453,6 +2889,7 @@
       "fragmento": "Un momento, señora vicepresidenta. Señor Hernando, le llamo al orden por primera vez. (El señor Hernando Fraile pronuncia palabras que no se perciben). Le llamo al orden por primera vez. Continúe, señora vicepresidenta. Disculpe."
     },
     {
+      "legislatura": "XV",
       "diario": 87,
       "sesion": 84,
       "fecha": "2024-12-11",
@@ -465,6 +2902,7 @@
       "fragmento": "Señor ministro, un momento, por favor. Señor Conde, le llamo al orden por primera vez. Le llamo al orden. (Rumores.—El señor Conde Bajén pronuncia palabras que no s"
     },
     {
+      "legislatura": "XV",
       "diario": 87,
       "sesion": 84,
       "fecha": "2024-12-11",
@@ -477,6 +2915,7 @@
       "fragmento": "n momento, por favor. Señor Conde, le llamo al orden por primera vez. Le llamo al orden. (Rumores.—El señor Conde Bajén pronuncia palabras que no se perciben). Le llamo al orden por segunda vez. Le advierto que, según establece el Reglamento, si le tengo que llamar una tercera vez, le tendré que expulsar del hemiciclo. Le llamo al orden por segunda vez. (Aplausos). Señor ministro, tiene la palab"
     },
     {
+      "legislatura": "XV",
       "diario": 92,
       "sesion": 89,
       "fecha": "2025-01-22",
@@ -489,6 +2928,7 @@
       "fragmento": "e intervención. Gracias, muchas gracias. (El señor Hoces Íñiguez intercambia unas palabras con la Presidencia). Señoría, no amenace al presidente de la Cámara. Le llamo al orden por primera vez. Le llamo al orden. Vaya a su asiento. (Protestas.―Prolongados aplausos de las"
     },
     {
+      "legislatura": "XV",
       "diario": 95,
       "sesion": 91,
       "fecha": "2025-02-12",
@@ -501,6 +2941,7 @@
       "fragmento": "Señora Montesinos, la llamo al orden. No se puede insultar en esta Cámara. (Rumores.—El señor De"
     },
     {
+      "legislatura": "XV",
       "diario": 99,
       "sesion": 95,
       "fecha": "2025-02-26",
@@ -513,6 +2954,7 @@
       "fragmento": "Silencio, señor Hernando. (El señor Pérez López: ¡Pero conteste!). Silencio. (El señor Hernando Fraile pronuncia palabras que no se perciben). Señor Hernando, le llamo al orden por primera vez. Cuando quiera, señora vicepresidenta."
     },
     {
+      "legislatura": "XV",
       "diario": 101,
       "sesion": 97,
       "fecha": "2025-03-12",
@@ -525,6 +2967,7 @@
       "fragmento": "lgueira pronuncia palabras que no se perciben). Señor Tellado, por favor, silencio. (El señor Tellado Filgueira continúa pronunciando palabras). Señor Tellado, le llamo al orden por primera vez. (Aplausos). Señor Bendodo, tiene la palabr"
     },
     {
+      "legislatura": "XV",
       "diario": 104,
       "sesion": 100,
       "fecha": "2025-03-19",
@@ -537,6 +2980,7 @@
       "fragmento": "l señor De Olano Vela: ¡Sí, claro que hay!). Salgan en silencio. (Rumores). Señor Tellado, en silencio. (El señor De Olano Vela: ¡Claro que hay!). Señor Olano, le llamo al orden por primera vez. (El señor De Olano Vela: ¡Claro que hay! ¡No se puede mentir! ¡Ya está bien!). Señor Olano, le llamo al orden por primera vez. Cállese, y en silencio. (Rumores)."
     },
     {
+      "legislatura": "XV",
       "diario": 105,
       "sesion": 101,
       "fecha": "2025-03-20",
@@ -549,6 +2993,7 @@
       "fragmento": "jemplar del Reglamento del Congreso de los Diputados: Aplique el reglamento). Siéntese, señor Tellado. (El señor Tellado Filgueira permanece en pie). Siéntese. Le llamo al orden por primera vez, señor Tellado. Siéntese. (Un señor diputad"
     },
     {
+      "legislatura": "XV",
       "diario": 105,
       "sesion": 101,
       "fecha": "2025-03-20",
@@ -561,6 +3006,7 @@
       "fragmento": ", por el Grupo Parlamentario Mixto, tiene la palabra el señor Rego Candamil. (El señor Tellado Filgueira pronuncia palabras que no se perciben). Señor Tellado, le llamo al orden por primera vez. (Fuertes protestas.—El señor De Olano Vela"
     },
     {
+      "legislatura": "XV",
       "diario": 105,
       "sesion": 101,
       "fecha": "2025-03-20",
@@ -573,6 +3019,7 @@
       "fragmento": "¡Reglamento!). Señoría, cuando quiera, comience. (El señor Tellado Filgueira: ¡Que se vote!―El señor Romaní Cantera: ¡Venga ya, hombre!). Señor Romaní Cantera, le llamo al orden por primera vez. (Fuertes protestas de las señoras y los se"
     },
     {
+      "legislatura": "XV",
       "diario": 109,
       "sesion": 105,
       "fecha": "2025-04-09",
@@ -585,6 +3032,7 @@
       "fragmento": "Un momento. Señora Moraleja, le llamo al orden por primera vez. (Protestas)."
     },
     {
+      "legislatura": "XV",
       "diario": 115,
       "sesion": 111,
       "fecha": "2025-05-14",
@@ -597,6 +3045,7 @@
       "fragmento": "acta que le ha llamado impresentable a la vicepresidenta. Debe tener decoro no solo ante las personas que intervienen, sino también ante el resto. (Aplausos). Le llamo al orden por primera vez, señoría. Le llamo al orden por primera vez. (Rumores.―El señor Tellado Filgueira hace"
     },
     {
+      "legislatura": "XV",
       "diario": 121,
       "sesion": 117,
       "fecha": "2025-06-11",
@@ -609,6 +3058,7 @@
       "fragmento": "yas, siéntese. No tiene la palabra, no tiene la palabra, siéntese. (El señor Sayas López sigue hablando desde el escaño con el micrófono apagado). Señor Sayas, le llamo al orden por primera vez. Siéntese. (El señor Sayas López, desde el"
     },
     {
+      "legislatura": "XV",
       "diario": 121,
       "sesion": 117,
       "fecha": "2025-06-11",
@@ -621,6 +3071,7 @@
       "fragmento": "y a sentar). Si no se sienta, le llamaré al orden por segunda vez. (El señor Sayas López sigue hablando desde el escaño con el micrófono apagado). Señor Sayas, le llamo al orden por segunda vez y le advierto de que si le llamara una terc"
     },
     {
+      "legislatura": "XV",
       "diario": 122,
       "sesion": 118,
       "fecha": "2025-06-12",
@@ -633,6 +3084,7 @@
       "fragmento": "Señor De Olano, le llamo al orden por primera vez. (Protestas.―El señor De Olano Vela: ¡Ya es"
     },
     {
+      "legislatura": "XV",
       "diario": 122,
       "sesion": 118,
       "fecha": "2025-06-12",
@@ -645,6 +3097,7 @@
       "fragmento": "Señor Tellado, silencio. Está en el uso de la palabra el señor ministro. (El señor Tellado Filgueira: Está reabriendo el debate). Le llamo al orden por primera vez, señor Tellado. (Protestas.―El señor Tellad"
     },
     {
+      "legislatura": "XV",
       "diario": 124,
       "sesion": 120,
       "fecha": "2025-06-18",
@@ -657,6 +3110,7 @@
       "fragmento": "Muchas gracias, señor presidente. Señor Sánchez, le llamo por primera vez al orden. No se puede insultar en esta Cámara de ninguna manera, señ"
     },
     {
+      "legislatura": "XV",
       "diario": 126,
       "sesion": 122,
       "fecha": "2025-06-24",
@@ -669,6 +3123,7 @@
       "fragmento": "Señora diputada, la llamo al orden."
     },
     {
+      "legislatura": "XV",
       "diario": 126,
       "sesion": 122,
       "fecha": "2025-06-24",
@@ -681,6 +3136,7 @@
       "fragmento": "Que quede en el Diario de Sesiones. (La señora Alfonso Silvestre: Estáis pactando con ellos, pregúntales.—Rumores). Señora Alfonso Silvestre, la llamo al orden por primera vez. (Rumores.—Un señor diputado: ¡Qué poca ver"
     },
     {
+      "legislatura": "XV",
       "diario": 126,
       "sesion": 122,
       "fecha": "2025-06-24",
@@ -693,6 +3149,7 @@
       "fragmento": "gastizabal, cuando quiera. (El señor Hernando Fraile: Es usted muy sectario.―El señor Argüelles García pronuncia palabras que no se perciben). Señor Argüelles, le llamo al orden por primera vez. Muchas gracias. Continuamos. Señora Sagast"
     },
     {
+      "legislatura": "XV",
       "diario": 126,
       "sesion": 122,
       "fecha": "2025-06-24",
@@ -705,6 +3162,7 @@
       "fragmento": "rán retirados del Diario de Sesiones los insultos y las condenas de delitos. (Rumores.―El señor Bayón Rolo pronuncia palabras que no se perciben). Señor Bayón, le llamo al orden por primera vez. Antes de empezar la siguiente moción, les"
     },
     {
+      "legislatura": "XV",
       "diario": 127,
       "sesion": 123,
       "fecha": "2025-06-25",
@@ -717,6 +3175,7 @@
       "fragmento": "voco, la diputada que ha insultado es la señora Garrido o es su vecina. (Protestas.—Un señor diputado: ¡Es una vergüenza!). Señora Alfonso, vuelve a ser usted; la llamo al orden por segunda vez en este Pleno, a la tercera tendrá que sali"
     },
     {
+      "legislatura": "XV",
       "diario": 127,
       "sesion": 123,
       "fecha": "2025-06-25",
@@ -729,6 +3188,7 @@
       "fragmento": "anas de este país. (Continúan las protestas.―El señor Hernando Fraile pronuncia palabras que no se perciben). Es una falta de respeto absoluta. Señor Hernando, le llamo al orden por primera vez. (El señor Hernando Fraile: ¿Y a Patxi"
     },
     {
+      "legislatura": "XV",
       "diario": 127,
       "sesion": 123,
       "fecha": "2025-06-25",
@@ -741,6 +3201,7 @@
       "fragmento": "no se perciben.―El señor Hernando Fraile pronuncia palabras que no se perciben.―Un señor diputado del Grupo Parlamentario Socialista: ¡Fuera!). Señor Hernando, le llamo al orden por segunda vez y a la tercera tiene que salir del hemicicl"
     },
     {
+      "legislatura": "XV",
       "diario": 127,
       "sesion": 123,
       "fecha": "2025-06-25",
@@ -753,6 +3214,7 @@
       "fragmento": "Un momento, señoría. Señor De Rosa Torner, le llamo al orden por primera vez. Les ruego silencio a todos. (El señor De R"
     },
     {
+      "legislatura": "XV",
       "diario": 127,
       "sesion": 123,
       "fecha": "2025-06-25",
@@ -765,6 +3227,7 @@
       "fragmento": "Señor De Rosa Torner, le llamo al orden por primera vez. Les ruego silencio a todos. (El señor De Rosa Torner pronuncia palabras que no se perciben). Señoría, le llamo al orden por segunda vez. Si tengo que hacerlo una tercera, le tendr"
     },
     {
+      "legislatura": "XV",
       "diario": 127,
       "sesion": 123,
       "fecha": "2025-06-25",
@@ -777,6 +3240,7 @@
       "fragmento": "Señor Tellado, le llamo al orden por primera vez. Conténgase de una vez por todas. (Protesta"
     },
     {
+      "legislatura": "XV",
       "diario": 129,
       "sesion": 125,
       "fecha": "2025-07-08",
@@ -789,6 +3253,7 @@
       "fragmento": "Un momento, señoría. Señor Abrines, le llamo al orden por primera vez. Conténgase y mantenga el respeto que merec"
     },
     {
+      "legislatura": "XV",
       "diario": 137,
       "sesion": 132,
       "fecha": "2025-09-17",
@@ -801,6 +3266,7 @@
       "fragmento": "señor ministro. Ruego respeto a la Cámara. (Un señor diputado pronuncia palabras que no se perciben). No sé quién es el que está gritando, pero… Señor Sánchez, le llamo al orden por primera vez. Y no se puede insultar en esta Cámara, si"
     },
     {
+      "legislatura": "XV",
       "diario": 138,
       "sesion": 133,
       "fecha": "2025-09-23",
@@ -813,6 +3279,7 @@
       "fragmento": "enyora Madrenas i Mir. (Rumores.—El señor Matute García de Jalón: No insulte. ¡Hipócrita!). Al diputado que acaba de lanzar un insulto le pido que se retrate y le llamo al orden por primera vez. Creo que es el señor Flores, pero desde aq"
     },
     {
+      "legislatura": "XV",
       "diario": 139,
       "sesion": 134,
       "fecha": "2025-09-24",
@@ -825,6 +3292,7 @@
       "fragmento": "a Tomás Olivares, le pido que retire el calificativo «y una mierda». Retírelo. (Rumores.―Pausa). Señora Tomás Olivares, ¿retira ese calificativo? (Pausa). Pues la llamo al orden por primera vez. Que conste en acta que la señora Olivares"
     },
     {
+      "legislatura": "XV",
       "diario": 140,
       "sesion": 135,
       "fecha": "2025-10-07",
@@ -837,6 +3305,7 @@
       "fragmento": "Un momento. Señor Robles López, le llamo al orden por primera vez. Y ya basta, por favor, porque en cada Plen"
     },
     {
+      "legislatura": "XV",
       "diario": 147,
       "sesion": 142,
       "fecha": "2025-10-28",
@@ -849,6 +3318,7 @@
       "fragmento": "iputada, deje de gritar. (La señora Méndez Monasterio: No puede ser).. Por favor, deje de gritar. Deje de gritar. (La señora Méndez Monasterio: No puede ser).. La llamo al orden, señora diputada. Por primera vez la llamo al orden. (La señora Méndez Monasterio: No puede ser. No puede ser)."
     },
     {
+      "legislatura": "XV",
       "diario": 148,
       "sesion": 143,
       "fecha": "2025-10-29",
@@ -861,6 +3331,7 @@
       "fragmento": "la el diputado don Nahuel González... (La señora Muñoz de la Iglesia: ¿Lo va a retirar?―Rumores). Silencio. Señora Muñoz, le llamo la atención por primera vez. La llamo al orden. (Protestas.― La señora Muñoz de la Iglesia: Retírelo). Tie"
     },
     {
+      "legislatura": "XV",
       "diario": 150,
       "sesion": 145,
       "fecha": "2025-11-12",
@@ -873,6 +3344,7 @@
       "fragmento": "Señor Tellado, le llamo al orden por primera vez. Por favor."
     },
     {
+      "legislatura": "XV",
       "diario": 161,
       "sesion": 156,
       "fecha": "2026-01-27",
@@ -885,6 +3357,7 @@
       "fragmento": "Será retirado del Diario de Sesiones y le llamo al orden por primera vez. Por el Grupo Parlamentario Socialista tien"
     },
     {
+      "legislatura": "XV",
       "diario": 164,
       "sesion": 158,
       "fecha": "2026-02-11",
@@ -897,6 +3370,7 @@
       "fragmento": "Señor Sánchez García, le llamo al orden por primera vez. Deje de insultar."
     },
     {
+      "legislatura": "XV",
       "diario": 164,
       "sesion": 158,
       "fecha": "2026-02-11",
@@ -909,6 +3383,7 @@
       "fragmento": "Muchas gracias, señor Núñez Feijóo. Señor presidente. (Rumores). Por favor, silencio. (El señor Hispán Iglesias de Ussel: ¡Mentiroso!). Señor Hispán, le llamo al orden por primera vez. (Continúan los rumores). Silencio. Señor p"
     },
     {
+      "legislatura": "XV",
       "diario": 164,
       "sesion": 158,
       "fecha": "2026-02-11",
@@ -921,6 +3396,7 @@
       "fragmento": "do don Santiago Abascal Conde, del Grupo Parlamentario VOX, que tiene la palabra. (El señor Sayas López: ¿Me has amenazado?). Por favor, silencio. Señor Sayas, le llamo al orden por primera vez. (Un señor diputado: ¡Ahí también!―Protesta"
     },
     {
+      "legislatura": "XV",
       "diario": 169,
       "sesion": 163,
       "fecha": "2026-02-25",
@@ -933,6 +3409,7 @@
       "fragmento": "Señor Tellado, le llamo al orden por primera vez. Esto no se puede consentir. (Aplausos.―Pro"
     },
     {
+      "legislatura": "XV",
       "diario": 169,
       "sesion": 163,
       "fecha": "2026-02-25",
@@ -945,6 +3422,7 @@
       "fragmento": "Un momento, señora ministra. Señora Rodríguez, la llamo al orden por primera vez, ya está bien la reiteración. Se lo he adve"
     },
     {
+      "legislatura": "XV",
       "diario": 174,
       "sesion": 168,
       "fecha": "2026-03-25",
@@ -957,6 +3435,7 @@
       "fragmento": "Un momento, señor presidente. Señores diputados, por favor, un poco de silencio. Señor Hernando, le llamo al orden por primera vez porque no para de hablar todo el tiempo. (P"
     },
     {
+      "legislatura": "XV",
       "diario": 174,
       "sesion": 168,
       "fecha": "2026-03-25",
@@ -969,6 +3448,7 @@
       "fragmento": "Señor Robles López, le llamo al orden. — DEL DIPUTADO DON EDUARDO CARAZO HERMOSO, DEL GRUPO PARLA"
     },
     {
+      "legislatura": "XV",
       "diario": 177,
       "sesion": 171,
       "fecha": "2026-04-14",
@@ -981,6 +3461,7 @@
       "fragmento": "ñalando al señor Salvador i Duch—, me está provocando porque le he dicho que durante la República se quemaron cientos de miles de…). Señor Sánchez, ¡siéntese! ¡Le llamo al orden por primera vez! Señor Álvaro, está en el uso de su palabra"
     },
     {
+      "legislatura": "XV",
       "diario": 177,
       "sesion": 171,
       "fecha": "2026-04-14",
@@ -993,6 +3474,7 @@
       "fragmento": "icepresidente, Rodríguez Gómez de Celis, dice: ¡Me está llamando criminal y asesino!―Una señora diputada del Grupo Parlamentario VOX: ¡Tiempo!). Señor Sánchez, le llamo al orden por segunda vez. Y le advierto que, si le tengo que llamar"
     },
     {
+      "legislatura": "XV",
       "diario": 178,
       "sesion": 172,
       "fecha": "2026-04-15",
@@ -1003,6 +3485,97 @@
       "ordinal": "primera",
       "coincidencias": 1,
       "fragmento": "Muchas gracias, señor ministro. Señor Hernando, le llamo al orden por primera vez. (Protestas.―El señor Hernando Fraile: Seño"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 182,
+      "sesion": 176,
+      "fecha": "2026-04-29",
+      "pagina": 70,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Sánchez",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Sánchez Torregrosa, ya está bien. La llamo al orden por primera vez. No puede estar gritando todo el tiempo. Se"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 196,
+      "sesion": 190,
+      "fecha": "2026-06-24",
+      "pagina": 33,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Hernando",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Un momento, señor Aizpurua. Señor Hernando, le llamo al orden por primera vez. (Protestas). Por favor, silencio. Aquí no"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 196,
+      "sesion": 190,
+      "fecha": "2026-06-24",
+      "pagina": 33,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Hernando",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "palabras que no se perciben). Silencio. Señora Aizpurua, cuando usted quiera. (El señor Hernando Fraile pronuncia palabras que no se perciben). Señor Hernando, le llamo al orden por segunda vez y a la tercera le voy a echar del Pleno. (L"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 207,
+      "sesion": 200,
+      "fecha": "2026-09-23",
+      "pagina": 22,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Vázquez",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "pimienta que ha enseñado la señora Vázquez es un arma. Le ruego, señora Vázquez, que salga. (Fuertes protestas). Señores diputados y diputadas… Señora Vázquez, la llamo al orden. (La señora Vázquez Blanco pide la palabra). No, no le doy"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 207,
+      "sesion": 200,
+      "fecha": "2026-09-23",
+      "pagina": 22,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Vázquez",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "… (Continúan las protestas.―La señora Vázquez Blanco pronuncia palabras que no se perciben.― Aplausos.—La señora Mínguez García: ¡A la calle!). Señora Vázquez, la llamo al orden por segunda vez. Si tengo que llamarla al orden por tercera"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 207,
+      "sesion": 200,
+      "fecha": "2026-09-23",
+      "pagina": 22,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Conde",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "rotestas). Señores diputados del Grupo Popular, hagan el favor de comportarse. (El señor Conde Bajén pronuncia palabras que no se perciben). Señor Conde Bajén, le llamo al orden por primera vez. — DEL DIPUTADO DON JOSEBA ANDONI AGIRRETXE"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 210,
+      "sesion": 203,
+      "fecha": "2026-10-02",
+      "pagina": 20,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Vergara",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "or Rufián Romero. (La señora Vergara Román dirige palabras que no se perciben a la señora Nogueras i Camero mientras esta regresa a su escaño). Señora Vergara, la llamo al orden por primera vez. (El señor vicepresidente, Rodríguez Gómez"
     }
   ]
 }

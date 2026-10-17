@@ -1,56 +1,75 @@
-# Llamadas al orden en el Pleno del Congreso, XV legislatura -> data/llamadas_al_orden.json
-# Unidad: acto de llamada (editorial/decisiones.md, 15-10-2026).
+# Llamadas al orden en el Pleno del Congreso, legislaturas VIII a XV -> data/llamadas_al_orden.json
+# Unidad: acto de llamada (editorial/decisiones.md, 15-10-2026). Rango: decisión del 16-10-2026.
 
 library(tidyverse)
 library(pdftools)
 library(jsonlite)
 
-leg <- 15
-cache <- file.path(tools::R_user_dir("juegos29n", "cache"), "ds", leg)
-dir.create(cache, recursive = TRUE, showWarnings = FALSE)
-
-url_ds <- \(n, parte = "") sprintf("https://www.congreso.es/public_oficiales/L%d/CONG/DS/PL/DSCD-%d-PL-%d%s.PDF", leg, leg, n, parte)
-
-# El servidor devuelve 403 sin User-Agent de navegador, y a veces una página de bloqueo con estado 200
-descarga_url <- \(u) {
-  f <- file.path(cache, basename(u))
-  if (file.exists(f)) return(f)
-  tryCatch({
-    httr2::request(u) |>
-      httr2::req_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64)") |>
-      httr2::req_throttle(rate = 1 / 2, realm = "congreso") |>
-      httr2::req_retry(max_tries = 3) |>
-      httr2::req_perform(path = f)
-    stopifnot(readBin(f, "raw", 4) == charToRaw("%PDF"))
-    f
-  }, error = \(e) { unlink(f); NA_character_ })
+legs <- 8:15
+cache <- \(leg) {
+  d <- file.path(tools::R_user_dir("juegos29n", "cache"), "ds", leg)
+  dir.create(d, recursive = TRUE, showWarnings = FALSE)
+  d
 }
 
-# Las sesiones largas se publican partidas (DSCD-15-PL-23-C1.PDF, -C2…) en lugar del diario entero
-descarga <- \(n) {
-  f <- descarga_url(url_ds(n))
-  if (!is.na(f)) return(f)
-  partes <- character()
-  while (!is.na(p <- descarga_url(url_ds(n, str_c("-C", length(partes) + 1))))) partes <- c(partes, p)
-  partes
+# Hasta el diario 53 de la X, PL_<nnn>.PDF a dos columnas; después, DSCD-<leg>-PL-<n>.PDF
+nombre <- \(leg, n, parte = "") {
+  if (leg >= 11 || (leg == 10 && n >= 54)) sprintf("DSCD-%d-PL-%d%s.PDF", leg, n, parte) else sprintf("PL_%03d.PDF", n)
+}
+url_ds <- \(leg, n, parte = "") sprintf("https://www.congreso.es/public_oficiales/L%d/CONG/DS/PL/%s", leg, nombre(leg, n, parte))
+
+# El servidor devuelve 403 sin User-Agent de navegador y, si se le pide más de un PDF por segundo,
+# páginas de bloqueo con estado 200: se espera y se repite en lugar de tomarlas por huecos
+descarga_url <- \(leg, n, parte = "") {
+  f <- file.path(cache(leg), nombre(leg, n, parte))
+  if (file.exists(f)) return(f)
+  for (i in 1:12) {
+    Sys.sleep(runif(1, 2, 4))
+    r <- tryCatch(
+      httr2::request(url_ds(leg, n, parte)) |>
+        httr2::req_user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64)") |>
+        httr2::req_error(is_error = \(r) FALSE) |>
+        httr2::req_perform(),
+      error = \(e) NULL
+    )
+    if (!is.null(r) && httr2::resp_status(r) == 404) return(NA_character_)
+    b <- if (is.null(r)) raw() else httr2::resp_body_raw(r)
+    if (length(b) > 4 && identical(b[1:4], charToRaw("%PDF"))) {
+      writeBin(b, f)
+      return(f)
+    }
+    Sys.sleep(60 * i)
+  }
+  stop("bloqueo persistente en ", url_ds(leg, n, parte))
+}
+
+# Algunas sesiones se publican partidas (DSCD-15-PL-23-C1.PDF, -C2…) en lugar del diario entero,
+# y no siempre desde -C1 (la constitutiva de la XIII solo está como DSCD-13-PL-1-C2.PDF)
+descarga <- \(leg, n) {
+  f <- descarga_url(leg, n)
+  if (!is.na(f) || str_starts(nombre(leg, n), "PL_")) return(na.omit(f))
+  na.omit(map_chr(str_c("-C", 1:4), \(p) descarga_url(leg, n, p)))
 }
 
 # La numeración tiene huecos: se para tras diez números seguidos sin diario
-ficheros <- character()
-n <- 1
-fallos <- 0
-while (fallos < 10) {
-  f <- descarga(n)
-  fallos <- if (length(f) == 0) fallos + 1 else 0
-  ficheros <- c(ficheros, f)
-  n <- n + 1
+diarios <- \(leg) {
+  ficheros <- character()
+  n <- 1
+  fallos <- 0
+  while (fallos < 10) {
+    f <- descarga(leg, n)
+    fallos <- if (length(f) == 0) fallos + 1 else 0
+    ficheros <- c(ficheros, f)
+    n <- n + 1
+  }
+  ficheros
 }
 
 meses <- c("enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
            "agosto", "septiembre", "octubre", "noviembre", "diciembre")
 fecha_iso <- \(x) {
   m <- str_match(x, "(\\d{1,2}) de (\\w+) de (\\d{4})")
-  sprintf("%s-%02d-%02d", m[, 4], match(m[, 3], meses), as.integer(m[, 2]))
+  sprintf("%s-%02d-%02d", m[, 4], match(str_to_lower(m[, 3]), meses), as.integer(m[, 2]))
 }
 
 cabecera <- "^DIARIO DE SESIONES DEL CONGRESO DE LOS DIPUTADOS PLENO Y DIPUTACIÓN PERMANENTE Núm\\. \\d+ .{0,30}? Pág\\. \\d+ "
@@ -59,37 +78,73 @@ pagina <- "§(\\d+)§ "
 orador <- "(?:El señor|La señora) [A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\\-]+(?: (?:DE |DEL |LA |LOS |Y |I )?[A-ZÁÉÍÓÚÜÑ][A-ZÁÉÍÓÚÜÑ\\-]+)*(?: \\([^)]{1,80}\\))?:"
 mesa <- "^(?:El señor|La señora) VI(?:CE)?PRESIDENT[EA](?: PRIMER[OA]| SEGUND[OA]| TERCER[OA]| CUART[OA])?(?: \\([^)]+\\))?:$|^(?:El señor|La señora) PRESIDENT[EA](?: \\([^)]+\\))?:$"
 
-lee <- \(f) {
-  hojas <- str_squish(pdf_text(f))
-  sesion <- as.integer(str_match(hojas[1], "Sesión plenaria núm\\. (\\d+)")[, 2])
-  texto <- str_c("§", str_match(hojas, "Pág\\. (\\d+)")[, 2], "§ ",
-                 str_remove_all(str_remove(hojas, cabecera), cve), collapse = " ")
+# PDF PL_ a dos columnas: sin cabecera ni folio, corte por el tramo central con menos comienzos de
+# palabra y lectura columna a columna
+columnas <- \(w, ancho) {
+  w <- filter(w, y > max(y) * 0.06, y < max(y) * 0.97)
+  tramos <- seq(ancho * 0.40, ancho * 0.62, 8)
+  corte <- tramos[which.min(map_int(tramos, \(a) sum(w$x >= a & w$x < a + 8)))] + 4
+  w |>
+    mutate(col = as.integer(x >= corte)) |>
+    arrange(col, y) |>
+    group_by(col) |>
+    mutate(linea = cumsum(c(1, diff(y) > 3))) |>
+    ungroup() |>
+    arrange(col, linea, x) |>
+    pull(text) |>
+    str_c(collapse = " ")
+}
+
+llamada <- regex("\\bl(?:e|es|a|o|os|as) llamo (?:\\w+ ){0,3}al orden|queda(?:n)? llamad[oa]s? al orden", ignore_case = TRUE)
+
+# Por memoria, de cada diario solo se guardan la primera fila (sesión, fecha y presidencia para el
+# denominador) y las intervenciones de la mesa con la fórmula
+lee <- \(leg, f) {
+  hojas <- str_squish(str_remove_all(pdf_text(f), "­"))
+  dos_columnas <- str_starts(basename(f), "PL_")
+  cuerpo <- if (dos_columnas) {
+    map2_chr(pdf_data(f), pdf_pagesize(f)$width, \(w, a) if (nrow(w)) columnas(w, a) else "") |>
+      str_remove("^Congreso ")
+  } else {
+    str_remove_all(str_remove(hojas, cabecera), cve)
+  }
+  # Una hoja sin folio (en blanco, láminas) toma el de la anterior; con NA se perdería el diario entero
+  num <- if (dos_columnas) str_match(hojas, "(\\d+)$")[, 2] else str_match(hojas, "Pág\\. (\\d+)")[, 2]
+  num <- vctrs::vec_fill_missing(num, direction = "downup")
+  # Palabras partidas a final de línea («al or- den»)
+  texto <- str_c("§", num, "§ ", cuerpo, collapse = " ") |>
+    str_remove_all("­") |>
+    str_replace_all("(\\p{Ll})- (\\p{Ll})", "\\1\\2")
   marcas <- str_locate_all(texto, pagina)[[1]][, 1]
   ini <- str_locate_all(texto, orador)[[1]]
   tibble(
-    diario = as.integer(str_match(basename(f), "PL-(\\d+)")[, 2]),
+    legislatura = leg,
+    diario = as.integer(str_match(basename(f), "PL[_-](\\d+)")[, 2]),
     parte = basename(f),
-    sesion = sesion,
-    fecha = fecha_iso(str_match(hojas[1], "celebrada el \\w+ (\\d{1,2} de \\w+ de \\d{4})")[, 2]),
-    preside = str_to_title(str_match(hojas[1], "PRESIDENCIA DE (?:LA EXCMA\\. SRA\\. D\\.ª|EL EXCMO\\. SR\\. D\\.) (.+?) Sesión")[, 2]),
+    sesion = as.integer(str_match(hojas[1], "Sesión (?:[Pp]lenaria )?núm\\. (\\d+)")[, 2]),
+    fecha = fecha_iso(str_match(hojas[1], "celebrada el \\w+,? (\\d{1,2} de \\w+ de \\d{4})")[, 2]),
+    preside = str_to_title(str_match(hojas[1], regex("PRESIDENCIA .{0,25}?\\bD\\.ª? (.+?) Sesión", ignore_case = TRUE))[, 2]),
     orador = str_sub(texto, ini[, 1], ini[, 2]),
     pagina_inicio = str_match(str_sub(texto, marcas[findInterval(ini[, 1], marcas)], ini[, 1]), pagina)[, 2],
     texto = str_sub(texto, ini[, 2] + 1, lead(ini[, 1], default = nchar(texto) + 1) - 1)
-  )
+  ) |>
+    filter(row_number() == 1 | (str_detect(orador, mesa) & str_detect(texto, llamada)))
 }
 
-# Solo sesiones plenarias: los diarios de la Diputación Permanente no llevan número de sesión plenaria.
+# Solo sesiones plenarias: los diarios de la Diputación Permanente no llevan número de sesión plenaria
+# («Sesión plenaria núm. N» o, en algunas portadas, «Sesión núm. N»).
 # Las partes -C2… de un diario toman la sesión, fecha y presidencia de la primera.
-intervenciones <- map(ficheros, lee, .progress = TRUE) |>
+intervenciones <- map(legs, \(leg) map(diarios(leg), \(f) lee(leg, f), .progress = str_c("L", leg))) |>
+  list_flatten() |>
   list_rbind() |>
-  arrange(diario, parte) |>
-  group_by(diario) |>
+  arrange(legislatura, diario, parte) |>
+  group_by(legislatura, diario) |>
   fill(sesion, fecha, preside) |>
   ungroup() |>
   filter(!is.na(sesion)) |>
-  mutate(id = row_number())
+  # Errata de portada: el diario 87 de la VIII (28-04-2005) dice «Sesión plenaria núm. 81», como el 86
+  mutate(sesion = if_else(legislatura == 8 & diario == 87, 82L, sesion), id = row_number())
 
-llamada <- regex("\\bl(?:e|es|a|o|os|as) llamo (?:\\w+ ){0,3}al orden|queda(?:n)? llamad[oa]s? al orden", ignore_case = TRUE)
 nombrado <- "(?:[Ss]eñor|[Ss]eñora) (?:de |del |De |Del )?([A-ZÁÉÍÓÚÑ][\\wáéíóúñü]+)"
 limpio <- \(x) str_squish(str_remove_all(x, pagina))
 
@@ -125,6 +180,7 @@ actos <- coincidencias |>
   ) |>
   group_by(id, acto) |>
   summarise(
+    legislatura = as.character(as.roman(first(legislatura))),
     diario = first(diario), sesion = first(sesion), fecha = first(fecha), pagina = as.integer(first(pagina)),
     presidencia = if_else(str_detect(first(orador), "\\("), str_match(first(orador), "\\((.+)\\)")[, 2], first(preside)),
     cargo = if_else(str_detect(first(orador), "VI(?:CE)?PRESIDENT"), "Vicepresidencia", "Presidencia"),
@@ -134,18 +190,22 @@ actos <- coincidencias |>
     fragmento = limpio(str_sub(first(texto), max(first(start) - 160, 1), last(end) + 60)),
     .groups = "drop"
   ) |>
-  arrange(diario, id, acto) |>
+  arrange(id, acto) |>
   select(-id, -acto)
 
+resumen <- intervenciones |>
+  group_by(legislatura) |>
+  summarise(diarios = n_distinct(diario), sesiones_plenarias = n_distinct(sesion)) |>
+  mutate(legislatura = as.character(as.roman(legislatura))) |>
+  left_join(count(actos, legislatura, name = "llamadas"), by = "legislatura") |>
+  mutate(llamadas = coalesce(llamadas, 0L))
+
 list(
-  legislatura = "XV",
   fuente = "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
-  url = sprintf("https://www.congreso.es/public_oficiales/L%d/CONG/DS/PL/", leg),
+  url = "https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/",
   consulta = as.character(Sys.Date()),
   metodo = "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria. Repeticiones de la fórmula a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos, menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente.",
-  diarios = n_distinct(intervenciones$diario),
-  sesiones_plenarias = n_distinct(intervenciones$sesion),
-  llamadas = nrow(actos),
+  legislaturas = resumen,
   actos = actos
 ) |>
   write_json("data/llamadas_al_orden.json", auto_unbox = TRUE, pretty = TRUE, na = "null")

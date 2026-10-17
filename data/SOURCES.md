@@ -29,11 +29,16 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 
 ## `llamadas_al_orden.json`
 
-- Script: `R/05_llamadas_al_orden.R`.
-- Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno y Diputación Permanente, XV legislatura, en PDF: `https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-<n>.PDF`.
-- PDF descargados el 14-10-2026; búsqueda de diarios nuevos repetida el 15 y el 16-10-2026. Diarios del 1 al 210. Los números 23, 41, 137 y 163 no están como `DSCD-15-PL-<n>.PDF`, sino como `DSCD-15-PL-<n>-C1.PDF` (sesiones plenarias 21, 39, 132 y 157). Se añadieron el 16-10-2026; antes faltaban en el conteo.
-- Denominador: 203 sesiones plenarias, numeradas del 1 al 203 sin huecos. El diario 9 (constitución de la Diputación Permanente, 21-11-2023) lleva en portada «Sesión plenaria núm. 1» y por eso pasa el filtro, pero no suma al denominador y no tiene llamadas. Los otros 6 diarios de la Diputación Permanente quedan fuera.
-- Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de repeticiones (bitácora del 15-10-2026).
+- Script: `R/05_llamadas_al_orden.R`. Legislaturas VIII a XV (rango decidido el 16-10-2026).
+- Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno y Diputación Permanente, en PDF, en `https://www.congreso.es/public_oficiales/L<n>/CONG/DS/PL/`:
+  - VIII, IX y X hasta el diario 53: `PL_<nnn>.PDF`, a dos columnas, leídos por columnas con las coordenadas de cada palabra.
+  - X desde el diario 54, y XI a XV: `DSCD-<n>-PL-<d>.PDF`. Algunas sesiones están partidas en `-C1`, `-C2`…, y no siempre empiezan en `-C1`: la constitutiva de la XIII solo existe como `DSCD-13-PL-1-C2.PDF`.
+- PDF de la XV descargados el 14-10-2026 (diarios nuevos buscados el 15 y el 16-10). Los de VIII a XIV, el 16-10-2026.
+- Denominador: sesiones plenarias distintas según la portada («Sesión plenaria núm. N», o «Sesión núm. N» en algunas de la XII), sin la Diputación Permanente. Son consecutivas desde la 1 en todas las legislaturas.
+  - XV: el diario 9 (constitución de la Diputación Permanente, 21-11-2023) lleva «Sesión plenaria núm. 1» y no suma.
+  - VIII: el diario 87 (28-04-2005) lleva por errata «Sesión plenaria núm. 81», como el 86; se cuenta como la 82.
+- 16-10-2026: corregido un fallo que dejaba sin texto los diarios con alguna hoja sin folio. La XV pasa de 83 a 90 llamadas (diarios 182, 196, 207 y 210).
+- Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de la XV (bitácora del 15-10-2026) y precisión, atribución y exhaustividad de VIII a XV en `editorial/fuentes/a03-validacion-viii-x.md`.
 
 ## `legislaturas.json`
 

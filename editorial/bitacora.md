@@ -2,6 +2,74 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-17 — A3: VIII a XV contadas y validadas; encargos nuevos del 16-10 en A1, A2 y A10
+
+**Hecho: A3**
+- `R/05_llamadas_al_orden.R` recorre de la VIII a la XV:
+  - Nombre de fichero por formato: `PL_<nnn>` hasta el diario 53 de la X y `DSCD-` después.
+  - Los PDF `PL_` (dos columnas) se leen por columnas, con las coordenadas de cada palabra. Se unen las palabras partidas a final de línea.
+  - Ante una página de bloqueo, espera y repite en lugar de tomarla por hueco.
+  - Busca las partes `-C1` a `-C4` (la constitutiva de la XIII solo existe como `-C2`).
+  - Por memoria, de cada diario solo guarda lo necesario para el denominador y las intervenciones de la mesa con la fórmula. La pasada completa la tuvo que lanzar el autor fuera de Claude Code: Claude Code paró tres veces el proceso en segundo plano por falta de memoria del sistema.
+- **Fallo corregido que afecta a la XV:** un diario con alguna hoja sin folio se quedaba entero sin texto, aunque contaba como sesión. La XV pasa de **83 a 90** llamadas. Las siete nuevas son reales y están en los diarios 182, 196, 207 y 210. En la IX el fallo vaciaba 14 diarios.
+- Denominador con el criterio de la XV. Numeración sin huecos de la sesión 1 a la última en todas las legislaturas, después de dos correcciones:
+  - Portadas con «Sesión núm.» o «Sesión Plenaria núm.».
+  - Errata del diario 87 de la VIII, que dice «núm. 81» y es la 82.
+- Validación en `editorial/fuentes/a03-validacion-viii-x.md`:
+  - **Precisión VIII–X:** 105 de 108 actos son llamadas reales (97 %).
+  - **Atribución a la Presidencia o una Vicepresidencia:** correcta en los 108, también en los PDF a dos columnas.
+  - **Exhaustividad VIII–X:** 95 % (en la X sola, 91 %).
+- `data/SOURCES.md` al día.
+
+| Leg. | Presidencia del Congreso | Sesiones plenarias | Llamadas | Por 100 sesiones |
+| --- | --- | --- | --- | --- |
+| VIII | Marín | 288 | 40 | 13,9 |
+| IX | Bono | 262 | 4 | 1,5 |
+| X | Posada | 293 | 64 | 21,8 |
+| XI | López | 13 | 2 | 15,4 |
+| XII | Pastor | 176 | 23 | 13,1 |
+| XIII | Batet | 9 | 0 | 0,0 |
+| XIV | Batet | 262 | 48 | 18,3 |
+| XV | Armengol | 203 | 90 | 44,3 |
+
+- XI y XIII tienen muy pocas sesiones (13 y 9), y su tasa es frágil: una llamada más o menos mueve la cifra varios puntos.
+
+**Hecho: encargos del 16-10 (tarde)**
+- Commit aparte con los cambios de Cowork en `editorial/` y `docs/` (catálogos, contenido nuevo, decisiones).
+- **A2:**
+  - `data.json` regenerado con los 12 hitos y las 3 rondas nuevas.
+  - Incidencia de los ítems 2 y 3 invertidos: **no se reproduce**. Solo ha existido una versión de `data.json`, con fechas ISO, y es la que está en Pages. `pruebas/ordenar.html` juega 100 partidas con el motor real y comprueba que la lista resuelta de cada ronda sale ordenada por fecha. Pasa con el contenido nuevo y con el publicado. Se ejecuta sirviendo la raíz del repo y abriéndola, o con `chrome --headless --dump-dom`.
+  - Hipótesis: al comprobar, la lista del jugador se sustituye por la solución, así que dos hitos que el jugador tenía cambiados (½ punto cada uno) se ven «invertidos» respecto a lo que había ordenado.
+- **A10:** `data.json` con los grupos A, J, H y D. Colores de grupo según la decisión de diseño:
+  - `--senado`, `--senal` y `--grupo-1…4` en `base.css`.
+  - Recibo 🟨🟫🟧⬛.
+  - Grupo resuelto con fondo de su color; texto en papel en el grupo 4.
+  - Grupo perdido en papel, con muestra de color.
+  - Capturas a 375 px (cuatro grupos resueltos, partida perdida y cierre) y a 1280 px, revisadas.
+- **A1:**
+  - `data.json` regenerado desde el contenido nuevo, con las preguntas en el orden fijo del fichero.
+  - Cotejo literal ampliado con CE 68.1 y 68.3 y LOREG 51, 162.1, 166.1, 25.1, 26.2 y 27, con la numeración nueva. Las citas que ya no usa ninguna pregunta quedan marcadas como «fuera desde el 16-10».
+  - Todos los textos de A1, A2 y A10 aparecen literales en su contenido. Hay dos excepciones que no vienen de él: la instrucción de A2, que ya estaba, y la fuente general de A10, compuesta con las fuentes de cada grupo.
+
+**Falta**
+- A3: validación del OCR de I–VII (muestra de 20 sesiones frente a lectura manual, umbral del 95 %), que el encargo deja para después de VIII–XV. Los PDF de I–VII están sin descargar: unos 1.800 diarios y varios GB.
+- A3: el juego en sí (M4 cadena mayor/menor y pantalla final con `legislaturas.json`).
+- A4: el contenido y el catálogo están en `editorial/`, pero no hay encargo para Code. Queda pendiente la propuesta de no barajar las opciones.
+- Pasar los motores al diseño arcade (pendiente de la sesión del 16-10).
+- Push a Pages de A1, A2 y A10 regenerados: pendiente de tu confirmación.
+
+**Dudas para el autor**
+- **A3, fórmula.** La regla fijada no recoge las perífrasis con valor de llamada: «le tengo que llamar al orden por primera vez», «le voy a llamar al orden por primera vez», «me obliga a llamarle al orden por segunda vez», «llamo al orden por primera vez al señor…». Se pierden 6 en la X (la mayoría de Posada), 4 en la XV, 1 en la XII y 1 en la XIV. La X queda infravalorada en torno a un 9 %. Si se amplía la fórmula, habría que revisar a mano las coincidencias nuevas, porque la misma perífrasis aparece también en avisos («si sigue, le tendré que llamar al orden»).
+- **A3, condicionales.** Tres avisos con la fórmula cuentan como llamada: «Si no lo retira le llamo al orden por primera vez» (VIII), «A la próxima le llamo al orden» (IX) y «si no lo hace, la llamo al orden» (X). ¿Se descuentan a mano o se deja la regla tal cual y se explica en la nota metodológica?
+- **A3, cifra de la XV.** Pasa de 83 a 90 por el fallo corregido. Es la que debe ir en el juego.
+- **A3, rango.** XI y XIII tienen 13 y 9 sesiones. ¿Entran en la cadena, que da 7 decisiones, o se agrupan o se marcan?
+- **A1, pregunta 9.** El art. 26.2 sortea «entre la totalidad de las personas incluidas en la lista de electores de la **Mesa** correspondiente», y la opción correcta y la explicación dicen «de la **sección**»; una sección puede tener varias mesas. Además, desde los 65 años se puede renunciar.
+- **A1, pregunta 10.** «Solo si también fracasa se tramitan nuevas propuestas» está en el art. 99.4, pero la pregunta solo cita el 99.3.
+- **A10, grupo 3.** La fuente sale en pantalla con «[VERIFICAR fechas de cada cargo]», copiada literal del contenido.
+- **A10, recibo.** Con la fuente de emojis de Windows, 🟨 se ve anaranjado y queda cerca de 🟧. Es cuestión del chat de diseño.
+- **A2.** ¿Se muestra, al comprobar, la posición que había puesto el jugador junto a la solución? Resolvería la confusión de la incidencia. Es decisión de diseño.
+- **Capturas.** En esta máquina no hay Node ni Playwright, aunque la decisión del 16-10 habla del «Chromium preinstalado». Sigo usando Chrome headless con un iframe del ancho exacto (375 px).
+
 ## 2026-10-16 (2) — M1 ordenar y pistas, M6 agrupar; A2, A10 y A12 jugables
 
 **Hecho** (plan confirmado por el autor: motores y juegos sobre el `base.css` actual; el paso al diseño arcade va después)
