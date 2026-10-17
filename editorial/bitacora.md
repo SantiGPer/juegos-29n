@@ -56,7 +56,8 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - A3: el juego en sí (M4 cadena mayor/menor y pantalla final con `legislaturas.json`).
 - A4: el contenido y el catálogo están en `editorial/`, pero no hay encargo para Code. Queda pendiente la propuesta de no barajar las opciones.
 - Pasar los motores al diseño arcade (pendiente de la sesión del 16-10).
-- Push a Pages de A1, A2 y A10 regenerados: pendiente de tu confirmación.
+- ~~Push a Pages de A1, A2 y A10 regenerados.~~ Hecho el 17-10-2026 con confirmación del autor (`6d4e728`).
+- Siguiente sesión: paso 1 del orden de trabajo del 17-10 (diseño arcade en `base.css` y motores), con plan previo.
 
 **Dudas para el autor**
 - **A3, fórmula.** La regla fijada no recoge las perífrasis con valor de llamada: «le tengo que llamar al orden por primera vez», «le voy a llamar al orden por primera vez», «me obliga a llamarle al orden por segunda vez», «llamo al orden por primera vez al señor…». Se pierden 6 en la X (la mayoría de Posada), 4 en la XV, 1 en la XII y 1 en la XIV. La X queda infravalorada en torno a un 9 %. Si se amplía la fórmula, habría que revisar a mano las coincidencias nuevas, porque la misma perífrasis aparece también en avisos («si sigue, le tendré que llamar al orden»).
