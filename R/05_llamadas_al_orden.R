@@ -1,11 +1,12 @@
-# Llamadas al orden en el Pleno del Congreso, legislaturas VIII a XV -> data/llamadas_al_orden.json
-# Unidad: acto de llamada (editorial/decisiones.md, 15-10-2026). Rango: decisión del 16-10-2026.
+# Llamadas al orden en el Pleno del Congreso -> data/llamadas_al_orden.json
+# Unidad: acto de llamada (editorial/decisiones.md, 15-10-2026). Fórmula ampliada y rango: 18-10-2026
+# (solo legislaturas con investidura: fuera la XI y la XIII).
 
 library(tidyverse)
 library(pdftools)
 library(jsonlite)
 
-legs <- 8:15
+legs <- c(8, 9, 10, 12, 14, 15)
 cache <- \(leg) {
   d <- file.path(tools::R_user_dir("juegos29n", "cache"), "ds", leg)
   dir.create(d, recursive = TRUE, showWarnings = FALSE)
@@ -95,11 +96,24 @@ columnas <- \(w, ancho) {
     str_c(collapse = " ")
 }
 
-llamada <- regex("\\bl(?:e|es|a|o|os|as) llamo (?:\\w+ ){0,3}al orden|queda(?:n)? llamad[oa]s? al orden", ignore_case = TRUE)
+# Fórmula y perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden»,
+# «me obliga a llamarle al orden», «llamo al orden al señor…»). Las coincidencias de las perífrasis
+# se revisan a mano: los avisos condicionales van a `descartes`
+llamada <- regex(str_c(
+  "\\bl(?:e|es|a|o|os|as) llamo (?:\\w+ ){0,3}al orden",
+  "(?:queda|quedan|está|están) llamad[oa]s? al orden",
+  "\\b(?:tengo|voy|vuelvo) (?:que |a )?llamarl?(?:[eao]s?)? (?:\\w+ ){0,2}al orden",
+  "\\bme obligan? a llamarl[eao]s? (?:\\w+ ){0,2}al orden",
+  "\\bllamo (?:\\w+ ){0,3}al orden",
+  sep = "|"
+), ignore_case = TRUE)
+previa <- regex("\\bllam\\w*(?: \\w+){0,3} al orden", ignore_case = TRUE)
 
 # Por memoria, de cada diario solo se guardan la primera fila (sesión, fecha y presidencia para el
-# denominador) y las intervenciones de la mesa con la fórmula
+# denominador) y las intervenciones de la mesa que mencionan llamar al orden, en una caché por diario
 lee <- \(leg, f) {
+  rds <- str_c(f, ".lee.rds")
+  if (file.exists(rds)) return(readRDS(rds))
   hojas <- str_squish(str_remove_all(pdf_text(f), "­"))
   dos_columnas <- str_starts(basename(f), "PL_")
   cuerpo <- if (dos_columnas) {
@@ -117,7 +131,7 @@ lee <- \(leg, f) {
     str_replace_all("(\\p{Ll})- (\\p{Ll})", "\\1\\2")
   marcas <- str_locate_all(texto, pagina)[[1]][, 1]
   ini <- str_locate_all(texto, orador)[[1]]
-  tibble(
+  t <- tibble(
     legislatura = leg,
     diario = as.integer(str_match(basename(f), "PL[_-](\\d+)")[, 2]),
     parte = basename(f),
@@ -128,7 +142,9 @@ lee <- \(leg, f) {
     pagina_inicio = str_match(str_sub(texto, marcas[findInterval(ini[, 1], marcas)], ini[, 1]), pagina)[, 2],
     texto = str_sub(texto, ini[, 2] + 1, lead(ini[, 1], default = nchar(texto) + 1) - 1)
   ) |>
-    filter(row_number() == 1 | (str_detect(orador, mesa) & str_detect(texto, llamada)))
+    filter(row_number() == 1 | (str_detect(orador, mesa) & str_detect(texto, previa)))
+  saveRDS(t, rds)
+  t
 }
 
 # Solo sesiones plenarias: los diarios de la Diputación Permanente no llevan número de sesión plenaria
@@ -157,8 +173,34 @@ coincidencias <- intervenciones |>
     antes = limpio(str_sub(texto, pmax(start - 120, 1), start - 1)),
     destinatario = map_chr(str_extract_all(antes, str_c(nombrado, "|[Ss]eñoría|[Ss]eñor diputado|[Ss]eñora diputada")), \(x) last(x) %||% NA_character_),
     ordinal = coalesce(str_extract(str_sub(texto, start, end + 25), "primera|segunda|tercera"),
-                       str_extract(str_sub(texto, pmax(start - 20, 1), start - 1), "primera|segunda|tercera"))
+                       str_extract(str_sub(texto, pmax(start - 20, 1), start - 1), "primera|segunda|tercera")),
+    cita = limpio(str_sub(texto, pmax(start - 80, 1), end))
   )
+
+# Revisión manual (decisión del 18-10-2026): avisos condicionales y negaciones que la fórmula recoge.
+# Se quitan antes de fusionar, para que no unan dos actos ni abran uno con otro ordinal.
+# Cada `literal` es el final del texto de una sola coincidencia.
+descartes <- tribble(
+  ~legislatura, ~diario, ~pagina, ~literal, ~motivo,
+  8, 49, "2275", "a pesar de que llamo al orden", "mención genérica",
+  8, 84, "4150", "Si no lo retira le llamo al orden", "aviso condicional",
+  9, 239, "11", "no llamo a su señoría al orden", "negación",
+  9, 256, "18", "A la próxima le llamo al orden", "aviso condicional",
+  10, 140, "35", "si no lo hace, la llamo al orden", "aviso condicional",
+  10, 267, "43", "no le voy a llamar al orden", "negación",
+  10, 306, "115", "como siga así le voy a llamar al orden", "aviso condicional",
+  12, 22, "23", "no llamo al orden", "negación",
+  12, 132, "49", "si tengo que llamar a alguno al orden", "aviso condicional",
+  12, 156, "41", "si le tengo que llamar al orden", "aviso condicional",
+  15, 43, "32", "si le tengo que llamar al orden", "aviso condicional",
+  15, 177, "59", "si le tengo que llamar al orden", "aviso condicional",
+  15, 207, "22", "Si tengo que llamarla al orden", "aviso condicional"
+)
+fuera <- pmap(descartes, \(legislatura, diario, pagina, literal, motivo) which(
+  coincidencias$legislatura == legislatura & coincidencias$diario == diario &
+    coincidencias$pagina == pagina & str_ends(coincidencias$cita, fixed(literal))))
+stopifnot(lengths(fuera) == 1)
+coincidencias <- coincidencias[-unlist(fuera), ]
 
 # Fusión: misma intervención, a 150 caracteres o menos, sin nombrar a otra persona entre medias
 # y sin cambio de ordinal («primera» -> «segunda» son dos llamadas)
@@ -204,8 +246,9 @@ list(
   fuente = "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
   url = "https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/",
   consulta = as.character(Sys.Date()),
-  metodo = "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria. Repeticiones de la fórmula a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos, menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente.",
+  metodo = "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria, con la fórmula («le llamo al orden») o una perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Repeticiones a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos (tampoco los condicionales, descontados a mano: ver `descartes`), menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente. Solo legislaturas con investidura.",
   legislaturas = resumen,
+  descartes = mutate(descartes, legislatura = as.character(as.roman(legislatura))),
   actos = actos
 ) |>
   write_json("data/llamadas_al_orden.json", auto_unbox = TRUE, pretty = TRUE, na = "null")

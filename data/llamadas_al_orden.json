@@ -1,56 +1,137 @@
 {
   "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
   "url": "https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/",
-  "consulta": "2026-10-17",
-  "metodo": "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria. Repeticiones de la fórmula a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos, menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente.",
+  "consulta": "2026-10-18",
+  "metodo": "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria, con la fórmula («le llamo al orden») o una perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Repeticiones a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal. No cuentan avisos (tampoco los condicionales, descontados a mano: ver `descartes`), menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente. Solo legislaturas con investidura.",
   "legislaturas": [
     {
       "legislatura": "VIII",
       "diarios": 288,
       "sesiones_plenarias": 288,
-      "llamadas": 40
+      "llamadas": 39
     },
     {
       "legislatura": "IX",
       "diarios": 262,
       "sesiones_plenarias": 262,
-      "llamadas": 4
+      "llamadas": 3
     },
     {
       "legislatura": "X",
       "diarios": 293,
       "sesiones_plenarias": 293,
-      "llamadas": 64
-    },
-    {
-      "legislatura": "XI",
-      "diarios": 13,
-      "sesiones_plenarias": 13,
-      "llamadas": 2
+      "llamadas": 69
     },
     {
       "legislatura": "XII",
       "diarios": 176,
       "sesiones_plenarias": 176,
-      "llamadas": 23
-    },
-    {
-      "legislatura": "XIII",
-      "diarios": 9,
-      "sesiones_plenarias": 9,
-      "llamadas": 0
+      "llamadas": 25
     },
     {
       "legislatura": "XIV",
       "diarios": 262,
       "sesiones_plenarias": 262,
-      "llamadas": 48
+      "llamadas": 49
     },
     {
       "legislatura": "XV",
       "diarios": 204,
       "sesiones_plenarias": 203,
-      "llamadas": 90
+      "llamadas": 95
+    }
+  ],
+  "descartes": [
+    {
+      "legislatura": "VIII",
+      "diario": 49,
+      "pagina": "2275",
+      "literal": "a pesar de que llamo al orden",
+      "motivo": "mención genérica"
+    },
+    {
+      "legislatura": "VIII",
+      "diario": 84,
+      "pagina": "4150",
+      "literal": "Si no lo retira le llamo al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "IX",
+      "diario": 239,
+      "pagina": "11",
+      "literal": "no llamo a su señoría al orden",
+      "motivo": "negación"
+    },
+    {
+      "legislatura": "IX",
+      "diario": 256,
+      "pagina": "18",
+      "literal": "A la próxima le llamo al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "pagina": "35",
+      "literal": "si no lo hace, la llamo al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "X",
+      "diario": 267,
+      "pagina": "43",
+      "literal": "no le voy a llamar al orden",
+      "motivo": "negación"
+    },
+    {
+      "legislatura": "X",
+      "diario": 306,
+      "pagina": "115",
+      "literal": "como siga así le voy a llamar al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 22,
+      "pagina": "23",
+      "literal": "no llamo al orden",
+      "motivo": "negación"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 132,
+      "pagina": "49",
+      "literal": "si tengo que llamar a alguno al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "XII",
+      "diario": 156,
+      "pagina": "41",
+      "literal": "si le tengo que llamar al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 43,
+      "pagina": "32",
+      "literal": "si le tengo que llamar al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 177,
+      "pagina": "59",
+      "literal": "si le tengo que llamar al orden",
+      "motivo": "aviso condicional"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 207,
+      "pagina": "22",
+      "literal": "Si tengo que llamarla al orden",
+      "motivo": "aviso condicional"
     }
   ],
   "actos": [
@@ -209,19 +290,6 @@
       "ordinal": "segunda",
       "coincidencias": 1,
       "fragmento": "o lamento mucho. No se viene al hemiciclo a generar este tipo de pequeños incidentes. Sigan con atención el debate de unos y de otros. (Continúan los rumores.) Le llamo al orden por segunda vez. A la siguiente le pediré que se ausente de"
-    },
-    {
-      "legislatura": "VIII",
-      "diario": 84,
-      "sesion": 79,
-      "fecha": "2005-04-21",
-      "pagina": 4150,
-      "presidencia": "Manuel Marín González",
-      "cargo": "Presidencia",
-      "destinatario": null,
-      "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "Si no lo retira le llamo al orden por primera vez."
     },
     {
       "legislatura": "VIII",
@@ -614,19 +682,6 @@
       "fragmento": "Señor Tarno, le llamo al orden. (El señor Tarno Blanco pronuncia palabras que no se perciben al bajar de la Presidencia.) Señor Tarno, le llamo por segunda vez al orden. Siéntese, señor Tardà. Del mismo modo que con el señor Est"
     },
     {
-      "legislatura": "IX",
-      "diario": 256,
-      "sesion": 244,
-      "fecha": "2011-06-28",
-      "pagina": 18,
-      "presidencia": "José Bono Martínez",
-      "cargo": "Presidencia",
-      "destinatario": null,
-      "ordinal": null,
-      "coincidencias": 1,
-      "fragmento": "A la próxima le llamo al orden."
-    },
-    {
       "legislatura": "X",
       "diario": 12,
       "sesion": 11,
@@ -917,6 +972,32 @@
       "diario": 140,
       "sesion": 131,
       "fecha": "2013-09-24",
+      "pagina": 15,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Pues le tengo que llamar al orden por primera vez. Continúe."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 15,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Le tengo que llamar al orden por segunda vez y recordarle que si le llamara por tercera"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
       "pagina": 24,
       "presidencia": "Villalobos Talero",
       "cargo": "Vicepresidencia",
@@ -924,19 +1005,6 @@
       "ordinal": "primera",
       "coincidencias": 2,
       "fragmento": "Señor Yuste, le llamo al orden. Hasta ahora ha intervenido usted explicando su posición respecto de la proposición de ley del Grupo Vasco. Esto ya no lo es. Por lo tanto, le llamo al orden por primera vez."
-    },
-    {
-      "legislatura": "X",
-      "diario": 140,
-      "sesion": 131,
-      "fecha": "2013-09-24",
-      "pagina": 35,
-      "presidencia": "Jesús Posada Moreno",
-      "cargo": "Presidencia",
-      "destinatario": null,
-      "ordinal": null,
-      "coincidencias": 1,
-      "fragmento": "Tiene usted que hablar de lo que está en el orden del día; de eso es de lo que debe usted hablar, si no lo hace, la llamo al orden."
     },
     {
       "legislatura": "X",
@@ -982,6 +1050,19 @@
       "diario": 140,
       "sesion": 131,
       "fecha": "2013-09-24",
+      "pagina": 36,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Ros",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Ros, sigue usted un camino ya trillado. (Risas). La tengo que llamar al orden por primera vez porque llamarla a la cuestión no creo que c"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
       "pagina": 45,
       "presidencia": "Jesús Posada Moreno",
       "cargo": "Presidencia",
@@ -1002,6 +1083,19 @@
       "ordinal": "primera",
       "coincidencias": 1,
       "fragmento": "e saltado el llamamiento a la cuestión precisamente porque lo que usted dice es un camino que ya han seguido sus compañeros, pero en fin, le vuelvo a decir que le llamo al orden una primera vez pero es por apartarse de la cuestión. Si vo"
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 45,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "señor Sixto",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Entonces, señor Sixto, le tengo que llamar al orden por segunda vez."
     },
     {
       "legislatura": "X",
@@ -1067,6 +1161,19 @@
       "ordinal": null,
       "coincidencias": 1,
       "fragmento": "Señora Vázquez, no siga usted por ese camino porque le tendré que llamar al orden, cosa que me duele personalmente, pero la llamo al orden. (Rumores)."
+    },
+    {
+      "legislatura": "X",
+      "diario": 140,
+      "sesion": 131,
+      "fecha": "2013-09-24",
+      "pagina": 53,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Vázquez",
+      "ordinal": "segunda",
+      "coincidencias": 1,
+      "fragmento": "Señora Vázquez, me obliga a llamarle al orden por segunda vez, por favor. (Rumores)."
     },
     {
       "legislatura": "X",
@@ -1210,6 +1317,19 @@
       "ordinal": "segunda",
       "coincidencias": 1,
       "fragmento": "cada uno ha votado lo quería. Por lo tanto, la votación es válida. Ahora les ruego y les llamo al orden por primera vez para que retiren los carteles. (Pausa). Les llamo al orden por segunda vez y, si no los retiran, les tendré que expuls"
+    },
+    {
+      "legislatura": "X",
+      "diario": 232,
+      "sesion": 217,
+      "fecha": "2014-10-21",
+      "pagina": 19,
+      "presidencia": "Jesús Posada Moreno",
+      "cargo": "Presidencia",
+      "destinatario": "Señora López",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora López i Chamosa, le voy a llamar al orden por primera vez."
     },
     {
       "legislatura": "X",
@@ -1459,32 +1579,6 @@
       "fragmento": "lo traduce. Tiene usted que hablar en castellano. (El señor Tardà i Coma pronuncia palabras que no se perciben). No, no, tiene usted que hablar en castellano y le llamo al orden por primera vez. Debe usted emplear el castellano. Es la no"
     },
     {
-      "legislatura": "XI",
-      "diario": 4,
-      "sesion": 4,
-      "fecha": "2016-03-04",
-      "pagina": 21,
-      "presidencia": "Patxi López Álvarez",
-      "cargo": "Presidencia",
-      "destinatario": "Señor Tardà",
-      "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "una falsedad!). Señor Tardà, siéntese y guarde silencio si no quiere que le llame al orden. (El señor Tardà i Coma: ¡Por favor, deme la palabra!). Señor Tardà, le llamo al orden por primera vez. (El señor Tardà i Coma: ¡Le exigimos que n"
-    },
-    {
-      "legislatura": "XI",
-      "diario": 4,
-      "sesion": 4,
-      "fecha": "2016-03-04",
-      "pagina": 21,
-      "presidencia": "Patxi López Álvarez",
-      "cargo": "Presidencia",
-      "destinatario": "Señor Tardà",
-      "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "señor Tardà i Coma: ¡Le exigimos que nos dé la palabra!—Varios señores diputados del Grupo Parlamentario de Esquerra Republicana se ponen de pie). Señor Tardà, le llamo al orden por primera vez. Siéntese. (El señor Tardà i Coma: ¡Le pedi"
-    },
-    {
       "legislatura": "XII",
       "diario": 10,
       "sesion": 9,
@@ -1548,6 +1642,32 @@
       "ordinal": null,
       "coincidencias": 1,
       "fragmento": "señor Delgado Ramos: ¡Mire por allí!). Señor Delgado, yo miro a toda la Cámara. (El señor Delgado Ramos pronuncia palabras que no se perciben). Señor Delgado, le llamo al orden. Continúe, señor Barrachina."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 43,
+      "sesion": 41,
+      "fecha": "2017-03-29",
+      "pagina": 13,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señor Merino",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "sar de la Cámara a alguna de sus señorías, porque alguna ha hecho méritos esta mañana para ello. (Protestas por parte del señor Merino López). Señor Merino, le vuelvo a llamar ahora al orden. Señor ministro del Interior."
+    },
+    {
+      "legislatura": "XII",
+      "diario": 61,
+      "sesion": 59,
+      "fecha": "2017-06-14",
+      "pagina": 51,
+      "presidencia": "Ana María Pastor Julián",
+      "cargo": "Presidencia",
+      "destinatario": "Señoría",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Señorías, por favor. (El señor De Luis Rodríguez: Orden para todos). Señorías, el orden en la Cámara lo mantiene la presidenta y les voy a llamar al orden a su señorías. El señor CANDIDATO A LA PRESIDENCIA DEL GOBI"
     },
     {
       "legislatura": "XII",
@@ -2159,6 +2279,19 @@
       "ordinal": null,
       "coincidencias": 1,
       "fragmento": "Señora Carvalho, ¡silencio, por favor! (La señora Carvalho Dantas: No es teatro, es asesinato). La llamo al orden, señora Carvalho, por primera vez. ¡Silencio! (Rumores)."
+    },
+    {
+      "legislatura": "XIV",
+      "diario": 205,
+      "sesion": 197,
+      "fecha": "2022-09-13",
+      "pagina": 60,
+      "presidencia": "Meritxell Batet Lamaña",
+      "cargo": "Presidencia",
+      "destinatario": "Señora Calvo",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Señora Calvo, tengo que llamarla al orden por primera vez y pedirle, por favor, encarecidamente, que"
     },
     {
       "legislatura": "XIV",
@@ -2877,6 +3010,19 @@
     },
     {
       "legislatura": "XV",
+      "diario": 85,
+      "sesion": 82,
+      "fecha": "2024-11-28",
+      "pagina": 54,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "señor Fernández",
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "do comprobar con la diputada afectada, la señora Velarde, quién es el diputado que había conferido los improperios, que es el señor Fernández Hernández, al que llamo al orden en este Pleno. (El señor Fernández Hernández pide la palabr"
+    },
+    {
+      "legislatura": "XV",
       "diario": 87,
       "sesion": 84,
       "fecha": "2024-12-11",
@@ -3095,6 +3241,19 @@
       "ordinal": "primera",
       "coincidencias": 1,
       "fragmento": "Señor Tellado, silencio. Está en el uso de la palabra el señor ministro. (El señor Tellado Filgueira: Está reabriendo el debate). Le llamo al orden por primera vez, señor Tellado. (Protestas.―El señor Tellad"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 123,
+      "sesion": 119,
+      "fecha": "2025-06-17",
+      "pagina": 7,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Ya saben que soy una persona que intento equilibrar. (Fuertes protestas). Pero le tengo que llamar al orden por primera vez, señor Tellado. (Fuertes protestas). Señor"
     },
     {
       "legislatura": "XV",
@@ -3413,6 +3572,19 @@
       "diario": 169,
       "sesion": 163,
       "fecha": "2026-02-25",
+      "pagina": 30,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "señor Tellado",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": ".―Protestas.―El señor Tellado Filgueira: ¡No puede mentir! ¡Es falso!) No se puede gritar mientras la ministra está hablando. No se puede hacer, señor Tellado. Está llamado al orden por primera vez. Compórtese. (El señor López Álvarez y la s"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 169,
+      "sesion": 163,
+      "fecha": "2026-02-25",
       "pagina": 35,
       "presidencia": "Rodríguez Gómez de Celis",
       "cargo": "Vicepresidencia",
@@ -3524,6 +3696,32 @@
       "ordinal": "segunda",
       "coincidencias": 1,
       "fragmento": "palabras que no se perciben). Silencio. Señora Aizpurua, cuando usted quiera. (El señor Hernando Fraile pronuncia palabras que no se perciben). Señor Hernando, le llamo al orden por segunda vez y a la tercera le voy a echar del Pleno. (L"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 206,
+      "sesion": 199,
+      "fecha": "2026-09-22",
+      "pagina": 67,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": "señor Azorín",
+      "ordinal": "primera",
+      "coincidencias": 1,
+      "fragmento": "Muchas gracias, señor Azorín. No he querido interrumpir el discurso, pero llamo al orden por primera vez al señor Robles López, porque ni su actitud"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 207,
+      "sesion": 200,
+      "fecha": "2026-09-23",
+      "pagina": 22,
+      "presidencia": "Francina Armengol Socias",
+      "cargo": "Presidencia",
+      "destinatario": null,
+      "ordinal": null,
+      "coincidencias": 1,
+      "fragmento": "Muchas gracias, señor ministro. Antes de continuar con las preguntas, tengo que llamar al orden a la señora Vázquez Blanco por haber enseñado un arma en el"
     },
     {
       "legislatura": "XV",

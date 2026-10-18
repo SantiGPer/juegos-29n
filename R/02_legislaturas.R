@@ -49,7 +49,12 @@ presidencias <- map(filas, \(f) {
   list_rbind() |>
   distinct(legislatura, .keep_all = TRUE) |>
   arrange(numero) |>
-  mutate(actas_eleccion = map(actas_eleccion, I))
+  # El partido es el del grupo parlamentario (decisión del 16-10-2026): Batet, PSOE; afiliación PSC
+  mutate(
+    afiliacion = if_else(partido == "PSC", partido, NA_character_),
+    partido = if_else(partido == "PSC", "PSOE", partido),
+    actas_eleccion = map(actas_eleccion, I)
+  )
 
 stopifnot(identical(presidencias$numero, as.numeric(0:15)), !anyNA(presidencias$partido))
 
@@ -57,7 +62,7 @@ list(
   fuente = "Wikipedia, Anexo:Presidentes del Congreso de los Diputados (contraste); actas de elección del Congreso de los Diputados enlazadas en cada fila",
   url = as.character(url_wiki),
   consulta = as.character(Sys.Date()),
-  nota = "Una fila por legislatura. Partido tal como lo da la fuente. Fechas de la presidencia: elección y cese; en la Constituyente y la I, desde la presidencia interina. Fin nulo = en el cargo.",
+  nota = "Una fila por legislatura. Partido = el del grupo parlamentario por el que fue elegida la presidencia; si la fuente da otra afiliación, va en `afiliacion`. Fechas de la presidencia: elección y cese; en la Constituyente y la I, desde la presidencia interina. Fin nulo = en el cargo.",
   legislaturas = presidencias
 ) |>
   write_json("data/legislaturas.json", auto_unbox = TRUE, pretty = TRUE, na = "null")

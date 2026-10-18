@@ -65,3 +65,24 @@ Sesiones plenarias distintas por legislatura, con el criterio de la XV: número 
 ## Corrección que afecta a la XV
 
 Un diario con una hoja sin folio legible (en blanco, láminas) se quedaba entero sin texto, aunque contaba como sesión. Pasaba ya en el script de la XV. Corregido: la hoja toma el folio de la anterior. La XV gana siete llamadas reales, en los diarios 182, 196, 207 y 210, y pasa de **83 a 90** en 203 sesiones. Ninguna de las 83 anteriores cambia. En la IX el fallo dejaba vacíos 14 diarios.
+
+## Fórmula ampliada y avisos descontados (18-10-2026)
+
+Decisión del 18-10-2026: la fórmula se amplía a las perífrasis con valor de llamada y los avisos condicionales se descuentan a mano. Rango: VIII, IX, X, XII, XIV y XV.
+
+- **Coincidencias nuevas:** 24, revisadas todas a mano.
+  - Llamadas reales: 14. Son las 6 perífrasis de la X, la XII DS 43 («le vuelvo a llamar ahora al orden»), la XIV DS 205 y 5 de la XV: DS 85, DS 123, DS 169, DS 206 y una que no recogía la validación anterior, DS 207, pág. 22 («tengo que llamar al orden a la señora Vázquez Blanco por haber enseñado un arma»). La decimocuarta es dudosa: XII DS 61, pág. 51 («les voy a llamar al orden a su señorías»). Es colectiva y sin ordinal, y cuenta.
+  - Descartadas: 10. Son seis avisos condicionales («si le tengo que llamar al orden por tercera vez», «como siga así le voy a llamar al orden»), tres negaciones («no llamo a su señoría al orden», «no le voy a llamar al orden hoy») y una mención genérica («a pesar de que llamo al orden y al silencio»).
+- **Avisos con la fórmula de antes:** se descuentan los tres de la validación (VIII DS 84, IX DS 256 y X DS 140, pág. 35).
+- **Descartes antes de fusionar:** se quitan a nivel de coincidencia. Si se quitaran después, un aviso condicional uniría dos actos (XV DS 43, pág. 32) o abriría uno con otro ordinal (XII DS 156, pág. 41).
+- La lista completa, con su motivo, está en `descartes`, en el script y en el JSON.
+- **Barrido de control:** se han leído todas las coincidencias que quedan con un indicio de aviso justo antes de la fórmula («si», «próxima», «como siga», «cuando», «no»). Ninguna es un aviso: los «no» son citas de diputados o de la acotación «palabras que no se perciben».
+
+| Leg. | Antes | Ahora | Sesiones plenarias | Por 100 sesiones |
+| --- | --- | --- | --- | --- |
+| VIII | 40 | 39 | 288 | 13,5 |
+| IX | 4 | 3 | 262 | 1,1 |
+| X | 64 | 69 | 293 | 23,5 |
+| XII | 23 | 25 | 176 | 14,2 |
+| XIV | 48 | 49 | 262 | 18,7 |
+| XV | 90 | 95 | 203 | 46,8 |

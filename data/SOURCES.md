@@ -29,7 +29,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 
 ## `llamadas_al_orden.json`
 
-- Script: `R/05_llamadas_al_orden.R`. Legislaturas VIII a XV (rango decidido el 16-10-2026).
+- Script: `R/05_llamadas_al_orden.R`. Legislaturas con investidura de la VIII a la XV: VIII, IX, X, XII, XIV y XV (decisión del 18-10-2026; la XI y la XIII quedan fuera).
 - Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno y Diputación Permanente, en PDF, en `https://www.congreso.es/public_oficiales/L<n>/CONG/DS/PL/`:
   - VIII, IX y X hasta el diario 53: `PL_<nnn>.PDF`, a dos columnas, leídos por columnas con las coordenadas de cada palabra.
   - X desde el diario 54, y XI a XV: `DSCD-<n>-PL-<d>.PDF`. Algunas sesiones están partidas en `-C1`, `-C2`…, y no siempre empiezan en `-C1`: la constitutiva de la XIII solo existe como `DSCD-13-PL-1-C2.PDF`.
@@ -45,7 +45,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Script: `R/02_legislaturas.R`.
 - Fuente: Wikipedia en español, [Anexo:Presidentes del Congreso de los Diputados](https://es.wikipedia.org/wiki/Anexo:Presidentes_del_Congreso_de_los_Diputados), revisión fijada [175471021](https://es.wikipedia.org/w/index.php?title=Anexo:Presidentes_del_Congreso_de_los_Diputados&oldid=175471021), sección «Periodo democrático» y tabla de Felipe VI. Consultada el 16-10-2026.
 - Cada fila guarda las actas de elección de la presidencia en congreso.es que cita Wikipedia (Constituyente a XII). XIII, XIV y XV citan prensa, no actas del Congreso, y quedan con la lista vacía.
-- Partido tal como lo da la fuente: Batet figura como PSC.
+- Partido = el del grupo parlamentario por el que fue elegida la presidencia (decisión del 16-10-2026). Batet figura como PSOE; la fuente la da como PSC, que queda en `afiliacion`. Regenerado el 18-10-2026.
 - Contraste con la fuente primaria: la portada de cada Diario de Sesiones del Pleno («PRESIDENCIA DE…»), revisada en la muestra del sondeo de A3 (bitácora del 16-10-2026).
 
 ## `presidentes.json`
