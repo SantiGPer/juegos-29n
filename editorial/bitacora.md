@@ -23,7 +23,7 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
   - `base.css` lleva la pareja y el ranking.
 - **A3** en `juegos/a03-crispometro/`, que lee los dos JSON de `data/`. 5 decisiones. Partida completa sin errores a 320, 375 y 1280 px; a 375 × 560 la pregunta y las dos opciones caben sobre la barra. Capturas revisadas contra la lista negra.
 - **Portadas** de A1, A2, A10 y A12 copiadas del contenido (`2f50727`); la regla de vidas de A10 lleva el corazón (`lleno`). A1 pasa a **ElectoQuiz** en el juego, el recibo y el índice. Los `data.json` de A1 y A10 están regenerados con las correcciones del 18-10 (pregunta 9 de A1, fuente de la 10, fuente del grupo 3 de A10).
-- Sin push.
+- Push a Pages el 18-10-2026 con confirmación del autor (`b287e2a`).
 
 **Falta**
 - A3: texto de portada, reglas y nota metodológica (en `TODO` visible), que vienen de Cowork. La nota debería explicar la fórmula, los avisos descontados y la exclusión de la XI y la XIII.
