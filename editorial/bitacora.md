@@ -27,6 +27,8 @@ Encargo del 19-10 para Code, puntos 1 a 5.
 4. **Crispómetro:** ya no estaba en el índice, que solo enlaza ElectoQuiz. Sigue en el repo y no hacía falta cambiar nada. Plenopedia tampoco está enlazada aún, porque el índice-selector no está montado.
 5. **A2:** `data.json` regenerado con la explicación y las fuentes nuevas del hito del Constitucional.
 
+- Push a Pages el 18-10-2026, con confirmación del autor (`250fbd3`).
+
 **Falta**
 - Punto 6, pendiente del chat de diseño: muestra de color del Gobierno en el duelo y tirador del deslizador.
 
