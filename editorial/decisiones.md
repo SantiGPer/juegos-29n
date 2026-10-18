@@ -317,3 +317,58 @@ Tras cada paso: capturas a 375 × 560 y a 1280, revisión contra la lista negra,
   - pasar los textos y las reglas de portada a los data.json de A1, A2 y A10, y al game.js de A12, en sustitución de los TODO;
   - cambiar el título de A1 a «ElectoQuiz» en el juego, el recibo y el índice;
   - de paso, regenerar los data.json de A1 y A10 con las correcciones de contenido del 18-10.
+
+## 2026-10-19
+
+Decisiones del autor tomadas el 18-10 en una sesión con Code (bitácora 18-10 (3)), pasadas aquí:
+- M1, criterio universal de orden de opciones:
+  - si las opciones son ordinales, no se barajan y van de mayor a menor;
+  - si son nominales, se barajan;
+  - las opciones de cierre («Ninguno», «No lo sé», blanco, nulo, otros…) van siempre al final, sin barajar.
+  
+  En A1 se aplica a las preguntas 1, 2, 4 y 7 (todas ordinales). Confirmado.
+- A10, cierre: muestra los grupos encontrados («N de 4») y los fallos. El recibo pasa a «N/4 grupos», sin emojis. Sustituye al recibo de colores por grupo.
+- A12: un presidente al azar en cada partida. El cierre incluye «Otro presidente», que abre una partida nueva con un presidente distinto del anterior.
+- A3: la cifra de la XV queda en 95 llamadas en 203 sesiones, con la fórmula ampliada y los avisos descontados. Sustituye a 90/203.
+- A10, fuente del grupo 3 en pantalla: sin ruta interna. Basta con quitar el [VERIFICAR], como ha hecho Code.
+- A3, conteo:
+  - la llamada colectiva de la XII (DS 61, «les voy a llamar al orden») cuenta como acto válido;
+  - en la XV (DS 43), las dos frases «le llamo al orden por primera vez» al mismo diputado se fusionan en un solo acto. Regla general: el mismo destinatario con el mismo ordinal en la misma intervención es un solo acto, aunque haya más de 150 caracteres entre las frases. La XV baja previsiblemente a 94.
+- A3: el periodo de la XV es 2023–2026 (termina con la disolución), no «Desde 2023».
+- A3, en revisión: el autor quiere ampliar el juego a otros indicadores del Diario de Sesiones, además de las llamadas al orden. La portada y la nota quedan en suspenso hasta definir el nuevo planteamiento. Code no debe tocar A3 más allá de las dos correcciones de conteo y del periodo.
+- **A3 se replantea como «Plenopedia»:** un juego sobre la actividad del Pleno en la XV legislatura, con varios indicadores muy fiables del Diario de Sesiones, cruzados con el grupo parlamentario o con el diputado:
+  - llamadas al orden;
+  - rumores, protestas y risas;
+  - aplausos;
+  - votaciones;
+  - duración de las sesiones;
+  - minutos de silencio;
+  - fórmulas de acatamiento;
+  - léxico (por ejemplo, menciones a ETA);
+  - menciones a líderes.
+- Plenopedia mezcla mecánicas: opción múltiple, ordenar, más o menos y quizá estimación. Es el primer juego que se publica (13-N) y sustituye al Crispómetro, que pasa a ser una parte. Las legislaturas VIII–XIV quedan contadas y en reserva (para A11 o para posts).
+- Plenopedia: el catálogo de preguntas candidatas está en editorial/catalogos/a03-plenopedia-catalogo.md. La selección se hará con las cifras de la prueba de viabilidad.
+- **Encargo para Code: prueba de viabilidad de Plenopedia, solo XV.** No se monta todavía el juego.
+  1. Aplicar las dos correcciones de conteo del 19-10 (llamada colectiva y fusión del DS 43) y el periodo 2023–2026.
+  2. Atribuir cada intervención a su orador y a su grupo. Hay que revivir diputados_xv.json, que estaba en reserva. El presidente y los ministros van a la categoría «Gobierno», no a su grupo; hay que tener en cuenta los cambios de Gobierno durante la legislatura. Todos los desgloses por grupo se normalizan por cada 10.000 palabras del grupo.
+  3. Contar en cada sesión, con los diarios que ya están en caché:
+     - acotaciones «(Rumores.)», «(Protestas.)», «(Risas.)» y «(Aplausos…)», con el grupo que aplaude si el Diario lo indica, y el orador en el uso de la palabra;
+     - hora de apertura y de cierre;
+     - «minuto de silencio»;
+     - palabras pronunciadas por orador y por grupo, que sirven de denominador y también para el Charlatán y las palabras por escaño (ver la decisión siguiente);
+     - menciones de una lista de prueba, por grupo del orador: ETA, Franco, Venezuela, España, Cataluña, vivienda, corrupción, Europa, amnistía, Palestina, Sánchez, Feijóo, Abascal, Puigdemont.
+  4. Para cada indicador: si el formato es estable en toda la XV, un ejemplo literal, el total y el desglose por grupo. La salida va en editorial/fuentes/a03-plenopedia-viabilidad.md y el resumen en la bitácora. No hay que preparar las preguntas.
+- Plenopedia, ajustes del autor (19-10):
+  - salen las votaciones y el acatamiento;
+  - entra «el Charlatán» (definición corregida más abajo, el 19-10).
+- Plenopedia, método:
+  - todos los indicadores por grupo se normalizan por cada 10.000 palabras pronunciadas por ese grupo;
+  - el presidente y los ministros cuentan como «Gobierno», no como su partido, y sus palabras no suman a ningún grupo parlamentario;
+  - la lista de términos del léxico recoge temas recurrentes de todos los bloques.
+  
+  Estas reglas sustituyen a lo que diga en contra el encargo de viabilidad anterior: sin votaciones, sin acatamiento y con el Gobierno como categoría propia.
+- Plenopedia, Charlatán y grupos (sustituye a «la mayor proporción de palabras de su grupo»):
+  - **Charlatán:** palabras totales pronunciadas en el Pleno por cada diputado durante toda la XV, en un ranking único de los 350. Los miembros del Gobierno quedan fuera y tienen su propio ranking («¿qué ministro habló más?»).
+  - **Grupos:** palabras por escaño, es decir, las palabras del grupo divididas entre su número de diputados. Como dato de apoyo para la explicación, el cociente entre el porcentaje de palabras y el porcentaje de escaños; si es mayor que 1, el grupo habla más de lo que le corresponde por tamaño.
+  - **Cambios de grupo:** las palabras cuentan para el grupo en el que estaba el diputado ese día (por ejemplo, Podemos al Mixto en diciembre de 2023).
+  - **Grupo Mixto:** se cuenta como grupo, que es la unidad oficial, con el desglose por partido al lado (BNG, CC, UPN, Podemos…).
