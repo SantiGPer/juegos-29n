@@ -9,7 +9,7 @@ const enLineas =(lista, n) => lista.map((x, i) => (i && i % n === 0 ? '\n' : '')
 
 // Opciones ordinales: orden fijo del contenido (`orden`). Nominales: barajadas, con la opción
 // de cierre («Ninguna», «No lo sé»…) siempre al final (`ultima`).
-const ordenOpciones = ({ opciones, orden, ultima }) =>
+export const ordenOpciones = ({ opciones, orden, ultima }) =>
   orden ?? [...baraja(Object.keys(opciones).filter(l => l !== ultima)), ...(ultima ? [ultima] : [])];
 
 const explicacion =(...parrafos) => el('div', { className: 'explicacion' }, ...parrafos);

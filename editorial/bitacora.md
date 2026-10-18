@@ -2,6 +2,35 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (8) — Motores de Plenopedia (encadenador, M2 y duelo) y cotejo de la amnistía en A2
+
+**Hecho**
+- **`shared/motores/rondas.js`, el encadenador.** Una cabecera, una pista (una celda por ronda; medio relleno si la ronda vale ½), una puntuación, un botón de acción y un `cerrar()`. Contrato de cada tipo: `ronda(datos, listo) → { cuerpo, resolver }`, y `resolver()` devuelve 0, ½ o 1.
+  - Tipos: `opciones` (con el criterio ordinal o nominal de M1, por eso `ordenOpciones` se exporta ahora desde `quiz.js`), `ordenar` (de mayor a menor `valor`), `estimacion` y `duelo`.
+  - `ordenar` da 1 punto con todo en su sitio y ½ con al menos `medio` ítems en su posición exacta (por defecto, la mitad).
+- **`shared/motores/estimacion.js` (M2).**
+  - Deslizador; la cifra elegida se dibuja con casillas.
+  - Respuesta en trama, dato en sólido y hueco en marcador.
+  - «Te quedaste a 51 min.». Con `formato: 'horas'`, «12 h 21 min».
+  - Puntos por `tramos` de error absoluto. A8 se montará como un encadenado solo de estimaciones.
+- **`shared/motores/duelo.js`.** Dos fichas que son los propios botones de elección, cifras ocultas con «?» y muestra de partido opcional. No se barajan.
+- **`base.css`:** bloques del duelo y de M2.
+- **Página de prueba `pruebas/motores/`** (sin enlace en el índice), con cifras reales de `plenopedia_xv.json`. Partida completa sin errores de JS ni scroll horizontal a 375 px. Capturas a 375 × 560 y 1280 revisadas contra la lista negra.
+- **A2, cotejo de la amnistía** en `editorial/fuentes/a02-cronologia.md`:
+  - El aval general (STC 137/2025) es del 26-06-2025: la fecha del hito es correcta. No trató la malversación.
+  - Malversación: el 22-09-2026 el Pleno rechazó la ponencia de Turull, sin sentencia. El primer fallo es del **06-10-2026** (amparo de Bassa, nota 91/2026, cotejada en el PDF del TC).
+  - No «amplía» la amnistía: la ley ya incluía la malversación, y el TC corrige la interpretación del Supremo.
+
+**Falta**
+- Contenido de Plenopedia (Cowork) y montaje en `juegos/a03-plenopedia/`.
+
+**Dudas para el autor**
+- **Tramos de la estimación** (cuánto vale el «casi») y regla de ½ en ordenar: son de contenido. En la prueba: ±30 min para 1 punto y ±1 h 30 min para ½.
+- **Paso del deslizador.** Con paso de 15 min no se puede clavar 12 h 21 min; con paso de 1 min sí.
+- **Recibo.** Una ronda de ½ sale ⬜, como en el resto de la serie.
+- **Diseño.** El tirador del deslizador es el nativo del navegador, redondo. ¿Se dibuja uno cuadrado para cumplir «sin radios»?
+- **A2, explicación del hito.** Se puede añadir «No se pronunció sobre la malversación» y cambiar las fuentes por la nota 61/2025 y BOE-A-2025-15939. Si se quiere un hito de la malversación, su fecha es el 06-10-2026, no septiembre.
+
 ## 2026-10-18 (7) — A3 Plenopedia: datos para el contenido (encargo del 18-10, diseño, punto 1)
 
 **Hecho** (detalle en `editorial/fuentes/a03-plenopedia-viabilidad.md`, sección «Datos para el contenido»)

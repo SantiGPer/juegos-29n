@@ -21,6 +21,29 @@ Fuera desde el 16-10 (ronda 3 eliminada): Podemos deja Sumar, carta de los cinco
 | Decretos de vivienda | 02-10-2026 | Civio, 02-10-2026 | Confirmado |
 | Anuncio de elecciones | 05-10-2026 | La Moncloa, 05-10-2026 | Confirmado |
 
+## Cotejo: el Constitucional y la amnistía (18-10-2026, encargo del autor)
+
+El hito es «El Constitucional avala la amnistía» (26-06-2025). Hay que distinguir el aval del marco general del episodio de la malversación. No se ha tocado el contenido.
+
+- **Aval general: STC 137/2025.** Pleno del 26-06-2025, recurso de inconstitucionalidad 6436-2024 del PP. **La fecha del contenido es correcta.**
+  - La nota informativa 61/2025, del 26-06-2025, dice: «EL PLENO DEL TC AVALA LA LEY ORGÁNICA 1/2024 […] SALVO EN TRES ASPECTOS».
+    - Anula solo el segundo párrafo del art. 1.3, que permitía amnistiar conductas posteriores a la ley.
+    - Declara una inconstitucionalidad por omisión del art. 1.1, por no amnistiar a quienes se opusieron al procés.
+    - Da una interpretación conforme del art. 13.2 y 13.3 (audiencia de las partes ante el Tribunal de Cuentas).
+  - Hay cuatro votos particulares: Enríquez, Arnaldo, Espejel y Tolosa.
+  - Se publicó en el BOE núm. 183, de 31-07-2025: BOE-A-2025-15939.
+  - **No se pronunció sobre la malversación.**
+- **Malversación: el TC, en amparo, no en el control de la ley.**
+  - **22-09-2026 (nota 85/2026).** El Pleno *no aprueba* la ponencia de Macías sobre el amparo de Turull. Cita: «La propuesta de sentencia no ha sido aprobada por la mayoría». Esto no es una sentencia: es el rechazo de una ponencia contraria a amnistiar la malversación.
+  - **06-10-2026 (nota 91/2026), primer fallo.** El TC estima el amparo de Dolors Bassa y anula los autos del Supremo del 1-07 y el 30-09-2024. Ordena al Supremo «un nuevo pronunciamiento en el que se declare amnistiado el delito de malversación de caudales públicos por el que fue condenada la demandante». Hay cinco votos particulares. Cotejado por Code en el texto del PDF del TC.
+  - **«Amplía la amnistía a la malversación» es impreciso.** La LO 1/2024 ya incluía la malversación, salvo en dos casos: con enriquecimiento personal o con afectación de los intereses financieros de la UE. El TC corrige la interpretación restrictiva del Supremo, caso a caso. Los amparos de Puigdemont, Junqueras y otros siguen pendientes [NO VERIFICADO].
+- **Sin verificar en fuente primaria:** la votación 6 a 4 de 2025 y la de 7 a 5 de 2026 (solo las da la prensa), y el número de STC del caso Bassa.
+- **Fuentes:**
+  - https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2025_061/NOTA%20INFORMATIVA%20N%C2%BA%2061-2025.pdf
+  - https://www.boe.es/buscar/doc.php?id=BOE-A-2025-15939
+  - https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2026_085/NOTA%20INFORMATIVA%20N%C2%BA%2085-2026.pdf
+  - https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2026_091/NOTA%20INFORMATIVA%20N%C2%BA%2091-2026.pdf
+
 ## Enlaces
 
 - https://www.elprogreso.es/articulo/espana/dana-crisis-ceuta-puntos-clave-turbulenta-ultima-legislatura-sanchez/202610070500002003918.html
