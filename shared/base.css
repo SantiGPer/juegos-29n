@@ -404,6 +404,53 @@ details[open] summary { margin-bottom: var(--s1); }
   vertical-align: baseline;
 }
 
+/* M4 más o menos: la pareja comparada, como dos columnas de un acta */
+.pareja {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 0 var(--s4);
+  border-top: 1px solid var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+}
+
+.pareja > div { padding: var(--s3) var(--s3) var(--s3) 0; }
+.pareja > div + div { padding-left: var(--s3); border-left: 1px solid var(--tinta); }
+.pareja p { margin-bottom: var(--s1); }
+.pareja .dato { margin: var(--s2) 0 0; line-height: 0; }
+
+.ranking-titulo { margin: var(--s5) 0 var(--s2); }
+
+.ranking {
+  list-style: none;
+  margin: 0 0 var(--s5);
+  padding: 0;
+  border-top: 1px solid var(--tinta);
+  font-size: 1rem;
+}
+
+.ranking li {
+  padding: var(--s3) 0;
+  border-bottom: 1px solid var(--raya);
+}
+
+.ranking-fila {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s3);
+  margin-bottom: var(--s1);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.trazo {
+  display: block;
+  height: 8px;
+  margin-bottom: var(--s2);
+  background: var(--tinta);
+}
+
+.ranking .etiqueta { margin: 0; }
+
 /* M6 agrupar */
 .cab .vidas {
   display: flex;
