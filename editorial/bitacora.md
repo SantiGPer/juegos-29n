@@ -2,6 +2,28 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (2) — Paso 3 del orden de trabajo: A2, A10 y A12
+
+**Hecho** (plan confirmado por el autor)
+- **A2:**
+  - «Más antiguo» encima de la lista y «Más reciente» debajo, en etiqueta.
+  - Etiqueta de ronda con su criterio («Ronda 1 de 3. Más de un año entre hitos»), sacado del campo nuevo `titulo` del `data.json`, copiado literal de los títulos de ronda del contenido.
+  - Ronda resuelta compacta: celda, fecha y hito; «Tu posición: N.º» si no está en su sitio; explicación y fuente plegadas en «Ver explicación».
+- **A10:**
+  - Grupos resueltos compactos (nombre e ítems) mientras se juega; explicación y fuente al terminar.
+  - «Barajar» secundario en la barra.
+  - «Ya lo has probado.» al repetir una combinación fallada, sin gastar vida ni sumar fila al recibo.
+  - Botón apagado «Marca 4 (N de 4)» hasta tener cuatro marcados.
+  - Corazones de 9×8 a escala 3 en `shared/iconos.js` (`lleno`, `mitad`, `vacio`). Al fallar, el corazón pasa por medio vacío (200 ms) y queda en contorno raya; con movimiento reducido cambia directo.
+  - Papeleta y nula salen de A10; nula se borra de `iconos.js`, porque ya no la usa nadie.
+- **A12:** opciones en dos columnas; la pista recién revelada en negrita y tinta, y las anteriores en lápiz. Al terminar, todas en tinta normal.
+- Partidas completas sin errores a 320 y 375 px. Capturas a 375 × 560 y 1280 revisadas contra la lista negra.
+- Ojo para pruebas: Chrome guardaba en caché un `iconos.js` antiguo y daba un error falso. Con perfil nuevo y `--disable-cache` desaparece. En Pages puede pasar lo mismo durante unos minutos tras el push.
+
+**Falta**
+- Paso 4: A4 y A13, en cuanto el autor resuelva las dudas de fuentes (bitácora del 17-10 (2)) y A4 tenga el campo `origen`.
+- Textos de portada de A1, A2, A10 y A12.
+
 ## 2026-10-18 — Paso 2 del orden de trabajo: portada común
 
 **Hecho** (plan confirmado por el autor)

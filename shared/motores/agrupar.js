@@ -15,8 +15,10 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
   const resueltos = [];
   const intentos = [];
   let marcados = [];
+  const fallidas = new Set();
   let fallos = 0;
   let aviso = '';
+  let recienPerdida = false;
 
   const completo = () => resueltos.length === grupos.length;
   const terminada = () => completo() || fallos === vidas;
@@ -31,6 +33,11 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
   }, contenedor);
 
   const comprobar = () => {
+    const clave = [...marcados].sort().join('|');
+    if (fallidas.has(clave)) {
+      aviso = 'Ya lo has probado.';
+      return pinta();
+    }
     intentos.push(marcados);
     const grupo = grupoDe.get(marcados[0]);
     if (marcados.every(item => grupoDe.get(item) === grupo)) {
@@ -38,7 +45,9 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
       restantes = restantes.filter(item => !marcados.includes(item));
       aviso = '';
     } else {
+      fallidas.add(clave);
       fallos += 1;
+      recienPerdida = true;
       aviso = 'No es un grupo.';
     }
     marcados = [];
@@ -46,6 +55,7 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
   };
 
   // Resuelto: fondo del color del grupo. Perdido: papel, con una muestra del color para leer el recibo.
+  // Mientras se juega, compacto; explicación y fuente al terminar.
   const bloque = (i, perdido) => el('div', {
     className: `grupo g${i + 1}${perdido ? ' perdido' : ''}`,
     style: perdido ? '' : `background: var(--grupo-${i + 1})`,
@@ -54,23 +64,39 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
       ...(perdido ? [el('span', { className: 'muestra-partido', style: `background: var(--grupo-${i + 1})` })] : []),
       grupos[i].nombre),
     el('p', { textContent: grupos[i].items.join(', ') }),
-    el('p', { className: 'etiqueta', textContent: grupos[i].explicacion }),
-    ...(terminada() ? [el('p', { className: 'fuente', textContent: `Fuente: ${grupos[i].fuente}` })] : []));
+    ...(terminada()
+      ? [el('p', { className: 'etiqueta', textContent: grupos[i].explicacion }),
+        el('p', { className: 'fuente', textContent: `Fuente: ${grupos[i].fuente}` })]
+      : []));
 
   const pinta = () => {
     const quedan = vidas - fallos;
-    const iconos = el('span');
-    iconos.innerHTML = Array.from({ length: vidas }, (_, i) => i < quedan ? icono('papeleta', 2) : icono('nula', 2, 'var(--raya)')).join('');
+    // Al perder una vida, el corazón pasa por medio vacío antes de quedarse en contorno
+    const animar = recienPerdida && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    recienPerdida = false;
+    const corazones = Array.from({ length: vidas }, (_, i) => {
+      const c = el('span');
+      c.innerHTML = i < quedan ? icono('lleno', 3) : animar && i === quedan ? icono('mitad', 3) : icono('vacio', 3, 'var(--raya)');
+      return c;
+    });
+    if (animar) setTimeout(() => { corazones[quedan].innerHTML = icono('vacio', 3, 'var(--raya)'); }, 200);
 
-    const boton = terminada() ? accion('Ver resultado', final) : accion('Comprobar', comprobar);
+    const boton = terminada()
+      ? accion('Ver resultado', final)
+      : accion(marcados.length < 4 ? `Marca 4 (${marcados.length} de 4)` : 'Comprobar', comprobar);
     boton.disabled = !terminada() && marcados.length < 4;
+    const barajar = el('button', { className: 'secundario', textContent: 'Barajar' });
+    barajar.onclick = () => {
+      restantes = baraja(restantes);
+      pinta();
+    };
 
     const sinResolver = grupos.map((_, i) => i).filter(i => !resueltos.includes(i));
 
     monta(contenedor, [
       el('header', { className: 'cab' }, el('div', { className: 'cab-fila' },
         el('h1', { className: 'nombre', textContent: juego }),
-        el('p', { className: 'vidas' }, iconos, el('span', { className: 'etiqueta', textContent: `${quedan} ${quedan === 1 ? 'vida' : 'vidas'}` })))),
+        el('p', { className: 'vidas' }, ...corazones, el('span', { className: 'etiqueta', textContent: `${quedan} ${quedan === 1 ? 'vida' : 'vidas'}` })))),
       ...resueltos.map(i => bloque(i, false)),
       ...(terminada()
         ? sinResolver.map(i => bloque(i, true))
@@ -86,7 +112,7 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
           return b;
         }))]),
       el('p', { className: 'etiqueta', ariaLive: 'polite', textContent: aviso }),
-    ], boton);
+    ], ...(terminada() ? [] : [barajar]), boton);
   };
 
   pinta();

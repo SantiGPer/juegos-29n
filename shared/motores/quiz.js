@@ -4,7 +4,8 @@ import { portada } from '../portada.js';
 import { accion, baraja, celda, el, marcador, monta, muestra, numero } from '../util.js';
 
 const fechaEs = iso => iso.split('-').reverse().join('-');
-const enLineas = (lista, n) => lista.map((x, i) => (i && i % n === 0 ? '\n' : '') + x).join('');
+const mayuscula = texto => texto[0].toUpperCase() + texto.slice(1);
+const enLineas =(lista, n) => lista.map((x, i) => (i && i % n === 0 ? '\n' : '') + x).join('');
 
 const explicacion = (...parrafos) => el('div', { className: 'explicacion' }, ...parrafos);
 
@@ -140,8 +141,11 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
           el('div', {},
             el('p', { className: 'etiqueta', textContent: fechaEs(h.fecha) }),
             el('p', { className: 'hito', textContent: h.texto }),
-            el('p', { textContent: h.explicacion }),
-            el('p', { className: 'fuente', textContent: `Fuente: ${h.fuente}` })));
+            ...(valor(h) === 1 ? [] : [el('p', { className: 'etiqueta', textContent: `Tu posición: ${orden.indexOf(h) + 1}.º` })]),
+            el('details', {},
+              el('summary', { textContent: 'Ver explicación' }),
+              el('p', { textContent: h.explicacion }),
+              el('p', { className: 'fuente', textContent: `Fuente: ${h.fuente}` }))));
       }));
       lista.replaceWith(resuelta);
 
@@ -153,9 +157,11 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
 
     monta(contenedor, [
       cab.nodo,
-      el('p', { className: 'etiqueta', textContent: `Ronda ${n + 1} de ${rondas.length}` }),
+      el('p', { className: 'etiqueta', textContent: `Ronda ${n + 1} de ${rondas.length}. ${mayuscula(rondas[n].titulo)}` }),
       el('p', { className: 'pregunta', textContent: instruccion }),
+      el('p', { className: 'etiqueta extremo', textContent: 'Más antiguo' }),
       lista,
+      el('p', { className: 'etiqueta extremo', textContent: 'Más reciente' }),
     ], boton);
     cab.pinta(estados(), enCurso, suma());
     scrollTo(0, 0);
@@ -216,8 +222,9 @@ const pistas = ({ juego, dia, fuente, items }, contenedor) => {
       cab.nodo,
       el('p', { className: 'etiqueta', textContent: terminada() ? 'Fin de la partida' : `Pista ${vistas} de ${n}` }),
       el('ol', { className: 'pistas' }, ...item.pistas.slice(0, vistas).map((texto, i) =>
-        el('li', {}, ...(i === n - 1 && item.color ? [el('span', { className: 'muestra-partido', style: `background: var(${item.color})` })] : []), texto))),
-      el('div', { className: 'opciones' }, ...botones),
+        el('li', { className: terminada() ? '' : i === vistas - 1 ? 'nueva' : 'vista' },
+          ...(i === n - 1 && item.color ? [el('span', { className: 'muestra-partido', style: `background: var(${item.color})` })] : []), texto))),
+      el('div', { className: 'opciones dos' }, ...botones),
       ...(terminada()
         ? [explicacion(
           el('p', { className: 'hito', textContent: item.nombre }),

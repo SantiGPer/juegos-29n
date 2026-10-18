@@ -1,7 +1,10 @@
 // Iconos de píxeles de docs/maquetas/maqueta-arcade-v2.html. Solo en tinta, lápiz o raya; nunca como adorno.
 const matrices = {
   papeleta: ['XXXXXXXX..', 'X......XX.', 'X......X.X', 'X.XXXX.XXX', 'X........X', 'X.XXXXXX.X', 'X........X', 'X.XXXX...X', 'X........X', 'XXXXXXXXXX'],
-  nula: ['XXXXXXXXXX', 'X........X', 'X.X....X.X', 'X..X..X..X', 'X...XX...X', 'X...XX...X', 'X..X..X..X', 'X.X....X.X', 'X........X', 'XXXXXXXXXX'],
+  // Vidas (maqueta v7, variante A): corazón lleno, medio vacío al perderse y contorno
+  lleno: ['.XX...XX.', 'XXXX.XXXX', 'XXXXXXXXX', 'XXXXXXXXX', '.XXXXXXX.', '..XXXXX..', '...XXX...', '....X....'],
+  mitad: ['.XX...XX.', 'X..X.XXXX', 'X...XXXXX', 'X....XXXX', '.X...XXX.', '..X..XX..', '...X.X...', '....X....'],
+  vacio: ['.XX...XX.', 'X..X.X..X', 'X...X...X', 'X.......X', '.X.....X.', '..X...X..', '...X.X...', '....X....'],
   urna: ['..XXXXXX..', '..X....X..', '..X.XX.X..', 'XXXXXXXXXX', 'X........X', 'X.XXXXXX.X', 'X........X', 'X........X', 'X........X', 'XXXXXXXXXX'],
   candado: ['...XXXX...', '..X....X..', '..X....X..', '..X....X..', '.XXXXXXXX.', '.X......X.', '.X..XX..X.', '.X..XX..X.', '.X......X.', '.XXXXXXXX.'],
   tic: ['.......', '......X', '.....X.', 'X...X..', '.X.X...', '..X....', '.......'],

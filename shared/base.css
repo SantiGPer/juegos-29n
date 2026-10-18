@@ -86,6 +86,8 @@ main {
   min-height: 52px;
 }
 
+.barra .secundario { min-height: 52px; }
+
 @media (min-width: 768px) {
   main { min-height: 0; }
   .cuerpo { padding-top: var(--s6); }
@@ -367,6 +369,20 @@ button:disabled {
 
 .orden.resuelta p { margin-bottom: var(--s1); }
 
+.extremo { margin: 0 0 var(--s2); }
+.orden + .extremo { margin: var(--s2) 0 0; }
+
+summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: var(--etiqueta);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+details[open] summary { margin-bottom: var(--s1); }
+
 /* M1 pistas */
 .pistas {
   margin: 0 0 var(--s5);
@@ -374,6 +390,10 @@ button:disabled {
 }
 
 .pistas li { margin-bottom: var(--s2); }
+.pistas li.vista { color: var(--lapiz); }
+.pistas li.nueva { font-weight: 800; }
+
+.opciones.dos { grid-template-columns: 1fr 1fr; }
 
 .muestra-partido {
   display: inline-block;
@@ -393,7 +413,8 @@ button:disabled {
   flex: none;
 }
 
-.vidas svg { margin-right: var(--s1); }
+.vidas span { line-height: 0; }
+.vidas .etiqueta { line-height: 1.45; }
 
 .cab:has(.vidas) { margin-bottom: var(--s5); }
 

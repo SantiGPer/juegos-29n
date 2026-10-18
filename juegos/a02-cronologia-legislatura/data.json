@@ -9,6 +9,7 @@
   "instruccion": "Ordena los cuatro hitos del más antiguo al más reciente.",
   "rondas": [
     {
+      "titulo": "más de un año entre hitos",
       "hitos": [
         {
           "texto": "Feijóo pierde su investidura",
@@ -37,6 +38,7 @@
       ]
     },
     {
+      "titulo": "parejas cercanas, lejos entre sí",
       "hitos": [
         {
           "texto": "Sánchez, investido presidente",
@@ -65,6 +67,7 @@
       ]
     },
     {
+      "titulo": "semanas entre hitos",
       "hitos": [
         {
           "texto": "España reconoce el Estado de Palestina",
