@@ -2,6 +2,40 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (4) — Encargos del 18-10: A3 (datos, M4 y juego), portadas y ElectoQuiz
+
+**Hecho** (plan confirmado por el autor)
+- **A3, datos** (`R/05`, `5e71087`):
+  - Fórmula ampliada a las perífrasis con valor de llamada.
+  - Rango VIII, IX, X, XII, XIV y XV.
+  - Caché por diario de lo ya leído (`<pdf>.lee.rds`), para que una pasada cortada se reanude.
+  - Revisión manual de las 24 coincidencias nuevas y descartes listados en el script y en el JSON (`descartes`, con su motivo), quitados antes de fusionar. Detalle en `editorial/fuentes/a03-validacion-viii-x.md`.
+  - Resultado: VIII 39/288 (13,5), IX 3/262 (1,1), X 69/293 (23,5), XII 25/176 (14,2), XIV 49/262 (18,7) y XV 95/203 (46,8). La XV pasa de 90 a 95.
+- **`legislaturas.json`:** Batet como PSOE, con la afiliación PSC en el campo `afiliacion`. La decisión del 16-10 no se había aplicado al JSON.
+- **M4** en `shared/motores/masomenos.js`, variante `cadena` (`f6dfecd`):
+  - Pareja de ítems en dos columnas, con la cifra en casillas; la del ítem por descubrir es «?».
+  - «Más» y «Menos» en orden fijo. Tocar elige y «Responder» confirma; después, «Siguiente legislatura».
+  - Pista de una celda por decisión.
+  - Cierre con aciertos sobre decisiones y ranking de mayor a menor: barra en tinta, presidencia del Congreso, partido con muestra de color y llamadas/sesiones.
+- **Cambios en `shared/`:**
+  - `cierre.js` acepta `detalle`, nodos bajo la nota; sirve también para el desglose de A4.3.
+  - `util.js` tiene el glifo «?».
+  - `base.css` lleva la pareja y el ranking.
+- **A3** en `juegos/a03-crispometro/`, que lee los dos JSON de `data/`. 5 decisiones. Partida completa sin errores a 320, 375 y 1280 px; a 375 × 560 la pregunta y las dos opciones caben sobre la barra. Capturas revisadas contra la lista negra.
+- **Portadas** de A1, A2, A10 y A12 copiadas del contenido (`2f50727`); la regla de vidas de A10 lleva el corazón (`lleno`). A1 pasa a **ElectoQuiz** en el juego, el recibo y el índice. Los `data.json` de A1 y A10 están regenerados con las correcciones del 18-10 (pregunta 9 de A1, fuente de la 10, fuente del grupo 3 de A10).
+- Sin push.
+
+**Falta**
+- A3: texto de portada, reglas y nota metodológica (en `TODO` visible), que vienen de Cowork. La nota debería explicar la fórmula, los avisos descontados y la exclusión de la XI y la XIII.
+- A3: el cierre no muestra racha. Con cinco decisiones no aporta nada; M4 la tendrá cuando la pida A11.
+- A4 y A13 (paso 4 del 17-10): las fuentes ya están cerradas.
+
+**Dudas para el autor**
+- **A3, XII DS 61:** «Señorías, el orden en la Cámara lo mantiene la presidenta y les voy a llamar al orden a su señorías». Es colectiva y sin ordinal. La cuento, como el resto de «le voy a llamar al orden». ¿De acuerdo?
+- **A3, XV DS 43:** «le llamo al orden por primera vez […] Así que le llamo al orden por primera vez» al mismo diputado cuenta como dos actos, porque las dos frases están a más de 150 caracteres. Es lo que da la regla, como antes, aunque parece la misma llamada repetida.
+- **A3, textos de juego escritos por Code** (no hay contenido de A3): la pregunta («¿La IX legislatura tuvo más o menos llamadas al orden por cada 100 sesiones plenarias que la VIII?»), la explicación de cada decisión (cifras, presidencia y partido) y el periodo de cada legislatura, sacado de las fechas de la presidencia («Desde 2023» en la XV). Que Cowork los revise.
+- **A10, fuente del grupo 3:** el contenido añade «Fechas de cada cargo en editorial/fuentes/a10-agrupar.md». En pantalla solo he quitado el `[VERIFICAR]` y no he puesto esa ruta interna. ¿Vale así?
+
 ## 2026-10-18 (3) — Ajustes del autor tras probar A1, A10 y A12
 
 Decisiones del autor en sesión (18-10), para que Cowork las pase a `decisiones.md`:
