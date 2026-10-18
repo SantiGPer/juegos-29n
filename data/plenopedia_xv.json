@@ -5934,189 +5934,6 @@
       "aplausos_10k": 12.1436311325337
     }
   ],
-  "aplausos_quien": [
-    {
-      "quien": "EH Bildu",
-      "categoria": "Mesa",
-      "veces": 1
-    },
-    {
-      "quien": "ERC",
-      "categoria": "ERC",
-      "veces": 6
-    },
-    {
-      "quien": "ERC",
-      "categoria": "Mesa",
-      "veces": 1
-    },
-    {
-      "quien": "ERC",
-      "categoria": "Sumar",
-      "veces": 1
-    },
-    {
-      "quien": "Gobierno",
-      "categoria": "Gobierno",
-      "veces": 75
-    },
-    {
-      "quien": "Gobierno",
-      "categoria": "Mesa",
-      "veces": 22
-    },
-    {
-      "quien": "Gobierno",
-      "categoria": "PNV",
-      "veces": 2
-    },
-    {
-      "quien": "Gobierno",
-      "categoria": "PSOE",
-      "veces": 35
-    },
-    {
-      "quien": "Gobierno",
-      "categoria": "Sumar",
-      "veces": 15
-    },
-    {
-      "quien": "Junts",
-      "categoria": "Mesa",
-      "veces": 1
-    },
-    {
-      "quien": "Mixto",
-      "categoria": "Mesa",
-      "veces": 1
-    },
-    {
-      "quien": "Mixto",
-      "categoria": "Mixto",
-      "veces": 1
-    },
-    {
-      "quien": "PNV",
-      "categoria": "Mesa",
-      "veces": 2
-    },
-    {
-      "quien": "PP",
-      "categoria": "Gobierno",
-      "veces": 3
-    },
-    {
-      "quien": "PP",
-      "categoria": "Mesa",
-      "veces": 30
-    },
-    {
-      "quien": "PP",
-      "categoria": "Otros",
-      "veces": 1
-    },
-    {
-      "quien": "PP",
-      "categoria": "PP",
-      "veces": 327
-    },
-    {
-      "quien": "PP",
-      "categoria": "PSOE",
-      "veces": 3
-    },
-    {
-      "quien": "PSOE",
-      "categoria": "Gobierno",
-      "veces": 128
-    },
-    {
-      "quien": "PSOE",
-      "categoria": "Mesa",
-      "veces": 17
-    },
-    {
-      "quien": "PSOE",
-      "categoria": "PNV",
-      "veces": 1
-    },
-    {
-      "quien": "PSOE",
-      "categoria": "PP",
-      "veces": 1
-    },
-    {
-      "quien": "PSOE",
-      "categoria": "PSOE",
-      "veces": 94
-    },
-    {
-      "quien": "PSOE",
-      "categoria": "Sumar",
-      "veces": 7
-    },
-    {
-      "quien": "Sumar",
-      "categoria": "ERC",
-      "veces": 1
-    },
-    {
-      "quien": "Sumar",
-      "categoria": "Gobierno",
-      "veces": 49
-    },
-    {
-      "quien": "Sumar",
-      "categoria": "Mesa",
-      "veces": 14
-    },
-    {
-      "quien": "Sumar",
-      "categoria": "PNV",
-      "veces": 1
-    },
-    {
-      "quien": "Sumar",
-      "categoria": "PSOE",
-      "veces": 1
-    },
-    {
-      "quien": "Sumar",
-      "categoria": "Sumar",
-      "veces": 180
-    },
-    {
-      "quien": "Vox",
-      "categoria": "Mesa",
-      "veces": 36
-    },
-    {
-      "quien": "Vox",
-      "categoria": "Otros",
-      "veces": 1
-    },
-    {
-      "quien": "Vox",
-      "categoria": "PP",
-      "veces": 1
-    },
-    {
-      "quien": "Vox",
-      "categoria": "Sumar",
-      "veces": 3
-    },
-    {
-      "quien": "Vox",
-      "categoria": "Vox",
-      "veces": 865
-    },
-    {
-      "quien": null,
-      "categoria": "Gobierno",
-      "veces": 2
-    }
-  ],
-  "aplausos_atribuidos": [1783, 33682],
   "risas_orador": [
     {
       "orador": "Sánchez Pérez-Castejón",
@@ -7859,7 +7676,6 @@
       "risas": 137,
       "aplausos": 669,
       "silencio": 0,
-      "aplausos_con_grupo": 54,
       "palabras": 136867,
       "otra_lengua": 26170,
       "jornadas": 6
@@ -7871,7 +7687,6 @@
       "risas": 126,
       "aplausos": 1449,
       "silencio": 0,
-      "aplausos_con_grupo": 118,
       "palabras": 389666,
       "otra_lengua": 55473,
       "jornadas": 8
@@ -7883,7 +7698,6 @@
       "risas": 104,
       "aplausos": 2175,
       "silencio": 3,
-      "aplausos_con_grupo": 154,
       "palabras": 631443,
       "otra_lengua": 103382,
       "jornadas": 19
@@ -7895,7 +7709,6 @@
       "risas": 134,
       "aplausos": 3111,
       "silencio": 0,
-      "aplausos_con_grupo": 182,
       "palabras": 805978,
       "otra_lengua": 116352,
       "jornadas": 19
@@ -7907,7 +7720,6 @@
       "risas": 96,
       "aplausos": 1979,
       "silencio": 3,
-      "aplausos_con_grupo": 109,
       "palabras": 527196,
       "otra_lengua": 68679,
       "jornadas": 11
@@ -7919,7 +7731,6 @@
       "risas": 175,
       "aplausos": 4197,
       "silencio": 10,
-      "aplausos_con_grupo": 289,
       "palabras": 1155173,
       "otra_lengua": 170023,
       "jornadas": 25
@@ -7931,7 +7742,6 @@
       "risas": 104,
       "aplausos": 2434,
       "silencio": 4,
-      "aplausos_con_grupo": 202,
       "palabras": 685664,
       "otra_lengua": 96906,
       "jornadas": 15
@@ -7943,7 +7753,6 @@
       "risas": 184,
       "aplausos": 3417,
       "silencio": 10,
-      "aplausos_con_grupo": 324,
       "palabras": 1021134,
       "otra_lengua": 151052,
       "jornadas": 21
@@ -7955,7 +7764,6 @@
       "risas": 91,
       "aplausos": 2040,
       "silencio": 4,
-      "aplausos_con_grupo": 172,
       "palabras": 553501,
       "otra_lengua": 88427,
       "jornadas": 10
@@ -7967,7 +7775,6 @@
       "risas": 193,
       "aplausos": 3698,
       "silencio": 10,
-      "aplausos_con_grupo": 274,
       "palabras": 1001346,
       "otra_lengua": 160296,
       "jornadas": 20
@@ -7979,7 +7786,6 @@
       "risas": 140,
       "aplausos": 2575,
       "silencio": 7,
-      "aplausos_con_grupo": 202,
       "palabras": 699842,
       "otra_lengua": 121948,
       "jornadas": 16
@@ -7991,7 +7797,6 @@
       "risas": 196,
       "aplausos": 3604,
       "silencio": 6,
-      "aplausos_con_grupo": 292,
       "palabras": 993615,
       "otra_lengua": 168327,
       "jornadas": 21
@@ -8003,7 +7808,6 @@
       "risas": 73,
       "aplausos": 2162,
       "silencio": 7,
-      "aplausos_con_grupo": 138,
       "palabras": 671600,
       "otra_lengua": 115388,
       "jornadas": 11
@@ -8015,7 +7819,6 @@
       "risas": 11,
       "aplausos": 172,
       "silencio": 0,
-      "aplausos_con_grupo": 15,
       "palabras": 35659,
       "otra_lengua": 4093,
       "jornadas": 1
@@ -8024,7 +7827,7 @@
   "llamadas_por_grupo": [
     {
       "grupo": "PP",
-      "n": 54
+      "n": 55
     },
     {
       "grupo": "PSOE",
@@ -8040,7 +7843,7 @@
     },
     {
       "grupo": null,
-      "n": 28
+      "n": 29
     }
   ],
   "llamadas_destinatario": [
@@ -8277,6 +8080,15 @@
       "destinatario": "Señor Tellado",
       "nombre": "Tellado Filgueira, Miguel",
       "grupo": "PP"
+    },
+    {
+      "fecha": "2024-10-08",
+      "diario": 67,
+      "pagina": 41,
+      "presidencia": "Rodríguez Gómez de Celis",
+      "destinatario": null,
+      "nombre": null,
+      "grupo": null
     },
     {
       "fecha": "2024-10-09",
@@ -8734,6 +8546,15 @@
       "pagina": 30,
       "presidencia": "Francina Armengol Socias",
       "destinatario": "Señor Tellado",
+      "nombre": "Tellado Filgueira, Miguel",
+      "grupo": "PP"
+    },
+    {
+      "fecha": "2026-02-25",
+      "diario": 169,
+      "pagina": 30,
+      "presidencia": "Francina Armengol Socias",
+      "destinatario": "señor Tellado",
       "nombre": "Tellado Filgueira, Miguel",
       "grupo": "PP"
     },

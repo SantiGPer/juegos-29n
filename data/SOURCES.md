@@ -39,7 +39,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
   - VIII: el diario 87 (28-04-2005) lleva por errata «Sesión plenaria núm. 81», como el 86; se cuenta como la 82.
 - 16-10-2026: corregido un fallo que dejaba sin texto los diarios con alguna hoja sin folio. La XV pasa de 83 a 90 llamadas (diarios 182, 196, 207 y 210).
 - Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de la XV (bitácora del 15-10-2026) y precisión, atribución y exhaustividad de VIII a XV en `editorial/fuentes/a03-validacion-viii-x.md`.
-- 18-10-2026, correcciones del 19-10: con el mismo ordinal y sin nombrar a otra persona, se fusiona a cualquier distancia dentro de la intervención; la llamada colectiva de la XII (DS 61) cuenta. La XV pasa de 95 a 92 y la XIV de 49 a 48 (casos en `editorial/fuentes/a03-plenopedia-viabilidad.md`).
+- 18-10-2026, correcciones del 19-10: la repetición de la XV, DS 43, pág. 32, se fusiona a mano (`fusiones_a_mano`), y la llamada colectiva de la XII (DS 61) cuenta. La XV pasa de 95 a 94.
 
 ## `legislaturas.json`
 

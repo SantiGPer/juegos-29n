@@ -2,6 +2,22 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (6) — A3 Plenopedia: respuestas del autor a las dudas de la viabilidad
+
+Decisiones del autor en sesión (18-10), para que Cowork las pase a `decisiones.md`:
+- Llamadas al orden: solo se fusiona a mano el DS 43 de la XV. **XV = 94/203**; el resto de legislaturas sin cambios (XIV, 49).
+- Plenopedia no compara legislaturas: todo va sobre la XV.
+- La Mesa queda fuera del Charlatán y de los grupos. Feijóo candidato cuenta para el PP; Sánchez candidato, como Gobierno.
+- Aplausos: basta con saber que se aplaude, no quién aplaude.
+
+**Hecho**
+- `R/05`: la regla general por ordinal sale y queda una fusión a mano (`fusiones_a_mano` en el JSON). `llamadas_al_orden.json` regenerado.
+- `R/08`: fuera el cálculo de quién aplaude. `plenopedia_xv.json` regenerado. Llamadas de la XV: Armengol 56 y Rodríguez Gómez de Celis 38; 65 de 94 con grupo automático y 29 por revisar a mano; Tellado, 16.
+- Informe de viabilidad y `SOURCES.md` al día. La pregunta 7 queda reformulada (aplausos durante las intervenciones de cada grupo) y la 8 sale.
+
+**Dudas para el autor**
+- Siguen abiertas: acotar «Sánchez» (pregunta 23) y los cuatro oradores sin identificar.
+
 ## 2026-10-18 (5) — A3 Plenopedia: prueba de viabilidad de la XV (encargo del 19-10)
 
 **Hecho** (plan confirmado por el autor; informe completo en `editorial/fuentes/a03-plenopedia-viabilidad.md`)

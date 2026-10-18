@@ -90,8 +90,6 @@ terminos <- list(
   Puigdemont = regex("\\bPuigdemont\\b")
 )
 
-grupos_texto <- c(Popular = "PP", Socialista = "PSOE", VOX = "Vox", SUMAR = "Sumar", Republicano = "ERC",
-                  Junts = "Junts", Bildu = "EH Bildu", "Vasco|PNV" = "PNV", Mixto = "Mixto")
 
 palabras <- \(x) str_count(x, "[\\p{L}\\p{N}]+(?:[’'·.,\\-][\\p{L}\\p{N}]+)*")
 
@@ -392,19 +390,6 @@ acotaciones_grupo <- piezas |>
   mutate(across(c(rumores, protestas, risas, aplausos), \(x) x / palabras * 1e4, .names = "{.col}_10k")) |>
   arrange(desc(palabras))
 
-aplaude <- piezas |>
-  filter(aplausos) |>
-  mutate(quien = map(pieza, \(p) c(
-    unname(grupos_texto[map_lgl(names(grupos_texto), \(g) str_detect(p, g))])[str_detect(p, "Grupos? Parlamentarios?")],
-    if (str_detect(p, "miembros del Gobierno|bancada del Gobierno")) "Gobierno"
-  ))) |>
-  mutate(atribuido = lengths(quien) > 0)
-
-aplausos_quien <- aplaude |>
-  filter(atribuido) |>
-  unnest(quien) |>
-  count(quien, categoria, name = "veces")
-
 risas_orador <- piezas |>
   filter(risas) |>
   inner_join(select(intervenciones, diario, intervencion, nombre, miembro_nombre, persona, tipo),
@@ -423,9 +408,7 @@ menciones <- intervenciones |>
 # Estabilidad del formato por trimestre
 trimestres <- piezas |>
   mutate(trimestre = str_c(year(dia), "-T", quarter(dia))) |>
-  summarise(across(c(rumores, protestas, risas, aplausos, silencio), sum),
-            aplausos_con_grupo = sum(aplausos & str_detect(pieza, "Grupos? Parlamentarios?")),
-            .by = trimestre) |>
+  summarise(across(c(rumores, protestas, risas, aplausos, silencio), sum), .by = trimestre) |>
   left_join(intervenciones |> mutate(trimestre = str_c(year(dia), "-T", quarter(dia))) |>
               summarise(palabras = sum(palabras), otra_lengua = sum(palabras_otra_lengua), jornadas = n_distinct(numero),
                         .by = trimestre), by = "trimestre") |>
@@ -467,8 +450,6 @@ list(
   gobierno = gobierno,
   otros_oradores = otros,
   acotaciones = acotaciones_grupo,
-  aplausos_quien = aplausos_quien,
-  aplausos_atribuidos = c(con_grupo = sum(aplaude$atribuido), total = nrow(aplaude)),
   risas_orador = risas_orador,
   minutos_de_silencio = silencios,
   menciones = menciones,

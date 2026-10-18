@@ -43,7 +43,7 @@ Encargo del 19-10-2026, con los ajustes, el método y la definición del Charlat
 | Menciones | Sí | DS 150, pág. 52: «…con los votos de los herederos políticos de ETA…» | ver tabla |
 
 - **Rumores, protestas, risas y aplausos.** Cada pieza de una acotación cuenta una vez: «(Rumores.―Aplausos)» suma un rumor y un aplauso. Se atribuye al orador que tiene la palabra. Por trimestre, las cuatro acotaciones aparecen con frecuencias parecidas de principio a fin (tabla `trimestres` del JSON), sin cambios de formato.
-- **Aplausos con grupo.** Solo 1.783 de 33.682 aplausos (5 %) dicen quién aplaude. Casi siempre son ovaciones «puestos en pie»; el «(Aplausos)» normal no lo dice.
+- **Aplausos.** Se cuenta que hay aplauso, no quién aplaude (decisión del autor, 18-10). Solo un 5 % de las acotaciones lo dice.
 - **Horas.** Salen de la apertura («Se abre/reanuda la sesión a las…») y del cierre («Eran las…»; a veces «Se suspende/levanta la sesión a las…»).
   - Cada sesión plenaria de la XV ocupa un solo diario, así que jornada y sesión son lo mismo.
   - 73 jornadas tienen pausas intermedias. En siete, la suspensión no lleva hora y no se puede calcular la duración neta.
@@ -105,17 +105,6 @@ Encargo del 19-10-2026, con los ajustes, el método y la definición del Charlat
 - La Mesa tiene 23,8 rumores por cada 10.000 palabras: es cuando pide silencio.
 - **Risas por orador:** Sánchez 266, Feijóo 228, Montero 94, Bolaños 88 y Rufián 88.
 
-### Aplausos atribuidos (catálogo 7 y 8)
-
-- **Quién aplaude** (solo el 5 % que lo indica): Vox 906, PP 364, PSOE 248, Sumar 246 y Gobierno 149. Los demás grupos, 14 entre todos.
-- **A otro grupo:**
-  - PSOE al Gobierno: 128.
-  - Sumar al Gobierno: 49.
-  - Gobierno al PSOE: 35.
-  - Gobierno a Sumar: 15.
-  - PSOE a Sumar: 7.
-  - Entre bloques, casi nada (PP al Gobierno, 3).
-
 ### Duración (catálogo 12 y 13)
 
 - **La más larga:** DS 135 (10-09-2025), de las 9.00 a las 21.21, 12 h 21 min sin pausas. Le siguen el DS 58 (23-07-2024, 12 h 10 min) y el DS 16 (10-01-2024, 11 h 35 min con dos pausas).
@@ -163,23 +152,23 @@ Límites:
 
 ### Llamadas al orden por grupo del llamado (catálogo 1 a 3)
 
-- Sobre los 92 actos de la XV (ver más abajo la corrección del 19-10).
-- **Presidencia:** Armengol 55 y Rodríguez Gómez de Celis 37.
+- Sobre los 94 actos de la XV (ver más abajo la corrección del 19-10).
+- **Presidencia:** Armengol 56 y Rodríguez Gómez de Celis 38.
 - **Grupo del llamado.** Se cruza el apellido del vocativo con los diputados en el cargo ese día. Si hay varios candidatos, decide el fragmento con los dos apellidos («(El señor Conde Bajén: …)»).
-  - Asignados automáticamente: 64 de 92. PP 54, Vox 8, PSOE 1 y Sumar 1.
-  - Sin asignar: 28. Catorce no tienen apellido («Señoría», «señor diputado» o sin vocativo). Otros catorce son apellidos ambiguos sin desempate en el fragmento: Hernando (cuatro), Sánchez (cuatro), Conde (dos), Mariscal, García, Alfonso y Rodríguez.
-  - Hay que leer esos 28 fragmentos a mano antes de usar las preguntas 1 y 3.
-- **Más llamado:** Tellado (PP), 15 veces.
+  - Asignados automáticamente: 65 de 94. PP 55, Vox 8, PSOE 1 y Sumar 1.
+  - Sin asignar: 29. Quince no tienen apellido («Señoría», «señor diputado» o sin vocativo). Catorce son apellidos ambiguos sin desempate en el fragmento: Hernando (cuatro), Sánchez (cuatro), Conde (dos), Mariscal, García, Alfonso y Rodríguez.
+  - Hay que leer esos 29 fragmentos a mano antes de usar las preguntas 1 y 3.
+- **Más llamado:** Tellado (PP), 16 veces.
 
 ## Veredicto por pregunta del catálogo
 
 | # | Viable | Nota |
 | --- | --- | --- |
-| 1, 3 | Con revisión manual | 28 de 92 llamadas sin destinatario automático |
-| 2 | Sí | Armengol 55, Rodríguez Gómez de Celis 37 |
+| 1, 3 | Con revisión manual | 29 de 94 llamadas sin destinatario automático |
+| 2 | Sí | Armengol 56, Rodríguez Gómez de Celis 38 |
 | 4, 5, 6 | Sí | Atribuido al orador que tiene la palabra, no a quien hace ruido |
-| 7 | Con reservas | Solo el 5 % de los aplausos dice quién aplaude: mide ovaciones anotadas, no aplausos |
-| 8 | Con reservas | Mismo límite; los cruces existen, pero son pocos |
+| 7 | Sí, reformulada | Aplausos durante las intervenciones de cada grupo, no quién aplaude |
+| 8 | No | Necesita saber quién aplaude |
 | 12, 13 | Sí | Duración bruta; 7 jornadas sin duración neta |
 | 14 | Casi | 64 seguros; 2 dudosos que hay que revisar a mano |
 | 18 a 22, 24 | Sí | Con los criterios de arriba |
@@ -189,20 +178,19 @@ Límites:
 ## Correcciones de A3 aplicadas (encargo, punto 1)
 
 - **XII, DS 61** (llamada colectiva, «les voy a llamar al orden»): ya contaba como acto. Queda anotado en el script y en el método del JSON.
-- **XV, DS 43:** las dos «le llamo al orden por primera vez» a Tellado se fusionan en un acto.
-- **Regla general aplicada en `R/05`:** con el mismo ordinal y sin nombrar a otra persona entre medias, se fusiona a cualquier distancia dentro de la intervención. Afecta a cuatro casos, no solo al DS 43:
-  - XV, DS 43, pág. 32 (Tellado).
-  - XV, DS 67, pág. 41 (Tellado): tres «primera vez», que antes contaban como dos actos.
-  - XV, DS 169, pág. 30 (Tellado): «le llamo al orden por primera vez […] Está llamado al orden por primera vez».
-  - XIV, DS 97, pág. 41 (Figaredo): ver dudas.
-- **Resultado:** XV = **92/203** (no 94) y XIV = 48/262 (antes 49).
+- **XV, DS 43, pág. 32:** las dos «le llamo al orden por primera vez» a Tellado se fusionan en un acto. Es una fusión a mano (`fusiones_a_mano` en el JSON), no una regla general (decisión del autor, 18-10).
+- **Resultado:** XV = **94/203**. El resto de legislaturas no cambia (XIV, 49/262).
+- Una regla general por ordinal habría fusionado también el DS 67 y el DS 169 de la XV (Tellado) y el DS 97 de la XIV. Quedan como estaban.
 - **Periodo de la XV:** 2023–2026. `legislaturas.json` tiene un campo nuevo, `disolucion` (06-10-2026, fecha de baja de todos los diputados en los datos abiertos), y el juego muestra «2023–2026».
 
-## Dudas para el autor
+## Decisiones del autor sobre las dudas (18-10)
 
-1. **XV = 92, no 94.** La regla general del 19-10 también fusiona el DS 67 y el DS 169, ambos a Tellado y con «primera vez» repetida en la misma intervención. ¿Se da por buena la regla (92) o se aplica solo al DS 43 (94)?
-2. **XIV, DS 97.** «Un momento, señor Figaredo. Le llamo al orden por primera vez. (El señor Figaredo Álvarez-Sala, ya en la tribuna, se dirige al señor vicepresidente). Estoy hablando a su compañero portavoz de bancada. Le llamo al orden por primera vez por un insulto grave a la Presidencia.» Pueden ser dos destinatarios: Espinosa de los Monteros y Figaredo. Con la regla se fusionan y la XIV baja a 48. ¿Uno o dos actos?
-3. **Mesa.** Las palabras de Armengol y los vicepresidentes cuando presiden quedan fuera del Charlatán y de los grupos. Cuando intervienen como diputados (raro), cuentan. ¿De acuerdo?
-4. **Candidatos.** Feijóo candidato (2023) cuenta para el PP y el Charlatán; Sánchez candidato, como Gobierno. ¿De acuerdo?
-5. **Cuatro oradores sin identificar,** con etiqueta de diputado pero que no figuran entre los diputados de la XV: Armario Rodríguez, Córdoba Marí, Gil Membrado y Costa Serra (unas 2.500 palabras). Probablemente sean promotores de iniciativas legislativas populares. Están en «Otros».
-6. **Aplausos (7 y 8).** Con el 5 % atribuido, la pregunta mediría quién recibe o da ovaciones anotadas, no aplausos. ¿Se reformula o sale?
+- XV = 94: solo se fusiona el DS 43.
+- No se comparan legislaturas: todo Plenopedia va sobre la XV. El DS 97 de la XIV deja de importar.
+- La Mesa queda fuera del Charlatán y de los grupos. Feijóo candidato cuenta para el PP; Sánchez candidato, como Gobierno.
+- Aplausos: basta con saber que se aplaude, no quién. El cálculo de quién aplaude sale del script.
+
+## Dudas pendientes
+
+1. **«Sánchez» (pregunta 23).** El recuento mezcla a todas las personas con ese apellido. Habría que acotarlo.
+2. **Cuatro oradores sin identificar,** con etiqueta de diputado pero que no figuran entre los diputados de la XV: Armario Rodríguez, Córdoba Marí, Gil Membrado y Costa Serra (unas 2.500 palabras). Probablemente sean promotores de iniciativas legislativas populares. Están en «Otros».
