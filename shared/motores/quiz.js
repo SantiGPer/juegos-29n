@@ -232,7 +232,7 @@ const pistas = (config, contenedor, anterior) => {
       el('ol', { className: 'pistas' }, ...item.pistas.slice(0, vistas).map((texto, i) =>
         el('li', { className: terminada() ? '' : i === vistas - 1 ? 'nueva' : 'vista' },
           ...(i === n - 1 && item.color ? [el('span', { className: 'muestra-partido', style: `background: var(${item.color})` })] : []), texto))),
-      el('div', { className: 'opciones dos' }, ...botones),
+      el('div', { className: 'opciones fichas' }, ...botones),
       ...(terminada()
         ? [explicacion(
           el('p', { className: 'hito', textContent: item.nombre }),

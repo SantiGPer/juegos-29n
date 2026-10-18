@@ -95,10 +95,10 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
       el('header', { className: 'cab' }, el('div', { className: 'cab-fila' },
         el('h1', { className: 'nombre', textContent: juego }),
         el('p', { className: 'vidas' }, ...corazones, el('span', { className: 'etiqueta', textContent: `${quedan} ${quedan === 1 ? 'vida' : 'vidas'}` })))),
-      ...resueltos.map(i => bloque(i, false)),
+      // En juego, cada grupo resuelto ocupa una fila de la rejilla para que el tablero no salte
       ...(terminada()
-        ? sinResolver.map(i => bloque(i, true))
-        : [el('div', { className: 'rejilla' }, ...restantes.map(item => {
+        ? [...resueltos.map(i => bloque(i, false)), ...sinResolver.map(i => bloque(i, true))]
+        : [el('div', { className: 'rejilla' }, ...resueltos.map(i => bloque(i, false)), ...restantes.map(item => {
           const b = el('button', { className: `opcion${marcados.includes(item) ? ' seleccionada' : ''}`, textContent: item });
           b.onclick = () => {
             if (marcados.includes(item)) marcados = marcados.filter(m => m !== item);
@@ -109,7 +109,7 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
           };
           return b;
         }))]),
-      el('p', { className: 'etiqueta', ariaLive: 'polite', textContent: aviso }),
+      el('p', { className: 'etiqueta aviso', ariaLive: 'polite', textContent: aviso }),
     ], ...(terminada() ? [] : [barajar]), boton);
   };
 

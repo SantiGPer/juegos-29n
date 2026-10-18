@@ -13,8 +13,8 @@ export const ronda = ({ pregunta, unidad, lados, explicacion, fuente }, listo) =
   const fichas = lados.map(lado => {
     const cifraLado = dato(lado, false);
     const boton = el('button', { className: 'opcion lado', ariaPressed: 'false' },
-      el('span', { className: 'hito' }, ...(lado.color ? [el('span', { className: 'muestra-partido', style: `background: var(${lado.color})` })] : []), lado.nombre),
-      el('span', { className: 'etiqueta', textContent: lado.contexto }),
+      el('span', { className: 'hito', textContent: lado.nombre }),
+      el('span', { className: 'etiqueta' }, ...(lado.color ? [el('i', { className: 'muestra', style: `background: var(${lado.color})` })] : []), lado.contexto),
       cifraLado);
     boton.onclick = () => {
       elegida = lado.id;

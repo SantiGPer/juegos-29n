@@ -32,11 +32,12 @@
       "pregunta": "Hay jornadas que no se acaban nunca. ¿Cuánto duró el pleno más largo de la legislatura?",
       "min": 6,
       "max": 16,
-      "paso": 0.25,
+      "paso": 0.5,
+      "marca": 1,
       "unidad": "h",
       "formato": "horas",
       "valor": 12.35,
-      "tramos": [{ "hasta": 0.5, "puntos": 1 }, { "hasta": 1.5, "puntos": 0.5 }],
+      "tramos": [{ "hasta": 0.5, "puntos": 1 }, { "hasta": 1, "puntos": 0.5 }],
       "explicacion": "Fue el 10 de septiembre de 2025, de las 9.00 a las 21.21 y sin pausas. Ese día el Congreso tumbó la reducción de la jornada laboral a 37,5 horas.",
       "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
     },
@@ -67,8 +68,8 @@
       "tipo": "duelo",
       "pregunta": "En política también hay espacio para la comedia: ¿quién hizo reír más veces a la Cámara?",
       "lados": [
-        { "id": "sanchez", "nombre": "Pedro Sánchez", "contexto": "Gobierno", "valor": 266, "cifra": "266" },
-        { "id": "feijoo", "nombre": "Alberto Núñez Feijóo", "contexto": "PP", "valor": 228, "cifra": "228" }
+        { "id": "sanchez", "nombre": "Pedro Sánchez", "contexto": "Gobierno", "color": "--gobierno", "valor": 266, "cifra": "266" },
+        { "id": "feijoo", "nombre": "Alberto Núñez Feijóo", "contexto": "PP", "color": "--pp", "valor": 228, "cifra": "228" }
       ],
       "explicacion": "El Diario anota 266 «(Risas)» durante las intervenciones de Pedro Sánchez y 228 durante las de Alberto Núñez Feijóo. Entre los dos suman más de una cuarta parte de todas las risas de la legislatura (1.764).",
       "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."

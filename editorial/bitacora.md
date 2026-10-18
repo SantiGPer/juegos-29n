@@ -2,6 +2,44 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (10) — Diseño: cabecera común, Presidentle 4 + 3, fichas de Agrupar 16, deslizador de píxel y duelo con muestras
+
+Decisiones de diseño del 18-10 (maquetas v8 y v9).
+
+**Hecho**
+- **Cabecera compacta común** (`shared/util.js`, `base.css`). El nombre va arriba; debajo, la pista a la izquierda y «Puntos» con las cifras a la derecha. El «+N» sale encima de las cifras, alineado a la derecha, sube 6 px y no toca la etiqueta.
+- **A12 Presidentle:**
+  - Fichas 4 + 3 en rejilla de 12, de 56 px y texto centrado en 800.
+  - Fallada tachada, en lápiz y con borde raya.
+  - Pista nueva a 1,125 rem en 800; las anteriores a 1 rem en lápiz.
+  - `opcion` de Zapatero → «Zapatero» en `data/presidentes.json`.
+- **A10 Agrupar 16:**
+  - Fichas cuadradas: 81 px a 375, 68 px a 320 y 96 px de máximo, centradas en escritorio.
+  - Grupo resuelto dentro de la rejilla, con la altura exacta de una fila.
+  - Aviso con una línea reservada.
+  - Al terminar, los grupos con explicación y fuente se ven como antes.
+- **Texto de ficha** (A10 y A12): 0,875 rem desde 375 px. Por debajo encoge con el ancho (`--ficha: min(0.875rem, 3.75vw)`), porque a 320 px «Armengol» y «González» no cabían sin partir.
+- **M2, deslizador de píxel:**
+  - Tirador cuadrado de 28 px sobre una línea de 2 px; el foco, solo en el tirador.
+  - Campo nuevo `marca` (una marca cada N unidades) y eje con extremos y punto medio.
+  - − y + de 44 px con `aria-label` («Quitar 30 minutos»).
+  - Al responder, todo pasa a raya.
+- **Duelo:**
+  - Token `--gobierno: var(--tinta)`.
+  - Muestra de 12 px junto a la afiliación, al 50 % en la ficha perdedora.
+  - La cifra va al pie de cada ficha, como en la maqueta, para que las dos queden alineadas aunque un nombre ocupe dos líneas.
+- **Plenopedia `data.json`:**
+  - Paso de 30 min y marca por hora.
+  - Tramos: 1 punto si el error es menor de 30 min y ½ hasta 1 h.
+  - Colores del duelo: `--gobierno` y `--pp`.
+- **Pruebas:**
+  - Partidas completas de Plenopedia, A12 y A10 (ganada y perdida) a 320, 375 y 1280; A1 y A2 a 320 y 375. Ninguna da errores de JS ni scroll horizontal, y ninguna ficha desborda.
+  - Capturas a 375 × 560 y 1280 revisadas contra la lista negra.
+
+**Dudas para el chat de diseño**
+- **La cabecera común solo cabe en una fila con pistas cortas.** A 375 px hay 343 px útiles. Diez celdas ocupan 247 px y los puntos unos 89 px (133 con decimal), más la separación, así que no caben. En A1, A2 y Plenopedia los puntos bajan a una segunda línea, alineados a la derecha; no desborda nada, pero se pierde la línea que buscaba la maqueta. Solo A12, con cinco celdas, queda como en la v8. Hay que decidir una salida: cifras más pequeñas, quitar la palabra «Puntos» o devolver los puntos a la línea del nombre en las pistas largas.
+- **Tamaño de ficha a 320 px.** El 0,875 rem se reduce a unos 12 px para no partir palabras. Confirmar que vale.
+
 ## 2026-10-18 (9) — Plenopedia montada; fusión de llamadas repetidas; A2 con el hito del Constitucional corregido
 
 Encargo del 19-10 para Code, puntos 1 a 5.

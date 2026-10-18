@@ -46,17 +46,18 @@ export const celdas = (estados, actual = [], porGrupo = estados.length) => el('d
   ...Array.from({ length: Math.ceil(estados.length / porGrupo) }, (_, t) => el('span', { className: 'tramo' },
     ...estados.slice(t * porGrupo, (t + 1) * porGrupo).map((e, k) => celda(e, actual.includes(t * porGrupo + k))))));
 
-// Cabecera compacta: nombre, puntos a dos dígitos y pista con cursor.
+// Cabecera compacta (maqueta v8): nombre arriba; debajo, pista con cursor a la izquierda y puntos a la derecha.
 // Persiste entre rondas para que el cursor salte y el «+N» salga al sumar.
 export const marcador = (juego, porGrupo) => {
   const valor = el('span');
-  const puntos = el('div', { className: 'puntos' }, el('span', { className: 'etiqueta', textContent: 'Puntos' }), valor);
+  const cifras = el('span', { className: 'cifras' }, valor);
+  const puntos = el('div', { className: 'puntos' }, el('span', { className: 'etiqueta', textContent: 'Puntos' }), cifras);
   const cursor = el('span', { className: 'cursor' });
   cursor.innerHTML = icono('subir', 2);
   let pista = el('div');
   const zona = el('div', { className: 'zona-pista' }, pista, cursor);
   const nodo = el('header', { className: 'cab' },
-    el('div', { className: 'cab-fila' }, el('h1', { className: 'nombre', textContent: juego }), puntos), zona);
+    el('h1', { className: 'nombre', textContent: juego }), el('div', { className: 'cab-fila' }, zona, puntos));
   let antes = 0;
 
   const pinta = (estados, actual, suma) => {
@@ -75,8 +76,8 @@ export const marcador = (juego, porGrupo) => {
     const [entero, decimal] = numero(suma).split(',');
     valor.replaceChildren(cifra(entero.padStart(2, '0') + (decimal ? `,${decimal}` : ''), 3), el('span', { className: 'oculto', textContent: numero(suma) }));
     if (suma > antes) {
-      puntos.querySelector('.mas')?.remove();
-      puntos.append(el('span', { className: 'mas' }, cifra(`+${numero(suma - antes)}`, 2)));
+      cifras.querySelector('.mas')?.remove();
+      cifras.append(el('span', { className: 'mas' }, cifra(`+${numero(suma - antes)}`, 2)));
     }
     antes = suma;
   };

@@ -34,6 +34,9 @@
   --upn: #2A52BE;
   --ucd: #197E36;
 
+  /* El Gobierno como categoría (presidente y ministros): no es color de partido (decisión de diseño del 18-10-2026) */
+  --gobierno: var(--tinta);
+
   --s1: 4px;
   --s2: 8px;
   --s3: 12px;
@@ -46,6 +49,8 @@
   --pregunta: 1.375rem;
   --cuerpo: 1.125rem;
   --etiqueta: 0.875rem;
+  /* Texto de ficha (A10, A12): 0,875 rem desde 375 px; por debajo encoge para no partir palabras */
+  --ficha: min(var(--etiqueta), 3.75vw);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -170,49 +175,57 @@ button:disabled {
 
 .reglas svg { display: block; flex: none; }
 
-/* Cabecera compacta: nombre, puntos y pista. No es fija. */
+/* Cabecera compacta (maqueta v8): nombre arriba; pista y puntos en la misma fila. No es fija. */
+.cab { margin-bottom: var(--s5); }
+
 .cab-fila {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: start;
-  gap: var(--s3);
+  align-items: end;
+  gap: var(--s2) var(--s3);
 }
 
 .cab .nombre {
-  margin: 0;
+  margin: 0 0 var(--s2);
   font-size: 1rem;
   line-height: 1.2;
 }
 
+.cab-fila .nombre { margin: 0; }
+
 .puntos {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-left: auto;
+  padding-bottom: 9px;
+}
+
+.puntos .etiqueta { font-size: 0.75rem; }
+
+.cifras {
   position: relative;
-  flex: none;
-  text-align: right;
+  line-height: 0;
 }
 
-.puntos .etiqueta {
-  display: block;
-  margin-bottom: var(--s1);
-  font-size: 0.75rem;
-}
-
+/* «+N» justo encima de las cifras, alineado a la derecha; sube 6 px y se apaga */
 .mas {
   position: absolute;
   right: 0;
-  top: -14px;
+  bottom: calc(100% + var(--s1));
   opacity: 0;
   animation: sube 700ms steps(6) forwards;
 }
 
 @keyframes sube {
-  0% { opacity: 1; transform: translateY(6px); }
+  0% { opacity: 1; transform: translateY(0); }
   70% { opacity: 1; transform: translateY(-4px); }
   100% { opacity: 0; transform: translateY(-6px); }
 }
 
 .zona-pista {
   position: relative;
-  margin: var(--s3) 0 var(--s5);
   padding-bottom: 9px;
 }
 
@@ -390,10 +403,30 @@ details[open] summary { margin-bottom: var(--s1); }
 }
 
 .pistas li { margin-bottom: var(--s2); }
-.pistas li.vista { color: var(--lapiz); }
-.pistas li.nueva { font-weight: 800; }
+.pistas li.vista { color: var(--lapiz); font-size: 1rem; }
+.pistas li.nueva { font-size: 1.125rem; font-weight: 800; line-height: 1.3; }
 
 .opciones.dos { grid-template-columns: 1fr 1fr; }
+
+/* Siete fichas a todo el ancho (maqueta v8): cuatro arriba y tres abajo, en rejilla de 12 */
+.opciones.fichas { grid-template-columns: repeat(12, 1fr); }
+
+.fichas .opcion {
+  grid-column: span 3;
+  min-height: 56px;
+  padding: 2px;
+  text-align: center;
+  font-size: var(--ficha);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.fichas .opcion:nth-child(n+5) { grid-column: span 4; }
+
+.fichas .opcion.fallada:disabled {
+  color: var(--lapiz);
+  border-color: var(--raya);
+}
 
 .muestra-partido {
   display: inline-block;
@@ -461,8 +494,23 @@ details[open] summary { margin-bottom: var(--s1); }
 }
 
 .duelo .lado .hito { line-height: 1.2; }
-.duelo .lado .etiqueta { color: inherit; }
-.duelo .lado .dato { margin-top: var(--s2); line-height: 0; }
+.duelo .lado .etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+}
+
+/* Muestra de 12 px junto a la afiliación, no junto al nombre; al 50 % en la ficha perdedora */
+.duelo .muestra {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--tinta);
+}
+
+.duelo .lado:disabled:not(.correcta) .muestra { opacity: 0.5; }
+.duelo .lado .dato { margin-top: auto; padding-top: var(--s2); line-height: 0; }
 
 /* M2 estimación: tu respuesta en trama, el dato en sólido y el hueco en marcador (maquetas v3 y v4) */
 .estimacion-cifra {
@@ -474,18 +522,77 @@ details[open] summary { margin-bottom: var(--s1); }
   line-height: 1;
 }
 
+.estimacion-valor {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: var(--s3);
+  margin: 0 0 var(--s3);
+}
+
+.estimacion-valor .estimacion-cifra {
+  justify-content: center;
+  margin: 0;
+}
+
+.paso {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: var(--pregunta);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.paso:disabled { color: var(--raya); }
+
+/* Deslizador de píxel (maqueta v9): tirador cuadrado de 28 px sobre una línea de 2 px; el foco, solo en el tirador */
 .deslizador {
   display: block;
   width: 100%;
   height: 44px;
   margin: 0;
-  accent-color: var(--tinta);
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
 }
+
+.deslizador:focus-visible { outline: none; }
+.deslizador::-webkit-slider-runnable-track { height: 2px; background: var(--tinta); }
+.deslizador::-moz-range-track { height: 2px; background: var(--tinta); }
+.deslizador::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; margin-top: -13px; background: var(--tinta); border: 0; border-radius: 0; }
+.deslizador::-moz-range-thumb { width: 28px; height: 28px; background: var(--tinta); border: 0; border-radius: 0; }
+.deslizador:focus-visible::-webkit-slider-thumb { outline: 3px solid var(--tinta); outline-offset: 3px; }
+.deslizador:focus-visible::-moz-range-thumb { outline: 3px solid var(--tinta); outline-offset: 3px; }
+.deslizador:disabled { cursor: default; }
+.deslizador:disabled::-webkit-slider-runnable-track { background: var(--raya); }
+.deslizador:disabled::-moz-range-track { background: var(--raya); }
+.deslizador:disabled::-webkit-slider-thumb { background: var(--raya); }
+.deslizador:disabled::-moz-range-thumb { background: var(--raya); }
+
+/* Marcas de 1 × 8 px bajo la línea, entre los centros extremos del tirador */
+.marcas {
+  position: relative;
+  height: 8px;
+  margin: -14px 14px 0;
+  pointer-events: none;
+}
+
+.marcas i {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 8px;
+  background: var(--tinta);
+}
+
+.deslizador:disabled + .marcas i { background: var(--raya); }
 
 .eje {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--s4);
+  margin: var(--s2) 0 var(--s4);
   font-size: 0.75rem;
   color: var(--lapiz);
 }
@@ -534,26 +641,48 @@ details[open] summary { margin-bottom: var(--s1); }
 .vidas span { line-height: 0; }
 .vidas .etiqueta { line-height: 1.45; }
 
-.cab:has(.vidas) { margin-bottom: var(--s5); }
+.cab-fila:has(.vidas) { align-items: center; }
 
+/* Fichas cuadradas (maqueta v8): unos 81 px a 375 y 96 px como máximo; 2 × 16 px de margen y 3 × 6 px de separación */
 .rejilla {
+  --lado: min(96px, (100vw - 50px) / 4);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, var(--lado));
+  grid-auto-rows: var(--lado);
+  justify-content: center;
   gap: 6px;
-  margin: 0 0 var(--s4);
 }
 
 .rejilla .opcion {
-  padding: var(--s2) var(--s1);
+  padding: 2px;
   text-align: center;
-  font-size: 0.9375rem;
-  line-height: 1.2;
-  overflow-wrap: anywhere;
+  font-size: var(--ficha);
+  font-weight: 800;
+  line-height: 1.15;
 }
 
 .grupo {
   margin: 0 0 6px;
   padding: var(--s3);
+}
+
+.rejilla .grupo {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: var(--s2) var(--s3);
+  font-size: var(--etiqueta);
+  line-height: 1.2;
+}
+
+.rejilla .grupo p { margin: 0; }
+.rejilla .grupo .hito { font-size: 0.9375rem; }
+
+.aviso {
+  min-height: 1.45em;
+  margin: var(--s3) 0 0;
 }
 
 .grupo.perdido {

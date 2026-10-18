@@ -19,9 +19,12 @@ const grande = (v, datos) => el('p', { className: 'estimacion-cifra' },
 
 const pendiente = () => el('p', { className: 'estimacion-cifra' }, cifra('?', 4), el('span', { className: 'oculto', textContent: 'Sin elegir' }));
 
-// Ronda para el encadenador (rondas.js; A8 es un encadenado solo de estimaciones): puntos por tramos de error absoluto, de menor a mayor
+const largo = (v, datos) => texto(v, datos).replace(/\bh\b/, 'horas').replace(/\bmin\b/, 'minutos');
+
+// Ronda para el encadenador (rondas.js; A8 es un encadenado solo de estimaciones): puntos por tramos de error absoluto, de menor a mayor.
+// Deslizador de píxel (maqueta v9): − y + mueven un paso; `marca`, una marca bajo la línea cada tantas unidades.
 export const ronda = (datos, listo) => {
-  const { pregunta, min, max, paso, valor, explicacion, fuente, tramos } = datos;
+  const { pregunta, min, max, paso, marca, valor, explicacion, fuente, tramos } = datos;
   const pct = v => `${(v - min) / (max - min) * 100}%`;
   let elegido;
 
@@ -34,17 +37,33 @@ export const ronda = (datos, listo) => {
   const regla = el('div', { className: 'regla' }, hueco, tu, real);
   const pie = el('div');
 
-  deslizador.oninput = () => {
+  const mueve = () => {
     elegido = Number(deslizador.value);
     deslizador.ariaValueText = texto(elegido, datos);
     cifraVista.replaceChildren(grande(elegido, datos));
     tu.style.width = pct(elegido);
     listo(true);
   };
+  deslizador.oninput = mueve;
+
+  const pasoBoton = (signo, verbo) => el('button', {
+    className: 'paso',
+    textContent: signo < 0 ? '−' : '+',
+    ariaLabel: `${verbo} ${largo(paso, datos)}`,
+    onclick: () => {
+      signo < 0 ? deslizador.stepDown() : deslizador.stepUp();
+      mueve();
+    },
+  });
+  const botones = [pasoBoton(-1, 'Quitar'), pasoBoton(1, 'Añadir')];
+
+  const marcas = el('div', { className: 'marcas', ariaHidden: 'true' },
+    ...(marca ? Array.from({ length: Math.floor((max - min) / marca) + 1 }, (_, i) => el('i', { style: `left: ${pct(min + i * marca)}` })) : []));
 
   const resolver = () => {
     const error = Math.abs(elegido - valor);
     deslizador.disabled = true;
+    botones.forEach(b => { b.disabled = true; });
     real.style.width = pct(valor);
     hueco.style.left = pct(Math.min(elegido, valor));
     hueco.style.width = `calc(${pct(Math.max(elegido, valor))} - ${pct(Math.min(elegido, valor))})`;
@@ -61,9 +80,10 @@ export const ronda = (datos, listo) => {
   return {
     cuerpo: [
       el('p', { className: 'pregunta', textContent: pregunta }),
-      cifraVista,
+      el('div', { className: 'estimacion-valor' }, botones[0], cifraVista, botones[1]),
       deslizador,
-      el('div', { className: 'eje' }, el('span', { textContent: texto(min, datos) }), el('span', { textContent: texto(max, datos) })),
+      marcas,
+      el('div', { className: 'eje' }, ...[min, (min + max) / 2, max].map(v => el('span', { textContent: texto(v, datos) }))),
       regla,
       pie,
     ],
