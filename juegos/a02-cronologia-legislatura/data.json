@@ -15,7 +15,7 @@
       "titulo": "más de un año entre hitos",
       "hitos": [
         {
-          "texto": "Feijóo pierde su investidura",
+          "texto": "Alberto Núñez Feijóo pierde su investidura",
           "fecha": "2023-09-29",
           "explicacion": "En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes, con un voto nulo. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.",
           "fuente": "Diario de Sesiones del Congreso, 29-09-2023; RTVC, 29-09-2023."
@@ -44,7 +44,7 @@
       "titulo": "parejas cercanas, lejos entre sí",
       "hitos": [
         {
-          "texto": "Sánchez, investido presidente",
+          "texto": "Pedro Sánchez, investido presidente",
           "fecha": "2023-11-16",
           "explicacion": "Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.",
           "fuente": "Diario de Sesiones del Congreso, 16-11-2023."
@@ -58,11 +58,11 @@
         {
           "texto": "El Congreso tumba los decretos de vivienda",
           "fecha": "2026-10-02",
-          "explicacion": "PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Sánchez anunció elecciones.",
+          "explicacion": "PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Pedro Sánchez anunció elecciones.",
           "fuente": "Civio, 02-10-2026."
         },
         {
-          "texto": "Sánchez anuncia elecciones para el 29 de noviembre",
+          "texto": "Pedro Sánchez anuncia elecciones para el 29 de noviembre",
           "fecha": "2026-10-05",
           "explicacion": "Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.",
           "fuente": "La Moncloa, 05-10-2026; Real Decreto 806/2026."
@@ -75,17 +75,17 @@
         {
           "texto": "España reconoce el Estado de Palestina",
           "fecha": "2024-05-28",
-          "explicacion": "El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Sánchez lo anunció en una declaración institucional.",
+          "explicacion": "El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Pedro Sánchez lo anunció en una declaración institucional.",
           "fuente": "La Moncloa, declaración institucional y rueda de prensa del Consejo de Ministros, 28-05-2024."
         },
         {
           "texto": "Junts rompe con el PSOE",
           "fecha": "2025-10-27",
-          "explicacion": "Puigdemont anunció que su partido pasaba a la oposición. Sin sus siete votos, el Gobierno perdió la mayoría de la investidura.",
+          "explicacion": "Carles Puigdemont anunció que su partido pasaba a la oposición. Sin sus siete votos, el Gobierno perdió la mayoría de la investidura.",
           "fuente": "Orain, 27-10-2025."
         },
         {
-          "texto": "Mazón anuncia su dimisión",
+          "texto": "Carlos Mazón anuncia su dimisión",
           "fecha": "2025-11-03",
           "explicacion": "Dejó la presidencia de la Generalitat Valenciana un año después de la dana. Le sucedió Juanfran Pérez Llorca, investido con los votos de PP y Vox.",
           "fuente": "Maldita, 03-11-2025; RTVC, 03-11-2025; El Debate, 07-11-2025 (cese en el BOE)."

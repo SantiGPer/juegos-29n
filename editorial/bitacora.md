@@ -2,6 +2,22 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (11) — Nombre y apellido en todas las referencias a personas
+
+Decisión del autor en sesión (18-10), para que Cowork la pase a `decisiones.md`: toda referencia a una persona lleva nombre y apellido, no solo el apellido. Sustituye a la etiqueta corta «Zapatero» de A12 decidida el 18-10. Los apodos de leyes de A10 («Wert», «Zerolo») se quedan como están, porque ahí nombran una ley y no a una persona.
+
+**Hecho**
+- **A12:** las siete `opcion` de `data/presidentes.json` pasan a nombre y apellido («Adolfo Suárez»… «José Luis Rodríguez Zapatero», «Pedro Sánchez»).
+- **A10:** ítems de los grupos 1, 3 y 4 con nombre y apellido; las explicaciones de los grupos 3 y 4 también.
+- **A2:** «Alberto Núñez Feijóo», «Pedro Sánchez» (dos hitos y dos explicaciones), «Carles Puigdemont» y «Carlos Mazón».
+- **ElectoQuiz y Plenopedia** ya los llevaban; sin cambios.
+- **Pruebas:** partidas completas de A2, A10 y A12 a 320 y 375 px, sin errores ni scroll horizontal y sin fichas desbordadas. A 320 px las fichas de A10 caben en tres líneas y el grupo resuelto, en dos.
+- Push a Pages con confirmación del autor.
+
+**Para Cowork**
+- Actualizar `editorial/contenido/` de A2, A10 y A12 con estos nombres, porque ahora los `data.json` y `presidentes.json` van por delante del contenido.
+- Aplicar el mismo criterio a A4 y A13 antes de montarlos.
+
 ## 2026-10-18 (10) — Diseño: cabecera común, Presidentle 4 + 3, fichas de Agrupar 16, deslizador de píxel y duelo con muestras
 
 Decisiones de diseño del 18-10 (maquetas v8 y v9).

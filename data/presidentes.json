@@ -12,7 +12,7 @@
     {
       "id": "suarez",
       "nombre": "Adolfo Suárez González",
-      "opcion": "Suárez",
+      "opcion": "Adolfo Suárez",
       "partido": "ucd",
       "nacimiento": "1932-09-25",
       "inicio": "1976-07-05",
@@ -31,7 +31,7 @@
     {
       "id": "calvo-sotelo",
       "nombre": "Leopoldo Calvo-Sotelo y Bustelo",
-      "opcion": "Calvo-Sotelo",
+      "opcion": "Leopoldo Calvo-Sotelo",
       "partido": "ucd",
       "nacimiento": "1926-04-14",
       "inicio": "1981-02-26",
@@ -48,7 +48,7 @@
     {
       "id": "gonzalez",
       "nombre": "Felipe González Márquez",
-      "opcion": "González",
+      "opcion": "Felipe González",
       "partido": "psoe",
       "nacimiento": "1942-03-05",
       "inicio": "1982-12-02",
@@ -65,7 +65,7 @@
     {
       "id": "aznar",
       "nombre": "José María Aznar López",
-      "opcion": "Aznar",
+      "opcion": "José María Aznar",
       "partido": "pp",
       "nacimiento": "1953-02-25",
       "inicio": "1996-05-05",
@@ -82,7 +82,7 @@
     {
       "id": "zapatero",
       "nombre": "José Luis Rodríguez Zapatero",
-      "opcion": "Zapatero",
+      "opcion": "José Luis Rodríguez Zapatero",
       "partido": "psoe",
       "nacimiento": "1960-08-04",
       "inicio": "2004-04-17",
@@ -99,7 +99,7 @@
     {
       "id": "rajoy",
       "nombre": "Mariano Rajoy Brey",
-      "opcion": "Rajoy",
+      "opcion": "Mariano Rajoy",
       "partido": "pp",
       "nacimiento": "1955-03-27",
       "inicio": "2011-12-21",
@@ -116,7 +116,7 @@
     {
       "id": "sanchez",
       "nombre": "Pedro Sánchez Pérez-Castejón",
-      "opcion": "Sánchez",
+      "opcion": "Pedro Sánchez",
       "partido": "psoe",
       "nacimiento": "1972-02-29",
       "inicio": "2018-06-02",

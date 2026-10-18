@@ -13,7 +13,7 @@
   "grupos": [
     {
       "nombre": "Presidieron el Congreso",
-      "items": ["Armengol", "Pastor", "Posada", "Bono"],
+      "items": ["Francina Armengol", "Ana Pastor", "Jesús Posada", "José Bono"],
       "explicacion": "José Bono (2008), Jesús Posada (2011), Ana Pastor (2016) y Francina Armengol (2023) presidieron la Cámara. Bono había presidido antes Castilla-La Mancha y fue ministro de Defensa.",
       "fuente": "Congreso de los Diputados; Unión Interparlamentaria, registro histórico de presidentes de cámara."
     },
@@ -25,14 +25,14 @@
     },
     {
       "nombre": "Fueron ministros y después presidieron su comunidad",
-      "items": ["Aguirre", "Cascos", "Montilla", "Illa"],
-      "explicacion": "Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. Bono y Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.",
+      "items": ["Esperanza Aguirre", "Francisco Álvarez-Cascos", "José Montilla", "Salvador Illa"],
+      "explicacion": "Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. José Bono y Alberto Núñez Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.",
       "fuente": "Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); biografías de Álvarez-Cascos."
     },
     {
       "nombre": "Perdieron una votación de investidura",
-      "items": ["Calvo-Sotelo", "Zapatero", "Rajoy", "Feijóo"],
-      "explicacion": "Calvo-Sotelo (1981), Zapatero (2008) y Rajoy (2016) perdieron una votación y fueron investidos después; Feijóo (2023) no llegó a serlo. Zapatero cayó en la primera votación de 2008 y ganó en la segunda.",
+      "items": ["Leopoldo Calvo-Sotelo", "José Luis Rodríguez Zapatero", "Mariano Rajoy", "Alberto Núñez Feijóo"],
+      "explicacion": "Leopoldo Calvo-Sotelo (1981), José Luis Rodríguez Zapatero (2008) y Mariano Rajoy (2016) perdieron una votación y fueron investidos después; Alberto Núñez Feijóo (2023) no llegó a serlo. Zapatero cayó en la primera votación de 2008 y ganó en la segunda.",
       "fuente": "Congreso de los Diputados, archivo de investiduras de todas las legislaturas; RTVC, 29-09-2023 (Feijóo)."
     }
   ]
