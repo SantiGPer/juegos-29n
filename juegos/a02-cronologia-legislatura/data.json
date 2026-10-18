@@ -3,8 +3,11 @@
   "variante": "ordenar",
   "fuente": "Diario de Sesiones del Congreso, BOE, La Moncloa y prensa citada en cada hito",
   "portada": {
-    "texto": "TODO texto de portada",
-    "reglas": [{ "icono": "papeleta", "texto": "TODO regla" }, { "icono": "urna", "texto": "TODO regla" }]
+    "texto": "Dicen que el electorado tiene la memoria de Dory, la de Buscando a Nemo. Ordena doce momentos de la legislatura y demuestra que tú eres la excepción.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "3 rondas de 4 hitos: ordénalos del más antiguo al más reciente." },
+      { "icono": "urna", "texto": "1 punto por hito en su sitio y medio si queda a una posición." }
+    ]
   },
   "instruccion": "Ordena los cuatro hitos del más antiguo al más reciente.",
   "rondas": [

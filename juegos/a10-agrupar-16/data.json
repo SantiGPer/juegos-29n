@@ -2,8 +2,12 @@
   "juego": "Agrupar 16",
   "fuente": "Congreso de los Diputados; Unión Interparlamentaria; BOE; Ministerio de Educación; Generalitat de Catalunya; El Independiente; RTVC",
   "portada": {
-    "texto": "TODO texto de portada",
-    "reglas": [{ "icono": "papeleta", "texto": "TODO regla" }, { "icono": "urna", "texto": "TODO regla" }]
+    "texto": "La política es enrevesada y este juego no iba a ser menos. Tira del hilo para encontrar los cuatro grupos ocultos.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "Marca cuatro que tengan algo en común y comprueba." },
+      { "icono": "lleno", "texto": "4 vidas: cada grupo equivocado cuesta una." },
+      { "icono": "urna", "texto": "Gana quien resuelve los cuatro grupos; cuentan los fallos." }
+    ]
   },
   "vidas": 4,
   "grupos": [
@@ -23,7 +27,7 @@
       "nombre": "Fueron ministros y después presidieron su comunidad",
       "items": ["Aguirre", "Cascos", "Montilla", "Illa"],
       "explicacion": "Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. Bono y Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.",
-      "fuente": "Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); biografías de Álvarez-Cascos. [VERIFICAR fechas de cada cargo]"
+      "fuente": "Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); biografías de Álvarez-Cascos."
     },
     {
       "nombre": "Perdieron una votación de investidura",

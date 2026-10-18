@@ -1,9 +1,12 @@
 {
-  "juego": "Quiz del sistema electoral",
+  "juego": "ElectoQuiz",
   "fuente": "Constitución Española y LOREG, textos consolidados del BOE",
   "portada": {
-    "texto": "TODO texto de portada",
-    "reglas": [{ "icono": "papeleta", "texto": "TODO regla" }, { "icono": "urna", "texto": "TODO regla" }]
+    "texto": "¿Eres todo un experto en el sistema electoral español? Diez preguntas del ElectoQuiz para demostrarlo antes de que abran los colegios.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "10 preguntas con cuatro opciones." },
+      { "icono": "urna", "texto": "Un punto por acierto; al final, tu nivel." }
+    ]
   },
   "preguntas": [
     {
@@ -90,13 +93,13 @@
     {
       "pregunta": "¿Entre quiénes se sortean los miembros de una mesa electoral?",
       "opciones": {
-        "a": "Entre todos los electores de la sección",
-        "b": "Entre los electores de la sección menores de 70 años que sepan leer y escribir",
+        "a": "Entre todos los electores de la mesa",
+        "b": "Entre los electores de la mesa menores de 70 años que sepan leer y escribir",
         "c": "Entre los voluntarios inscritos en el ayuntamiento",
-        "d": "Entre los electores de la sección con estudios universitarios"
+        "d": "Entre los electores de la mesa con estudios universitarios"
       },
       "correcta": "b",
-      "explicacion": "La mesa, con un presidente y dos vocales, se sortea entre los censados de la sección menores de 70 años que sepan leer y escribir; al presidente se le exige además una titulación mínima. El cargo es obligatorio.",
+      "explicacion": "La mesa, con un presidente y dos vocales, se sortea entre los electores de esa mesa menores de 70 años que sepan leer y escribir, aunque desde los 65 se puede renunciar. El cargo es obligatorio y al presidente se le exige además una titulación mínima.",
       "fuente": "LOREG, arts. 25.1, 26.2 y 27."
     },
     {
@@ -109,7 +112,7 @@
       },
       "correcta": "a",
       "explicacion": "La segunda votación llega cuarenta y ocho horas después y en ella basta con más síes que noes. Solo si también fracasa se tramitan nuevas propuestas.",
-      "fuente": "Constitución Española, art. 99.3."
+      "fuente": "Constitución Española, art. 99.3 y 99.4."
     }
   ],
   "niveles": [
