@@ -62,6 +62,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Script: `R/08_plenopedia_xv.R`. Prueba de viabilidad de A3 Plenopedia (encargo del 19-10-2026); todavía no lo lee ningún juego.
 - Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura, los mismos PDF que `llamadas_al_orden.json` (caché de `R/05`), más `diputados_xv.json` y `llamadas_al_orden.json`.
 - Método: en el campo `metodo` del JSON y en `editorial/fuentes/a03-plenopedia-viabilidad.md`, con ejemplos literales, controles y límites de cada indicador.
+- Revisiones a mano (18-10-2026), escritas en el script: destinatario de 29 llamadas al orden (`llamadas_destinatario`, `revision = "manual"`, con nota) y minutos de silencio de los DS 91 y 147.
 
 ## `presidentes.json`
 

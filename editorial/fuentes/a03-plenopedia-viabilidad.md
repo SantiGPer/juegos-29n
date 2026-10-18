@@ -190,7 +190,91 @@ Límites:
 - La Mesa queda fuera del Charlatán y de los grupos. Feijóo candidato cuenta para el PP; Sánchez candidato, como Gobierno.
 - Aplausos: basta con saber que se aplaude, no quién. El cálculo de quién aplaude sale del script.
 
+## Datos para el contenido (encargo del 18-10, diseño, punto 1)
+
+Hecho por Code el 18-10-2026. Todo sale de `R/08_plenopedia_xv.R` → `data/plenopedia_xv.json` (campos nuevos: `llamadas_por_diputado`, `diputados_llamados_por_grupo`, `mudos`, `cierres_mas_tardios`; `llamadas_destinatario` lleva ahora `revision` y `nota`).
+
+### Revisión manual de las 29 llamadas sin destinatario
+
+Se leyó cada caso en el Diario con su contexto (unos 2.000 caracteres alrededor). El criterio es quién interrumpe justo antes o el nombre completo en la misma página. La nota de cada caso está en `llamadas_destinatario`.
+
+| DS | Pág. | Destinatario | Grupo | Base |
+| --- | --- | --- | --- | --- |
+| 24 | 21 | De Andrés Guerra | PP | «(El señor De Andrés Guerra: ¡Dimisión!)» justo antes |
+| 27 | 18 | Sánchez García (×2) | Vox | «El señor Sánchez García pronuncia palabras…»; «Le llamo al orden, señor Sánchez» y «Por primera vez le llamo al orden, señor Sánchez» |
+| 41 | 22 | Conde Bajén | PP | «El señor Conde Bajén pronuncia palabras…» en la página anterior |
+| 43 | 36 | «Señor Conde» | PP | Conde Bajén o Conde López, los dos del PP; el Diario no desempata |
+| 45 | 16 | Mariscal Zabala | Vox | «El señor Mariscal Zabala: ¡Traidor!» justo antes |
+| 50 | 57 | Sánchez García | Vox | «El señor Sánchez García pronuncia palabras…»; «Señor García» |
+| 63, 81, 174, 196 | 22, 34, 8, 33 | Hernando Fraile | PP | Interrupciones de «el señor Hernando Fraile» anotadas antes de la llamada |
+| 65, 67, 115, 123 | 39, 41, 34, 7 | Tellado Filgueira | PP | La Presidencia lo nombra en la misma intervención |
+| 67 | 29 | Sáez Alonso-Muñumer (×2) | Vox | «El señor Sáez Alonso-Muñumer: ¡Es una vergüenza…!» |
+| 92 | 17 | Hoces Íñiguez | Vox | «intercambia unas palabras con la Presidencia» |
+| 124, 177, 177 | 9, 57, 59 | Sánchez García | Vox | Interrupciones suyas anotadas justo antes |
+| 126, 127 | 35, 13 | Alfonso Silvestre | PP | «La señora Alfonso Silvestre: Pregunta a tus socios»; «Señora Alfonso, vuelve a ser usted» |
+| 127 | 49 | De Rosa Torner | PP | Segunda llamada, justo después de la primera, que lo nombra |
+| 137 | 90 | Sánchez García (probable) | Vox | «Señor Sánchez»; el Diario solo dice «un señor diputado» |
+| 138 | 61 | Sin identificar | — | «Creo que es el señor Flores, pero desde aquí no le he oído…» |
+| 161 | 21 | Figaredo Álvarez-Sala | Vox | «Señor Figaredo… le llamo al orden por primera vez» |
+| 169 | 35 | Rodríguez Calleja | PP | «La señora Rodríguez Calleja pronuncia palabras…» |
+| 207 | 22 | Vázquez Blanco | PP | «tengo que llamar al orden a la señora Vázquez Blanco» |
+
+**Resultado sobre 94 actos:** PP 71, Vox 20, PSOE 1 (Azorín), Sumar 1 (Vergara) y 1 sin identificar.
+
+**Diputados más llamados** (preguntas 3 y distractores):
+1. Tellado Filgueira (PP): 20.
+2. Hernando Fraile (PP): 11.
+3. Sánchez García (Vox): 9, uno de ellos probable (DS 137).
+4. Conde Bajén (PP): 6, o 7 si el «señor Conde» del DS 43 es él.
+5. De Olano Vela (PP): 4.
+
+**Diputados distintos llamados por grupo** (pregunta 4): PP 23 (24 si el DS 43 es Conde López), Vox 9, PSOE 1 y Sumar 1. El orden no cambia con ninguna de las dudas.
+
+### Mudos (pregunta 2)
+
+Diputados de toda la legislatura, de la sesión constitutiva (17-08-2023) a la disolución (06-10-2026), sin bajas ni sustituciones, con cero palabras en el Pleno como diputados, como Mesa o como Gobierno. **Son 4, todos del PP:**
+- Aragonés Mendiguchía, Carlos.
+- Quintanilla Navarro, Miguel Ángel.
+- Sánchez Sierra, María del Mar.
+- Varela Pazos, Marta.
+
+De los 34 diputados con cero palabras, 28 no estuvieron toda la legislatura. Salen además Armengol (habla siempre como presidenta) y Sánchez (habla como Gobierno). Ningún otro miembro de la Mesa elegida en el DS 1 sale con cero palabras.
+
+### Distractores
+
+- **Palabras:** Rego 203.982, Sagastizabal 145.571, Feijóo 128.034 y Rufián 91.871.
+- **Rumores y aplausos por cada 10.000 palabras:**
+
+| Categoría | Rumores | Rumores / 10.000 | Aplausos | Aplausos / 10.000 |
+| --- | --- | --- | --- | --- |
+| Gobierno | 2.500 | 13,2 | 7.157 | 37,8 |
+| PSOE | 670 | 8,42 | 4.424 | 55,6 |
+| PP | 1.020 | 7,30 | 8.900 | 63,7 |
+| Vox | 391 | 3,64 | 5.815 | 54,1 |
+| Sumar | 211 | 2,59 | 3.213 | 39,5 |
+
+- **Las cinco horas de cierre más tardías:**
+  1. DS 14, 19-12-2023: 23.25.
+  2. DS 12, 12-12-2023: 22.55.
+  3. DS 134, 09-09-2025: 22.11.
+  4. DS 58, 23-07-2024: 22.10.
+  5. DS 140, 07-10-2025: 21.35.
+- **Léxico (pregunta 8):** España 20.126, vivienda(s) 10.239, Cataluña 6.635, corrupción(es) 4.733 y ETA 859.
+
+### Minutos de silencio (DS 91 y DS 147)
+
+Los dos son minutos de silencio reales. El Diario lleva el epígrafe «MINUTO DE SILENCIO» y la petición de la presidenta, pero la acotación es «(Pausa)» y no la fórmula habitual, por eso el script no los veía.
+- DS 91 (19-12-2024, pág. 7): «tengo que pedirles que nos pongamos en pie para hacer un minuto de silencio en homenaje a Rejane, la mujer de 42 años que fue asesinada ayer en Lugo…». El sumario dice: «La Cámara, puesta en pie, guarda un minuto de silencio».
+- DS 147 (28-10-2025, pág. 5): «les pediré que nos pongamos en pie para guardar un minuto de silencio en recuerdo de Anna Balletbó…».
+
+**Total: 66 minutos de silencio** en la XV. Los dos se añaden a mano en el script.
+
 ## Dudas pendientes
 
+0. **Posibles dobles conteos, como el del DS 43.** En dos casos, la Presidencia llama al orden al mismo diputado dos veces seguidas, primero sin ordinal y después «por primera vez». Ahora cuentan dos actos cada uno:
+   - DS 27, pág. 18: «Le llamo al orden, señor Sánchez. (…) Por primera vez le llamo al orden, señor Sánchez».
+   - DS 126, pág. 35: «Señora diputada, la llamo al orden. (…) Señora Alfonso Silvestre, la llamo al orden por primera vez».
+   
+   Si se fusionan, la XV pasa a 92, Sánchez García a 8 y Alfonso Silvestre a 2. El ranking de las preguntas 3 y 4 no cambia.
 1. **«Sánchez» (pregunta 23).** El recuento mezcla a todas las personas con ese apellido. Habría que acotarlo.
 2. **Cuatro oradores sin identificar,** con etiqueta de diputado pero que no figuran entre los diputados de la XV: Armario Rodríguez, Córdoba Marí, Gil Membrado y Costa Serra (unas 2.500 palabras). Probablemente sean promotores de iniciativas legislativas populares. Están en «Otros».

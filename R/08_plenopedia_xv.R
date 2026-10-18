@@ -397,9 +397,17 @@ risas_orador <- piezas |>
   mutate(orador = coalesce(nombre, miembro_nombre, persona)) |>
   count(orador, tipo, categoria, sort = TRUE)
 
+# DS 91 y DS 147: la Presidencia pide el minuto de silencio y el Diario anota solo «(Pausa)». Revisados a
+# mano (encargo del 18-10): el epígrafe «MINUTO DE SILENCIO» y el sumario lo confirman
 silencios <- piezas |>
   filter(silencio) |>
-  distinct(diario, intervencion, pieza, dia)
+  distinct(diario, intervencion, pieza, dia) |>
+  bind_rows(tibble(
+    diario = c("DSCD-15-PL-91.PDF", "DSCD-15-PL-147.PDF"),
+    pieza = c("A mano: «tengo que pedirles que nos pongamos en pie para hacer un minuto de silencio en homenaje a Rejane…» (pág. 7)",
+              "A mano: «les pediré que nos pongamos en pie para guardar un minuto de silencio en recuerdo de Anna Balletbó…» (pág. 5)"),
+    dia = ymd(c("2024-12-19", "2025-10-28"))
+  ))
 
 menciones <- intervenciones |>
   summarise(palabras = sum(palabras), across(all_of(names(terminos)), sum), .by = categoria) |>
@@ -431,12 +439,66 @@ llamados <- fromJSON("data/llamadas_al_orden.json")$actos |>
   mutate(n = n(), en_fragmento = str_detect(norm(fragmento), fixed(norm(apellidos))), .by = fila) |>
   filter(n == 1 | (en_fragmento & sum(en_fragmento) == 1), .by = fila) |>
   select(fila, nombre, grupo)
+# Revisión manual (encargo del 18-10) de las llamadas sin destinatario automático: el diputado sale del
+# contexto del Diario (quien interrumpe justo antes, o el nombre completo en la misma página)
+a_mano <- tribble(
+  ~diario, ~pagina, ~ordinal, ~nombre_mano, ~grupo_mano, ~nota,
+  24, 21, "", "De Andrés Guerra, Javier", "PP", "«(El señor De Andrés Guerra: ¡Dimisión!)» justo antes",
+  27, 18, "", "Sánchez García, José María", "Vox", "«El señor Sánchez García pronuncia palabras…»; «Le llamo al orden, señor Sánchez»",
+  27, 18, "primera", "Sánchez García, José María", "Vox", "«Por primera vez le llamo al orden, señor Sánchez»",
+  41, 22, "primera", "Conde Bajén, Agustín", "PP", "«El señor Conde Bajén pronuncia palabras…» en la página anterior",
+  43, 36, "primera", NA, "PP", "«Señor Conde»: Conde Bajén o Conde López, ambos del PP; el Diario no desempata",
+  45, 16, "primera", "Mariscal Zabala, Manuel", "Vox", "«El señor Mariscal Zabala: ¡Traidor!…» justo antes",
+  50, 57, "primera", "Sánchez García, José María", "Vox", "«El señor Sánchez García pronuncia palabras…»; «Señor García»",
+  63, 22, "primera", "Hernando Fraile, Rafael Antonio", "PP", "«El señor Hernando Fraile pronuncia palabras…»",
+  65, 39, "primera", "Tellado Filgueira, Miguel", "PP", "«Señor Tellado… le llamo por primera vez al orden»",
+  67, 29, "primera", "Sáez Alonso-Muñumer, Pablo", "Vox", "«El señor Sáez Alonso-Muñumer: ¡Es una vergüenza…!»",
+  67, 29, "segunda", "Sáez Alonso-Muñumer, Pablo", "Vox", "Mismo diputado, segunda llamada",
+  67, 41, "primera", "Tellado Filgueira, Miguel", "PP", "«Señor Tellado, le llamo al orden por primera vez por llamar «la mafia»…»",
+  81, 34, "primera", "Hernando Fraile, Rafael Antonio", "PP", "«El señor Hernando Fraile: ¡Pida perdón!»",
+  92, 17, "primera", "Hoces Íñiguez, Ignacio", "Vox", "«El señor Hoces Íñiguez intercambia unas palabras con la Presidencia»",
+  115, 34, "primera", "Tellado Filgueira, Miguel", "PP", "«Señor Tellado… Le llamo al orden por primera vez, señoría»",
+  123, 7, "primera", "Tellado Filgueira, Miguel", "PP", "«le tengo que llamar al orden por primera vez, señor Tellado»",
+  124, 9, "primera", "Sánchez García, José María", "Vox", "«el señor Sánchez García: ¡Sinvergüenza!» justo antes",
+  126, 35, "", "Alfonso Silvestre, Alma", "PP", "«La señora Alfonso Silvestre: Pregunta a tus socios» justo antes",
+  127, 13, "segunda", "Alfonso Silvestre, Alma", "PP", "«Señora Alfonso, vuelve a ser usted»",
+  127, 49, "segunda", "De Rosa Torner, Fernando", "PP", "«Señor De Rosa Torner, le llamo al orden por primera vez… Señoría, … por segunda vez»",
+  137, 90, "primera", "Sánchez García, José María", "Vox", "«Señor Sánchez»: probable Sánchez García; el Diario solo dice «un señor diputado»",
+  138, 61, "primera", NA, NA, "La Presidencia no identifica al diputado («Creo que es el señor Flores, pero…»)",
+  161, 21, "primera", "Figaredo Álvarez-Sala, José María", "Vox", "«Señor Figaredo… le llamo al orden por primera vez»",
+  169, 35, "primera", "Rodríguez Calleja, Patricia", "PP", "«La señora Rodríguez Calleja pronuncia palabras…»",
+  174, 8, "primera", "Hernando Fraile, Rafael Antonio", "PP", "«El señor Hernando Fraile pronuncia palabras…»",
+  177, 57, "primera", "Sánchez García, José María", "Vox", "«El señor Sánchez García pide la palabra…»",
+  177, 59, "segunda", "Sánchez García, José María", "Vox", "«El señor Sánchez García se acerca a la tribuna…»",
+  196, 33, "primera", "Hernando Fraile, Rafael Antonio", "PP", "«El señor Hernando Fraile pronuncia palabras…»",
+  207, 22, "", "Vázquez Blanco, Ana Belén", "PP", "«tengo que llamar al orden a la señora Vázquez Blanco»"
+) |> mutate(across(c(diario, pagina), as.character), pendiente = TRUE)
 llamados <- fromJSON("data/llamadas_al_orden.json")$actos |>
   as_tibble() |>
   filter(legislatura == "XV") |>
-  mutate(fila = row_number()) |>
+  mutate(fila = row_number(), across(c(diario, pagina), as.character), ordinal = coalesce(ordinal, "")) |>
   left_join(llamados, by = "fila") |>
-  select(fecha, diario, pagina, presidencia, destinatario, nombre, grupo)
+  mutate(pendiente = is.na(nombre)) |>
+  left_join(a_mano, by = c("diario", "pagina", "ordinal", "pendiente")) |>
+  mutate(revision = if_else(pendiente, "manual", "automática"),
+         grupo = coalesce(grupo, grupo_mano), nombre = coalesce(nombre, nombre_mano)) |>
+  select(fecha, diario, pagina, presidencia, destinatario, nombre, grupo, revision, nota)
+stopifnot(nrow(llamados) == 94, sum(!is.na(llamados$nota)) == nrow(a_mano),
+          all(na.omit(a_mano$nombre_mano) %in% periodos$nombre))
+
+# Mudos: diputados de toda la legislatura (de la sesión constitutiva a la disolución, sin bajas ni
+# sustituciones) que no hablaron nunca en el Pleno, ni como diputados, ni en la Mesa ni en el Gobierno
+toda <- periodos |>
+  summarise(desde = min(desde), hasta = max(hasta), tramos = n(), dias = sum(as.numeric(hasta - desde) + 1),
+            grupo = str_c(unique(grupo), collapse = " → "), .by = c(nombre, apellidos)) |>
+  filter(desde <= inicio_xv, hasta >= fin_xv, dias >= as.numeric(hasta - desde) + 1)
+en_gobierno <- intervenciones |> filter(tipo == "Gobierno") |> distinct(k = clave(miembro_nombre))
+mudos <- charlatan |>
+  # La presidenta habla siempre como Mesa; ningún otro miembro de la Mesa sale con cero palabras
+  filter(palabras == 0, nombre != "Armengol Socias, Francina") |>
+  inner_join(toda, by = "nombre") |>
+  filter(!map_lgl(clave(apellidos), \(a) any(str_detect(en_gobierno$k, fixed(a))))) |>
+  select(nombre, grupo)
 
 list(
   fuente = "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura (PDF); diputados: data/diputados_xv.json",
@@ -454,8 +516,14 @@ list(
   minutos_de_silencio = silencios,
   menciones = menciones,
   trimestres = trimestres,
-  llamadas_por_grupo = count(llamados, grupo),
+  llamadas_por_grupo = count(llamados, grupo, sort = TRUE),
+  llamadas_por_diputado = count(filter(llamados, !is.na(nombre)), nombre, grupo, sort = TRUE),
+  diputados_llamados_por_grupo = llamados |> filter(!is.na(nombre)) |>
+    summarise(diputados = n_distinct(nombre), llamadas = n(), .by = grupo) |> arrange(desc(diputados)),
   llamadas_destinatario = llamados,
+  mudos = mudos,
+  cierres_mas_tardios = jornadas |> filter(!is.na(hora_cierre)) |> slice_max(hora_cierre, n = 5) |>
+    select(numero, fecha, hora_cierre, cierre),
   control = list(
     sin_etiqueta = map(leidos, \(r) tibble(diario = r$diario, texto = str_trunc(r$sospechosos, 200))) |> list_rbind(),
     cruces_aproximados = nombres |> filter(!is.na(nombre), k != clave(diputados$apellidos[match(nombre, diputados$nombre)])),

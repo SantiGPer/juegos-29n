@@ -2,6 +2,26 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (7) — A3 Plenopedia: datos para el contenido (encargo del 18-10, diseño, punto 1)
+
+**Hecho** (detalle en `editorial/fuentes/a03-plenopedia-viabilidad.md`, sección «Datos para el contenido»)
+- **29 llamadas sin destinatario, leídas a mano** y escritas en `R/08` con una nota por caso.
+  - 27 identificadas; el «señor Conde» del DS 43 queda en el PP sin persona (Conde Bajén o Conde López); en el DS 138, la Presidencia no identifica al diputado.
+  - Por grupo, sobre 94: PP 71, Vox 20, PSOE 1, Sumar 1 y 1 sin identificar.
+  - Más llamados: Tellado 20, Hernando Fraile 11, Sánchez García 9 y Conde Bajén 6 (7 si el DS 43 es él).
+  - Diputados distintos llamados: PP 23, Vox 9, PSOE 1 y Sumar 1.
+- **Mudos de toda la legislatura:** 4, todos del PP (Aragonés Mendiguchía, Quintanilla Navarro, Sánchez Sierra y Varela Pazos). Salen Armengol (presidenta) y Sánchez (Gobierno).
+- **Distractores:** palabras de Rego, Sagastizabal, Feijóo y Rufián; rumores y aplausos de Gobierno, PSOE, PP, Vox y Sumar; las cinco horas de cierre más tardías; los totales de los cinco términos. Todo en el informe.
+- **Minutos de silencio:** los DS 91 y 147 son reales (el Diario anota «(Pausa)»). Total: **66**.
+- `plenopedia_xv.json` regenerado; `SOURCES.md` al día.
+
+**Falta**
+- Motores (encadenador, M2 y duelo) y montar Plenopedia cuando llegue el contenido de Cowork.
+
+**Dudas para el autor**
+- **Dos posibles dobles conteos**, como el del DS 43: DS 27 (Sánchez García, «Le llamo al orden» y «Por primera vez le llamo al orden») y DS 126 (Alfonso Silvestre, «la llamo al orden» y «la llamo al orden por primera vez»). Si se fusionan, la XV pasa a 92/203. Los rankings no cambian.
+- El DS 137 («Señor Sánchez») se asigna a Sánchez García como probable: el Diario solo anota «un señor diputado».
+
 ## 2026-10-18 (6) — A3 Plenopedia: respuestas del autor a las dudas de la viabilidad
 
 Decisiones del autor en sesión (18-10), para que Cowork las pase a `decisiones.md`:
