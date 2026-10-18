@@ -22,6 +22,16 @@ Formato fijo de las pistas:
 4. «Nació en la provincia de X.»
 5. «Partido, año.»
 
+
+## Portada
+
+**Texto:** Uno de los siete presidentes del Gobierno de la democracia y cinco pistas para dar con él. Cuanto antes aciertes, más puntos.
+
+**Reglas:**
+- (papeleta) 5 pistas, de la más vaga a la más clara, con los siete nombres siempre a la vista.
+- (urna) 5 puntos con la primera pista, 1 con la última y 0 si se acaban.
+
+
 ---
 
 ## Adolfo Suárez González

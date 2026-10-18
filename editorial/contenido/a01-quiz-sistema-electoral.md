@@ -1,4 +1,4 @@
-# A1 · Quiz del sistema electoral
+# A1 · ElectoQuiz
 
 Estado: **definitivo, selección del autor** (2026-10-16). Preguntas elegidas por el autor del catálogo `editorial/catalogos/a01-catalogo.md`: 1, 2, 5, 7, 8, 17, 25, 27, 28 y 34. Pendiente el cotejo literal de los artículos nuevos.
 
@@ -9,6 +9,16 @@ Estado: **definitivo, selección del autor** (2026-10-16). Preguntas elegidas po
 - Fuente general: Constitución Española y LOREG, textos consolidados del BOE.
 
 Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos frases) / fuente.
+
+
+## Portada
+
+**Texto:** ¿Eres todo un experto en el sistema electoral español? Diez preguntas del ElectoQuiz para demostrarlo antes de que abran los colegios.
+
+**Reglas:**
+- (papeleta) 10 preguntas con cuatro opciones.
+- (urna) Un punto por acierto; al final, tu nivel.
+
 
 ---
 
@@ -161,14 +171,14 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 **Pregunta:** ¿Entre quiénes se sortean los miembros de una mesa electoral?
 
 **Opciones:**
-- a) Entre todos los electores de la sección
-- b) Entre los electores de la sección menores de 70 años que sepan leer y escribir
+- a) Entre todos los electores de la mesa
+- b) Entre los electores de la mesa menores de 70 años que sepan leer y escribir
 - c) Entre los voluntarios inscritos en el ayuntamiento
-- d) Entre los electores de la sección con estudios universitarios
+- d) Entre los electores de la mesa con estudios universitarios
 
 **Correcta:** b
 
-**Explicación:** La mesa, con un presidente y dos vocales, se sortea entre los censados de la sección menores de 70 años que sepan leer y escribir; al presidente se le exige además una titulación mínima. El cargo es obligatorio.
+**Explicación:** La mesa, con un presidente y dos vocales, se sortea entre los electores de esa mesa menores de 70 años que sepan leer y escribir, aunque desde los 65 se puede renunciar. El cargo es obligatorio y al presidente se le exige además una titulación mínima.
 
 **Fuente:** LOREG, arts. 25.1, 26.2 y 27.
 
@@ -188,7 +198,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación (dos fr
 
 **Explicación:** La segunda votación llega cuarenta y ocho horas después y en ella basta con más síes que noes. Solo si también fracasa se tramitan nuevas propuestas.
 
-**Fuente:** Constitución Española, art. 99.3.
+**Fuente:** Constitución Española, art. 99.3 y 99.4.
 
 ---
 

@@ -12,6 +12,16 @@ Estado: **selección del autor** (2026-10-16), hitos 2, 5, 6, 13, 16, 21, 24, 25
 
 Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicación (dos frases) / fuente.
 
+
+## Portada
+
+**Texto:** Dicen que el electorado tiene la memoria de Dory, la de Buscando a Nemo. Ordena doce momentos de la legislatura y demuestra que tú eres la excepción.
+
+**Reglas:**
+- (papeleta) 3 rondas de 4 hitos: ordénalos del más antiguo al más reciente.
+- (urna) 1 punto por hito en su sitio y medio si queda a una posición.
+
+
 ---
 
 ## Ronda 1 — más de un año entre hitos

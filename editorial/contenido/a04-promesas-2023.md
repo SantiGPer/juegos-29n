@@ -97,7 +97,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Explicación:** El 22-01-2025 el Congreso derogó el decreto que prorrogaba el gravamen, con 183 votos en contra (PP, Vox, Junts, PNV y UPN) y 165 a favor.
 
-**Fuente:** Acuerdo PSOE-Sumar, 24-10-2023 [VERIFICAR literal]; Bolsamanía, 22-01-2025.
+**Fuente:** Acuerdo PSOE-Sumar, 24-10-2023, pág. 38; Bolsamanía, 22-01-2025.
 
 ---
 
@@ -148,7 +148,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Explicación:** La reforma del artículo 49, pactada por PSOE y PP, entró en vigor el 17-02-2024. Fue la tercera reforma de la Constitución desde 1978.
 
-**Fuente:** BOE, 17-02-2024; El Independiente, 29-12-2023 (acuerdo Gobierno-PP). [VERIFICAR origen de la promesa]
+**Fuente:** Acuerdo PSOE-Sumar, 24-10-2023, pág. 24; BOE-A-2024-3099.
 
 ---
 
@@ -214,7 +214,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Correcta:** a
 
-**Explicación:** Se aprobó como Ley Orgánica 2/2024, de 1 de agosto. Exige una presencia equilibrada de mujeres y hombres en las listas electorales, en los consejos de administración de grandes empresas y en otros órganos.
+**Explicación:** Se aprobó como Ley Orgánica 2/2024, de 1 de agosto. Exige una presencia equilibrada de mujeres y hombres en las listas electorales, el Gobierno y los consejos de administración de las sociedades cotizadas, entre otros órganos.
 
-**Fuente:** BOE (LO 2/2024); Junta Electoral Central, reformas de la LOREG; Newtral, Pactocheck. [VERIFICAR origen de la promesa y alcance en consejos de administración]
+**Fuente:** Acuerdo PSOE-Sumar, 24-10-2023, pág. 34; BOE-A-2024-15936 (LO 2/2024).
 

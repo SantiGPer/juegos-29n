@@ -291,3 +291,29 @@ Revisión de A1, A2, A4, A10, A12 y A13 hecha por el autor con el chat de diseñ
 4. A4 y A13, cuando su contenido esté completo (A4 necesita el campo `origen`; A13 tiene dos fuentes por verificar).
 
 Tras cada paso: capturas a 375 × 560 y a 1280, revisión contra la lista negra, commit y entrada en la bitácora. No hagas push sin confirmación del autor.
+
+## 2026-10-18
+
+- A3: la cifra de la XV es de 90 llamadas en 203 sesiones plenarias, tras el fallo de texto corregido por Code. Sustituye a 83/203.
+- A3, fórmula: se amplía a las perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Cada coincidencia nueva se revisa a mano.
+- A3: no cuentan los avisos condicionales («si no lo retira, le llamo al orden», «a la próxima le llamo al orden»), estén redactados con la fórmula o con una perífrasis. Se descuentan a mano.
+- A3, rango: solo entran las legislaturas en las que hubo investidura. Quedan fuera la XI y la XIII (sin investidura, con 13 y 9 sesiones), y el juego lo explica en la nota metodológica. Rango del juego: VIII, IX, X, XII, XIV y XV, que dan 6 legislaturas y 5 decisiones en la cadena. Si después entran las legislaturas I–VII, se aplica el mismo criterio.
+- A1, pregunta 9: el sorteo es entre los electores de la mesa, no de la sección, y la explicación añade que desde los 65 años se puede renunciar. Pregunta 10: la fuente pasa a «CE, art. 99.3 y 99.4».
+- A4: fuentes cerradas.
+  - Energéticas: acuerdo PSOE-Sumar, pág. 38.
+  - Art. 49: acuerdo PSOE-Sumar, pág. 24, y BOE-A-2024-3099.
+  - Paridad: acuerdo, pág. 34, y BOE-A-2024-15936. La explicación queda en «sociedades cotizadas», no en «grandes empresas».
+- A13, B: la respuesta es «Bisagra» y se acepta «partido bisagra»; la fuente es DLE, s. v. «partido» (partido bisagra).
+- A13, H: la pista queda en «apellido que da nombre a la cuota…», sin «abogado inglés». Fuente: Nohlen, 1.ª ed., 1994, p. 70.
+- A10, grupo 3: fechas verificadas en editorial/fuentes/a10-agrupar.md; se quita el [VERIFICAR] de la fuente en pantalla.
+- Encargos para Code:
+  - A3: aplicar la fórmula ampliada con revisión manual, descontar los avisos condicionales y regenerar llamadas_al_orden.json con las seis legislaturas del rango. Después, montar M4 y el juego A3. Es el juego del día 1 y va antes que el resto.
+  - Regenerar los data.json de A1 y A10 con el contenido corregido.
+  - Pasar las correcciones de fuentes al contenido de A4 y A13 cuando se monten.
+- Portadas: tono poco pedante, planteado como desafío en clave divertida y con metáforas, símiles y otros recursos narrativos de la política. Las reglas siguen siendo literales. Queda recogido en editorial/COWORK.md.
+- A1 se llama **ElectoQuiz**: sustituye a «Quiz del sistema electoral» en el título, la portada, el recibo y el índice. La carpeta del juego puede conservar su nombre.
+- Portadas de A1, A2, A10 y A12 cerradas por el autor. Están en la sección «Portada» de cada fichero de editorial/contenido/; en A10 la regla de vidas usa el icono de corazón.
+- Encargo para Code:
+  - pasar los textos y las reglas de portada a los data.json de A1, A2 y A10, y al game.js de A12, en sustitución de los TODO;
+  - cambiar el título de A1 a «ElectoQuiz» en el juego, el recibo y el índice;
+  - de paso, regenerar los data.json de A1 y A10 con las correcciones de contenido del 18-10.

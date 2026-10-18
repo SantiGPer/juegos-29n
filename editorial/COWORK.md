@@ -43,6 +43,12 @@ Los borradores de contenido se escriben en markdown con una estructura fija por 
 - Cita siempre la fuente del dato en el post (nombre, no URL) y la fecha.
 - Cada post se escribe el día antes como mínimo; los de debate, la misma noche.
 
+## Voz de las portadas de los juegos
+
+- Tono poco pedante y nada pretencioso (decisión del autor, 18-10-2026).
+- Plantear la partida como un desafío en clave divertida, apoyándose en metáforas, símiles y otros recursos narrativos ligados a la política.
+- Dos frases como máximo; las reglas, en cambio, claras y literales.
+
 ## Reglas de contenido
 
 - **Selección combinada (decisión del autor, 16-10-2026).** Cowork no decide qué elementos, temas o sucesos entran en un juego de contenido: quiz, ordenar, agrupar, rosco, promesas, bingo, «Quién dijo qué» y similares. El procedimiento es este:

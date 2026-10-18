@@ -16,6 +16,17 @@ Estado: **cerrado, selección del autor** (2026-10-16). Grupos A, H, J y D de `e
 
 Formato por grupo: nombre / ítems / explicación / fuente.
 
+
+## Portada
+
+**Texto:** La política es enrevesada y este juego no iba a ser menos. Tira del hilo para encontrar los cuatro grupos ocultos.
+
+**Reglas:**
+- (papeleta) Marca cuatro que tengan algo en común y comprueba.
+- (corazón) 4 vidas: cada grupo equivocado cuesta una.
+- (urna) Gana quien resuelve los cuatro grupos; cuentan los fallos.
+
+
 ---
 
 ## Grupo 1 — Presidieron el Congreso
@@ -34,7 +45,7 @@ Formato por grupo: nombre / ítems / explicación / fuente.
 
 - **Ítems:** Aguirre · Cascos · Montilla · Illa
 - **Explicación:** Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. Bono y Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.
-- **Fuente:** Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); biografías de Álvarez-Cascos. [VERIFICAR fechas de cada cargo]
+- **Fuente:** Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); biografías de Álvarez-Cascos. Fechas de cada cargo en editorial/fuentes/a10-agrupar.md.
 
 ## Grupo 4 — Perdieron una votación de investidura
 

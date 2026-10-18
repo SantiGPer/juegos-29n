@@ -31,3 +31,14 @@
   - LO 2/2010, de 3 de marzo, de salud sexual y reproductiva y de la interrupción voluntaria del embarazo.
   - LO 8/2013, de 9 de diciembre, para la mejora de la calidad educativa.
   - LO 3/2020, de 29 de diciembre, por la que se modifica la LO 2/2006, de Educación.
+
+## Grupo 3: fechas de los cargos (verificado el 18-10-2026)
+
+| Persona | Ministerio | Presidencia autonómica | Fuente |
+| --- | --- | --- | --- |
+| Aguirre | Educación y Cultura, 06-05-1996 a 19-01-1999 | Comunidad de Madrid, 21-11-2003 a 17-09-2012 | Ministerio de Educación (Conferencia de Educación); Wikipedia, President of the Community of Madrid |
+| Álvarez-Cascos | Vicepresidente primero, 1996-2000; Fomento, 2000-2004 | Principado de Asturias, 15-07-2011 a 26-05-2012 | Wikipedia, Francisco Álvarez-Cascos |
+| Montilla | Industria, Turismo y Comercio, 18-04-2004 a 08/09-09-2006 (las fuentes varían en un día) | Generalitat, 28-11-2006 a 27-12-2010 | Generalitat de Catalunya; Wikipedia, José Montilla |
+| Illa | Sanidad, 13-01-2020 a 27-01-2021 | Generalitat, desde el 10-08-2024 (toma de posesión) | La Moncloa (nombramiento); BOE-A-2021-1139 (cese); El Independiente, 10-08-2024 |
+
+Trampas: Bono presidió Castilla-La Mancha (1983-2004) antes de ser ministro de Defensa (2004-2006). Feijóo presidió la Xunta (2009-2022) y nunca fue ministro. [VERIFICAR fechas de Bono y Feijóo con fuente oficial; no salen en pantalla]

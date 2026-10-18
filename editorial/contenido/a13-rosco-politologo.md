@@ -1,6 +1,6 @@
 # A13 · Rosco del politólogo
 
-Estado: **términos y pistas revisados por el autor** (2026-10-17). Quedan por comprobar dos fuentes: la acepción de «bisagra» en el DLE y la edición del manual de Nohlen.
+Estado: **términos y pistas revisados por el autor** (2026-10-17). Fuentes cerradas el 18-10.
 
 - Motor: M9. Las 27 letras van en círculo; una definición por letra.
 - Formato de pista, estilo concurso: «Empieza por la X, …» o «Contiene la X, …». Ñ, K, W, X e Y van por «contiene».
@@ -30,7 +30,7 @@ Formato por letra: pista / respuesta / variantes aceptadas / fuente.
 
 **Variantes aceptadas:** Partido bisagra
 
-**Fuente:** DLE (RAE), «bisagra». [VERIFICAR acepción política]
+**Fuente:** DLE (RAE), s. v. «partido» (partido bisagra).
 
 ## C
 
@@ -84,13 +84,13 @@ Formato por letra: pista / respuesta / variantes aceptadas / fuente.
 
 ## H
 
-**Pista:** Empieza por la H, apellido del abogado inglés que da nombre a la cuota que divide los votos válidos entre los escaños en juego.
+**Pista:** Empieza por la H, apellido que da nombre a la cuota que divide los votos válidos entre los escaños en juego.
 
 **Respuesta:** Hare
 
 **Variantes aceptadas:** Cuota Hare
 
-**Fuente:** Nohlen, Sistemas electorales y partidos políticos. [VERIFICAR edición]
+**Fuente:** Nohlen, Sistemas electorales y partidos políticos, 1.ª ed., UNAM-FCE, 1994, p. 70.
 
 ## I
 
