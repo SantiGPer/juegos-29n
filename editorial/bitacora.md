@@ -2,6 +2,44 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (5) — A3 Plenopedia: prueba de viabilidad de la XV (encargo del 19-10)
+
+**Hecho** (plan confirmado por el autor; informe completo en `editorial/fuentes/a03-plenopedia-viabilidad.md`)
+- **Correcciones de A3:**
+  - `R/05` fusiona con el mismo ordinal y sin nombrar a otra persona a cualquier distancia; la llamada colectiva de la XII ya contaba.
+  - Resultado: **XV = 92/203**, no 94 (ver dudas), y XIV = 48/262.
+  - Periodo de la XV: 2023–2026, con el campo nuevo `disolucion` en `legislaturas.json` y en `game.js` de A3. El juego no se ha vuelto a probar en el navegador: solo cambian el dato y el texto del periodo.
+- **`R/04_diputados.R` → `data/diputados_xv.json`:** 412 diputados y 420 periodos de grupo, con datos abiertos del Congreso. Cambios de grupo reconstruidos: Podemos, Ábalos, Micó y Ortega Smith al Mixto.
+- **`R/08_plenopedia_xv.R` → `data/plenopedia_xv.json`:** 203 sesiones y 9,3 millones de palabras atribuidas.
+  - Indicadores: palabras, rumores, protestas, risas, aplausos (y quién aplaude, si consta), apertura, cierre y pausas, minutos de silencio y 14 términos.
+  - Por grupo, con el Gobierno y la Mesa aparte, y por diputado.
+  - Normalizado por 10.000 palabras y por escaño medio.
+  - Cruce de las llamadas al orden con el grupo del llamado.
+- **Problemas del Diario resueltos por el script:**
+  - Las intervenciones en lenguas cooficiales salen dos veces (original e interpretación): se cuenta solo el castellano.
+  - Erratas en las etiquetas y en los apellidos.
+  - El sello «cve:» parte párrafos y a veces comparte línea con el texto (la hora de cierre del DS 46, entre otras).
+  - Etiquetas de ministro partidas en dos líneas.
+  - Ninguna etiqueta queda sin reconocer.
+- **Cifras clave** (ninguna pregunta preparada):
+  - Charlatán: Rego (BNG) con 203.982 palabras; en el Gobierno, Sánchez con 387.836.
+  - Palabras por escaño: Mixto y PNV, unas 104.000; PSOE, 6.621.
+  - Sesión más larga: 10-09-2025, 12 h 21 min. La que acabó más tarde: 19-12-2023, a las 23.25.
+  - 64 minutos de silencio.
+
+**Falta**
+- Selección de preguntas sobre el catálogo (autor y Cowork).
+- Revisión a mano de 28 llamadas sin destinatario automático (preguntas 1 y 3) y de dos minutos de silencio dudosos (DS 91 y DS 147).
+- Montar el juego cuando haya selección.
+
+**Dudas para el autor** (detalle en el informe)
+- **XV = 92 o 94.** La regla general del 19-10 también fusiona el DS 67 y el DS 169 (Tellado, «primera vez» repetida en la misma intervención). ¿Vale la regla (92) o solo el DS 43 (94)?
+- **XIV, DS 97.** Puede haber dos destinatarios: Espinosa de los Monteros y Figaredo. ¿Uno o dos actos? Ahora cuenta uno.
+- **Mesa y candidatos.** La Mesa queda fuera del Charlatán y de los grupos. Feijóo candidato cuenta para el PP; Sánchez candidato, como Gobierno. ¿De acuerdo?
+- **Aplausos (preguntas 7 y 8).** Solo el 5 % de los aplausos dice quién aplaude: la pregunta mediría ovaciones anotadas. ¿Se reformula o sale?
+- **«Sánchez» (pregunta 23).** El recuento mezcla a todas las personas con ese apellido. Habría que acotarlo.
+- **Cuatro oradores** con etiqueta de diputado que no están entre los diputados de la XV (Armario Rodríguez, Córdoba Marí, Gil Membrado y Costa Serra). Van en «Otros».
+
 ## 2026-10-18 (4) — Encargos del 18-10: A3 (datos, M4 y juego), portadas y ElectoQuiz
 
 **Hecho** (plan confirmado por el autor)

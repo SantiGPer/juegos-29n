@@ -42,9 +42,11 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 01_resultados_2023.R
 │   ├── 02_legislaturas.R
 │   ├── 03_actividad_parlamentaria.R
+│   ├── 04_diputados.R    # grupo de cada diputado de la XV por periodo
 │   ├── 05_llamadas_al_orden.R
 │   ├── 06_cis_postelectoral.R
 │   ├── 07_programas.R    # pesos temáticos para A14
+│   ├── 08_plenopedia_xv.R # indicadores del Pleno de la XV para A3
 │   └── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # fichas completas, calendario, reserva
@@ -110,7 +112,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 - **B1 Quién dijo qué** (M1). Día siguiente a cada debate: atribuir frases + tema más repetido con recuento.
 - **B2 Bingo del debate** (estático). Cartón de 16-25 casillas publicado la víspera; al día siguiente, marcado con lo ocurrido.
 
-**Reserva:** mitos electorales V/F, titular a medio, Politle, léxico del Congreso (descalificativos de todos los grupos + cifra a estimar), artículo censurado, dibuja la curva, proximidad semántica. Datos en reserva: `diputados_xv.json` (sin script mientras no lo use un juego).
+**Reserva:** mitos electorales V/F, titular a medio, Politle, léxico del Congreso (descalificativos de todos los grupos + cifra a estimar), artículo censurado, dibuja la curva, proximidad semántica.
 
 **Descartados:** afinidad por votaciones reales, predicción del 29-N, coste de ir separados, última papeleta, forma gobierno, encuestas en vivo.
 
@@ -123,6 +125,8 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, A11, plan B A14 |
 | `presidentes.json` | La Moncloa y BOE; siete fichas a mano, sin script | A12 |
 | `llamadas_al_orden.json` | Diario de Sesiones (regex: "le llamo al orden", "retire esa expresión"); ParlaMint-ES para texto limpio de legislaturas anteriores | A3 |
+| `diputados_xv.json` | Datos abiertos del Congreso (diputados activos y de baja) | A3 |
+| `plenopedia_xv.json` | Diario de Sesiones de la XV: palabras, acotaciones, horas y menciones por orador y grupo | A3 |
 | `cis_postelectoral_2023.json` | CIS, microdato | A8 |
 | `renta_prov.json` | INE | A7 |
 | `programas_29n.json` | Webs de los partidos; MARPOR como plan B | A14 |

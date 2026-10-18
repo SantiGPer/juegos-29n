@@ -53,7 +53,10 @@ presidencias <- map(filas, \(f) {
   mutate(
     afiliacion = if_else(partido == "PSC", partido, NA_character_),
     partido = if_else(partido == "PSC", "PSOE", partido),
-    actas_eleccion = map(actas_eleccion, I)
+    actas_eleccion = map(actas_eleccion, I),
+    # Fin de la XV: disolución, fecha de baja de todos los diputados en los datos abiertos del
+    # Congreso (DiputadosDeBaja). Periodo 2023–2026 (decisión del 19-10-2026)
+    disolucion = if_else(numero == 15, "2026-10-06", NA_character_)
   )
 
 stopifnot(identical(presidencias$numero, as.numeric(0:15)), !anyNA(presidencias$partido))
@@ -62,7 +65,7 @@ list(
   fuente = "Wikipedia, Anexo:Presidentes del Congreso de los Diputados (contraste); actas de elección del Congreso de los Diputados enlazadas en cada fila",
   url = as.character(url_wiki),
   consulta = as.character(Sys.Date()),
-  nota = "Una fila por legislatura. Partido = el del grupo parlamentario por el que fue elegida la presidencia; si la fuente da otra afiliación, va en `afiliacion`. Fechas de la presidencia: elección y cese; en la Constituyente y la I, desde la presidencia interina. Fin nulo = en el cargo.",
+  nota = "Una fila por legislatura. Partido = el del grupo parlamentario por el que fue elegida la presidencia; si la fuente da otra afiliación, va en `afiliacion`. Fechas de la presidencia: elección y cese; en la Constituyente y la I, desde la presidencia interina. Fin nulo = en el cargo. `disolucion`: fin de la legislatura cuando la presidencia sigue en el cargo (XV).",
   legislaturas = presidencias
 ) |>
   write_json("data/legislaturas.json", auto_unbox = TRUE, pretty = TRUE, na = "null")

@@ -11,7 +11,7 @@ const items = llamadas.legislaturas.map(({ legislatura, sesiones_plenarias, llam
   return {
     id: legislatura,
     nombre: `${legislatura} legislatura`,
-    periodo: p.fin ? `${anio(p.inicio)}–${anio(p.fin)}` : `Desde ${anio(p.inicio)}`,
+    periodo: `${anio(p.inicio)}–${anio(p.fin ?? p.disolucion)}`,
     valor: llamadas / sesiones_plenarias * 100,
     cifra: decimal(llamadas / sesiones_plenarias * 100),
     explicacion: `${legislatura} legislatura: ${llamadas} llamadas al orden en ${sesiones_plenarias} sesiones plenarias. Presidía el Congreso ${p.presidencia} (${p.partido}).`,

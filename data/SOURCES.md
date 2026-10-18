@@ -39,6 +39,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
   - VIII: el diario 87 (28-04-2005) lleva por errata «Sesión plenaria núm. 81», como el 86; se cuenta como la 82.
 - 16-10-2026: corregido un fallo que dejaba sin texto los diarios con alguna hoja sin folio. La XV pasa de 83 a 90 llamadas (diarios 182, 196, 207 y 210).
 - Método: en el campo `metodo` del JSON. Validación: revisión manual de las 12 fusiones de la XV (bitácora del 15-10-2026) y precisión, atribución y exhaustividad de VIII a XV en `editorial/fuentes/a03-validacion-viii-x.md`.
+- 18-10-2026, correcciones del 19-10: con el mismo ordinal y sin nombrar a otra persona, se fusiona a cualquier distancia dentro de la intervención; la llamada colectiva de la XII (DS 61) cuenta. La XV pasa de 95 a 92 y la XIV de 49 a 48 (casos en `editorial/fuentes/a03-plenopedia-viabilidad.md`).
 
 ## `legislaturas.json`
 
@@ -47,6 +48,20 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Cada fila guarda las actas de elección de la presidencia en congreso.es que cita Wikipedia (Constituyente a XII). XIII, XIV y XV citan prensa, no actas del Congreso, y quedan con la lista vacía.
 - Partido = el del grupo parlamentario por el que fue elegida la presidencia (decisión del 16-10-2026). Batet figura como PSOE; la fuente la da como PSC, que queda en `afiliacion`. Regenerado el 18-10-2026.
 - Contraste con la fuente primaria: la portada de cada Diario de Sesiones del Pleno («PRESIDENCIA DE…»), revisada en la muestra del sondeo de A3 (bitácora del 16-10-2026).
+- `disolucion` (solo XV): 06-10-2026, fecha de baja de todos los diputados en los datos abiertos del Congreso (ver `diputados_xv.json`). Da el periodo 2023–2026 (decisión del 19-10-2026).
+
+## `diputados_xv.json`
+
+- Script: `R/04_diputados.R`. Lo usa `R/08_plenopedia_xv.R` (A3 Plenopedia).
+- Fuente: Congreso de los Diputados, datos abiertos, https://www.congreso.es/es/opendata/diputados: ficheros `DiputadosActivos` y `DiputadosDeBaja` en JSON (el nombre exacto, con fecha, va en `ficheros`). Consultados el 18-10-2026.
+- Los datos abiertos solo dan el último grupo de cada diputado. Si el alta en el grupo es más de 30 días posterior al alta como diputado y el grupo no es el de su formación, el periodo anterior se asigna al grupo de su formación electoral: Podemos (cinco diputados, 05-12-2023), Ábalos (27-02-2024), Micó (03-07-2025) y Ortega Smith (17-07-2026).
+- `partido_mixto`, puesto a mano: BNG, CC y UPN por su formación; los diputados de SUMAR que pasan al Mixto el 05-12-2023, Podemos; Micó, Compromís; Ábalos y Ortega Smith, a título propio.
+
+## `plenopedia_xv.json`
+
+- Script: `R/08_plenopedia_xv.R`. Prueba de viabilidad de A3 Plenopedia (encargo del 19-10-2026); todavía no lo lee ningún juego.
+- Fuente: Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura, los mismos PDF que `llamadas_al_orden.json` (caché de `R/05`), más `diputados_xv.json` y `llamadas_al_orden.json`.
+- Método: en el campo `metodo` del JSON y en `editorial/fuentes/a03-plenopedia-viabilidad.md`, con ejemplos literales, controles y límites de cada indicador.
 
 ## `presidentes.json`
 

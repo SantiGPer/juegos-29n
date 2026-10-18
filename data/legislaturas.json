@@ -2,7 +2,7 @@
   "fuente": "Wikipedia, Anexo:Presidentes del Congreso de los Diputados (contraste); actas de elección del Congreso de los Diputados enlazadas en cada fila",
   "url": "https://es.wikipedia.org/w/index.php?title=Anexo:Presidentes_del_Congreso_de_los_Diputados&oldid=175471021",
   "consulta": "2026-10-18",
-  "nota": "Una fila por legislatura. Partido = el del grupo parlamentario por el que fue elegida la presidencia; si la fuente da otra afiliación, va en `afiliacion`. Fechas de la presidencia: elección y cese; en la Constituyente y la I, desde la presidencia interina. Fin nulo = en el cargo.",
+  "nota": "Una fila por legislatura. Partido = el del grupo parlamentario por el que fue elegida la presidencia; si la fuente da otra afiliación, va en `afiliacion`. Fechas de la presidencia: elección y cese; en la Constituyente y la I, desde la presidencia interina. Fin nulo = en el cargo. `disolucion`: fin de la legislatura cuando la presidencia sigue en el cargo (XV).",
   "legislaturas": [
     {
       "legislatura": "C",
@@ -12,7 +12,8 @@
       "inicio": "1977-07-13",
       "fin": "1979-03-22",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1977_07_13.pdf", "http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1977_10_18.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "I",
@@ -22,7 +23,8 @@
       "inicio": "1979-03-23",
       "fin": "1982-11-17",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1979_03_23.pdf", "http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1979_05_03.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "II",
@@ -32,7 +34,8 @@
       "inicio": "1982-11-18",
       "fin": "1986-07-14",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1982_11_18.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "III",
@@ -42,7 +45,8 @@
       "inicio": "1986-07-15",
       "fin": "1989-11-20",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1986_07_15.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "IV",
@@ -52,7 +56,8 @@
       "inicio": "1989-11-21",
       "fin": "1993-06-28",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1989_11_21.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "V",
@@ -62,7 +67,8 @@
       "inicio": "1993-06-29",
       "fin": "1996-03-26",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1993_06_29.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "VI",
@@ -72,7 +78,8 @@
       "inicio": "1996-03-27",
       "fin": "2000-04-04",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/1996_03_27.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "VII",
@@ -82,7 +89,8 @@
       "inicio": "2000-04-05",
       "fin": "2004-04-01",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/2000_04_05.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "VIII",
@@ -92,7 +100,8 @@
       "inicio": "2004-04-02",
       "fin": "2008-03-31",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/2004_04_02.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "IX",
@@ -102,7 +111,8 @@
       "inicio": "2008-04-01",
       "fin": "2011-12-12",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/2008_04_01.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "X",
@@ -112,7 +122,8 @@
       "inicio": "2011-12-13",
       "fin": "2016-01-12",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/2011_12_13.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "XI",
@@ -122,7 +133,8 @@
       "inicio": "2016-01-13",
       "fin": "2016-07-18",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/DSCD-11-PL-1.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "XII",
@@ -132,7 +144,8 @@
       "inicio": "2016-07-19",
       "fin": "2019-05-20",
       "actas_eleccion": ["http://www.congreso.es/wc/htdocs/web/ficheros/pdf_presi/DSCD-12-PL-1.pdf"],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": null
     },
     {
       "legislatura": "XIII",
@@ -142,7 +155,8 @@
       "inicio": "2019-05-21",
       "fin": "2019-12-02",
       "actas_eleccion": [],
-      "afiliacion": "PSC"
+      "afiliacion": "PSC",
+      "disolucion": null
     },
     {
       "legislatura": "XIV",
@@ -152,7 +166,8 @@
       "inicio": "2019-12-03",
       "fin": "2023-08-16",
       "actas_eleccion": [],
-      "afiliacion": "PSC"
+      "afiliacion": "PSC",
+      "disolucion": null
     },
     {
       "legislatura": "XV",
@@ -162,7 +177,8 @@
       "inicio": "2023-08-17",
       "fin": null,
       "actas_eleccion": [],
-      "afiliacion": null
+      "afiliacion": null,
+      "disolucion": "2026-10-06"
     }
   ]
 }
