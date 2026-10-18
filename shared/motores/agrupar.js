@@ -1,12 +1,15 @@
 import { cerrar } from '../cierre.js';
 import { icono } from '../iconos.js';
+import { portada } from '../portada.js';
 import { accion, baraja, el, monta } from '../util.js';
 
 // Recibo: una fila por intento, con el grupo de cada ítem marcado (grupos en orden de dificultad;
 // marcador, senado, señal y tinta, como --grupo-1…4 en base.css)
 const emoji = ['🟨', '🟫', '🟧', '⬛'];
 
-export function iniciar({ juego, dia, fuente, vidas, grupos }, contenedor) {
+export const iniciar = (config, contenedor) => portada(config, contenedor, () => partida(config, contenedor));
+
+function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
   const grupoDe = new Map(grupos.flatMap((g, i) => g.items.map(item => [item, i])));
   let restantes = baraja([...grupoDe.keys()]);
   const resueltos = [];

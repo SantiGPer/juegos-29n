@@ -1,5 +1,6 @@
 import { cerrar } from '../cierre.js';
 import { icono } from '../iconos.js';
+import { portada } from '../portada.js';
 import { accion, baraja, celda, el, marcador, monta, muestra, numero } from '../util.js';
 
 const fechaEs = iso => iso.split('-').reverse().join('-');
@@ -232,4 +233,5 @@ const pistas = ({ juego, dia, fuente, items }, contenedor) => {
 
 const variantes = { opciones, ordenar, pistas };
 
-export const iniciar = (config, contenedor) => variantes[config.variante ?? 'opciones'](config, contenedor);
+export const iniciar = (config, contenedor) =>
+  portada(config, contenedor, () => variantes[config.variante ?? 'opciones'](config, contenedor));

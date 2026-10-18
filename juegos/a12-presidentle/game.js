@@ -6,5 +6,9 @@ iniciar({
   juego: 'Presidentle',
   variante: 'pistas',
   fuente,
+  portada: {
+    texto: 'TODO texto de portada',
+    reglas: [{ icono: 'papeleta', texto: 'TODO regla' }, { icono: 'urna', texto: 'TODO regla' }],
+  },
   items: presidentes.map(p => ({ ...p, color: `--${p.partido}` })),
 }, document.querySelector('main'));

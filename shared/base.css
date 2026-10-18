@@ -140,6 +140,34 @@ button:disabled {
 
 .accion { font-weight: 800; }
 
+/* «Jugar»: el único botón con color de la serie; al pulsarlo se invierte */
+.accion.jugar { background: var(--marcador); }
+.accion.jugar:active { background: var(--tinta); color: var(--papel); }
+
+/* Portada común (maqueta v7) */
+.entradilla {
+  margin-top: var(--s3);
+  font-size: 1.0625rem;
+}
+
+.reglas {
+  list-style: none;
+  margin: var(--s5) 0;
+  padding: 0;
+  font-size: 1rem;
+  border-top: 1px solid var(--tinta);
+}
+
+.reglas li {
+  display: flex;
+  gap: var(--s3);
+  align-items: center;
+  padding: var(--s3) 0;
+  border-bottom: 1px solid var(--raya);
+}
+
+.reglas svg { display: block; flex: none; }
+
 /* Cabecera compacta: nombre, puntos y pista. No es fija. */
 .cab-fila {
   display: flex;

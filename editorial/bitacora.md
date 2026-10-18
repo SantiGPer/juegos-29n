@@ -2,6 +2,21 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 — Paso 2 del orden de trabajo: portada común
+
+**Hecho** (plan confirmado por el autor)
+- `shared/portada.js`, según la maqueta v7: «Juegos 29N, día N», título, entradilla (1.0625 rem), reglas con icono de 10×10 separadas por rayas finas bajo un borde de tinta, y fuente general. «Jugar» va en la barra, en marcador; al pulsarlo se invierte a tinta.
+- `quiz.js` y `agrupar.js` pasan siempre por la portada antes de la partida.
+- Campos `portada.texto` y `portada.reglas` (con `icono` y `texto`) en los `data.json` de A1, A2 y A10, y en el `game.js` de A12. Todos con `TODO` visible: el texto llega al cerrar cada juego (decisión del 16-10).
+- Partidas completas sin errores a 320 y 375 px. Capturas de la portada a 375 × 560 y 1280, revisadas contra la lista negra.
+
+**Falta**
+- Texto de portada y de reglas de A1, A2, A10 y A12 en `editorial/contenido/`.
+- Paso 3: cambios de A2, A10 y A12.
+
+**Dudas para el autor**
+- Iconos de las reglas: de momento solo hay papeleta (ítems) y urna (puntuación). Si una regla necesita otro icono (por ejemplo, «pasar» en A13), que el contenido lo nombre.
+
 ## 2026-10-17 (2) — Paso 1 del orden de trabajo: base.css y motores al diseño arcade
 
 **Hecho** (plan confirmado por el autor)

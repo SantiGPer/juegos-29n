@@ -2,6 +2,10 @@
   "juego": "Cronología de la legislatura",
   "variante": "ordenar",
   "fuente": "Diario de Sesiones del Congreso, BOE, La Moncloa y prensa citada en cada hito",
+  "portada": {
+    "texto": "TODO texto de portada",
+    "reglas": [{ "icono": "papeleta", "texto": "TODO regla" }, { "icono": "urna", "texto": "TODO regla" }]
+  },
   "instruccion": "Ordena los cuatro hitos del más antiguo al más reciente.",
   "rondas": [
     {

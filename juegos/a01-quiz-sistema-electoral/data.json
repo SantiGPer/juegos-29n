@@ -1,6 +1,10 @@
 {
   "juego": "Quiz del sistema electoral",
   "fuente": "Constitución Española y LOREG, textos consolidados del BOE",
+  "portada": {
+    "texto": "TODO texto de portada",
+    "reglas": [{ "icono": "papeleta", "texto": "TODO regla" }, { "icono": "urna", "texto": "TODO regla" }]
+  },
   "preguntas": [
     {
       "pregunta": "¿Cuántos diputados tiene el Congreso?",

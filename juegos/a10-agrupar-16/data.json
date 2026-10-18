@@ -1,6 +1,10 @@
 {
   "juego": "Agrupar 16",
   "fuente": "Congreso de los Diputados; Unión Interparlamentaria; BOE; Ministerio de Educación; Generalitat de Catalunya; El Independiente; RTVC",
+  "portada": {
+    "texto": "TODO texto de portada",
+    "reglas": [{ "icono": "papeleta", "texto": "TODO regla" }, { "icono": "urna", "texto": "TODO regla" }]
+  },
   "vidas": 4,
   "grupos": [
     {
