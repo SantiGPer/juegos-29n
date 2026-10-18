@@ -20,6 +20,8 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - Partidas completas sin errores a 320 y 375 px. Capturas a 375 × 560 y 1280 revisadas contra la lista negra.
 - Ojo para pruebas: Chrome guardaba en caché un `iconos.js` antiguo y daba un error falso. Con perfil nuevo y `--disable-cache` desaparece. En Pages puede pasar lo mismo durante unos minutos tras el push.
 
+- Push a Pages hecho el 18-10-2026 con confirmación del autor (`096de8f`); pasos 1 a 3 publicados.
+
 **Falta**
 - Paso 4: A4 y A13, en cuanto el autor resuelva las dudas de fuentes (bitácora del 17-10 (2)) y A4 tenga el campo `origen`.
 - Textos de portada de A1, A2, A10 y A12.
