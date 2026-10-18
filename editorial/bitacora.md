@@ -24,6 +24,8 @@ Decisiones del autor en sesión (18-10), para que Cowork las pase a `decisiones.
   - Ahora el cierre tiene «Otro presidente», debajo del recibo, que empieza otra partida con uno distinto del que acaba de salir. Es secundario y no va en la barra, para no partir «Copiar resultado».
   - `cierre.js` admite `otra`, y el texto del botón viene de `game.js`.
 - Pruebas: partidas completas de A1, A10 y A12, y «Otro presidente» que abre una partida nueva. Capturas a 375 y 320 px.
+- El autor lo ha probado en local: al principio no veía «Otro presidente» porque Chrome guardaba los módulos en caché. Para las pruebas locales, el servidor se lanza con `Cache-Control: no-store`.
+- Push a Pages el 18-10-2026 con confirmación del autor (`eeb47d0`).
 
 **Dudas para el autor**
 - En A1 he aplicado el criterio también a las preguntas 1, 4 y 7, además de la 2, porque también son ordinales. ¿De acuerdo?
