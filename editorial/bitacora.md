@@ -2,6 +2,32 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (3) — Ajustes del autor tras probar A1, A10 y A12
+
+Decisiones del autor en sesión (18-10), para que Cowork las pase a `decisiones.md`:
+- **Criterio universal de opciones (M1).**
+  - Si las opciones son ordinales, no se barajan; van de mayor a menor.
+  - Si son nominales, se barajan.
+  - Las opciones de cierre («Ninguno», «No lo sé», blanco, nulo, otros…) van siempre al final, sin barajar.
+- **A10, cierre.** La cuadrícula de colores no dice qué se acertó. El cierre muestra los grupos encontrados («2 de 4») y los fallos. El recibo pasa a «N/4 grupos», sin emojis. Sustituye al recibo 🟨🟫🟧⬛ de la decisión de diseño del 16-10.
+- **A12.** Cada partida sale con un presidente al azar, para poder volver a jugar.
+
+**Hecho**
+- `quiz.js`: cada pregunta puede llevar `orden` (orden fijo, lista de letras) o `ultima` (letra que va al final; el resto se baraja). Sin ninguno de los dos, se baraja todo, como antes. Sirve también para el orden fijo de A4.
+- **A1** (`data.json`):
+  - Orden de mayor a menor en las cuatro preguntas ordinales: diputados del Congreso (450…300), mínimo por provincia (3, 2, 1, Ninguno), días de campaña (30…10) y senadores (4…1).
+  - En la pregunta de Madrid y Cádiz, «Ninguna: el reparto es idéntico al de 2023» va siempre al final.
+  - El contenido no cambia; solo el orden en que se muestran las opciones.
+- **A10:** cifra «N /4» en casillas, «Grupos encontrados. N fallos» y recibo «N/4 grupos». `cierre.js` admite una `unidad` para el recibo.
+- **A12:**
+  - Ya salía un presidente al azar en cada carga.
+  - Ahora el cierre tiene «Otro presidente», debajo del recibo, que empieza otra partida con uno distinto del que acaba de salir. Es secundario y no va en la barra, para no partir «Copiar resultado».
+  - `cierre.js` admite `otra`, y el texto del botón viene de `game.js`.
+- Pruebas: partidas completas de A1, A10 y A12, y «Otro presidente» que abre una partida nueva. Capturas a 375 y 320 px.
+
+**Dudas para el autor**
+- En A1 he aplicado el criterio también a las preguntas 1, 4 y 7, además de la 2, porque también son ordinales. ¿De acuerdo?
+
 ## 2026-10-18 (2) — Paso 3 del orden de trabajo: A2, A10 y A12
 
 **Hecho** (plan confirmado por el autor)

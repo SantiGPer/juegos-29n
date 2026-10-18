@@ -9,6 +9,7 @@
     {
       "pregunta": "¿Cuántos diputados tiene el Congreso?",
       "opciones": { "a": "300", "b": "350", "c": "400", "d": "450" },
+      "orden": ["d", "c", "b", "a"],
       "correcta": "b",
       "explicacion": "La Constitución fija una horquilla de entre 300 y 400 diputados. La LOREG la concreta en 350.",
       "fuente": "Constitución Española, art. 68.1; LOREG, art. 162.1."
@@ -16,6 +17,7 @@
     {
       "pregunta": "¿Cuántos diputados tiene garantizados cada provincia antes de repartir el resto por población?",
       "opciones": { "a": "Ninguno", "b": "1", "c": "2", "d": "3" },
+      "orden": ["d", "c", "b", "a"],
       "correcta": "c",
       "explicacion": "Cada provincia parte con dos diputados (Ceuta y Melilla, con uno) y solo el resto se reparte según población. Por eso Soria elige dos diputados y Madrid, treinta y ocho.",
       "fuente": "LOREG, art. 162.2 y 162.3; Real Decreto 806/2026, anexo."
@@ -28,6 +30,7 @@
         "c": "Gana Málaga y pierde Asturias",
         "d": "Ninguna: el reparto es idéntico al de 2023"
       },
+      "ultima": "d",
       "correcta": "a",
       "explicacion": "El reparto de escaños se recalcula en cada convocatoria según la población: Madrid pasa de 37 a 38 diputados y Cádiz, de 9 a 8. Las otras cincuenta circunscripciones eligen los mismos que en 2023.",
       "fuente": "Real Decreto 806/2026, de 5 de octubre, anexo; Real Decreto 400/2023, de 29 de mayo, anexo."
@@ -35,6 +38,7 @@
     {
       "pregunta": "¿Cuántos días dura la campaña electoral?",
       "opciones": { "a": "10", "b": "15", "c": "21", "d": "30" },
+      "orden": ["d", "c", "b", "a"],
       "correcta": "b",
       "explicacion": "La campaña dura quince días y termina a las cero horas del día anterior a la votación, que es la jornada de reflexión. Esta serie publica un juego por cada uno de esos quince días.",
       "fuente": "LOREG, art. 51."
@@ -66,6 +70,7 @@
     {
       "pregunta": "En una provincia peninsular se eligen cuatro senadores. ¿A cuántos puede votar cada elector?",
       "opciones": { "a": "1", "b": "2", "c": "3", "d": "4" },
+      "orden": ["d", "c", "b", "a"],
       "correcta": "c",
       "explicacion": "Es un sistema de voto limitado: se marcan hasta tres nombres para cuatro puestos. Por eso lo habitual es que el partido más votado saque tres senadores y el segundo, uno.",
       "fuente": "Constitución Española, art. 69.2; LOREG, art. 166.1.a."

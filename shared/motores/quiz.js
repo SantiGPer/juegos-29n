@@ -7,7 +7,12 @@ const fechaEs = iso => iso.split('-').reverse().join('-');
 const mayuscula = texto => texto[0].toUpperCase() + texto.slice(1);
 const enLineas =(lista, n) => lista.map((x, i) => (i && i % n === 0 ? '\n' : '') + x).join('');
 
-const explicacion = (...parrafos) => el('div', { className: 'explicacion' }, ...parrafos);
+// Opciones ordinales: orden fijo del contenido (`orden`). Nominales: barajadas, con la opción
+// de cierre («Ninguna», «No lo sé»…) siempre al final (`ultima`).
+const ordenOpciones = ({ opciones, orden, ultima }) =>
+  orden ?? [...baraja(Object.keys(opciones).filter(l => l !== ultima)), ...(ultima ? [ultima] : [])];
+
+const explicacion =(...parrafos) => el('div', { className: 'explicacion' }, ...parrafos);
 
 const opciones = ({ juego, dia, fuente, preguntas, niveles }, contenedor) => {
   const resultados = [];
@@ -33,8 +38,8 @@ const opciones = ({ juego, dia, fuente, preguntas, niveles }, contenedor) => {
     boton.disabled = true;
     const pie = el('div');
 
-    const botones = baraja(Object.entries(p.opciones)).map(([letra, texto]) => {
-      const opcion = el('button', { className: 'opcion', textContent: texto });
+    const botones = ordenOpciones(p).map(letra => {
+      const opcion = el('button', { className: 'opcion', textContent: p.opciones[letra] });
       opcion.dataset.letra = letra;
       opcion.onclick = () => {
         botones.forEach(b => b.classList.toggle('seleccionada', b === opcion));
@@ -172,8 +177,10 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
 
 // Un ítem al azar entre todos; cada fallo revela la pista siguiente.
 // Puntos: tantos como pistas quedaban por ver al acertar, incluida la que lo resolvió.
-const pistas = ({ juego, dia, fuente, items }, contenedor) => {
-  const item = items[Math.floor(Math.random() * items.length)];
+// El botón `otra` del cierre vuelve a empezar con un ítem distinto del que acaba de salir.
+const pistas = (config, contenedor, anterior) => {
+  const { juego, dia, fuente, items } = config;
+  const item = baraja(items.filter(({ id }) => id !== anterior))[0];
   const n = item.pistas.length;
   const fallos = [];
   let acierto = false;
@@ -190,6 +197,7 @@ const pistas = ({ juego, dia, fuente, items }, contenedor) => {
     cuadricula: estados().map(e => e === 'acierto' ? '🟨' : '⬜').join(''),
     fuente,
     pista: { estados: estados() },
+    otra: { texto: config.otra, accion: () => pistas(config, contenedor, item.id) },
   }, contenedor);
 
   const pinta = () => {

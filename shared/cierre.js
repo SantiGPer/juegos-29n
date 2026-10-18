@@ -1,9 +1,10 @@
 import { icono } from './iconos.js';
 import { accion, celdas, cifra, el, monta } from './util.js';
 
-// pista: { estados, porGrupo } de la partida, que queda fija bajo la cifra
-export function cerrar({ juego, dia, puntuacion, total, nivel, cuadricula, fuente, pista }, contenedor) {
-  const resultado = total === undefined ? puntuacion : `${puntuacion}/${total}`;
+// pista: { estados, porGrupo } de la partida, que queda fija bajo la cifra.
+// otra: { texto, accion } para volver a jugar dentro de la misma edición (A12).
+export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricula, fuente, pista, otra }, contenedor) {
+  const resultado = total === undefined ? puntuacion : `${puntuacion}/${total}${unidad ? ` ${unidad}` : ''}`;
   const texto = [`Juegos 29N, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
     .filter(Boolean)
     .join('\n');
@@ -33,6 +34,7 @@ export function cerrar({ juego, dia, puntuacion, total, nivel, cuadricula, fuent
     ...(pista ? [celdas(pista.estados, [], pista.porGrupo)] : []),
     ...(nivel ? [el('p', { className: 'etiqueta', textContent: nivel })] : []),
     el('p', { className: 'recibo', textContent: texto }),
+    ...(otra ? [el('p', {}, el('button', { className: 'secundario', textContent: otra.texto, onclick: otra.accion }))] : []),
     el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
     manana,
     el('p', {}, el('a', { href: '../../', textContent: 'Todos los juegos' })),

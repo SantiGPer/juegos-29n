@@ -3,9 +3,6 @@ import { icono } from '../iconos.js';
 import { portada } from '../portada.js';
 import { accion, baraja, el, monta } from '../util.js';
 
-// Recibo: una fila por intento, con el grupo de cada ítem marcado (grupos en orden de dificultad;
-// marcador, senado, señal y tinta, como --grupo-1…4 en base.css)
-const emoji = ['🟨', '🟫', '🟧', '⬛'];
 
 export const iniciar = (config, contenedor) => portada(config, contenedor, () => partida(config, contenedor));
 
@@ -13,7 +10,7 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
   const grupoDe = new Map(grupos.flatMap((g, i) => g.items.map(item => [item, i])));
   let restantes = baraja([...grupoDe.keys()]);
   const resueltos = [];
-  const intentos = [];
+
   let marcados = [];
   const fallidas = new Set();
   let fallos = 0;
@@ -26,9 +23,10 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
   const final = () => cerrar({
     juego,
     dia,
-    puntuacion: completo() ? 'Resuelto' : 'No resuelto',
-    nivel: fallos === 0 ? 'Sin fallos' : `${fallos} ${fallos === 1 ? 'fallo' : 'fallos'}`,
-    cuadricula: intentos.map(fila => fila.map(item => emoji[grupoDe.get(item)]).join('')).join('\n'),
+    puntuacion: resueltos.length,
+    total: grupos.length,
+    unidad: 'grupos',
+    nivel: `Grupos encontrados. ${fallos === 0 ? 'Sin fallos' : `${fallos} ${fallos === 1 ? 'fallo' : 'fallos'}`}`,
     fuente,
   }, contenedor);
 
@@ -38,7 +36,7 @@ function partida({ juego, dia, fuente, vidas, grupos }, contenedor) {
       aviso = 'Ya lo has probado.';
       return pinta();
     }
-    intentos.push(marcados);
+
     const grupo = grupoDe.get(marcados[0]);
     if (marcados.every(item => grupoDe.get(item) === grupo)) {
       resueltos.push(grupo);
