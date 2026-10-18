@@ -1,0 +1,112 @@
+{
+  "juego": "Plenopedia",
+  "dia": 1,
+  "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia (data/plenopedia_xv.json).",
+  "portada": {
+    "texto": "Tres años de plenos, 9,3 millones de palabras y unas cuantas broncas. ¿Has estado atento a la legislatura o te has quedado dormido en el escaño?",
+    "reglas": [
+      { "icono": "papeleta", "texto": "10 preguntas: elegir, ordenar, estimar y un duelo." },
+      { "icono": "urna", "texto": "1 punto por acierto; al ordenar y al estimar, medio punto si te acercas." }
+    ]
+  },
+  "nota": "Todo sale de los Diarios de Sesiones del Pleno de la XV legislatura, leídos intervención a intervención. Las palabras se cuentan en castellano: de las intervenciones en catalán, euskera o gallego se toma la interpretación que publica el propio Diario. El presidente y los ministros cuentan como Gobierno y no como su partido, y la Mesa queda aparte. Rumores, risas y aplausos son las acotaciones del Diario y se atribuyen a quien tiene la palabra; para comparar grupos se dan por cada 10.000 palabras. Las llamadas al orden las impone la Presidencia y se cuentan una vez por acto, aunque se repita la fórmula. Todos los grupos se miden con el mismo método.",
+  "rondas": [
+    {
+      "tipo": "opciones",
+      "pregunta": "De todos los diputados, ¿quién tuvo más cosas que decir en los plenos de la legislatura?",
+      "opciones": { "a": "Néstor Rego (BNG)", "b": "Idoia Sagastizabal (PNV)", "c": "Alberto Núñez Feijóo (PP)", "d": "Gabriel Rufián (ERC)" },
+      "correcta": "a",
+      "explicacion": "Néstor Rego, único diputado del BNG, pronunció 203.982 palabras, casi 60.000 más que la segunda, Idoia Sagastizabal (PNV). En los grupos pequeños el turno se reparte entre muy pocos diputados, y eso dispara la cuenta de cada uno.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "opciones",
+      "pregunta": "Cuando toma la palabra, ¿a quién se le revuelve más la bancada?",
+      "opciones": { "a": "Gobierno", "b": "PSOE", "c": "PP", "d": "Vox" },
+      "correcta": "a",
+      "explicacion": "El Diario de Sesiones anota «(Rumores)» cada vez que el hemiciclo murmulla: durante las intervenciones del Gobierno salen 13,2 por cada 10.000 palabras, más que con cualquier grupo. Le siguen el PSOE (8,4) y el PP (7,3).",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "estimacion",
+      "pregunta": "Hay jornadas que no se acaban nunca. ¿Cuánto duró el pleno más largo de la legislatura?",
+      "min": 6,
+      "max": 16,
+      "paso": 0.25,
+      "unidad": "h",
+      "formato": "horas",
+      "valor": 12.35,
+      "tramos": [{ "hasta": 0.5, "puntos": 1 }, { "hasta": 1.5, "puntos": 0.5 }],
+      "explicacion": "Fue el 10 de septiembre de 2025, de las 9.00 a las 21.21 y sin pausas. Ese día el Congreso tumbó la reducción de la jornada laboral a 37,5 horas.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "opciones",
+      "pregunta": "En el Congreso no hay tarjetas amarillas, pero casi. ¿Qué diputado se llevó más llamadas al orden?",
+      "opciones": { "a": "Miguel Tellado (PP)", "b": "Rafael Hernando (PP)", "c": "José María Sánchez García (Vox)", "d": "Agustín Conde (PP)" },
+      "correcta": "a",
+      "explicacion": "Miguel Tellado acumuló 18 de las 90 llamadas al orden de la legislatura, casi el doble que el segundo. Las llamadas las impone la Presidencia cuando un diputado interrumpe o no respeta el turno.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "ordenar",
+      "pregunta": "¿Qué palabras se oyeron más en el hemiciclo? Ordénalas de la más repetida a la menos.",
+      "extremos": ["Más repetida", "Menos repetida"],
+      "medio": 3,
+      "items": [
+        { "texto": "España", "valor": 20126, "cifra": "20.126" },
+        { "texto": "vivienda", "valor": 10239, "cifra": "10.239" },
+        { "texto": "Cataluña", "valor": 6635, "cifra": "6.635" },
+        { "texto": "corrupción", "valor": 4733, "cifra": "4.733" },
+        { "texto": "ETA", "valor": 859, "cifra": "859" }
+      ],
+      "explicacion": "«España» se pronunció 20.126 veces, el doble que «vivienda»; «ETA», 859. Se cuenta también el plural de «vivienda» y de «corrupción».",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "duelo",
+      "pregunta": "En política también hay espacio para la comedia: ¿quién hizo reír más veces a la Cámara?",
+      "lados": [
+        { "id": "sanchez", "nombre": "Pedro Sánchez", "contexto": "Gobierno", "valor": 266, "cifra": "266" },
+        { "id": "feijoo", "nombre": "Alberto Núñez Feijóo", "contexto": "PP", "valor": 228, "cifra": "228" }
+      ],
+      "explicacion": "El Diario anota 266 «(Risas)» durante las intervenciones de Pedro Sánchez y 228 durante las de Alberto Núñez Feijóo. Entre los dos suman más de una cuarta parte de todas las risas de la legislatura (1.764).",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "opciones",
+      "pregunta": "Hay quien prefiere escuchar. ¿Cuántos diputados pasaron toda la legislatura sin tomar la palabra ni una vez en los plenos?",
+      "opciones": { "a": "21", "b": "15", "c": "4", "d": "0" },
+      "orden": ["a", "b", "c", "d"],
+      "correcta": "c",
+      "explicacion": "Fueron cuatro, todos del PP. Si se cuentan también los que solo ocuparon el escaño una parte de la legislatura, la cifra sube a 21.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "opciones",
+      "pregunta": "Algunos plenos terminaron a deshoras. ¿A qué hora acabó el más tardío?",
+      "opciones": { "a": "23.25", "b": "22.55", "c": "22.11", "d": "21.35" },
+      "orden": ["a", "b", "c", "d"],
+      "correcta": "a",
+      "explicacion": "Fue el 19 de diciembre de 2023, a las 23.25. La segunda más tardía también cayó ese mes: el 12 de diciembre, a las 22.55.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "opciones",
+      "pregunta": "Cuando sus diputados toman la palabra, ¿qué grupo recibe más aplausos?",
+      "opciones": { "a": "PP", "b": "PSOE", "c": "Vox", "d": "Sumar" },
+      "correcta": "a",
+      "explicacion": "El Diario anota los aplausos durante cada intervención: con los oradores del PP salen 63,7 por cada 10.000 palabras, por delante del PSOE (55,6) y de Vox (54,1). En el otro extremo está Junts, con 0,7.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    },
+    {
+      "tipo": "opciones",
+      "pregunta": "A veces el hemiciclo enmudece por respeto. ¿Cuántos minutos de silencio se guardaron en la legislatura?",
+      "opciones": { "a": "112", "b": "66", "c": "31", "d": "12" },
+      "orden": ["a", "b", "c", "d"],
+      "correcta": "b",
+      "explicacion": "La Cámara se puso en pie 66 veces en 203 sesiones, casi una de cada tres. Uno de ellos, por la dana, abrió el 30 de octubre de 2024 la sesión más corta de la legislatura: 25 minutos.",
+      "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
+    }
+  ]
+}

@@ -48,7 +48,7 @@ export const ronda = ({ pregunta, unidad, lados, explicacion, fuente }, listo) =
   return {
     cuerpo: [
       el('p', { className: 'pregunta', textContent: pregunta }),
-      el('p', { className: 'etiqueta', textContent: unidad }),
+      ...(unidad ? [el('p', { className: 'etiqueta', textContent: unidad })] : []),
       el('div', { className: 'opciones dos duelo' }, ...fichas.map(f => f.boton)),
       pie,
     ],

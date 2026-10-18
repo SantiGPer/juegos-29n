@@ -203,10 +203,18 @@ stopifnot(lengths(fuera) == 1)
 coincidencias <- coincidencias[-unlist(fuera), ]
 
 # Fusión: misma intervención, a 150 caracteres o menos, sin nombrar a otra persona entre medias
-# y sin cambio de ordinal («primera» -> «segunda» son dos llamadas). Fusión a mano a más distancia:
-# XV, DS 43, pág. 32, la misma «primera vez» a Tellado repetida (decisión del autor, 18-10-2026).
+# y sin cambio de ordinal («primera» -> «segunda» son dos llamadas).
 # Las llamadas colectivas («les voy a llamar al orden», XII, DS 61) cuentan como acto
-a_mano <- tibble(legislatura = 15, diario = 43, pagina = "32")
+# Fusión a mano (decisión del autor, 19-10-2026): la misma persona llamada dos veces seguidas. En cada
+# una de estas páginas todos los actos son a esa persona y quedan en uno
+a_mano <- tribble(
+  ~legislatura, ~diario, ~pagina, ~persona,
+  15, 43, "32", "Tellado Filgueira",
+  15, 67, "41", "Tellado Filgueira",
+  15, 169, "30", "Tellado Filgueira",
+  15, 27, "18", "Sánchez García",
+  15, 126, "35", "Alfonso Silvestre"
+)
 otro_nombre <- \(hueco, destinatario) {
   apellido <- str_match(destinatario, nombrado)[, 2]
   nombres <- str_match_all(hueco, nombrado)[[1]][, 2]
@@ -214,13 +222,12 @@ otro_nombre <- \(hueco, destinatario) {
 }
 
 actos <- coincidencias |>
-  left_join(mutate(a_mano, fusion = TRUE), by = c("legislatura", "diario", "pagina")) |>
   group_by(id) |>
   arrange(start, .by_group = TRUE) |>
   mutate(
     hueco = limpio(str_sub(texto, lag(end, default = 0) + 1, start - 1)),
     ordinal_previo = lag(accumulate(ordinal, \(a, b) coalesce(b, a))),
-    nuevo = row_number() == 1 | (nchar(hueco) > 150 & is.na(fusion)) |
+    nuevo = row_number() == 1 | nchar(hueco) > 150 |
       map2_lgl(hueco, lag(destinatario), otro_nombre) |
       coalesce(ordinal != ordinal_previo, FALSE),
     acto = cumsum(nuevo)
@@ -240,6 +247,14 @@ actos <- coincidencias |>
   arrange(id, acto) |>
   select(-id, -acto)
 
+claves <- with(a_mano, str_c(as.character(as.roman(legislatura)), diario, pagina))
+actos <- actos |>
+  mutate(clave = str_c(legislatura, diario, pagina), grupo = if_else(clave %in% claves, clave, as.character(row_number()))) |>
+  summarise(across(-c(ordinal, coincidencias, fragmento, clave), first), ordinal = first(na.omit(ordinal)),
+            coincidencias = sum(coincidencias), fragmento = str_c(fragmento, collapse = " […] "), .by = grupo) |>
+  select(legislatura, diario, sesion, fecha, pagina, presidencia, cargo, destinatario, ordinal, coincidencias, fragmento)
+stopifnot(sum(str_c(actos$legislatura, actos$diario, actos$pagina) %in% claves) == nrow(a_mano))
+
 resumen <- intervenciones |>
   group_by(legislatura) |>
   summarise(diarios = n_distinct(diario), sesiones_plenarias = n_distinct(sesion)) |>
@@ -251,7 +266,7 @@ list(
   fuente = "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
   url = "https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/",
   consulta = as.character(Sys.Date()),
-  metodo = "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria, con la fórmula («le llamo al orden») o una perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Repeticiones a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal; a mano, también la repetición de la XV, DS 43, pág. 32 (ver `fusiones_a_mano`). Las llamadas colectivas («les voy a llamar al orden») cuentan. No cuentan avisos (tampoco los condicionales, descontados a mano: ver `descartes`), menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente. Solo legislaturas con investidura.",
+  metodo = "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria, con la fórmula («le llamo al orden») o una perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Repeticiones a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal; a mano, también las llamadas repetidas a la misma persona en la XV (DS 43, 67, 169, 27 y 126; ver `fusiones_a_mano`). Las llamadas colectivas («les voy a llamar al orden») cuentan. No cuentan avisos (tampoco los condicionales, descontados a mano: ver `descartes`), menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente. Solo legislaturas con investidura.",
   legislaturas = resumen,
   descartes = mutate(descartes, legislatura = as.character(as.roman(legislatura))),
   fusiones_a_mano = mutate(a_mano, legislatura = as.character(as.roman(legislatura))),

@@ -2,7 +2,7 @@
   "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno (PDF)",
   "url": "https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/",
   "consulta": "2026-10-18",
-  "metodo": "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria, con la fórmula («le llamo al orden») o una perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Repeticiones a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal; a mano, también la repetición de la XV, DS 43, pág. 32 (ver `fusiones_a_mano`). Las llamadas colectivas («les voy a llamar al orden») cuentan. No cuentan avisos (tampoco los condicionales, descontados a mano: ver `descartes`), menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente. Solo legislaturas con investidura.",
+  "metodo": "Acto de llamada al orden pronunciado por la Presidencia o una Vicepresidencia en sesión plenaria, con la fórmula («le llamo al orden») o una perífrasis con valor de llamada («le tengo que llamar al orden», «le voy a llamar al orden», «me obliga a llamarle al orden», «llamo al orden al señor…»). Repeticiones a 150 caracteres o menos dentro de la misma intervención se fusionan si entre ellas no se nombra a otra persona ni cambia el ordinal; a mano, también las llamadas repetidas a la misma persona en la XV (DS 43, 67, 169, 27 y 126; ver `fusiones_a_mano`). Las llamadas colectivas («les voy a llamar al orden») cuentan. No cuentan avisos (tampoco los condicionales, descontados a mano: ver `descartes`), menciones a llamadas previas, retiradas de expresiones ni sesiones de la Diputación Permanente. Solo legislaturas con investidura.",
   "legislaturas": [
     {
       "legislatura": "VIII",
@@ -38,7 +38,7 @@
       "legislatura": "XV",
       "diarios": 204,
       "sesiones_plenarias": 203,
-      "llamadas": 94
+      "llamadas": 90
     }
   ],
   "descartes": [
@@ -138,7 +138,32 @@
     {
       "legislatura": "XV",
       "diario": 43,
-      "pagina": "32"
+      "pagina": "32",
+      "persona": "Tellado Filgueira"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 67,
+      "pagina": "41",
+      "persona": "Tellado Filgueira"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 169,
+      "pagina": "30",
+      "persona": "Tellado Filgueira"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 27,
+      "pagina": "18",
+      "persona": "Sánchez García"
+    },
+    {
+      "legislatura": "XV",
+      "diario": 126,
+      "pagina": "35",
+      "persona": "Alfonso Silvestre"
     }
   ],
   "actos": [
@@ -2582,22 +2607,9 @@
       "presidencia": "Francina Armengol Socias",
       "cargo": "Presidencia",
       "destinatario": "Señor diputado",
-      "ordinal": null,
-      "coincidencias": 1,
-      "fragmento": "¡Señor diputado! ¡Señor diputado! Le llamo al orden, señor Sánchez. (Un señor diputado: ¡Sinvergüenza!—Una seño"
-    },
-    {
-      "legislatura": "XV",
-      "diario": 27,
-      "sesion": 25,
-      "fecha": "2024-02-28",
-      "pagina": 18,
-      "presidencia": "Francina Armengol Socias",
-      "cargo": "Presidencia",
-      "destinatario": "señora diputada",
       "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "¡Señor diputado! ¡Señor diputado! Le llamo al orden, señor Sánchez. (Un señor diputado: ¡Sinvergüenza!—Una señora diputada: ¡A tu casa!). Por primera vez le llamo al orden, señor Sánchez. (El señor Sánchez García: Contención, ningu"
+      "coincidencias": 2,
+      "fragmento": "¡Señor diputado! ¡Señor diputado! Le llamo al orden, señor Sánchez. (Un señor diputado: ¡Sinvergüenza!—Una seño […] ¡Señor diputado! ¡Señor diputado! Le llamo al orden, señor Sánchez. (Un señor diputado: ¡Sinvergüenza!—Una señora diputada: ¡A tu casa!). Por primera vez le llamo al orden, señor Sánchez. (El señor Sánchez García: Contención, ningu"
     },
     {
       "legislatura": "XV",
@@ -2649,7 +2661,7 @@
       "destinatario": "Señor Tellado",
       "ordinal": "primera",
       "coincidencias": 2,
-      "fragmento": "Un momento, señoría. Señor Tellado, le llamo al orden por primera vez. (El señor Tellado Filgueira: Es que se está pasando). Y le advierto que, según el artículo 104, si le tengo que llamar al orden tres veces le expulsaré del hemiciclo. (Rumores.―Aplausos). Así que le llamo al orden por primera vez. Continúe, señoría."
+      "fragmento": "Un momento, señoría. Señor Tellado, le llamo al orden por primera vez. (El señor Tellado Filgueira: Es que se est […] se está pasando). Y le advierto que, según el artículo 104, si le tengo que llamar al orden tres veces le expulsaré del hemiciclo. (Rumores.―Aplausos). Así que le llamo al orden por primera vez. Continúe, señoría."
     },
     {
       "legislatura": "XV",
@@ -2882,21 +2894,8 @@
       "cargo": "Vicepresidencia",
       "destinatario": "Señor Tellado",
       "ordinal": "primera",
-      "coincidencias": 2,
-      "fragmento": "Un momento, señoría. Señor Tellado, le llamo al orden por primera vez por llamar «la mafia» a esta Presidencia. No se lo voy a admitir. Le llamo al orden por primera vez. Si usted lo reitera, le tendré que volver"
-    },
-    {
-      "legislatura": "XV",
-      "diario": 67,
-      "sesion": 64,
-      "fecha": "2024-10-08",
-      "pagina": 41,
-      "presidencia": "Rodríguez Gómez de Celis",
-      "cargo": "Vicepresidencia",
-      "destinatario": null,
-      "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "abras que no se perciben). Señoría, no se puede permitir que usted utilice esos términos en esta sede. No es adecuado y así lo establece el Reglamento, así que le llamo por primera vez al orden. (El señor Tellado Filgueira hace gestos negativos con la c"
+      "coincidencias": 3,
+      "fragmento": "Un momento, señoría. Señor Tellado, le llamo al orden por primera vez por llamar «la mafia» a esta Presidencia. No se lo voy a admitir. Le llamo al orden por primera vez. Si usted lo reitera, le tendré que volver […] abras que no se perciben). Señoría, no se puede permitir que usted utilice esos términos en esta sede. No es adecuado y así lo establece el Reglamento, así que le llamo por primera vez al orden. (El señor Tellado Filgueira hace gestos negativos con la c"
     },
     {
       "legislatura": "XV",
@@ -3271,22 +3270,9 @@
       "presidencia": "Francina Armengol Socias",
       "cargo": "Presidencia",
       "destinatario": "Señora diputada",
-      "ordinal": null,
-      "coincidencias": 1,
-      "fragmento": "Señora diputada, la llamo al orden."
-    },
-    {
-      "legislatura": "XV",
-      "diario": 126,
-      "sesion": 122,
-      "fecha": "2025-06-24",
-      "pagina": 35,
-      "presidencia": "Francina Armengol Socias",
-      "cargo": "Presidencia",
-      "destinatario": "Señora Alfonso",
       "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "Que quede en el Diario de Sesiones. (La señora Alfonso Silvestre: Estáis pactando con ellos, pregúntales.—Rumores). Señora Alfonso Silvestre, la llamo al orden por primera vez. (Rumores.—Un señor diputado: ¡Qué poca ver"
+      "coincidencias": 2,
+      "fragmento": "Señora diputada, la llamo al orden. […] Que quede en el Diario de Sesiones. (La señora Alfonso Silvestre: Estáis pactando con ellos, pregúntales.—Rumores). Señora Alfonso Silvestre, la llamo al orden por primera vez. (Rumores.—Un señor diputado: ¡Qué poca ver"
     },
     {
       "legislatura": "XV",
@@ -3558,21 +3544,8 @@
       "cargo": "Presidencia",
       "destinatario": "Señor Tellado",
       "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": "Señor Tellado, le llamo al orden por primera vez. Esto no se puede consentir. (Aplausos.―Pro"
-    },
-    {
-      "legislatura": "XV",
-      "diario": 169,
-      "sesion": 163,
-      "fecha": "2026-02-25",
-      "pagina": 30,
-      "presidencia": "Francina Armengol Socias",
-      "cargo": "Presidencia",
-      "destinatario": "señor Tellado",
-      "ordinal": "primera",
-      "coincidencias": 1,
-      "fragmento": ".―Protestas.―El señor Tellado Filgueira: ¡No puede mentir! ¡Es falso!) No se puede gritar mientras la ministra está hablando. No se puede hacer, señor Tellado. Está llamado al orden por primera vez. Compórtese. (El señor López Álvarez y la s"
+      "coincidencias": 2,
+      "fragmento": "Señor Tellado, le llamo al orden por primera vez. Esto no se puede consentir. (Aplausos.―Pro […] .―Protestas.―El señor Tellado Filgueira: ¡No puede mentir! ¡Es falso!) No se puede gritar mientras la ministra está hablando. No se puede hacer, señor Tellado. Está llamado al orden por primera vez. Compórtese. (El señor López Álvarez y la s"
     },
     {
       "legislatura": "XV",

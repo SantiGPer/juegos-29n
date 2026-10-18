@@ -7839,11 +7839,11 @@
   "llamadas_por_grupo": [
     {
       "grupo": "PP",
-      "n": 71
+      "n": 68
     },
     {
       "grupo": "Vox",
-      "n": 20
+      "n": 19
     },
     {
       "grupo": "PSOE",
@@ -7862,7 +7862,7 @@
     {
       "nombre": "Tellado Filgueira, Miguel",
       "grupo": "PP",
-      "n": 20
+      "n": 18
     },
     {
       "nombre": "Hernando Fraile, Rafael Antonio",
@@ -7872,7 +7872,7 @@
     {
       "nombre": "Sánchez García, José María",
       "grupo": "Vox",
-      "n": 9
+      "n": 8
     },
     {
       "nombre": "Conde Bajén, Agustín",
@@ -7885,11 +7885,6 @@
       "n": 4
     },
     {
-      "nombre": "Alfonso Silvestre, Alma",
-      "grupo": "PP",
-      "n": 3
-    },
-    {
       "nombre": "Sayas López, Sergio",
       "grupo": "PP",
       "n": 3
@@ -7898,6 +7893,11 @@
       "nombre": "Vázquez Blanco, Ana Belén",
       "grupo": "PP",
       "n": 3
+    },
+    {
+      "nombre": "Alfonso Silvestre, Alma",
+      "grupo": "PP",
+      "n": 2
     },
     {
       "nombre": "Argüelles García, Silverio",
@@ -8034,12 +8034,12 @@
     {
       "grupo": "PP",
       "diputados": 23,
-      "llamadas": 70
+      "llamadas": 67
     },
     {
       "grupo": "Vox",
       "diputados": 9,
-      "llamadas": 20
+      "llamadas": 19
     },
     {
       "grupo": "PSOE",
@@ -8084,18 +8084,7 @@
       "nombre": "Sánchez García, José María",
       "grupo": "Vox",
       "revision": "manual",
-      "nota": "«El señor Sánchez García pronuncia palabras…»; «Le llamo al orden, señor Sánchez»"
-    },
-    {
-      "fecha": "2024-02-28",
-      "diario": "27",
-      "pagina": "18",
-      "presidencia": "Francina Armengol Socias",
-      "destinatario": "señora diputada",
-      "nombre": "Sánchez García, José María",
-      "grupo": "Vox",
-      "revision": "manual",
-      "nota": "«Por primera vez le llamo al orden, señor Sánchez»"
+      "nota": "«Le llamo al orden, señor Sánchez… Por primera vez le llamo al orden, señor Sánchez» (un acto, fusión del 19-10)"
     },
     {
       "fecha": "2024-02-29",
@@ -8338,17 +8327,6 @@
       "grupo": "PP",
       "revision": "automática",
       "nota": null
-    },
-    {
-      "fecha": "2024-10-08",
-      "diario": "67",
-      "pagina": "41",
-      "presidencia": "Rodríguez Gómez de Celis",
-      "destinatario": null,
-      "nombre": "Tellado Filgueira, Miguel",
-      "grupo": "PP",
-      "revision": "manual",
-      "nota": "«Señor Tellado, le llamo al orden por primera vez por llamar «la mafia»…»"
     },
     {
       "fecha": "2024-10-09",
@@ -8667,18 +8645,7 @@
       "nombre": "Alfonso Silvestre, Alma",
       "grupo": "PP",
       "revision": "manual",
-      "nota": "«La señora Alfonso Silvestre: Pregunta a tus socios» justo antes"
-    },
-    {
-      "fecha": "2025-06-24",
-      "diario": "126",
-      "pagina": "35",
-      "presidencia": "Francina Armengol Socias",
-      "destinatario": "Señora Alfonso",
-      "nombre": "Alfonso Silvestre, Alma",
-      "grupo": "PP",
-      "revision": "automática",
-      "nota": null
+      "nota": "«La señora Alfonso Silvestre: Pregunta a tus socios»; «Señora Alfonso Silvestre, la llamo al orden por primera vez» (un acto, fusión del 19-10)"
     },
     {
       "fecha": "2025-06-24",
@@ -8914,17 +8881,6 @@
     {
       "fecha": "2026-02-25",
       "diario": "169",
-      "pagina": "30",
-      "presidencia": "Francina Armengol Socias",
-      "destinatario": "señor Tellado",
-      "nombre": "Tellado Filgueira, Miguel",
-      "grupo": "PP",
-      "revision": "automática",
-      "nota": null
-    },
-    {
-      "fecha": "2026-02-25",
-      "diario": "169",
       "pagina": "35",
       "presidencia": "Rodríguez Gómez de Celis",
       "destinatario": "Señora Rodríguez",
@@ -9104,6 +9060,71 @@
     {
       "nombre": "Varela Pazos, Marta",
       "grupo": "PP"
+    }
+  ],
+  "cero_palabras": [
+    {
+      "nombre": "Aragonés Mendiguchía, Carlos"
+    },
+    {
+      "nombre": "Batet Lamaña, Meritxell"
+    },
+    {
+      "nombre": "Calvo Poyato, Carmen"
+    },
+    {
+      "nombre": "García Bernal, Begoña"
+    },
+    {
+      "nombre": "Gómez Hernández, Héctor"
+    },
+    {
+      "nombre": "Hernando Vera, Antonio"
+    },
+    {
+      "nombre": "Iceta i Llorens, Miquel"
+    },
+    {
+      "nombre": "Lastra Fernández, Adriana"
+    },
+    {
+      "nombre": "Llorens Carbonell, Teresa"
+    },
+    {
+      "nombre": "Marín González, Luis Alberto"
+    },
+    {
+      "nombre": "Miñones Conde, José"
+    },
+    {
+      "nombre": "Pastor Julián, Ana María"
+    },
+    {
+      "nombre": "Quintanilla Navarro, Miguel Ángel"
+    },
+    {
+      "nombre": "Rivera de la Cruz, Marta María"
+    },
+    {
+      "nombre": "Salazar Rodríguez, Francisco José"
+    },
+    {
+      "nombre": "Sumelzo Jordán, Susana"
+    },
+    {
+      "nombre": "Sánchez Jiménez, Raquel"
+    },
+    {
+      "nombre": "Sánchez Sierra, María del Mar"
+    },
+    {
+      "nombre": "Toscano de Balbín, Carla"
+    },
+    {
+      "nombre": "Varela Pazos, Marta"
+    },
+    {
+      "nombre": "Vázquez Vega, Pablo"
     }
   ],
   "cierres_mas_tardios": [

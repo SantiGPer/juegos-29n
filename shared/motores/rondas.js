@@ -108,7 +108,8 @@ const tipos = { opciones, ordenar, duelo, estimacion };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 
-const partida = ({ juego, dia, fuente, rondas, niveles }, contenedor) => {
+// nota: nota metodológica, bajo la puntuación del cierre
+const partida = ({ juego, dia, fuente, rondas, niveles, nota }, contenedor) => {
   const puntos = [];
   const cab = marcador(juego);
   const estados = () => rondas.map((_, i) => i < puntos.length ? estado(puntos[i]) : '');
@@ -123,6 +124,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles }, contenedor) => {
     cuadricula: puntos.map(p => p === 1 ? '🟨' : '⬜').join(''),
     fuente,
     pista: { estados: estados() },
+    detalle: nota ? [el('div', { className: 'explicacion' }, el('p', { className: 'etiqueta', textContent: 'Cómo se ha contado' }), el('p', { textContent: nota }))] : [],
   }, contenedor);
 
   const ronda = n => {

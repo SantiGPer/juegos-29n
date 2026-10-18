@@ -444,8 +444,7 @@ llamados <- fromJSON("data/llamadas_al_orden.json")$actos |>
 a_mano <- tribble(
   ~diario, ~pagina, ~ordinal, ~nombre_mano, ~grupo_mano, ~nota,
   24, 21, "", "De Andrés Guerra, Javier", "PP", "«(El señor De Andrés Guerra: ¡Dimisión!)» justo antes",
-  27, 18, "", "Sánchez García, José María", "Vox", "«El señor Sánchez García pronuncia palabras…»; «Le llamo al orden, señor Sánchez»",
-  27, 18, "primera", "Sánchez García, José María", "Vox", "«Por primera vez le llamo al orden, señor Sánchez»",
+  27, 18, "primera", "Sánchez García, José María", "Vox", "«Le llamo al orden, señor Sánchez… Por primera vez le llamo al orden, señor Sánchez» (un acto, fusión del 19-10)",
   41, 22, "primera", "Conde Bajén, Agustín", "PP", "«El señor Conde Bajén pronuncia palabras…» en la página anterior",
   43, 36, "primera", NA, "PP", "«Señor Conde»: Conde Bajén o Conde López, ambos del PP; el Diario no desempata",
   45, 16, "primera", "Mariscal Zabala, Manuel", "Vox", "«El señor Mariscal Zabala: ¡Traidor!…» justo antes",
@@ -454,13 +453,12 @@ a_mano <- tribble(
   65, 39, "primera", "Tellado Filgueira, Miguel", "PP", "«Señor Tellado… le llamo por primera vez al orden»",
   67, 29, "primera", "Sáez Alonso-Muñumer, Pablo", "Vox", "«El señor Sáez Alonso-Muñumer: ¡Es una vergüenza…!»",
   67, 29, "segunda", "Sáez Alonso-Muñumer, Pablo", "Vox", "Mismo diputado, segunda llamada",
-  67, 41, "primera", "Tellado Filgueira, Miguel", "PP", "«Señor Tellado, le llamo al orden por primera vez por llamar «la mafia»…»",
   81, 34, "primera", "Hernando Fraile, Rafael Antonio", "PP", "«El señor Hernando Fraile: ¡Pida perdón!»",
   92, 17, "primera", "Hoces Íñiguez, Ignacio", "Vox", "«El señor Hoces Íñiguez intercambia unas palabras con la Presidencia»",
   115, 34, "primera", "Tellado Filgueira, Miguel", "PP", "«Señor Tellado… Le llamo al orden por primera vez, señoría»",
   123, 7, "primera", "Tellado Filgueira, Miguel", "PP", "«le tengo que llamar al orden por primera vez, señor Tellado»",
   124, 9, "primera", "Sánchez García, José María", "Vox", "«el señor Sánchez García: ¡Sinvergüenza!» justo antes",
-  126, 35, "", "Alfonso Silvestre, Alma", "PP", "«La señora Alfonso Silvestre: Pregunta a tus socios» justo antes",
+  126, 35, "primera", "Alfonso Silvestre, Alma", "PP", "«La señora Alfonso Silvestre: Pregunta a tus socios»; «Señora Alfonso Silvestre, la llamo al orden por primera vez» (un acto, fusión del 19-10)",
   127, 13, "segunda", "Alfonso Silvestre, Alma", "PP", "«Señora Alfonso, vuelve a ser usted»",
   127, 49, "segunda", "De Rosa Torner, Fernando", "PP", "«Señor De Rosa Torner, le llamo al orden por primera vez… Señoría, … por segunda vez»",
   137, 90, "primera", "Sánchez García, José María", "Vox", "«Señor Sánchez»: probable Sánchez García; el Diario solo dice «un señor diputado»",
@@ -483,7 +481,7 @@ llamados <- fromJSON("data/llamadas_al_orden.json")$actos |>
   mutate(revision = if_else(pendiente, "manual", "automática"),
          grupo = coalesce(grupo, grupo_mano), nombre = coalesce(nombre, nombre_mano)) |>
   select(fecha, diario, pagina, presidencia, destinatario, nombre, grupo, revision, nota)
-stopifnot(nrow(llamados) == 94, sum(!is.na(llamados$nota)) == nrow(a_mano),
+stopifnot(nrow(llamados) == 90,sum(!is.na(llamados$nota)) == nrow(a_mano),
           all(na.omit(a_mano$nombre_mano) %in% periodos$nombre))
 
 # Mudos: diputados de toda la legislatura (de la sesión constitutiva a la disolución, sin bajas ni
@@ -499,6 +497,12 @@ mudos <- charlatan |>
   inner_join(toda, by = "nombre") |>
   filter(!map_lgl(clave(apellidos), \(a) any(str_detect(en_gobierno$k, fixed(a))))) |>
   select(nombre, grupo)
+# Lo mismo sin exigir toda la legislatura (sustitutos y bajas incluidos)
+callados <- charlatan |>
+  filter(palabras == 0, nombre != "Armengol Socias, Francina") |>
+  inner_join(distinct(periodos, nombre, apellidos), by = "nombre") |>
+  filter(!map_lgl(clave(apellidos), \(a) any(str_detect(en_gobierno$k, fixed(a))))) |>
+  select(nombre)
 
 list(
   fuente = "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura (PDF); diputados: data/diputados_xv.json",
@@ -522,6 +526,7 @@ list(
     summarise(diputados = n_distinct(nombre), llamadas = n(), .by = grupo) |> arrange(desc(diputados)),
   llamadas_destinatario = llamados,
   mudos = mudos,
+  cero_palabras = callados,
   cierres_mas_tardios = jornadas |> filter(!is.na(hora_cierre)) |> slice_max(hora_cierre, n = 5) |>
     select(numero, fecha, hora_cierre, cierre),
   control = list(

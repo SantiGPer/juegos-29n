@@ -2,6 +2,39 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-18 (9) — Plenopedia montada; fusión de llamadas repetidas; A2 con el hito del Constitucional corregido
+
+Encargo del 19-10 para Code, puntos 1 a 5.
+
+**Hecho**
+1. **Fusión de las llamadas repetidas** (DS 43, 67, 169, 27 y 126) en `R/05`, a mano y por página, después de construir los actos. En cada una de esas páginas todos los actos van a la misma persona.
+   - **XV = 90/203.** El resto de legislaturas no cambia (XIV, 49).
+   - Tellado 18, Hernando Fraile 11, Sánchez García 8 y Conde Bajén 6 (7 si el «señor Conde» del DS 43 es él).
+   - Por grupo: PP 68, Vox 19, PSOE 1, Sumar 1 y 1 sin identificar.
+   - `llamadas_al_orden.json` y `plenopedia_xv.json` regenerados; `SOURCES.md` al día.
+2. **Cifras con [VERIFICAR]:**
+   - Pregunta 4: 18 de 90. Coincide.
+   - Nombres de pila: José María Sánchez García y **Agustín** Conde Bajén. La opción queda en «Agustín Conde (PP)», como «Rafael Hernando».
+   - Pregunta 7: **no coincide.** Las 34 personas con cero palabras incluyen a 12 miembros del Gobierno que hablaron como Gobierno, no solo a Sánchez: Albares, Alegría, Grande-Marlaska, López, Montero, Morant, Planas, Ribera, Robles, Rodríguez, Tolón y Sánchez. Sin ellos ni Armengol quedan **21** (lista en `cero_palabras`). Ninguno de los 21 es de la Mesa elegida en el DS 1. El distractor «32» pasa a «21», y la explicación también.
+3. **Plenopedia en `juegos/a03-plenopedia/`**, con el encadenador. `data.json` copia literalmente el contenido.
+   - Portada, nota metodológica en el cierre («Cómo se ha contado»), fuente general y día 1.
+   - Pregunta 3: estimación de 6 a 16 h en pasos de 15 min, 1 punto a 30 min o menos y ½ hasta 1 h 30 min.
+   - Pregunta 5: ordenar, con ½ a partir de tres palabras en su sitio.
+   - Pregunta 6: duelo, sin muestras de color en ninguno de los dos lados mientras diseño decide la del Gobierno.
+   - Cifras y horas en orden fijo de mayor a menor; los nombres, barajados.
+   - Cambios en motores: `rondas.js` acepta `nota` y `duelo.js` omite la etiqueta de unidad si no la hay.
+   - Partida completa sin errores de JS ni scroll horizontal a 320, 375 y 1280 px. Capturas a 375 × 560 y 1280 revisadas contra la lista negra.
+4. **Crispómetro:** ya no estaba en el índice, que solo enlaza ElectoQuiz. Sigue en el repo y no hacía falta cambiar nada. Plenopedia tampoco está enlazada aún, porque el índice-selector no está montado.
+5. **A2:** `data.json` regenerado con la explicación y las fuentes nuevas del hito del Constitucional.
+
+**Falta**
+- Punto 6, pendiente del chat de diseño: muestra de color del Gobierno en el duelo y tirador del deslizador.
+
+**Dudas para el autor** (no he tocado los textos aprobados)
+- **Pregunta 4.** Dice «casi el doble que el segundo», pero con la fusión son 18 frente a 11 (×1,6).
+- **Pregunta 10.** Dice «casi una de cada tres», pero 66 de 203 sesiones son algo más de una de cada tres (32,5 %).
+- **Pregunta 7.** Confirmar que el 21 sustituye al 32 en el distractor y en la explicación.
+
 ## 2026-10-18 (8) — Motores de Plenopedia (encadenador, M2 y duelo) y cotejo de la amnistía en A2
 
 **Hecho**
