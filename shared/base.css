@@ -694,6 +694,118 @@ details[open] summary { margin-bottom: var(--s1); }
 .grupo .etiqueta, .grupo .fuente { color: inherit; }
 .grupo.g4:not(.perdido) { color: var(--papel); }
 
+/* M9 rosco (maqueta v7): circular sin teclado; tira de 14 + 13 con el campo enfocado. Sin barra fija. */
+.cuerpo.plegado { padding-top: var(--s3); }
+.plegado .cab { margin-bottom: var(--s3); }
+
+.rosco {
+  position: relative;
+  width: 252px;
+  height: 252px;
+  margin: 0 auto var(--s4);
+}
+
+.letra {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: var(--etiqueta);
+  font-weight: 800;
+  line-height: 1;
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+}
+
+.rosco .letra {
+  position: absolute;
+  margin: -12px 0 0 -12px;
+}
+
+.letra.acierto { background: var(--marcador); }
+.letra.fallo { background: var(--raya); }
+.letra.pasada { background: var(--senado); border-color: var(--senado); }
+.letra.actual { border-width: 3px; }
+
+.centro {
+  position: absolute;
+  inset: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.centro .grande {
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.centro .etiqueta { line-height: 1; }
+
+.tira {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 2px;
+  margin: 0 0 var(--s4);
+}
+
+.tira .letra {
+  width: auto;
+  height: 22px;
+  font-size: 0.6875rem;
+}
+
+.tira .letra.actual { border-width: 2px; }
+
+.definicion {
+  margin: 0 0 var(--s3);
+  font-size: 1.0625rem;
+  line-height: 1.35;
+}
+
+.definicion b { font-size: var(--pregunta); }
+
+.era {
+  margin: 0 0 var(--s2);
+  font-size: var(--etiqueta);
+}
+
+.era:empty { margin: 0; }
+.era b { padding: 0 0.2em; background: var(--raya); }
+
+.campo {
+  display: flex;
+  gap: var(--s2);
+}
+
+.campo input {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 var(--s3);
+  font: inherit;
+  color: var(--tinta);
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+  border-radius: 0;
+}
+
+.campo input:focus { outline: 3px solid var(--tinta); outline-offset: -3px; }
+
+.botones {
+  display: flex;
+  gap: var(--s2);
+  margin-top: var(--s2);
+}
+
+.botones button { flex: 1; min-height: 52px; }
+.plegado .botones button { min-height: 44px; }
+
 /* Cierre */
 .final {
   display: flex;

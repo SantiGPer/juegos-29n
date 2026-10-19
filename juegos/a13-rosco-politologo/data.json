@@ -1,0 +1,40 @@
+{
+  "juego": "Rosco del politólogo",
+  "fuente": "TODO",
+  "portada": {
+    "texto": "TODO",
+    "reglas": [
+      { "icono": "papeleta", "texto": "TODO" },
+      { "icono": "urna", "texto": "TODO" }
+    ]
+  },
+  "letras": [
+    { "letra": "A", "pista": "Empieza por la A, no participación en una votación de quien tiene derecho a hacerlo.", "respuesta": "Abstención", "variantes": [], "fuente": "DLE (RAE), «abstenerse»." },
+    { "letra": "B", "pista": "Empieza por la B, se dice del partido que, con pocos escaños, decide qué bloque suma la mayoría.", "respuesta": "Bisagra", "variantes": ["Partido bisagra"], "fuente": "DLE (RAE), s. v. «partido» (partido bisagra)." },
+    { "letra": "C", "pista": "Empieza por la C, línea de fractura social duradera que da forma al sistema de partidos.", "respuesta": "Clivaje", "variantes": [], "fuente": "Lipset y Rokkan (1967), Party Systems and Voter Alignments." },
+    { "letra": "D", "pista": "Empieza por la D, método de reparto de escaños por cocientes sucesivos que usa la LOREG y que lleva el apellido de un jurista belga.", "respuesta": "D'Hondt", "variantes": ["Dhondt", "D Hondt", "D'Hont"], "fuente": "LOREG, art. 163." },
+    { "letra": "E", "pista": "Empieza por la E, asiento de los parlamentarios en la Cámara.", "respuesta": "Escaño", "variantes": [], "fuente": "DLE (RAE), «escaño»." },
+    { "letra": "F", "pista": "Empieza por la F, grado de dispersión del voto o de los escaños entre muchos partidos.", "respuesta": "Fragmentación", "variantes": [], "fuente": "Rae (1967), The Political Consequences of Electoral Laws." },
+    { "letra": "G", "pista": "Empieza por la G, grupo parlamentario en el que acaban los diputados que no pueden formar uno propio ni se integran en otro.", "respuesta": "Grupo Mixto", "variantes": [], "fuente": "Reglamento del Congreso, art. 25." },
+    { "letra": "H", "pista": "Empieza por la H, apellido que da nombre a la cuota que divide los votos válidos entre los escaños en juego.", "respuesta": "Hare", "variantes": ["Cuota Hare"], "fuente": "Nohlen, Sistemas electorales y partidos políticos, 1.ª ed., UNAM-FCE, 1994, p. 70." },
+    { "letra": "I", "pista": "Empieza por la I, votación en la que el Congreso otorga su confianza al candidato a presidente del Gobierno.", "respuesta": "Investidura", "variantes": [], "fuente": "Constitución Española, art. 99." },
+    { "letra": "J", "pista": "Empieza por la J, órgano que vela por la transparencia y la objetividad del proceso electoral; hay una Central, provinciales y de zona.", "respuesta": "Junta Electoral", "variantes": ["Junta Electoral Central"], "fuente": "LOREG, art. 8." },
+    { "letra": "K", "pista": "Contiene la K, laboratorio de ideas que elabora análisis y propuestas para influir en las políticas públicas.", "respuesta": "Think tank", "variantes": ["Thinktank", "Think-tank"], "fuente": "Fundéu RAE, «laboratorio de ideas, mejor que think tank»." },
+    { "letra": "L", "pista": "Empieza por la L, siglas de la ley orgánica de 1985 que regula las elecciones en España.", "respuesta": "LOREG", "variantes": ["Ley Orgánica del Régimen Electoral General"], "fuente": "LO 5/1985, de 19 de junio (BOE)." },
+    { "letra": "M", "pista": "Empieza por la M, reunión pública en la que los candidatos se dirigen a sus votantes, sobre todo durante la campaña.", "respuesta": "Mitin", "variantes": [], "fuente": "DLE (RAE), «mitin»." },
+    { "letra": "N", "pista": "Empieza por la N, se dice del voto que no cuenta.", "respuesta": "Nulo", "variantes": ["Voto nulo"], "fuente": "LOREG, art. 96." },
+    { "letra": "Ñ", "pista": "Contiene la Ñ, tratamiento con el que la Presidencia y los oradores se dirigen a los diputados en el Congreso.", "respuesta": "Señoría", "variantes": [], "fuente": "DLE (RAE), «señoría»." },
+    { "letra": "O", "pista": "Empieza por la O, gobierno de unos pocos.", "respuesta": "Oligarquía", "variantes": [], "fuente": "Michels (1911), Los partidos políticos." },
+    { "letra": "P", "pista": "Empieza por la P, se dice de la circunscripción en la que se elige a más de un representante.", "respuesta": "Plurinominal", "variantes": [], "fuente": "LOREG, art. 162; Real Decreto 806/2026, anexo." },
+    { "letra": "Q", "pista": "Empieza por la Q, número mínimo de miembros presentes para que un órgano pueda adoptar acuerdos válidos.", "respuesta": "Quórum", "variantes": ["Quorum"], "fuente": "DLE (RAE), «cuórum»; Constitución Española, art. 79.1." },
+    { "letra": "R", "pista": "Empieza por la R, consulta en la que la ciudadanía vota directamente sobre una decisión.", "respuesta": "Referéndum", "variantes": ["Referendum"], "fuente": "Constitución Española, art. 92." },
+    { "letra": "S", "pista": "Empieza por la S, cámara de representación territorial, según la Constitución.", "respuesta": "Senado", "variantes": [], "fuente": "Constitución Española, art. 69.1." },
+    { "letra": "T", "pista": "Empieza por la T, cargo electo que abandona el partido por el que se presentó y conserva el acta.", "respuesta": "Tránsfuga", "variantes": [], "fuente": "DLE (RAE), «tránsfuga»." },
+    { "letra": "U", "pista": "Empieza por la U, caja en la que se depositan los votos.", "respuesta": "Urna", "variantes": [], "fuente": "DLE (RAE), «urna»." },
+    { "letra": "V", "pista": "Empieza por la V, cambio neto en el voto de los partidos entre dos elecciones.", "respuesta": "Volatilidad", "variantes": ["Volatilidad electoral"], "fuente": "Pedersen (1979), European Journal of Political Research." },
+    { "letra": "W", "pista": "Contiene la W, votante que cambia de partido de unas elecciones a otras.", "respuesta": "Swing voter", "variantes": ["Swing-voter"], "fuente": "Cambridge Dictionary, «swing voter»." },
+    { "letra": "X", "pista": "Contiene la X, se dice del partido que no tiene representación en el Parlamento.", "respuesta": "Extraparlamentario", "variantes": [], "fuente": "DLE (RAE), «extraparlamentario»." },
+    { "letra": "Y", "pista": "Contiene la Y, en el Congreso, la absoluta son 176 escaños.", "respuesta": "Mayoría", "variantes": ["Mayoría absoluta"], "fuente": "Constitución Española, art. 99.3; LOREG, art. 162.1." },
+    { "letra": "Z", "pista": "Empieza por la Z, palacio en el que el Rey recibe a los representantes de los grupos en la ronda de consultas, antes de proponer un candidato a la investidura.", "respuesta": "Zarzuela", "variantes": ["Palacio de la Zarzuela"], "fuente": "Constitución Española, art. 99.1; Casa de S. M. el Rey." }
+  ]
+}

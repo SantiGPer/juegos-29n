@@ -2,6 +2,32 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-19 — Motor M9 y A13 Rosco del politólogo
+
+Plan confirmado por el autor. Antes, commit aparte con los cambios de Cowork que estaban sin versionar (`0bdf99f`).
+
+**Hecho**
+- **`shared/motores/rosco.js` (M9)**, según A13.0–A13.6 y la maqueta v7:
+  - Sin el campo enfocado, rosco circular de 252 px con la letra actual y los aciertos en el centro. Con el campo enfocado, tira de 14 + 13 y aciertos en la cabecera.
+  - Sin barra fija: «Responder» junto al campo y «Pasar» debajo; «Terminar» aparece cuando solo quedan pasadas, que cuentan como no respondidas.
+  - Los botones no le quitan el foco al campo, así que el teclado no se cierra al responder ni al pasar. Tras un fallo, «Era: …» y avance a la letra siguiente.
+  - Comprobación sin mayúsculas ni tildes, con las variantes del contenido. El apóstrofo tipográfico del teclado del móvil (’) cuenta como recto, para que «D’Hondt» valga.
+  - Cierre con `cierre.js` sin cambios: rosco final en `detalle` (acierto en marcador, fallo en raya, sin responder en senado). Al tocar una letra salen su pista, su respuesta y su fuente. Recibo de 27 casillas en tres filas de 9 (🟨 acierto, ⬜ el resto).
+- **`base.css`:** bloque nuevo del rosco (letras, centro, tira, definición, «Era», campo y botones). No cambia nada de lo que ya había.
+- **A13** en `juegos/a13-rosco-politologo/`, con un `data.json` que copia literal el contenido, incluidas B («partido bisagra») y H (pista sin «abogado inglés»). No está enlazado en el índice, como el resto.
+- **Pruebas:** partida completa a 320, 375 y 1280 px sin errores de JS ni scroll horizontal. Prueba el plegado con el foco, el foco que no se pierde tras responder, las variantes, el apóstrofo tipográfico, «Terminar», el recibo y la ficha de letra del cierre. Capturas a 375 × 560 (portada, rosco, plegado, fallo, solo pasadas y cierre), 320 y 1280, revisadas contra la lista negra.
+
+**Falta**
+- Texto de portada, reglas y fuente general de A13: el contenido no tiene sección «Portada». Van en `TODO` visible.
+
+**Dudas para el autor**
+- **Rosco del cierre bajo la nota.** A13.6 lo pone encima de la nota «N de 27», pero `cierre.js` coloca el `detalle` debajo. Para ponerlo encima hay que añadir un hueco en `cierre.js`; es un cambio de una línea.
+- **Letra actual pasada.** Siguiendo la maqueta, una letra pasada lleva el borde en senado, así que la actual con borde de 3 px apenas se distingue en la segunda vuelta (la letra grande del centro sí la indica). ¿Se pone el borde de la actual en tinta?
+
+**Para Cowork**
+- `editorial/contenido/a12-presidentle.md` todavía dice «Zapatero» en pantalla, pero la decisión de nombre y apellido (bitácora 18-10 (11)) ya se aplicó a `presidentes.json`. Además, esa decisión no está todavía en `decisiones.md`.
+- Portada de A13: texto, reglas (con icono; si «Pasar» necesita el suyo, la maqueta v7 tiene uno) y fuente general.
+
 ## 2026-10-18 (11) — Nombre y apellido en todas las referencias a personas
 
 Decisión del autor en sesión (18-10), para que Cowork la pase a `decisiones.md`: toda referencia a una persona lleva nombre y apellido, no solo el apellido. Sustituye a la etiqueta corta «Zapatero» de A12 decidida el 18-10. Los apodos de leyes de A10 («Wert», «Zerolo») se quedan como están, porque ahí nombran una ley y no a una persona.
