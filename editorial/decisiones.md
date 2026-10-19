@@ -372,3 +372,113 @@ Decisiones del autor tomadas el 18-10 en una sesión con Code (bitácora 18-10 (
   - **Grupos:** palabras por escaño, es decir, las palabras del grupo divididas entre su número de diputados. Como dato de apoyo para la explicación, el cociente entre el porcentaje de palabras y el porcentaje de escaños; si es mayor que 1, el grupo habla más de lo que le corresponde por tamaño.
   - **Cambios de grupo:** las palabras cuentan para el grupo en el que estaba el diputado ese día (por ejemplo, Podemos al Mixto en diciembre de 2023).
   - **Grupo Mixto:** se cuenta como grupo, que es la unidad oficial, con el desglose por partido al lado (BNG, CC, UPN, Podemos…).
+
+Decisiones del autor del 18-10 en sesión con Code (bitácora 18-10 (6)), pasadas aquí el 19-10:
+- Llamadas al orden: solo se fusiona a mano el DS 43 de la XV, y la regla general por ordinal no se aplica. **XV = 94/203.** El resto de legislaturas no cambia (XIV, 49/262). Sustituye a la regla general anotada antes el 19-10.
+- Plenopedia no compara legislaturas: todo va sobre la XV.
+- La Mesa queda fuera del Charlatán y de los grupos. Feijóo como candidato cuenta para el PP y Sánchez como candidato, para el Gobierno.
+- Aplausos: se cuenta que hay aplauso durante la intervención de cada grupo, no quién aplaude. La pregunta 8 del catálogo sale.
+- Los cuatro oradores que no son diputados de la XV (probablemente promotores de iniciativas legislativas populares) se quedan en «Otros».
+- Plenopedia, selección del autor (19-10). Diez preguntas, con planteamiento y mecánica pendientes de su visto bueno:
+  1. Charlatán.
+  2. Los mudos (diputados que nunca hablaron en el Pleno).
+  3. Diputado con más llamadas al orden.
+  4. Grupo con más llamadas al orden.
+  5. Rumores.
+  6. Duración, como estimación en horas.
+  7. La sesión que acabó más tarde.
+  8. Léxico, ordenar términos.
+  9. Aplausos.
+  10. Risas.
+
+## 2026-10-18 (diseño, distribución de opciones)
+
+Revisión de Presidentle y Agrupar 16 jugados en el repositorio. Referencia: docs/maquetas/maqueta-opciones-v8.html.
+
+- Diseño, cabecera compacta común (todos los juegos con pista):
+  - Primera línea: nombre del juego (1 rem, 800).
+  - Segunda línea: pista a la izquierda y puntos a la derecha («Puntos» en etiqueta y cifras de casillas a escala 3).
+  - Los puntos ya no ocupan una fila propia. En A10, en lugar de puntos van los corazones de vida, en la misma línea que el nombre.
+- Diseño, A12 Presidentle:
+  - Opciones en dos filas que ocupan todo el ancho, en orden cronológico: cuatro arriba (Suárez, Calvo-Sotelo, González, Aznar) y tres abajo (Zapatero, Rajoy, Sánchez). Rejilla de 12 columnas: span 3 en la primera fila y span 4 en la segunda, con 8 px de separación.
+  - Casillas de 56 px de alto como mínimo, texto centrado a 0,875 rem en 800, sin partir palabras («Calvo-Sotelo» solo parte por el guion).
+  - Seleccionada invertida; fallada tachada, en lápiz y con borde raya.
+  - La etiqueta de opción de Rodríguez Zapatero pasa a «Zapatero» (`opcion` en data/presidentes.json). El nombre completo se mantiene en `nombre` y en el cierre.
+  - Pistas: la nueva en 1,125 rem y 800; las anteriores en 1 rem, 400 y lápiz.
+- Diseño, A10 Agrupar 16:
+  - Fichas cuadradas (`aspect-ratio: 1`, como máximo 96 px), 6 px de separación, texto centrado a 0,875 rem en 800 y sin partir palabras.
+  - En 375 px salen de unos 81 px y la rejilla llena el centro de la pantalla.
+  - Cada grupo resuelto ocupa exactamente la altura de una fila de fichas (nombre en 800 e ítems en una línea, sobre su color), así que la rejilla no salta.
+  - El aviso («No es un grupo.», «Ya lo has probado.») va bajo la rejilla con su altura de una línea reservada aunque esté vacío.
+  - En escritorio la rejilla no supera los 38 em de la columna.
+- Plenopedia, planteamiento aprobado de las diez preguntas, con la mecánica de cada una:
+  1. Charlatán: opción múltiple.
+  2. Mudos: opción múltiple con cifras, de mayor a menor.
+  3. Diputado con más llamadas al orden: opción múltiple.
+  4. Grupos por diputados llamados al orden: ordenar.
+  5. Rumores por cada 10.000 palabras: opción múltiple.
+  6. Sesión más larga: estimación en horas.
+  7. Hora de cierre más tardía: opción múltiple con horas en orden.
+  8. Léxico: ordenar España, vivienda, Cataluña, corrupción y ETA.
+  9. Aplausos por cada 10.000 palabras: opción múltiple.
+  10. Risas: duelo entre Sánchez y Feijóo.
+- Plenopedia, pregunta 6: se estima la duración de la sesión más larga de la legislatura (DS 135, 10-09-2025, 12 h 21 min), no el total de horas de Pleno.
+- Plenopedia, pregunta 2 (mudos): solo cuentan los diputados que estuvieron toda la legislatura, desde la sesión constitutiva hasta la disolución, sin bajas ni sustituciones.
+- Plenopedia, nota metodológica: explicará que las llamadas al orden las impone la Presidencia y que todos los grupos se miden con el mismo método. El texto lo escribe Cowork.
+- Encargos para Code (Plenopedia), en este orden:
+  1. **Datos:**
+     - revisar a mano las 29 llamadas al orden sin destinatario automático y recalcular el diputado y el grupo más llamados;
+     - número de mudos que estuvieron toda la legislatura, con la lista;
+     - para los distractores, los datos de los cuatro primeros de cada pregunta: palabras de Rego, Sagastizabal, Feijóo y Rufián; llamadas de los cuatro diputados más llamados; rumores y aplausos de Gobierno, PSOE, PP, Vox y Sumar; las cinco horas de cierre más tardías; los totales de los cinco términos;
+     - revisar a mano los minutos de silencio de los DS 91 y 147.
+     
+     El resultado va en editorial/fuentes/a03-plenopedia-viabilidad.md y en la bitácora. Con eso, Cowork redacta el contenido.
+  2. **Motores, en paralelo:**
+     - encadenador de rondas para un juego con mecánicas mezcladas: una sola puntuación, una sola pista de partida y un solo cierre;
+     - motor M2 de estimación (deslizador y error respecto al dato), adelantado del 9-N porque Plenopedia sale el 13-N;
+     - duelo de dos opciones.
+  3. **Montar Plenopedia** en juegos/a03-plenopedia/ cuando llegue el contenido. El Crispómetro queda en el repo pero sale del índice.
+- Plenopedia: la pregunta de grupos llamados al orden (empate entre PSOE y Sumar) se sustituye por los minutos de silencio (66), en opciones con cifras de mayor a menor.
+- Llamadas al orden: se fusionan todos los casos en los que la misma persona recibe dos veces la fórmula en la misma intervención. Son el DS 43, el DS 67 y el DS 169 (Tellado), el DS 27 (Sánchez García) y el DS 126 (Alfonso Silvestre). La XV queda previsiblemente en 90/203 y Tellado en 18. Sustituye a la fusión solo del DS 43.
+- Plenopedia, estimación: 1 punto con un error de 30 minutos o menos y ½ hasta 1 h 30 min. Deslizador de 6 a 16 horas, en pasos de 15 minutos.
+- Plenopedia: se mantienen las preguntas en las que la respuesta es el PP (mudos, más llamado, aplausos). La nota metodológica explica el método común y que las llamadas las impone la Presidencia.
+- A2: en el hito del aval del Constitucional se añade que no se pronunció sobre la malversación. Fuentes: nota informativa 61/2025 del Tribunal Constitucional y BOE-A-2025-15939.
+- Plenopedia, contenido redactado por Cowork en editorial/contenido/a03-plenopedia.md, pendiente de visto bueno del autor.
+- Plenopedia: las preguntas usan el tono de las portadas (desafío, metáforas, nada literal) y no definen el indicador; la definición va en la explicación. Se evita «el Pleno» en singular cuando se habla de toda la legislatura: «los plenos» o «el hemiciclo».
+- Plenopedia, tono corregido: preguntas naturales, con algún guiño ligero y sin sátira ni teatralidad. Las preguntas 2, 4 y 10 quedan como modelo.
+- Plenopedia: textos aprobados por el autor el 19-10 (portada, diez preguntas, explicaciones y nota metodológica) en editorial/contenido/a03-plenopedia.md.
+- **Encargo para Code (Plenopedia), en este orden:**
+  1. Aplicar la fusión de todas las llamadas repetidas a la misma persona en la misma intervención: DS 43, 67, 169, 27 y 126. Confirmar el total de la XV y las llamadas de Tellado, Hernando Fraile, Sánchez García y Conde Bajén.
+  2. Confirmar las cifras marcadas con [VERIFICAR] en el contenido:
+     - total de llamadas y de Tellado (pregunta 4);
+     - diputados con cero palabras contando los que no estuvieron toda la legislatura, sin Armengol ni Sánchez (pregunta 7, calculado en 32);
+     - nombres de pila de Sánchez García y Conde Bajén.
+     
+     Si alguna cifra no coincide, se usa la de los datos y se anota en la bitácora. Las opciones se ajustan si es necesario: por ejemplo, en la pregunta 7 el distractor «32» pasa a la cifra real.
+  3. Montar Plenopedia en juegos/a03-plenopedia/ con el encadenador de rondas, a partir del contenido. Portada, nota metodológica al final y fuente general.
+     - Pregunta 3: la estimación con los tramos y el deslizador aprobados.
+     - Pregunta 5: ordenar, con ½ si hay al menos tres palabras en su posición exacta.
+     - Pregunta 6: el duelo.
+  4. Sacar el Crispómetro del índice, aunque se queda en el repo.
+  5. A2: regenerar el data.json con la explicación y las fuentes nuevas del hito del Constitucional.
+  6. Pendiente del chat de diseño, sin bloquear el montaje: la muestra de color del Gobierno en el duelo y el tirador del deslizador.
+
+## 2026-10-18 (diseño, Plenopedia: deslizador y duelo)
+
+Pendientes de diseño de la bitácora de Code (entrada 2026-10-18 (9), punto 6). Referencia: docs/maquetas/maqueta-deslizador-duelo-v9.html.
+
+- Diseño, M2 deslizador de píxel:
+  - Tirador cuadrado de 28 × 28 px en tinta, sin radio ni sombra (`appearance: none` y estilo propio de thumb en WebKit y Firefox), sobre una línea de 2 px en tinta.
+  - Una marca de 1 × 8 px por cada hora bajo la línea. En el eje, etiquetas solo en los extremos y en el punto medio («6 h», «11 h», «16 h»).
+  - Zona táctil de 44 px de alto. El foco visible va solo en el tirador (contorno de 3 px a 3 px), no en todo el control.
+  - Botones «−» y «+» cuadrados de 44 px a los lados de la cifra, con el borde de las opciones. Mueven un paso, llevan `aria-label` («Quitar 30 minutos», «Añadir 30 minutos») y no van en la barra.
+  - Antes del primer movimiento, la cifra es «?» y el tirador está en el centro; «Responder» sigue apagado hasta que se mueve el tirador o se pulsa − o +.
+  - Al responder, el deslizador y los botones se apagan (tinta → raya) y aparece la regla de trama, sólido y hueco ya aprobada.
+- Plenopedia, pregunta 3 (decisión del autor):
+  - Paso del deslizador de 30 minutos, en lugar de 15.
+  - Tramos: 1 punto si el error es menor de 30 min (las dos posiciones que rodean el dato de 12 h 21 min: 12 h y 12 h 30 min); ½ punto si el error es de 1 h o menos (11 h 30 min o 13 h, a media hora de las anteriores); 0 en otro caso.
+  - Sustituye a los tramos de ±30 min y ±1 h 30 min. Contenido actualizado en editorial/contenido/a03-plenopedia.md.
+- Diseño, Gobierno como categoría: token nuevo `--gobierno: var(--tinta)` en `:root`. No es color de partido. Se usa en el duelo y en cualquier gráfico o ranking donde el Gobierno aparezca como categoría.
+- Diseño, duelo: muestra de color de 12 px con borde de 1 px tinta junto a la afiliación de cada lado, no junto al nombre («Gobierno» con `--gobierno`, «PP» con `--pp`). En la ficha perdedora, la muestra va al 50 % de opacidad. En Plenopedia, pregunta 6, `color` de Sánchez = `--gobierno` y de Feijóo = `--pp`.
+- Diseño, corrección del «+N» de los puntos: en la cabecera compacta, «Puntos» va a la izquierda de las cifras y el «+N» sale justo encima de las cifras, alineado a la derecha, y sube 6 px antes de apagarse. Nunca se superpone a la etiqueta. Vale para todos los juegos con puntos.
+- Encargo para Code: aplicar estos cinco puntos en `shared/motores/estimacion.js`, `shared/motores/duelo.js`, `shared/base.css` y `juegos/a03-plenopedia/data.json`. Partida completa a 320, 375 y 1280 px; capturas revisadas contra la lista negra, commit y entrada en la bitácora.

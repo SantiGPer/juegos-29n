@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distribución de opciones v8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --senado:#dcc7a1; --senal:#ff5f1f; --fuente: Archivo, system-ui, sans-serif; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; }
+.notas li { margin-bottom:.3rem; }
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; gap:var(--s3); }
+.btn { font:inherit; font-weight:800; min-height:52px; padding:0 var(--s4); border:1px solid var(--tinta); background:var(--papel); color:var(--tinta); border-radius:0; }
+.btn.ancho { flex:1; }
+.btn.off { color:var(--lapiz); border-color:var(--raya); }
+.btn.sec { font-weight:400; }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s4); }
+
+/* Cabecera compacta común */
+.cab { display:grid; grid-template-columns:1fr auto; align-items:end; row-gap:var(--s2); column-gap:var(--s3); margin-bottom:var(--s4); }
+.cab .nombre { font-size:1rem; font-weight:800; grid-column:1 / -1; }
+.pista { display:flex; gap:3px; padding-bottom:9px; position:relative; }
+.celda { width:22px; height:22px; border:1px solid var(--tinta); }
+.celda.actual { border-width:3px; }
+.cursor { position:absolute; bottom:0; left:6px; }
+.puntos { display:flex; align-items:center; gap:var(--s2); padding-bottom:9px; }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+/* Presidentle */
+.pistas { margin:0 0 var(--s4); padding:0; list-style:none; }
+.pistas li { font-size:1.125rem; font-weight:800; line-height:1.3; }
+.pistas li.vieja { font-weight:400; color:var(--lapiz); font-size:1rem; margin-bottom:var(--s1); }
+.pres { display:grid; grid-template-columns:repeat(12, 1fr); gap:var(--s2); }
+.pres button { grid-column:span 3; min-height:56px; font:inherit; font-size:.875rem; font-weight:800; line-height:1.15; border:1px solid var(--tinta); background:var(--papel); padding:2px; overflow-wrap:normal; }
+.pres button:nth-child(n+5) { grid-column:span 4; }
+.pres button.sel { background:var(--tinta); color:var(--papel); }
+.pres button.ko { text-decoration:line-through; color:var(--lapiz); border-color:var(--raya); }
+.pres .num { display:block; font-weight:400; font-size:.75rem; color:var(--lapiz); }
+.pres button.sel .num { color:var(--raya); }
+
+/* Agrupar */
+.vidas { display:flex; gap:5px; align-items:center; }
+.rej { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+.rej span { aspect-ratio:1; max-height:96px; border:1px solid var(--tinta); display:grid; place-items:center; text-align:center; font-size:.875rem; font-weight:800; line-height:1.15; padding:2px; overflow-wrap:normal; hyphens:manual; }
+.rej span.sel { background:var(--tinta); color:var(--papel); }
+.grupo { grid-column:1 / -1; display:flex; flex-direction:column; justify-content:center; padding:var(--s2) var(--s3); min-height:calc((100% - 18px) / 4); }
+.grupo b { font-size:.9375rem; }
+.grupo span { all:unset; font-size:.875rem; }
+.aviso { font-size:.875rem; min-height:1.3em; margin:var(--s3) 0 0; color:var(--lapiz); }
+
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Distribución de las opciones</h1>
+<p class="intro">Revisión de Presidentle y Agrupar 16 sobre lo que hay ahora en el repositorio. Marcos de 375 × 560. ElectoQuiz y Cronología no se tocan.</p>
+
+<h2 class="sec">0. Cabecera compacta (común)</h2>
+<p class="porque">Ahora los puntos ocupan su propia fila a la derecha del título y la pista baja a otra: se gastan unos 40 px antes de llegar al juego. La propuesta: nombre del juego en una línea y, debajo, pista a la izquierda y puntos a la derecha, en la misma fila. Lo ganado va a las opciones.</p>
+
+<h2 class="sec">1. Presidentle: 4 + 3</h2>
+<p class="porque">Con siete opciones, dos columnas siempre dejan una huérfana, y «Rodríguez Zapatero» rompe la altura de su fila. Propongo dos filas que ocupan todo el ancho: cuatro arriba y tres abajo, más anchas. En orden cronológico, se lee como una línea del tiempo de izquierda a derecha y ninguna opción queda destacada. Con «Zapatero», el apellido corto que ya usa Agrupar 16, todas las casillas miden lo mismo.</p>
+<div class="fila">
+<div><h3 class="sec">Pista 3 de 5, con dos fallos</h3><div class="f" id="pres"></div></div>
+<div><h3 class="sec">Alternativa descartada: 2 columnas</h3><div class="f" id="pres2"></div>
+<ul class="notas"><li>Huérfana abajo y, si se estira a todo el ancho, destaca a Sánchez: no es neutral.</li><li>Las dos filas de la propuesta caben en 128 px; las cuatro de esta, en 256.</li></ul></div>
+</div>
+<ul class="notas" style="max-width:46em">
+  <li>Casillas de 56 px de alto como mínimo y texto a 0,875 rem en negrita, sin partir palabras: «Calvo-Sotelo» solo parte por el guion.</li>
+  <li>Sin números ni años en las casillas: el año es la pista 5.</li>
+  <li>Fallada: tachada y apagada, como ahora. Seleccionada: invertida.</li>
+  <li>Pistas: la nueva en negrita a 1,125 rem y las anteriores en gris a 1 rem, más compactas.</li>
+</ul>
+
+<h2 class="sec">2. Agrupar 16: casillas cuadradas</h2>
+<p class="porque">La rejilla actual son 16 rectángulos bajos y apretados arriba, con la mitad de la pantalla vacía. Propongo casillas cuadradas (81 px en un móvil de 375; con tope de 96 px en escritorio) y texto en negrita, como fichas de un tablero. La rejilla pasa a ocupar el centro de la pantalla. Cada grupo resuelto ocupa exactamente una fila de la rejilla, así que el tablero no salta.</p>
+<div class="fila">
+<div><h3 class="sec">Inicio, dos marcados</h3><div class="f" id="agr1"></div></div>
+<div><h3 class="sec">Un grupo resuelto</h3><div class="f" id="agr2"></div></div>
+</div>
+<ul class="notas" style="max-width:46em">
+  <li>El grupo resuelto mide lo mismo que la fila que sustituye: nombre en negrita e ítems en una línea, sobre el color del grupo.</li>
+  <li>Un aviso de una línea bajo la rejilla, con su altura reservada, para que «No es un grupo.» no empuje nada.</li>
+  <li>En escritorio la rejilla no pasa de los 38 em de la columna: casillas de 96 px, centradas.</li>
+</ul>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>0</td><td>Cabecera compacta común: nombre en una línea; pista y puntos en la misma fila.</td></tr>
+<tr><td>1</td><td>Presidentle: 4 + 3 a todo el ancho, en orden cronológico, con «Zapatero» en lugar de «Rodríguez Zapatero».</td></tr>
+<tr><td>2</td><td>Agrupar 16: casillas cuadradas en negrita (máximo 96 px), grupo resuelto de la altura de una fila y aviso con altura reservada.</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","3":"11110000010000101110000010000111110","5":"11111100001111000001000011000101110","8":"01110100011000101110100011000101110","?":"01110100010000100010001000000000100",",":"00000000000000000000001100010001000"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "#000") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+const G = {
+  aspa: [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."],
+  cursor: ["..X..",".XXX.","XXXXX"],
+  lleno: [".XX...XX.","XXXX.XXXX","XXXXXXXXX","XXXXXXXXX",".XXXXXXX.","..XXXXX..","...XXX...","....X...."],
+  vacio: [".XX...XX.","X..X.X..X","X...X...X","X.......X",".X.....X.","..X...X..","...X.X...","....X...."]
+};
+const cab = (nombre, est, act, pts, extra = "") => `<div class="cab"><span class="nombre">${nombre}</span>
+  <div class="pista">${est.map((e, i) => `<span class="celda${i === act ? " actual" : ""}" style="${e === "x" ? "background:var(--raya)" : ""};display:grid;place-items:center">${e === "x" ? svg(G.aspa, 2) : ""}</span>`).join("")}<span class="cursor" style="left:${act * 25 + 6}px">${svg(G.cursor, 2)}</span></div>
+  ${extra || `<div class="puntos"><span class="et">Puntos</span>${px(pts, 3)}</div>`}</div>`;
+
+/* Presidentle */
+const P = ["Suárez", "Calvo-Sotelo", "González", "Aznar", "Zapatero", "Rajoy", "Sánchez"];
+const fallos = ["Suárez", "Aznar"];
+document.getElementById("pres").innerHTML = `<div class="cuerpo">${cab("Presidentle", ["x", "x", "", "", ""], 2, "03")}
+  <ul class="pistas"><li class="vieja">Tenía 56 años al tomar posesión por primera vez.</li><li class="vieja">Estuvo 6 años y 5 meses en el cargo.</li><li>Licenciado en Derecho por la Universidad de Santiago; registrador de la propiedad.</li></ul>
+  <div class="pres">${P.map(n => `<button class="${fallos.includes(n) ? "ko" : n === "Rajoy" ? "sel" : ""}">${n}</button>`).join("")}</div>
+  </div><div class="barra"><button class="btn ancho">Responder</button></div>`;
+document.getElementById("pres2").innerHTML = `<div class="cuerpo">${cab("Presidentle", ["x", "x", "", "", ""], 2, "03")}
+  <ul class="pistas"><li class="vieja">Tenía 56 años al tomar posesión por primera vez.</li><li class="vieja">Estuvo 6 años y 5 meses en el cargo.</li><li>Licenciado en Derecho por la Universidad de Santiago; registrador de la propiedad.</li></ul>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">${["Suárez","Calvo-Sotelo","González","Aznar","Rodríguez Zapatero","Rajoy","Sánchez"].map(n => `<button class="btn" style="font-weight:400;text-align:left">${n}</button>`).join("")}</div>
+  </div><div class="barra"><button class="btn ancho">Responder</button></div>`;
+
+/* Agrupar */
+const vidas = n => `<div class="vidas">${[0,1,2,3].map(i => svg(i < n ? G.lleno : G.vacio, 3, i < n ? "#000" : "#bdbdbd")).join("")}<span class="et" style="margin-left:6px">${n} vidas</span></div>`;
+const T = ["Pastor","Armengol","Cascos","Montilla","Aguirre","Mordaza","Posada","Calvo-Sotelo","Rajoy","Wert","Feijóo","Zapatero","Solo sí es sí","Zerolo","Bono","Illa"];
+const cabA = n => `<div class="cab" style="grid-template-columns:1fr auto;align-items:center"><span class="nombre" style="grid-column:auto">Agrupar 16</span>${vidas(n)}</div>`;
+document.getElementById("agr1").innerHTML = `<div class="cuerpo">${cabA(4)}<div class="rej">${T.map(t => `<span class="${["Wert","Mordaza"].includes(t) ? "sel" : ""}">${t}</span>`).join("")}</div><p class="aviso"></p></div>
+  <div class="barra"><button class="btn sec">Barajar</button><button class="btn ancho off">Marca 4 (2 de 4)</button></div>`;
+const R = ["Aguirre","Cascos","Montilla","Calvo-Sotelo","Rajoy","Feijóo","Zapatero","Bono","Illa","Wert","Zerolo","Solo sí es sí"];
+document.getElementById("agr2").innerHTML = `<div class="cuerpo">${cabA(3)}<div class="rej" id="rej2">
+  <div class="grupo" style="background:var(--marcador);aspect-ratio:auto"><b>Presidieron el Congreso</b><span>Armengol, Pastor, Posada, Bono</span></div>
+  ${R.filter(t => t !== "Bono").concat(["Mordaza"]).map(t => `<span>${t}</span>`).join("")}</div><p class="aviso">No es un grupo.</p></div>
+  <div class="barra"><button class="btn sec">Barajar</button><button class="btn ancho off">Marca 4 (0 de 4)</button></div>`;
+const fila = document.querySelector("#rej2 > span").getBoundingClientRect().height;
+document.querySelector("#rej2 .grupo").style.minHeight = fila + "px";
+
+</script>
+</body>
+</html>

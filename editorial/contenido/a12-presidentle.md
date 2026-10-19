@@ -3,7 +3,7 @@
 Estado: **cerrado** (2026-10-15). Listo para que Code lo pase a `data/presidentes.json`.
 
 - Motor: M1, variante pistas progresivas
-- Opciones fijas, siempre visibles y en este orden: Suárez, Calvo-Sotelo, González, Aznar, Rodríguez Zapatero, Rajoy, Sánchez
+- Opciones fijas, siempre visibles y en este orden: Suárez, Calvo-Sotelo, González, Aznar, Zapatero, Rajoy, Sánchez (en pantalla, «Zapatero»; decisión de diseño del 18-10-2026)
 - Una ronda por partida, con presidente aleatorio
 - Puntos: 5 si acierta con la pista 1, 4 con la 2, 3 con la 3, 2 con la 4 y 1 con la 5; 0 si se agotan
 - Datos: van a `data/presidentes.json`, con entrada en `data/SOURCES.md` (decisión del 15-10). Verificación de cada dato en `editorial/fuentes/a12-presidentes.md`

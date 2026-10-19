@@ -38,8 +38,8 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ### El Constitucional avala la amnistía
 - **Fecha:** 26-06-2025
-- **Explicación:** El pleno declaró constitucional la ley en lo esencial, con votos particulares en contra. Había pasado algo más de un año desde su aprobación en el Congreso.
-- **Fuente:** RTVC, 26-06-2025; Diario Constitucional, 27-06-2025.
+- **Explicación:** El pleno declaró constitucional la ley en lo esencial, con votos particulares en contra. No se pronunció entonces sobre la malversación.
+- **Fuente:** Tribunal Constitucional, nota informativa 61/2025; BOE-A-2025-15939 (STC 137/2025).
 
 ### El Congreso tumba el decreto antidesahucios
 - **Fecha:** 26-02-2026

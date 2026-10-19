@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deslizador y duelo v9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --pp:#1E4B8F; --fuente: Archivo, system-ui, sans-serif; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; }
+.notas li { margin-bottom:.3rem; }
+.f { width:100%; max-width:375px; border:1px solid var(--raya); padding:var(--s4); font-size:1.125rem; }
+.et { font-size:.875rem; color:var(--lapiz); }
+.preg { font-size:1.375rem; font-weight:800; line-height:1.2; margin:0 0 var(--s4); }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+/* Deslizador */
+.valor { display:grid; grid-template-columns:44px 1fr 44px; align-items:center; gap:var(--s3); margin:0 0 var(--s3); }
+.valor button { width:44px; height:44px; border:1px solid var(--tinta); background:var(--papel); font:inherit; font-size:1.375rem; font-weight:800; line-height:1; padding:0; }
+.valor .cifra { display:flex; align-items:end; justify-content:center; gap:6px; font-weight:800; }
+input[type=range].pixel { -webkit-appearance:none; appearance:none; width:100%; height:44px; margin:0; background:transparent; cursor:pointer; }
+input[type=range].pixel:focus { outline:none; }
+input[type=range].pixel::-webkit-slider-runnable-track { height:2px; background:var(--tinta); }
+input[type=range].pixel::-moz-range-track { height:2px; background:var(--tinta); }
+input[type=range].pixel::-webkit-slider-thumb { -webkit-appearance:none; width:28px; height:28px; margin-top:-13px; background:var(--tinta); border:0; border-radius:0; }
+input[type=range].pixel::-moz-range-thumb { width:28px; height:28px; background:var(--tinta); border:0; border-radius:0; }
+input[type=range].pixel:focus-visible::-webkit-slider-thumb { outline:3px solid var(--tinta); outline-offset:3px; }
+input[type=range].pixel:focus-visible::-moz-range-thumb { outline:3px solid var(--tinta); outline-offset:3px; }
+.marcas { position:relative; height:8px; margin:-14px 14px 0; pointer-events:none; }
+.marcas i { position:absolute; top:0; width:1px; height:8px; background:var(--tinta); }
+.eje { display:flex; justify-content:space-between; font-size:.75rem; color:var(--lapiz); margin:var(--s2) 0 0; }
+
+/* Duelo */
+.duelo { display:grid; grid-template-columns:1fr 1fr; gap:var(--s2); }
+.lado { border:1px solid var(--tinta); padding:var(--s3); display:flex; flex-direction:column; gap:var(--s1); min-height:132px; background:var(--papel); text-align:left; font:inherit; }
+.lado b { font-size:1.125rem; line-height:1.2; }
+.lado.ok { background:var(--marcador); }
+.lado.ko { color:var(--lapiz); border-color:var(--raya); }
+.lado .ctx { display:flex; align-items:center; gap:6px; font-size:.875rem; }
+.chip { width:12px; height:12px; border:1px solid var(--tinta); display:inline-block; flex:none; }
+.mas { position:relative; }
+.fix { display:flex; justify-content:space-between; align-items:end; }
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Deslizador y duelo</h1>
+<p class="intro">Dos pendientes de diseño de la bitácora de Code (Plenopedia): el tirador del deslizador y la muestra de color del Gobierno en el duelo. Hay además un error visual del «+1» que conviene corregir de paso. El deslizador de esta página funciona.</p>
+
+<h2 class="sec">1. Deslizador de píxel (M2)</h2>
+<p class="porque">El tirador nativo es redondo y cambia de un navegador a otro. Propongo un tirador cuadrado de 28 px en tinta, como un bloque de píxel, sobre una línea de 2 px con una marca por hora. La zona táctil sigue siendo de 44 px. Con un paso de 15 minutos en 343 px, cada paso son unos 8 px, difícil de afinar con el dedo: por eso añado − y + a los lados de la cifra, que mueven un paso.</p>
+<div class="fila">
+<div><h3 class="sec">Pregunta 3, eligiendo</h3>
+<div class="f">
+  <p class="preg">Hay jornadas que no se acaban nunca. ¿Cuánto duró el pleno más largo de la legislatura?</p>
+  <div class="valor"><button aria-label="Quitar 15 minutos" id="menos">−</button><div class="cifra" id="cifra"></div><button aria-label="Añadir 15 minutos" id="mas">+</button></div>
+  <input type="range" class="pixel" id="rango" min="6" max="16" step="0.25" value="11" aria-label="Duración del pleno">
+  <div class="marcas" id="marcas"></div>
+  <div class="eje"><span>6 h</span><span>11 h</span><span>16 h</span></div>
+</div></div>
+<ul class="notas" style="align-self:center">
+  <li>Tirador: cuadrado de 28 px en tinta, sin radio ni sombra. Con el foco, contorno de 3 px a 3 px de distancia, solo en el tirador (ahora el contorno rodea todo el control).</li>
+  <li>Línea de 2 px en tinta, con marcas de 1 × 8 px en cada hora; en el eje, solo los extremos y el punto medio.</li>
+  <li>− y + en botones cuadrados de 44 px, con el mismo borde que las opciones. Mueven un paso (15 min) y no van en la barra.</li>
+  <li>Antes de tocar nada, la cifra muestra «?» y el tirador está en el centro; «Responder» está apagado hasta el primer movimiento, como ahora.</li>
+  <li>Al responder, el deslizador y los botones se apagan (tinta → raya) y aparece la regla de trama, sólido y hueco ya aprobada.</li>
+</ul>
+</div>
+
+<h2 class="sec">2. Muestra del Gobierno en el duelo</h2>
+<p class="porque">El Gobierno no es un partido, así que no puede llevar el color de ninguno; y si Sánchez lleva el rojo del PSOE, se contradice la regla de que cuenta como Gobierno. La propuesta es un token propio, <code>--gobierno</code> = tinta: negro, institucional, de nadie, y distinguible de todos los colores de partido. Sirve para el duelo y para cualquier gráfico o ranking futuro donde el Gobierno aparezca como categoría.</p>
+<div class="fila">
+<div><h3 class="sec">A · Con muestras (recomendada)</h3>
+<div class="f">
+  <p class="preg">En política también hay espacio para la comedia: ¿quién hizo reír más veces a la Cámara?</p>
+  <div class="duelo">
+    <button class="lado"><b>Pedro Sánchez</b><span class="ctx"><i class="chip" style="background:var(--tinta)"></i>Gobierno</span><span style="margin-top:auto" id="q1"></span></button>
+    <button class="lado"><b>Alberto Núñez Feijóo</b><span class="ctx"><i class="chip" style="background:var(--pp)"></i>PP</span><span style="margin-top:auto" id="q2"></span></button>
+  </div>
+</div></div>
+<div><h3 class="sec">A · Resuelto</h3>
+<div class="f">
+  <p class="preg">En política también hay espacio para la comedia: ¿quién hizo reír más veces a la Cámara?</p>
+  <div class="duelo">
+    <button class="lado ok"><b>Pedro Sánchez</b><span class="ctx"><i class="chip" style="background:var(--tinta)"></i>Gobierno</span><span style="margin-top:auto" id="r1"></span></button>
+    <button class="lado ko"><b>Alberto Núñez Feijóo</b><span class="ctx"><i class="chip" style="background:var(--pp);opacity:.5"></i>PP</span><span style="margin-top:auto" id="r2"></span></button>
+  </div>
+</div></div>
+</div>
+<ul class="notas" style="max-width:46em">
+  <li>La muestra va junto a la afiliación, no junto al nombre: el color acompaña a «Gobierno» o «PP», que es lo que codifica.</li>
+  <li>En la ficha ganadora (fondo marcador) las muestras siguen con su borde de 1 px tinta; en la perdedora, al 50 %.</li>
+  <li>B, la alternativa, es quitar las muestras de los dos lados y dejar solo el texto, como ahora. Es neutral, pero pierde la coherencia con A12 y deja el token del Gobierno sin definir para el futuro.</li>
+</ul>
+
+<h2 class="sec">3. Corrección: el «+1» pisa la etiqueta</h2>
+<p class="porque">En Plenopedia (y en cualquier juego con medios puntos), el «+0,5» aparece encima de la palabra «Puntos» y se superpone. Con la cabecera compacta aprobada (puntos a la derecha de la pista, en la misma fila), el «+N» debe salir a la izquierda de las cifras, a su misma altura, y subir 6 px antes de apagarse, sin tocar la etiqueta.</p>
+<div class="fila"><div class="f"><div class="fix"><span class="et">… pista …</span><span style="display:flex;align-items:center;gap:8px"><span class="et">Puntos</span><span style="color:var(--tinta)" id="mas1"></span><span id="pts"></span></span></div></div></div>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>Deslizador de píxel: tirador cuadrado de 28 px en tinta, línea de 2 px con marcas por hora, foco solo en el tirador y botones − y + de un paso.</td></tr>
+<tr><td>2</td><td>Token <code>--gobierno</code> = tinta. En el duelo, muestra junto a la afiliación de los dos lados (A).</td></tr>
+<tr><td>3</td><td>«+N» a la izquierda de las cifras de los puntos, sin pisar la etiqueta.</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100","?":"01110100010000100010001000000000100",",":"00000000000000000000001100010001000","+":"00000001000010011111001000010000000"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const r = document.getElementById("rango"), c = document.getElementById("cifra");
+let tocado = false;
+const pinta = () => {
+  if (!tocado) { c.innerHTML = px("?", 4); return; }
+  const m = Math.round(r.value * 60), h = Math.floor(m / 60), mi = m % 60;
+  c.innerHTML = `${px(String(h), 4)}<span>h</span>${mi ? `${px(String(mi), 4)}<span>min</span>` : ""}`;
+};
+r.oninput = () => { tocado = true; pinta(); };
+document.getElementById("menos").onclick = () => { tocado = true; r.stepDown(); pinta(); };
+document.getElementById("mas").onclick = () => { tocado = true; r.stepUp(); pinta(); };
+pinta();
+document.getElementById("marcas").innerHTML = Array.from({length: 11}, (_, i) => `<i style="left:${i * 10}%"></i>`).join("");
+document.getElementById("q1").innerHTML = px("?", 3);
+document.getElementById("q2").innerHTML = px("?", 3);
+document.getElementById("r1").innerHTML = px("266", 3);
+document.getElementById("r2").innerHTML = `<span style="color:#575757">${px("228", 3)}</span>`;
+document.getElementById("mas1").innerHTML = px("+0,5", 2);
+document.getElementById("pts").innerHTML = px("01,5", 3);
+</script>
+</body>
+</html>
