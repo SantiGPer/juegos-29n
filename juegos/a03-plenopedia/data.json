@@ -13,7 +13,7 @@
   "rondas": [
     {
       "tipo": "opciones",
-      "pregunta": "De todos los diputados, ¿quién tuvo más cosas que decir en los plenos de la legislatura?",
+      "pregunta": "¿Qué diputado habló más en los plenos de la legislatura?",
       "opciones": { "a": "Néstor Rego (BNG)", "b": "Idoia Sagastizabal (PNV)", "c": "Alberto Núñez Feijóo (PP)", "d": "Gabriel Rufián (ERC)" },
       "correcta": "a",
       "explicacion": "Néstor Rego, único diputado del BNG, pronunció 203.982 palabras, casi 60.000 más que la segunda, Idoia Sagastizabal (PNV). En los grupos pequeños el turno se reparte entre muy pocos diputados, y eso dispara la cuenta de cada uno.",
@@ -21,7 +21,7 @@
     },
     {
       "tipo": "opciones",
-      "pregunta": "Cuando toma la palabra, ¿a quién se le revuelve más la bancada?",
+      "pregunta": "Cuando toma la palabra, ¿quién levanta más murmullos en el hemiciclo?",
       "opciones": { "a": "Gobierno", "b": "PSOE", "c": "PP", "d": "Vox" },
       "correcta": "a",
       "explicacion": "El Diario de Sesiones anota «(Rumores)» cada vez que el hemiciclo murmulla: durante las intervenciones del Gobierno salen 13,2 por cada 10.000 palabras, más que con cualquier grupo. Le siguen el PSOE (8,4) y el PP (7,3).",
@@ -46,7 +46,7 @@
       "pregunta": "En el Congreso no hay tarjetas amarillas, pero casi. ¿Qué diputado se llevó más llamadas al orden?",
       "opciones": { "a": "Miguel Tellado (PP)", "b": "Rafael Hernando (PP)", "c": "José María Sánchez García (Vox)", "d": "Agustín Conde (PP)" },
       "correcta": "a",
-      "explicacion": "Miguel Tellado acumuló 18 de las 90 llamadas al orden de la legislatura, casi el doble que el segundo. Las llamadas las impone la Presidencia cuando un diputado interrumpe o no respeta el turno.",
+      "explicacion": "Miguel Tellado acumuló 18 de las 90 llamadas al orden de la legislatura, siete más que el segundo, Rafael Hernando. Las llamadas las impone la Presidencia cuando un diputado interrumpe o no respeta el turno.",
       "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
     },
     {
@@ -106,7 +106,7 @@
       "opciones": { "a": "112", "b": "66", "c": "31", "d": "12" },
       "orden": ["a", "b", "c", "d"],
       "correcta": "b",
-      "explicacion": "La Cámara se puso en pie 66 veces en 203 sesiones, casi una de cada tres. Uno de ellos, por la dana, abrió el 30 de octubre de 2024 la sesión más corta de la legislatura: 25 minutos.",
+      "explicacion": "La Cámara se puso en pie 66 veces en 203 sesiones, algo más de una de cada tres. Uno de ellos, por la dana, abrió el 30 de octubre de 2024 la sesión más corta de la legislatura: 25 minutos.",
       "fuente": "Diario de Sesiones del Congreso de los Diputados, Pleno, XV legislatura. Elaboración propia."
     }
   ]

@@ -9,6 +9,8 @@ const matrices = {
   candado: ['...XXXX...', '..X....X..', '..X....X..', '..X....X..', '.XXXXXXXX.', '.X......X.', '.X..XX..X.', '.X..XX..X.', '.X......X.', '.XXXXXXXX.'],
   tic: ['.......', '......X', '.....X.', 'X...X..', '.X.X...', '..X....', '.......'],
   aspa: ['.......', '.X...X.', '..X.X..', '...X...', '..X.X..', '.X...X.', '.......'],
+  // «Pasar» en las reglas de A13 (maqueta v7)
+  pasar: ['..........', '...X......', '...XX.....', 'XXXXXX....', 'XXXXXXX...', 'XXXXXX....', '...XX.....', '...X......', '..........', '..........'],
   subir: ['..X..', '.XXX.', 'XXXXX'],
   bajar: ['XXXXX', '.XXX.', '..X..'],
   // Días de debate en el selector (maqueta v3): contorno en tinta y relleno «o» en señal
