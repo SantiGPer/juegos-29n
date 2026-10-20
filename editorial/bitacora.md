@@ -2,6 +2,55 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 (6) — Encargos del 20-10: diseño en base.css, datos de A7, A5 y A8, viabilidad de A6
+
+Orden confirmado por el autor en sesión: commit de Cowork (`6ada063`), diseño, datos de A7 y A5, viabilidad de A6 y datos de A8. No se monta ningún juego.
+
+**Hecho**
+1. **Diseño en `shared/`** (`39b1310`):
+   - **Cabecera con pistas largas.** Con más de seis rondas, `marcador()` pone la clase `larga`: celdas de 18 px con 2 px de separación, tic y aspa a escala 1,6 y puntos a escala 2. El cursor se centra en la celda, sea cual sea su tamaño.
+   - **Fichas:** `--ficha: clamp(13px, 3.75vw, 0.875rem)` con `hyphens: auto` en las fichas de A10 y A12.
+   - **Índice:** la rejilla de días mide como máximo 26 rem.
+   - Capturas con emulación de viewport (Chrome por CDP; Playwright no está instalado) de ElectoQuiz a 320 y 375, Cronología a 375, Presidentle a 320, Agrupar 16 a 320 y el índice a 1280, sin errores ni scroll horizontal. Revisadas contra la lista negra.
+2. **A7 y A5, datos** (`36ef5a3`). Lector común `R/infoelectoral.R` para los ficheros de Interior.
+   - **`R/01_resultados_2023_prov.R` → `data/resultados_2023_prov.json`.** Por provincia trae:
+     - censo y votantes con y sin CERA, blancos, nulos y válidos;
+     - votos y escaños de cada candidatura, con su cabecera nacional, y el partido más votado;
+     - escaños de 2023 (RD 400/2023) y de 2026 (RD 806/2026), del anexo del BOE. Cambian Madrid (37 → 38) y Cádiz (9 → 8);
+     - población oficial del INE a 1-1-2023 y a 1-1-2025, que es la revisión más reciente;
+     - nacidos en el extranjero del Padrón Continuo a 1-1-2023 (tabla 68526), con su propio total como denominador.
+     
+     Comprobado: las provincias suman el total nacional de Interior, y 206 cifras de votos y escaños casan con la resolución de la JEC (BOE-A-2023-18907) sin discrepancias.
+   - **`R/09_escanos_generales.R` → `data/escanos_generales.json`:** escaños y votos por candidatura en 1982, 2000, 2015 y 2023, con «Otros» para las de menos de cinco escaños. Cada año suma 350.
+3. **A8, datos** (`7bc835e`). `R/06_cis_postelectoral.R` → `data/cis_postelectoral_2023.json`, con el detalle en `editorial/fuentes/a08-cis.md`.
+   - Estudio CIS 3420 (barómetro de septiembre de 2023, postelectoral). Ponderación `PESO`; tramos de edad del propio CIS (siete) y siete de hábitat.
+   - Cada celda trae el porcentaje, la n sin ponderar y el intervalo al 95 % con n efectiva de Kish. Ninguna base baja de n = 100.
+   - Comprobado: con `PESO`, el microdato reproduce décima a décima los marginales publicados.
+4. **A6, viabilidad**, en `editorial/fuentes/a06-viabilidad.md` (resumen abajo).
+
+**A6, resumen**
+- **1 y 2. Leyes y decretos-ley:** viables de VIII a XV con el buscador del BOE diario. Las cifras de la XV coinciden con los datos abiertos del Congreso. La API de legislación consolidada no sirve, porque se deja fuera los decretos-ley derogados. Leyes por año, de VIII a XV: 41,8, 38,1, 41,4, 13,8, 31,9 y 10,8. Decretos-ley: del 23,7 % de la VIII al 64,2 % de la XV.
+- **3 y 4. Proposiciones de ley por grupo:** viables en la XV con los datos abiertos, normalizadas por el tamaño medio del grupo. Sumar presentó 66 y no aprobó ninguna; el PSOE, 40 y 9 aprobadas. El estado «Aprobado» no está cruzado ley a ley con el BOE (falta una).
+- **5. Preguntas al presidente:** viables de VIII a XV con los sumarios del Diario de Sesiones (caché de `R/05`), porque el buscador del Congreso no dice a quién va cada pregunta. De VIII a XV: 283, 207, 205, 130, 198 y 149. Falta validar a mano una muestra, sobre todo las 34 sesiones de la VIII con más de tres preguntas.
+- **6. Comparecencias de ministros:** viables de VIII a XV con el buscador de iniciativas del Congreso (tipos 210, 213 y 214). Miden solicitudes atendidas, no sesiones.
+
+**Falta**
+- Montar A7 (contenido de Cowork) y A5 (umbrales de puntuación y colores históricos).
+- Montar A6, cuando el autor elija rango y métricas.
+
+**Dudas para el autor**
+- **A8, recuerdo frente a resultado real.** Sobre la misma base, el CIS da a Sumar 5,9 puntos más que el resultado real y al PSOE 2,4 más; a Vox, 3,5 menos y al PP, 4,8 menos. Si el jugador estima contra el CIS, compite contra lo que declaran los encuestados. ¿Se explica en una nota o se cambia el planteamiento (por ejemplo, la estructura por segmento en lugar del nivel)?
+- **A8, base.** El encargo excluye el blanco. El voto válido oficial lo incluye. En la comparación real van las dos (con blanco y sin blanco); para comparar con la encuesta, la buena es la de sin blanco.
+- **A7, Vox en Santa Cruz de Tenerife.** Vox no presentó lista al Congreso en esa provincia en 2023 (renuncias de última hora; RTVC, 2023). En el mapa de voto a Vox sale con 0 %, y el contenido tendría que explicarlo.
+- **A7, nacidos en el extranjero.** El Padrón Continuo agrupa «nacidos en el extranjero o en antiguos territorios españoles», y su total no coincide con la cifra oficial de población (387.529 frente a 387.174 en Albacete). Uso su propio total como denominador.
+- **A7, población más reciente.** Es la de 1-1-2025: la revisión del padrón a 1-1-2026 no está publicada todavía.
+- **A5, nombres de la época.** Interior los da en mayúsculas y abreviados («PSOE-PROGR.», «PODEMOS-COM», «C's»). El nombre que se enseñe tiene que llegar en el contenido.
+- **A5, 2015.** En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de Podemos. Con la regla de cinco escaños, las tres tienen fila propia (12, 9 y 6 escaños). Hace falta un color para cada una, o decidir si se agrupan con Podemos.
+- **A6, métrica 2.** ¿Los reales decretos legislativos entran en el «total de normas con rango de ley»? Cambian poco la cifra (van las dos versiones).
+- **A6, métrica 6.** ¿Pleno, Comisión o las dos? En la XV hay muchas más en el Pleno (81) y menos en comisión que en las anteriores.
+- **CLAUDE.md.** El esquema de `R/` no recoge `R/09_escanos_generales.R` ni `R/infoelectoral.R`.
+- **Diseño (para el chat de diseño), Cronología.** Con 12 celdas en tres tramos, a 375 px falta 1 px para que los puntos quepan en la fila: los puntos bajan a la segunda línea. La decisión no fija la separación entre tramos (11 px). Si fuese de 10 px, cabría.
+
 ## 2026-10-20 (5) — Crispómetro eliminado
 
 Decisión del autor en sesión (20-10), para que Cowork la pase a `decisiones.md`: el Crispómetro sale del repo porque lo sustituye Plenopedia.
