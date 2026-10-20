@@ -46,6 +46,14 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS.
 - Siglas y denominación tal como las publica Interior, en mayúsculas. Las candidaturas con menos de cinco escaños se agrupan en `otros`, con su lista. Cada año suma 350.
 
+## `cis_postelectoral_2023.json`
+
+- Script: `R/06_cis_postelectoral.R`. Juego: A8. Detalle en `editorial/fuentes/a08-cis.md`.
+- Fuente: CIS, estudio 3420, «Barómetro de septiembre 2023. Postelectoral elecciones generales 2023» (CATI, 1 al 12-09-2023). Microdato: https://www.cis.es/documents/d/cis/MD3420 (zip con `3420.sav`, cuestionario, libro de códigos y ficha técnica), descargado el 20-10-2026. El zip no se versiona (caché de R).
+- Base: voto válido declarado en `RECUVOTOG1` (partidos y «Otro partido»), sin abstención, blanco, nulo, «No recuerda» ni N.C. Ponderación `PESO`. Tramos de edad de los marginales del propio CIS (pregunta 0b); hábitat en los siete tramos de `TAMUNI`.
+- Comprobado al generar: con `PESO`, la edad, el sexo y el recuerdo de voto reproducen décima a décima los marginales publicados del estudio (avance de resultados, https://cis.es/documents/d/cis/es3420marMT_a).
+- La comparación con el resultado real sale de `resultados_2023_prov.json`.
+
 ## `llamadas_al_orden.json`
 
 - Script: `R/05_llamadas_al_orden.R`. Legislaturas con investidura de la VIII a la XV: VIII, IX, X, XII, XIV y XV (decisión del 18-10-2026; la XI y la XIII quedan fuera).
