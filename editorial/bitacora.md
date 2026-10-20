@@ -2,6 +2,30 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 (4) — A4, pregunta 9: ley contra el proxenetismo
+
+Encargo del 20-10 (A4, pregunta 9). Antes, commit aparte con los cambios de Cowork (`76956ee`). Detalle y citas en `editorial/fuentes/a04-promesas.md`, apartado 5.
+
+**Hecho**
+1. **Programa del PSOE de 2023: sí recoge la promesa.** Está en la pág. 153 impresa (bloque IV, «Abolir la prostitución y erradicar la trata de seres humanos»): «Aboliremos la prostitución. Desarrollaremos una ley para prohibir el proxenetismo en todas sus formas, que incluya el castigo de la tercería locativa y la sanción a los proxenetas.»
+   - psoe.es sigue bloqueado. La copia leída es la captura de Wayback del 09-07-2023 (PDF creado el 06-07-2023), con su hash anotado.
+   - Las copias del PSC y de ASPACE que salen en las búsquedas no sirven: son el programa de PSOE Cantabria y un resumen de lectura fácil de 2019.
+2. **Votación del 21-05-2024** (DS núm. 40 y votación nominal de los datos abiertos del Congreso): 342 votos emitidos, 122 a favor, 184 en contra y 36 abstenciones.
+   - En contra: PP 135, Sumar 25, ERC 7, Junts 7, EH Bildu 6 y PNV 4.
+   - Abstención: Vox 32 y Podemos 4 (en el Mixto).
+   - A favor: PSOE 118, más CC, UPN, BNG y José Luis Ábalos (Mixto).
+   - La lista de grupos en contra del contenido es correcta.
+3. **`data.json` de A4 regenerado.** Pregunta 9 nueva y [VERIFICAR] cambiados por el dato. Pregunta 10 con el origen y la fuente del contenido. Fuente general del contenido, en lugar del `TODO`. El resto coincide literalmente con el contenido (cotejo automático campo a campo). Partida completa a 320 y 375 px sin errores ni scroll horizontal; captura de la pregunta 9 revisada.
+
+**Para Cowork** (el contenido va por detrás del `data.json` en la pregunta 9):
+- Origen: «Programa del PSOE 2023».
+- Explicación: «El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con 184 votos en contra (PP, Sumar, ERC, Junts, PNV y EH Bildu), 122 a favor y 36 abstenciones. Su propio socio de Gobierno votó en contra.» He metido el recuento con el mismo formato que la pregunta 5.
+- Fuente: «Programa del PSOE 2023, pág. 153; Diario de Sesiones del Congreso, 21-05-2024; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024». He añadido el Diario de Sesiones porque de ahí sale el recuento.
+
+**Dudas para el autor**
+- **Fuente general de A4.** Cita «Acuerdo PSOE-Sumar (24-10-2023), acuerdos de investidura, BOE…», pero no el programa del PSOE de 2023, que ahora es el origen de la pregunta 9. ¿Se añade?
+- **Vox se abstuvo.** La explicación no lo dice, porque nombra solo a quienes votaron en contra. Lo dejo por si interesa para el texto del post.
+
 ## 2026-10-20 (3) — Ordenar: la lista se queda como la dejó el jugador
 
 Encargo del 20-10, punto 2.

@@ -122,3 +122,49 @@ En las 48 páginas no aparecen «suspensión», «prórroga», «moratoria» ni 
 Origen de la prórroga que cayó en 2026. Lo que se ha encontrado en la búsqueda web es un acuerdo del Gobierno con EH Bildu del 22-12-2025, no un acuerdo de investidura ni de coalición: «se mantenga todo el 2026 la prohibición de desahuciar a familias vulnerables sin alternativa habitacional» (Ara, 22-12-2025, https://es.ara.cat/politica/bildu-gobierno-espanol-acuerdan-prorrogar-ano-prohibicion-desahucios-vulnerables_1_5599610.html). Las prórrogas anteriores fueron por decreto-ley (RDL 8/2023, de 27-12-2023, hasta finales de 2024) sin un acuerdo de investidura que las recoja en lo encontrado. Del acuerdo PSOE-ERC de noviembre de 2023 no se ha leído el texto íntegro; las crónicas de su contenido no mencionan desahucios (`TODO` si se quiere descartar del todo). Tampoco se han leído los programas de PSOE y Sumar de 2023 (`TODO`).
 
 Consecuencia para el ámbito de A4 (decisión del 16-10: programas de 2023, acuerdo de coalición y acuerdos de investidura): con lo encontrado, la promesa no tiene origen dentro del ámbito. La decisión es del autor.
+
+
+## 5. Pregunta 9: ley contra el proxenetismo (encargo del 20-10-2026)
+
+### Votación del 21-05-2024
+
+Toma en consideración de la «Proposición de Ley del Grupo Parlamentario Socialista, Orgánica, por la que se modifica la Ley Orgánica 10/1995, de 23 de noviembre, del Código Penal, para prohibir el proxenetismo en todas sus formas» (expediente 122/000077).
+
+Diario de Sesiones del Congreso, Pleno, XV legislatura, núm. 40, 21-05-2024 (DSCD-15-PL-40, caché de R/05):
+
+> «Efectuada la votación, dio el siguiente resultado: votos emitidos, 342; a favor, 122; en contra, 184; abstenciones, 36. La señora PRESIDENTA: En consecuencia, no se toma en consideración la proposición de ley.»
+
+El Diario no da el voto por grupo. Sale de la votación nominal de los datos abiertos del Congreso (sesión 38, votación 002; https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion038/20240521/Votacion002/VOT_20240521203902.json, descargada el 20-10-2026). Totales: presentes 342, a favor 122, en contra 184, abstenciones 36, no votan 8.
+
+| Grupo | Sí | No | Abstención | No vota |
+| --- | --- | --- | --- | --- |
+| Socialista | 118 | 0 | 0 | 2 |
+| Popular | 0 | 135 | 0 | 2 |
+| Vox | 0 | 0 | 32 | 1 |
+| Sumar | 0 | 25 | 0 | 2 |
+| Republicano | 0 | 7 | 0 | 0 |
+| Junts | 0 | 7 | 0 | 0 |
+| EH Bildu | 0 | 6 | 0 | 0 |
+| Vasco (EAJ-PNV) | 0 | 4 | 0 | 1 |
+| Mixto | 4 | 0 | 4 | 0 |
+
+Mixto: sí de Cristina Valido (CC), José Luis Ábalos, Alberto Catalán (UPN) y Néstor Rego (BNG); abstención de Martina Velarde, Ione Belarra, Javier Sánchez Serna y Noemí Santana (Podemos).
+
+La lista de grupos en contra del contenido (PP, Sumar, ERC, Junts, PNV y EH Bildu) es correcta y suma los 184. Vox se abstuvo.
+
+### Programa del PSOE de 2023
+
+«Programa electoral. Elecciones generales 23 julio 2023» (PSOE), 272 págs. del PDF; el número impreso va 5 por detrás del del PDF (la pág. 158 del PDF es la 153 impresa).
+- psoe.es sigue bloqueado: el 20-10-2026 la URL oficial (https://www.psoe.es/media-content/2023/07/PROGRAMA_ELECTORAL-GENERALES-2023.pdf) devuelve una página HTML de 212 bytes en lugar del PDF.
+- Copia leída: captura de Wayback del 09-07-2023, en plena campaña: https://web.archive.org/web/20230709064011/https://www.psoe.es/media-content/2023/07/PROGRAMA_ELECTORAL-GENERALES-2023.pdf. Metadatos del PDF: título «PROGRAMA ELECTORAL GENERALES 23», creado el 06-07-2023; pie de página «MADRID 7 DE JULIO 2023». SHA-256: 02D4972A848250FEC9B8B2CFFC5AAA78733ACB0AC010E79CE1787161F91A42F2.
+- Las capturas de Wayback desde agosto de 2024 tienen otro tamaño, así que el fichero de psoe.es se cambió después. No se han comparado; la cita sale de la versión de julio de 2023.
+- Copias descartadas: la del PSC (https://www.psc-psoe.es/wp-content/uploads/2026/05/PROGRAMA-ELECTORAL-2023.pdf) es el programa de PSOE Cantabria de 2023, y la de ASPACE es un resumen de lectura fácil de 2019.
+
+Bloque IV, apartado «Las mujeres no son mercancías. Ni prostitución ni vientres de alquiler», subapartado «Abolir la prostitución y erradicar la trata de seres humanos» (empieza en la pág. 152). Pág. 153:
+
+> «Los y las socialistas queremos dotar a nuestro país de mecanismos jurídicos y sociales que regulen el abolicionismo, que acaben con la prostitución y articulen una respuesta integral para las mujeres que han sido víctimas de esta esclavitud.
+> • Aboliremos la prostitución. Desarrollaremos una ley para prohibir el proxenetismo en todas sus formas, que incluya el castigo de la tercería locativa y la sanción a los proxenetas.»
+
+La pág. 133 (balance de la legislatura anterior) también lo menciona: «impulsamos una norma para acabar con todas las formas de proxenetismo».
+
+Resultado: la promesa está en el programa del PSOE de 2023, dentro del ámbito de A4. Origen «Programa del PSOE 2023», fuente «Programa del PSOE 2023, pág. 153».

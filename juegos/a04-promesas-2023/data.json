@@ -1,6 +1,6 @@
 {
   "juego": "Promesas de 2023",
-  "fuente": "TODO",
+  "fuente": "Acuerdo PSOE-Sumar (24-10-2023), acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa.",
   "portada": {
     "texto": "Prometer es fácil; cumplir, ya se verá. Doce promesas de 2023: ¿cuáles salieron adelante, cuáles se quedaron en el cajón y cuáles tumbó el Congreso?",
     "reglas": [
@@ -84,22 +84,22 @@
       "fuente": "Acuerdo PSOE-Sumar, 24-10-2023, pág. 24; BOE-A-2024-3099."
     },
     {
-      "pregunta": "Prorrogar la suspensión de desahucios de familias vulnerables",
-      "origen": "Acuerdo PSOE-Sumar [VERIFICAR]",
+      "pregunta": "Aprobar una ley abolicionista que persiga el proxenetismo en todas sus formas",
+      "origen": "Programa del PSOE 2023",
       "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
       "orden": ["a", "b", "c"],
       "correcta": "c",
-      "explicacion": "El 26-02-2026 el Congreso derogó el Real Decreto-ley 2/2026, con 177 votos en contra (PP, Vox y Junts) y 172 a favor. Era la segunda vez en un mes que caía la moratoria.",
-      "fuente": "BOE-A-2026-4667; Idealista, 26-02-2026."
+      "explicacion": "El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con 184 votos en contra (PP, Sumar, ERC, Junts, PNV y EH Bildu), 122 a favor y 36 abstenciones. Su propio socio de Gobierno votó en contra.",
+      "fuente": "Programa del PSOE 2023, pág. 153; Diario de Sesiones del Congreso, 21-05-2024; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024."
     },
     {
       "pregunta": "Aprobar un nuevo modelo de financiación autonómica",
-      "origen": "Acuerdo PSOE-Sumar [VERIFICAR]",
+      "origen": "Acuerdo PSOE-Sumar",
       "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
       "orden": ["a", "b", "c"],
       "correcta": "b",
       "explicacion": "El Consejo de Política Fiscal y Financiera aprobó el modelo el 04-09-2026, con más de dos años de retraso, pero la ley no llegó a votarse. No hubo votación que lo tumbara.",
-      "fuente": "El Español, 06-10-2026."
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023, pág. 40; El Español, 06-10-2026."
     },
     {
       "pregunta": "Que el catalán sea lengua oficial de la UE",
