@@ -25,8 +25,8 @@ const circulo = (nodos, centro) => el('div', { className: 'rosco' },
 
 const abierta = estado => estado === 'pendiente' || estado === 'pasada';
 
-// Cierre: el rosco con el estado final; tocar una letra muestra su pista, su respuesta y su fuente
-const resumen = (letras, estados) => {
+// Cierre: el rosco con el estado final encima de la nota; tocar una letra muestra debajo su pista, su respuesta y su fuente
+const rosco = (letras, estados) => {
   const grande = el('span', { className: 'grande' });
   const ficha = el('div', { ariaLive: 'polite' }, el('p', { className: 'etiqueta', textContent: 'Toca una letra para ver su pista.' }));
   const botones = letras.map((l, i) => el('button', {
@@ -41,7 +41,7 @@ const resumen = (letras, estados) => {
         el('p', { className: 'fuente', textContent: `Fuente: ${l.fuente}` }));
     },
   }));
-  return [circulo(botones, [grande]), ficha];
+  return { resumen: [circulo(botones, [grande])], detalle: [ficha] };
 };
 
 function partida({ juego, dia, fuente, letras }, contenedor) {
@@ -60,7 +60,7 @@ function partida({ juego, dia, fuente, letras }, contenedor) {
     total: letras.length,
     cuadricula: [0, 9, 18].map(k => estados.slice(k, k + 9).map(e => e === 'acierto' ? '🟨' : '⬜').join('')).join('\n'),
     fuente,
-    detalle: resumen(letras, estados),
+    ...rosco(letras, estados),
   }, contenedor);
 
   const campo = el('input', { placeholder: 'Respuesta', ariaLabel: 'Respuesta', autocomplete: 'off', spellcheck: false, enterKeyHint: 'send' });

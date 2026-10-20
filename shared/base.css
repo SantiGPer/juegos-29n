@@ -726,7 +726,8 @@ details[open] summary { margin-bottom: var(--s1); }
 .letra.acierto { background: var(--marcador); }
 .letra.fallo { background: var(--raya); }
 .letra.pasada { background: var(--senado); border-color: var(--senado); }
-.letra.actual { border-width: 3px; }
+/* La actual, siempre con borde de tinta, también cuando es una pasada */
+.letra.actual { border: 3px solid var(--tinta); }
 
 .centro {
   position: absolute;

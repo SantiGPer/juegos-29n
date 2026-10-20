@@ -20,9 +20,9 @@ Plan confirmado por el autor. Antes, commit aparte con los cambios de Cowork que
 **Falta**
 - Texto de portada, reglas y fuente general de A13: el contenido no tiene sección «Portada». Van en `TODO` visible.
 
-**Dudas para el autor**
-- **Rosco del cierre bajo la nota.** A13.6 lo pone encima de la nota «N de 27», pero `cierre.js` coloca el `detalle` debajo. Para ponerlo encima hay que añadir un hueco en `cierre.js`; es un cambio de una línea.
-- **Letra actual pasada.** Siguiendo la maqueta, una letra pasada lleva el borde en senado, así que la actual con borde de 3 px apenas se distingue en la segunda vuelta (la letra grande del centro sí la indica). ¿Se pone el borde de la actual en tinta?
+**Resuelto con el autor (20-10)**, para que Cowork lo pase a `decisiones.md`:
+- **Rosco del cierre encima de la nota**, como dice A13.6. `cierre.js` admite `resumen`, unos nodos que van entre «Fin de la partida» y la cifra; la ficha de la letra tocada sigue debajo, en `detalle`. Los demás juegos no cambian.
+- **Letra actual con borde de tinta siempre**, también cuando es una pasada (antes, borde senado sobre fondo senado, como en la maqueta). Prueba y capturas repetidas a 320, 375 y 1280 px, sin errores.
 
 **Para Cowork**
 - `editorial/contenido/a12-presidentle.md` todavía dice «Zapatero» en pantalla, pero la decisión de nombre y apellido (bitácora 18-10 (11)) ya se aplicó a `presidentes.json`. Además, esa decisión no está todavía en `decisiones.md`.
