@@ -508,3 +508,16 @@ Plenopedia, ajustes tras la confirmación de cifras de Code (18-10 (9)):
   1. Cotejar en el texto del acuerdo PSOE-Sumar (24-10-2023) si recoge la moratoria de desahucios y el nuevo modelo de financiación autonómica, con página y cita literal. Si no los recoge, buscar el acuerdo de origen: PSOE-ERC, PSOE-Junts u otro. Anotarlo en editorial/fuentes/a04-promesas.md; la etiqueta no se cambia sin el visto bueno del autor.
   2. Montar A4 en juegos/a04-promesas-2023/, según A4.1 a A4.3 y el contenido, con su portada.
   3. Poner en A13 la portada, las reglas y la fuente general del contenido, en sustitución de los TODO.
+
+Decisiones del autor del 20-10 en sesión con Code, pasadas aquí:
+- Ordenar (A2 y Plenopedia): «Era el N.º» solo aparece en los ítems mal colocados. Los ítems con 0 puntos llevan el aspa de fallo en su casilla de la lista resuelta. La pista de partida de la cabecera de A2 no cambia.
+- A4, pregunta 9: sale la moratoria de desahucios, porque su origen no está en el ámbito de A4 (no figura en el acuerdo PSOE-Sumar; viene de un acuerdo del Gobierno con EH Bildu de diciembre de 2025). La sustituye una promesa bloqueada con origen verificado, que elige el autor.
+- A4, pregunta 10: origen confirmado (acuerdo PSOE-Sumar, pág. 40). Se quita el [VERIFICAR].
+- A4, fuente general: «Acuerdo PSOE-Sumar (24-10-2023), acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa».
+- A4, pregunta 9 (bloqueada): la moratoria de desahucios se sustituye por la ley abolicionista contra el proxenetismo. La toma en consideración de la proposición de ley del PSOE se rechazó el 21-05-2024, con los votos en contra de PP, Sumar, ERC, Junts, PNV y EH Bildu.
+- **Encargo para Code (A4, pregunta 9):**
+  1. Cotejar en el programa del PSOE de 2023 el compromiso de una ley abolicionista o contra el proxenetismo, con página y cita literal. Si psoe.es sigue bloqueado, buscar otra copia del PDF (Fundación Pablo Iglesias, Manifesto Project u otra) y anotar de dónde sale.
+  2. Cotejar en el Diario de Sesiones del 21-05-2024 el resultado exacto de la votación (sí, no, abstenciones) y el sentido de voto de cada grupo.
+  3. Anotar el resultado en editorial/fuentes/a04-promesas.md, completar la pregunta 9 en el data.json sustituyendo los [VERIFICAR] por el dato y regenerar A4.
+  
+  Si el programa no recoge la promesa, se avisa en la bitácora y no se monta.

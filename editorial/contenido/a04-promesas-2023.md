@@ -17,6 +17,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ## Portada
 
+**Fuente general:** Acuerdo PSOE-Sumar (24-10-2023), acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa.
+
 **Texto:** Prometer es fácil; cumplir, ya se verá. Doce promesas de 2023: ¿cuáles salieron adelante, cuáles se quedaron en el cajón y cuáles tumbó el Congreso?
 
 **Reglas:**
@@ -179,9 +181,9 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ## 9
 
-**Pregunta:** Prorrogar la suspensión de desahucios de familias vulnerables
+**Pregunta:** Aprobar una ley abolicionista que persiga el proxenetismo en todas sus formas
 
-**Origen:** Acuerdo PSOE-Sumar [VERIFICAR]
+**Origen:** Programa del PSOE 2023 [VERIFICAR texto en el programa]
 
 **Opciones:**
 - a) Cumplida
@@ -190,9 +192,9 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Correcta:** c
 
-**Explicación:** El 26-02-2026 el Congreso derogó el Real Decreto-ley 2/2026, con 177 votos en contra (PP, Vox y Junts) y 172 a favor. Era la segunda vez en un mes que caía la moratoria.
+**Explicación:** El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con los votos en contra del PP, Sumar, ERC, Junts, PNV y EH Bildu [VERIFICAR recuento]. Su propio socio de Gobierno votó en contra.
 
-**Fuente:** BOE-A-2026-4667; Idealista, 26-02-2026.
+**Fuente:** Programa del PSOE 2023 [VERIFICAR página]; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024.
 
 ---
 
@@ -200,7 +202,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Aprobar un nuevo modelo de financiación autonómica
 
-**Origen:** Acuerdo PSOE-Sumar [VERIFICAR]
+**Origen:** Acuerdo PSOE-Sumar
 
 **Opciones:**
 - a) Cumplida
@@ -211,7 +213,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Explicación:** El Consejo de Política Fiscal y Financiera aprobó el modelo el 04-09-2026, con más de dos años de retraso, pero la ley no llegó a votarse. No hubo votación que lo tumbara.
 
-**Fuente:** El Español, 06-10-2026.
+**Fuente:** Acuerdo PSOE-Sumar, 24-10-2023, pág. 40; El Español, 06-10-2026.
 
 ---
 
