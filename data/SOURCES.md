@@ -47,6 +47,13 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS; por decisión del 20-10-2026 se agrupan con ella en una sola fila, «Podemos y confluencias» (69 = 42 + 12 + 9 + 6), con el desglose en `desglose`.
 - Siglas y denominación tal como las publica Interior, en mayúsculas. Las candidaturas con menos de cinco escaños se agrupan en `otros`, con su lista. Cada año suma 350.
 
+## `actividad_parlamentaria.json`
+
+- Script: `R/03_actividad_parlamentaria.R`. Juego: A6. Método y límites en `editorial/fuentes/a06-viabilidad.md`. Rango: VIII, IX, X, XII, XIV y XV (decisión del 20-10-2026). Fechas de cada legislatura, de `legislaturas.json`.
+- Leyes, leyes orgánicas y decretos-ley: BOE, buscador del diario (https://www.boe.es/buscar/boe.php), sección I, departamento «Jefatura del Estado», por fecha de publicación; rango según el título. El peso de los decretos-ley no incluye los reales decretos legislativos (decisión del 20-10-2026). Consultado el 20-10-2026, que es también el corte de la XV (`corte`).
+- Preguntas orales al presidente del Gobierno: sumarios del Diario de Sesiones del Pleno (https://www.congreso.es/public_oficiales/L<legislatura>/CONG/DS/PL/), los PDF de la caché de `R/05`. Se cuentan los diputados distintos por sesión. Las sesiones con más de tres preguntas están pendientes de validación manual.
+- Comparecencias de ministros: Congreso, buscador de iniciativas (https://www.congreso.es/es/busqueda-de-iniciativas), tipos 210 (Pleno), 213 y 214 (Comisión). Pleno y Comisión van juntos (decisión del 20-10-2026). Se cuentan las solicitudes tramitadas por completo, no las sesiones. Consultado el 20-10-2026.
+
 ## `cis_postelectoral_2023.json`
 
 - Script: `R/06_cis_postelectoral.R`. Juego: A8. Detalle en `editorial/fuentes/a08-cis.md`.
