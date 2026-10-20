@@ -2,6 +2,37 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 (7) — Encargos de las dudas del 20-10: A7, A5, A6, CLAUDE.md y 40dB para A8
+
+**Hecho**
+1. **Decisiones de Cowork en commit** (`9f4ad8d`), con las maquetas v10 y v11, que estaban sin versionar.
+2. **A7, Vox en Santa Cruz de Tenerife** (`468744b`).
+   - Cada provincia de `resultados_2023_prov.json` trae `sin_candidatura`: las candidaturas nacionales (con lista en 26 provincias o más) que no se presentaron allí. Su voto es NA, no 0. La regla es general y no solo para Vox: también salen PCTE, PUM+J, FO y PACMA en algunas provincias.
+   - El juego todavía no está montado. Cuando se monte, el mapa tiene que leer `sin_candidatura` y pintar sin dato.
+3. **A5, 2015** (`897d067`). «Podemos y confluencias», con 69 escaños y la suma de votos, y el campo `desglose` con 42 + 12 + 9 + 6. Cada año sigue sumando 350.
+4. **CLAUDE.md** (`b73fc9b`).
+   - Añadidos al esquema de `R/` `infoelectoral.R` y `09_escanos_generales.R`.
+   - Corregido el nombre de `01_resultados_2023_prov.R`.
+   - Añadido `escanos_generales.json` a la tabla de datos.
+5. **A8, 40dB** (`930a35e`), en `editorial/fuentes/a08-40db.md`.
+6. **A6, script y JSON** (`eb279cc`): `R/03_actividad_parlamentaria.R` → `data/actividad_parlamentaria.json`, con las métricas 1, 2, 5 y 6 en VIII, IX, X, XII, XIV y XV.
+   - Métrica 2 sin reales decretos legislativos: del 23,7 % de la VIII al 64,2 % de la XV.
+   - Métrica 6 con Pleno y Comisión juntos: 618, 705, 643, 559, 1.136 y 494.
+   - Las cifras coinciden una a una con las de la viabilidad.
+   - El buscador del Congreso volvió a perder páginas sin dar error; el script repite la descarga hasta que cuadra con el total.
+
+**Falta**
+- A6: las métricas 3 y 4 (proposiciones por grupo, solo XV) no están en el JSON hasta que se cruce ley a ley con el BOE (falta una ley).
+- A6, métrica 5: validar a mano las sesiones con más de tres preguntas al presidente (`sesiones_mas_de_tres`: 34 en la VIII, 16 en la IX, 11 en la X, 3 en la XII, 8 en la XIV y ninguna en la XV).
+- Montar A5, A6 y A7 (contenido de Cowork, umbrales de A5).
+
+**Dudas para el autor**
+- **A8, 40dB: el informe publicado no sirve para A8.** La oleada de septiembre de 2023 (campo del 25 al 28-08, CAWI, n = 2.000) solo publica el recuerdo de voto total (pág. 40). No hay ningún cruce por edad, sexo ni hábitat, ni perfil sociodemográfico del electorado de cada partido: los cruces van por recuerdo de voto. Para usar 40dB haría falta que se publicaran, con fecha, las tablas cruzadas o el microdato.
+- **A8, desviación de 40dB sobre la misma base que el CIS:** PP −6,4, PSOE +3,4, Vox +0,4 y Sumar +2,5, frente a −4,8, +2,4, −3,5 y +5,9 del CIS.
+  - En la suma de desviaciones absolutas, 40dB se desvía menos (12,7 frente a 16,6).
+  - En PP y PSOE se desvía más: pone al PSOE 8,4 puntos por delante del PP, y el CIS 5,7. En el resultado real, el PP sacó 1,4 puntos más que el PSOE.
+- **A8, otra oleada entre el 24-07 y el 25-08-2023:** no he encontrado ninguna, pero no lo puedo confirmar con una fuente pública. Hay que confirmarlo con el archivo de 40dB.
+
 ## 2026-10-20 (6) — Encargos del 20-10: diseño en base.css, datos de A7, A5 y A8, viabilidad de A6
 
 Orden confirmado por el autor en sesión: commit de Cowork (`6ada063`), diseño, datos de A7 y A5, viabilidad de A6 y datos de A8. No se monta ningún juego.
