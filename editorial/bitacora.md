@@ -22,8 +22,11 @@ Encargo del 20-10 (A4, pregunta 9). Antes, commit aparte con los cambios de Cowo
 - Explicación: «El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con 184 votos en contra (PP, Sumar, ERC, Junts, PNV y EH Bildu), 122 a favor y 36 abstenciones. Su propio socio de Gobierno votó en contra.» He metido el recuento con el mismo formato que la pregunta 5.
 - Fuente: «Programa del PSOE 2023, pág. 153; Diario de Sesiones del Congreso, 21-05-2024; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024». He añadido el Diario de Sesiones porque de ahí sale el recuento.
 
-**Dudas para el autor**
-- **Fuente general de A4.** Cita «Acuerdo PSOE-Sumar (24-10-2023), acuerdos de investidura, BOE…», pero no el programa del PSOE de 2023, que ahora es el origen de la pregunta 9. ¿Se añade?
+**Resuelto con el autor (20-10)**, para que Cowork lo pase a `decisiones.md` y al contenido:
+- **Fuente general de A4:** se añade el programa. Queda: «Acuerdo PSOE-Sumar (24-10-2023), programa electoral del PSOE de 2023, acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa.»
+- Push a Pages con confirmación del autor.
+
+**Nota**
 - **Vox se abstuvo.** La explicación no lo dice, porque nombra solo a quienes votaron en contra. Lo dejo por si interesa para el texto del post.
 
 ## 2026-10-20 (3) — Ordenar: la lista se queda como la dejó el jugador
