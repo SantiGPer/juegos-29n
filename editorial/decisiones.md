@@ -662,3 +662,23 @@ Aprobado por el autor. Referencia: docs/maquetas/maqueta-pendientes-v11.html.
   - Aplicar la cabecera con pistas largas, el suelo de las fichas y el ancho del índice en `shared/base.css`.
   - Montar A5 con estas reglas cuando estén los datos (encargo del 20-10) y los umbrales de puntuación.
   - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.
+
+## 2026-10-20 (dudas de la bitácora del 20-10, entrada 6)
+
+- A7, Vox en Santa Cruz de Tenerife: no se presentó. El mapa la pinta como «sin candidatura» (sin dato), nunca como 0 %, y la explicación lo dice.
+- A7, nacidos en el extranjero: el denominador es el total del propio padrón. La población es la de 1-1-2025, la misma cifra oficial que fija el reparto de escaños de 2026.
+- A5, 2015: En Comú Podem (12), Compromís-Podemos (9) y En Marea (6) se agrupan con Podemos (42) en una sola fila, «Podemos y confluencias» (69). La nota da el desglose 42 + 12 + 9 + 6.
+- A5, nombres de época: los fija Cowork en el contenido.
+- A6, métrica 2: los reales decretos legislativos quedan fuera. El ratio es decretos-ley / (leyes + decretos-ley).
+- A6, métrica 6: las comparecencias cuentan Pleno y Comisión juntos, y la explicación lo aclara.
+- A6, rango: legislaturas VIII, IX, X, XII, XIV y XV. La XI y la XIII se excluyen por cortas. Las métricas 3 y 4 solo en la XV, por diputado.
+- Pendiente: A8, cómo tratar la desviación del recuerdo de voto del CIS frente al resultado real.
+- Encargo para Code:
+  - A7: en `data/` y en el juego, Vox en Santa Cruz de Tenerife como NA (sin candidatura), no como 0.
+  - A5: fusionar las confluencias de 2015 con Podemos en una sola candidatura («Podemos y confluencias», 69) y conservar el desglose en el JSON para la nota.
+  - A6: recalcular la métrica 2 sin reales decretos legislativos y la 6 con Pleno y Comisión juntos, en el rango VIII, IX, X, XII, XIV y XV.
+  - CLAUDE.md: añadir `R/09_escanos_generales.R` y `R/infoelectoral.R` al esquema de `R/`.
+- Encargo para el chat de diseño: a 375 px, la cabecera de A2 se queda 1 px corta.
+- A8, fuente (20-10): se sustituye el postelectoral del CIS (3420) por el barómetro de 40dB, que se desvía menos del resultado real. Quedan por fijar la oleada y el formato de la publicación; el criterio de fuente pública y fechada se mantiene.
+- A8, oleada (20-10): el primer barómetro de 40dB posterior al 23-J. Candidato: septiembre de 2023 (https://ep00.epimg.net/infografias/encuestas40db/2023Sept/2023_09_informe.pdf); Code confirma que no hubo otra oleada entre el 24-07 y esa fecha. El planteamiento (porcentaje por segmento con nota, o composición del electorado de cada partido) se decide al ver el análisis de Code.
+- Encargo para Code (A8): comprobar que las tablas publicadas de esa oleada traen el recuerdo de voto 2023 cruzado por edad, sexo y hábitat, con la n de cada segmento. Medir la desviación del recuerdo frente al resultado real sobre la misma base que en el CIS. Aplicar la regla n ≥ 100. El script del CIS y su JSON se conservan como respaldo.

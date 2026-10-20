@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pendientes de diseño v11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --fuente: Archivo, system-ui, sans-serif;
+  --pp:#1E4B8F; --psoe:#FF0000; --vox:#63BE21; --sumar:#E51C55; --erc:#FFB32E; --junts:#20C0C2; --bildu:#00D0B6; --pnv:#008000; --otros:#bdbdbd;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; max-width:46em; }
+.notas li { margin-bottom:.3rem; }
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; position:relative; }
+.f.alto { height:auto; }
+.cuerpo { flex:1; padding:0 var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; gap:var(--s3); align-items:center; }
+.btn { font:inherit; font-weight:800; min-height:52px; padding:0 var(--s4); border:1px solid var(--tinta); background:var(--papel); border-radius:0; flex:1; }
+.btn.off { color:var(--lapiz); border-color:var(--raya); }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s3); }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+/* Cabecera con pista larga */
+.cab { display:grid; grid-template-columns:1fr auto; align-items:end; row-gap:var(--s2); column-gap:var(--s3); padding-top:var(--s4); margin-bottom:var(--s3); }
+.cab .nombre { font-size:1rem; font-weight:800; grid-column:1/-1; }
+.pista { display:flex; gap:var(--g,3px); padding-bottom:9px; position:relative; }
+.celda { width:var(--c,22px); height:var(--c,22px); border:1px solid var(--tinta); display:grid; place-items:center; }
+.celda.a { background:var(--marcador); }
+.celda.x { background:var(--raya); }
+.celda.actual { border-width:3px; }
+.puntos { display:flex; align-items:center; gap:6px; padding-bottom:9px; }
+.puntos .et { font-size:.75rem; }
+
+/* A5 */
+.hemi { position:sticky; top:0; background:var(--papel); z-index:2; padding-bottom:var(--s2); border-bottom:1px solid var(--tinta); }
+.hemi svg { display:block; height:132px; width:auto; max-width:100%; margin:0 auto; }
+.quedan { display:flex; flex-direction:column; align-items:flex-start; min-width:84px; }
+.lista { list-style:none; margin:0; padding:0; }
+.lista li { display:grid; grid-template-columns:14px 1fr 44px 64px 44px; gap:var(--s2); align-items:center; padding:var(--s1) 0; border-bottom:1px solid var(--raya); }
+.lista .chip { width:14px; height:14px; border:1px solid var(--tinta); }
+.lista .nom { font-size:1rem; font-weight:800; line-height:1.1; }
+.lista .nom small { display:block; font-weight:400; font-size:.75rem; color:var(--lapiz); }
+.lista button { width:44px; height:44px; border:1px solid var(--tinta); background:var(--papel); font:inherit; font-size:1.375rem; font-weight:800; padding:0; }
+.lista input { width:64px; height:44px; border:1px solid var(--tinta); border-radius:0; font:inherit; font-weight:800; text-align:center; font-variant-numeric:tabular-nums; }
+.res li { grid-template-columns:14px 1fr 64px; }
+.barras { display:grid; gap:2px; width:100%; margin-top:4px; }
+.barras span { display:block; height:10px; }
+.dif { font-size:.875rem; text-align:right; font-variant-numeric:tabular-nums; }
+.dif b { display:block; font-size:1rem; }
+
+table.res2 { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res2 th, .res2 td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res2 th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Pendientes de diseño</h1>
+<p class="intro">Todo lo que la bitácora de Code y las decisiones dejaban para el chat de diseño: la cabecera con pistas largas, la letra de las fichas a 320 px, el índice en escritorio, el recibo de A10 en Windows y el encargo completo de A5 (hemiciclos). Los escaños de A5 son los de 2023 y solo sirven de ilustración: los datos los genera Code desde el Ministerio del Interior.</p>
+
+<h2 class="sec">1. Cabecera con pistas largas</h2>
+<p class="porque">Con diez celdas de 22 px y los puntos a escala 3 no caben en 343 px. Propongo que, cuando la pista tenga más de seis rondas, las celdas bajen a 18 px con 2 px de separación y los puntos pasen a escala 2, con «Puntos» a 0,75 rem. Así caben en una fila desde 360 px. Por debajo (320 px) los puntos bajan a una segunda línea, alineados a la derecha, como ya hace Code.</p>
+<div class="fila">
+<div><h3 class="sec">A1, pregunta 5 de 10, con medio punto</h3><div class="f alto" style="padding:0 16px 12px" id="cab10"></div></div>
+<div><h3 class="sec">A12, cinco celdas (sin cambios)</h3><div class="f alto" style="padding:0 16px 12px" id="cab5"></div></div>
+</div>
+
+<h2 class="sec">2. Detalles sin maqueta</h2>
+<table class="res2">
+<tr><th>Asunto</th><th>Propuesta</th></tr>
+<tr><td>Letra de las fichas a 320 px (A10, A12)</td><td>Suelo de 13 px: <code>--ficha: clamp(13px, 3.75vw, 0.875rem)</code>. Si una palabra no cabe ni así, guion automático (<code>hyphens: auto</code>, con <code>lang="es"</code> ya en el documento). Por debajo de 13 px la negrita se empasta en móvil.</td></tr>
+<tr><td>Índice en escritorio</td><td>La rejilla de días no pasa de 26 rem (416 px): casillas de unos 78 px, las cifras a escala 3 se leen bien y la ficha queda debajo, alineada a la izquierda con la columna. No se agrandan las cifras.</td></tr>
+<tr><td>A10, recibo en Windows</td><td>Se mantiene 🟨🟫🟧⬛. En Windows 🟨 sale ámbar, pero sigue siendo más claro que 🟧 y el orden de dificultad ayuda a leerlo. Las alternativas (🟥, 🟪) llevan color de partido. La mayoría de lectores llegan desde el móvil, donde los cuatro se distinguen sin problema.</td></tr>
+<tr><td>A2, posición del jugador</td><td>Ya resuelto el 17-10 (A2.3, «Tu posición: 3.º»). No hace falta nada nuevo.</td></tr>
+</table>
+
+<h2 class="sec">3. A5 · Hemiciclos</h2>
+<p class="porque">El gesto memorable de este juego, el que ya anticipaba <code>diseno.md</code>: el hemiciclo se rellena a medida que repartes. Los escaños son casillas cuadradas, píxeles, como el resto de la serie. Tu reparto se pinta en trama del color de cada candidatura; al comprobar, el real lo sustituye en sólido.</p>
+<div class="fila">
+<div><h3 class="sec">a. Repartiendo (375 × 560)</h3><div class="f" id="a5a"></div></div>
+<div><h3 class="sec">b. Comprobado</h3><div class="f" id="a5b"></div></div>
+</div>
+<ul class="notas">
+  <li><b>Hemiciclo:</b> 350 casillas cuadradas en 10 filas de semicírculo, sin huecos, en SVG. Fijo arriba (sticky) mientras se reparte, con el hemiciclo a unos 132 px de alto en móvil, para que se vea crecer mientras la lista se desplaza. Las casillas sin asignar van en papel con borde raya.</li>
+  <li><b>Orden:</b> las candidaturas se listan y se sientan en el hemiciclo por orden alfabético de siglas, con «Otros» al final. Así ni el orden da la respuesta (por escaños) ni la serie toma partido sobre quién va a la izquierda o a la derecha.</li>
+  <li><b>Control por candidatura:</b> muestra de color, siglas con el nombre de la época debajo, y «−», campo numérico y «+». El campo abre el teclado numérico (<code>inputmode="numeric"</code>) para escribir 137 de golpe; − y + ajustan de uno en uno, con repetición al mantener pulsado. Todo empieza en 0.</li>
+  <li><b>Contador:</b> en la barra, «Quedan» con las cifras de casillas a escala 3. «Comprobar» está apagado mientras no queden 0. Si te pasas, el contador dice «Sobran N» y no se puede comprobar.</li>
+  <li><b>Al comprobar:</b> el hemiciclo pasa de trama a sólido de izquierda a derecha en una sola pasada (600 ms, por pasos; sin animación con movimiento reducido). Cada fila de la lista muestra dos barras finas (tu reparto en trama y el real en sólido), los escaños reales y la diferencia («+7», «−4»).</li>
+  <li><b>Puntuación:</b> arriba, el error medio por candidatura en cifras de casillas («2,7 escaños»). Cuánto vale cada error en puntos lo deciden el autor y Cowork; la pista de cuatro celdas sigue la regla de llena, media o vacía.</li>
+  <li><b>Colores históricos:</b> UCD, AP, CDS, IU, CiU, Podemos, Ciudadanos y el resto, de la misma plantilla de Wikipedia y la misma revisión que los actuales, citados en SOURCES.md. «Otros» va en raya. Si dos candidaturas de la misma ronda tienen colores casi iguales, Code lo anota en la bitácora antes de montar.</li>
+</ul>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res2">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>Cabecera con pistas de más de seis rondas: celdas de 18 px con 2 px de separación y puntos a escala 2 con «Puntos» a 0,75 rem.</td></tr>
+<tr><td>2</td><td>Fichas con un suelo de 13 px y guion automático; rejilla del índice limitada a 416 px en escritorio; recibo de A10 sin cambios.</td></tr>
+<tr><td>3</td><td>A5: hemiciclo de casillas fijo arriba, lista en orden alfabético con − / campo / +, contador «Quedan» en la barra, trama que pasa a sólido al comprobar, barras y diferencia por fila, y error medio como cifra.</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100",",":"00000000000000000000001100010001000"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svgM = (m, s) => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1"/>` : "")).join("")}</svg>`;
+const tic = [".......","......X",".....X.","X...X..",".X.X...","..X....","......."];
+const aspa = [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."];
+
+/* 1. Cabeceras */
+const pista = (est, act, c, g) => `<div class="pista" style="--c:${c}px;--g:${g}px">${est.map((e, i) => `<span class="celda ${e}${i === act ? " actual" : ""}" style="${e === "m" ? `background:linear-gradient(to top,var(--marcador) 50%,#fff 50%)` : ""}">${e === "a" ? svgM(tic, c > 20 ? 2 : 1.6) : e === "x" ? svgM(aspa, c > 20 ? 2 : 1.6) : ""}</span>`).join("")}</div>`;
+document.getElementById("cab10").innerHTML = `<div class="cab"><span class="nombre">ElectoQuiz</span>${pista(["a","x","a","m","","","","","",""], 4, 18, 2)}<div class="puntos"><span class="et">Puntos</span>${px("02,5", 2)}</div></div>`;
+document.getElementById("cab5").innerHTML = `<div class="cab"><span class="nombre">Presidentle</span>${pista(["x","x","","",""], 2, 22, 3)}<div class="puntos"><span class="et">Puntos</span>${px("03", 3)}</div></div>`;
+
+/* 3. A5 */
+const P = [
+  ["EH Bildu", "EH Bildu", "--bildu", 6, 5],
+  ["ERC", "Esquerra Republicana", "--erc", 7, 8],
+  ["Junts", "Junts per Catalunya", "--junts", 7, 7],
+  ["PNV", "Partido Nacionalista Vasco", "--pnv", 5, 4],
+  ["PP", "Partido Popular", "--pp", 137, 130],
+  ["PSOE", "Partido Socialista", "--psoe", 121, 125],
+  ["Sumar", "Sumar", "--sumar", 31, 28],
+  ["Vox", "Vox", "--vox", 33, 40],
+  ["Otros", "BNG, CC y UPN", "--otros", 3, 0]
+];
+// Asientos: 350 en 10 filas de semicírculo, ordenados por ángulo de izquierda a derecha
+const W = 343, H = 172, cx = W / 2, cy = H - 4, R0 = 62, R1 = 166, filas = 10;
+const radios = Array.from({length: filas}, (_, i) => R0 + i * (R1 - R0) / (filas - 1));
+const suma = radios.reduce((s, r) => s + r, 0);
+let porFila = radios.map(r => Math.round(350 * r / suma));
+porFila[filas - 1] += 350 - porFila.reduce((s, n) => s + n, 0);
+const asientos = radios.flatMap((r, i) => Array.from({length: porFila[i]}, (_, k) => {
+  const a = Math.PI - Math.PI * (k / (porFila[i] - 1));
+  return { x: cx + r * Math.cos(a), y: cy - r * Math.sin(a), a };
+})).sort((p, q) => q.a - p.a || p.x - q.x);
+const L = 7;
+const defs = `<defs>${P.map(([s, , c]) => `<pattern id="t${s.replace(/\W/g, "")}" width="2" height="2" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#fff"/><rect width="1" height="1" fill="var(${c})"/><rect x="1" y="1" width="1" height="1" fill="var(${c})"/></pattern>`).join("")}</defs>`;
+const hemi = (reparto, solido) => {
+  const color = [];
+  reparto.forEach((n, i) => { for (let k = 0; k < n; k++) color.push(i); });
+  return `<svg viewBox="0 0 ${W} ${H}" shape-rendering="crispEdges" aria-label="Hemiciclo">${defs}${asientos.map((s, k) => {
+    const i = color[k];
+    const fill = i === undefined ? "#fff" : solido ? `var(${P[i][2]})` : `url(#t${P[i][0].replace(/\W/g, "")})`;
+    return `<rect x="${(s.x - L / 2).toFixed(1)}" y="${(s.y - L / 2).toFixed(1)}" width="${L}" height="${L}" fill="${fill}" stroke="${i === undefined ? "#bdbdbd" : "none"}" stroke-width=".6"/>`;
+  }).join("")}</svg>`;
+};
+const parcial = [0, 8, 7, 4, 130, 125, 28, 0, 0];
+const quedan = 350 - parcial.reduce((s, n) => s + n, 0);
+document.getElementById("a5a").innerHTML = `<div class="cuerpo">
+  <div class="hemi"><div class="cab" style="margin-bottom:6px"><span class="nombre">Hemiciclos</span>${pista(["a","m","",""], 2, 22, 3)}<div class="puntos"><span class="et">Puntos</span>${px("01,5", 2)}</div></div>
+  <p class="et" style="margin:0 0 4px">Ronda 3 de 4. Reparte los 350 escaños de 2023.</p>${hemi(parcial, false)}</div>
+  <ul class="lista">${P.map(([s, n, c], i) => `<li><i class="chip" style="background:var(${c})"></i><span class="nom">${s}<small>${n}</small></span><button aria-label="Quitar un escaño">−</button><input inputmode="numeric" value="${parcial[i]}"><button aria-label="Añadir un escaño">+</button></li>`).join("")}</ul></div>
+  <div class="barra"><div class="quedan"><span class="et">Quedan</span>${px(String(quedan), 3)}</div><button class="btn off">Comprobar</button></div>`;
+
+const tu = P.map(p => p[4]), real = P.map(p => p[3]);
+const err = (P.reduce((s, p) => s + Math.abs(p[3] - p[4]), 0) / P.length).toFixed(1).replace(".", ",");
+document.getElementById("a5b").innerHTML = `<div class="cuerpo">
+  <div class="hemi"><div class="cab" style="margin-bottom:6px"><span class="nombre">Hemiciclos</span>${pista(["a","m","m",""], 3, 22, 3)}<div class="puntos"><span class="et">Puntos</span>${px("02", 2)}</div></div>
+  <p style="margin:0 0 4px;display:flex;align-items:end;gap:8px">${px(err, 4)}<span style="font-weight:800">escaños de error medio</span></p>${hemi(real, true)}</div>
+  <ul class="lista res">${P.map(([s, n, c, r, t]) => `<li><i class="chip" style="background:var(${c})"></i><div><span class="nom">${s}</span><div class="barras"><span style="width:${t / 1.4}%;background:url(#none),repeating-conic-gradient(var(${c}) 0 25%, #fff 0 50%) 0 0/2px 2px"></span><span style="width:${r / 1.4}%;background:var(${c})"></span></div></div><span class="dif"><b>${r}</b>${t - r === 0 ? "=" : (t - r > 0 ? "+" : "−") + Math.abs(t - r)}</span></li>`).join("")}</ul></div>
+  <div class="barra"><button class="btn">Siguiente ronda</button></div>`;
+</script>
+</body>
+</html>
