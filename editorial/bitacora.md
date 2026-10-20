@@ -11,9 +11,11 @@ Encargo del 20-10, punto 2.
 - **`pruebas/ordenar.html` reescrita:** antes comprobaba que la lista resuelta salía ordenada por fecha, justo lo que ya no ocurre. Además se había quedado rota desde que existe la portada, porque su primer clic pulsaba «Jugar». Ahora comprueba en 100 partidas que la lista resuelta conserva el orden del jugador y que cada «Era el N.º» es la posición del hito por fecha. Pasa.
 - **Pruebas:** partidas completas de A2 y Plenopedia a 320, 375 y 1280 px sin errores ni scroll horizontal. Capturas de la ronda resuelta de A2 y de la pregunta 5 de Plenopedia revisadas contra la lista negra.
 
-**Dudas para el autor**
-- **«Era el N.º» también en los ítems bien colocados.** He seguido la decisión al pie de la letra («junto a cada ítem»), así que un ítem en su sitio dice, por ejemplo, «Era el 3.º» junto a su casilla de acierto. Si sobra, se puede dejar solo en los que están fuera de sitio.
-- **Casillas.** Mantengo las de cada juego: en A2, marcador, medio o vacía (regla del 16-10), y en Plenopedia, acierto o vacía, porque la pregunta puntúa entera y no por ítem. La decisión habla de «acierto, medio o fallo»; si se quiere el aspa de fallo, es un cambio de una palabra.
+**Resuelto con el autor (20-10)**, para que Cowork lo pase a `decisiones.md`:
+- **«Era el N.º» solo en los ítems mal colocados**, no en los que están en su sitio.
+- **Aspa de fallo** en la casilla de los ítems con 0 puntos en la lista resuelta, en A2 y en Plenopedia. La pista de partida de la cabecera de A2 no cambia: la regla del 16-10 la deja vacía.
+- Aplicado en `rondas.js` y `quiz.js`. `pruebas/ordenar.html` comprueba además que la anotación solo aparece en los mal colocados (100 partidas, pasa). Partidas completas de A2 y Plenopedia sin errores; capturas revisadas.
+- **A4, pregunta 9: la moratoria de desahucios sale** y se sustituye por otra promesa con origen verificado. La elección es del autor sobre el catálogo; hasta entonces, el juego sigue con la moratoria. Para mantener el reparto 4-4-4, la sustituta tendría que ser bloqueada. En el catálogo solo queda una sin usar, la 9 («Prórroga de alquileres y paquete de vivienda»), y tiene dos pegas: «prórroga» no aparece en el acuerdo PSOE-Sumar (búsqueda del 20-10 en las 48 págs.), y la votación del 02-10-2026 ya es un hito de A2. Puede que haga falta ampliar el catálogo de bloqueadas.
 
 ## 2026-10-20 (2) — Encargos del 20-10: portada de A13, Plenopedia y A4
 

@@ -6,7 +6,7 @@
 </head>
 <body>
 <!-- Juega partidas de A2 con el motor real y comprueba que, al comprobar, la lista resuelta conserva
-     el orden del jugador y que cada «Era el N.º» es la posición del hito por fecha. Resultado en el título y en <pre>.
+     el orden del jugador y que solo los hitos mal colocados llevan «Era el N.º», con su posición por fecha. Resultado en el título y en <pre>.
      Uso: servir la raíz del repo y abrir /pruebas/ordenar.html (o chrome --headless --dump-dom). -->
 <main hidden></main>
 <pre id="log"></pre>
@@ -26,10 +26,13 @@ const partida = () => {
     const filas = [...main.querySelectorAll('.orden.resuelta li')];
     const resuelta = filas.map(li => li.querySelector('.hito').textContent);
     const porFecha = [...r.hitos].sort((a, b) => a.fecha.localeCompare(b.fecha)).map(h => h.texto);
-    const era = filas.map(li => +li.textContent.match(/Era el (\d+)\.º/)[1]);
+    // Sin «Era el», el hito está en su sitio; con él, está fuera y la cifra es su posición por fecha
+    const era = filas.map((li, i) => +(li.textContent.match(/Era el (\d+)\.º/)?.[1] ?? i + 1));
+    const anotadas = filas.map(li => /Era el/.test(li.textContent));
     main.querySelector('.accion').click();
     if (resuelta.join('|') !== jugador.join('|')) return `ronda ${n + 1}: la lista resuelta no conserva el orden del jugador`;
     if (era.some((p, i) => porFecha[p - 1] !== resuelta[i])) return `ronda ${n + 1}: «Era el» no coincide con la fecha (${era.join(' ')})`;
+    if (anotadas.some((a, i) => a === (porFecha[i] === resuelta[i]))) return `ronda ${n + 1}: «Era el» en un hito bien colocado o falta en uno mal colocado`;
     return null;
   }).filter(Boolean);
 };

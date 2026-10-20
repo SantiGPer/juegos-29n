@@ -148,16 +148,16 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
       puntos.push(...correcto.map(valor));
       cab.pinta(estados(), enCurso, suma());
 
-      // La lista se queda como la dejó el jugador, con la posición real de cada hito (decisión del 20-10)
+      // La lista se queda como la dejó el jugador; los mal colocados llevan su posición real y, con 0 puntos, aspa (decisión del 20-10)
       const resuelta = el('ol', { className: 'orden resuelta' }, ...orden.map(h => {
-        const casilla = celda(estado(valor(h)));
+        const casilla = celda(estado(valor(h)) || 'fallo');
         casilla.ariaLabel = `${numero(valor(h))} puntos`;
         return el('li', {},
           casilla,
           el('div', {},
             el('p', { className: 'etiqueta', textContent: fechaEs(h.fecha) }),
             el('p', { className: 'hito', textContent: h.texto }),
-            el('p', { className: 'etiqueta', textContent: `Era el ${correcto.indexOf(h) + 1}.º` }),
+            ...(valor(h) === 1 ? [] : [el('p', { className: 'etiqueta', textContent: `Era el ${correcto.indexOf(h) + 1}.º` })]),
             el('details', {},
               el('summary', { textContent: 'Ver explicación' }),
               el('p', { textContent: h.explicacion }),
