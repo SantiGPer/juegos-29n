@@ -1,0 +1,375 @@
+{
+  "nota": "Total nacional de Interior. Solo candidaturas con escaño; «Otros» agrupa las de menos de cinco escaños.",
+  "elecciones": [
+    {
+      "eleccion": "198210",
+      "fecha": "1982-10-28",
+      "candidaturas": [
+        {
+          "codigo": "000077",
+          "siglas": "PSOE",
+          "denominacion": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+          "votos": 10127392,
+          "escanos": 202
+        },
+        {
+          "codigo": "000005",
+          "siglas": "AP-PDP",
+          "denominacion": "ALIANZA POPULAR - PARTIDO DEMOCRATA POPULAR",
+          "votos": 5548107,
+          "escanos": 107
+        },
+        {
+          "codigo": "000018",
+          "siglas": "CIU",
+          "denominacion": "CONVERGENCIA I UNIO",
+          "votos": 772726,
+          "escanos": 12
+        },
+        {
+          "codigo": "000081",
+          "siglas": "UCD",
+          "denominacion": "UNION DE CENTRO DEMOCRATICO",
+          "votos": 1425093,
+          "escanos": 11
+        },
+        {
+          "codigo": "000020",
+          "siglas": "EAJ-PNV",
+          "denominacion": "PARTIDO NACIONALISTA VASCO-EUZKO ALDERDI JELTZALEA",
+          "votos": 395656,
+          "escanos": 8
+        }
+      ],
+      "otros": {
+        "escanos": 10,
+        "votos": 1899869,
+        "candidaturas": [
+          {
+            "codigo": "000055",
+            "siglas": "PCE",
+            "denominacion": "PARTIDO COMUNISTA DE ESPAÑA",
+            "votos": 846515,
+            "escanos": 4
+          },
+          {
+            "codigo": "000015",
+            "siglas": "CDS",
+            "denominacion": "CENTRO DEMOCRATICO Y SOCIAL",
+            "votos": 604309,
+            "escanos": 2
+          },
+          {
+            "codigo": "000034",
+            "siglas": "HB",
+            "denominacion": "AGRUPACION ELECTORES HERRI BATASUNA",
+            "votos": 210601,
+            "escanos": 2
+          },
+          {
+            "codigo": "000026",
+            "siglas": "ERC",
+            "denominacion": "ESQUERRA REPUBLICANA DE CATALUNYA",
+            "votos": 138118,
+            "escanos": 1
+          },
+          {
+            "codigo": "000021",
+            "siglas": "EE",
+            "denominacion": "EUSKADIKO EZKERRA - IZQUIERDA PARA EL SOCIALISMO",
+            "votos": 100326,
+            "escanos": 1
+          }
+        ]
+      }
+    },
+    {
+      "eleccion": "200003",
+      "fecha": "2000-03-12",
+      "candidaturas": [
+        {
+          "codigo": "000113",
+          "siglas": "PP",
+          "denominacion": "PARTIDO POPULAR",
+          "votos": 10321178,
+          "escanos": 183
+        },
+        {
+          "codigo": "000135",
+          "siglas": "PSOE-PROGR.",
+          "denominacion": "PARTIDO SOCIALISTA OBRERO ESPAÑOL - PROGRESISTAS",
+          "votos": 7918752,
+          "escanos": 125
+        },
+        {
+          "codigo": "000026",
+          "siglas": "CIU",
+          "denominacion": "CONVERGENCIA I UNIO",
+          "votos": 970421,
+          "escanos": 15
+        },
+        {
+          "codigo": "000063",
+          "siglas": "IU",
+          "denominacion": "IZQUIERDA UNIDA",
+          "votos": 1263043,
+          "escanos": 8
+        },
+        {
+          "codigo": "000029",
+          "siglas": "EAJ-PNV",
+          "denominacion": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+          "votos": 353953,
+          "escanos": 7
+        }
+      ],
+      "otros": {
+        "escanos": 12,
+        "votos": 1250887,
+        "candidaturas": [
+          {
+            "codigo": "000014",
+            "siglas": "CC",
+            "denominacion": "COALICION CANARIA",
+            "votos": 248261,
+            "escanos": 4
+          },
+          {
+            "codigo": "000013",
+            "siglas": "BNG",
+            "denominacion": "BLOQUE NACIONALISTA GALEGO",
+            "votos": 306268,
+            "escanos": 3
+          },
+          {
+            "codigo": "000086",
+            "siglas": "PA",
+            "denominacion": "PARTIDO ANDALUCISTA",
+            "votos": 206255,
+            "escanos": 1
+          },
+          {
+            "codigo": "000036",
+            "siglas": "ERC",
+            "denominacion": "ESQUERRA REPUBLICANA DE CATALUNYA",
+            "votos": 194715,
+            "escanos": 1
+          },
+          {
+            "codigo": "000058",
+            "siglas": "IC-V",
+            "denominacion": "INICIATIVA PER CATALUNYA-VERDS",
+            "votos": 119290,
+            "escanos": 1
+          },
+          {
+            "codigo": "000028",
+            "siglas": "EA",
+            "denominacion": "EUSKO ALKARTASUNA",
+            "votos": 100742,
+            "escanos": 1
+          },
+          {
+            "codigo": "000020",
+            "siglas": "CHA",
+            "denominacion": "CHUNTA ARAGONESISTA",
+            "votos": 75356,
+            "escanos": 1
+          }
+        ]
+      }
+    },
+    {
+      "eleccion": "201512",
+      "fecha": "2015-12-20",
+      "candidaturas": [
+        {
+          "codigo": "903316",
+          "siglas": "PP",
+          "denominacion": "PARTIDO POPULAR",
+          "votos": 7236965,
+          "escanos": 123
+        },
+        {
+          "codigo": "903484",
+          "siglas": "PSOE",
+          "denominacion": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+          "votos": 5545315,
+          "escanos": 90
+        },
+        {
+          "codigo": "903736",
+          "siglas": "PODEMOS",
+          "denominacion": "PODEMOS",
+          "votos": 3198584,
+          "escanos": 42
+        },
+        {
+          "codigo": "901079",
+          "siglas": "C's",
+          "denominacion": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
+          "votos": 3514528,
+          "escanos": 40
+        },
+        {
+          "codigo": "905033",
+          "siglas": "EN COMÚ",
+          "denominacion": "EN COMÚ PODEM",
+          "votos": 929880,
+          "escanos": 12
+        },
+        {
+          "codigo": "905008",
+          "siglas": "PODEMOS-COM",
+          "denominacion": "COMPROMÍS-PODEMOS-ÉS EL MOMENT",
+          "votos": 673549,
+          "escanos": 9
+        },
+        {
+          "codigo": "905063",
+          "siglas": "ERC-CATSI",
+          "denominacion": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
+          "votos": 601782,
+          "escanos": 9
+        },
+        {
+          "codigo": "904991",
+          "siglas": "DL",
+          "denominacion": "DEMOCRÀCIA I LLIBERTAT. CONVERGÈNCIA. DEMÒCRATES.",
+          "votos": 567253,
+          "escanos": 8
+        },
+        {
+          "codigo": "905041",
+          "siglas": "PODEMOS-En",
+          "denominacion": "EN MAREA",
+          "votos": 410698,
+          "escanos": 6
+        },
+        {
+          "codigo": "901533",
+          "siglas": "EAJ-PNV",
+          "denominacion": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+          "votos": 302316,
+          "escanos": 6
+        }
+      ],
+      "otros": {
+        "escanos": 5,
+        "votos": 1227825,
+        "candidaturas": [
+          {
+            "codigo": "904850",
+            "siglas": "IU-UPeC",
+            "denominacion": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
+            "votos": 926783,
+            "escanos": 2
+          },
+          {
+            "codigo": "901528",
+            "siglas": "EH Bildu",
+            "denominacion": "EUSKAL HERRIA BILDU",
+            "votos": 219125,
+            "escanos": 2
+          },
+          {
+            "codigo": "904744",
+            "siglas": "CCa-PNC",
+            "denominacion": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
+            "votos": 81917,
+            "escanos": 1
+          }
+        ]
+      }
+    },
+    {
+      "eleccion": "202307",
+      "fecha": "2023-07-23",
+      "candidaturas": [
+        {
+          "codigo": "000005",
+          "siglas": "PP",
+          "denominacion": "PARTIDO POPULAR",
+          "votos": 8160837,
+          "escanos": 137
+        },
+        {
+          "codigo": "000002",
+          "siglas": "PSOE",
+          "denominacion": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
+          "votos": 7821718,
+          "escanos": 121
+        },
+        {
+          "codigo": "000006",
+          "siglas": "VOX",
+          "denominacion": "VOX",
+          "votos": 3057000,
+          "escanos": 33
+        },
+        {
+          "codigo": "000010",
+          "siglas": "SUMAR",
+          "denominacion": "SUMAR",
+          "votos": 3044996,
+          "escanos": 31
+        },
+        {
+          "codigo": "000050",
+          "siglas": "ERC",
+          "denominacion": "ESQUERRA REPUBLICANA DE CATALUNYA",
+          "votos": 466020,
+          "escanos": 7
+        },
+        {
+          "codigo": "000057",
+          "siglas": "JxCAT - JUNTS",
+          "denominacion": "JUNTS PER CATALUNYA - JUNTS",
+          "votos": 395429,
+          "escanos": 7
+        },
+        {
+          "codigo": "000071",
+          "siglas": "EH Bildu",
+          "denominacion": "EUSKAL HERRIA BILDU",
+          "votos": 335129,
+          "escanos": 6
+        },
+        {
+          "codigo": "000075",
+          "siglas": "EAJ-PNV",
+          "denominacion": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
+          "votos": 277289,
+          "escanos": 5
+        }
+      ],
+      "otros": {
+        "escanos": 3,
+        "votos": 322546,
+        "candidaturas": [
+          {
+            "codigo": "000065",
+            "siglas": "B.N.G.",
+            "denominacion": "BLOQUE NACIONALISTA GALEGO",
+            "votos": 153995,
+            "escanos": 1
+          },
+          {
+            "codigo": "000031",
+            "siglas": "CCa",
+            "denominacion": "COALICIÓN CANARIA",
+            "votos": 116363,
+            "escanos": 1
+          },
+          {
+            "codigo": "000074",
+            "siglas": "U.P.N.",
+            "denominacion": "UNION DEL PUEBLO NAVARRO",
+            "votos": 52188,
+            "escanos": 1
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -27,6 +27,25 @@
 
 Se usa siempre el color vigente de cada partido, en todas las legislaturas (decisión del 15-10-2026), aunque la plantilla tenga entradas fechadas (PP 2008-2022 `#1D84CE`, EH Bildu 2012-2023 `#C4D600`). Para Junts la plantilla tiene «JxCat» `#EE5976` y «Junts» `#20C0C2`; se usa `#20C0C2` por decisión del autor.
 
+## `resultados_2023_prov.json`
+
+- Script: `R/01_resultados_2023_prov.R` (lector común en `R/infoelectoral.R`). Juegos: A7; también para A9 y A11.
+- Resultados del Congreso del 23-07-2023: Ministerio del Interior, infoelectoral, https://infoelectoral.interior.gob.es/estaticos/docxl/apliextr/02202307_MUNI.zip, ficheros 03 (candidaturas), 05 (municipios), 07 (provincias) y 08 (votos por candidatura). Diseño de registro en el `FICHEROS.doc` del zip. Descargado el 20-10-2026; el zip no se versiona (caché de R).
+  - `censo` y `votantes`, con el CERA (07). `censo_residentes` y `votantes_residentes` suman los municipios del 05, que no incluyen el CERA; `censo_cera` y `votantes_cera` son la diferencia.
+  - Votos de candidatura con el CERA (08). `cabecera` es la candidatura de acumulación nacional (03): PSC, PSIB-PSOE… en PSOE; las variantes de SUMAR en SUMAR.
+- Escaños: anexo del RD 400/2023 (BOE-A-2023-12663, https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-12663) y del RD 806/2026 (BOE-A-2026-20742, https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-20742). Leídos el 20-10-2026. Cambian Madrid (37 → 38) y Cádiz (9 → 8).
+- Población: INE, Cifras oficiales de población de los municipios españoles: revisión del Padrón Municipal (operación DPOP), tablas «<provincia>: Población por municipios y sexo», serie del total provincial, a 1-1-2023 y a 1-1-2025 (la revisión más reciente). API: https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/DPOP. Consultado el 20-10-2026.
+- Nacidos en el extranjero: INE, Estadística del Padrón Continuo, tabla 68526 («Población por sexo y edad según la relación entre lugar de nacimiento y lugar de residencia»), a 1-1-2023, categoría «Nacido en el extranjero o en antiguos territorios españoles». API: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/68526. Consultado el 20-10-2026. Su total (`poblacion_padron_2023`) no coincide con las cifras oficiales (387.529 frente a 387.174 en Albacete), y es el denominador que corresponde a esta cifra.
+- Comprobado al generar: las 52 provincias suman el total nacional de Interior en censo, votantes, blancos y nulos (votantes: 24.952.447). Los escaños de Interior coinciden con el anexo del RD 400/2023 y suman 350 por provincia y por candidatura.
+- Cotejo con la resolución de la Junta Electoral Central de 30-08-2023 (BOE-A-2023-18907), Cuadro II: 206 cifras de votos y escaños de los partidos con escaño casan por siglas sin ninguna discrepancia. Las 23 restantes no casan por las variantes de siglas (PSIB-PSOE, SUMAR ARAGÓN…). El Cuadro I va como imagen en el BOE y no se pudo cotejar de forma automática.
+
+## `escanos_generales.json`
+
+- Script: `R/09_escanos_generales.R` (lector común en `R/infoelectoral.R`). Juego: A5.
+- Fuente: Ministerio del Interior, infoelectoral, `02<aaaamm>_MUNI.zip` de 198210, 200003, 201512 y 202307 (ficheros 02, 03 y 08, total nacional). Descargados el 20-10-2026.
+- El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS.
+- Siglas y denominación tal como las publica Interior, en mayúsculas. Las candidaturas con menos de cinco escaños se agrupan en `otros`, con su lista. Cada año suma 350.
+
 ## `llamadas_al_orden.json`
 
 - Script: `R/05_llamadas_al_orden.R`. Legislaturas con investidura de la VIII a la XV: VIII, IX, X, XII, XIV y XV (decisión del 18-10-2026; la XI y la XIII quedan fuera).
