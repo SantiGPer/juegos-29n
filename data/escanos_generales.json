@@ -1,5 +1,5 @@
 {
-  "nota": "Total nacional de Interior. Solo candidaturas con escaño; «Otros» agrupa las de menos de cinco escaños.",
+  "nota": "Total nacional de Interior. Solo candidaturas con escaño; «Otros» agrupa las de menos de cinco escaños. En 2015, «Podemos y confluencias» suma Podemos, En Comú Podem, Compromís-Podemos y En Marea, con el desglose en `desglose`.",
   "elecciones": [
     {
       "eleccion": "198210",
@@ -188,70 +188,85 @@
           "siglas": "PP",
           "denominacion": "PARTIDO POPULAR",
           "votos": 7236965,
-          "escanos": 123
+          "escanos": 123,
+          "desglose": {}
         },
         {
           "codigo": "903484",
           "siglas": "PSOE",
           "denominacion": "PARTIDO SOCIALISTA OBRERO ESPAÑOL",
           "votos": 5545315,
-          "escanos": 90
+          "escanos": 90,
+          "desglose": {}
         },
         {
           "codigo": "903736",
           "siglas": "PODEMOS",
-          "denominacion": "PODEMOS",
-          "votos": 3198584,
-          "escanos": 42
+          "denominacion": "Podemos y confluencias",
+          "votos": 5212711,
+          "escanos": 69,
+          "desglose": [
+            {
+              "codigo": "903736",
+              "siglas": "PODEMOS",
+              "denominacion": "PODEMOS",
+              "votos": 3198584,
+              "escanos": 42
+            },
+            {
+              "codigo": "905033",
+              "siglas": "EN COMÚ",
+              "denominacion": "EN COMÚ PODEM",
+              "votos": 929880,
+              "escanos": 12
+            },
+            {
+              "codigo": "905008",
+              "siglas": "PODEMOS-COM",
+              "denominacion": "COMPROMÍS-PODEMOS-ÉS EL MOMENT",
+              "votos": 673549,
+              "escanos": 9
+            },
+            {
+              "codigo": "905041",
+              "siglas": "PODEMOS-En",
+              "denominacion": "EN MAREA",
+              "votos": 410698,
+              "escanos": 6
+            }
+          ]
         },
         {
           "codigo": "901079",
           "siglas": "C's",
           "denominacion": "CIUDADANOS-PARTIDO DE LA CIUDADANÍA",
           "votos": 3514528,
-          "escanos": 40
-        },
-        {
-          "codigo": "905033",
-          "siglas": "EN COMÚ",
-          "denominacion": "EN COMÚ PODEM",
-          "votos": 929880,
-          "escanos": 12
-        },
-        {
-          "codigo": "905008",
-          "siglas": "PODEMOS-COM",
-          "denominacion": "COMPROMÍS-PODEMOS-ÉS EL MOMENT",
-          "votos": 673549,
-          "escanos": 9
+          "escanos": 40,
+          "desglose": {}
         },
         {
           "codigo": "905063",
           "siglas": "ERC-CATSI",
           "denominacion": "ESQUERRA REPUBLICANA DE CATALUNYA-CATALUNYA SÍ",
           "votos": 601782,
-          "escanos": 9
+          "escanos": 9,
+          "desglose": {}
         },
         {
           "codigo": "904991",
           "siglas": "DL",
           "denominacion": "DEMOCRÀCIA I LLIBERTAT. CONVERGÈNCIA. DEMÒCRATES.",
           "votos": 567253,
-          "escanos": 8
-        },
-        {
-          "codigo": "905041",
-          "siglas": "PODEMOS-En",
-          "denominacion": "EN MAREA",
-          "votos": 410698,
-          "escanos": 6
+          "escanos": 8,
+          "desglose": {}
         },
         {
           "codigo": "901533",
           "siglas": "EAJ-PNV",
           "denominacion": "EUZKO ALDERDI JELTZALEA-PARTIDO NACIONALISTA VASCO",
           "votos": 302316,
-          "escanos": 6
+          "escanos": 6,
+          "desglose": {}
         }
       ],
       "otros": {
@@ -263,21 +278,24 @@
             "siglas": "IU-UPeC",
             "denominacion": "UNIDAD POPULAR: IZQUIERDA UNIDA, UNIDAD POPULAR EN",
             "votos": 926783,
-            "escanos": 2
+            "escanos": 2,
+            "desglose": {}
           },
           {
             "codigo": "901528",
             "siglas": "EH Bildu",
             "denominacion": "EUSKAL HERRIA BILDU",
             "votos": 219125,
-            "escanos": 2
+            "escanos": 2,
+            "desglose": {}
           },
           {
             "codigo": "904744",
             "siglas": "CCa-PNC",
             "denominacion": "COALICIÓN CANARIA - PARTIDO NACIONALISTA CANARIO",
             "votos": 81917,
-            "escanos": 1
+            "escanos": 1,
+            "desglose": {}
           }
         ]
       }

@@ -44,7 +44,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 
 - Script: `R/09_escanos_generales.R` (lector común en `R/infoelectoral.R`). Juego: A5.
 - Fuente: Ministerio del Interior, infoelectoral, `02<aaaamm>_MUNI.zip` de 198210, 200003, 201512 y 202307 (ficheros 02, 03 y 08, total nacional). Descargados el 20-10-2026.
-- El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS.
+- El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS; por decisión del 20-10-2026 se agrupan con ella en una sola fila, «Podemos y confluencias» (69 = 42 + 12 + 9 + 6), con el desglose en `desglose`.
 - Siglas y denominación tal como las publica Interior, en mayúsculas. Las candidaturas con menos de cinco escaños se agrupan en `otros`, con su lista. Cada año suma 350.
 
 ## `cis_postelectoral_2023.json`
