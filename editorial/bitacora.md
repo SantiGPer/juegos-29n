@@ -2,6 +2,14 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 (5) — Crispómetro eliminado
+
+Decisión del autor en sesión (20-10), para que Cowork la pase a `decisiones.md`: el Crispómetro sale del repo porque lo sustituye Plenopedia.
+
+**Hecho**
+- Borrada `juegos/a03-crispometro/` (`index.html` y `game.js`), en `d9518e8`. Fuera de `editorial/` no había ninguna referencia.
+- Se quedan el motor M4 (`shared/motores/masomenos.js`), que usará A11, y `data/llamadas_al_orden.json` con las legislaturas VIII–XV, en reserva para A11 o para posts.
+
 ## 2026-10-20 (4) — A4, pregunta 9: ley contra el proxenetismo
 
 Encargo del 20-10 (A4, pregunta 9). Antes, commit aparte con los cambios de Cowork (`76956ee`). Detalle y citas en `editorial/fuentes/a04-promesas.md`, apartado 5.
