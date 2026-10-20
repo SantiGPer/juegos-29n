@@ -39,7 +39,8 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── *.json            # datos consumidos por los juegos
 │   └── SOURCES.md        # fuente, URL y fecha de descarga de cada JSON
 ├── R/
-│   ├── 01_resultados_2023.R
+│   ├── infoelectoral.R   # lector común de los ficheros de Interior (lo usan 01 y 09)
+│   ├── 01_resultados_2023_prov.R
 │   ├── 02_legislaturas.R
 │   ├── 03_actividad_parlamentaria.R
 │   ├── 04_diputados.R    # grupo de cada diputado de la XV por periodo
@@ -47,6 +48,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 06_cis_postelectoral.R
 │   ├── 07_programas.R    # pesos temáticos para A14
 │   ├── 08_plenopedia_xv.R # indicadores del Pleno de la XV para A3
+│   ├── 09_escanos_generales.R # escaños por candidatura de 1982, 2000, 2015 y 2023 para A5
 │   └── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # fichas completas, calendario, reserva
@@ -120,7 +122,8 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 
 | JSON | Fuente | Juegos |
 | --- | --- | --- |
-| `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral) | A7, A9, A11 |
+| `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral), INE y BOE | A7, A9, A11 |
+| `escanos_generales.json` | Ministerio del Interior (infoelectoral) | A5 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, A11, plan B A14 |
 | `presidentes.json` | La Moncloa y BOE; siete fichas a mano, sin script | A12 |
