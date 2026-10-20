@@ -49,8 +49,8 @@
   --pregunta: 1.375rem;
   --cuerpo: 1.125rem;
   --etiqueta: 0.875rem;
-  /* Texto de ficha (A10, A12): 0,875 rem desde 375 px; por debajo encoge para no partir palabras */
-  --ficha: min(var(--etiqueta), 3.75vw);
+  /* Texto de ficha (A10, A12): 0,875 rem desde 375 px; por debajo encoge hasta un suelo de 13 px */
+  --ficha: clamp(13px, 3.75vw, var(--etiqueta));
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -259,6 +259,10 @@ button:disabled {
 .celda.fallo { background: var(--raya); }
 .celda.actual { border-width: 3px; }
 
+/* Pista larga (más de seis rondas, maqueta v11) */
+.cab.larga .tramo { gap: 2px; }
+.cab.larga .celda { width: 18px; height: 18px; }
+
 .celda.media::after {
   content: "";
   position: absolute;
@@ -447,6 +451,7 @@ details[open] summary { margin-bottom: var(--s1); }
   font-size: var(--ficha);
   font-weight: 800;
   line-height: 1.15;
+  hyphens: auto;
 }
 
 .fichas .opcion:nth-child(n+5) { grid-column: span 4; }
@@ -687,6 +692,7 @@ details[open] summary { margin-bottom: var(--s1); }
   font-size: var(--ficha);
   font-weight: 800;
   line-height: 1.15;
+  hyphens: auto;
 }
 
 .grupo {
@@ -727,6 +733,7 @@ details[open] summary { margin-bottom: var(--s1); }
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 6px;
+  max-width: 26rem;
   margin: var(--s5) 0 0;
 }
 

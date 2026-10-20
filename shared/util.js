@@ -35,18 +35,19 @@ export const cifra = (texto, p) => el('span', { className: 'digitos', ariaHidden
 
 export const numero = n => n.toLocaleString('es-ES');
 
-export const celda = (estado, enCurso) => {
+export const celda = (estado, enCurso, escala = 2) => {
   const nodo = el('span', { className: `celda ${estado}${enCurso ? ' actual' : ''}` });
-  nodo.innerHTML = { acierto: icono('tic', 2), fallo: icono('aspa', 2) }[estado] ?? '';
+  nodo.innerHTML = { acierto: icono('tic', escala), fallo: icono('aspa', escala) }[estado] ?? '';
   return nodo;
 };
 
 // Pista de partida: una celda por ronda, en tramos de porGrupo
-export const celdas = (estados, actual = [], porGrupo = estados.length) => el('div', { className: 'pista', ariaHidden: 'true' },
+export const celdas = (estados, actual = [], porGrupo = estados.length, escala) => el('div', { className: 'pista', ariaHidden: 'true' },
   ...Array.from({ length: Math.ceil(estados.length / porGrupo) }, (_, t) => el('span', { className: 'tramo' },
-    ...estados.slice(t * porGrupo, (t + 1) * porGrupo).map((e, k) => celda(e, actual.includes(t * porGrupo + k))))));
+    ...estados.slice(t * porGrupo, (t + 1) * porGrupo).map((e, k) => celda(e, actual.includes(t * porGrupo + k), escala)))));
 
 // Cabecera compacta (maqueta v8): nombre arriba; debajo, pista con cursor a la izquierda y puntos a la derecha.
+// Con más de seis rondas (maqueta v11), celdas de 18 px, tic y aspa a escala 1,6 y puntos a escala 2.
 // Persiste entre rondas para que el cursor salte y el «+N» salga al sumar.
 export const marcador = (juego, porGrupo) => {
   const valor = el('span');
@@ -61,7 +62,9 @@ export const marcador = (juego, porGrupo) => {
   let antes = 0;
 
   const pinta = (estados, actual, suma) => {
-    const nueva = celdas(estados, actual, porGrupo);
+    const larga = estados.length > 6;
+    nodo.classList.toggle('larga', larga);
+    const nueva = celdas(estados, actual, porGrupo, larga ? 1.6 : 2);
     pista.replaceWith(nueva);
     pista = nueva;
 
@@ -69,12 +72,12 @@ export const marcador = (juego, porGrupo) => {
     cursor.hidden = !enCurso;
     if (enCurso) {
       void cursor.offsetWidth;
-      cursor.style.left = `${enCurso.offsetLeft + 6}px`;
+      cursor.style.left = `${enCurso.offsetLeft + (enCurso.offsetWidth - 10) / 2}px`;
       cursor.style.top = `${enCurso.offsetTop + enCurso.offsetHeight + 3}px`;
     }
 
     const [entero, decimal] = numero(suma).split(',');
-    valor.replaceChildren(cifra(entero.padStart(2, '0') + (decimal ? `,${decimal}` : ''), 3), el('span', { className: 'oculto', textContent: numero(suma) }));
+    valor.replaceChildren(cifra(entero.padStart(2, '0') + (decimal ? `,${decimal}` : ''), larga ? 2 : 3), el('span', { className: 'oculto', textContent: numero(suma) }));
     if (suma > antes) {
       cifras.querySelector('.mas')?.remove();
       cifras.append(el('span', { className: 'mas' }, cifra(`+${numero(suma - antes)}`, 2)));
