@@ -12,7 +12,7 @@ Estado: **cerrado, selección del autor** (2026-10-16). Grupos A, H, J y D de `e
   - **Aguirre** presidió el Senado, no el Congreso.
   - **Wert y Zerolo** parecen apellidos de los grupos de personas, pero son apodos de leyes.
 - Equilibrio, contando el partido del Gobierno o del cargo: 8 PP, 7 PSOE/PSC, 1 UCD.
-- En pantalla: solo apellidos o apodos, sin la palabra «ley». Álvarez-Cascos aparece como «Cascos», para que quepa en la casilla.
+- En pantalla: nombre y apellido de cada persona (decisión del 18-10); los apodos de leyes, sin la palabra «ley».
 
 Formato por grupo: nombre / ítems / explicación / fuente.
 
@@ -31,7 +31,7 @@ Formato por grupo: nombre / ítems / explicación / fuente.
 
 ## Grupo 1 — Presidieron el Congreso
 
-- **Ítems:** Armengol · Pastor · Posada · Bono
+- **Ítems:** Francina Armengol · Ana Pastor · Jesús Posada · José Bono
 - **Explicación:** José Bono (2008), Jesús Posada (2011), Ana Pastor (2016) y Francina Armengol (2023) presidieron la Cámara. Bono había presidido antes Castilla-La Mancha y fue ministro de Defensa.
 - **Fuente:** Congreso de los Diputados; Unión Interparlamentaria, registro histórico de presidentes de cámara.
 
@@ -43,12 +43,12 @@ Formato por grupo: nombre / ítems / explicación / fuente.
 
 ## Grupo 3 — Fueron ministros y después presidieron su comunidad
 
-- **Ítems:** Aguirre · Cascos · Montilla · Illa
-- **Explicación:** Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. Bono y Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.
+- **Ítems:** Esperanza Aguirre · Francisco Álvarez-Cascos · José Montilla · Salvador Illa
+- **Explicación:** Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. José Bono y Alberto Núñez Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.
 - **Fuente:** Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); biografías de Álvarez-Cascos. Fechas de cada cargo en editorial/fuentes/a10-agrupar.md.
 
 ## Grupo 4 — Perdieron una votación de investidura
 
-- **Ítems:** Calvo-Sotelo · Zapatero · Rajoy · Feijóo
-- **Explicación:** Calvo-Sotelo (1981), Zapatero (2008) y Rajoy (2016) perdieron una votación y fueron investidos después; Feijóo (2023) no llegó a serlo. Zapatero cayó en la primera votación de 2008 y ganó en la segunda.
+- **Ítems:** Leopoldo Calvo-Sotelo · José Luis Rodríguez Zapatero · Mariano Rajoy · Alberto Núñez Feijóo
+- **Explicación:** Leopoldo Calvo-Sotelo (1981), José Luis Rodríguez Zapatero (2008) y Mariano Rajoy (2016) perdieron una votación y fueron investidos después; Alberto Núñez Feijóo (2023) no llegó a serlo. Zapatero cayó en la primera votación de 2008 y ganó en la segunda.
 - **Fuente:** Congreso de los Diputados, archivo de investiduras de todas las legislaturas; RTVC, 29-09-2023 (Feijóo).

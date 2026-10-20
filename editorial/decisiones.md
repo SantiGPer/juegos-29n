@@ -482,3 +482,29 @@ Pendientes de diseño de la bitácora de Code (entrada 2026-10-18 (9), punto 6).
 - Diseño, duelo: muestra de color de 12 px con borde de 1 px tinta junto a la afiliación de cada lado, no junto al nombre («Gobierno» con `--gobierno`, «PP» con `--pp`). En la ficha perdedora, la muestra va al 50 % de opacidad. En Plenopedia, pregunta 6, `color` de Sánchez = `--gobierno` y de Feijóo = `--pp`.
 - Diseño, corrección del «+N» de los puntos: en la cabecera compacta, «Puntos» va a la izquierda de las cifras y el «+N» sale justo encima de las cifras, alineado a la derecha, y sube 6 px antes de apagarse. Nunca se superpone a la etiqueta. Vale para todos los juegos con puntos.
 - Encargo para Code: aplicar estos cinco puntos en `shared/motores/estimacion.js`, `shared/motores/duelo.js`, `shared/base.css` y `juegos/a03-plenopedia/data.json`. Partida completa a 320, 375 y 1280 px; capturas revisadas contra la lista negra, commit y entrada en la bitácora.
+
+## 2026-10-20
+
+Decisiones del autor tomadas en sesión con Code, pasadas aquí:
+- **Nombre y apellido** en toda referencia a una persona, no solo el apellido (18-10). Sustituye a la etiqueta corta «Zapatero» de A12. Los apodos de leyes de A10 («Wert», «Zerolo») se quedan como están. El contenido de A2, A10 y A12 ya está sincronizado; A4 y A13 no nombran a personas.
+- A13, rosco del cierre: va encima de la nota, entre «Fin de la partida» y la cifra; la ficha de la letra tocada va debajo (20-10).
+- A13: la letra actual lleva siempre borde de tinta, también cuando es una pasada (20-10).
+
+Plenopedia, ajustes tras la confirmación de cifras de Code (18-10 (9)):
+- Pregunta 4: la explicación pasa a «18 de las 90 llamadas, siete más que el segundo, Rafael Hernando», no «casi el doble». La opción de Conde Bajén es «Agustín Conde (PP)».
+- Pregunta 7: la cifra con los diputados que no estuvieron toda la legislatura es 21, no 32, porque también se excluyen los 12 miembros del Gobierno que hablaron como Gobierno. Cambian el distractor y la explicación.
+- Pregunta 10: «algo más de una de cada tres sesiones» (66 de 203), no «casi una de cada tres».
+- Encargo para Code: regenerar el data.json de Plenopedia con estos tres cambios.
+- **Preguntas de ordenar, al comprobar** (decisión del autor, 20-10): la lista se queda en el orden que dio el jugador y no se recoloca en el orden correcto. Junto a cada ítem se indica su posición real («Era el 2.º») y su casilla de acierto, medio o fallo. Hasta ahora se mostraba la solución ordenada con «Tu posición». Se aplica a la pregunta 5 de Plenopedia (`rondas.js`, tipo `ordenar`) y a A2 Cronología (`quiz.js`, variante `ordenar`). En A2 desaparece la lista recolocada con «Tu posición»; la explicación y la fuente plegadas se mantienen bajo cada hito.
+- Plenopedia, nuevos enunciados (20-10):
+  - pregunta 1: «¿Qué diputado habló más en los plenos de la legislatura?»;
+  - pregunta 2: «Cuando toma la palabra, ¿quién levanta más murmullos en el hemiciclo?».
+- **Encargo para Code (20-10):**
+  1. Regenerar el data.json de Plenopedia con los enunciados de las preguntas 1 y 2 y con los ajustes de las preguntas 4, 7 y 10.
+  2. Cambiar la comprobación de ordenar en Plenopedia y en A2: la lista se queda como la dejó el jugador, con la posición real («Era el 2.º») y la casilla de cada ítem.
+- A13, portada (texto del autor, con un retoque mínimo): «La adaptación que nadie pidió: el rosco, pero con conceptos de ciencia política (y sin bote). ¿Podrás completarlo sin pasar palabra?». Las reglas y la fuente general están en editorial/contenido/a13-rosco-politologo.md. La regla de «Pasar» usa el icono de la maqueta v7.
+- A4, portada aprobada y campo `origen` en cada promesa (A4.2), en editorial/contenido/a04-promesas-2023.md. Dos orígenes por confirmar: la moratoria de desahucios y la financiación autonómica.
+- **Encargo para Code (20-10, A4 y A13):**
+  1. Cotejar en el texto del acuerdo PSOE-Sumar (24-10-2023) si recoge la moratoria de desahucios y el nuevo modelo de financiación autonómica, con página y cita literal. Si no los recoge, buscar el acuerdo de origen: PSOE-ERC, PSOE-Junts u otro. Anotarlo en editorial/fuentes/a04-promesas.md; la etiqueta no se cambia sin el visto bueno del autor.
+  2. Montar A4 en juegos/a04-promesas-2023/, según A4.1 a A4.3 y el contenido, con su portada.
+  3. Poner en A13 la portada, las reglas y la fuente general del contenido, en sustitución de los TODO.

@@ -1,6 +1,6 @@
 # A3 · Plenopedia
 
-Estado: **textos aprobados por el autor** (2026-10-19). Hay tres cifras marcadas con [VERIFICAR], que dependen de la fusión de llamadas del 19-10 y que Code tiene que confirmar.
+Estado: **textos aprobados por el autor** (2026-10-19). Cifras confirmadas por Code el 18-10 (9).
 
 - Ámbito: Pleno del Congreso, XV legislatura (203 sesiones, 17-08-2023 a 06-10-2026).
 - Motor: encadenador de rondas (`shared/motores/rondas.js`), 10 rondas de tipos distintos, una puntuación sobre 10.
@@ -25,7 +25,7 @@ Todo sale de los Diarios de Sesiones del Pleno de la XV legislatura, leídos int
 
 ## 1 · Opciones
 
-**Pregunta:** De todos los diputados, ¿quién tuvo más cosas que decir en los plenos de la legislatura?
+**Pregunta:** ¿Qué diputado habló más en los plenos de la legislatura?
 
 **Opciones:** Néstor Rego (BNG) · Idoia Sagastizabal (PNV) · Alberto Núñez Feijóo (PP) · Gabriel Rufián (ERC)
 
@@ -39,7 +39,7 @@ Todo sale de los Diarios de Sesiones del Pleno de la XV legislatura, leídos int
 
 ## 2 · Opciones
 
-**Pregunta:** Cuando toma la palabra, ¿a quién se le revuelve más la bancada?
+**Pregunta:** Cuando toma la palabra, ¿quién levanta más murmullos en el hemiciclo?
 
 **Opciones:** Gobierno · PSOE · PP · Vox
 
@@ -69,13 +69,13 @@ Todo sale de los Diarios de Sesiones del Pleno de la XV legislatura, leídos int
 
 **Pregunta:** En el Congreso no hay tarjetas amarillas, pero casi. ¿Qué diputado se llevó más llamadas al orden?
 
-**Opciones:** Miguel Tellado (PP) · Rafael Hernando (PP) · José María Sánchez García (Vox) · Conde Bajén (PP) [VERIFICAR nombres de pila de Sánchez García y Conde Bajén en diputados_xv.json]
+**Opciones:** Miguel Tellado (PP) · Rafael Hernando (PP) · José María Sánchez García (Vox) · Agustín Conde (PP)
 
 **Correcta:** Miguel Tellado (PP)
 
-**Explicación:** Miguel Tellado acumuló 18 [VERIFICAR] de las 90 [VERIFICAR] llamadas al orden de la legislatura, casi el doble que el segundo. Las llamadas las impone la Presidencia cuando un diputado interrumpe o no respeta el turno.
+**Explicación:** Miguel Tellado acumuló 18 de las 90 llamadas al orden de la legislatura, siete más que el segundo, Rafael Hernando. Las llamadas las impone la Presidencia cuando un diputado interrumpe o no respeta el turno.
 
-**Datos (antes de la fusión del 19-10):** Tellado 20 · Hernando Fraile 11 · Sánchez García 9 · Conde Bajén 6.
+**Datos:** Tellado 18 · Hernando 11 · Sánchez García 8 · Conde 6.
 
 ---
 
@@ -109,11 +109,11 @@ Todo sale de los Diarios de Sesiones del Pleno de la XV legislatura, leídos int
 
 **Pregunta:** Hay quien prefiere escuchar. ¿Cuántos diputados pasaron toda la legislatura sin tomar la palabra ni una vez en los plenos?
 
-**Opciones:** 32 · 15 · 4 · 0
+**Opciones:** 21 · 15 · 4 · 0
 
 **Correcta:** 4
 
-**Explicación:** Fueron cuatro, todos del PP. Si se cuentan también los que solo ocuparon el escaño una parte de la legislatura, la cifra sube a 32 [VERIFICAR: 34 con cero palabras menos Armengol y Sánchez, que hablaron como presidenta y como Gobierno].
+**Explicación:** Fueron cuatro, todos del PP. Si se cuentan también los que solo ocuparon el escaño una parte de la legislatura, la cifra sube a 21.
 
 ---
 
@@ -151,4 +151,4 @@ Todo sale de los Diarios de Sesiones del Pleno de la XV legislatura, leídos int
 
 **Correcta:** 66
 
-**Explicación:** La Cámara se puso en pie 66 veces en 203 sesiones, casi una de cada tres. Uno de ellos, por la dana, abrió el 30 de octubre de 2024 la sesión más corta de la legislatura: 25 minutos.
+**Explicación:** La Cámara se puso en pie 66 veces en 203 sesiones, algo más de una de cada tres. Uno de ellos, por la dana, abrió el 30 de octubre de 2024 la sesión más corta de la legislatura: 25 minutos.

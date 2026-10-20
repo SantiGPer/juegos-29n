@@ -26,7 +26,7 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ## Ronda 1 — más de un año entre hitos
 
-### Feijóo pierde su investidura
+### Alberto Núñez Feijóo pierde su investidura
 - **Fecha:** 29-09-2023
 - **Explicación:** En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes, con un voto nulo. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.
 - **Fuente:** Diario de Sesiones del Congreso, 29-09-2023; RTVC, 29-09-2023.
@@ -48,7 +48,7 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ## Ronda 2 — parejas cercanas, lejos entre sí
 
-### Sánchez, investido presidente
+### Pedro Sánchez, investido presidente
 - **Fecha:** 16-11-2023
 - **Explicación:** Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.
 - **Fuente:** Diario de Sesiones del Congreso, 16-11-2023.
@@ -60,10 +60,10 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ### El Congreso tumba los decretos de vivienda
 - **Fecha:** 02-10-2026
-- **Explicación:** PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Sánchez anunció elecciones.
+- **Explicación:** PP, Vox, Junts y UPN votaron en contra de convalidar los dos decretos-ley aprobados esa semana. Tres días después, Pedro Sánchez anunció elecciones.
 - **Fuente:** Civio, 02-10-2026.
 
-### Sánchez anuncia elecciones para el 29 de noviembre
+### Pedro Sánchez anuncia elecciones para el 29 de noviembre
 - **Fecha:** 05-10-2026
 - **Explicación:** Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.
 - **Fuente:** La Moncloa, 05-10-2026; Real Decreto 806/2026.
@@ -72,15 +72,15 @@ Formato por hito: texto en pantalla (máx. ~60 caracteres) / fecha / explicació
 
 ### España reconoce el Estado de Palestina
 - **Fecha:** 28-05-2024
-- **Explicación:** El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Sánchez lo anunció en una declaración institucional.
+- **Explicación:** El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Pedro Sánchez lo anunció en una declaración institucional.
 - **Fuente:** La Moncloa, declaración institucional y rueda de prensa del Consejo de Ministros, 28-05-2024.
 
 ### Junts rompe con el PSOE
 - **Fecha:** 27-10-2025
-- **Explicación:** Puigdemont anunció que su partido pasaba a la oposición. Sin sus siete votos, el Gobierno perdió la mayoría de la investidura.
+- **Explicación:** Carles Puigdemont anunció que su partido pasaba a la oposición. Sin sus siete votos, el Gobierno perdió la mayoría de la investidura.
 - **Fuente:** Orain, 27-10-2025.
 
-### Mazón anuncia su dimisión
+### Carlos Mazón anuncia su dimisión
 - **Fecha:** 03-11-2025
 - **Explicación:** Dejó la presidencia de la Generalitat Valenciana un año después de la dana. Le sucedió Juanfran Pérez Llorca, investido con los votos de PP y Vox.
 - **Fuente:** Maldita, 03-11-2025; RTVC, 03-11-2025; El Debate, 07-11-2025 (cese en el BOE).

@@ -10,6 +10,18 @@ Estado: **términos y pistas revisados por el autor** (2026-10-17). Fuentes cerr
 
 Formato por letra: pista / respuesta / variantes aceptadas / fuente.
 
+
+## Portada
+
+**Texto:** La adaptación que nadie pidió: el rosco, pero con conceptos de ciencia política (y sin bote). ¿Podrás completarlo sin pasar palabra?
+
+**Reglas:**
+- (papeleta) Una definición por letra: escribe la palabra que empieza por ella o que la contiene.
+- (pasar) «Pasar» deja la letra para la siguiente vuelta.
+- (urna) Un punto por acierto, sobre 27.
+
+**Fuente general:** Diccionario de la lengua española (RAE), Constitución Española, LOREG, Reglamento del Congreso y manuales de ciencia política citados en cada letra.
+
 ---
 
 ## A

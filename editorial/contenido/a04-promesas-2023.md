@@ -14,11 +14,22 @@ Estado: **selección del autor cerrada** (2026-10-17): 1, 2, 4, 7, 8, 10, 11, 12
 
 Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuente.
 
+
+## Portada
+
+**Texto:** Prometer es fácil; cumplir, ya se verá. Doce promesas de 2023: ¿cuáles salieron adelante, cuáles se quedaron en el cajón y cuáles tumbó el Congreso?
+
+**Reglas:**
+- (papeleta) 12 promesas: cumplida, incumplida o bloqueada en el Congreso.
+- (urna) Un punto por acierto; al final, tus aciertos por tipo.
+
 ---
 
 ## 1
 
 **Pregunta:** La reducción de la jornada laboral a 37,5 horas
+
+**Origen:** Acuerdo PSOE-Sumar
 
 **Opciones:**
 - a) Cumplida
@@ -37,6 +48,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Revalorizar las pensiones con el IPC
 
+**Origen:** Acuerdo PSOE-Sumar
+
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
@@ -53,6 +66,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 ## 3
 
 **Pregunta:** Poder hablar catalán, euskera y gallego en el Congreso
+
+**Origen:** Acuerdo para la Mesa del Congreso
 
 **Opciones:**
 - a) Cumplida
@@ -71,6 +86,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Derogar o reformar la «ley mordaza»
 
+**Origen:** Acuerdo PSOE-Sumar
+
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
@@ -87,6 +104,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 ## 5
 
 **Pregunta:** Mantener el impuesto a las energéticas
+
+**Origen:** Acuerdo PSOE-Sumar
 
 **Opciones:**
 - a) Cumplida
@@ -105,6 +124,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Delegar a Cataluña las competencias de inmigración
 
+**Origen:** Acuerdo PSOE-Junts
+
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
@@ -121,6 +142,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 ## 7
 
 **Pregunta:** Aprobar el Estatuto del Becario
+
+**Origen:** Acuerdo PSOE-Sumar
 
 **Opciones:**
 - a) Cumplida
@@ -139,6 +162,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Cambiar «disminuidos» por «personas con discapacidad» en la Constitución
 
+**Origen:** Acuerdo PSOE-Sumar
+
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
@@ -155,6 +180,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 ## 9
 
 **Pregunta:** Prorrogar la suspensión de desahucios de familias vulnerables
+
+**Origen:** Acuerdo PSOE-Sumar [VERIFICAR]
 
 **Opciones:**
 - a) Cumplida
@@ -173,6 +200,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Aprobar un nuevo modelo de financiación autonómica
 
+**Origen:** Acuerdo PSOE-Sumar [VERIFICAR]
+
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
@@ -190,6 +219,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Que el catalán sea lengua oficial de la UE
 
+**Origen:** Acuerdo PSOE-Junts
+
 **Opciones:**
 - a) Cumplida
 - b) Incumplida
@@ -206,6 +237,8 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 ## 12
 
 **Pregunta:** Aprobar una ley de representación paritaria entre mujeres y hombres
+
+**Origen:** Acuerdo PSOE-Sumar
 
 **Opciones:**
 - a) Cumplida
