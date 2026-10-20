@@ -14,6 +14,7 @@ Encargo del 20-10, punto 2.
 **Resuelto con el autor (20-10)**, para que Cowork lo pase a `decisiones.md`:
 - **«Era el N.º» solo en los ítems mal colocados**, no en los que están en su sitio.
 - **Aspa de fallo** en la casilla de los ítems con 0 puntos en la lista resuelta, en A2 y en Plenopedia. La pista de partida de la cabecera de A2 no cambia: la regla del 16-10 la deja vacía.
+- Push a Pages el 20-10-2026, con confirmación del autor (`3757a4b..59787dd`): rosco, índice-selector, A4, portada de A13 y los cambios de A2, A12 y Plenopedia. Comprobado que Pages sirve el índice nuevo, `calendario.json`, A4 y A13.
 - Aplicado en `rondas.js` y `quiz.js`. `pruebas/ordenar.html` comprueba además que la anotación solo aparece en los mal colocados (100 partidas, pasa). Partidas completas de A2 y Plenopedia sin errores; capturas revisadas.
 - **A4, pregunta 9: la moratoria de desahucios sale** y se sustituye por otra promesa con origen verificado. La elección es del autor sobre el catálogo; hasta entonces, el juego sigue con la moratoria. Para mantener el reparto 4-4-4, la sustituta tendría que ser bloqueada. En el catálogo solo queda una sin usar, la 9 («Prórroga de alquileres y paquete de vivienda»), y tiene dos pegas: «prórroga» no aparece en el acuerdo PSOE-Sumar (búsqueda del 20-10 en las 48 págs.), y la votación del 02-10-2026 ya es un hito de A2. Puede que haga falta ampliar el catálogo de bloqueadas.
 
