@@ -127,12 +127,24 @@ lista_votos <- votos |>
   select(provincia, codigo, siglas, denominacion, cabecera, votos, escanos) |>
   nest(candidaturas = -provincia)
 
+# Candidaturas nacionales (presentes en la mitad de las provincias o más) que no se presentaron en la provincia:
+# su voto es NA, no 0 (Vox en Santa Cruz de Tenerife; decisión del 20-10)
+nacionales <- votos |> count(cabecera) |> filter(n >= 26) |>
+  left_join(votos |> filter(codigo == cabecera) |> distinct(cabecera, siglas), "cabecera")
+sin_candidatura <- provincias |>
+  select(provincia) |>
+  cross_join(nacionales) |>
+  anti_join(votos, c("provincia", "cabecera")) |>
+  summarise(sin_candidatura = list(siglas), .by = provincia)
+
 salida <- provincias |>
   left_join(lista_votos, "provincia") |>
-  mutate(mas_votado = map_chr(candidaturas, \(d) d$siglas[1])) |>
+  left_join(sin_candidatura, "provincia") |>
+  mutate(mas_votado = map_chr(candidaturas, \(d) d$siglas[1]),
+         sin_candidatura = map(sin_candidatura, \(s) s %||% character())) |>
   select(provincia, nombre, ccaa, censo, censo_residentes, censo_cera, votantes, votantes_residentes,
          votantes_cera, blancos, nulos, validos, mas_votado, escanos_2023, escanos_2026,
-         starts_with("poblacion_"), nacidos_extranjero_2023, candidaturas)
+         starts_with("poblacion_"), nacidos_extranjero_2023, sin_candidatura, candidaturas)
 
 list(
   eleccion = "Congreso de los Diputados, 23-07-2023",
@@ -140,6 +152,7 @@ list(
     censo = "Censo de escrutinio con el CERA; censo_residentes suma los municipios (sin CERA); censo_cera es la diferencia.",
     votos = "Votos oficiales de cada candidatura, con el CERA. validos = blancos + votos a candidaturas.",
     candidaturas = "Siglas de la candidatura en la provincia; cabecera es el código de su candidatura de acumulación nacional.",
+    sin_candidatura = "Siglas nacionales de las candidaturas presentes en 26 provincias o más que no se presentaron en esta. Su voto es NA (sin candidatura), no 0: en los mapas se pinta como sin dato.",
     poblacion = str_glue("Cifras oficiales del INE a 1 de enero de 2023 y de {anyo_reciente} (la revisión más reciente)."),
     nacidos_extranjero_2023 = "INE, Estadística del Padrón Continuo a 1-1-2023 (tabla 68526), categoría «Nacido en el extranjero o en antiguos territorios españoles»; poblacion_padron_2023 es su total, el denominador del mismo origen."
   ),

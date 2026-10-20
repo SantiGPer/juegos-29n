@@ -4,6 +4,7 @@
     "censo": "Censo de escrutinio con el CERA; censo_residentes suma los municipios (sin CERA); censo_cera es la diferencia.",
     "votos": "Votos oficiales de cada candidatura, con el CERA. validos = blancos + votos a candidaturas.",
     "candidaturas": "Siglas de la candidatura en la provincia; cabecera es el código de su candidatura de acumulación nacional.",
+    "sin_candidatura": "Siglas nacionales de las candidaturas presentes en 26 provincias o más que no se presentaron en esta. Su voto es NA (sin candidatura), no 0: en los mapas se pinta como sin dato.",
     "poblacion": "Cifras oficiales del INE a 1 de enero de 2023 y de 2025 (la revisión más reciente).",
     "nacidos_extranjero_2023": "INE, Estadística del Padrón Continuo a 1-1-2023 (tabla 68526), categoría «Nacido en el extranjero o en antiguos territorios españoles»; poblacion_padron_2023 es su total, el denominador del mismo origen."
   },
@@ -35,6 +36,7 @@
       "poblacion_2023": 753920,
       "poblacion_padron_2023": 753364,
       "nacidos_extranjero_2023": 179142,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -138,6 +140,7 @@
       "poblacion_2023": 1250539,
       "poblacion_padron_2023": 1254866,
       "nacidos_extranjero_2023": 84209,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -241,6 +244,7 @@
       "poblacion_2023": 773997,
       "poblacion_padron_2023": 775002,
       "nacidos_extranjero_2023": 36536,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -344,6 +348,7 @@
       "poblacion_2023": 930181,
       "poblacion_padron_2023": 934072,
       "nacidos_extranjero_2023": 102574,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -455,6 +460,7 @@
       "poblacion_2023": 530824,
       "poblacion_padron_2023": 534084,
       "nacidos_extranjero_2023": 63541,
+      "sin_candidatura": ["FO", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -542,6 +548,7 @@
       "poblacion_2023": 620242,
       "poblacion_padron_2023": 620637,
       "nacidos_extranjero_2023": 26723,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -637,6 +644,7 @@
       "poblacion_2023": 1751600,
       "poblacion_padron_2023": 1752728,
       "nacidos_extranjero_2023": 393178,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -732,6 +740,7 @@
       "poblacion_2023": 1957210,
       "poblacion_padron_2023": 1959394,
       "nacidos_extranjero_2023": 129460,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000002",
@@ -843,6 +852,7 @@
       "poblacion_2023": 227077,
       "poblacion_padron_2023": 226878,
       "nacidos_extranjero_2023": 38431,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -970,6 +980,7 @@
       "poblacion_2023": 135237,
       "poblacion_padron_2023": 135046,
       "nacidos_extranjero_2023": 19166,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1097,6 +1108,7 @@
       "poblacion_2023": 977413,
       "poblacion_padron_2023": 979365,
       "nacidos_extranjero_2023": 164958,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1232,6 +1244,7 @@
       "poblacion_2023": 1005283,
       "poblacion_padron_2023": 1006060,
       "nacidos_extranjero_2023": 94756,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1343,6 +1356,7 @@
       "poblacion_2023": 1197261,
       "poblacion_padron_2023": 1209906,
       "nacidos_extranjero_2023": 319791,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1430,6 +1444,7 @@
       "poblacion_2023": 1140258,
       "poblacion_padron_2023": 1145843,
       "nacidos_extranjero_2023": 225091,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000002",
@@ -1541,6 +1556,7 @@
       "poblacion_2023": 1061790,
       "poblacion_padron_2023": 1067173,
       "nacidos_extranjero_2023": 253219,
+      "sin_candidatura": ["PUM+J", "VOX", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1636,6 +1652,7 @@
       "poblacion_2023": 588419,
       "poblacion_padron_2023": 588387,
       "nacidos_extranjero_2023": 64614,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1723,6 +1740,7 @@
       "poblacion_2023": 387174,
       "poblacion_padron_2023": 387529,
       "nacidos_extranjero_2023": 39152,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1810,6 +1828,7 @@
       "poblacion_2023": 491127,
       "poblacion_padron_2023": 491927,
       "nacidos_extranjero_2023": 41707,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -1897,6 +1916,7 @@
       "poblacion_2023": 197139,
       "poblacion_padron_2023": 198436,
       "nacidos_extranjero_2023": 28075,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2000,6 +2020,7 @@
       "poblacion_2023": 274598,
       "poblacion_padron_2023": 275082,
       "nacidos_extranjero_2023": 52973,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2103,6 +2124,7 @@
       "poblacion_2023": 728496,
       "poblacion_padron_2023": 731112,
       "nacidos_extranjero_2023": 108146,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2198,6 +2220,7 @@
       "poblacion_2023": 158407,
       "poblacion_padron_2023": 159764,
       "nacidos_extranjero_2023": 16892,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2309,6 +2332,7 @@
       "poblacion_2023": 357180,
       "poblacion_padron_2023": 357370,
       "nacidos_extranjero_2023": 43243,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2420,6 +2444,7 @@
       "poblacion_2023": 447463,
       "poblacion_padron_2023": 448573,
       "nacidos_extranjero_2023": 38470,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2539,6 +2564,7 @@
       "poblacion_2023": 157752,
       "poblacion_padron_2023": 157787,
       "nacidos_extranjero_2023": 11682,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2674,6 +2700,7 @@
       "poblacion_2023": 327170,
       "poblacion_padron_2023": 327089,
       "nacidos_extranjero_2023": 29088,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2793,6 +2820,7 @@
       "poblacion_2023": 155258,
       "poblacion_padron_2023": 155332,
       "nacidos_extranjero_2023": 23084,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -2904,6 +2932,7 @@
       "poblacion_2023": 89482,
       "poblacion_padron_2023": 89528,
       "nacidos_extranjero_2023": 13842,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -3007,6 +3036,7 @@
       "poblacion_2023": 521071,
       "poblacion_padron_2023": 521333,
       "nacidos_extranjero_2023": 47051,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -3142,6 +3172,7 @@
       "poblacion_2023": 166366,
       "poblacion_padron_2023": 166927,
       "nacidos_extranjero_2023": 10966,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -3261,6 +3292,7 @@
       "poblacion_2023": 5805500,
       "poblacion_padron_2023": 5797356,
       "nacidos_extranjero_2023": 1291248,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000047",
@@ -3380,6 +3412,7 @@
       "poblacion_2023": 809266,
       "poblacion_padron_2023": 808672,
       "nacidos_extranjero_2023": 204406,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000047",
@@ -3499,6 +3532,7 @@
       "poblacion_2023": 446793,
       "poblacion_padron_2023": 447343,
       "nacidos_extranjero_2023": 98845,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000047",
@@ -3626,6 +3660,7 @@
       "poblacion_2023": 847566,
       "poblacion_padron_2023": 848592,
       "nacidos_extranjero_2023": 180142,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000047",
@@ -3761,6 +3796,7 @@
       "poblacion_2023": 665089,
       "poblacion_padron_2023": 666049,
       "nacidos_extranjero_2023": 31470,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000002",
@@ -3856,6 +3892,7 @@
       "poblacion_2023": 387434,
       "poblacion_padron_2023": 388257,
       "nacidos_extranjero_2023": 22624,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000002",
@@ -3959,6 +3996,7 @@
       "poblacion_2023": 1123426,
       "poblacion_padron_2023": 1123884,
       "nacidos_extranjero_2023": 115109,
+      "sin_candidatura": ["PUM+J", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -4046,6 +4084,7 @@
       "poblacion_2023": 323956,
       "poblacion_padron_2023": 324267,
       "nacidos_extranjero_2023": 31645,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -4149,6 +4188,7 @@
       "poblacion_2023": 304550,
       "poblacion_padron_2023": 304563,
       "nacidos_extranjero_2023": 41916,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -4260,6 +4300,7 @@
       "poblacion_2023": 944245,
       "poblacion_padron_2023": 946710,
       "nacidos_extranjero_2023": 93732,
+      "sin_candidatura": "PUM+J",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -4355,6 +4396,7 @@
       "poblacion_2023": 6859914,
       "poblacion_padron_2023": 6871903,
       "nacidos_extranjero_2023": 1535961,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -4466,6 +4508,7 @@
       "poblacion_2023": 671746,
       "poblacion_padron_2023": 672155,
       "nacidos_extranjero_2023": 120390,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000072",
@@ -4585,6 +4628,7 @@
       "poblacion_2023": 336686,
       "poblacion_padron_2023": 336308,
       "nacidos_extranjero_2023": 49157,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000076",
@@ -4704,6 +4748,7 @@
       "poblacion_2023": 728027,
       "poblacion_padron_2023": 726712,
       "nacidos_extranjero_2023": 88070,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000071",
@@ -4823,6 +4868,7 @@
       "poblacion_2023": 1154306,
       "poblacion_padron_2023": 1153282,
       "nacidos_extranjero_2023": 137162,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000075",
@@ -4934,6 +4980,7 @@
       "poblacion_2023": 1552457,
       "poblacion_padron_2023": 1551692,
       "nacidos_extranjero_2023": 289569,
+      "sin_candidatura": ["PUM+J", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -5053,6 +5100,7 @@
       "poblacion_2023": 322490,
       "poblacion_padron_2023": 322282,
       "nacidos_extranjero_2023": 54888,
+      "sin_candidatura": [],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -5164,6 +5212,7 @@
       "poblacion_2023": 1950357,
       "poblacion_padron_2023": 1955268,
       "nacidos_extranjero_2023": 514431,
+      "sin_candidatura": ["PUM+J", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -5259,6 +5308,7 @@
       "poblacion_2023": 603952,
       "poblacion_padron_2023": 604086,
       "nacidos_extranjero_2023": 113570,
+      "sin_candidatura": ["PUM+J", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -5346,6 +5396,7 @@
       "poblacion_2023": 2656291,
       "poblacion_padron_2023": 2656841,
       "nacidos_extranjero_2023": 463454,
+      "sin_candidatura": "PCTE",
       "candidaturas": [
         {
           "codigo": "000005",
@@ -5457,6 +5508,7 @@
       "poblacion_2023": 83039,
       "poblacion_padron_2023": 83052,
       "nacidos_extranjero_2023": 11314,
+      "sin_candidatura": ["PACMA", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
@@ -5544,6 +5596,7 @@
       "poblacion_2023": 85491,
       "poblacion_padron_2023": 85493,
       "nacidos_extranjero_2023": 19331,
+      "sin_candidatura": ["FO", "PCTE"],
       "candidaturas": [
         {
           "codigo": "000005",
