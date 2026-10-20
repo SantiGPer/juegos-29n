@@ -694,6 +694,87 @@ details[open] summary { margin-bottom: var(--s1); }
 .grupo .etiqueta, .grupo .fuente { color: inherit; }
 .grupo.g4:not(.perdido) { color: var(--papel); }
 
+/* Índice: selector de días (maquetas v5 y v6). La barra dice qué día y qué juego están elegidos. */
+.niveles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin: var(--s5) 0 0;
+}
+
+.nivel {
+  position: relative;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+}
+
+.nivel.hoy { background: var(--marcador); }
+.nivel.elegido { border-width: 3px; }
+.nivel.cerrado { background: var(--senado); border-color: var(--senado); }
+.nivel svg { display: block; }
+
+.nivel .esq {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  line-height: 0;
+}
+
+.ficha {
+  margin-top: var(--s6);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--tinta);
+}
+
+.ficha:empty { display: none; }
+.ficha .etiqueta { margin: 0; }
+
+.ficha h2 {
+  margin: var(--s1) 0 var(--s2);
+  font-size: var(--pregunta);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.ficha .entradilla { margin-top: 0; font-size: 1rem; }
+.ficha .reglas { margin: var(--s4) 0; }
+
+.recuadro {
+  display: flex;
+  gap: var(--s3);
+  align-items: start;
+  padding: var(--s3);
+  border: 1px solid var(--tinta);
+  font-size: var(--etiqueta);
+}
+
+.recuadro svg { display: block; }
+
+.barra .que {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-size: var(--etiqueta);
+  line-height: 1.25;
+}
+
+.barra .que .etiqueta { display: block; }
+
+.barra .que b {
+  display: block;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.barra .que + .accion { flex: none; padding: 0 var(--s5); }
+.accion.jugar:disabled { background: var(--papel); }
+
 /* M9 rosco (maqueta v7): circular sin teclado; tira de 14 + 13 con el campo enfocado. Sin barra fija. */
 .cuerpo.plegado { padding-top: var(--s3); }
 .plegado .cab { margin-bottom: var(--s3); }

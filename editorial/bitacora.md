@@ -2,6 +2,35 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 — Índice: selector de días
+
+Plan confirmado por el autor, con dos decisiones suyas en sesión (20-10), para que Cowork las pase a `decisiones.md`:
+- **Precampaña:** hasta el 13-N, la rejilla sale entera cerrada y no se ve ningún juego. En la barra pone «Día 1 · Empieza el 13 de noviembre», con «Jugar» apagado.
+- **Apertura:** cada día se abre a las 00:00, hora peninsular.
+
+**Hecho**
+- **`data/calendario.json`:** los 15 días con fecha y carpeta. Solo está fijado el día 1 (Plenopedia); el resto, en `TODO`. Un campo opcional `debate` pone el bocadillo en la casilla y el recuadro en la ficha, con su texto.
+- **`shared/indice.js` e `index.html`**, según las maquetas v5 y v6 y las decisiones de diseño del 15-10:
+  - Rejilla de 5 × 3 con cifras de casillas: hoy en marcador, abiertas con borde de tinta, cerradas en senado con candado en lápiz (sin nombre) y la elegida con borde de 3 px.
+  - Bocadillo de 14 px (contorno en tinta, relleno en señal) en los días de debate, también si están cerrados.
+  - Ficha: fecha, título, entradilla y reglas, leídos de la portada del `data.json` de cada juego para no duplicar texto. Debajo, el recuadro de debate, si lo hay.
+  - Barra con el día y el juego elegidos, y «Jugar» en marcador («Jugar el del N» en los días pasados).
+  - `?hoy=N` simula el día N para las pruebas.
+- **Cambios en `shared/`:** `icono()` acepta un relleno para los píxeles «o» y lleva el icono nuevo `bocadillo`. `portada.js` exporta `reglas()`, que también usa la ficha. Hay un bloque nuevo del índice en `base.css`.
+- **A12:** la portada pasa de `game.js` a un `data.json` propio, para que la ficha la lea como en los demás juegos. El contenido no cambia.
+- **Pruebas** con un calendario de prueba (servido en local, fuera del repo) con seis juegos asignados y dos días de debate:
+  - Índice en precampaña, con `?hoy=1`, `?hoy=4` (día en `TODO`) y `?hoy=6`, a 320, 375 y 1280 px, sin errores de JS ni scroll horizontal. «Jugar el del 14» lleva a Presidentle.
+  - Las portadas de A1, A2, A3, A10, A12 y A13 se cargan bien con `reglas()`, y A12 se juega hasta el cierre.
+  - Capturas revisadas contra la lista negra.
+
+**Falta**
+- El reparto de los días 2 a 15 y las fechas de los debates (con su texto de recuadro) en `calendario.json`.
+- El subtítulo «Un juego al día del 13 al 27 de noviembre.» y «Empieza el 13 de noviembre» están tomados de las maquetas, sin pasar por contenido. Que Cowork los revise.
+
+**Dudas para el autor**
+- **Día del recibo.** Los juegos siguen leyendo `dia` de su propio `data.json` (solo Plenopedia lo tiene) y el resto pone «día TODO». Ahora que existe `calendario.json`, cada juego podría leer de ahí su día y así no habría dos sitios que mantener. ¿Lo hago al fijar el reparto?
+- **Escritorio.** A 1280 px las casillas miden unos 125 px y las cifras (escala 3) quedan pequeñas dentro. ¿Se limita el ancho de la rejilla o se agrandan las cifras desde 768 px? Es decisión del chat de diseño.
+
 ## 2026-10-19 — Motor M9 y A13 Rosco del politólogo
 
 Plan confirmado por el autor. Antes, commit aparte con los cambios de Cowork que estaban sin versionar (`0bdf99f`).

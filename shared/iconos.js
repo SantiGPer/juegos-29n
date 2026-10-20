@@ -11,10 +11,14 @@ const matrices = {
   aspa: ['.......', '.X...X.', '..X.X..', '...X...', '..X.X..', '.X...X.', '.......'],
   subir: ['..X..', '.XXX.', 'XXXXX'],
   bajar: ['XXXXX', '.XXX.', '..X..'],
+  // Días de debate en el selector (maqueta v3): contorno en tinta y relleno «o» en señal
+  bocadillo: ['XXXXXXXXXX', 'XooooooooX', 'XoXXXXXXoX', 'XooooooooX', 'XoXXXXoooX', 'XooooooooX', 'XXXXXXXXXX', '..XX......', '..X.......', '..........'],
 };
 
-export const icono = (nombre, escala, color = 'currentColor') => {
+export const icono = (nombre, escala, color = 'currentColor', relleno) => {
   const m = matrices[nombre];
-  const pixeles = m.flatMap((fila, y) => [...fila].map((v, x) => v === 'X' ? `<rect x="${x}" y="${y}" width="1" height="1"/>` : ''));
+  const pixeles = m.flatMap((fila, y) => [...fila].map((v, x) =>
+    v === 'X' ? `<rect x="${x}" y="${y}" width="1" height="1"/>`
+      : v === 'o' && relleno ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${relleno}"/>` : ''));
   return `<svg width="${m[0].length * escala}" height="${m.length * escala}" viewBox="0 0 ${m[0].length} ${m.length}" fill="${color}" shape-rendering="crispEdges" aria-hidden="true">${pixeles.join('')}</svg>`;
 };

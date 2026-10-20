@@ -1,0 +1,20 @@
+{
+  "nota": "Reparto de los 15 días de campaña. Solo el día 1 está fijado (Plenopedia, decisión del 16-10-2026); el resto se asigna conforme se cierran los juegos. debate: texto del recuadro de la ficha en los días con bingo o «Quién dijo qué».",
+  "dias": [
+    { "dia": 1, "fecha": "2026-11-13", "carpeta": "a03-plenopedia" },
+    { "dia": 2, "fecha": "2026-11-14", "carpeta": "TODO" },
+    { "dia": 3, "fecha": "2026-11-15", "carpeta": "TODO" },
+    { "dia": 4, "fecha": "2026-11-16", "carpeta": "TODO" },
+    { "dia": 5, "fecha": "2026-11-17", "carpeta": "TODO" },
+    { "dia": 6, "fecha": "2026-11-18", "carpeta": "TODO" },
+    { "dia": 7, "fecha": "2026-11-19", "carpeta": "TODO" },
+    { "dia": 8, "fecha": "2026-11-20", "carpeta": "TODO" },
+    { "dia": 9, "fecha": "2026-11-21", "carpeta": "TODO" },
+    { "dia": 10, "fecha": "2026-11-22", "carpeta": "TODO" },
+    { "dia": 11, "fecha": "2026-11-23", "carpeta": "TODO" },
+    { "dia": 12, "fecha": "2026-11-24", "carpeta": "TODO" },
+    { "dia": 13, "fecha": "2026-11-25", "carpeta": "TODO" },
+    { "dia": 14, "fecha": "2026-11-26", "carpeta": "TODO" },
+    { "dia": 15, "fecha": "2026-11-27", "carpeta": "TODO" }
+  ]
+}
