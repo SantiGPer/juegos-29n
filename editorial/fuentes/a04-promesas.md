@@ -99,3 +99,26 @@ Jurados de premios (DA 2.ª):
 > «En la composición de los tribunales, jurados u órganos colegiados que se constituyan para otorgar premios o condecoraciones financiados o concedidos por la Administración General del Estado o entidades integrantes del sector público institucional estatal, […] se garantizará que los miembros del sexo menos representado ocupen como mínimo el cuarenta por ciento de los puestos.»
 
 Colegios profesionales (artículo undécimo): no tienen cuota obligatoria, solo un deber de transparencia. Si la Junta de Gobierno no llega al 40 % de mujeres, la Memoria Anual explica los motivos y las medidas.
+
+
+## 4. Orígenes por confirmar (encargo del 20-10-2026)
+
+Consulta: 20-10-2026, sobre la misma copia del acuerdo PSOE-Sumar (descargada de nuevo y leída con `pdftools`). La numeración impresa coincide con la del PDF: el control de la pág. 38 (energéticas) da la misma cita del 17-10.
+
+### Financiación autonómica (pregunta 10): sí está en el acuerdo PSOE-Sumar
+
+Acuerdo PSOE-Sumar, pág. 40, apartado «Modelo territorial»:
+
+> «Impulsaremos un nuevo modelo de financiación autonómica que garantice los recursos necesarios para que la ciudadanía disfrute de servicios públicos de calidad. Un modelo basado en los principios de equidad, solidaridad, autonomía financiera, corresponsabilidad fiscal, suficiencia financiera y lealtad institucional para garantizar la igualdad de acceso de la ciudadanía a los servicios públicos, y que corrija la infrafinanciación de determinadas Comunidades Autónomas. Mientras esta reforma no se produzca, en los Presupuestos Generales del Estado se garantizará a la Generalitat Valenciana y al resto de Comunidades Autónomas infrafinanciadas la prestación de los servicios públicos al mismo nivel que el resto del Estado.»
+
+La pág. 38 vuelve a mencionarlo, en relación con la tributación de la riqueza («en el marco del modelo de financiación autonómica»). La etiqueta «Acuerdo PSOE-Sumar» se sostiene; fuente propuesta: «Acuerdo PSOE-Sumar, 24-10-2023, pág. 40».
+
+### Moratoria de desahucios (pregunta 9): no está en el acuerdo PSOE-Sumar
+
+En las 48 páginas no aparecen «suspensión», «prórroga», «moratoria» ni «escudo social». El único pasaje sobre desahucios (págs. 30-31) trata de las garantías procesales de la Ley de Vivienda, no de prorrogar la suspensión:
+
+> «Se impulsarán las medidas necesarias para garantizar los mecanismos de protección contemplados en la disposición final quinta de la Ley por el Derecho a la Vivienda en materia de desahucios y lanzamientos. En concreto, impulsaremos actuaciones para asegurar que, una vez comunicada de oficio por el Juzgado la existencia del procedimiento a las Administraciones autonómicas y locales competentes y verificada la situación de vulnerabilidad, se presente al Juzgado propuesta de alternativa de vivienda digna en alquiler social […]»
+
+Origen de la prórroga que cayó en 2026. Lo que se ha encontrado en la búsqueda web es un acuerdo del Gobierno con EH Bildu del 22-12-2025, no un acuerdo de investidura ni de coalición: «se mantenga todo el 2026 la prohibición de desahuciar a familias vulnerables sin alternativa habitacional» (Ara, 22-12-2025, https://es.ara.cat/politica/bildu-gobierno-espanol-acuerdan-prorrogar-ano-prohibicion-desahucios-vulnerables_1_5599610.html). Las prórrogas anteriores fueron por decreto-ley (RDL 8/2023, de 27-12-2023, hasta finales de 2024) sin un acuerdo de investidura que las recoja en lo encontrado. Del acuerdo PSOE-ERC de noviembre de 2023 no se ha leído el texto íntegro; las crónicas de su contenido no mencionan desahucios (`TODO` si se quiere descartar del todo). Tampoco se han leído los programas de PSOE y Sumar de 2023 (`TODO`).
+
+Consecuencia para el ámbito de A4 (decisión del 16-10: programas de 2023, acuerdo de coalición y acuerdos de investidura): con lo encontrado, la promesa no tiene origen dentro del ámbito. La decisión es del autor.

@@ -408,6 +408,34 @@ details[open] summary { margin-bottom: var(--s1); }
 
 .opciones.dos { grid-template-columns: 1fr 1fr; }
 
+/* Opciones en una fila de botones iguales (A4.1); origen de la promesa encima, en etiqueta (A4.2) */
+.opciones.fila { grid-template-columns: repeat(var(--columnas), 1fr); }
+
+.fila .opcion {
+  padding: var(--s2) var(--s1);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.origen { margin: 0 0 var(--s1); }
+
+/* Desglose del cierre por tipo de respuesta (A4.3) */
+.desglose {
+  list-style: none;
+  margin: 0 0 var(--s4);
+  padding: 0;
+  max-width: 18em;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.desglose li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--s1) 0;
+  border-bottom: 1px solid var(--raya);
+}
+
 /* Siete fichas a todo el ancho (maqueta v8): cuatro arriba y tres abajo, en rejilla de 12 */
 .opciones.fichas { grid-template-columns: repeat(12, 1fr); }
 

@@ -2,6 +2,31 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 (2) — Encargos del 20-10: portada de A13, Plenopedia y A4
+
+Antes, commit aparte con los cambios de Cowork (`0ae64b7`).
+
+**Hecho**
+- **A13:** portada, reglas y fuente general del contenido. La regla de «Pasar» usa el icono `pasar` de la maqueta v7, que ahora está en `shared/iconos.js` (`cb660f7`).
+- **Plenopedia:** enunciados nuevos de las preguntas 1 y 2 y explicaciones de la 4 y la 10. La pregunta 7 y la opción «Agustín Conde (PP)» ya estaban al día desde el 18-10. Enunciados y explicaciones de las diez preguntas cotejados de forma automática con el contenido: coinciden literalmente (`cb660f7`).
+- **A4, cotejo de orígenes** (detalle y citas en `editorial/fuentes/a04-promesas.md`, apartado 4):
+  - **Financiación autonómica (pregunta 10): sí está** en el acuerdo PSOE-Sumar, pág. 40 («Impulsaremos un nuevo modelo de financiación autonómica…»).
+  - **Moratoria de desahucios (pregunta 9): no está.** En las 48 páginas no aparecen «suspensión», «prórroga» ni «moratoria»; el único pasaje sobre desahucios (págs. 30-31) trata de las garantías de la Ley de Vivienda. Lo que se ha encontrado como origen de la prórroga que cayó en 2026 es un acuerdo del Gobierno con EH Bildu del 22-12-2025 (Ara), que no es un acuerdo de investidura ni de coalición. Sin leer: el texto íntegro del acuerdo PSOE-ERC y los programas de 2023 (`TODO`).
+  - No he cambiado ninguna etiqueta: en pantalla siguen «Acuerdo PSOE-Sumar [VERIFICAR]» en las preguntas 9 y 10, copiadas literalmente del contenido.
+- **A4 montado** en `juegos/a04-promesas-2023/`, con M1:
+  - A4.1: tres botones iguales en una fila, en orden fijo, con «Bloqueada» en pantalla.
+  - A4.2: el origen, en etiqueta sobre la promesa.
+  - A4.3: desglose de aciertos por tipo en el cierre.
+  - Cambios en `quiz.js`, todos opcionales para que ElectoQuiz no cambie: `columnas`, `origen` por pregunta, `desglose` y `niveles`. Hay un bloque nuevo en `base.css`.
+- **Pruebas:** partida completa de A4 a 320, 375 y 1280 px sin errores ni scroll horizontal; el desglose y el recibo cuadran con las respuestas. ElectoQuiz llega al cierre con su nivel. Capturas de la pregunta, la respuesta y el cierre revisadas contra la lista negra.
+
+**Falta**
+- Fuente general de A4: el contenido no la trae; va en `TODO` visible en la portada y en el cierre.
+
+**Dudas para el autor**
+- **A4, pregunta 9.** Con lo encontrado, la prórroga de la moratoria no tiene origen dentro del ámbito de A4 (programas de 2023, acuerdo de coalición y acuerdos de investidura). Hay tres salidas: buscar en los programas de 2023, cambiar el origen al acuerdo con EH Bildu (que queda fuera del ámbito) o sustituir la promesa.
+- **A4, pregunta 10.** El origen queda confirmado. Cowork puede quitar el [VERIFICAR] y añadir «pág. 40» a la fuente.
+
 ## 2026-10-20 — Índice: selector de días
 
 Plan confirmado por el autor, con dos decisiones suyas en sesión (20-10), para que Cowork las pase a `decisiones.md`:

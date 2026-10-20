@@ -14,7 +14,15 @@ export const ordenOpciones = ({ opciones, orden, ultima }) =>
 
 const explicacion =(...parrafos) => el('div', { className: 'explicacion' }, ...parrafos);
 
-const opciones = ({ juego, dia, fuente, preguntas, niveles }, contenedor) => {
+// Aciertos por tipo de respuesta correcta (A4.3): «Cumplidas 3 de 4», una línea por letra de `desglose`
+const porTipo = (desglose, preguntas, resultados) => el('ul', { className: 'desglose' },
+  ...Object.entries(desglose).map(([letra, tipo]) => {
+    const deEse = preguntas.map((p, i) => [p, resultados[i]]).filter(([p]) => p.correcta === letra);
+    return el('li', {}, el('span', { textContent: tipo }), el('span', { textContent: `${deEse.filter(([, r]) => r).length} de ${deEse.length}` }));
+  }));
+
+// columnas: opciones en una fila de botones iguales (A4.1). origen: etiqueta sobre la pregunta (A4.2).
+const opciones = ({ juego, dia, fuente, preguntas, niveles, columnas, desglose }, contenedor) => {
   const resultados = [];
   const cab = marcador(juego);
   const estados = () => preguntas.map((_, i) => i >= resultados.length ? '' : resultados[i] ? 'acierto' : 'fallo');
@@ -25,10 +33,11 @@ const opciones = ({ juego, dia, fuente, preguntas, niveles }, contenedor) => {
     dia,
     puntuacion: aciertos(),
     total: preguntas.length,
-    nivel: niveles.find(({ desde, hasta }) => aciertos() >= desde && aciertos() <= hasta).etiqueta,
+    nivel: niveles?.find(({ desde, hasta }) => aciertos() >= desde && aciertos() <= hasta).etiqueta,
     cuadricula: resultados.map(r => r ? '🟨' : '⬜').join(''),
     fuente,
     pista: { estados: estados() },
+    detalle: desglose ? [porTipo(desglose, preguntas, resultados)] : [],
   }, contenedor);
 
   const pregunta = n => {
@@ -71,8 +80,9 @@ const opciones = ({ juego, dia, fuente, preguntas, niveles }, contenedor) => {
 
     monta(contenedor, [
       cab.nodo,
+      ...(p.origen ? [el('p', { className: 'etiqueta origen', textContent: p.origen })] : []),
       el('p', { className: 'pregunta', textContent: p.pregunta }),
-      el('div', { className: 'opciones' }, ...botones),
+      el('div', columnas ? { className: 'opciones fila', style: `--columnas: ${columnas}` } : { className: 'opciones' }, ...botones),
       pie,
     ], boton);
     cab.pinta(estados(), [n], aciertos());
