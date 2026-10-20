@@ -78,14 +78,15 @@ const ordenar = (datos, listo) => {
   pinta();
 
   const pie = el('div');
+  // Al comprobar, la lista se queda como la dejó el jugador, con la posición real de cada ítem (decisión del 20-10)
   const resolver = () => {
     const enSitio = correcto.filter((x, i) => orden[i] === x).length;
-    const resuelta = el('ol', { className: 'orden resuelta' }, ...correcto.map((x, i) => el('li', {},
-      celda(orden[i] === x ? 'acierto' : ''),
+    const resuelta = el('ol', { className: 'orden resuelta' }, ...orden.map((x, i) => el('li', {},
+      celda(correcto[i] === x ? 'acierto' : ''),
       el('div', {},
         el('p', { className: 'hito', textContent: x.texto }),
         el('p', { className: 'etiqueta', textContent: x.cifra }),
-        ...(orden[i] === x ? [] : [el('p', { className: 'etiqueta', textContent: `Tu posición: ${orden.indexOf(x) + 1}.º` })])))));
+        el('p', { className: 'etiqueta', textContent: `Era el ${correcto.indexOf(x) + 1}.º` })))));
     lista.replaceWith(resuelta);
     pie.append(explicacion(datos));
     muestra(pie);

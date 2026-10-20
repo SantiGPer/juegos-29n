@@ -5,8 +5,8 @@
 <title>Prueba: M1 ordenar</title>
 </head>
 <body>
-<!-- Juega partidas de A2 con el motor real y comprueba que la lista resuelta de cada ronda
-     sale ordenada por fecha y con los hitos del data.json. Resultado en el título y en <pre>.
+<!-- Juega partidas de A2 con el motor real y comprueba que, al comprobar, la lista resuelta conserva
+     el orden del jugador y que cada «Era el N.º» es la posición del hito por fecha. Resultado en el título y en <pre>.
      Uso: servir la raíz del repo y abrir /pruebas/ordenar.html (o chrome --headless --dump-dom). -->
 <main hidden></main>
 <pre id="log"></pre>
@@ -15,22 +15,27 @@ import { iniciar } from '../shared/motores/quiz.js';
 
 const datos = await fetch('../juegos/a02-cronologia-legislatura/data.json').then(r => r.json());
 const main = document.querySelector('main');
-const iso = es => es.split('-').reverse().join('-');
 window.scrollTo = () => {};
 
 const partida = () => {
   iniciar(datos, main);
+  main.querySelector('.accion').click();
   return datos.rondas.map((r, n) => {
+    const jugador = [...main.querySelectorAll('.orden li > span')].map(s => s.textContent);
     main.querySelector('.accion').click();
-    const fechas = [...main.querySelectorAll('.orden.resuelta .etiqueta')].map(p => iso(p.textContent));
-    const esperadas = r.hitos.map(h => h.fecha).sort();
+    const filas = [...main.querySelectorAll('.orden.resuelta li')];
+    const resuelta = filas.map(li => li.querySelector('.hito').textContent);
+    const porFecha = [...r.hitos].sort((a, b) => a.fecha.localeCompare(b.fecha)).map(h => h.texto);
+    const era = filas.map(li => +li.textContent.match(/Era el (\d+)\.º/)[1]);
     main.querySelector('.accion').click();
-    return fechas.join() === esperadas.join() ? null : `ronda ${n + 1}: ${fechas.join(' ')} ≠ ${esperadas.join(' ')}`;
+    if (resuelta.join('|') !== jugador.join('|')) return `ronda ${n + 1}: la lista resuelta no conserva el orden del jugador`;
+    if (era.some((p, i) => porFecha[p - 1] !== resuelta[i])) return `ronda ${n + 1}: «Era el» no coincide con la fecha (${era.join(' ')})`;
+    return null;
   }).filter(Boolean);
 };
 
 const fallos = Array.from({ length: 100 }, partida).flat();
-document.querySelector('#log').textContent = fallos.length ? fallos.join('\n') : '100 partidas: todas las rondas resueltas en orden de fecha';
+document.querySelector('#log').textContent = fallos.length ? fallos.join('\n') : '100 partidas: listas resueltas en el orden del jugador y posiciones reales correctas';
 document.title = fallos.length ? 'FALLO' : 'OK';
 </script>
 </body>

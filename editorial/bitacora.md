@@ -2,6 +2,19 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-20 (3) — Ordenar: la lista se queda como la dejó el jugador
+
+Encargo del 20-10, punto 2.
+
+**Hecho**
+- **`rondas.js` (tipo `ordenar`, pregunta 5 de Plenopedia) y `quiz.js` (variante `ordenar`, A2):** al comprobar, la lista no se recoloca. Cada ítem sale en el sitio en que lo dejó el jugador, con su casilla y «Era el N.º» (su posición real). En A2 se mantienen la fecha y la explicación y la fuente plegadas; desaparece «Tu posición».
+- **`pruebas/ordenar.html` reescrita:** antes comprobaba que la lista resuelta salía ordenada por fecha, justo lo que ya no ocurre. Además se había quedado rota desde que existe la portada, porque su primer clic pulsaba «Jugar». Ahora comprueba en 100 partidas que la lista resuelta conserva el orden del jugador y que cada «Era el N.º» es la posición del hito por fecha. Pasa.
+- **Pruebas:** partidas completas de A2 y Plenopedia a 320, 375 y 1280 px sin errores ni scroll horizontal. Capturas de la ronda resuelta de A2 y de la pregunta 5 de Plenopedia revisadas contra la lista negra.
+
+**Dudas para el autor**
+- **«Era el N.º» también en los ítems bien colocados.** He seguido la decisión al pie de la letra («junto a cada ítem»), así que un ítem en su sitio dice, por ejemplo, «Era el 3.º» junto a su casilla de acierto. Si sobra, se puede dejar solo en los que están fuera de sitio.
+- **Casillas.** Mantengo las de cada juego: en A2, marcador, medio o vacía (regla del 16-10), y en Plenopedia, acierto o vacía, porque la pregunta puntúa entera y no por ítem. La decisión habla de «acierto, medio o fallo»; si se quiere el aspa de fallo, es un cambio de una palabra.
+
 ## 2026-10-20 (2) — Encargos del 20-10: portada de A13, Plenopedia y A4
 
 Antes, commit aparte con los cambios de Cowork (`0ae64b7`).
