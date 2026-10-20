@@ -521,3 +521,144 @@ Decisiones del autor del 20-10 en sesión con Code, pasadas aquí:
   3. Anotar el resultado en editorial/fuentes/a04-promesas.md, completar la pregunta 9 en el data.json sustituyendo los [VERIFICAR] por el dato y regenerar A4.
   
   Si el programa no recoge la promesa, se avisa en la bitácora y no se monta.
+- A4, pregunta 9, cotejada por Code (20-10):
+  - Origen: programa del PSOE de 2023, pág. 153 («Desarrollaremos una ley para prohibir el proxenetismo en todas sus formas…»).
+  - Votación del 21-05-2024: 184 en contra, 122 a favor y 36 abstenciones; Vox y Podemos se abstuvieron.
+  - El contenido ya está al día con el data.json.
+- A4, fuente general (decisión del autor, 20-10): «Acuerdo PSOE-Sumar (24-10-2023), programa electoral del PSOE de 2023, acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa».
+- **El Crispómetro sale del repo** (decisión del autor, 20-10): lo sustituye Plenopedia. Se quedan el motor M4, para A11, y llamadas_al_orden.json (VIII–XV), en reserva para A11 o para posts.
+- A7, selección del autor (20-10), seis mapas provinciales:
+  - partido más votado en 2023 (de categorías);
+  - habitantes por escaño;
+  - voto nulo (%);
+  - voto a Sumar (%);
+  - población nacida en el extranjero (%);
+  - voto a Vox (%).
+  
+  Catálogo y criterios de juego, en editorial/catalogos/ y en esta misma página cuando el autor los cierre.
+- **Encargo para Code (A7, datos; se puede empezar ya):**
+  1. `R/01_resultados_2023_prov.R` → `data/resultados_2023_prov.json`, con los resultados de las generales del 23-07-2023 por provincia (Ministerio del Interior, infoelectoral):
+     - censo (con y sin CERA), votantes, votos válidos, blancos y nulos;
+     - votos de cada candidatura y partido más votado;
+     - escaños de 2023.
+     
+     Sirve también para A9 y A11.
+  2. Población por provincia (INE, padrón continuo) a 1-1-2023 y la más reciente, con los escaños de 2023 (RD 400/2023) y de 2026 (RD 806/2026), para calcular los habitantes por escaño de los dos años.
+  3. Población nacida en el extranjero por provincia (INE, padrón continuo, 1-1-2023).
+  4. Fuente, URL y fecha de descarga en SOURCES.md. Comprobar que los totales cuadran con el resultado nacional publicado.
+- A7, criterios (20-10):
+  - **Mecánica:** un mapa por ronda, sin leyenda, con cuatro etiquetas para elegir (la correcta y tres del mismo juego, con el mapa más parecido entre ellas). Seis rondas con el encadenador.
+  - **Partido más votado:** sale y entra la **abstención** (%). Los seis mapas son abstención, habitantes por escaño, voto nulo, voto a Sumar, población nacida en el extranjero y voto a Vox.
+  - **Habitantes por escaño:** con los escaños de 2026 (RD 806/2026) y la población más reciente del INE.
+  - **Escala:** cinco tramos con cortes propios en cada mapa. Los colores los decide el chat de diseño.
+  - **Abstención:** sobre el censo de residentes en España, sin el voto exterior (CERA). Confirmado por el autor el 20-10.
+- A6, enfoque: producción legislativa y control al Gobierno comparados entre legislaturas, sin repetir lo que ya cubre Plenopedia (el Pleno de la XV).
+- A6, selección del autor (20-10), seis métricas:
+  1. leyes aprobadas por año de legislatura;
+  2. peso de los decretos-ley sobre el total de normas con rango de ley;
+  3. proposiciones de ley presentadas por grupo;
+  4. proposiciones de ley que llegaron a ser ley, por grupo;
+  5. preguntas orales al presidente del Gobierno en el Pleno, por legislatura;
+  6. comparecencias de ministros, por legislatura.
+- A6, propuesta de Cowork pendiente de confirmar por el autor:
+  - **Rango:** las mismas legislaturas que el análisis de llamadas al orden, es decir, VIII, IX, X, XII, XIV y XV, las que tuvieron investidura.
+  - **Por grupo:** las métricas 3 y 4 solo en la XV, normalizadas por diputado.
+- **Encargo para Code (A6, viabilidad; sin montar el juego):** comprobar en los datos abiertos del Congreso, y en el BOE para las leyes y los decretos-ley, si las seis métricas se pueden sacar de forma fiable para ese rango. Para cada una:
+  - fuente y URL;
+  - si el formato es estable entre legislaturas;
+  - cifras por legislatura (o por grupo en la XV);
+  - límites, por ejemplo cómo se cuentan las comparecencias en comisión frente al Pleno, o las proposiciones conjuntas de varios grupos.
+  
+  Salida en editorial/fuentes/a06-viabilidad.md y resumen en la bitácora. Va después del encargo de datos de A7.
+- A8, selección del autor (20-10): cuatro partidos (PP, PSOE, Vox y Sumar) y tres segmentaciones (edad, sexo y hábitat).
+- **Encargo para Code (A8, datos; va después de A7 y de la viabilidad de A6):**
+  1. Localizar el estudio postelectoral del CIS de las generales de 2023 y descargar el microdato, con número de estudio, URL y fecha.
+  2. Calcular, con la ponderación del estudio, el voto declarado a PP, PSOE, Vox y Sumar sobre el voto válido declarado, es decir, sin abstención, blanco, nulo ni NS/NC, por:
+     - edad, en los tramos del propio CIS;
+     - sexo;
+     - tamaño de hábitat, en los tramos del propio CIS.
+  3. Para cada celda, el porcentaje, la n sin ponderar y el intervalo de confianza al 95 %. Marcar las celdas con n < 100.
+  4. Para comparar, el resultado real de 2023 sobre voto válido.
+  
+  Salida en data/cis_postelectoral_2023.json, con el detalle en editorial/fuentes/a08-cis.md. No se monta el juego.
+- A8, mecánica (20-10): entre seis y ocho estimaciones sueltas con el motor M2, cada una sobre una celda de partido y segmento elegida por lo que sorprende. La selección se hará sobre un catálogo de celdas con el dato y la n, cuando Code tenga las cifras. Las celdas con n < 100 quedan fuera.
+
+## 2026-10-20 (diseño, A7 ¿Qué mapa es este?)
+
+Aprobado por el autor. Referencia: docs/maquetas/maqueta-mapas-v10.html (variante A).
+
+- Diseño, A7, escala de color:
+  - Una sola escala neutra para los seis mapas, «del sepia a la tinta», con cinco tramos como tokens en `:root`: `--m0: #f3ebdc`, `--m1: #dcc7a1` (senado), `--m2: #ab9472`, `--m3: #615341`, `--m4: #000000`.
+  - Nunca colores de partido, tampoco en los mapas de voto a Vox o a Sumar: el color no puede dar la respuesta.
+  - Excepción aprobada: senado entra en un gráfico porque en A7 no hay colores de partido.
+- Diseño, A7, mapa:
+  - SVG provincial con proyección cónica conforme (d3-geo, `geoConicConformal().rotate([3.5,0]).parallels([37,43])`), ajustado al ancho de la columna con la península, Baleares, Ceuta y Melilla. Sin Gibraltar, Portugal, Francia ni mar.
+  - Canarias, con su propia proyección, en un recuadro abajo a la izquierda, por debajo de Huelva, Cádiz y Ceuta y sin solaparse con la península. El recuadro lleva una escuadra raya de 1 px en sus lados superior y derecho. Con 343 px de ancho, el mapa mide unos 343 × 334 px.
+  - Geometría de referencia: es-atlas (provincias del IGN, `provinces.json`), con la fuente citada en data/SOURCES.md. Los recortes se generan una vez y se guardan como datos, no en el navegador.
+  - Provincias rellenas con su tramo y separadas por un trazo de papel de 0,6 px, sin contorno exterior.
+  - Ceuta y Melilla llevan además una casilla de 8 × 8 px con su tramo y borde de 1 px tinta, centrada en su posición.
+- Diseño, A7, ronda:
+  - Mientras se juega:
+    - etiqueta «Ronda N de 6. ¿Qué muestra este mapa?»;
+    - mapa sin título ni leyenda, ajustado en alto para que las cuatro opciones quepan sin scroll en 375 × 560 (unos 216 px de alto; nunca menos de 200 px) y centrado;
+    - opciones en una rejilla de 2 × 2, de 52 px de alto como mínimo y texto a 0,9375 rem en 800. Tocar elige y «Responder» confirma.
+    - El mapa no reacciona al toque.
+  - Al resolver:
+    - el mapa recupera el ancho completo;
+    - encima van el título real (1.125 rem, 800, por ejemplo «Voto nulo (% de votantes), 2023») y la leyenda de cinco casillas con sus cortes debajo (0,6875 rem, lápiz);
+    - las opciones se marcan como en el resto de la serie (acierto en marcador, fallo tachado);
+    - debajo, explicación de dos frases y fuente.
+  - Tras resolver, tocar una provincia la marca con contorno de 2 px tinta y escribe su nombre y su valor en una franja fija bajo la leyenda (borde superior tinta e inferior raya). Una sola provincia marcada a la vez.
+  - Pista de seis celdas y recibo 🟨⬜, como en el resto de la serie.
+- Encargo para Code: montar A7 con estas reglas cuando estén los datos (encargo del 20-10) y el contenido (títulos, cortes de los cinco tramos de cada mapa, distractores y explicaciones, de Cowork editorial). Captura a 320, 375 × 560 y 1280, revisión contra la lista negra, commit y entrada en la bitácora.
+- A5, criterios del autor (20-10):
+  - **Escaños:** por candidatura en las elecciones generales (Ministerio del Interior), con el nombre de la época. Las candidaturas con menos de cinco escaños se agrupan en «Otros».
+  - **Rondas:** cuatro, una por etapa: 1982 (mayoría absoluta del PSOE), 2000 (mayoría absoluta del PP), 2015 (fin del bipartidismo) y 2023.
+- **Encargo para el chat de diseño (A5):** definir cómo reparte el jugador los 350 escaños en el móvil y cómo se compara su reparto con el real. Incluye:
+  - el control por partido (deslizador, campo numérico u otro);
+  - el contador de escaños por asignar;
+  - el dibujo del hemiciclo en SVG;
+  - la superposición de la respuesta (trama) y el dato real (sólido), según la decisión de diseño del 15-10;
+  - los colores de las candidaturas históricas (UCD, AP, CDS, IU, CiU, Podemos, Ciudadanos…), sacados de la paleta de Wikipedia que ya se usa;
+  - el aspecto de la puntuación (error medio por partido).
+  
+  La puntuación concreta, es decir, cuánto error vale cada punto, la decide el autor con Cowork después de ver la propuesta.
+- **Encargo para Code (A5, datos; puede ir en paralelo a diseño):** `R/02_legislaturas.R` o un script nuevo → escaños por candidatura en las generales de 1982, 2000, 2015 y 2023 (Ministerio del Interior, infoelectoral), con nombre de la candidatura, siglas, escaños y votos, y las de menos de cinco escaños agrupadas en «Otros». Fuente en SOURCES.md; los totales tienen que sumar 350 en cada año.
+
+## 2026-10-20 (diseño, pendientes del chat de diseño)
+
+Aprobado por el autor. Referencia: docs/maquetas/maqueta-pendientes-v11.html.
+
+- Diseño, cabecera con pistas largas (duda de la bitácora):
+  - Cuando la pista tiene más de seis rondas, las celdas bajan a 18 px con 2 px de separación (tic y aspa a escala 1,6) y los puntos pasan a cifras de casillas de escala 2, con «Puntos» a 0,75 rem.
+  - Desde 360 px de ancho cabe todo en una fila. Por debajo, los puntos bajan a una segunda línea, alineados a la derecha.
+  - Con seis rondas o menos, no cambia nada (celdas de 22 px y escala 3).
+- Diseño, fichas a 320 px (A10, A12): `--ficha: clamp(13px, 3.75vw, 0.875rem)`, con un suelo de 13 px. Si una palabra no cabe, `hyphens: auto` (el documento ya lleva `lang="es"`).
+- Diseño, índice en escritorio: la rejilla de días tiene un ancho máximo de 26 rem (416 px), con casillas de unos 78 px y cifras a escala 3, alineada a la izquierda con la columna. Las cifras no se agrandan.
+- Diseño, A10, recibo en Windows: se mantiene 🟨🟫🟧⬛. Las alternativas a 🟧 (🟥, 🟪) llevan color de partido.
+- Diseño, A5 Hemiciclos (respuesta al encargo del 20-10):
+  - **Hemiciclo:**
+    - SVG de 350 casillas cuadradas en 10 filas de semicírculo, repartidas por fila en proporción al radio y ordenadas por ángulo de izquierda a derecha.
+    - Mientras se reparte va fijo arriba (sticky), con unos 132 px de alto en móvil y la cabecera compacta encima.
+    - Asientos sin asignar: papel con borde raya de 0,6 px.
+  - **Reparto del jugador:** trama al 50 % del color de cada candidatura (patrón SVG de 2×2), que se actualiza con cada cambio.
+  - **Orden:** las candidaturas se listan y se sientan por orden alfabético de siglas, con «Otros» al final, en la lista y en el hemiciclo.
+  - **Fila de la lista:**
+    - muestra de 14 px con borde tinta;
+    - siglas en 800 y el nombre de la época debajo, a 0,75 rem en lápiz;
+    - botón «−» de 44 px, campo numérico de 64 × 44 px (`inputmode="numeric"`, cifra centrada en 800 y tabular) y botón «+» de 44 px. Los botones mueven de uno en uno y repiten al mantenerlos pulsados.
+    - Todo empieza en 0.
+  - **Barra:**
+    - a la izquierda, «Quedan» con las cifras de casillas a escala 3;
+    - a la derecha, «Comprobar», apagado mientras no queden 0;
+    - si el jugador se pasa, el contador dice «Sobran N» y «Comprobar» sigue apagado.
+  - **Al comprobar:**
+    - el hemiciclo pasa de trama a sólido con el reparto real, de izquierda a derecha en una sola pasada (600 ms, por pasos; sin animación con prefers-reduced-motion);
+    - cada fila sustituye los controles por dos barras finas (tu reparto en trama y el real en sólido), los escaños reales en 800 y la diferencia («+7», «−4», «=»);
+    - encima del hemiciclo, el error medio por candidatura en cifras de casillas a escala 4, seguido de «escaños de error medio».
+  - **Puntuación por ronda:** la pista de cuatro celdas sigue la regla de llena, media o vacía. Los umbrales de error los deciden el autor y Cowork.
+  - **Colores históricos:** se añaden a `:root` desde la misma plantilla de Wikipedia y la misma revisión que los actuales (UCD ya está; faltan AP, CDS, IU, CiU, Podemos, Ciudadanos y las que salgan con cinco o más escaños en 1982, 2000 y 2015), citados en SOURCES.md. «Otros» va en raya. Si dos candidaturas de una misma ronda tienen colores casi iguales, Code lo anota en la bitácora antes de montar.
+- Encargo para Code:
+  - Aplicar la cabecera con pistas largas, el suelo de las fichas y el ancho del índice en `shared/base.css`.
+  - Montar A5 con estas reglas cuando estén los datos (encargo del 20-10) y los umbrales de puntuación.
+  - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.

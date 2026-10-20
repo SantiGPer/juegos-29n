@@ -17,7 +17,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 ## Portada
 
-**Fuente general:** Acuerdo PSOE-Sumar (24-10-2023), acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa.
+**Fuente general:** Acuerdo PSOE-Sumar (24-10-2023), programa electoral del PSOE de 2023, acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa.
 
 **Texto:** Prometer es fácil; cumplir, ya se verá. Doce promesas de 2023: ¿cuáles salieron adelante, cuáles se quedaron en el cajón y cuáles tumbó el Congreso?
 
@@ -183,7 +183,7 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Pregunta:** Aprobar una ley abolicionista que persiga el proxenetismo en todas sus formas
 
-**Origen:** Programa del PSOE 2023 [VERIFICAR texto en el programa]
+**Origen:** Programa del PSOE 2023
 
 **Opciones:**
 - a) Cumplida
@@ -192,9 +192,9 @@ Formato fijo por pregunta: pregunta / opciones / correcta / explicación / fuent
 
 **Correcta:** c
 
-**Explicación:** El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con los votos en contra del PP, Sumar, ERC, Junts, PNV y EH Bildu [VERIFICAR recuento]. Su propio socio de Gobierno votó en contra.
+**Explicación:** El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con 184 votos en contra (PP, Sumar, ERC, Junts, PNV y EH Bildu), 122 a favor y 36 abstenciones. Su propio socio de Gobierno votó en contra.
 
-**Fuente:** Programa del PSOE 2023 [VERIFICAR página]; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024.
+**Fuente:** Programa del PSOE 2023, pág. 153; Diario de Sesiones del Congreso, 21-05-2024; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024.
 
 ---
 
