@@ -719,3 +719,54 @@ Aprobado por el autor. Referencia: docs/maquetas/maqueta-pendientes-v11.html.
   1. Actualizar `CLAUDE.md` con A8 «El fondo de la urna» (M10 emparejar + duelo con el encadenador; datos de `resultados_2023_prov.json`) y M10 en la tabla de motores.
   2. Comprobar las dos inventadas en el Registro de Partidos (encargo anterior de hoy).
   3. Montar A8 desde el contenido cuando estén el diseño de M10 y la comprobación; las provincias y los votos de las candidaturas reales se leen de `resultados_2023_prov.json` y se cotejan con el contenido.
+
+## 2026-10-21 (diseño, M10 emparejar)
+
+Respuesta a los encargos de diseño del 21-10 (M10 y añadido), aprobada por el autor. Referencia: docs/maquetas/maqueta-emparejar-v12.html.
+
+- Diseño, M10, disposición a 375 × 560 (todo cabe sin scroll):
+  - Cabecera compacta con la pista larga (ver abajo).
+  - Enunciado en una línea: «Ronda N de 3.» en etiqueta y el texto del enunciado en 1 rem y 800.
+  - **Filas de ítem:** una por candidatura, separadas 4 px, con borde de 1 px tinta y alto mínimo de 48 px. Rejilla de dos columnas: `1fr` y 88 px.
+    - Nombre en 0,875 rem y 800.
+    - Debajo, las provincias en 0,75 rem y lápiz: hasta tres se nombran; desde cuatro, «N provincias», y la lista completa va en la explicación.
+    - A la derecha, el hueco: 88 × 38 px, borde discontinuo de 1 px raya y «?» en raya.
+  - **Bandeja:** las cinco respuestas como fichas en una rejilla de cinco columnas iguales (6 px de separación, 48 px de alto), dentro de la barra fija, justo encima del botón principal. Siempre visible.
+  - **Fichas:** cifras en Archivo 800 tabular con punto de miles («5.620»), no en cifras de casillas.
+  - **Tamaño fijo de las fichas:** todas miden lo mismo. En la bandeja, una quinta parte del ancho; en el hueco, 88 × 38 px, igual que el hueco vacío, tanto con cifra como con «No existe». Nunca se ajustan al texto.
+  - **Orden:** ítems en orden alfabético; respuestas de mayor a menor y «No existe» al final.
+- Diseño, M10, interacción:
+  - **Formar una pareja:** tocar una fila (borde de 3 px) y después una ficha (se invierte), o al revés. La ficha salta al hueco y en la bandeja deja su sitio vacío con borde discontinuo raya, para que nada se recoloque.
+  - **Deshacer:** tocar una ficha colocada la devuelve a su sitio. Elegir una ficha para una fila ya ocupada sustituye a la anterior, que vuelve sola a la bandeja.
+  - En escritorio, arrastrar una ficha al hueco es un extra, nunca obligatorio.
+  - El botón principal dice «Empareja las 5 (N de 5)», apagado, hasta completar las cinco parejas; entonces pasa a «Comprobar». Se corrige todo al final.
+- Diseño, M10, corrección:
+  - Pareja acertada: ficha en marcador.
+  - Pareja fallada: ficha tachada, en lápiz y con borde raya; debajo, alineado a la derecha, «Era: 484» o «Era: no existe» (0,75 rem, 800, tinta).
+  - Las filas no cambian de tamaño al corregir.
+- Diseño, M10, «No existe» y candidatura inventada:
+  - La ficha «No existe» lleva delante el icono «nula» de 10×10 (escala 1,4 en la bandeja y 1,2 en el hueco). En la bandeja su texto va a 0,8125 rem y en el hueco a 0,75 rem, para que quepa en una línea.
+  - Al corregir, la fila de la candidatura inventada pasa a borde discontinuo de 1 px tinta, con el icono «nula» delante del nombre y, bajo las provincias, la línea «Candidatura inventada. Sus provincias, también.» (0,75 rem, tinta). El texto exacto de la línea puede venir del contenido.
+- Diseño, pista y recibo de A8:
+  - Pista de 11 celdas en tres tramos (5, 5 y 1: dos rondas y el duelo), con la cabecera de pistas largas (celdas de 18 px).
+  - Al resolver una ronda se rellenan de golpe sus cinco celdas.
+  - Separación entre tramos de 8 px. Se aplica también a Cronología (duda de la bitácora del 20-10 (6)).
+  - Recibo: 🟨⬜ en tres líneas (5 + 5 + 1).
+- Encargo para Code: montar M10 en `shared/motores/emparejar.js` con estas reglas (ronda para el encadenador `rondas.js`, respuesta especial «No existe» por configuración) y ajustar la separación entre tramos en `base.css`. Captura a 320, 375 × 560 y 1280, revisión contra la lista negra, commit y entrada en la bitácora.
+- Aviso para editorial: en editorial/contenido/a08-fondo-de-la-urna.md, a la tabla de la ronda 1 le falta la fila de Caminando Juntos (10 provincias, 5.620 votos), que sí está en las respuestas y en la explicación.
+
+## 2026-10-21 (tarde, tras la bitácora del 21-10 y el diseño de M10)
+
+- **A8, Registro de Partidos:** el autor ha comprobado a mano en el buscador del Registro (21-10) que «Por Mi Comarca y la de al Lado» (PMC+) y «Horario Europeo Ya» (HEY) no existen. Las inventadas quedan limpias. Code deja la descarga del listado completo y anota en editorial/fuentes/a08-inventadas.md la comprobación del autor y sus cinco búsquedas con 0 resultados. Sigue pendiente repetirla en las candidaturas proclamadas para el 29-N cuando se publiquen en el BOE.
+- **A8, contenido corregido** (aviso del chat de diseño y duda de la bitácora del 21-10): a la tabla de la ronda 1 le faltaba la fila de Caminando Juntos por un error de Cowork al cambiar las inventadas. Repuesta como «Caminando Juntos (CJ)», 10 provincias, 5.620 votos. En pantalla, todas las candidaturas con siglas entre paréntesis salvo las que no las tienen distintas del nombre.
+- A8, adaptación del contenido al diseño de M10: desde cuatro provincias se muestra «N provincias» y la lista completa va en la explicación (Caminando Juntos y Horario Europeo Ya; la de esta última, inventada). La fila de la inventada usa al corregir la línea del diseño, «Candidatura inventada. Sus provincias, también.», y el texto «La inventada» de cada ronda va en la explicación, tras las dos frases.
+- A7, método A de cortes: la discrepancia de quintiles con R (tipo 7) se debe al cálculo de Cowork, no a los datos. Si el autor elige el método A, valen los de R. El método B (recomendado) no cambia.
+- **Encargo para Code:**
+  1. Montar M10 en `shared/motores/emparejar.js` según el diseño del 21-10 (maqueta v12) y la separación de 8 px entre tramos en `base.css`; muestra el diff de `shared/`.
+  2. Montar A8 en `juegos/a08-fondo-de-la-urna/` desde editorial/contenido/a08-fondo-de-la-urna.md, cotejando votos y provincias con `resultados_2023_prov.json`.
+  3. Escribir editorial/fuentes/a08-inventadas.md (punto anterior).
+  4. `CLAUDE.md`, fichas y tablas:
+     - **A3 Plenopedia** (medio en datos). Diez preguntas sobre el Pleno de la XV (203 sesiones, 2023–2026) con mecánicas mezcladas en el encadenador: opción múltiple, ordenar, estimación (M2) y duelo. Indicadores del Diario de Sesiones: palabras por diputado, rumores, aplausos y risas por cada 10.000 palabras, llamadas al orden, duración y hora de cierre de las sesiones, minutos de silencio y léxico. El Gobierno cuenta como categoría propia. Primer juego de la serie (13-N). Cierre: puntos sobre 10. Sustituye al Crispómetro (20-10).
+     - **A7 ¿Qué mapa es este?** (medio). Seis mapas provinciales sin leyenda (abstención, habitantes por escaño, voto nulo, voto a Sumar, nacidos en el extranjero y voto a Vox), con cuatro etiquetas por mapa; ronda de tipo mapa en el encadenador y geometría de `mapa_provincias.json`. Cierre: aciertos sobre 6.
+     - Tabla de motores: M3 solo para A5 y A6; M4 solo para A11 (A3 ya no lo usa); el encadenador (`rondas.js`) para A3, A7 y A8.
+     - Tabla de datos: fuera `renta_prov.json` (A7 ya no tiene mapa de renta).

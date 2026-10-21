@@ -1,6 +1,6 @@
 # A8 · El fondo de la urna
 
-Estado: **textos aprobados por el autor** (2026-10-21), salvo la comprobación de las inventadas en el Registro. Selección del autor del 21-10 sobre editorial/catalogos/a08-nunca-votas-catalogo.md.
+Estado: **textos aprobados por el autor** (2026-10-21). Selección del autor del 21-10 sobre editorial/catalogos/a08-nunca-votas-catalogo.md.
 
 - Ámbito: candidaturas al Congreso en las elecciones generales del 23-07-2023.
 - Motor: encadenador de rondas (`shared/motores/rondas.js`) con dos rondas de M10 emparejar y un duelo final; una puntuación sobre 11.
@@ -8,7 +8,9 @@ Estado: **textos aprobados por el autor** (2026-10-21), salvo la comprobación d
 - Inventadas (21-10): I4 en la ronda 1, entre otros nombres llamativos y junto a Por Mi Región, de la que es eco; I8 en la ronda 2, entre nombres genéricos. Propuesta de Cowork.
 - Orden en pantalla (criterio del 19-10): candidaturas en orden alfabético; cifras de mayor a menor; «No existe» al final.
 - Cada candidatura muestra las provincias en las que se presentó (decisión del autor, 21-10). Las de la candidatura inventada son parte de la ficción y se desvelan al resolver.
-- Candidaturas inventadas: pendientes de comprobar en el Registro de Partidos Políticos y en las candidaturas proclamadas para el 29-N. Hasta entonces, [VERIFICAR].
+- En pantalla (diseño del 21-10): hasta tres provincias se nombran; desde cuatro, «N provincias», y la lista completa va en la explicación.
+- Al corregir, la fila de la inventada lleva la línea del diseño: «Candidatura inventada. Sus provincias, también.». El texto «La inventada» de cada ronda va en la explicación, tras las dos frases.
+- Candidaturas inventadas: comprobadas por el autor en el Registro de Partidos Políticos el 21-10, sin coincidencias. Falta repetir la búsqueda en las candidaturas proclamadas para el 29-N cuando se publiquen en el BOE.
 - Fuente general: Ministerio del Interior (infoelectoral), resultados del Congreso de las elecciones generales del 23-07-2023. Elaboración propia (`data/resultados_2023_prov.json`).
 
 ## Portada
@@ -27,7 +29,8 @@ Estado: **textos aprobados por el autor** (2026-10-21), salvo la comprobación d
 
 | Candidatura (en pantalla) | Provincias | Respuesta correcta |
 | --- | --- | --- |
-| Por Mi Comarca y la de al Lado (PMC+) | Albacete y Cuenca [inventado; propuesta] | No existe |
+| Caminando Juntos (CJ) | 10 provincias (lista abajo) | 5.620 |
+| Por Mi Comarca y la de al Lado (PMC+) | Albacete y Cuenca [inventado] | No existe |
 | Por Mi Región | Murcia | 1.698 |
 | Referéndum Sistema Dinero (+RDS+) | Murcia | 165 |
 | Tercera Edad en Acción (3e) | Segovia y La Rioja | 484 |
@@ -37,6 +40,8 @@ Estado: **textos aprobados por el autor** (2026-10-21), salvo la comprobación d
 **Explicación:** Caminando Juntos fue la más votada de la ronda porque se presentó en diez provincias, y más de la mitad de sus votos salen de Valencia, Alicante y Sevilla. En Murcia compitieron dos de estas candidaturas: Por Mi Región sacó 1.698 votos y Referéndum Sistema Dinero, 165.
 
 **La inventada:** Por Mi Comarca y la de al Lado no existe; Por Mi Región, sí, y sacó 1.698 votos en Murcia.
+
+**Provincias (lista completa, en la explicación):** Caminando Juntos: Alicante, Cádiz, Granada, Málaga, Murcia, Palencia, Salamanca, Segovia, Sevilla y Valencia.
 
 **Datos por provincia:** Caminando Juntos: Valencia 1.056, Alicante 1.027, Sevilla 912, Cádiz 745, Málaga 691, Granada 461, Murcia 453, Salamanca 140, Segovia 102, Palencia 33. Tercera Edad en Acción: La Rioja 286, Segovia 198.
 
@@ -51,7 +56,7 @@ Estado: **textos aprobados por el autor** (2026-10-21), salvo la comprobación d
 | Candidatura (en pantalla) | Provincias | Respuesta correcta |
 | --- | --- | --- |
 | Fuerza Cívica | Valladolid | 115 |
-| Horario Europeo Ya (HEY) | 6: Barcelona, Madrid, Málaga, Sevilla, Valencia y Zaragoza [inventado; propuesta] | No existe |
+| Horario Europeo Ya (HEY) | 6 provincias [inventado] (lista abajo) | No existe |
 | Libres | Almería y Ceuta | 263 |
 | Partido Autónomos | Alicante | 1.446 |
 | Partido Humanista (PH) | Madrid | 2.902 |
@@ -61,6 +66,8 @@ Estado: **textos aprobados por el autor** (2026-10-21), salvo la comprobación d
 **Explicación:** Fuerza Cívica, con 115 votos en Valladolid, fue la candidatura menos votada de todas las que se presentaron al Congreso en 2023. El Partido Humanista sacó 2.902 votos con una sola lista, la de Madrid, la provincia que más diputados elige.
 
 **La inventada:** Horario Europeo Ya tampoco existe: la hemos inventado con la fórmula de las candidaturas que llevan el programa en el nombre.
+
+**Provincias (lista completa, en la explicación):** Horario Europeo Ya: Barcelona, Madrid, Málaga, Sevilla, Valencia y Zaragoza [inventado].
 
 **Datos por provincia:** Libres: Almería 210, Ceuta 53.
 

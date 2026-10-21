@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emparejar M10 v12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --fuente: Archivo, system-ui, sans-serif; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; max-width:46em; }
+.notas li { margin-bottom:.3rem; }
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; }
+.f.alto { height:auto; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; flex-direction:column; gap:var(--s2); }
+.btn { flex:1; font:inherit; font-weight:800; min-height:52px; border:1px solid var(--tinta); background:var(--papel); border-radius:0; }
+.btn.off { color:var(--lapiz); border-color:var(--raya); }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s3); }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+.cab { display:grid; grid-template-columns:1fr auto; align-items:end; row-gap:var(--s2); column-gap:var(--s3); margin-bottom:var(--s3); }
+.cab .nombre { font-size:1rem; font-weight:800; grid-column:1/-1; }
+.pista { display:flex; gap:2px; }
+.pista .tramo { display:flex; gap:2px; }
+.pista .tramo + .tramo { margin-left:8px; }
+.celda { width:18px; height:18px; border:1px solid var(--tinta); display:grid; place-items:center; }
+.celda.a { background:var(--marcador); }
+.celda.x { background:var(--raya); }
+.celda.actual { border-width:3px; }
+.puntos { display:flex; align-items:center; gap:6px; }
+.puntos .et { font-size:.75rem; }
+.enun { font-size:1rem; font-weight:800; line-height:1.25; margin:0 0 var(--s2); }
+
+/* Filas de candidatura con hueco */
+.cands { list-style:none; margin:0; padding:0; display:grid; gap:4px; }
+.cand { display:grid; grid-template-columns:1fr 88px; gap:var(--s2); align-items:center; min-height:48px; padding:var(--s1) var(--s1) var(--s1) var(--s3); border:1px solid var(--tinta); background:var(--papel); }
+.cand.sel { border-width:3px; padding-left:10px; }
+.cand .n { font-size:.875rem; font-weight:800; line-height:1.15; }
+.cand .prov { display:block; font-size:.75rem; color:var(--lapiz); font-weight:400; margin-top:2px; }
+.hueco { height:38px; border:1px dashed var(--raya); display:grid; place-items:center; color:var(--raya); font-size:.875rem; }
+.ficha { height:38px; display:flex; align-items:center; justify-content:center; gap:5px; border:1px solid var(--tinta); background:var(--papel); font:inherit; font-size:.9375rem; font-weight:800; font-variant-numeric:tabular-nums; padding:0 4px; }
+.ficha.sel { background:var(--tinta); color:var(--papel); }
+.ficha.ok { background:var(--marcador); }
+.ficha.ko { text-decoration:line-through; color:var(--lapiz); border-color:var(--raya); }
+.ficha.nx { font-size:.8125rem; }
+.cand .ficha, .cand .hueco { width:88px; white-space:nowrap; }
+.cand .ficha.nx { font-size:.75rem; gap:4px; }
+.bandeja { display:grid; grid-template-columns:repeat(5,1fr); gap:6px; }
+.bandeja .ficha { height:48px; width:100%; }
+.bandeja .vacia { display:block; height:48px; border:1px dashed var(--raya); }
+.era { display:block; font-size:.75rem; color:var(--tinta); font-weight:800; text-align:right; margin-top:2px; }
+.cand.falsa { border-style:dashed; }
+.desc { font-size:.75rem; color:var(--tinta); margin-top:3px; display:block; font-weight:400; }
+.expl { border-top:1px solid var(--tinta); padding-top:var(--s3); font-size:1rem; }
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>M10 · Emparejar (A8 «El fondo de la urna»)</h1>
+<p class="intro">Respuesta al encargo de diseño del 21-10: cómo se forma, se ve y se deshace una pareja en el móvil, la pista, la corrección, la tarjeta «No existe» y la candidatura inventada al descubierto. Contenido de la ronda 1 de A8. Marcos de 375 × 560; las figuras se pueden tocar.</p>
+
+<h2 class="sec">La idea: huecos y bandeja</h2>
+<p class="porque">Dos columnas unidas por líneas funcionan en escritorio, pero en 343 px no caben ni los nombres ni las líneas. Propongo otra metáfora: cada candidatura es una fila con un hueco a la derecha y las respuestas son fichas en una bandeja fija en la barra de abajo, justo encima del botón, al alcance del pulgar y siempre visible. Formar una pareja es meter una ficha en un hueco. Se entiende sin instrucciones y deja ver de un vistazo qué falta.</p>
+
+<div class="fila">
+<div><h3 class="sec">a. Inicio, una fila elegida</h3><div class="f" id="fa"></div></div>
+<div><h3 class="sec">b. Interactivo: prueba a emparejar</h3><div class="f" id="fb"></div></div>
+<div><h3 class="sec">c. Corregida</h3><div class="f alto" id="fc"></div></div>
+</div>
+<ul class="notas">
+  <li><b>Formar:</b> se toca una fila (borde de 3 px) y luego una ficha, o al revés: ficha (invertida) y luego fila. La ficha salta al hueco y en la bandeja deja su sitio vacío, con borde discontinuo raya, para que nada se recoloque. En escritorio, arrastrar la ficha al hueco es un extra, nunca obligatorio.</li>
+  <li><b>Tamaño fijo:</b> todas las fichas miden lo mismo: en la bandeja, una quinta parte del ancho; en el hueco, 88 × 38 px, tanto con cifra como con «No existe» (que en el hueco baja a 0,75 rem para caber en una línea). El hueco vacío mide igual que la ficha, así que nada cambia de tamaño al emparejar.</li>
+  <li><b>Deshacer:</b> tocar una ficha ya colocada la devuelve a su sitio de la bandeja. Tocar otra ficha con la fila elegida sustituye a la anterior, que vuelve sola.</li>
+  <li><b>Comprobar:</b> se activa con las cinco parejas hechas. La corrección es al final, de una vez.</li>
+  <li><b>Provincias:</b> bajo el nombre, en 0,75 rem y lápiz. Hasta tres se nombran; desde cuatro, «10 provincias», y la lista completa sale en la explicación.</li>
+  <li><b>Orden</b> (criterio del contenido): candidaturas en orden alfabético; fichas de mayor a menor, con «No existe» al final.</li>
+  <li><b>Cifras de las fichas:</b> en Archivo 800 tabular con punto de miles («5.620»), no en cifras de casillas: estas no tienen separador de miles y una cifra de cuatro dígitos sin punto se lee peor.</li>
+</ul>
+
+<h2 class="sec">La tarjeta «No existe» y la inventada al descubierto</h2>
+<p class="porque">«No existe» es una ficha más, del mismo tamaño, pero con el icono de la papeleta nula delante: una papeleta que no vale para un partido que no hay. Al corregir, la candidatura inventada se descubre con el borde discontinuo (un fantasma en la lista), la nula delante del nombre y una línea en tinta: «Candidatura inventada. Sus provincias, también.». Si el jugador la había emparejado con una cifra, esa ficha sale tachada y el hueco dice «Era: no existe».</p>
+
+<h2 class="sec">Pista y recibo</h2>
+<p class="porque">Once celdas en tres tramos (5, 5 y 1: las dos rondas y el duelo), con la cabecera de pistas largas (18 px). Tras cada ronda se rellenan sus cinco celdas de golpe. La separación entre tramos es de 8 px, que resuelve también la duda de Cronología (con 10 px cabe; con 8, con margen). Recibo: 🟨⬜ en tres líneas, 5 + 5 + 1.</p>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>M10 con filas con hueco y bandeja de fichas, todas del mismo tamaño (88 × 38 px en el hueco): tocar fila y ficha (en cualquier orden), tocar para deshacer, arrastrar solo como extra en escritorio, y corrección al final.</td></tr>
+<tr><td>2</td><td>Ficha «No existe» con la papeleta nula; candidatura inventada al descubierto con borde discontinuo, nula y línea explicativa.</td></tr>
+<tr><td>3</td><td>Pista de 11 celdas en tramos de 5, 5 y 1, con 8 px entre tramos, que se aplica también a Cronología.</td></tr>
+</table>
+<p class="intro" style="margin-top:1.5rem"><b>Aviso para editorial:</b> en el contenido de A8, la tabla de la ronda 1 tiene cuatro filas: falta Caminando Juntos (10 provincias, 5.620 votos), que sí está en las respuestas y en la explicación. En la maqueta va incluida.</p>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "currentColor") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true" style="flex:none">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+const NULA = ["XXXXXXXXXX","X........X","X.X....X.X","X..X..X..X","X...XX...X","X...XX...X","X..X..X..X","X.X....X.X","X........X","XXXXXXXXXX"];
+const TIC = [".......","......X",".....X.","X...X..",".X.X...","..X....","......."];
+const ASPA = [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."];
+
+const C = [
+  { n: "Caminando Juntos", p: "10 provincias", r: "5.620" },
+  { n: "Por Mi Comarca y la de al Lado (PMC+)", p: "Albacete y Cuenca", r: "No existe", falsa: true },
+  { n: "Por Mi Región", p: "Murcia", r: "1.698" },
+  { n: "Referéndum Sistema Dinero (+RDS+)", p: "Murcia", r: "165" },
+  { n: "Tercera Edad en Acción (3e)", p: "Segovia y La Rioja", r: "484" }
+];
+const R = ["5.620", "1.698", "484", "165", "No existe"];
+const ficha = (r, cls = "") => `<button class="ficha ${cls}${r === "No existe" ? " nx" : ""}">${r === "No existe" ? svg(NULA, 1.4) + "No existe" : r}</button>`;
+const pista = (est, act) => `<div class="pista">${[est.slice(0,5), est.slice(5,10), est.slice(10)].map((t, k) => `<span class="tramo">${t.map((e, i) => `<span class="celda ${e}${k*5+i === act ? " actual" : ""}">${e === "a" ? svg(TIC, 1.6) : e === "x" ? svg(ASPA, 1.6) : ""}</span>`).join("")}</span>`).join("")}</div>`;
+const cab = (est, act, pts) => `<div class="cab"><span class="nombre">El fondo de la urna</span>${pista(est, act)}<div class="puntos"><span class="et">Puntos</span>${px(pts, 2)}</div></div>`;
+const vacio = Array(11).fill("");
+
+/* a: estático */
+document.getElementById("fa").innerHTML = `<div class="cuerpo">${cab(vacio, 0, "00")}
+  <p class="enun"><span class="et" style="font-weight:400">Ronda 1 de 3. </span>Cinco candidaturas, cuatro cifras de votos y un impostor.</p>
+  <ul class="cands">${C.map((c, i) => `<li class="cand${i === 2 ? " sel" : ""}"><span class="n">${c.n}<span class="prov">${c.p}</span></span><span class="hueco">?</span></li>`).join("")}</ul>
+  </div>
+  <div class="barra"><div class="bandeja">${R.map(r => ficha(r)).join("")}</div><button class="btn off">Empareja las 5 (0 de 5)</button></div>`;
+
+/* b: interactivo */
+const st = { fila: null, ficha: null, par: {} };
+const pinta = () => {
+  const usadas = Object.values(st.par);
+  const n = usadas.length;
+  document.getElementById("fb").innerHTML = `<div class="cuerpo">${cab(vacio, 0, "00")}
+    <p class="enun"><span class="et" style="font-weight:400">Ronda 1 de 3. </span>Cinco candidaturas, cuatro cifras de votos y un impostor.</p>
+    <ul class="cands">${C.map((c, i) => `<li class="cand${st.fila === i ? " sel" : ""}" data-f="${i}"><span class="n">${c.n}<span class="prov">${c.p}</span></span>${st.par[i] !== undefined ? `<span data-q="${i}">${ficha(R[st.par[i]])}</span>` : `<span class="hueco">?</span>`}</li>`).join("")}</ul>
+    </div>
+    <div class="barra"><div class="bandeja">${R.map((r, j) => usadas.includes(j) ? `<span class="vacia"></span>` : `<span data-r="${j}">${ficha(r, st.ficha === j ? "sel" : "")}</span>`).join("")}</div><button class="btn${n === 5 ? "" : " off"}">${n === 5 ? "Comprobar" : `Empareja las 5 (${n} de 5)`}</button></div>`;
+  const une = () => { if (st.fila !== null && st.ficha !== null) { st.par[st.fila] = st.ficha; st.fila = st.ficha = null; } };
+  document.querySelectorAll("#fb [data-f]").forEach(el => el.onclick = e => {
+    const q = e.target.closest("[data-q]");
+    if (q) { delete st.par[+q.dataset.q]; st.fila = null; return pinta(); }
+    const i = +el.dataset.f; st.fila = st.fila === i ? null : i;
+    if (st.par[i] !== undefined && st.ficha !== null) delete st.par[i];
+    une(); pinta();
+  });
+  document.querySelectorAll("#fb [data-r]").forEach(el => el.onclick = () => {
+    const j = +el.dataset.r; st.ficha = st.ficha === j ? null : j;
+    if (st.fila !== null) delete st.par[st.fila];
+    une(); pinta();
+  });
+};
+pinta();
+
+/* c: corregida, con dos fallos (la inventada emparejada con 484 y Tercera Edad con No existe) */
+const jug = ["5.620", "484", "1.698", "165", "No existe"];
+document.getElementById("fc").innerHTML = `<div class="cuerpo">${cab(["a","x","a","a","x","","","","","",""], 5, "03")}
+  <p class="enun"><span class="et" style="font-weight:400">Ronda 1 de 3. </span>Cinco candidaturas, cuatro cifras de votos y un impostor.</p>
+  <ul class="cands">${C.map((c, i) => {
+    const ok = jug[i] === c.r;
+    return `<li class="cand${c.falsa ? " falsa" : ""}"><span class="n">${c.falsa ? `<span style="display:flex;gap:6px;align-items:center">${svg(NULA, 1.6)}<span>${c.n}</span></span>` : c.n}<span class="prov">${c.p}</span>${c.falsa ? `<span class="desc">Candidatura inventada. Sus provincias, también.</span>` : ""}</span>
+    <span>${ficha(jug[i], ok ? "ok" : "ko")}${ok ? "" : `<span class="era">Era: ${c.r === "No existe" ? "no existe" : c.r}</span>`}</span></li>`;
+  }).join("")}</ul>
+  <div class="expl"><p>Caminando Juntos fue la más votada de la ronda porque se presentó en diez provincias, y más de la mitad de sus votos salen de Valencia, Alicante y Sevilla. En Murcia compitieron dos de estas candidaturas: Por Mi Región sacó 1.698 votos y Referéndum Sistema Dinero, 165.</p><p class="et">Fuente: Ministerio del Interior, resultados del Congreso del 23-07-2023.</p></div></div>
+  <div class="barra"><button class="btn">Siguiente ronda</button></div>`;
+</script>
+</body>
+</html>
