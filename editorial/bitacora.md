@@ -2,6 +2,39 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-21 — Encargos del 21-10: CLAUDE.md con A8, cotejos de A7 y A8, geometría de A7 y Registro de Partidos
+
+**Hecho**
+1. **Cambios de Cowork del 21-10 en commit** (`9981e46`): decisiones, contenidos de A7 y A8 y catálogo de A8.
+2. **CLAUDE.md** (`d3b1b40` y `5ae9928`):
+   - A8 «El fondo de la urna»: ficha, M10 emparejar en la tabla de motores y `resultados_2023_prov.json` también para A8.
+   - `cis_postelectoral_2023.json`, en reserva.
+   - M2 apunta a A3 (Plenopedia), que es quien lo usa.
+   - Añadidos `R/10_mapa_provincias.R` y `mapa_provincias.json` a sus esquemas.
+3. **A8, cotejo del contenido con `resultados_2023_prov.json`:** coinciden los votos totales, las provincias y su número, el desglose por provincia (Caminando Juntos, Tercera Edad en Acción y Libres) y los datos del duelo (PACMA, 169.237 votos en 51 provincias; UPN, 52.188 en Navarra con 1 escaño). También se cumple «más de la mitad de sus votos salen de Valencia, Alicante y Sevilla»: 2.995 de 5.620, el 53,3 %.
+4. **A7, cotejo del borrador:** coinciden con el JSON los máximos y mínimos de las seis rondas, la matriz de Spearman y las provincias por tramo con el método B.
+5. **A7, geometría** (`5ae9928`): `R/10_mapa_provincias.R` → `data/mapa_provincias.json` (139 KB), desde es-atlas 0.6.0 (IGN), sin Gibraltar.
+   - Lleva el mismo formato que la maqueta v10: `W`, `H`, `borde`, y por provincia `id`, `n`, `d` y `c`.
+   - Proyección cónica conforme del diseño, Canarias en su recuadro y coordenadas SVG ya calculadas, así que el navegador no necesita D3.
+   - Comparado con la geometría de la maqueta: diferencia de 0,005 px como mucho en las 50 provincias de la península, Baleares, Ceuta y Melilla, y de 0,12 px en Canarias.
+   - El script comprueba que la península no entra en el recuadro de Canarias.
+   - Captura revisada con 52 provincias.
+
+**Falta**
+- **A8, Registro de Partidos:** la web (servicio.mir.es) responde, pero cada búsqueda tarda minutos.
+  - Las cinco primeras búsquedas por denominación («Por Mi Comarca y la de al Lado», «Por Mi Comarca», «Comarca y la de al Lado», «de al Lado» y «Horario Europeo Ya») dieron 0 resultados.
+  - La búsqueda de control («Por Mi Region») se cortó por tiempo, así que no puedo asegurar que el 0 sea real.
+  - Estoy descargando el listado completo para buscar en local. Hasta entonces, las inventadas no están limpias.
+- **A7, montar el juego:** falta el visto bueno del autor al contenido y al método de cortes. El motor necesita además un tipo de ronda «mapa» en el encadenador, que es un cambio en `shared/`, con diff para el autor.
+- **A8, montar el juego:** falta el diseño de M10 del chat de diseño y que las inventadas estén limpias.
+- **A5:** faltan los umbrales de puntuación.
+- **A6:** métricas 3 y 4 (cruce ley a ley con el BOE) y validación manual de la métrica 5. Siguen sin hacer.
+
+**Dudas para el autor y para Cowork**
+- **A8, contenido, ronda 1:** en la tabla de candidaturas falta la fila de Caminando Juntos (CJ, diez provincias, 5.620 votos). Sale en las respuestas y en la explicación, pero no en la tabla. Para el `data.json` hace falta que esté, con su nombre en pantalla (¿con siglas «(CJ)»?).
+- **A7, cortes del método A:** los quintiles del contenido no coinciden del todo con los que da R por defecto (tipo 7). Por ejemplo, el cuarto corte de habitantes por escaño es 154.632 en el contenido y 145.926 en R, y el de nacidos en el extranjero, 22,10 frente a 20,91. No afecta al método B, que es el recomendado y cuyas provincias por tramo sí coinciden.
+- **CLAUDE.md, A3:** la ficha sigue describiendo el Crispómetro, y la tabla de motores pone A3 en M4. Plenopedia no tiene ficha en CLAUDE.md. Si Cowork me pasa la ficha, la actualizo.
+
 ## 2026-10-20 (7) — Encargos de las dudas del 20-10: A7, A5, A6, CLAUDE.md y 40dB para A8
 
 **Hecho**
