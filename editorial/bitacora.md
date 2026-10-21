@@ -2,6 +2,59 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-21 (3) — Duelo con «VS», A8 al día y A7 montado (pendiente del visto bueno a `shared/`)
+
+Antes, commit aparte con los cambios de Cowork (`73dfd46`): decisiones de A7, duelo con «VS» (v13) y dudas de A8.
+
+**Hecho**
+1. **Duelo con «VS» y dudas de diseño de A8** (`401a3a1`). Diff de `shared/` enseñado al autor.
+   - `duelo.js`:
+     - columnas `minmax(0, 1fr)` y ficha derecha en espejo, con un mínimo de 136 px;
+     - «VS» de píxel en papel sobre tinta, con contorno de papel;
+     - barras de diez segmentos que se llenan al resolver (ganador 10; el otro, `round(10 × valor / ganador)`), uno cada 40 ms;
+     - entrada desde los lados y caída del «VS», sin animación con movimiento reducido;
+     - cifras de más de cinco caracteres a escala 2;
+     - muestra de color junto al nombre si la ficha es un partido (`partido: true`).
+     - El «VS» va centrado sobre la rejilla de las fichas (`top: 50%`), no a una altura fija como en la maqueta, para que siga en el centro si una ficha pasa de 136 px.
+   - `util.js`: V y S de la maqueta; punto y coma estrechos de 2 × 7, con la separación entre glifos de siempre.
+   - `rondas.js`: una ronda puede traer su `rotulo` («Duelo» en Plenopedia, «Duelo final» en A8).
+   - `emparejar.js` y `base.css`: «No existe» en la bandeja con una sola forma (icono arriba y «No / existe» a 0,75 rem); en el hueco, igual que antes.
+   - `--pacma`.
+   - Comprobado:
+     - **Plenopedia** a 375, 320 y 1280: fichas iguales; «VS» en el centro del hueco (187 frente a 188 px a 375); barras 10 y 9 (Sánchez 266, Feijóo 228).
+     - **A8**: barras 10 y 3.
+     - Sin errores de consola.
+2. **A8** (`00549a3`):
+   - Ronda 1 reordenada: las dos frases, la lista de Caminando Juntos y «La inventada».
+   - Duelo con «Duelo final» y las muestras de PACMA (`--pacma`) y UPN (`--upn`) junto al nombre.
+   - Día 5 provisional en `calendario.json` (`"provisional": true`, con la regla del día 6 en la nota) y `dia: 5` en el `data.json`; el índice con `?hoy=5` lo enseña.
+   - **`#00FF7F` coincide** con la entrada de PACMA de la Plantilla:Color político, revisión 173877042 (cotejado hoy), y así va en SOURCES.md. UPN, `#2A52BE`, también coincide.
+3. **A7, datos** (`a7753e3`): `R/11_mapas_a07.R` → `data/mapas_a07.json`, con los valores sin redondear de los seis mapas y los siete señuelos (`null` en Vox/Santa Cruz de Tenerife y PACMA/Ceuta).
+   - **Cotejo con el contenido, sin discrepancias:**
+     - provincias por tramo (B) de los seis mapas, también las pintadas en el juego;
+     - los tres distractores de cada ronda y su ρ, aplicando la regla en el orden de rondas;
+     - Población fuera por casi idéntica (ρ = 0,974);
+     - señuelos usados como mucho tres veces.
+4. **A7, juego, sin commit:** `juegos/a07-que-mapa-es-este/` y el tipo de ronda `shared/motores/mapa.js`, con su CSS en `base.css` y el registro en `rondas.js`. Esperan el visto bueno del autor al diff de `shared/`, como pide el encargo.
+   - El `game.js` de A7 carga la geometría y los valores y se los pasa a cada ronda; el motor no sabe de A7.
+   - Probado a 375 × 560, 320 × 560 y 1280, con dos fallos a propósito, sin errores de consola ni scroll horizontal:
+     - la ronda cabe sin scroll en los tres anchos, con el mapa a 216 px en móvil;
+     - el mapa no reacciona antes de responder;
+     - la franja da «Sin candidatura» en Santa Cruz de Tenerife, 23,26 % en Ceuta (tocando su casilla), 187.817 en Madrid y 45.117 en Soria;
+     - la leyenda sigue el formato del contenido y el recibo es 🟨⬜🟨🟨⬜🟨.
+   - Capturas revisadas contra la lista negra: escala neutra, sin colores de partido en los mapas, sin sombras ni radios.
+
+**Falta**
+- A7: commit del motor y del juego cuando el autor apruebe el diff. Día en el calendario.
+- A8: búsqueda en las candidaturas proclamadas del 29-N.
+- A5 (umbrales) y A6 (métricas 3, 4 y 5), sin cambios.
+
+**Dudas para el chat de diseño**
+- **A7, «sin dato».** La maqueta no lo define. Santa Cruz de Tenerife va en papel con borde raya de 0,6 px, y la franja dice «Sin candidatura». No lleva casilla en la leyenda.
+- **A7, franja antes de tocar.** Dice «Toca una provincia para ver su dato.» en lápiz; el texto lo he puesto yo. Va bajo el mapa, como en la maqueta v10, aunque la decisión dice «bajo la leyenda».
+- **A7, leyenda de habitantes por escaño.** «80.000–105.000» ocupa casi toda su quinta parte a 0,6875 rem; a 320 px cabe, pero justo.
+- **Coma estrecha.** Con la definición literal (un píxel a la derecha en la fila 6 y otro a la izquierda en la 7), a escala 2 o 3 casi no se distingue del punto: «01,5» se lee como «01.5». Si se quiere más legible, una coma de tres píxeles (filas 5 y 6 a la derecha, fila 7 a la izquierda).
+
 ## 2026-10-21 (2) — M10 emparejar, A8 El fondo de la urna, inventadas y CLAUDE.md
 
 Encargo de la tarde del 21-10, en su orden. Antes, commit aparte con los cambios de Cowork y la maqueta v12 (`67bda6f`). Se deja la descarga del listado del Registro, como dice la decisión.
