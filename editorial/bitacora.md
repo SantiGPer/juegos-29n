@@ -2,6 +2,53 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-21 (2) — M10 emparejar, A8 El fondo de la urna, inventadas y CLAUDE.md
+
+Encargo de la tarde del 21-10, en su orden. Antes, commit aparte con los cambios de Cowork y la maqueta v12 (`67bda6f`). Se deja la descarga del listado del Registro, como dice la decisión.
+
+**Hecho**
+1. **M10 y separación entre tramos** (`b65e306`). Diff de `shared/` enseñado al autor en sesión.
+   - `shared/motores/emparejar.js`, como tipo de ronda del encadenador:
+     - filas con hueco de 88 × 38 px y bandeja de cinco piezas iguales dentro de la barra fija, encima del botón;
+     - se toca fila y pieza en cualquier orden; tocar una pieza colocada la devuelve, y una pieza nueva en una fila ocupada sustituye a la anterior;
+     - en escritorio se puede arrastrar;
+     - el botón dice «Empareja las 5 (N de 5)», apagado, y pasa a «Comprobar»;
+     - en la corrección: acierto en marcador; fallo tachado con «Era: …»; la inventada con borde discontinuo, la nula y la línea de `revelacion`.
+     - Configuración: `nula` («No existe») para los ítems con respuesta `null`; `detalle` y `unidad` para «N provincias» desde cuatro.
+   - `rondas.js`:
+     - un tipo puede ocupar varias celdas (`casillas`), poner su propio rótulo y añadir nodos a la barra;
+     - `listo` puede cambiar el texto del botón;
+     - nuevos `etiqueta` («Ronda») y `porGrupo` (tramos de la pista y líneas del recibo).
+     - Plenopedia no cambia: partida completa a 375 y 320 con «Pregunta N de 10», 10 celdas y el recibo en una línea.
+   - `base.css`:
+     - 8 px entre tramos. La cabecera de Cronología cabe ya en una fila a 375 px (comprobado).
+     - Estilos de M10, con clases propias (`.renglon`, `.pieza`, `.bandeja`, `.debia`), porque `.pareja`, `.ficha` y `.era` ya existían en M4, el índice y el rosco.
+   - `iconos.js`: icono «nula». `util.js`: glifo «.» en las cifras de casillas, para el «169.237» del duelo.
+2. **A8** (`0ab7510`): `juegos/a08-fondo-de-la-urna/`, desde el contenido.
+   - Cotejo de `data.json` con `resultados_2023_prov.json`: casan los votos y la lista de provincias de las ocho reales, y los datos del duelo (PACMA, 169.237 votos en 51 provincias y 0 escaños; UPN, 52.188 y 1 escaño de los 5 de Navarra).
+   - Partidas completas a 375 × 560, 320 × 560 y 1280, sin errores de consola ni scroll horizontal.
+   - Sustituir, deshacer, contador, corrección (3 de 5 con dos fallos a propósito) y recibo en 5 + 5 + 1, comprobados.
+   - A 375 × 560 la ronda cabe sin scroll: 560 px justos, con la cabecera y el cuerpo compactos solo en las rondas de emparejar.
+   - Capturas revisadas contra la lista negra.
+3. **`editorial/fuentes/a08-inventadas.md`** (`611a5c1`): la comprobación del autor, las cinco búsquedas de Code con 0 resultados y su límite (sin control positivo). Queda pendiente repetirla en las candidaturas proclamadas del 29-N.
+4. **CLAUDE.md** (`cd74eb3`):
+   - fichas de A3 Plenopedia y A7, con el texto del encargo;
+   - M3 solo en A5 y A6, M4 solo en A11, y una fila para el encadenador (A3, A7 y A8);
+   - fuera `renta_prov.json`;
+   - `llamadas_al_orden.json` sigue en A3, porque `R/08_plenopedia_xv.R` lo lee, y figura además en reserva.
+
+**Falta**
+- A7: montar el juego (tipo de ronda «mapa» en el encadenador) cuando el autor dé el visto bueno al contenido y al método de cortes.
+- A8: día en `calendario.json` (el recibo dice «día TODO», como A4) y la búsqueda en las candidaturas proclamadas del 29-N.
+- A5 (umbrales) y A6 (métricas 3, 4 y 5), sin cambios.
+
+**Dudas para el autor y para el chat de diseño**
+- **Diseño, «No existe» en la bandeja.** A 0,8125 rem no cabe en una línea en una quinta parte del ancho: la maqueta también la parte en dos («No / existe»), y así lo he dejado. Por debajo de 360 px tampoco caben icono y texto en fila: el icono va encima y el texto baja a 0,6875 rem. Si se prefiere otra solución, es solo CSS.
+- **Diseño, 320 × 560.** La ronda de emparejar mide 598 px, porque los nombres largos ocupan dos líneas. La bandeja y el botón siguen visibles en la barra fija, y la última fila queda bajo la barra hasta que se hace scroll.
+- **Diseño, glifo «.».** El punto de miles en cifras de casillas ocupa una celda de 5 columnas, como la coma, así que «169.237» queda algo espaciado. Lo pide el duelo de A8; la alternativa es la cifra sin punto.
+- **A8, contenido.** La lista completa de provincias («Caminando Juntos: Alicante, …») va como tercer párrafo de la explicación, tras «La inventada». Al pasarla, he quitado la marca editorial «[inventado]» de la lista de Horario Europeo Ya.
+- **A8, duelo.** Sin colores de partido en los lados (PACMA no tiene color en la paleta); en Plenopedia el duelo los lleva.
+
 ## 2026-10-21 — Encargos del 21-10: CLAUDE.md con A8, cotejos de A7 y A8, geometría de A7 y Registro de Partidos
 
 **Hecho**
