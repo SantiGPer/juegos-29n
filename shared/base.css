@@ -229,10 +229,11 @@ button:disabled {
   padding-bottom: 9px;
 }
 
+/* 8 px entre tramos (maqueta v12; también resuelve la fila de Cronología a 375 px) */
 .pista {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s3) 11px;
+  gap: var(--s3) var(--s2);
   margin-bottom: var(--s4);
 }
 
@@ -922,6 +923,129 @@ details[open] summary { margin-bottom: var(--s1); }
 
 .botones button { flex: 1; min-height: 52px; }
 .plegado .botones button { min-height: 44px; }
+
+/* M10 emparejar (maqueta v12): filas con hueco y bandeja de piezas en la barra, todas del mismo tamaño.
+   Cabecera y cuerpo compactos para que la ronda quepa sin scroll en 375 × 560. */
+.cuerpo:has(.renglones) { padding-bottom: var(--s3); }
+.cuerpo:has(.renglones) .cab { margin-bottom: var(--s3); }
+
+.enunciado {
+  margin: 0 0 var(--s2);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.enunciado .etiqueta { font-weight: 400; }
+
+.renglones {
+  display: grid;
+  gap: var(--s1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.renglon {
+  display: grid;
+  grid-template-columns: 1fr 88px;
+  gap: var(--s2);
+  align-items: center;
+  min-height: 48px;
+  padding: var(--s1) var(--s1) var(--s1) var(--s3);
+  border: 1px solid var(--tinta);
+}
+
+.renglon.elegida { border-width: 3px; padding: 2px 2px 2px 10px; }
+.renglon.inventada { border-style: dashed; }
+
+.renglon .nombre {
+  align-self: stretch;
+  padding: 0;
+  text-align: left;
+  font-size: var(--etiqueta);
+  font-weight: 800;
+  line-height: 1.15;
+  background: none;
+  border: 0;
+}
+
+.renglon div.nombre { align-self: center; }
+
+.renglon .detalle {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--lapiz);
+}
+
+.renglon .revelacion {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.con-icono { display: flex; gap: 6px; align-items: center; }
+.con-icono svg { display: block; flex: none; }
+
+.hueco, .pieza {
+  height: 38px;
+  padding: 0 var(--s1);
+  white-space: nowrap;
+}
+
+.hueco {
+  width: 88px;
+  color: var(--raya);
+  font-size: var(--etiqueta);
+  border: 1px dashed var(--raya);
+}
+
+.pieza {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 88px;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.pieza svg { display: block; flex: none; }
+.pieza.nula { gap: 4px; font-size: 0.75rem; }
+.pieza.elegida { background: var(--tinta); color: var(--papel); }
+.pieza.acierto { background: var(--marcador); }
+.pieza.acierto:disabled { color: var(--tinta); border-color: var(--tinta); }
+.pieza.fallo { text-decoration: line-through; }
+
+.debia {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.bandeja {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+
+/* En la bandeja, «No existe» parte en dos líneas para que las cinco piezas midan lo mismo */
+.bandeja .pieza { width: 100%; height: 48px; line-height: 1.1; white-space: normal; }
+.bandeja .pieza.nula { gap: 5px; font-size: 0.8125rem; }
+.bandeja .vacia { height: 48px; border: 1px dashed var(--raya); }
+
+/* Por debajo de 360 px la quinta parte no llega para icono y texto en fila: el icono va encima */
+@media (max-width: 359px) {
+  .bandeja .pieza.nula { flex-direction: column; gap: 2px; font-size: 0.6875rem; line-height: 1; }
+}
+
+.barra:has(> .bandeja) { flex-direction: column; gap: var(--s2); }
 
 /* Cierre */
 .final {

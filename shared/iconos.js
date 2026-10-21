@@ -11,6 +11,8 @@ const matrices = {
   aspa: ['.......', '.X...X.', '..X.X..', '...X...', '..X.X..', '.X...X.', '.......'],
   // «Pasar» en las reglas de A13 (maqueta v7)
   pasar: ['..........', '...X......', '...XX.....', 'XXXXXX....', 'XXXXXXX...', 'XXXXXX....', '...XX.....', '...X......', '..........', '..........'],
+  // Papeleta nula: la ficha «No existe» y la candidatura inventada de M10 (maqueta v12)
+  nula: ['XXXXXXXXXX', 'X........X', 'X.X....X.X', 'X..X..X..X', 'X...XX...X', 'X...XX...X', 'X..X..X..X', 'X.X....X.X', 'X........X', 'XXXXXXXXXX'],
   subir: ['..X..', '.XXX.', 'XXXXX'],
   bajar: ['XXXXX', '.XXX.', '..X..'],
   // Días de debate en el selector (maqueta v3): contorno en tinta y relleno «o» en señal
