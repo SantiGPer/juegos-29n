@@ -25,6 +25,8 @@
 
 `--ucd` se añadió el 15-10-2026 para A12, de la misma revisión 173877042.
 
+`--pacma: #00FF7F` se añadió el 21-10-2026 para el duelo de A8. El color lo indicó el autor y coincide con la entrada «PACMA / Partido Animalista Contra el Maltrato Animal» de la misma revisión 173877042 (cotejado el 21-10-2026).
+
 Se usa siempre el color vigente de cada partido, en todas las legislaturas (decisión del 15-10-2026), aunque la plantilla tenga entradas fechadas (PP 2008-2022 `#1D84CE`, EH Bildu 2012-2023 `#C4D600`). Para Junts la plantilla tiene «JxCat» `#EE5976` y «Junts» `#20C0C2`; se usa `#20C0C2` por decisión del autor.
 
 ## `resultados_2023_prov.json`
