@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duelo VS v13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --pp:#1E4B8F; --gobierno:#000; --fuente: Archivo, system-ui, sans-serif; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; max-width:46em; }
+.notas li { margin-bottom:.3rem; }
+.demo { font:inherit; font-size:.875rem; background:var(--papel); color:var(--lapiz); border:1px dashed var(--lapiz); padding:.35rem .6rem; margin-top:.6rem; cursor:pointer; }
+.f { width:100%; max-width:375px; border:1px solid var(--raya); padding:var(--s4); font-size:1.125rem; }
+.et { font-size:.875rem; color:var(--lapiz); }
+.preg { font-size:1.375rem; font-weight:800; line-height:1.2; margin:var(--s1) 0 var(--s4); }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+
+/* Duelo */
+.ring { position:relative; }
+.energia { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s2); margin-bottom:6px; }
+.barra-e { display:flex; gap:2px; }
+.barra-e.izq { flex-direction:row-reverse; }
+.barra-e i { flex:1; height:10px; border:1px solid var(--raya); }
+.barra-e i.on { background:var(--tinta); border-color:var(--tinta); }
+.duelo { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s2); }
+.lado { border:1px solid var(--tinta); padding:var(--s3); display:flex; flex-direction:column; gap:var(--s1); min-height:136px; background:var(--papel); text-align:left; font:inherit; }
+.lado.der { text-align:right; align-items:flex-end; }
+.lado b { font-size:1.125rem; line-height:1.15; }
+.lado .ctx { display:flex; align-items:center; gap:6px; font-size:.875rem; }
+.lado .dato { margin-top:auto; }
+.lado.sel { background:var(--tinta); color:var(--papel); }
+.lado.ok { background:var(--marcador); }
+.lado.ko { color:var(--lapiz); border-color:var(--raya); }
+.chip { width:12px; height:12px; border:1px solid var(--tinta); display:inline-block; flex:none; }
+.lado.sel .chip { border-color:var(--papel); }
+.vs { position:absolute; left:50%; top:calc(16px + 68px); transform:translate(-50%,-50%); width:44px; height:44px; background:var(--tinta); color:var(--papel); display:grid; place-items:center; z-index:2; outline:4px solid var(--papel); }
+.entra .lado:first-child { animation: izq 280ms steps(4) both; }
+.entra .lado:last-child { animation: der 280ms steps(4) both; }
+.entra .vs { animation: golpe 360ms steps(3) 200ms both; }
+@keyframes izq { from { transform:translateX(-40px); opacity:0; } }
+@keyframes der { from { transform:translateX(40px); opacity:0; } }
+@keyframes golpe { 0% { transform:translate(-50%,-50%) scale(1.8); opacity:0; } 60% { transform:translate(-50%,-50%) scale(.9); opacity:1; } }
+.llena i.on { animation-name: carga; animation-timing-function: steps(1, end); animation-fill-mode: backwards; }
+@keyframes carga { from { background:transparent; border-color:var(--raya); } }
+@media (prefers-reduced-motion: reduce) { .entra .lado, .entra .vs, .llena i.on { animation:none; } }
+.expl { border-top:1px solid var(--tinta); margin-top:var(--s4); padding-top:var(--s3); font-size:1rem; }
+.muestras { display:flex; gap:2rem; align-items:end; flex-wrap:wrap; }
+.muestras figure { margin:0; font-size:.875rem; color:var(--lapiz); }
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>Duelo con «VS»</h1>
+<p class="intro">Propuesta para el duelo de Plenopedia (Sánchez contra Feijóo) y el duelo final de A8 (PACMA contra UPN). Tomo el lenguaje de la pantalla de enfrentamiento de las recreativas de lucha, pero sin copiar ningún juego: un «VS» propio dibujado en píxeles y unas barras de energía que salen del dato.</p>
+
+<h2 class="sec">Tres piezas</h2>
+<div class="muestras" id="piezas"></div>
+<ul class="notas">
+  <li><b>«VS» de píxel:</b> V y S dibujadas en la misma rejilla de 5×7 que las cifras de casillas, en papel sobre un cuadrado de tinta de 44 px. Va en el centro, sobre el hueco entre las dos fichas, con un margen de 4 px de papel para que se despegue de los bordes.</li>
+  <li><b>Barras de energía:</b> diez segmentos sobre cada ficha, en espejo y creciendo desde el centro hacia fuera. Antes de responder están vacías (borde raya). Al resolver se llenan en proporción al dato: el ganador llena las diez y el otro las que le tocan (Feijóo, 9 de 10; UPN, 3 de 10). Es la diferencia vista de un golpe, y es dato, no adorno.</li>
+  <li><b>Entrada:</b> al llegar al duelo, las dos fichas entran desde los lados y el «VS» cae en el centro, a saltos (280 ms y 360 ms). Es una sola animación por duelo, y llega porque el jugador ha pulsado «Siguiente». Con movimiento reducido aparece todo quieto.</li>
+</ul>
+
+<h2 class="sec">En las dos partidas</h2>
+<div class="fila">
+<div><h3 class="sec">Plenopedia, pregunta 6, antes de responder</h3><div class="f" id="d1"></div><button class="demo" data-r="d1">Repetir entrada</button></div>
+<div><h3 class="sec">Plenopedia, resuelto</h3><div class="f" id="d2"></div><button class="demo" data-l="d2">Repetir carga</button></div>
+<div><h3 class="sec">A8, duelo final, elegido</h3><div class="f" id="d3"></div><button class="demo" data-r="d3">Repetir entrada</button></div>
+<div><h3 class="sec">A8, resuelto</h3><div class="f" id="d4"></div><button class="demo" data-l="d4">Repetir carga</button></div>
+</div>
+<ul class="notas">
+  <li>La etiqueta encima de la pregunta dice «Duelo» en Plenopedia y «Duelo final» en A8, en lugar de «Pregunta N de 10»; la pista sigue diciendo en qué punto de la partida estás.</li>
+  <li>La ficha derecha alinea su texto a la derecha, en espejo con la izquierda: dos esquinas enfrentadas.</li>
+  <li>Las barras van siempre en tinta: el color de partido sigue en la muestra junto a la afiliación, como se aprobó.</li>
+  <li>Las dos columnas miden siempre lo mismo (<code>minmax(0, 1fr)</code>), así que el «VS» queda en el centro exacto pase lo que pase con las cifras. Las cifras de más de cinco caracteres («169.237») bajan de escala 3 a escala 2 para caber en su ficha.</li>
+  <li>Nada se mueve después de resolver salvo el llenado de las barras, de dentro afuera, un segmento cada 40 ms.</li>
+</ul>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>«VS» de píxel en el centro del duelo (cuadrado de tinta de 44 px).</td></tr>
+<tr><td>2</td><td>Barras de energía de diez segmentos, vacías al empezar y llenas al resolver en proporción al dato.</td></tr>
+<tr><td>3</td><td>Entrada de las fichas desde los lados y caída del «VS», a saltos y una sola vez por duelo.</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100","?":"01110100010000100010001000000000100",".":"00000000000000000000000000110001100","V":"10001100011000110001100010101000100","S":"01111100001000001110000010000111110"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const barra = (lado, n) => `<div class="barra-e ${lado}">${Array.from({length: 10}, (_, i) => `<i class="${i < n ? "on" : ""}" style="animation-duration:${(i + 1) * 40}ms"></i>`).join("")}</div>`;
+const duelo = ({ etq, preg, a, b, estado, ea = 0, eb = 0 }) => `
+  <span class="et">${etq}</span><p class="preg">${preg}</p>
+  <div class="ring">
+    <div class="energia">${barra("izq", ea)}${barra("der", eb)}</div>
+    <div class="duelo">${[a, b].map((l, i) => `<button class="lado ${i ? "der" : ""} ${estado[i] || ""}"><b>${l.n}</b><span class="ctx">${l.c ? `<i class="chip" style="background:var(${l.c})"></i>` : ""}${l.ctx}</span><span class="dato">${px(estado.includes("ok") ? l.v : "?", (estado.includes("ok") ? l.v : "?").length > 5 ? 2 : 3)}</span></button>`).join("")}</div>
+    <span class="vs">${px("VS", 2)}</span>
+  </div>`;
+const P6 = { etq: "Duelo", preg: "En política también hay espacio para la comedia: ¿quién hizo reír más veces a la Cámara?",
+  a: { n: "Pedro Sánchez", ctx: "Gobierno", c: "--gobierno", v: "266" }, b: { n: "Alberto Núñez Feijóo", ctx: "PP", c: "--pp", v: "228" } };
+const A8 = { etq: "Duelo final", preg: "Uno se sentó en el Congreso y el otro no. ¿Quién sacó más votos?",
+  a: { n: "PACMA", ctx: "0 escaños", v: "169.237" }, b: { n: "UPN", ctx: "1 escaño", v: "52.188" } };
+const pinta = () => {
+  document.getElementById("d1").innerHTML = duelo({ ...P6, estado: ["", ""] });
+  document.getElementById("d2").innerHTML = duelo({ ...P6, estado: ["ok", "ko"], ea: 10, eb: Math.round(10 * 228 / 266) });
+  document.getElementById("d3").innerHTML = duelo({ ...A8, estado: ["", "sel"] });
+  document.getElementById("d4").innerHTML = duelo({ ...A8, estado: ["ok", "ko"], ea: 10, eb: Math.round(10 * 52188 / 169237) });
+};
+pinta();
+document.getElementById("piezas").innerHTML = `
+  <figure><span style="display:grid;place-items:center;width:88px;height:88px;background:#000;color:#fff">${px("VS", 4)}</span><figcaption>«VS» a escala 4</figcaption></figure>
+  <figure><span style="display:grid;place-items:center;width:44px;height:44px;background:#000;color:#fff">${px("VS", 2)}</span><figcaption>a tamaño real</figcaption></figure>
+  <figure style="width:300px"><div class="energia" style="margin:0 0 6px">${barra("izq", 10)}${barra("der", 3)}</div><figcaption>Barras: 10 frente a 3</figcaption></figure>`;
+const repetir = (id, cls) => { const r = document.querySelector(`#${id} .ring`); r.classList.remove(cls); void r.offsetWidth; r.classList.add(cls); };
+document.querySelectorAll("[data-r]").forEach(b => b.onclick = () => repetir(b.dataset.r, "entra"));
+document.querySelectorAll("[data-l]").forEach(b => b.onclick = () => document.querySelectorAll(`#${b.dataset.l} .barra-e`).forEach(e => { e.classList.remove("llena"); void e.offsetWidth; e.classList.add("llena"); }));
+["d1", "d3"].forEach(id => document.querySelector(`#${id} .ring`).classList.add("entra"));
+["d2", "d4"].forEach(id => document.querySelectorAll(`#${id} .barra-e`).forEach(e => e.classList.add("llena")));
+</script>
+</body>
+</html>

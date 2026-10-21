@@ -770,3 +770,57 @@ Respuesta a los encargos de diseño del 21-10 (M10 y añadido), aprobada por el 
      - **A7 ¿Qué mapa es este?** (medio). Seis mapas provinciales sin leyenda (abstención, habitantes por escaño, voto nulo, voto a Sumar, nacidos en el extranjero y voto a Vox), con cuatro etiquetas por mapa; ronda de tipo mapa en el encadenador y geometría de `mapa_provincias.json`. Cierre: aciertos sobre 6.
      - Tabla de motores: M3 solo para A5 y A6; M4 solo para A11 (A3 ya no lo usa); el encadenador (`rondas.js`) para A3, A7 y A8.
      - Tabla de datos: fuera `renta_prov.json` (A7 ya no tiene mapa de renta).
+- **A7, cortes (decisión del autor, 21-10): método B,** cortes redondos cerca de los quintiles, con la tabla de editorial/contenido/a07-que-mapa-es-este.md. Solo se redondean los cortes, nunca los datos. Un valor igual al corte va al tramo superior.
+- **A7, distractores (decisión del autor, 21-10; sustituye a «tres del mismo juego» del 20-10):** un mapa ya resuelto no vuelve como opción; los distractores salen de los mapas aún no jugados y de siete señuelos (voto al PP, voto al PSOE, voto en blanco, electores en el extranjero, población, crecimiento de la población 2023-2025 y voto a PACMA), variables reales de los mismos datos cuyo mapa no se enseña; siempre los tres más parecidos por Spearman, excluidos los casi idénticos (ρ > 0,9); cada señuelo, como mucho tres veces. Opciones de cada ronda en el contenido.
+- A7, orden de rondas (decisión del autor, 21-10): Vox, nacidos en el extranjero, abstención, habitantes por escaño, Sumar y voto nulo.
+- A7, portada (texto del autor, 21-10, unido en dos frases y con «adivina» corregido): «El verdadero mapa político de España es el de la geografía electoral: seis mapas sin título ni leyenda para poner a prueba tu instinto. Mira dónde se oscurece y adivina qué cuenta cada uno.» Explicaciones y reglas, aprobadas. Contenido completo en editorial/contenido/a07-que-mapa-es-este.md.
+- **Encargo para Code (A7):** montar A7 en `juegos/a07-que-mapa-es-este/` desde el contenido, con el diseño del 20-10 (maqueta v10), los cortes del método B y la geometría de `mapa_provincias.json`. La ronda de tipo mapa en el encadenador es un cambio en `shared/`: diff para el autor antes del commit. Cotejar los cortes y las provincias por tramo con el contenido, y las correlaciones de los distractores con el JSON; las discrepancias, a la bitácora.
+
+## 2026-10-21 (diseño, duelo con «VS»)
+
+Aprobado por el autor. Se aplica a todos los duelos (Plenopedia, pregunta 6, y duelo final de A8). Referencia: docs/maquetas/maqueta-duelo-vs-v13.html.
+
+- Diseño, duelo:
+  - Las dos fichas van en `grid-template-columns: minmax(0, 1fr) minmax(0, 1fr)` con 8 px de separación: miden siempre lo mismo y el «VS» queda en el centro exacto, sea cual sea la cifra.
+  - La ficha derecha alinea su texto a la derecha, en espejo con la izquierda.
+  - Alto mínimo de ficha: 136 px.
+  - Las cifras de más de cinco caracteres («169.237») van en cifras de casillas a escala 2; el resto, a escala 3.
+- Diseño, «VS»:
+  - V y S dibujadas en la rejilla de 5×7 de las cifras de casillas (matrices en la maqueta), a escala 2, en papel sobre un cuadrado de tinta de 44 × 44 px.
+  - Centrado en horizontal entre las dos fichas y en vertical sobre su centro, con un contorno de 4 px de papel.
+  - Es decorativo: `aria-hidden`.
+- Diseño, barras de energía:
+  - Encima de cada ficha, diez segmentos de 10 px de alto con 2 px de separación, en espejo: crecen desde el centro hacia fuera.
+  - Antes de responder, todos vacíos con borde raya.
+  - Al resolver, segmentos en tinta en proporción al dato: el ganador, 10; el otro, `round(10 × valor / valor del ganador)`.
+  - El llenado avanza un segmento cada 40 ms, de dentro afuera.
+  - Siempre en tinta: el color de partido sigue solo en la muestra junto a la afiliación.
+- Diseño, entrada:
+  - Al llegar al duelo (después de pulsar «Siguiente»), las fichas entran desde los lados (40 px, 280 ms, `steps(4)`) y el «VS» cae en el centro (360 ms, `steps(3)`, 200 ms de retardo).
+  - Una sola vez por duelo.
+  - Con prefers-reduced-motion no hay entrada ni llenado animado: todo aparece en su estado final.
+- Diseño, etiqueta: «Duelo» en Plenopedia y «Duelo final» en A8, en lugar de «Pregunta N de 10». La pista sigue marcando el avance.
+- Encargo para Code: aplicarlo en `shared/motores/duelo.js` y `shared/base.css`, y volver a probar Plenopedia y, cuando esté montado, A8. Captura a 320, 375 × 560 y 1280, revisión contra la lista negra, commit y entrada en la bitácora.
+- **A8, dudas de la bitácora del 21-10 (2)** (decisiones del autor, 21-10):
+  - Explicación: se acepta la lista completa de provincias como párrafo de la explicación y sin la marca «[inventado]». En la ronda 1, la lista de Caminando Juntos va justo después de las dos frases y antes del texto «La inventada»; en la ronda 2 se queda como está (la lista de Horario Europeo Ya, al final).
+  - Duelo: PACMA lleva color de partido, `#00FF7F` (indicado por el autor). Si coincide con la entrada de la Plantilla:Color político (revisión 173877042), se cita la plantilla en data/SOURCES.md; si no, se anota como decisión del autor. UPN usa el `--upn` que ya existe. Pendiente de diseño solo cómo encaja en el duelo con «VS» (v13), que ya prevé la muestra junto a la afiliación.
+  - Calendario: A8 va, provisionalmente, el día 5 (17-11). Aviso de Cowork: si el cara a cara del 16-11 se confirma, el 17-11 es el día de «Quién dijo qué» (B1); entonces A8 se mueve.
+  - Las inventadas se vuelven a comprobar en las candidaturas proclamadas para el 29-N cuando las publique el BOE (aviso programado por Cowork).
+- **Encargo para Code (A8):** reordenar la explicación de la ronda 1; añadir `--pacma: #00FF7F` a `base.css` con su fuente en SOURCES.md y poner los colores en el duelo final; día 5 provisional de A8 en `calendario.json`. Va junto con el encargo de diseño del duelo con «VS» (v13).
+
+## 2026-10-21 (diseño, dudas de Code sobre A8)
+
+Respuestas a las dudas de diseño de la bitácora 2026-10-21 (2), aprobadas por el autor.
+
+- Diseño, M10, «No existe» en la bandeja: una sola forma para todos los anchos. Icono «nula» arriba, centrado (escala 1,4), y debajo «No / existe» en dos líneas, a 0,75 rem y 800, centrado, dentro de los 48 px de alto de la pieza. Sustituye a la solución actual (dos líneas a 0,8125 rem y, por debajo de 360 px, icono encima con texto a 0,6875 rem). En el hueco de la fila (88 × 38 px) sigue en una línea, con el icono a la izquierda y el texto a 0,75 rem.
+- Diseño, regla de altura en móvil: «todo cabe sin scroll» se exige desde 360 px de ancho. A 320 × 560 se admite scroll del cuerpo, siempre que la barra fija (con la bandeja, en M10) quede visible. Vale para todos los juegos.
+- Diseño, cifras de casillas: el punto y la coma son glifos estrechos de 2 columnas × 7 filas (punto: los dos píxeles de las dos últimas filas; coma: el píxel de la columna derecha en la fila 6 y el de la izquierda en la fila 7, o equivalente legible). La separación con las cifras vecinas es la misma que entre cifras. Vale para todas las cifras de casillas de la serie («169.237», «13,5», «01,5»…).
+- Diseño, muestras de color en el duelo:
+  - Si la ficha es una persona, la muestra va junto a su afiliación (Plenopedia: Sánchez con `--gobierno`, Feijóo con `--pp`).
+  - Si la ficha es un partido, va junto a su nombre.
+  - En A8: PACMA con `--pacma` y UPN con `--upn`.
+- Color nuevo: `--pacma: #00FF7F`, dato del autor (21-10). Code lo coteja con la Plantilla:Color político de es.wikipedia en la revisión ya citada; si no coincide, lo anota en la bitácora y usa el del autor. Se cita en data/SOURCES.md.
+- Encargo para Code: aplicar estos puntos en `shared/motores/emparejar.js`, `shared/motores/duelo.js`, `shared/util.js` (glifos estrechos), `shared/base.css` (token `--pacma`) y `juegos/a08-fondo-de-la-urna/data.json` (`color` de los dos lados del duelo). Volver a probar A8 y Plenopedia a 320, 375 × 560 y 1280; capturas revisadas contra la lista negra; commit y entrada en la bitácora.
+- Pendiente de editorial (no es de diseño): fila de Caminando Juntos en la tabla de la ronda 1 de A8 y su nombre en pantalla (¿«Caminando Juntos (CJ)»?).
+- **Cerrado el pendiente de editorial del chat de diseño (A8, ronda 1):** la fila de Caminando Juntos ya está en el contenido y en el `data.json` (montado por Code el 21-10), con el nombre en pantalla «Caminando Juntos (CJ)». Criterio: siglas entre paréntesis salvo cuando coinciden con el nombre (Por Mi Región, Fuerza Cívica, Libres, Partido Autónomos).
+- A8, calendario (decisión del autor, 21-10): si se confirma el cara a cara del 16-11 y el 17-11 pasa a ser día de «Quién dijo qué», A8 se mueve al día 6 (18-11).

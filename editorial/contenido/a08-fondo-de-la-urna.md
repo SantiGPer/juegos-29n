@@ -9,7 +9,9 @@ Estado: **textos aprobados por el autor** (2026-10-21). Selección del autor del
 - Orden en pantalla (criterio del 19-10): candidaturas en orden alfabético; cifras de mayor a menor; «No existe» al final.
 - Cada candidatura muestra las provincias en las que se presentó (decisión del autor, 21-10). Las de la candidatura inventada son parte de la ficción y se desvelan al resolver.
 - En pantalla (diseño del 21-10): hasta tres provincias se nombran; desde cuatro, «N provincias», y la lista completa va en la explicación.
-- Al corregir, la fila de la inventada lleva la línea del diseño: «Candidatura inventada. Sus provincias, también.». El texto «La inventada» de cada ronda va en la explicación, tras las dos frases.
+- Al corregir, la fila de la inventada lleva la línea del diseño: «Candidatura inventada. Sus provincias, también.».
+- Orden de la explicación (decisión del autor, 21-10): ronda 1, las dos frases, la lista de provincias de Caminando Juntos y el texto «La inventada»; ronda 2, las dos frases, el texto «La inventada» y la lista de provincias de Horario Europeo Ya, sin marca de inventado.
+- Duelo: color de PACMA `#00FF7F` (decisión del autor, 21-10); UPN con su color de `base.css`.
 - Candidaturas inventadas: comprobadas por el autor en el Registro de Partidos Políticos el 21-10, sin coincidencias. Falta repetir la búsqueda en las candidaturas proclamadas para el 29-N cuando se publiquen en el BOE.
 - Fuente general: Ministerio del Interior (infoelectoral), resultados del Congreso de las elecciones generales del 23-07-2023. Elaboración propia (`data/resultados_2023_prov.json`).
 

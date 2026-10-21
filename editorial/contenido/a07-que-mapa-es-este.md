@@ -1,16 +1,20 @@
 # A7 · ¿Qué mapa es este?
 
-Estado: **borrador de Cowork, pendiente del visto bueno del autor** (2026-10-21). Criterios del autor del 20-10 en editorial/decisiones.md; diseño en docs/maquetas/maqueta-mapas-v10.html (variante A).
+Estado: **aprobado por el autor** (2026-10-21): portada, orden de rondas, distractores, cortes y explicaciones. Criterios del autor del 20-10 en editorial/decisiones.md; diseño en docs/maquetas/maqueta-mapas-v10.html (variante A).
 
 - Ámbito: 52 provincias (con Ceuta y Melilla). Datos en `data/resultados_2023_prov.json`.
-- Mecánica: seis rondas con el encadenador; en cada una, un mapa sin título ni leyenda y cuatro etiquetas (la correcta y tres de los otros mapas del juego). 1 punto por acierto; 6 en total.
-- Distractores (propuesta de Cowork): los tres mapas más parecidos al de la ronda, medidos con la correlación de rangos de Spearman entre provincias. Así siempre entra el más parecido, como pide el criterio del 20-10. Las etiquetas son nominales: se barajan (criterio del 19-10).
+- Mecánica: seis rondas con el encadenador; en cada una, un mapa sin título ni leyenda y cuatro etiquetas (la correcta y tres distractores). 1 punto por acierto; 6 en total.
+- Distractores (decisión del autor, 21-10; sustituye a «tres del mismo juego» del 20-10):
+  1. Un mapa ya resuelto no vuelve como opción. Los distractores salen de los mapas que aún no han salido y de siete etiquetas señuelo (tabla «Señuelos»): variables reales calculadas con los mismos datos, cuyo mapa no se enseña.
+  2. Siempre los tres más parecidos al mapa de la ronda (Spearman entre provincias), excluidos los casi idénticos (ρ > 0,9).
+  3. Cada señuelo sale como mucho tres veces en la partida.
+  Las etiquetas son nominales: se barajan (criterio del 19-10). Si cambia el orden de las rondas, los distractores se recalculan.
 - Escala: cinco tramos, del sepia a la tinta. Cortes: ver la tabla «Cortes» (método pendiente del autor).
 - Fuente general: Ministerio del Interior (infoelectoral), elecciones generales del 23-07-2023; INE, cifras oficiales de población a 1-1-2025 y Estadística del Padrón Continuo a 1-1-2023; Real Decreto 806/2026 (escaños de 2026).
 
 ## Portada
 
-**Texto:** Seis mapas de España sin título ni leyenda: un examen de geografía electoral al que alguien le ha arrancado la chuleta. Mira dónde se oscurece y adivina qué cuenta cada uno.
+**Texto:** El verdadero mapa político de España es el de la geografía electoral: seis mapas sin título ni leyenda para poner a prueba tu instinto. Mira dónde se oscurece y adivina qué cuenta cada uno.
 
 **Reglas:**
 - (papeleta) 6 mapas: elige qué muestra cada uno entre cuatro opciones.
@@ -27,6 +31,20 @@ Estado: **borrador de Cowork, pendiente del visto bueno del autor** (2026-10-21)
 | Nacidos en el extranjero | Nacidos en el extranjero | Nacidos en el extranjero (% de la población), 2023 | Nacidos en el extranjero / total del Padrón Continuo a 1-1-2023 |
 | Voto a Vox | Voto a Vox | Voto a Vox (% del voto válido), 2023 | Votos de Vox / válidos; Santa Cruz de Tenerife sin candidatura (sin dato) |
 
+## Señuelos (etiquetas que nunca son la respuesta)
+
+| Etiqueta | Cálculo (no se dibuja) |
+| --- | --- |
+| Voto al PP | Votos del PP / válidos, 2023 |
+| Voto al PSOE | Votos del PSOE / válidos, 2023 |
+| Voto en blanco | Blancos / válidos, 2023 |
+| Electores en el extranjero | Censo CERA / censo total, 2023 |
+| Población | Población a 1-1-2025 |
+| Crecimiento de la población | Población 1-1-2025 / 1-1-2023 − 1 |
+| Voto a PACMA | Votos de PACMA / válidos, 2023 (Ceuta sin candidatura, fuera del cálculo) |
+
+Excluido por casi idéntico: Población frente a Habitantes por escaño (ρ = 0,97).
+
 ## Parecido entre mapas (Spearman, 52 provincias)
 
 | | Abstención | Hab./escaño | Nulo | Sumar | Extranjero | Vox |
@@ -40,7 +58,7 @@ Estado: **borrador de Cowork, pendiente del visto bueno del autor** (2026-10-21)
 
 En Vox, 51 provincias (sin Santa Cruz de Tenerife).
 
-## Cortes (pendiente del autor)
+## Cortes (método B, decisión del autor del 21-10)
 
 Dos métodos. **A, quintiles exactos:** diez u once provincias por tramo, pero cortes con decimales poco legibles en la leyenda. **B, cortes redondos cerca de los quintiles (recomendado):** la leyenda se lee de un vistazo y los tramos quedan entre 8 y 13 provincias. Los datos no se redondean: solo los cortes son cifras redondas.
 
@@ -59,7 +77,9 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 1 · Voto a Vox
 
-**Opciones:** Voto a Vox · Voto nulo · Nacidos en el extranjero · Habitantes por escaño
+**Opciones:** Voto a Vox · Voto nulo · Voto a PACMA · Crecimiento de la población
+
+**Parecido de los distractores (Spearman):** Voto nulo 0,35 · PACMA 0,28 · Crecimiento 0,23
 
 **Explicación:** Vox superó el 21 % en Almería, Murcia y Ceuta, su mejor provincia (23,3 %), y no llegó al 4 % en ninguna de las tres provincias vascas. En Santa Cruz de Tenerife no presentó candidatura, y por eso el mapa la deja sin dato.
 
@@ -71,7 +91,9 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 2 · Nacidos en el extranjero
 
-**Opciones:** Nacidos en el extranjero · Abstención · Habitantes por escaño · Voto a Sumar
+**Opciones:** Nacidos en el extranjero · Crecimiento de la población · Voto a PACMA · Abstención
+
+**Parecido de los distractores (Spearman):** Crecimiento 0,85 · PACMA 0,54 · Abstención 0,37
 
 **Explicación:** Illes Balears (26,4 %), Alicante (26,3 %) y Girona (25,3 %) son las provincias con más población nacida en el extranjero, y Jaén (4,3 %), la que menos. La cifra del INE incluye a los nacidos en antiguos territorios españoles.
 
@@ -83,7 +105,9 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 3 · Abstención
 
-**Opciones:** Abstención · Habitantes por escaño · Nacidos en el extranjero · Voto a Sumar
+**Opciones:** Abstención · Voto a PACMA · Habitantes por escaño · Población
+
+**Parecido de los distractores (Spearman):** PACMA 0,60 · Habitantes por escaño 0,44 · Población 0,35
 
 **Explicación:** Melilla (50,2 %) y Ceuta (44,3 %) tuvieron la abstención más alta, seguidas de Lleida y Girona, por encima del 37 %; la más baja fue la de Segovia (22,8 %). Se calcula sobre los electores que viven en España, sin el voto exterior.
 
@@ -95,7 +119,9 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 4 · Habitantes por escaño
 
-**Opciones:** Habitantes por escaño · Voto a Sumar · Abstención · Nacidos en el extranjero
+**Opciones:** Habitantes por escaño · Voto a Sumar · Crecimiento de la población · Voto en blanco
+
+**Parecido de los distractores (Spearman):** Sumar 0,79 · Crecimiento 0,47 · Blanco 0,12
 
 **Explicación:** Un diputado de Soria representa a 45.117 habitantes y uno de Madrid, a 187.817: más de cuatro veces más. Es el efecto del mínimo de dos diputados por provincia que fija la LOREG antes de repartir el resto por población.
 
@@ -107,7 +133,9 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 5 · Voto a Sumar
 
-**Opciones:** Voto a Sumar · Habitantes por escaño · Abstención · Nacidos en el extranjero
+**Opciones:** Voto a Sumar · Población · Voto en blanco · Voto al PSOE
+
+**Parecido de los distractores (Spearman):** Población 0,81 · Blanco 0,22 · PSOE −0,04
 
 **Explicación:** Sumar tuvo sus mejores resultados en Valencia (16,9 %, con Compromís), Illes Balears (16,6 %, con Més) y Madrid (15,5 %), y los peores en Ceuta, Melilla y Soria, por debajo del 3,5 %. Su mapa se parece mucho al de habitantes por escaño: le fue mejor cuanto más poblada es la provincia.
 
@@ -119,7 +147,9 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 6 · Voto nulo
 
-**Opciones:** Voto nulo · Voto a Vox · Habitantes por escaño · Abstención
+**Opciones:** Voto nulo · Voto al PSOE · Voto en blanco · Voto al PP
+
+**Parecido de los distractores (Spearman):** PSOE 0,54 · Blanco 0,49 · PP 0,17
 
 **Explicación:** Badajoz (1,70 %), Cáceres (1,63 %) y Huelva (1,56 %) tuvieron más voto nulo, y Gipuzkoa (0,62 %), el que menos. El nulo no es el voto en blanco: el blanco cuenta como voto válido y el nulo no.
 
