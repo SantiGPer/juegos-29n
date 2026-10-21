@@ -56,6 +56,13 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Sin Gibraltar (id 54). Península, Baleares, Ceuta y Melilla: cónica conforme sobre la esfera (paralelos 37 y 43, meridiano central −3,5), la misma que `d3.geoConicConformal().rotate([3.5, 0]).parallels([37, 43])`, ajustada a 343 px de ancho. Canarias: cónica conforme propia (paralelos 27,5 y 29,5, meridiano central −15,75), en el recuadro de abajo a la izquierda. Coordenadas SVG con dos decimales.
 - Cotejado con la geometría de la maqueta: diferencia máxima de 0,005 px en las cajas de las 50 provincias de la península, Baleares, Ceuta y Melilla, y de 0,12 px en las dos de Canarias.
 
+## `mapas_a07.json`
+
+- Script: `R/11_mapas_a07.R`. Juego: A7. Definiciones y señuelos de `editorial/contenido/a07-que-mapa-es-este.md` (aprobado el 21-10-2026).
+- Fuente: `resultados_2023_prov.json` (Ministerio del Interior, INE y RD 806/2026), sin datos nuevos. Valores por provincia sin redondear.
+- `null` donde la candidatura no se presentó: Vox en Santa Cruz de Tenerife y PACMA en Ceuta. Nunca 0.
+- Cotejado el 21-10-2026 con el contenido: las provincias por tramo con los cortes del método B y los tres distractores de cada ronda, con su ρ de Spearman (población fuera por casi idéntica a habitantes por escaño, ρ = 0,974; ningún señuelo más de tres veces). Sin discrepancias.
+
 ## `actividad_parlamentaria.json`
 
 - Script: `R/03_actividad_parlamentaria.R`. Juego: A6. Método y límites en `editorial/fuentes/a06-viabilidad.md`. Rango: VIII, IX, X, XII, XIV y XV (decisión del 20-10-2026). Fechas de cada legislatura, de `legislaturas.json`.

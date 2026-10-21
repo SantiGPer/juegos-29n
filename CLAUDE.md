@@ -50,6 +50,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 08_plenopedia_xv.R # indicadores del Pleno de la XV para A3
 │   ├── 09_escanos_generales.R # escaños por candidatura de 1982, 2000, 2015 y 2023 para A5
 │   ├── 10_mapa_provincias.R # trazados SVG de las provincias (es-atlas/IGN) para A7
+│   ├── 11_mapas_a07.R    # valores por provincia de los seis mapas de A7 y sus señuelos
 │   └── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # fichas completas, calendario, reserva
@@ -128,6 +129,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral), INE y BOE | A7, A8, A9, A11 |
 | `escanos_generales.json` | Ministerio del Interior (infoelectoral) | A5 |
 | `mapa_provincias.json` | IGN vía es-atlas 0.6.0, proyectado en R | A7 |
+| `mapas_a07.json` | Derivado de `resultados_2023_prov.json` | A7 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, A11, plan B A14 |
 | `presidentes.json` | La Moncloa y BOE; siete fichas a mano, sin script | A12 |
