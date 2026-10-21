@@ -1,0 +1,65 @@
+{
+  "juego": "El fondo de la urna",
+  "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso de las elecciones generales del 23-07-2023. Elaboración propia (data/resultados_2023_prov.json).",
+  "portada": {
+    "texto": "En cada papeleta hay alguien que se presentó con toda la ilusión del mundo y volvió a casa con 115 votos. Empareja a cada candidatura con lo que sacó y desenmascara a la que nunca existió.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "Dos rondas: une cada candidatura con sus votos. Una de las cinco no existe." },
+      { "icono": "urna", "texto": "1 punto por pareja y 1 en el duelo final: 11 en total." }
+    ]
+  },
+  "etiqueta": "Ronda",
+  "porGrupo": 5,
+  "rondas": [
+    {
+      "tipo": "emparejar",
+      "pregunta": "Cinco candidaturas, cuatro cifras de votos y un impostor.",
+      "unidad": "provincias",
+      "nula": "No existe",
+      "revelacion": "Candidatura inventada. Sus provincias, también.",
+      "items": [
+        { "texto": "Caminando Juntos (CJ)", "detalle": ["Alicante", "Cádiz", "Granada", "Málaga", "Murcia", "Palencia", "Salamanca", "Segovia", "Sevilla", "Valencia"], "respuesta": "5.620", "valor": 5620 },
+        { "texto": "Por Mi Comarca y la de al Lado (PMC+)", "detalle": ["Albacete", "Cuenca"], "respuesta": null },
+        { "texto": "Por Mi Región", "detalle": ["Murcia"], "respuesta": "1.698", "valor": 1698 },
+        { "texto": "Referéndum Sistema Dinero (+RDS+)", "detalle": ["Murcia"], "respuesta": "165", "valor": 165 },
+        { "texto": "Tercera Edad en Acción (3e)", "detalle": ["Segovia", "La Rioja"], "respuesta": "484", "valor": 484 }
+      ],
+      "explicacion": [
+        "Caminando Juntos fue la más votada de la ronda porque se presentó en diez provincias, y más de la mitad de sus votos salen de Valencia, Alicante y Sevilla. En Murcia compitieron dos de estas candidaturas: Por Mi Región sacó 1.698 votos y Referéndum Sistema Dinero, 165.",
+        "Por Mi Comarca y la de al Lado no existe; Por Mi Región, sí, y sacó 1.698 votos en Murcia.",
+        "Caminando Juntos: Alicante, Cádiz, Granada, Málaga, Murcia, Palencia, Salamanca, Segovia, Sevilla y Valencia."
+      ],
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023."
+    },
+    {
+      "tipo": "emparejar",
+      "pregunta": "Otras cinco. Una sigue sin existir.",
+      "unidad": "provincias",
+      "nula": "No existe",
+      "revelacion": "Candidatura inventada. Sus provincias, también.",
+      "items": [
+        { "texto": "Fuerza Cívica", "detalle": ["Valladolid"], "respuesta": "115", "valor": 115 },
+        { "texto": "Horario Europeo Ya (HEY)", "detalle": ["Barcelona", "Madrid", "Málaga", "Sevilla", "Valencia", "Zaragoza"], "respuesta": null },
+        { "texto": "Libres", "detalle": ["Almería", "Ceuta"], "respuesta": "263", "valor": 263 },
+        { "texto": "Partido Autónomos", "detalle": ["Alicante"], "respuesta": "1.446", "valor": 1446 },
+        { "texto": "Partido Humanista (PH)", "detalle": ["Madrid"], "respuesta": "2.902", "valor": 2902 }
+      ],
+      "explicacion": [
+        "Fuerza Cívica, con 115 votos en Valladolid, fue la candidatura menos votada de todas las que se presentaron al Congreso en 2023. El Partido Humanista sacó 2.902 votos con una sola lista, la de Madrid, la provincia que más diputados elige.",
+        "Horario Europeo Ya tampoco existe: la hemos inventado con la fórmula de las candidaturas que llevan el programa en el nombre.",
+        "Horario Europeo Ya: Barcelona, Madrid, Málaga, Sevilla, Valencia y Zaragoza."
+      ],
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023."
+    },
+    {
+      "tipo": "duelo",
+      "pregunta": "Uno se sentó en el Congreso y el otro no. ¿Quién sacó más votos?",
+      "lados": [
+        { "id": "pacma", "nombre": "PACMA", "contexto": "0 escaños", "valor": 169237, "cifra": "169.237" },
+        { "id": "upn", "nombre": "UPN", "contexto": "1 escaño", "valor": 52188, "cifra": "52.188" }
+      ],
+      "explicacion": "PACMA sacó 169.237 votos, más del triple que UPN, pero repartidos en 51 provincias no le alcanzaron para un escaño en ninguna. UPN solo se presentó en Navarra y con sus 52.188 votos sacó uno de los cinco diputados de la provincia.",
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023."
+    }
+  ]
+}
