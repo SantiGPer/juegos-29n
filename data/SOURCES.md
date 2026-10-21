@@ -47,6 +47,13 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS; por decisión del 20-10-2026 se agrupan con ella en una sola fila, «Podemos y confluencias» (69 = 42 + 12 + 9 + 6), con el desglose en `desglose`.
 - Siglas y denominación tal como las publica Interior, en mayúsculas. Las candidaturas con menos de cinco escaños se agrupan en `otros`, con su lista. Cada año suma 350.
 
+## `mapa_provincias.json`
+
+- Script: `R/10_mapa_provincias.R`. Juego: A7. Diseño de `docs/maquetas/maqueta-mapas-v10.html` (variante A, aprobado el 20-10-2026).
+- Fuente: es-atlas 0.6.0 (Martín González, licencia MIT), `es/provinces.json` (https://cdn.jsdelivr.net/npm/es-atlas@0.6.0/es/provinces.json), TopoJSON generado a partir de la Base de Datos de Líneas Límite Jurisdiccionales del IGN (CNIG, CC BY 4.0). Códigos INE de provincia. Descargado el 21-10-2026.
+- Sin Gibraltar (id 54). Península, Baleares, Ceuta y Melilla: cónica conforme sobre la esfera (paralelos 37 y 43, meridiano central −3,5), la misma que `d3.geoConicConformal().rotate([3.5, 0]).parallels([37, 43])`, ajustada a 343 px de ancho. Canarias: cónica conforme propia (paralelos 27,5 y 29,5, meridiano central −15,75), en el recuadro de abajo a la izquierda. Coordenadas SVG con dos decimales.
+- Cotejado con la geometría de la maqueta: diferencia máxima de 0,005 px en las cajas de las 50 provincias de la península, Baleares, Ceuta y Melilla, y de 0,12 px en las dos de Canarias.
+
 ## `actividad_parlamentaria.json`
 
 - Script: `R/03_actividad_parlamentaria.R`. Juego: A6. Método y límites en `editorial/fuentes/a06-viabilidad.md`. Rango: VIII, IX, X, XII, XIV y XV (decisión del 20-10-2026). Fechas de cada legislatura, de `legislaturas.json`.
