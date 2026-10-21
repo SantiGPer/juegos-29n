@@ -79,14 +79,15 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 | --- | --- | --- |
 | M1 quiz | N preguntas, explicación, puntuación; variantes "ordena" y "pistas progresivas" | A1, A2, A4, A12, B1 |
 | M2 estimación | Deslizadores / entrada numérica; error respecto a la referencia | A3 |
-| M3 gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | A5, A6, A7 |
-| M4 más-o-menos | Rondas de comparar dos cifras, cadena "mayor o menor", ordenar seis ítems; racha y ranking final | A3, A11 |
+| M3 gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | A5, A6 |
+| M4 más-o-menos | Rondas de comparar dos cifras, cadena "mayor o menor", ordenar seis ítems; racha y ranking final | A11 |
 | M5 D'Hondt | Reparto provincial a partir de votos con reglas editables | A9 |
 | M6 agrupar | 16 ítems en 4 grupos de 4; 4 fallos; cuadrícula de colores | A10 |
 | M7 atributos | Adivinar un ítem; feedback ✓/✗ y ↑↓ por atributo; autocompletado | Sin uso desde el 15-10 (A12 pasa a M1) |
 | M8 afinidad | El usuario ordena ítems; Spearman con el perfil de cada partido | A14 |
 | M9 rosco | Una definición por letra en círculo; respuesta escrita con variantes aceptadas; pasar y volver | A13 |
-| M10 emparejar | Columna fija de ítems y columna barajada de respuestas, con una respuesta especial sin dato («No existe») por configuración; se corrige al final, 1 punto por pareja | A8 (candidatos de B1, A9 y «Lemas de campaña» si entra) |
+| M10 emparejar | Filas de ítems con hueco y bandeja de respuestas en la barra, con una respuesta especial sin dato («No existe») por configuración; se corrige al final, 1 punto por pareja. Es un tipo de ronda del encadenador | A8 (candidatos de B1, A9 y «Lemas de campaña» si entra) |
+| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7) con una cabecera, una pista, una puntuación y un cierre | A3, A7, A8 |
 
 Cada motor expone una función `iniciar(config, contenedor)` y delega el final en `shared/cierre.js`. El contenido del juego vive en JSON, nunca en el JS del motor.
 
@@ -98,11 +99,11 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 
 - **A1 Quiz del sistema electoral** (bajo). 10 preguntas: D'Hondt, barrera 3 %, circunscripciones, Senado, voto por correo, CERA. Cierre: nota sobre 10 + nivel.
 - **A2 Cronología de la legislatura** (bajo). Ordenar 12-15 hitos de la XV legislatura. Cierre: posiciones correctas.
-- **A3 Crispómetro** (medio en datos). Llamadas al orden por cada 100 sesiones plenarias, por legislatura. Cadena "¿más o menos que la anterior?" hasta la XV; pantalla final con ranking, presidencia del Congreso y partido de cada legislatura. Rango (todas o desde la VIII) por decidir con el dato.
+- **A3 Plenopedia** (medio en datos). Diez preguntas sobre el Pleno de la XV (203 sesiones, 2023–2026) con mecánicas mezcladas en el encadenador: opción múltiple, ordenar, estimación (M2) y duelo. Indicadores del Diario de Sesiones: palabras por diputado, rumores, aplausos y risas por cada 10.000 palabras, llamadas al orden, duración y hora de cierre de las sesiones, minutos de silencio y léxico. El Gobierno cuenta como categoría propia. Primer juego de la serie (13-N). Cierre: puntos sobre 10. Sustituye al Crispómetro (20-10).
 - **A4 Promesas de 2023** (bajo-medio). Cumplida / incumplida / bloqueada, con la votación que la bloqueó documentada.
 - **A5 Hemiciclos por legislatura** (medio). Hemiciclo SVG; el usuario asigna escaños a cada grupo con grupo propio (sin Mixto). Coaliciones con el nombre de la época. Cierre: error absoluto medio.
 - **A6 Completa el gráfico parlamentario** (medio). 6-8 métricas de actividad del Congreso, generales y por grupo; el usuario dibuja barras. Cierre: grado de acierto.
-- **A7 ¿Qué mapa es este?** (medio). Mapas provinciales sin leyenda (voto PP, Vox, PSOE, abstención, voto por correo, renta). Cierre: aciertos.
+- **A7 ¿Qué mapa es este?** (medio). Seis mapas provinciales sin leyenda (abstención, habitantes por escaño, voto nulo, voto a Sumar, nacidos en el extranjero y voto a Vox), con cuatro etiquetas por mapa; ronda de tipo mapa en el encadenador y geometría de `mapa_provincias.json`. Cierre: aciertos sobre 6.
 - **A8 El fondo de la urna** (bajo). Candidaturas sin escaño del 23-J. Encadenador con dos rondas de M10 emparejar (cinco candidaturas, una inventada, contra cuatro cifras de votos y «No existe»; cada candidatura con sus provincias) y un duelo final (PACMA, 0 escaños, frente a UPN, 1 escaño). Datos de `resultados_2023_prov.json`. Las inventadas se comprueban antes en el Registro de Partidos y en las candidaturas proclamadas del 29-N. Cierre: puntos sobre 11. Sustituye a «Demografía del voto» (21-10).
 - **A9 Mismo voto, otras reglas** (medio). Resultado real 2023 con circunscripción única, autonómica, barrera 5 %. El usuario predice ganador/perdedor por regla. Cierre: aciertos.
 - **A10 Agrupar 16** (muy bajo). Nombres, leyes, lemas, fechas en 4 grupos de 4 con grupos trampa. Una sola edición. Cierre: resuelto + fallos.
@@ -130,11 +131,10 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, A11, plan B A14 |
 | `presidentes.json` | La Moncloa y BOE; siete fichas a mano, sin script | A12 |
-| `llamadas_al_orden.json` | Diario de Sesiones (regex: "le llamo al orden", "retire esa expresión"); ParlaMint-ES para texto limpio de legislaturas anteriores | A3 |
+| `llamadas_al_orden.json` | Diario de Sesiones (regex: "le llamo al orden", "retire esa expresión"); ParlaMint-ES para texto limpio de legislaturas anteriores | A3 (vía `plenopedia_xv.json`); VIII–XV en reserva para A11 o posts |
 | `diputados_xv.json` | Datos abiertos del Congreso (diputados activos y de baja) | A3 |
 | `plenopedia_xv.json` | Diario de Sesiones de la XV: palabras, acotaciones, horas y menciones por orador y grupo | A3 |
 | `cis_postelectoral_2023.json` | CIS, microdato | Reserva (era el A8 anterior) |
-| `renta_prov.json` | INE | A7 |
 | `programas_29n.json` | Webs de los partidos; MARPOR como plan B | A14 |
 | `encuestas.json` | Agregadores públicos | contexto |
 
