@@ -11,7 +11,7 @@ import { ronda as estimacion } from './estimacion.js';
 // Cada tipo de ronda es ronda(datos, listo, rotulo) → { cuerpo, barra?, resolver }: listo(bool, texto?) enciende
 // el botón y puede cambiar su texto; barra va en la barra fija, sobre el botón; resolver() revela la solución y
 // devuelve 0, ½ o 1. Un tipo con casillas(datos) ocupa varias celdas de la pista y su resolver devuelve un
-// punto por celda; uno con rotulo pone él mismo el «Ronda N de M».
+// punto por celda; uno con rotulo pone él mismo el «Ronda N de M». Una ronda puede traer su rotulo («Duelo»).
 
 const explicacion = ({ explicacion, fuente }) => el('div', { className: 'explicacion' },
   el('p', { textContent: explicacion }),
@@ -144,7 +144,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     const boton = accion('Responder');
     boton.disabled = true;
     const tipo = tipos[rondas[n].tipo];
-    const rotulo = `${etiqueta} ${n + 1} de ${rondas.length}`;
+    const rotulo = rondas[n].rotulo ?? `${etiqueta} ${n + 1} de ${rondas.length}`;
     const { cuerpo, barra = [], resolver } = tipo(rondas[n], (ok, texto) => {
       boton.disabled = !ok;
       if (texto) boton.textContent = texto;

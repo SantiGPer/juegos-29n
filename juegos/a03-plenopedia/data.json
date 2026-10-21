@@ -66,6 +66,7 @@
     },
     {
       "tipo": "duelo",
+      "rotulo": "Duelo",
       "pregunta": "En política también hay espacio para la comedia: ¿quién hizo reír más veces a la Cámara?",
       "lados": [
         { "id": "sanchez", "nombre": "Pedro Sánchez", "contexto": "Gobierno", "color": "--gobierno", "valor": 266, "cifra": "266" },

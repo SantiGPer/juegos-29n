@@ -33,6 +33,7 @@
   --cc: #FFD700;
   --upn: #2A52BE;
   --ucd: #197E36;
+  --pacma: #00FF7F;
 
   /* El Gobierno como categoría (presidente y ministros): no es color de partido (decisión de diseño del 18-10-2026) */
   --gobierno: var(--tinta);
@@ -290,7 +291,7 @@ button:disabled {
 
 .digito {
   display: grid;
-  grid-template-columns: repeat(5, var(--p));
+  grid-template-columns: repeat(var(--columnas, 5), var(--p));
   grid-auto-rows: var(--p);
   gap: 1px;
 }
@@ -518,16 +519,56 @@ details[open] summary { margin-bottom: var(--s1); }
 
 .ranking .etiqueta { margin: 0; }
 
-/* Duelo: dos fichas enfrentadas que son los botones de elección */
+/* Duelo con «VS» (maqueta v13): dos fichas enfrentadas que son los botones de elección, en espejo */
+.energia,
+.opciones.duelo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s2);
+}
+
+.energia { margin-bottom: 6px; }
+
+/* Barras de energía: diez segmentos que crecen desde el centro; al resolver, uno cada 40 ms de dentro afuera */
+.energia-lado { display: flex; gap: 2px; }
+.energia-lado.izq { flex-direction: row-reverse; }
+
+.energia-lado i {
+  flex: 1;
+  height: 10px;
+  border: 1px solid var(--raya);
+}
+
+.energia-lado i.on { background: var(--tinta); border-color: var(--tinta); }
+
+.llena i.on {
+  animation-name: carga;
+  animation-timing-function: steps(1, end);
+  animation-fill-mode: backwards;
+}
+
+@keyframes carga { from { background: var(--papel); border-color: var(--raya); } }
+
+.duelo { position: relative; }
+
 .duelo .lado {
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: var(--s1);
+  min-height: 136px;
   padding: var(--s3);
 }
 
-.duelo .lado .hito { line-height: 1.2; }
+.duelo .lado.der { align-items: end; text-align: right; }
+
+.duelo .lado .hito {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.2;
+}
+
 .duelo .lado .etiqueta {
   display: flex;
   align-items: center;
@@ -535,7 +576,7 @@ details[open] summary { margin-bottom: var(--s1); }
   color: inherit;
 }
 
-/* Muestra de 12 px junto a la afiliación, no junto al nombre; al 50 % en la ficha perdedora */
+/* Muestra de 12 px junto a la afiliación o, si la ficha es un partido, junto al nombre; al 50 % en la perdedora */
 .duelo .muestra {
   flex: none;
   width: 12px;
@@ -543,8 +584,36 @@ details[open] summary { margin-bottom: var(--s1); }
   border: 1px solid var(--tinta);
 }
 
+.duelo .lado.seleccionada .muestra { border-color: var(--papel); }
 .duelo .lado:disabled:not(.correcta) .muestra { opacity: 0.5; }
 .duelo .lado .dato { margin-top: auto; padding-top: var(--s2); line-height: 0; }
+
+.vs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--papel);
+  background: var(--tinta);
+  outline: 4px solid var(--papel);
+  transform: translate(-50%, -50%);
+}
+
+/* Entrada, una vez por duelo: las fichas desde los lados y el «VS» cae en el centro */
+.entra .lado { animation: desde-izq 280ms steps(4) both; }
+.entra .lado.der { animation-name: desde-der; }
+.entra .vs { animation: golpe 360ms steps(3) 200ms both; }
+
+@keyframes desde-izq { from { transform: translateX(-40px); opacity: 0; } }
+@keyframes desde-der { from { transform: translateX(40px); opacity: 0; } }
+@keyframes golpe {
+  0% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+  60% { transform: translate(-50%, -50%) scale(0.9); opacity: 1; }
+}
 
 /* M2 estimación: tu respuesta en trama, el dato en sólido y el hueco en marcador (maquetas v3 y v4) */
 .estimacion-cifra {
@@ -1035,15 +1104,19 @@ details[open] summary { margin-bottom: var(--s1); }
   gap: 6px;
 }
 
-/* En la bandeja, «No existe» parte en dos líneas para que las cinco piezas midan lo mismo */
-.bandeja .pieza { width: 100%; height: 48px; line-height: 1.1; white-space: normal; }
-.bandeja .pieza.nula { gap: 5px; font-size: 0.8125rem; }
+.bandeja .pieza { width: 100%; height: 48px; }
 .bandeja .vacia { height: 48px; border: 1px dashed var(--raya); }
 
-/* Por debajo de 360 px la quinta parte no llega para icono y texto en fila: el icono va encima */
-@media (max-width: 359px) {
-  .bandeja .pieza.nula { flex-direction: column; gap: 2px; font-size: 0.6875rem; line-height: 1; }
+/* En la bandeja, «No existe» en todos los anchos: icono arriba y «No / existe» en dos líneas (diseño del 21-10) */
+.bandeja .pieza.nula {
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: normal;
 }
+
+.bandeja .pieza.nula .texto { width: min-content; }
 
 .barra:has(> .bandeja) { flex-direction: column; gap: var(--s2); }
 
@@ -1109,6 +1182,7 @@ details[open] summary { margin-bottom: var(--s1); }
 
 @media (prefers-reduced-motion: reduce) {
   .marca::before { animation: none; }
+  .entra .lado, .entra .vs, .llena i.on { animation: none; }
   .mas { display: none; }
   .cursor { transition: none; }
 }

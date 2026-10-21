@@ -19,7 +19,7 @@ export const ronda = ({ pregunta, items, nula, revelacion, unidad, explicacion, 
   const ficha = (j, escala, clase = '') => {
     const b = el('button', { type: 'button', className: `pieza${respuestas[j] === nula ? ' nula' : ''}${clase}` });
     if (respuestas[j] === nula) b.innerHTML = icono('nula', escala);
-    b.append(respuestas[j]);
+    b.append(el('span', { className: 'texto', textContent: respuestas[j] }));
     return b;
   };
 

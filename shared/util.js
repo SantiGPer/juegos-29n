@@ -19,7 +19,8 @@ export const muestra = nodo => nodo.scrollIntoView({
   block: 'nearest',
 });
 
-// Cifras de casillas en rejilla de 5×7 (maqueta arcade v2), más la coma para el medio punto y el punto de miles
+// Cifras de casillas en rejilla de 5×7 (maqueta arcade v2) y la V y la S del duelo (maqueta v13). La coma del
+// medio punto y el punto de miles son glifos estrechos de 2×7 (diseño del 21-10).
 const glifos = {
   0: '01110100011001110101110011000101110', 1: '00100011000010000100001000010001110',
   2: '01110100010000100010001000100011111', 3: '11110000010000101110000010000111110',
@@ -27,12 +28,14 @@ const glifos = {
   6: '00110010001000011110100011000101110', 7: '11111000010001000100010000100001000',
   8: '01110100011000101110100011000101110', 9: '01110100011000101111000010001001100',
   '/': '00001000010001000100010001000010000', '+': '00000001000010011111001000010000000',
-  ',': '00000000000000000000001100011000100', '.': '00000000000000000000000000110001100',
   '?': '01110100010000100010001000000000100',
+  V: '10001100011000110001100010101000100', S: '01111100001000001110000010000111110',
+  ',': '00000000000110', '.': '00000000001111',
 };
 
 export const cifra = (texto, p) => el('span', { className: 'digitos', ariaHidden: 'true', style: `--p: ${p}px` },
-  ...[...texto].map(c => el('span', { className: 'digito' }, ...[...glifos[c]].map(b => el('i', { className: b === '1' ? 'on' : '' })))));
+  ...[...texto].map(c => el('span', { className: 'digito', style: `--columnas: ${glifos[c].length / 7}` },
+    ...[...glifos[c]].map(b => el('i', { className: b === '1' ? 'on' : '' })))));
 
 export const numero = n => n.toLocaleString('es-ES');
 
