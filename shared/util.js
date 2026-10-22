@@ -20,7 +20,7 @@ export const muestra = nodo => nodo.scrollIntoView({
 });
 
 // Cifras de casillas en rejilla de 5×7 (maqueta arcade v2) y la V y la S del duelo (maqueta v13). La coma del
-// medio punto y el punto de miles son glifos estrechos de 2×7 (diseño del 21-10).
+// medio punto (tres píxeles) y el punto de miles (2 × 2) son glifos estrechos de 2×7 (diseño del 22-10).
 const glifos = {
   0: '01110100011001110101110011000101110', 1: '00100011000010000100001000010001110',
   2: '01110100010000100010001000100011111', 3: '11110000010000101110000010000111110',
@@ -30,7 +30,7 @@ const glifos = {
   '/': '00001000010001000100010001000010000', '+': '00000001000010011111001000010000000',
   '?': '01110100010000100010001000000000100',
   V: '10001100011000110001100010101000100', S: '01111100001000001110000010000111110',
-  ',': '00000000000110', '.': '00000000001111',
+  ',': '00000000010110', '.': '00000000001111',
 };
 
 export const cifra = (texto, p) => el('span', { className: 'digitos', ariaHidden: 'true', style: `--p: ${p}px` },

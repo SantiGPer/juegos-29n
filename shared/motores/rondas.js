@@ -6,6 +6,7 @@ import { ordenOpciones } from './quiz.js';
 import { ronda as duelo } from './duelo.js';
 import { ronda as emparejar } from './emparejar.js';
 import { ronda as estimacion } from './estimacion.js';
+import { ronda as mapa } from './mapa.js';
 
 // Encadenador de rondas de mecánicas distintas: una cabecera, una pista, una puntuación y un cierre.
 // Cada tipo de ronda es ronda(datos, listo, rotulo) → { cuerpo, barra?, resolver }: listo(bool, texto?) enciende
@@ -108,7 +109,7 @@ const ordenar = (datos, listo) => {
   };
 };
 
-const tipos = { opciones, ordenar, duelo, estimacion, emparejar };
+const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;

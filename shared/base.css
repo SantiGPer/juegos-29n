@@ -35,6 +35,13 @@
   --ucd: #197E36;
   --pacma: #00FF7F;
 
+  /* Escala de los mapas de A7, «del sepia a la tinta», ajena a los partidos (decisión de diseño del 20-10-2026) */
+  --m0: #f3ebdc;
+  --m1: var(--senado);
+  --m2: #ab9472;
+  --m3: #615341;
+  --m4: #000000;
+
   /* El Gobierno como categoría (presidente y ministros): no es color de partido (decisión de diseño del 18-10-2026) */
   --gobierno: var(--tinta);
 
@@ -993,10 +1000,102 @@ details[open] summary { margin-bottom: var(--s1); }
 .botones button { flex: 1; min-height: 52px; }
 .plegado .botones button { min-height: 44px; }
 
-/* M10 emparejar (maqueta v12): filas con hueco y bandeja de piezas en la barra, todas del mismo tamaño.
-   Cabecera y cuerpo compactos para que la ronda quepa sin scroll en 375 × 560. */
-.cuerpo:has(.renglones) { padding-bottom: var(--s3); }
-.cuerpo:has(.renglones) .cab { margin-bottom: var(--s3); }
+/* Cabecera y cuerpo compactos en las rondas de emparejar y de mapa, para que quepan sin scroll en 375 × 560 */
+.cuerpo:has(.renglones, .mapa.jugando) { padding-bottom: var(--s3); }
+.cuerpo:has(.renglones, .mapa.jugando) .cab { margin-bottom: var(--s3); }
+
+/* Ronda de mapa (A7, maqueta v10): sin título ni leyenda mientras se juega, con el alto justo para que las
+   opciones quepan; al resolver, a todo el ancho con título, leyenda y la provincia tocada en una franja */
+.rotulo-mapa { margin: 0 0 var(--s1); }
+
+.mapa {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto var(--s3);
+}
+
+.mapa.jugando { max-height: max(200px, calc(100dvh - 344px)); }
+
+@media (min-width: 768px) {
+  .mapa.jugando { max-height: max(200px, calc(100dvh - 368px)); }
+}
+
+.mapa:not(.jugando) [data-id] { cursor: pointer; }
+
+.mapa .provincia { stroke: var(--papel); stroke-width: 0.6; }
+.mapa .provincia.sin-dato { stroke: var(--raya); }
+.mapa .casilla { stroke: var(--tinta); stroke-width: 1; }
+.mapa .marcada { stroke: var(--tinta); stroke-width: 2; }
+.recuadro-canarias { fill: none; stroke: var(--raya); stroke-width: 1; }
+
+.opciones-mapa .opcion {
+  padding: var(--s1) var(--s2);
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.titulo-mapa {
+  margin: 0 0 var(--s2);
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Leyenda (maqueta v14): barra de cinco casillas pegadas con los cortes en las fronteras y, si hace falta,
+   la casilla «sin dato» a la derecha */
+.leyenda {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: start;
+  margin: 0 0 var(--s3);
+  font-size: 0.6875rem;
+  color: var(--lapiz);
+}
+
+.escala { position: relative; padding-bottom: 16px; }
+.cajas { display: grid; grid-template-columns: repeat(5, 1fr); }
+.cajas i { height: 14px; border: 1px solid var(--tinta); }
+.cajas i + i { border-left: 0; }
+
+.corte {
+  position: absolute;
+  top: 14px;
+  padding-top: 3px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  transform: translateX(-50%);
+}
+
+.corte::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 1px;
+  height: 5px;
+  background: var(--tinta);
+}
+
+.leyenda .sin-dato { display: flex; align-items: center; gap: var(--s1); white-space: nowrap; }
+.leyenda .sin-dato i { width: 14px; height: 14px; border: 1px solid var(--raya); background: var(--papel); }
+
+.franja {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s3);
+  margin: 0 0 var(--s3);
+  padding: var(--s2) 0;
+  font-size: 1rem;
+  border-top: 1px solid var(--tinta);
+  border-bottom: 1px solid var(--raya);
+}
+
+.franja .etiqueta { margin: 0; }
+.franja span:last-child:not(.etiqueta) { white-space: nowrap; }
 
 .enunciado {
   margin: 0 0 var(--s2);
