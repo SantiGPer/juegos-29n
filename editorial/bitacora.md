@@ -2,6 +2,26 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-22 — A7: leyenda, sin dato y coma según el diseño del 22-10
+
+Encargo de decisiones.md, «2026-10-22 (diseño, A7 montado: dudas de Code)». Antes, commit aparte con los cambios de Cowork y la maqueta v14 (`754cced`).
+
+**Hecho** (pendiente del commit con el autor)
+- **`mapa.js` y `base.css`, leyenda (maqueta v14):**
+  - cinco casillas de 14 px pegadas en una barra con borde de tinta;
+  - los cuatro cortes centrados en las fronteras, con marca de 1 × 5 px, a 0,6875 rem, en lápiz, con cifras tabulares y sin unidad («7,5», «105.000»);
+  - en los mapas con alguna provincia sin dato (solo Vox), la casilla «sin dato» a la derecha, a 10 px.
+- **Franja:** sin cambios de diseño, salvo un ajuste. A 320 px «Sin candidatura» partía en dos líneas; ahora el valor no se parte y es el nombre el que pasa a la segunda.
+- **`util.js`:** coma de tres píxeles (columna derecha en las filas 5 y 6, izquierda en la 7); el punto ya era de 2 × 2. «3,5» y «01,5» se leen ya como coma.
+- **Pruebas** a 320 × 560, 375 × 560 y 1280, sin errores de consola ni scroll horizontal; capturas revisadas contra la lista negra:
+  - **A7:** la ronda cabe sin scroll en los tres anchos; leyendas con los cortes del contenido; recibo 🟨⬜🟨🟨⬜🟨.
+  - **A8:** igual que antes; 9/11 en la partida de prueba.
+  - **Plenopedia:** igual que antes, con el duelo centrado y las barras 10 y 9.
+
+**Falta**
+- Commit de A7 (motor `mapa.js`, cambios de `base.css`, `rondas.js` y `util.js`, y `juegos/a07-que-mapa-es-este/`) con el autor. Día de A7 en el calendario.
+- A8: búsqueda en las candidaturas proclamadas del 29-N. A5 (umbrales) y A6 (métricas 3, 4 y 5), sin cambios.
+
 ## 2026-10-21 (3) — Duelo con «VS», A8 al día y A7 montado (pendiente del visto bueno a `shared/`)
 
 Antes, commit aparte con los cambios de Cowork (`73dfd46`): decisiones de A7, duelo con «VS» (v13) y dudas de A8.

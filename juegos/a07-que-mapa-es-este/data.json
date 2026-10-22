@@ -1,0 +1,87 @@
+{
+  "juego": "¿Qué mapa es este?",
+  "fuente": "Ministerio del Interior (infoelectoral), elecciones generales del 23-07-2023; INE, cifras oficiales de población a 1-1-2025 y Estadística del Padrón Continuo a 1-1-2023; Real Decreto 806/2026 (escaños de 2026).",
+  "portada": {
+    "texto": "El verdadero mapa político de España es el de la geografía electoral: seis mapas sin título ni leyenda para poner a prueba tu instinto. Mira dónde se oscurece y adivina qué cuenta cada uno.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "6 mapas: elige qué muestra cada uno entre cuatro opciones." },
+      { "icono": "urna", "texto": "1 punto por mapa acertado." }
+    ]
+  },
+  "etiqueta": "Ronda",
+  "rondas": [
+    {
+      "tipo": "mapa",
+      "mapa": "vox",
+      "pregunta": "¿Qué muestra este mapa?",
+      "opciones": ["Voto a Vox", "Voto nulo", "Voto a PACMA", "Crecimiento de la población"],
+      "correcta": "Voto a Vox",
+      "titulo": "Voto a Vox (% del voto válido), 2023",
+      "cortes": [7.5, 13, 15, 16],
+      "formato": "pct",
+      "sinDato": "Sin candidatura",
+      "explicacion": "Vox superó el 21 % en Almería, Murcia y Ceuta, su mejor provincia (23,3 %), y no llegó al 4 % en ninguna de las tres provincias vascas. En Santa Cruz de Tenerife no presentó candidatura, y por eso el mapa la deja sin dato.",
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023."
+    },
+    {
+      "tipo": "mapa",
+      "mapa": "extranjero",
+      "pregunta": "¿Qué muestra este mapa?",
+      "opciones": ["Nacidos en el extranjero", "Crecimiento de la población", "Voto a PACMA", "Abstención"],
+      "correcta": "Nacidos en el extranjero",
+      "titulo": "Nacidos en el extranjero (% de la población), 2023",
+      "cortes": [9, 12, 16, 22],
+      "formato": "pct",
+      "explicacion": "Illes Balears (26,4 %), Alicante (26,3 %) y Girona (25,3 %) son las provincias con más población nacida en el extranjero, y Jaén (4,3 %), la que menos. La cifra del INE incluye a los nacidos en antiguos territorios españoles.",
+      "fuente": "INE, Estadística del Padrón Continuo a 1-1-2023 (tabla 68526)."
+    },
+    {
+      "tipo": "mapa",
+      "mapa": "abstencion",
+      "pregunta": "¿Qué muestra este mapa?",
+      "opciones": ["Abstención", "Voto a PACMA", "Habitantes por escaño", "Población"],
+      "correcta": "Abstención",
+      "titulo": "Abstención (% del censo residente), 2023",
+      "cortes": [25.5, 26.5, 29, 34],
+      "formato": "pct",
+      "explicacion": "Melilla (50,2 %) y Ceuta (44,3 %) tuvieron la abstención más alta, seguidas de Lleida y Girona, por encima del 37 %; la más baja fue la de Segovia (22,8 %). Se calcula sobre los electores que viven en España, sin el voto exterior.",
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023 (censo y votantes residentes)."
+    },
+    {
+      "tipo": "mapa",
+      "mapa": "habitantes_escano",
+      "pregunta": "¿Qué muestra este mapa?",
+      "opciones": ["Habitantes por escaño", "Voto a Sumar", "Crecimiento de la población", "Voto en blanco"],
+      "correcta": "Habitantes por escaño",
+      "titulo": "Habitantes por escaño, 2026",
+      "cortes": [80000, 105000, 135000, 155000],
+      "formato": "entero",
+      "explicacion": "Un diputado de Soria representa a 45.117 habitantes y uno de Madrid, a 187.817: más de cuatro veces más. Es el efecto del mínimo de dos diputados por provincia que fija la LOREG antes de repartir el resto por población.",
+      "fuente": "INE, cifras oficiales de población a 1-1-2025; Real Decreto 806/2026; LOREG, art. 162.2."
+    },
+    {
+      "tipo": "mapa",
+      "mapa": "sumar",
+      "pregunta": "¿Qué muestra este mapa?",
+      "opciones": ["Voto a Sumar", "Población", "Voto en blanco", "Voto al PSOE"],
+      "correcta": "Voto a Sumar",
+      "titulo": "Voto a Sumar (% del voto válido), 2023",
+      "cortes": [6, 8, 11, 13],
+      "formato": "pct",
+      "explicacion": "Sumar tuvo sus mejores resultados en Valencia (16,9 %, con Compromís), Illes Balears (16,6 %, con Més) y Madrid (15,5 %), y los peores en Ceuta, Melilla y Soria, por debajo del 3,5 %. Su mapa se parece mucho al de habitantes por escaño: le fue mejor cuanto más poblada es la provincia.",
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023; INE, población a 1-1-2025."
+    },
+    {
+      "tipo": "mapa",
+      "mapa": "nulo",
+      "pregunta": "¿Qué muestra este mapa?",
+      "opciones": ["Voto nulo", "Voto al PSOE", "Voto en blanco", "Voto al PP"],
+      "correcta": "Voto nulo",
+      "titulo": "Voto nulo (% de votantes), 2023",
+      "cortes": [0.95, 1.05, 1.2, 1.3],
+      "formato": "pct",
+      "explicacion": "Badajoz (1,70 %), Cáceres (1,63 %) y Huelva (1,56 %) tuvieron más voto nulo, y Gipuzkoa (0,62 %), el que menos. El nulo no es el voto en blanco: el blanco cuenta como voto válido y el nulo no.",
+      "fuente": "Ministerio del Interior, resultados del Congreso del 23-07-2023; LOREG, art. 96.5."
+    }
+  ]
+}
