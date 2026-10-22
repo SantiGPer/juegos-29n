@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leyenda A7 v14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --m0:#f3ebdc; --m1:#dcc7a1; --m2:#ab9472; --m3:#615341; --m4:#000; --fuente: Archivo, system-ui, sans-serif; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1100px; margin:0 auto; }
+h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+h2 { font-size:1.25rem; font-weight:800; margin:2.5rem 0 .4rem; }
+h3 { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.intro, .porque { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+.fila { display:flex; gap:2rem; flex-wrap:wrap; align-items:start; }
+.f { border:1px solid var(--raya); padding:16px; }
+.titulo { font-size:1.125rem; font-weight:800; margin:0 0 8px; line-height:1.2; }
+/* actual */
+.ley-a { display:grid; grid-template-columns:repeat(5,1fr); gap:3px; }
+.ley-a span { font-size:.6875rem; color:var(--lapiz); text-align:center; line-height:1.2; }
+.ley-a i { display:block; height:14px; border:1px solid var(--tinta); margin-bottom:2px; }
+/* propuesta: cortes en las fronteras */
+.ley { position:relative; padding-bottom:16px; }
+.ley .cajas { display:grid; grid-template-columns:repeat(5,1fr) ; gap:0; }
+.ley .cajas i { height:14px; border:1px solid var(--tinta); }
+.ley .cajas i + i { border-left:0; }
+.ley .corte { position:absolute; top:14px; transform:translateX(-50%); font-size:.6875rem; color:var(--lapiz); white-space:nowrap; font-variant-numeric:tabular-nums; padding-top:3px; }
+.ley .corte::before { content:""; position:absolute; top:-3px; left:50%; width:1px; height:5px; background:var(--tinta); }
+.ley .sindato { position:absolute; right:0; top:-2px; }
+.leyfila { display:grid; grid-template-columns:1fr auto; gap:10px; align-items:start; }
+.sd { display:flex; align-items:center; gap:4px; font-size:.6875rem; color:var(--lapiz); white-space:nowrap; }
+.sd i { width:14px; height:14px; border:1px solid var(--raya); background:var(--papel); display:block; }
+.franja { display:flex; justify-content:space-between; border-top:1px solid var(--tinta); border-bottom:1px solid var(--raya); padding:8px 0; margin-top:12px; font-size:1rem; }
+.franja.vacia { color:var(--lapiz); font-size:.875rem; }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(var(--c,5),var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+table { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+th, td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>A7 · Leyenda, sin dato, franja y coma</h1>
+<p class="intro">Revisión de las decisiones que Code tomó al montar A7 (bitácora 21-10 (3)), con el juego jugado a 375 y 320 px.</p>
+
+<h2>1. Leyenda: cortes en las fronteras</h2>
+<p class="porque">Ahora cada casilla lleva su intervalo debajo («80.000–105.000», «menos de 7,5»), que a 320 px no cabe y parte en dos líneas. Propongo la leyenda clásica de un mapa: las cinco casillas pegadas en una sola barra y los cuatro cortes escritos en las fronteras, con una marca de 1 px. Cada cifra aparece una vez, sin guiones ni «menos de», y la unidad ya va en el título.</p>
+<div class="fila">
+<div><h3>Actual, 320 px</h3><div class="f" style="width:320px" id="act"></div></div>
+<div><h3>Propuesta, 320 px</h3><div class="f" style="width:320px" id="pro320"></div></div>
+<div><h3>Propuesta, 375 px, mapa con dato que falta</h3><div class="f" style="width:375px" id="pro375"></div></div>
+</div>
+
+<h2>2. Provincia sin dato</h2>
+<p class="porque">Code la pinta en papel con borde raya y la franja dice «Sin candidatura». Lo valido, y añado una cosa: cuando el mapa tiene alguna provincia sin dato, la leyenda lleva al final una casilla aparte, en papel con borde raya, rotulada «sin dato». Si no, quien vea Santa Cruz de Tenerife en blanco puede leerla como «tramo más bajo», que es casi el mismo tono.</p>
+
+<h2>3. Franja antes de tocar</h2>
+<p class="porque">Valido lo que hizo Code: la franja va bajo el mapa, no bajo la leyenda, porque está junto a lo que se toca y el orden de lectura queda título, leyenda, mapa y dato. El texto «Toca una provincia para ver su dato.» en lápiz también vale. Se corrige la decisión del 20-10, que decía «bajo la leyenda».</p>
+
+<h2>4. Coma estrecha</h2>
+<p class="porque">Code tiene razón: con dos píxeles la coma se confunde con el punto. Propongo una coma de tres píxeles (columna derecha en las filas 5 y 6, columna izquierda en la fila 7) y el punto en un bloque de 2 × 2 en las filas 6 y 7.</p>
+<div class="fila" id="comas"></div>
+
+<h2>Qué decidir</h2>
+<table>
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>Leyenda en una barra de cinco casillas pegadas, con los cuatro cortes en las fronteras (0,6875 rem, lápiz, cifras tabulares) y una marca de 1 × 5 px.</td></tr>
+<tr><td>2</td><td>Sin dato: papel con borde raya, como ya está, más la casilla «sin dato» en la leyenda solo en los mapas que la necesitan.</td></tr>
+<tr><td>3</td><td>Franja bajo el mapa con «Toca una provincia para ver su dato.»: validado.</td></tr>
+<tr><td>4</td><td>Coma de tres píxeles y punto de 2 × 2.</td></tr>
+</table>
+</div>
+<script>
+const M = ["var(--m0)","var(--m1)","var(--m2)","var(--m3)","var(--m4)"];
+const actual = (t, et) => `<p class="titulo">${t}</p><div class="ley-a">${M.map((c, i) => `<span><i style="background:${c}"></i>${et[i]}</span>`).join("")}</div>`;
+const propuesta = (t, cortes, sd) => `<p class="titulo">${t}</p><div class="leyfila"><div class="ley"><div class="cajas">${M.map(c => `<i style="background:${c}"></i>`).join("")}</div>${cortes.map((c, i) => `<span class="corte" style="left:${(i + 1) * 20}%">${c}</span>`).join("")}</div>${sd ? `<span class="sd"><i></i>sin dato</span>` : ""}</div>`;
+document.getElementById("act").innerHTML = actual("Habitantes por escaño, 2026", ["menos de 80.000","80.000–105.000","105.000–130.000","130.000–155.000","155.000 o más"]) + `<p style="font-size:.75rem;color:#575757;margin:8px 0 0">Cortes de ejemplo para medir el espacio; los reales están en el contenido.</p>`;
+document.getElementById("pro320").innerHTML = propuesta("Habitantes por escaño, 2026", ["80.000","105.000","130.000","155.000"], false) + `<div class="franja vacia">Toca una provincia para ver su dato.</div>`;
+document.getElementById("pro375").innerHTML = propuesta("Voto a Vox (% del voto válido), 2023", ["7,5","13","15","16"], true) + `<div class="franja"><b>Santa Cruz de Tenerife</b><span>Sin candidatura</span></div>`;
+const G = { "1":"00100011000010000100001000010001110", "3":"11110000010000101110000010000111110", "5":"11111100001111000001000011000101110", "0":"01110100011001110101110011000101110", "6":"00110010001000011110100011000101110", "9":"01110100011000101111000010001001100", "2":"01110100010000100010001000100011111", "7":"11111000010001000100010000100001000", ",":"00000000000000000101010", ".":"00000000000000000000001111" };
+const W = { ",": 2, ".": 2 };
+const glifo = (c, p) => { const w = W[c] || 5, s = G[c].padEnd(w * 7, "0"); return `<span class="digito" style="--c:${w}">${[...s.slice(0, w * 7)].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`; };
+G[","] = "00" + "00" + "00" + "00" + "01" + "01" + "10";
+G["."] = "00" + "00" + "00" + "00" + "00" + "11" + "11";
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => glifo(c, p)).join("")}</span>`;
+document.getElementById("comas").innerHTML = [["13,5", 4], ["01,5", 3], ["169.237", 3]].map(([s, p]) => `<div class="f">${px(s, p)}</div>`).join("");
+</script>
+</body>
+</html>

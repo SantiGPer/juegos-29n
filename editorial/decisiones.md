@@ -824,3 +824,25 @@ Respuestas a las dudas de diseño de la bitácora 2026-10-21 (2), aprobadas por 
 - Pendiente de editorial (no es de diseño): fila de Caminando Juntos en la tabla de la ronda 1 de A8 y su nombre en pantalla (¿«Caminando Juntos (CJ)»?).
 - **Cerrado el pendiente de editorial del chat de diseño (A8, ronda 1):** la fila de Caminando Juntos ya está en el contenido y en el `data.json` (montado por Code el 21-10), con el nombre en pantalla «Caminando Juntos (CJ)». Criterio: siglas entre paréntesis salvo cuando coinciden con el nombre (Por Mi Región, Fuerza Cívica, Libres, Partido Autónomos).
 - A8, calendario (decisión del autor, 21-10): si se confirma el cara a cara del 16-11 y el 17-11 pasa a ser día de «Quién dijo qué», A8 se mueve al día 6 (18-11).
+
+## 2026-10-22 (diseño, A7 montado: dudas de Code)
+
+Respuestas a las dudas de diseño de la bitácora 2026-10-21 (3), aprobadas por el autor tras jugar A7 a 375 y 320 px. Referencia: docs/maquetas/maqueta-leyenda-a7-v14.html.
+
+- Diseño, A7, leyenda:
+  - Sustituye a la leyenda de cinco casillas con su intervalo debajo.
+  - Las cinco casillas de 14 px de alto van pegadas en una sola barra a todo el ancho de la leyenda, con borde de 1 px tinta y sin separación.
+  - Los cuatro cortes se escriben centrados en las fronteras entre casillas, con una marca vertical de 1 × 5 px en tinta, a 0,6875 rem, en lápiz, con cifras tabulares y sin unidad (la unidad va en el título).
+  - Formato del contenido: «7,5», «105.000». Nada de «menos de», «o más» ni guiones.
+- Diseño, A7, provincia sin dato:
+  - Se valida lo que montó Code: papel con borde raya de 0,6 px y, al tocarla, «Sin candidatura» (o el texto que dé el contenido) en la franja.
+  - Además, en los mapas con alguna provincia sin dato, la leyenda lleva a la derecha, separada 10 px de la barra, una casilla de 14 px en papel con borde raya y el rótulo «sin dato» (0,6875 rem, lápiz). En los demás mapas no aparece.
+- Diseño, A7, franja: se valida tal como está.
+  - Va bajo el mapa (no bajo la leyenda, como decía la decisión del 20-10, que queda corregida).
+  - Antes de tocar, «Toca una provincia para ver su dato.» en lápiz a 0,875 rem.
+  - Al tocar, nombre en 800 y valor a la derecha.
+- Diseño, cifras de casillas, coma y punto (corrige la decisión del 21-10):
+  - Coma de tres píxeles en un glifo de 2 × 7: columna derecha en las filas 5 y 6, columna izquierda en la fila 7.
+  - Punto de 2 × 2 en las filas 6 y 7.
+  - Vale para toda la serie.
+- Encargo para Code: aplicarlo en `shared/motores/mapa.js`, `shared/util.js` y `shared/base.css`, y hacer commit de A7 con el visto bueno del autor al diff de `shared/`. Volver a probar A7, Plenopedia y A8 a 320, 375 × 560 y 1280; capturas revisadas contra la lista negra; entrada en la bitácora.
