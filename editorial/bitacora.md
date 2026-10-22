@@ -2,6 +2,13 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-22 (2) — A8, texto de la inventada de la ronda 2
+
+Decisión del autor en sesión (22-10), para que Cowork la pase a `decisiones.md` y al contenido: la explicación no cuenta cómo se creó el nombre falso; basta con decir que es inventado.
+- `data.json` de A8, ronda 2, texto «La inventada»: «Horario Europeo Ya tampoco existe: es una candidatura inventada.» Sustituye a «… la hemos inventado con la fórmula de las candidaturas que llevan el programa en el nombre.».
+- La ronda 1 («Por Mi Comarca y la de al Lado no existe; Por Mi Región, sí, y sacó 1.698 votos en Murcia.») no explica cómo se creó y no cambia.
+- Push a Pages del 22-10 (`4b088b3..1c96d92`) con confirmación del autor: A7, A8, duelo con «VS» y el resto de cambios del 21 y el 22-10.
+
 ## 2026-10-22 — A7: leyenda, sin dato y coma según el diseño del 22-10
 
 Encargo de decisiones.md, «2026-10-22 (diseño, A7 montado: dudas de Code)». Antes, commit aparte con los cambios de Cowork y la maqueta v14 (`754cced`).
