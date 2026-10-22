@@ -13,6 +13,15 @@ const pista = texto => {
   return el('p', { className: 'definicion' }, antes, el('b', { textContent: letra }), despues);
 };
 
+// Al final de la definición, «(Dos palabras, anglicismo)» cuando la respuesta tiene varias palabras o es un
+// anglicismo (anglicismo: true), para que nadie se quede en «swing» (decisión del autor, 22-10)
+const numeros = ['', '', 'Dos', 'Tres', 'Cuatro'];
+const definicion = ({ pista: texto, respuesta, anglicismo }) => {
+  const palabras = respuesta.split(' ').length;
+  const notas = [...(palabras > 1 ? [`${numeros[palabras]} palabras`] : []), ...(anglicismo ? ['anglicismo'] : [])];
+  return pista(notas.length ? `${texto} (${notas.join(', ').replace(/^./, c => c.toUpperCase())})` : texto);
+};
+
 // Rosco circular de 252 px (maqueta v7): letras de 24 px en un radio de 111 px, desde arriba
 const circulo = (nodos, centro) => el('div', { className: 'rosco' },
   ...nodos.map((nodo, i) => {
@@ -36,7 +45,7 @@ const rosco = (letras, estados) => {
     onclick: () => {
       botones.forEach((b, k) => b.classList.toggle('actual', k === i));
       grande.textContent = l.letra;
-      ficha.replaceChildren(pista(l.pista),
+      ficha.replaceChildren(definicion(l),
         el('p', {}, 'Respuesta: ', el('b', { textContent: l.respuesta })),
         el('p', { className: 'fuente', textContent: `Fuente: ${l.fuente}` }));
     },
@@ -75,10 +84,10 @@ function partida({ juego, dia, fuente, letras }, contenedor) {
   const cuenta = el('span', { className: 'cifras' });
   const zona = el('div', { ariaHidden: 'true' });
   const era = el('p', { className: 'era', ariaLive: 'polite' });
-  const definicion = el('div');
+  const zonaDefinicion = el('div');
   const cuerpo = el('div', { className: 'cuerpo' },
     el('header', { className: 'cab' }, el('div', { className: 'cab-fila' }, el('h1', { className: 'nombre', textContent: juego }), cuenta)),
-    zona, era, definicion,
+    zona, era, zonaDefinicion,
     el('form', {
       className: 'campo',
       onsubmit: e => {
@@ -101,7 +110,7 @@ function partida({ juego, dia, fuente, letras }, contenedor) {
       ? el('div', { className: 'tira' }, ...casillas)
       : circulo(casillas, [el('span', { className: 'grande', textContent: letras[actual].letra }), el('span', { className: 'etiqueta', textContent: 'Aciertos' }), cifra(marca, 3)]));
     cuenta.replaceChildren(...(plegado ? [cifra(marca, 2)] : []), el('span', { className: 'oculto', textContent: `${aciertos()} aciertos` }));
-    definicion.replaceChildren(pista(letras[actual].pista));
+    zonaDefinicion.replaceChildren(definicion(letras[actual]));
     terminar.hidden = estados.includes('pendiente');
   };
 

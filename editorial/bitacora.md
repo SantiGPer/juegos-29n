@@ -2,6 +2,22 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-22 (3) — A13, nota de palabras y anglicismo al final de la definición
+
+Decisión del autor en sesión (22-10), para que Cowork la pase a `decisiones.md` y al contenido de A13: cuando la respuesta tiene más de una palabra o es un anglicismo, la definición lo dice al final, para que nadie escriba solo «swing».
+
+**Hecho**
+- `shared/motores/rosco.js`:
+  - tras la definición va «(Dos palabras, anglicismo)», «(Dos palabras)» o «(Anglicismo)»;
+  - el número de palabras se cuenta en la respuesta principal (las variantes no cuentan);
+  - el anglicismo sale del campo `anglicismo: true` de la letra;
+  - vale también para la ficha de cada letra en el cierre.
+- `data.json` de A13: `anglicismo: true` en K (Think tank) y W (Swing voter).
+- Resultado: G (Grupo Mixto) y J (Junta Electoral), «(Dos palabras)»; K y W, «(Dos palabras, anglicismo)». El resto, sin nota.
+- Probado a 320 × 560, 375 × 560 y 1280, sin errores de consola ni scroll; «swing» sigue siendo fallo («Era: Swing voter»).
+
+**Para Cowork:** si se añade otra letra con un anglicismo, el contenido tiene que marcarlo; el número de palabras sale solo.
+
 ## 2026-10-22 (2) — A8, texto de la inventada de la ronda 2
 
 Decisión del autor en sesión (22-10), para que Cowork la pase a `decisiones.md` y al contenido: la explicación no cuenta cómo se creó el nombre falso; basta con decir que es inventado.
