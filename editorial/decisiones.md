@@ -889,3 +889,60 @@ Aprobado por el autor, como respuesta anticipada a las dudas de diseño del enca
 - Contenido para M8: cada partido trae en el `data.json` su artículo para el titular (campo `de`: «del PP», «del PSOE», «de Vox», «de Sumar»…). No se calcula.
 - Diseño, M8, recibo: solo texto, sin emojis de color. «Juegos 29N, día N» / nombre del juego / «Mi agenda se parece a la de X (0,71)» / «Mis tres primeros: …» / URL. Botón «Copiar resultado» en la barra.
 - Encargo para Code: aplicarlo al montar `shared/motores/afinidad.js` (encargo del 24-10), con datos de prueba marcados como tales. Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.
+- **A11, selección y estructura (decisión del autor, 24-10):** diez duelos seguidos con el duelo con «VS» (P1, P2, P3, P4, P5, P6, P7, P9, P10 y P11 del catálogo). Borrador en editorial/contenido/a11-mas-o-menos.md, pendiente del autor: orden, racha, nombre, portada y explicaciones.
+- **A11 Más o menos pasa a la reserva** (decisión del autor, 24-10). Se conservan el catálogo (editorial/catalogos/a11-catalogo.md) y el borrador de diez duelos (editorial/contenido/a11-mas-o-menos.md) por si hace falta un suplente; usa el duelo con «VS», que ya existe, así que su coste como suplente es muy bajo. Code no lo monta.
+- **B2 Bingo del debate se fusiona con B1** (decisión del autor, 24-10). No hay cartón la víspera: el bingo pasa a ser una ronda de «Quién dijo qué», «¿Lo dijeron o no?», que se publica el día siguiente a cada debate. El jugador marca en un cartón las casillas que cree que ocurrieron (frases literales o gestos observables, según la regla del bingo de COWORK.md) y se corrige al momento con la transcripción. Libera un día de calendario por debate y deja una sola pieza que producir cada noche de debate.
+- Pendiente para cuando se diseñe B1: número de casillas, cuánto pesa la ronda del cartón en la puntuación de B1, mecánica del resto de B1 (emparejar frases con candidatos u opción múltiple) y encargo al chat de diseño para el cartón.
+- **B1 es una sola pieza** (decisión del autor, 24-10): no se repite por cada debate. Sustituye a «una pieza por debate» del 15-10. Qué debate cubre queda pendiente de que se confirmen las fechas.
+- **A11 Más o menos vuelve a la serie** (decisión del autor, 24-10), para cubrir el hueco. Su contenido sigue en borrador: orden, racha, nombre, portada y explicaciones, pendientes del autor.
+- Serie: 15 piezas para 15 días. Jugables: A1, A2, A3 Plenopedia, A4, A7, A8, A10, A12 y A13. Pendientes: A5, A6, A9, A11, A14 y B1 (con el bingo dentro).
+- **Encargo para Code (CLAUDE.md):** B2 desaparece como juego propio (es una ronda de B1); B1 es una sola pieza; A11 sigue en el pool. Quitar «B1 y B2 son una pieza por debate» de los principios y ajustar la sección de campaña y el calendario de entregas («plantillas B1/B2» pasa a «plantilla de B1»).
+- **A11, decisiones del autor (24-10):**
+  - Se llama **«Duelo de circunscripciones»**. Carpeta propuesta: `juegos/a11-duelo-de-circunscripciones/`.
+  - Madrid sale de uno de sus cuatro duelos: en el de voto en blanco, Lleida (1,12 %) se enfrenta a Valencia (0,75 %).
+  - **Vida en lugar de racha:** una barra de vida que se vacía con cada fallo; con 5 fallos llega a cero y la partida termina. Puntos = aciertos sobre 10. El orden de los duelos sigue la dificultad creciente del contenido.
+- **Encargo para el chat de diseño (A11, barra de vida):** estética de barra de vida de los juegos de lucha arcade de los noventa (referencia del autor: Street Fighter), dentro de las reglas de la serie: píxel, tinta, papel y marcador, animación por pasos y sin degradados ni brillos. Solo como referencia de estilo: nada de logotipos, tipografías, personajes ni elementos reconocibles de ninguna marca. Definir:
+  - la barra de 5 tramos y cómo se vacía con cada fallo (con `prefers-reduced-motion`, sin animación);
+  - el final de partida al llegar a cero (texto y aspecto; el vocabulario de la serie solo admite palabras que nombran una regla: si se quiere «K.O.», que lo apruebe el autor);
+  - su convivencia con las barras de energía del duelo con «VS» (v13), que muestran el dato de cada lado y no deben confundirse con la vida, y con los corazones de vida de A10;
+  - el icono «vida» de la regla de portada;
+  - el recibo con la partida cortada (duelos no jugados).
+- **A11, cierre del contenido (decisión del autor, 24-10):**
+  - El duelo «En Jaén, ¿PP o PSOE?» se sustituye por «¿Dónde sacó más porcentaje el PP: Jaén o Sevilla?» (37,32 % frente a 33,38 %), para que todos los duelos enfrenten a dos circunscripciones. Pasa al puesto 5 y el de voto en blanco al 4, para que no vayan seguidos dos duelos del PP.
+  - Portada: «Cincuenta y dos circunscripciones, diez combates y una sola pregunta: ¿quién tiene más? Cada fallo te quita vida, y al quinto te quedas fuera del hemiciclo.»
+  - Contenido completo y aprobado en editorial/contenido/a11-mas-o-menos.md.
+- **Encargo para Code (A11):** montar «Duelo de circunscripciones» en `juegos/a11-duelo-de-circunscripciones/` con el duelo con «VS» del encadenador, cuando llegue el diseño de la barra de vida. Cotejar cifras y posiciones de las explicaciones con `mapas_a07.json` y `resultados_2023_prov.json`.
+
+## 2026-10-24 (diseño, A11 barra de vida y dudas de A5)
+
+Aprobado por el autor. Referencia: docs/maquetas/maqueta-vida-a11-v16.html.
+
+- Diseño, A11, barra de vida (respuesta al encargo del 24-10):
+  - **Posición:** en la cabecera, a todo el ancho, entre el nombre del juego y la fila de pista y puntos (pista larga de 10 celdas de 18 px).
+  - **Forma:**
+    - a la izquierda, el corazón de píxel (9×8, escala 2, tinta);
+    - en el centro, un marco de 1 px tinta con 2 px de relleno y, dentro, cinco tramos macizos de 14 px de alto en tinta, separados 3 px;
+    - a la derecha, la cuenta «N/5» en 0,75 rem, lápiz y tabular.
+  - **Perder una vida:** el tramo más a la derecha de los que quedan parpadea dos veces (tinta, papel, tinta, papel; 400 ms, `steps(1)`) y queda vacío en papel, dentro del marco. Siempre se vacía de derecha a izquierda. Sin rojo, brillos ni degradados. Con prefers-reduced-motion, se vacía sin parpadeo.
+  - **Diferencia con las barras de energía del duelo (v13):**
+    - la de vida es una sola, de 14 px, con marco y en la cabecera;
+    - las de energía son dos, de 10 px, sin marco, en espejo y encima de las fichas, y solo se llenan al resolver.
+    - No se toca ninguna de las dos.
+- Diseño, A11, fin de la partida:
+  - Al quinto fallo se resuelve el duelo como siempre (fichas, energía, explicación y fuente) y debajo aparece un recuadro con borde de 1 px tinta: «Fuera del hemiciclo» (1,375 rem, 800) y «Te quedaste sin vida en el duelo N de 10.» (etiqueta).
+  - El botón pasa a «Ver resultado».
+  - Los duelos no jugados quedan como celdas vacías en la pista.
+  - Sin «K.O.».
+- Diseño, A11, recibo:
+  - Solo los duelos jugados (🟨⬜).
+  - Si la partida se corta, una línea más: «Fuera del hemiciclo en el duelo N».
+  - Si se llega al final con vida: «Vida: N/5».
+  - Sin emoji para los duelos no jugados.
+- Diseño, icono «vida»: el corazón de píxel lleno de A10 es el icono «vida» de la serie. Se usa en la regla «(vida)» de la portada de A11 y en las vidas de A10, que siguen con sus cuatro corazones.
+- Diseño, A5 (dudas de la bitácora del 24-10):
+  - **Al comprobar:** se valida que la vista suba al hemiciclo. Además, en ese momento el bloque del hemiciclo deja de ser fijo (`position: static`), para que al bajar no tape la explicación.
+  - **Colores parecidos dentro de una ronda:** se mantienen los de la plantilla, sin cambios (cada partido conserva su color en toda la serie). Basta con el orden alfabético y las siglas en cada fila.
+- Encargo para Code:
+  - Montar A11 en `juegos/a11-duelo-de-circunscripciones/` con esta barra de vida (encargo del 24-10), con la vida como parte del encadenador o de la ronda de duelo, según convenga.
+  - Aplicar el cambio de A5 (sticky al comprobar).
+  - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barra de vida A11 v16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --fuente: Archivo, system-ui, sans-serif; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; max-width:46em; }
+.notas li { margin-bottom:.3rem; }
+.demo { font:inherit; font-size:.875rem; background:var(--papel); color:var(--lapiz); border:1px dashed var(--lapiz); padding:.35rem .6rem; margin-top:.6rem; cursor:pointer; }
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:hidden; display:flex; flex-direction:column; font-size:1.125rem; }
+.f.alto { height:auto; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s4); }
+.barra { border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; }
+.btn { flex:1; font:inherit; font-weight:800; min-height:52px; border:1px solid var(--tinta); background:var(--papel); border-radius:0; }
+.btn.off { color:var(--lapiz); border-color:var(--raya); }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s3); }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(var(--c,5),var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+.nombre { font-size:1rem; font-weight:800; }
+
+/* Vida */
+.vida { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:var(--s2); margin:var(--s2) 0 var(--s2); }
+.vida .tramos { display:grid; grid-template-columns:repeat(5,1fr); gap:3px; padding:2px; border:1px solid var(--tinta); }
+.vida .tramos i { height:14px; background:var(--tinta); display:block; }
+.vida .tramos i.fuera { background:var(--papel); }
+.vida .tramos i.golpe { animation: golpe 400ms steps(1) both; }
+@keyframes golpe { 0%,50% { background:var(--papel); } 25%,75% { background:var(--tinta); } 100% { background:var(--papel); } }
+@media (prefers-reduced-motion: reduce) { .vida .tramos i.golpe { animation:none; background:var(--papel); } }
+.vida .cuenta { font-size:.75rem; color:var(--lapiz); font-variant-numeric:tabular-nums; min-width:2.6em; text-align:right; }
+.cab2 { display:flex; justify-content:space-between; align-items:center; }
+.pista { display:flex; gap:2px; }
+.celda { width:18px; height:18px; border:1px solid var(--tinta); display:grid; place-items:center; }
+.celda.a { background:var(--marcador); }
+.celda.x { background:var(--raya); }
+.celda.actual { border-width:3px; }
+.puntos { display:flex; align-items:center; gap:6px; }
+.puntos .et { font-size:.75rem; }
+
+/* Duelo (v13 simplificado) */
+.preg { font-size:1.25rem; font-weight:800; line-height:1.2; margin:var(--s3) 0 var(--s3); }
+.ring { position:relative; }
+.energia { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s2); margin-bottom:6px; }
+.barra-e { display:flex; gap:2px; }
+.barra-e.izq { flex-direction:row-reverse; }
+.barra-e i { flex:1; height:10px; border:1px solid var(--raya); }
+.barra-e i.on { background:var(--tinta); border-color:var(--tinta); }
+.duelo { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--s2); }
+.lado { border:1px solid var(--tinta); padding:var(--s3); display:flex; flex-direction:column; gap:var(--s1); min-height:120px; background:var(--papel); text-align:left; font:inherit; }
+.lado.der { text-align:right; align-items:flex-end; }
+.lado b { font-size:1.125rem; line-height:1.15; }
+.lado .dato { margin-top:auto; }
+.lado.ok { background:var(--marcador); }
+.lado.ko { text-decoration:line-through; color:var(--lapiz); border-color:var(--raya); }
+.lado.sel { background:var(--tinta); color:var(--papel); }
+.vs { position:absolute; left:50%; top:calc(16px + 60px); transform:translate(-50%,-50%); width:44px; height:44px; background:var(--tinta); color:var(--papel); display:grid; place-items:center; outline:4px solid var(--papel); }
+.fin { border:1px solid var(--tinta); padding:var(--s3); margin-top:var(--s3); }
+.fin b { font-size:1.375rem; display:block; line-height:1.15; }
+.recibo { border:1px solid var(--tinta); padding:var(--s3) var(--s4); white-space:pre-line; font-size:1rem; margin:var(--s3) 0; }
+.muestras { display:flex; gap:2rem; align-items:end; flex-wrap:wrap; }
+.muestras figure { margin:0; font-size:.875rem; color:var(--lapiz); }
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>A11 · Barra de vida (y dos dudas de A5)</h1>
+<p class="intro">Respuesta al encargo de diseño del 24-10 para «Duelo de circunscripciones» y a las dos dudas de A5 de la bitácora de Code. Marcos de 375 × 560 con el contenido real de los duelos 1 y 7.</p>
+
+<h2 class="sec">1. La barra</h2>
+<p class="porque">Estilo de barra de vida de máquina de lucha, con las piezas de la serie: un marco de 1 px de tinta y dentro cinco tramos macizos, uno por vida, separados por 3 px de papel. A la izquierda, el corazón de píxel de A10, que pasa a ser el icono «vida» de toda la serie; a la derecha, la cuenta («5/5»). Va arriba, a todo el ancho, entre el nombre del juego y la pista: es lo primero que se mira, como en las recreativas.</p>
+<div class="muestras" id="piezas"></div>
+<button class="demo" id="golpe">Ver cómo se pierde una vida</button>
+<ul class="notas">
+  <li><b>Perder una vida:</b> el tramo de la derecha parpadea dos veces (tinta, papel, tinta, papel; 400 ms por pasos) y queda vacío. Sin rojo, que es color de partido, ni brillos ni degradados. Con movimiento reducido se vacía sin parpadeo.</li>
+  <li><b>Se vacía de derecha a izquierda:</b> siempre desde el mismo lado, así que la barra se lee como un depósito que baja.</li>
+  <li><b>No se confunde con las barras de energía del duelo:</b> la de vida es una, gruesa (14 px), con marco y en la cabecera; las de energía son dos, finas (10 px), sin marco, en espejo y solo aparecen al resolver encima de las fichas.</li>
+  <li><b>Con A10:</b> el corazón es el mismo icono. A10 sigue con sus cuatro corazones; A11 usa la barra porque tiene más rondas y la vida es el centro del juego.</li>
+</ul>
+
+<h2 class="sec">2. En la partida</h2>
+<div class="fila">
+<div><h3 class="sec">a. Duelo 1, vida completa</h3><div class="f" id="d1"></div></div>
+<div><h3 class="sec">b. Duelo 7, tras el tercer fallo</h3><div class="f" id="d2"></div><button class="demo" id="golpe2">Repetir el golpe</button></div>
+<div><h3 class="sec">c. Quinto fallo: fin de la partida</h3><div class="f alto" id="d3"></div></div>
+</div>
+<ul class="notas">
+  <li><b>Cabecera:</b> nombre; debajo, la barra de vida; debajo, la pista larga (10 celdas de 18 px) y los puntos, como en el resto de la serie.</li>
+  <li><b>Al llegar a cero:</b> se resuelve el duelo como siempre (explicación y fuente) y debajo aparece un recuadro: «Fuera del hemiciclo» en 1,375 rem y «Te quedaste sin vida en el duelo 8 de 10.» El texto sale de la portada aprobada; no hace falta «K.O.». El botón dice «Ver resultado».</li>
+  <li><b>Celdas sin jugar:</b> se quedan vacías en la pista. En el cierre, la barra aparece vacía junto a la cifra.</li>
+  <li><b>Recibo con partida cortada:</b> solo los duelos jugados (🟨⬜), y una línea más: «Fuera del hemiciclo en el duelo 8». Sin emoji nuevo para los no jugados. Si se acaban los diez con vida: «Vida: 3/5».</li>
+  <li><b>Portada:</b> la regla «(vida)» usa el corazón.</li>
+</ul>
+
+<h2 class="sec">3. Dos dudas de A5 (bitácora del 24-10)</h2>
+<table class="res">
+<tr><th>Duda</th><th>Propuesta</th></tr>
+<tr><td>Al comprobar, la vista sube al hemiciclo en vez de bajar a la explicación.</td><td>Vale así: lo que se revela es el hemiciclo. Pero al comprobar el bloque del hemiciclo deja de ser fijo (pasa a <code>position: static</code>), para que al bajar no tape la explicación.</td></tr>
+<tr><td>Colores casi iguales dentro de una ronda (PNV y UCD en 1982, IU y PSOE en 2000…).</td><td>Se mantienen los colores de la plantilla: cada partido conserva su color en toda la serie. El orden alfabético ya los separa en el hemiciclo y cada fila lleva sus siglas junto a la muestra. No se cambia ningún color.</td></tr>
+</table>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>Barra de vida de cinco tramos macizos con marco, corazón a la izquierda y cuenta a la derecha, en la cabecera; se vacía de derecha a izquierda con un parpadeo por pasos.</td></tr>
+<tr><td>2</td><td>Fin de la partida «Fuera del hemiciclo», sin «K.O.»; recibo solo con los duelos jugados y la línea del duelo en que se acabó.</td></tr>
+<tr><td>3</td><td>El corazón pasa a ser el icono «vida» de la serie (portada de A11 y A10).</td></tr>
+<tr><td>4</td><td>A5: subir al hemiciclo al comprobar y quitarle el sticky; colores de la plantilla sin cambios.</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","3":"11110000010000101110000010000111110","4":"00010001100101010010111110001000010","5":"11111100001111000001000011000101110","6":"00110010001000011110100011000101110","7":"11111000010001000100010000100001000","8":"01110100011000101110100011000101110","9":"01110100011000101111000010001001100","?":"01110100010000100010001000000000100","V":"10001100011000110001100010101000100","S":"01111100001000001110000010000111110"};
+const NARROW = {",":"00000000000101"+"10".slice(0,0), "%":""};
+D[","] = "00000000000101" + "10"; // coma de 3 píxeles en 2×7
+const W = { ",": 2 };
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => { const w = W[c] || 5; const m = c === "," ? "00000000000101" + "10" : D[c]; return `<span class="digito" style="--c:${w}">${[...m].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`; }).join("")}</span>`;
+const svg = (m, s, c = "currentColor") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+const CORAZON = [".XX...XX.","XXXX.XXXX","XXXXXXXXX","XXXXXXXXX",".XXXXXXX.","..XXXXX..","...XXX...","....X...."];
+const TIC = [".......","......X",".....X.","X...X..",".X.X...","..X....","......."];
+const ASPA = [".......",".X...X.","..X.X..","...X...","..X.X..",".X...X.","......."];
+const vida = (n, golpe) => `<div class="vida">${svg(CORAZON, 2)}<span class="tramos">${[0,1,2,3,4].map(i => `<i class="${i >= n ? "fuera" : ""}${golpe && i === n ? " golpe" : ""}"></i>`).join("")}</span><span class="cuenta">${n}/5</span></div>`;
+const pista = (est, act) => `<div class="pista">${est.map((e, i) => `<span class="celda ${e}${i === act ? " actual" : ""}">${e === "a" ? svg(TIC, 1.6) : e === "x" ? svg(ASPA, 1.6) : ""}</span>`).join("")}</div>`;
+const cab = (n, est, act, pts, golpe) => `<span class="nombre">Duelo de circunscripciones</span>${vida(n, golpe)}<div class="cab2">${pista(est, act)}<span class="puntos"><span class="et">Puntos</span>${px(pts, 2)}</span></div>`;
+const duelo = (preg, a, b, est, ea = 0, eb = 0) => `<p class="preg">${preg}</p><div class="ring"><div class="energia"><div class="barra-e izq">${Array.from({length:10},(_, i)=>`<i class="${i<ea?"on":""}"></i>`).join("")}</div><div class="barra-e">${Array.from({length:10},(_, i)=>`<i class="${i<eb?"on":""}"></i>`).join("")}</div></div>
+  <div class="duelo"><button class="lado ${est[0]}"><b>${a[0]}</b><span class="dato">${px(est[0] && est[0] !== "sel" ? a[1] : "?", 3)}</span></button><button class="lado der ${est[1]}"><b>${b[0]}</b><span class="dato">${px(est[1] && est[1] !== "sel" ? b[1] : "?", 3)}</span></button></div><span class="vs">${px("VS", 2)}</span></div>`;
+const est10 = (s, n) => [...s].map(c => c === "a" ? "a" : c === "x" ? "x" : "").concat(Array(10 - s.length).fill(""));
+
+document.getElementById("piezas").innerHTML = `<figure>${svg(CORAZON, 5)}<figcaption>Icono «vida»</figcaption></figure>
+  <figure style="width:300px">${vida(5)}<figcaption>5/5</figcaption></figure>
+  <figure style="width:300px" id="pz2">${vida(3)}<figcaption>3/5</figcaption></figure>
+  <figure style="width:300px">${vida(0)}<figcaption>0/5</figcaption></figure>`;
+
+document.getElementById("d1").innerHTML = `<div class="cuerpo">${cab(5, est10(""), 0, "00")}<span class="et" style="display:block;margin-top:10px">Duelo 1 de 10</span>${duelo("¿Dónde sacó más porcentaje el PSOE?", ["Barcelona", "35,70"], ["Madrid", "27,84"], ["", ""])}</div><div class="barra"><button class="btn off">Responder</button></div>`;
+const pintaD2 = () => document.getElementById("d2").innerHTML = `<div class="cuerpo">${cab(2, est10("axaxaax"), 6, "04", true)}<span class="et" style="display:block;margin-top:10px">Duelo 7 de 10</span>${duelo("Duelo con el contenido del puesto 7", ["Provincia A", "?"], ["Provincia B", "?"], ["ko", ""])}<p class="et" style="margin-top:12px">Tercer fallo: la vida baja de 3/5 a 2/5.</p></div><div class="barra"><button class="btn">Siguiente duelo</button></div>`;
+pintaD2();
+document.getElementById("d3").innerHTML = `<div class="cuerpo">${cab(0, est10("axaxaxx"), 7, "03")}<span class="et" style="display:block;margin-top:10px">Duelo 7 de 10</span>
+  <div class="fin"><b>Fuera del hemiciclo</b><span class="et">Te quedaste sin vida en el duelo 7 de 10.</span></div>
+  <div class="recibo">Juegos 29N, día N
+Duelo de circunscripciones
+3/10
+🟨⬜🟨⬜🟨⬜⬜
+Fuera del hemiciclo en el duelo 7
+santigper.github.io/juegos-29n/</div></div><div class="barra"><button class="btn">Ver resultado</button></div>`;
+const golpe = id => { const i = document.querySelector(`#${id} .golpe`) || document.querySelector(`#${id} .tramos i.fuera`); if (!i) return; i.classList.remove("golpe"); void i.offsetWidth; i.classList.add("golpe"); };
+document.getElementById("golpe").onclick = () => { document.getElementById("pz2").innerHTML = `${vida(2, true)}<figcaption>3/5 → 2/5</figcaption>`; };
+document.getElementById("golpe2").onclick = pintaD2;
+</script>
+</body>
+</html>
