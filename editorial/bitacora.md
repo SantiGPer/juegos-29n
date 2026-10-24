@@ -2,6 +2,87 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-24 — A5 Hemiciclos montado y motor M8 afinidad con datos de prueba
+
+Antes, commit aparte con los cambios de Cowork (`fed5585`): decisiones del 22 y el 24-10, contenido de A5, textos de A8 y A13, catálogo de A11 y maqueta v15.
+
+### A5 · Hemiciclos (`615fea3`)
+
+- **Motor:** tipo de ronda `hemiciclo` en el encadenador (`shared/motores/hemiciclo.js`), no un M3 aparte; así reutiliza la cabecera, la pista y el cierre. Sigue la maqueta v11:
+  - 350 casillas en 10 filas, ordenadas por ángulo;
+  - cabecera y hemiciclo fijos arriba mientras la lista se desplaza;
+  - por fila, − / campo / + (el campo abre el teclado numérico; − y + repiten al mantenerlos pulsados);
+  - «Quedan» o «Sobran N» en la barra, con «Comprobar» apagado hasta 0;
+  - al comprobar, de trama a sólido en 600 ms por pasos, y en cada fila dos barras finas, los escaños reales y la diferencia;
+  - error medio en cifras de casillas a escala 4.
+- **Puntuación:** umbrales de 4 y 8 en el `data.json` (`umbrales`), por candidatura con «Otros» incluida.
+- **Cambios en `shared/`:**
+  - `rondas.js`: un tipo con `fija` queda pegado arriba con la cabecera; `resultado()` permite al juego poner su propia cifra en el cierre.
+  - `cierre.js`: cifra con su unidad al lado cuando no hay total.
+  - `iconos.js`: icono «escaño», de la maqueta v2.
+  - `base.css`: colores históricos y el estilo de la ronda.
+- **Cierre:** «3,6 escaños de error medio» en cifras de casillas sobre la banda de marcador, con la pista de cuatro celdas. Recibo: `3,6 escaños de error medio` y `🟨⬜⬜🟨`.
+- **Una desviación de la regla general:** al comprobar, la vista sube al hemiciclo en lugar de bajar a la explicación. Lo que se revela es el hemiciclo y las barras; bajando, la explicación queda tapada por el bloque fijo. **Duda para el chat de diseño:** ¿vale así?
+- **Pruebas** a 375 × 560, 320 × 560 y 1280, con una partida en la que salen llena, media, vacía y llena, y «Sobran 7» en la ronda 4: sin errores de consola ni scroll horizontal. Plenopedia, A4, A7, A8 y A10 siguen arrancando sin errores tras el cambio en `rondas.js` y `cierre.js`. Capturas revisadas contra la lista negra: sin degradados (la trama de color es una máscara de 2×2), sin sombras ni radios; los colores de partido solo codifican partido.
+- **Pequeña diferencia de siglas:** el contenido dice «CC-PNC» (2015, Otros) e Interior publica «CCa-PNC». Dejo el texto del contenido.
+- **Día de A5** en el calendario: sin asignar (`día TODO` en la portada y el recibo).
+
+### M8 · Afinidad (commit hecho; diff de `shared/` enseñado al autor, sin push)
+
+- **`shared/motores/afinidad.js`:** sigue el diseño del 24-10 (maqueta v15).
+  - El jugador ordena los temas con el control de la serie: botones de 44 px y fila movida en marcador; sin arrastre, como en A2 y Plenopedia.
+  - La lista va en versión compacta, con el número de puesto, para que los ocho temas quepan en 375 × 560.
+  - Spearman: Pearson sobre los rangos, con rango medio en los empates de proporción.
+  - Cierre:
+    - titular, banda o bandas en el color del partido (tinta o papel según el contraste) y línea fija de saliencia;
+    - barras divergentes de todos los partidos con su ρ a dos decimales, la escala y la línea de lectura;
+    - comparación de órdenes, con en negrita los temas que están en la misma posición;
+    - recibo sin emojis.
+- **Empates:** los que comparten el ρ más alto a dos decimales llevan varias bandas en orden alfabético. El titular dice «Tu agenda se parece por igual a la del PP y a la del PSOE», y la comparación usa al primero en orden alfabético.
+- **Titular sin empate:** «Tu agenda se parece a la del…» o «a la de…». El artículo sale del campo `de` sin las siglas («del PP» → «del»), para que no se lea «a la de PP».
+- **`cierre.js`:** parámetro `sinCifra` para un cierre sin nota en pantalla. El texto del resultado solo va en el recibo.
+- **Datos de prueba:** `juegos/a14-ordena-las-prioridades/`, con los ocho temas de la ficha y perfiles inventados de PP, PSOE, Sumar y Vox. Llevan `TODO` visible en la portada, las reglas y la fuente, y una nota en el `data.json`. Los perfiles están hechos para comprobar dos casos:
+  - el orden de la lista empata a PP y PSOE (0,98);
+  - otro orden da Sumar 0,95 y Vox −0,93, cifras cotejadas a mano.
+- **Pruebas** a 375 × 560, 320 × 560 y 1280, sin errores ni scroll horizontal. La lista cabe a 375 y a 320; solo queda bajo la barra el relleno de 8 px tras «Menos importante». La carpeta no está en el calendario, así que no sale en el índice.
+
+**Falta**
+- Visto bueno del autor al diff de `shared/` de A5 y de M8 antes del push.
+- A14:
+  - perfiles reales cuando lleguen los programas del 29-N;
+  - texto de portada y reglas;
+  - el campo `de` de cada partido.
+- A5:
+  - respuesta del autor sobre la frase de 2015;
+  - respuesta de diseño sobre las colisiones de color y el scroll al comprobar.
+- A8: búsqueda de las inventadas en las candidaturas proclamadas del 29-N.
+
+### Antes de montar A5: cotejo con Interior y colisiones de color
+
+**Cotejo de los dos [VERIFICAR]** (`R/cotejo_a05_interior.R` → `editorial/fuentes/a05-cotejo-interior.md`, 16 generales de 1977 a 2023, total nacional de Interior):
+- **1982, «la mayoría más amplia de la democracia»: se confirma.** Los 202 escaños del PSOE son el máximo de la serie; le siguen 186 del PP (2011) y 184 del PSOE (1986).
+- **2015, «por primera vez, cuatro candidaturas pasaron de 40 escaños»: falla tal como está escrito.** Ciudadanos sacó exactamente 40 (C's, 40), así que en 2015 solo pasan de 40 tres candidaturas (PP 123, PSOE 90 y Podemos 42, o 69 con las confluencias). Ninguna elección de la serie tiene cuatro por encima de 40. Con «40 escaños o más», 2015 sí es la primera, y la única. **Duda para el autor:** ¿«Por primera vez, cuatro candidaturas llegaron a 40 escaños»? No toco el texto: el juego lleva el del contenido con el [VERIFICAR] visible hasta que decidas. El de 1982 sí lo he quitado.
+
+**Colores históricos** (Plantilla:Color político, revisión 173877042, la ya citada):
+- Nuevos: AP-PDP `#FFD42A` (entrada «Alianza Popular»), CiU `#18307B`, IU `#DF0022`, Cs `#EB6109` (entrada «Ciudadanos») y DL `#212765`.
+- ERC-CatSí no tiene entrada propia; uso `--erc` (`#FFB32E`), como color vigente de ERC.
+- «Otros», en raya.
+
+**Colisiones dentro de una ronda** (ΔE2000 por debajo de 15; por debajo de 10 casi no se distinguen):
+
+| Ronda | Par | ΔE2000 | ¿Contiguos en el hemiciclo? |
+| --- | --- | ---: | --- |
+| 1982 | PNV `#008000` / UCD `#197E36` | 6,3 | No (PSOE entre medias) |
+| 2000 | IU `#DF0022` / PSOE `#FF0000` | 9,0 | No (PNV y PP entre medias) |
+| 2000 | CiU `#18307B` / PP `#1E4B8F` | 9,1 | No (IU y PNV) |
+| 2023 | EH Bildu `#00D0B6` / Junts `#20C0C2` | 10,0 | No (ERC, 7 escaños) |
+| 2015 | Cs `#EB6109` / PSOE `#FF0000` | 12,3 | No |
+| 2015 | DL `#212765` / PP `#1E4B8F` | 13,0 | No |
+
+Les siguen PSOE/Sumar (18,1) y PNV/Vox (21,3) en 2023. Con el orden alfabético ningún par que colisiona queda contiguo, y cada fila de la lista lleva sus siglas junto a la muestra. Además, AP `#FFD42A` está cerca del marcador; la regla del 15-10 (el marcador no entra en el gráfico) lo resuelve como con CC y ERC.
+
+**Duda para el chat de diseño:** ¿basta con el orden alfabético y las siglas, o cambiamos algún color (UCD/PNV en 1982 es el caso más claro)? Monto A5 con los colores de la plantilla, sin tocar nada, hasta que diseño responda.
+
 ## 2026-10-22 (3) — A13, nota de palabras y anglicismo al final de la definición
 
 Decisión del autor en sesión (22-10), para que Cowork la pase a `decisiones.md` y al contenido de A13: cuando la respuesta tiene más de una palabra o es un anglicismo, la definición lo dice al final, para que nadie escriba solo «swing».
