@@ -2,6 +2,14 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-24 (4) — A8: comprobación de las inventadas cerrada
+
+**Hecho**
+- El autor da por cerrada la comprobación de las candidaturas inventadas de A8 (PMC+ y HEY) con su búsqueda del 24-10, sin esperar a la proclamación. Anotado en `editorial/fuentes/a08-inventadas.md`.
+
+**Falta**
+- Nada en A8. Cowork puede quitar el punto de pendientes en `decisiones.md`.
+
 ## 2026-10-24 (3) — Decisiones del autor en sesión y push
 
 Decisiones del autor en sesión con Code (24-10). Cowork tiene que pasarlas a `decisiones.md` y a los contenidos:

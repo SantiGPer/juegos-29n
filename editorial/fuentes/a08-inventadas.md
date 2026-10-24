@@ -15,9 +15,10 @@ Candidaturas inventadas: **Por Mi Comarca y la de al Lado (PMC+)**, ronda 1, y *
   5. «Horario Europeo Ya»
 - **Límite de las búsquedas de Code:** el servidor tardaba minutos en cada respuesta. Quedaron sin respuesta las búsquedas «Horario Europeo», «Horario», «Comarca», las de siglas (PMC+, PMC y HEY) y la de control con un partido inscrito («Por Mi Region»). También se cortó la descarga del listado completo. Por eso las cinco búsquedas, por sí solas, no descartan del todo un fallo de lectura. La comprobación del autor lo cubre.
 
-## 2. Candidaturas del 29-N: limpias a 24-10, a confirmar con la proclamación
+## 2. Candidaturas del 29-N: limpias, comprobación cerrada
 
 Las agrupaciones de electores no se inscriben en el Registro, así que la búsqueda se repite en las candidaturas para las generales del 29-11-2026 (denominación y siglas de las dos inventadas).
 
 - **Comprobación del autor (24-10-2026):** ni «Por Mi Comarca y la de al Lado» (PMC+) ni «Horario Europeo Ya» (HEY) figuran. Las dos siguen libres.
 - **Salvedad:** el plazo de presentación de candidaturas acaba el 26-10 y la proclamación se publica después. Una última búsqueda en las candidaturas proclamadas del BOE cerraría el punto del todo.
+- **Cierre (24-10-2026):** el autor da por buena la comprobación de hoy y cierra el punto sin esperar a la proclamación.
