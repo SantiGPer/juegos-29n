@@ -5,7 +5,8 @@ import { accion, celdas, cifra, el, monta } from './util.js';
 // otra: { texto, accion } para volver a jugar dentro de la misma edición (A12).
 // resumen: nodos que van encima de la nota (rosco de A13).
 // detalle: nodos que van bajo la nota (ranking de A3, desglose de A4).
-export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricula, fuente, pista, otra, resumen = [], detalle = [] }, contenedor) {
+// sinCifra: sin nota en pantalla; la puntuación solo va en el recibo (M8, que pinta su resultado en resumen).
+export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricula, fuente, pista, otra, sinCifra, resumen = [], detalle = [] }, contenedor) {
   const resultado = total === undefined ? [puntuacion, unidad].filter(Boolean).join(' ') : `${puntuacion}/${total}${unidad ? ` ${unidad}` : ''}`;
   const texto = [`Juegos 29N, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
     .filter(Boolean)
@@ -39,7 +40,7 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
     el('h1', { textContent: juego }),
     el('p', { className: 'etiqueta', textContent: 'Fin de la partida' }),
     ...resumen,
-    final,
+    ...(sinCifra ? [] : [final]),
     ...(pista ? [celdas(pista.estados, [], pista.porGrupo)] : []),
     ...(nivel ? [el('p', { className: 'etiqueta', textContent: nivel })] : []),
     ...detalle,

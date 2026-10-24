@@ -1,0 +1,25 @@
+{
+  "nota": "DATOS DE PRUEBA para montar M8 (encargo del 24-10-2026). Temas de la ficha de A14; perfiles inventados. Los perfiles reales salen de los programas del 29-N.",
+  "juego": "Ordena las prioridades",
+  "fuente": "TODO: datos de prueba inventados, no son los programas del 29-N. Afinidad: correlación de Spearman entre tu orden y el peso de cada tema en cada programa.",
+  "portada": {
+    "texto": "TODO: datos de prueba. El texto de portada llega con el contenido de A14.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "TODO: 8 temas: ordénalos del más importante al menos importante." },
+      { "icono": "urna", "texto": "TODO: tu orden se compara con el peso de cada tema en los programas." }
+    ]
+  },
+  "pregunta": "¿Qué debería pesar más en la próxima legislatura?",
+  "extremos": ["Más importante", "Menos importante"],
+  "temas": ["Vivienda", "Inmigración", "Economía", "Cataluña", "Corrupción", "Sanidad", "Clima", "Defensa"],
+  "partidos": [
+    { "siglas": "PP", "de": "del PP", "color": "--pp",
+      "perfil": { "Inmigración": 0.22, "Vivienda": 0.19, "Economía": 0.17, "Cataluña": 0.14, "Corrupción": 0.11, "Sanidad": 0.08, "Clima": 0.06, "Defensa": 0.03 } },
+    { "siglas": "PSOE", "de": "del PSOE", "color": "--psoe",
+      "perfil": { "Vivienda": 0.22, "Inmigración": 0.19, "Economía": 0.17, "Cataluña": 0.14, "Corrupción": 0.11, "Sanidad": 0.08, "Defensa": 0.06, "Clima": 0.03 } },
+    { "siglas": "Sumar", "de": "de Sumar", "color": "--sumar",
+      "perfil": { "Clima": 0.22, "Vivienda": 0.19, "Sanidad": 0.17, "Economía": 0.14, "Corrupción": 0.11, "Inmigración": 0.08, "Cataluña": 0.06, "Defensa": 0.03 } },
+    { "siglas": "Vox", "de": "de Vox", "color": "--vox",
+      "perfil": { "Inmigración": 0.22, "Cataluña": 0.19, "Defensa": 0.17, "Corrupción": 0.14, "Economía": 0.11, "Vivienda": 0.08, "Sanidad": 0.06, "Clima": 0.03 } }
+  ]
+}
