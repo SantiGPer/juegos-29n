@@ -1,6 +1,7 @@
 import { baraja, el, muestra } from '../util.js';
 
-// Ronda de mapa (A7, maqueta v10, variante A): un mapa provincial sin título ni leyenda y cuatro etiquetas en 2 × 2.
+// Ronda de mapa (A7, maqueta v10, variante A): un mapa provincial sin título ni leyenda, con el año de los datos
+// (anio), y cuatro etiquetas en 2 × 2.
 // Al resolver, el mapa recupera el ancho completo con su título y su leyenda de cinco tramos, y cada provincia se
 // puede tocar para ver su valor. geometria: data/mapa_provincias.json; valores: id de provincia → número o null
 // (sin dato, que nunca se pinta como 0). cortes: cuatro, y un valor igual al corte va al tramo superior.
@@ -28,7 +29,7 @@ const leyenda = (cortes, conSinDato) => el('div', { className: 'leyenda' },
     ...cortes.map((c, k) => el('span', { className: 'corte', style: `left: ${(k + 1) * 20}%`, textContent: c.toLocaleString('es-ES') }))),
   ...(conSinDato ? [el('span', { className: 'sin-dato' }, el('i'), 'sin dato')] : []));
 
-export const ronda = ({ pregunta, opciones, correcta, titulo, cortes, formato, sinDato, geometria, valores, explicacion, fuente }, listo, rotulo) => {
+export const ronda = ({ pregunta, opciones, correcta, titulo, anio, cortes, formato, sinDato, geometria, valores, explicacion, fuente }, listo, rotulo) => {
   const { W, H, borde, p } = geometria;
   const mapa = svg('svg', { viewBox: `0 0 ${W} ${H}`, class: 'mapa jugando', role: 'img', 'aria-label': 'Mapa provincial' });
   mapa.append(svg('path', { d: borde, class: 'recuadro-canarias' }));
@@ -56,7 +57,8 @@ export const ronda = ({ pregunta, opciones, correcta, titulo, cortes, formato, s
     return b;
   });
 
-  const cabecera = el('div');
+  // Mientras se juega, solo el año de los datos como pista; al resolver lo sustituyen el título y la leyenda
+  const cabecera = el('div', {}, el('p', { className: 'titulo-mapa', textContent: `Datos de ${anio}` }));
   const franja = el('p', { className: 'franja' }, el('span', { className: 'etiqueta', textContent: 'Toca una provincia para ver su dato.' }));
   const pie = el('div');
 
@@ -79,7 +81,7 @@ export const ronda = ({ pregunta, opciones, correcta, titulo, cortes, formato, s
     });
     mapa.classList.remove('jugando');
     mapa.onclick = e => { if (e.target.dataset.id) toca(e.target.dataset.id); };
-    cabecera.append(el('p', { className: 'titulo-mapa', textContent: titulo }), leyenda(cortes, Object.values(valores).includes(null)));
+    cabecera.replaceChildren(el('p', { className: 'titulo-mapa', textContent: titulo }), leyenda(cortes, Object.values(valores).includes(null)));
     mapa.after(franja);
     pie.append(el('div', { className: 'explicacion' },
       el('p', { textContent: explicacion }),
