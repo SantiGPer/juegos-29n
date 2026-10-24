@@ -2,6 +2,61 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-24 (2) — A11 Duelo de circunscripciones, A5 al comprobar y CLAUDE.md
+
+Antes, commit aparte con los cambios de Cowork (`3a5a295`): decisiones del 24-10 sobre A11, B1 y A5, contenido de A11 y maqueta v16.
+
+**A11 · Duelo de circunscripciones**
+- **Cotejo** (`R/cotejo_a11_datos.R` → `editorial/fuentes/a11-cotejo.md`): las 20 cifras de los lados y todas las posiciones de las explicaciones coinciden con `resultados_2023_prov.json`. Lo comprobado:
+  - Barcelona, séptima del PSOE; Madrid, 45.ª;
+  - Zamora, la mayor caída, y las cinco provincias que pierden población;
+  - Lugo y Ourense, las únicas por encima del 50 % del PP;
+  - Lleida, la primera en voto en blanco; Cádiz va segunda con 1,11 %;
+  - Jaén, quinta del PSOE con 36,29 %;
+  - Alicante y Madrid, por delante de Guadalajara en crecimiento;
+  - Ourense, la primera en CERA con 28,93 %;
+  - Badajoz y Cáceres, primeras del PSOE;
+  - Santa Cruz de Tenerife, la primera de PACMA.
+- **Juego** en `juegos/a11-duelo-de-circunscripciones/`: diez duelos con «VS» en el encadenador, con `etiqueta: "Duelo"` («Duelo 1 de 10», «Siguiente duelo»).
+- **Barra de vida** como opción del encadenador (`vida: { total, fin }`), según la maqueta v16:
+  - corazón, cinco tramos en un marco y la cuenta «N/5», entre el nombre y la pista;
+  - cada duelo con 0 puntos vacía el tramo de la derecha, que parpadea dos veces (`steps(1)`, sin animación con movimiento reducido);
+  - al quinto fallo, el recuadro «Fuera del hemiciclo» / «Te quedaste sin vida en el duelo N de 10.» y «Ver resultado»;
+  - los duelos no jugados quedan vacíos en la pista;
+  - en el cierre, la barra vacía va bajo la pista, como en la nota de la maqueta.
+  - Recibo: solo los duelos jugados y «Fuera del hemiciclo en el duelo N» o «Vida: N/5».
+- **Cambios en `shared/`:**
+  - `duelo.js`: opción `barajar`, porque los lados de A11 son nominales; Plenopedia y A8 siguen en el orden del contenido.
+  - `util.js`: glifo «−» para las cifras negativas (Zamora, −0,66), y la cabecera admite nodos entre el nombre y la pista.
+  - `rondas.js`: la vida.
+  - `base.css`: la barra de vida y el recuadro final.
+- **Regla de vida:** el icono es el corazón lleno («lleno»), el mismo de A10.
+- **Pruebas** a 375 × 560, 320 × 560 y 1280, con dos partidas:
+  - una cortada en el duelo 7, con 2/10;
+  - una completa con 8/10 y «Vida: 3/5».
+  - Sin errores de consola ni scroll horizontal. Capturas revisadas contra la lista negra: sin rojo, brillos ni degradados en la barra.
+  - Los demás juegos y el índice arrancan sin errores.
+- **Duda para Cowork:** la línea de unidad bajo cada pregunta la he escrito yo, porque las cifras de casillas no tienen «%»: «% sobre voto válido», «% de variación de la población» y «% del censo electoral que vive en el extranjero». Está en el `data.json`; si se cambia, va en el contenido.
+- **Duda para Cowork:** en el duelo 4, la explicación dice «Lleida fue la provincia con más voto en blanco»; es cierto, pero Cádiz se queda a una centésima (1,11 % frente a 1,12 %). Lo anoto por si se quiere matizar.
+
+**A5:** al comprobar, el bloque del hemiciclo deja de ser fijo (diseño del 24-10). Probado a 375: la explicación ya no queda tapada. Los colores se quedan como están.
+
+**CLAUDE.md** (encargo del 24-10):
+- B2 desaparece como juego; B1 es una sola pieza con el bingo dentro.
+- Fuera «B1 y B2 son una pieza por debate» de los principios, y «plantilla de B1» en el calendario.
+- Además, para que siga al día:
+  - fichas de A5 y A11;
+  - M3 solo para A6 y M4 sin uso;
+  - el encadenador con A5 y A11;
+  - `actividad_parlamentaria.json` ya sin A11;
+  - `cotejo_a11_datos.R` en el esquema.
+
+**Falta**
+- Visto bueno del autor al diff de `shared/` (A5, M8 y A11) antes del push.
+- Días de A5, A11 y A14 en el calendario.
+- A5: la frase de 2015 sigue pendiente del autor.
+- A8: búsqueda de las inventadas en las candidaturas proclamadas del 29-N.
+
 ## 2026-10-24 — A5 Hemiciclos montado y motor M8 afinidad con datos de prueba
 
 Antes, commit aparte con los cambios de Cowork (`fed5585`): decisiones del 22 y el 24-10, contenido de A5, textos de A8 y A13, catálogo de A11 y maqueta v15.
