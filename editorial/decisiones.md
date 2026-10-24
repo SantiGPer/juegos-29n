@@ -846,3 +846,46 @@ Respuestas a las dudas de diseño de la bitácora 2026-10-21 (3), aprobadas por 
   - Punto de 2 × 2 en las filas 6 y 7.
   - Vale para toda la serie.
 - Encargo para Code: aplicarlo en `shared/motores/mapa.js`, `shared/util.js` y `shared/base.css`, y hacer commit de A7 con el visto bueno del autor al diff de `shared/`. Volver a probar A7, Plenopedia y A8 a 320, 375 × 560 y 1280; capturas revisadas contra la lista negra; entrada en la bitácora.
+
+## 2026-10-22
+
+- **A5, nombres en pantalla (decisión del autor):** «Cs» (no «C's»); «PSOE» también en 2000, con «PSOE-Progresistas» como nombre de la época; «PNV» (no «EAJ-PNV») en las cuatro rondas. Resto de siglas y nombres de época, como en editorial/contenido/a05-hemiciclos.md.
+- **A5, puntuación (decisión del autor, criterio benévolo):** error medio absoluto por candidatura, «Otros» incluida. Celda llena con 4 escaños o menos; media, más de 4 y hasta 8; vacía, más de 8. Mismos umbrales en las cuatro rondas. Sustituye a la propuesta de 3 y 6 de Cowork.
+- A5, portada: «Cuatro elecciones, 350 escaños en cada una y ningún ujier que te diga dónde se sienta cada diputado. Reparte el hemiciclo como lo dejaron las urnas.» Reglas y explicaciones aprobadas; contenido completo en editorial/contenido/a05-hemiciclos.md.
+- **Encargo para Code (A5):**
+  1. Cotejar con la serie de Interior (infoelectoral, generales de 1977 a 2023) los dos [VERIFICAR] de las explicaciones: que los 202 escaños del PSOE en 1982 son la mayoría más amplia de la democracia y que 2015 es la primera elección con cuatro candidaturas por encima de 40 escaños. Si alguno falla, a la bitácora; no se cambia el texto sin el autor.
+  2. Montar A5 en `juegos/a05-hemiciclos/` con el diseño del 20-10 (maqueta v11), los colores históricos de la Plantilla:Color político y el contenido. Las colisiones de color dentro de una ronda, a la bitácora antes de montar (decisión de diseño del 20-10).
+
+## 2026-10-24 (decisiones del autor en sesión con Code, pasadas por Cowork)
+
+- A8, ronda 2 (22-10): el texto de la inventada queda en «Horario Europeo Ya tampoco existe: es inventada.». La explicación no cuenta cómo se creó el nombre. La ronda 1 no cambia. Contenido actualizado.
+- A13 (22-10): cuando la respuesta tiene más de una palabra o es un anglicismo, la definición lo dice al final: «(Dos palabras)», «(Anglicismo)» o «(Dos palabras, anglicismo)». El anglicismo se marca en el contenido (K, Think tank, y W, Swing voter); el número de palabras sale solo. Contenido actualizado.
+- Push a Pages del 22-10 (`4b088b3..1c96d92`) con confirmación del autor: A7, A8, duelo con «VS» y cambios del 21 y el 22-10.
+- **Encargo para Code (M8 afinidad, entrega del 26-10):** montar el motor en `shared/motores/afinidad.js` sin esperar al contenido de A14, con datos de prueba marcados como tales. Según la ficha de A14 en docs/documento-base.md:
+  - el jugador ordena ocho temas, con el mismo control de ordenar de la serie (dos botones por fila; arrastrar, solo como extra en escritorio);
+  - se calcula la correlación de Spearman entre su orden y el perfil de cada partido (orden de los temas por proporción de medidas del programa);
+  - cierre: «Tu agenda se parece a la de X» (saliencia, no posición), con el nombre sobre una banda de su color (decisión de diseño del 15-10) y una barra por partido con su ρ; recibo copiable;
+  - todo el contenido (temas, partidos y perfiles) llega en el `data.json`; el motor no sabe de A14.
+  
+  Los temas, los partidos y los perfiles quedan pendientes de los programas del 29-N. Lo que necesite de diseño (barras de afinidad, empates de ρ), a la bitácora como duda para el chat de diseño.
+- A11: catálogo de rondas en editorial/catalogos/a11-catalogo.md, pendiente de la selección del autor.
+
+## 2026-10-24 (diseño, M8 afinidad)
+
+Aprobado por el autor, como respuesta anticipada a las dudas de diseño del encargo de M8 del 24-10. Referencia: docs/maquetas/maqueta-afinidad-v15.html (valores inventados).
+
+- Diseño, M8, partida:
+  - Sin pista ni puntos: es un juego de opinión, sin respuesta correcta. La cabecera lleva solo el nombre del juego.
+  - Pregunta en 1,125 rem y 800.
+  - Control de ordenar de la serie (dos botones de 44 px por fila con triángulos de píxeles, fila movida en marcador un instante, arrastrar solo como extra en escritorio), con «Más importante» encima de la lista y «Menos importante» debajo, en 0,75 rem y lápiz.
+  - Botón de la barra: «Ver mi afinidad».
+- Diseño, M8, cierre:
+  - «Fin de la partida» (etiqueta) y «Tu agenda se parece a la de…» (1,125 rem). Debajo, el partido de mayor ρ sobre una banda de su color (1,75 rem, 800), con el texto en tinta o papel según el contraste (decisión del 15-10).
+  - Bajo la banda, línea fija en lápiz: «Mide qué temas pesan más en cada programa, no qué propone cada partido sobre ellos.»
+  - Barras de todos los partidos, siempre, ordenadas de mayor a menor ρ. Cada fila: muestra de 12 px y siglas en 800; barra divergente de 16 px de alto en el color del partido, con el eje de 1 px tinta en 0 (hacia la derecha si ρ ≥ 0 y hacia la izquierda si es negativa, de −1 a 1); el valor con dos decimales a la derecha («0,71», «−0,31»), en 800 y tabular.
+  - Bajo las barras, la escala «−1 · 0 · 1» en 0,6875 rem y la línea «1: el mismo orden que el tuyo. 0: ninguna relación. −1: el orden contrario.» en 0,8125 rem y lápiz. La palabra «Spearman» no sale en pantalla; va en la fuente.
+  - Comparación: dos columnas con los ocho temas, «Tu orden» y el orden del partido de mayor ρ. Los temas en la misma posición en las dos columnas van en 800.
+- Diseño, M8, empates: si dos o más partidos comparten el ρ más alto, redondeado a dos decimales, se ponen todas sus bandas, una debajo de otra, en orden alfabético, y el titular dice «Tu agenda se parece por igual a la del PP y a la del PSOE». En las barras, los empatados van en orden alfabético. La comparación de órdenes usa el primero en orden alfabético.
+- Contenido para M8: cada partido trae en el `data.json` su artículo para el titular (campo `de`: «del PP», «del PSOE», «de Vox», «de Sumar»…). No se calcula.
+- Diseño, M8, recibo: solo texto, sin emojis de color. «Juegos 29N, día N» / nombre del juego / «Mi agenda se parece a la de X (0,71)» / «Mis tres primeros: …» / URL. Botón «Copiar resultado» en la barra.
+- Encargo para Code: aplicarlo al montar `shared/motores/afinidad.js` (encargo del 24-10), con datos de prueba marcados como tales. Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.

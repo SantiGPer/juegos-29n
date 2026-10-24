@@ -67,7 +67,7 @@ Estado: **textos aprobados por el autor** (2026-10-21). Selección del autor del
 
 **Explicación:** Fuerza Cívica, con 115 votos en Valladolid, fue la candidatura menos votada de todas las que se presentaron al Congreso en 2023. El Partido Humanista sacó 2.902 votos con una sola lista, la de Madrid, la provincia que más diputados elige.
 
-**La inventada:** Horario Europeo Ya tampoco existe: la hemos inventado con la fórmula de las candidaturas que llevan el programa en el nombre.
+**La inventada:** Horario Europeo Ya tampoco existe: es inventada.
 
 **Provincias (lista completa, en la explicación):** Horario Europeo Ya: Barcelona, Madrid, Málaga, Sevilla, Valencia y Zaragoza [inventado].
 

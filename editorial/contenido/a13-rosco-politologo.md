@@ -7,6 +7,7 @@ Estado: **términos y pistas revisados por el autor** (2026-10-17). Fuentes cerr
 - La comprobación no distingue mayúsculas ni tildes. Además acepta las variantes que se listan en cada letra.
 - «Pasar» deja la letra para la siguiente vuelta. Sin cronómetro (decisión de diseño del 17-10-2026). Una sola edición.
 - Cierre: aciertos sobre 27; el recibo es el rosco.
+- Nota al final de la definición (decisión del autor, 22-10): «(Dos palabras)», «(Anglicismo)» o «(Dos palabras, anglicismo)». El número de palabras sale solo de la respuesta principal; el anglicismo se marca en el contenido con «Anglicismo: sí» (hoy, K y W).
 
 Formato por letra: pista / respuesta / variantes aceptadas / fuente.
 
@@ -129,6 +130,8 @@ Formato por letra: pista / respuesta / variantes aceptadas / fuente.
 **Pista:** Contiene la K, laboratorio de ideas que elabora análisis y propuestas para influir en las políticas públicas.
 
 **Respuesta:** Think tank
+
+**Anglicismo:** sí
 
 **Variantes aceptadas:** Thinktank; Think-tank
 
@@ -259,6 +262,8 @@ Formato por letra: pista / respuesta / variantes aceptadas / fuente.
 **Pista:** Contiene la W, votante que cambia de partido de unas elecciones a otras.
 
 **Respuesta:** Swing voter
+
+**Anglicismo:** sí
 
 **Variantes aceptadas:** Swing-voter
 

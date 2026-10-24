@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afinidad M8 v15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200;
+  --pp:#1E4B8F; --psoe:#FF0000; --vox:#63BE21; --sumar:#E51C55; --fuente: Archivo, system-ui, sans-serif; --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+.intro b { color:var(--tinta); }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; max-width:46em; }
+.notas li { margin-bottom:.3rem; }
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; }
+.f.alto { height:auto; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; }
+.btn { flex:1; font:inherit; font-weight:800; min-height:52px; border:1px solid var(--tinta); background:var(--papel); border-radius:0; }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s3); }
+.nombre { font-size:1rem; font-weight:800; margin:0 0 var(--s2); }
+.preg { font-size:1.125rem; font-weight:800; line-height:1.2; margin:0 0 var(--s1); }
+.extremo { font-size:.75rem; color:var(--lapiz); margin:var(--s1) 0; }
+.orden { list-style:none; margin:0; padding:0; border-top:1px solid var(--tinta); }
+.orden li { display:grid; grid-template-columns:1.5rem 1fr 44px 44px; align-items:center; gap:0; border-bottom:1px solid var(--raya); min-height:46px; font-size:1rem; }
+.orden li.mov { background:var(--marcador); }
+.orden .n { color:var(--lapiz); font-variant-numeric:tabular-nums; font-size:.875rem; }
+.orden button { width:44px; height:44px; border:1px solid var(--tinta); background:var(--papel); display:grid; place-items:center; padding:0; margin-left:-1px; }
+.orden button:disabled { border-color:var(--raya); }
+
+/* Cierre */
+.banda { display:inline-block; font-size:1.75rem; font-weight:800; line-height:1; padding:.2em .25em; margin:var(--s1) 0 var(--s3); }
+.afin { list-style:none; margin:0 0 var(--s3); padding:0; }
+.afin li { display:grid; grid-template-columns:4.2rem 1fr 3rem; align-items:center; gap:var(--s2); padding:6px 0; border-bottom:1px solid var(--raya); font-size:.9375rem; }
+.afin li b { font-weight:800; display:flex; align-items:center; gap:6px; }
+.chip { width:12px; height:12px; border:1px solid var(--tinta); display:inline-block; flex:none; }
+.eje { position:relative; height:16px; }
+.eje::before { content:""; position:absolute; left:50%; top:-6px; bottom:-6px; width:1px; background:var(--tinta); }
+.eje span { position:absolute; top:0; height:16px; }
+.rho { text-align:right; font-variant-numeric:tabular-nums; font-weight:800; font-size:.875rem; }
+.escala { display:grid; grid-template-columns:4.2rem 1fr 3rem; gap:var(--s2); font-size:.6875rem; color:var(--lapiz); }
+.escala div { display:flex; justify-content:space-between; }
+.leer { font-size:.8125rem; color:var(--lapiz); margin:var(--s2) 0 var(--s3); }
+.comp { display:grid; grid-template-columns:1fr 1fr; gap:var(--s3); font-size:.875rem; border-top:1px solid var(--tinta); padding-top:var(--s2); }
+.comp ol { margin:0; padding-left:1.3em; }
+.comp li.igual { font-weight:800; }
+.recibo { border:1px solid var(--tinta); padding:var(--s3) var(--s4); white-space:pre-line; font-size:1rem; margin:var(--s3) 0; }
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>M8 · Afinidad (A14 «Ordena las prioridades»)</h1>
+<p class="intro">Code monta M8 para el 26-10 y el encargo le dice que lleve a la bitácora lo que necesite de diseño (barras de afinidad, empates de ρ). Me adelanto: esta es la propuesta para que lo monte ya con ella.</p>
+<p class="intro"><b>Aviso:</b> los valores de ρ y los perfiles de partido de esta maqueta son inventados; solo sirven para ver el diseño. Los temas son los ocho de la ficha.</p>
+
+<h2 class="sec">1. Ordenar</h2>
+<p class="porque">El control de ordenar de la serie (A2), sin cambios: dos botones de 44 px por fila con triángulos de píxeles, la fila movida destellando en marcador, y «Más importante» encima y «Menos importante» debajo. Es un juego de opinión, sin respuesta correcta, así que <b>no hay pista ni puntos</b>: la cabecera lleva solo el nombre.</p>
+
+<h2 class="sec">2. Cierre</h2>
+<div class="fila">
+<div><h3 class="sec">a. Ordenando (375 × 560)</h3><div class="f" id="f1"></div></div>
+<div><h3 class="sec">b. Cierre</h3><div class="f alto" id="f2"></div></div>
+<div><h3 class="sec">c. Empate en cabeza</h3><div class="f alto" id="f3"></div></div>
+</div>
+<ul class="notas">
+  <li><b>Titular:</b> «Tu agenda se parece a la de» y, debajo, el partido sobre una banda de su color (decisión del 15-10), con el texto en tinta o papel según el contraste.</li>
+  <li><b>Barras de todos los partidos:</b> siempre se muestran todas, ordenadas de mayor a menor ρ: el que gana no queda solo en pantalla. Barra divergente con el eje en 0: hacia la derecha si ρ es positiva, hacia la izquierda si es negativa, en el color del partido, 16 px de alto. A la derecha, el valor con dos decimales («0,71»).</li>
+  <li><b>Cómo se lee:</b> una línea bajo las barras: «1: el mismo orden que el tuyo. 0: ninguna relación. −1: el orden contrario.» Sin la palabra «Spearman» en pantalla; va en la fuente.</li>
+  <li><b>Tu orden frente al suyo:</b> dos columnas con los ocho temas, el tuyo y el del partido con mayor ρ. Los temas en la misma posición van en negrita. Es lo que explica el resultado sin fórmulas.</li>
+  <li><b>Empates:</b> si dos o más partidos comparten el ρ más alto (con dos decimales), el titular dice «Tu agenda se parece a la de» y pone las dos bandas, una debajo de otra, en orden alfabético. En las barras, los empatados van en orden alfabético.</li>
+  <li><b>Recibo:</b> texto sin emojis de color, porque los emojis no tienen los colores de los partidos y no se puede codificar uno con otro. «Juegos 29N, día N / Ordena las prioridades / Mi agenda se parece a la de X (0,71) / Mis tres primeros: Vivienda, Sanidad, Corrupción / URL».</li>
+  <li><b>No es una recomendación de voto:</b> bajo el titular, una línea fija en lápiz: «Mide qué temas pesan más en cada programa, no qué propone cada partido sobre ellos.»</li>
+</ul>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>Sin pista ni puntos; control de ordenar de la serie.</td></tr>
+<tr><td>2</td><td>Cierre: banda del partido, barras divergentes de todos los partidos con su ρ, línea de lectura y comparación de órdenes.</td></tr>
+<tr><td>3</td><td>Empates: varias bandas en orden alfabético.</td></tr>
+<tr><td>4</td><td>Recibo de texto, sin emojis, con el partido, su ρ y tus tres primeros temas; línea fija de «saliencia, no posición».</td></tr>
+</table>
+</div>
+
+<script>
+const T = ["Vivienda","Inmigración","Economía","Cataluña","Corrupción","Sanidad","Clima","Defensa"];
+const svg = (m, s) => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1"/>` : "")).join("")}</svg>`;
+const SUBE = ["...X...","..XXX..",".XXXXX.","XXXXXXX"], BAJA = ["XXXXXXX",".XXXXX.","..XXX..","...X..."];
+const mio = ["Vivienda","Sanidad","Corrupción","Economía","Clima","Inmigración","Defensa","Cataluña"];
+document.getElementById("f1").innerHTML = `<div class="cuerpo"><p class="nombre">Ordena las prioridades</p>
+  <p class="preg">¿Qué debería pesar más en la próxima legislatura?</p>
+  <p class="extremo">Más importante</p>
+  <ol class="orden">${mio.map((t, i) => `<li class="${i === 2 ? "mov" : ""}"><span class="n">${i + 1}</span><span>${t}</span><button ${i === 0 ? "disabled" : ""}>${svg(SUBE, 2)}</button><button ${i === 7 ? "disabled" : ""}>${svg(BAJA, 2)}</button></li>`).join("")}</ol>
+  <p class="extremo">Menos importante</p></div>
+  <div class="barra"><button class="btn">Ver mi afinidad</button></div>`;
+
+const C = { PP: "--pp", PSOE: "--psoe", Vox: "--vox", Sumar: "--sumar" };
+const lum = h => { const [r, g, b] = [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16) / 255).map(v => v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4); return .2126*r + .7152*g + .0722*b; };
+const HEX = { PP: "#1E4B8F", PSOE: "#FF0000", Vox: "#63BE21", Sumar: "#E51C55" };
+const txt = p => { const L = lum(HEX[p]); return (1.05) / (L + .05) >= (L + .05) / .05 ? "#fff" : "#000"; };
+const fmt = r => (r < 0 ? "−" : "") + Math.abs(r).toFixed(2).replace(".", ",");
+const barras = rs => `<ul class="afin">${rs.map(([p, r]) => `<li><b><i class="chip" style="background:var(${C[p]})"></i>${p}</b><span class="eje"><span style="background:var(${C[p]});${r >= 0 ? `left:50%;width:${r * 50}%` : `right:50%;width:${-r * 50}%`}"></span></span><span class="rho">${fmt(r)}</span></li>`).join("")}</ul>
+  <div class="escala"><span></span><div><span>−1</span><span>0</span><span>1</span></div><span></span></div>
+  <p class="leer">1: el mismo orden que el tuyo. 0: ninguna relación. −1: el orden contrario.</p>`;
+const suyo = ["Vivienda","Economía","Sanidad","Clima","Corrupción","Defensa","Inmigración","Cataluña"];
+const comp = (p) => `<div class="comp"><div><span class="et">Tu orden</span><ol>${mio.map((t, i) => `<li class="${suyo[i] === t ? "igual" : ""}">${t}</li>`).join("")}</ol></div><div><span class="et">${p}</span><ol>${suyo.map((t, i) => `<li class="${mio[i] === t ? "igual" : ""}">${t}</li>`).join("")}</ol></div></div>`;
+const cierre = (gana, rs) => `<div class="cuerpo"><p class="nombre">Ordena las prioridades</p>
+  <p class="et" style="margin:0">Fin de la partida</p>
+  <p style="margin:8px 0 0;font-size:1.125rem">Tu agenda se parece a la de</p>
+  ${gana.map(p => `<div><span class="banda" style="background:var(${C[p]});color:${txt(p)}">${p}</span></div>`).join("")}
+  <p class="et">Mide qué temas pesan más en cada programa, no qué propone cada partido sobre ellos.</p>
+  ${barras(rs)}${comp(gana[0])}
+  <div class="recibo">Juegos 29N, día N
+Ordena las prioridades
+Mi agenda se parece a la de ${gana.join(" y ")} (${fmt(rs[0][1])})
+Mis tres primeros: ${mio.slice(0, 3).join(", ")}
+santigper.github.io/juegos-29n/</div></div>
+  <div class="barra"><button class="btn">Copiar resultado</button></div>`;
+document.getElementById("f2").innerHTML = cierre(["Sumar"], [["Sumar", .71], ["PSOE", .52], ["PP", .18], ["Vox", -.31]]);
+document.getElementById("f3").innerHTML = cierre(["PP", "PSOE"], [["PP", .62], ["PSOE", .62], ["Sumar", .40], ["Vox", .05]]);
+</script>
+</body>
+</html>
