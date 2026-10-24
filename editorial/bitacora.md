@@ -2,6 +2,13 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-24 (3) — Decisiones del autor en sesión y push
+
+Decisiones del autor en sesión con Code (24-10). Cowork tiene que pasarlas a `decisiones.md` y a los contenidos:
+- **A5, ronda 2015:** «Por primera vez, cuatro candidaturas alcanzaron 40 escaños o más: PP, PSOE, Podemos y sus confluencias, y Ciudadanos.» Sustituye a «pasaron de 40 escaños [VERIFICAR]». Aplicado en el `data.json`. Falta pasarlo a `editorial/contenido/a05-hemiciclos.md`.
+- **A11, línea de unidad** bajo cada pregunta: se aprueba tal como está en el `data.json` («% sobre voto válido», «% de variación de la población», «% del censo electoral que vive en el extranjero»). Falta pasarla al contenido.
+- **Diff de `shared/`** de A5, M8 y A11 aprobado por el autor. Push a Pages hecho con su confirmación.
+
 ## 2026-10-24 (2) — A11 Duelo de circunscripciones, A5 al comprobar y CLAUDE.md
 
 Antes, commit aparte con los cambios de Cowork (`3a5a295`): decisiones del 24-10 sobre A11, B1 y A5, contenido de A11 y maqueta v16.

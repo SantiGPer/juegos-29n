@@ -59,7 +59,7 @@
         { "siglas": "PSOE", "nombre": "Partido Socialista Obrero Español", "color": "--psoe", "escanos": 90 },
         { "siglas": "Otros", "nombre": "IU-UPeC, EH Bildu y CC-PNC", "color": "--otros", "escanos": 5 }
       ],
-      "explicacion": "Por primera vez, cuatro candidaturas pasaron de 40 escaños [VERIFICAR con la serie de Interior]: PP, PSOE, Podemos y sus confluencias, y Ciudadanos. Los 69 de Podemos suman Podemos (42), En Comú Podem (12), Compromís-Podemos-És el Moment (9) y En Marea (6).",
+      "explicacion": "Por primera vez, cuatro candidaturas alcanzaron 40 escaños o más: PP, PSOE, Podemos y sus confluencias, y Ciudadanos. Los 69 de Podemos suman Podemos (42), En Comú Podem (12), Compromís-Podemos-És el Moment (9) y En Marea (6).",
       "otros": "IU-UPeC 2, EH Bildu 2 y CC-PNC 1",
       "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso."
     },
