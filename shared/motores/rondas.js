@@ -116,11 +116,37 @@ const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;
 
+// Barra de vida (A11, maqueta v16): corazón, cinco tramos en un marco y la cuenta. Cada ronda sin puntos vacía el
+// tramo de más a la derecha, que parpadea dos veces.
+const barraVida = ({ total, fin }) => {
+  let quedan = total;
+  const tramos = Array.from({ length: total }, () => el('i'));
+  const corazon = el('span');
+  corazon.innerHTML = icono('lleno', 2);
+  const cuenta = el('span', { className: 'cuenta', textContent: `${total}/${total}` });
+  const nodo = el('div', { className: 'vida' }, corazon, el('span', { className: 'tramos', ariaHidden: 'true' }, ...tramos),
+    el('span', { className: 'oculto', textContent: 'Vida: ' }), cuenta);
+  return {
+    nodo,
+    fin,
+    total,
+    quedan: () => quedan,
+    quita: () => {
+      quedan -= 1;
+      tramos[quedan].classList.add('fuera');
+      cuenta.textContent = `${quedan}/${total}`;
+    },
+  };
+};
+
 // nota: nota metodológica, bajo la puntuación del cierre. etiqueta: «Pregunta» o «Ronda». porGrupo: celdas por
 // tramo de la pista y por línea del recibo. resultado(): { puntuacion, unidad } del cierre en lugar de los puntos (A5).
-const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregunta', porGrupo, resultado }, contenedor) => {
+// vida: { total, fin }: la partida termina al perder la última vida, con el texto fin (A11).
+const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregunta', porGrupo, resultado, vida: conVida }, contenedor) => {
   const puntos = [];
-  const cab = marcador(juego, porGrupo);
+  const vida = conVida && barraVida(conVida);
+  let cortada;
+  const cab = marcador(juego, porGrupo, ...(vida ? [vida.nodo] : []));
   const inicio = rondas.map((_, i) => rondas.slice(0, i).reduce((s, r) => s + casillas(r), 0));
   const total = rondas.reduce((s, r) => s + casillas(r), 0);
   const estados = () => rondas.flatMap((r, i) => i < puntos.length ? [puntos[i]].flat().map(estado) : Array(casillas(r)).fill(''));
@@ -138,10 +164,13 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     total,
     ...resultado?.(),
     nivel: niveles?.find(({ desde, hasta }) => suma() >= desde && suma() <= hasta).etiqueta,
-    cuadricula: recibo(),
+    cuadricula: [recibo(), ...(vida ? [cortada ? `${vida.fin} en el ${etiqueta.toLowerCase()} ${cortada}` : `Vida: ${vida.quedan()}/${vida.total}`] : [])].join('\n'),
     fuente,
     pista: { estados: estados(), porGrupo },
-    detalle: nota ? [el('div', { className: 'explicacion' }, el('p', { className: 'etiqueta', textContent: 'Cómo se ha contado' }), el('p', { textContent: nota }))] : [],
+    detalle: [
+      ...(vida ? [Object.assign(vida.nodo.cloneNode(true), { className: 'vida quieta' })] : []),
+      ...(nota ? [el('div', { className: 'explicacion' }, el('p', { className: 'etiqueta', textContent: 'Cómo se ha contado' }), el('p', { textContent: nota }))] : []),
+    ],
   }, contenedor);
 
   const ronda = n => {
@@ -155,9 +184,18 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     }, rotulo);
 
     boton.onclick = () => {
-      puntos.push(resolver());
+      const p = resolver();
+      puntos.push(p);
+      if (vida && p === 0) vida.quita();
       cab.pinta(estados(), [inicio[n]], suma());
-      const ultima = n === rondas.length - 1;
+      if (vida?.quedan() === 0) {
+        cortada = n + 1;
+        const aviso = el('div', { className: 'fin-vida' }, el('p', { textContent: vida.fin }),
+          el('p', { className: 'etiqueta', textContent: `Te quedaste sin vida en el ${etiqueta.toLowerCase()} ${cortada} de ${rondas.length}.` }));
+        contenedor.querySelector('.cuerpo').append(aviso);
+        muestra(aviso);
+      }
+      const ultima = n === rondas.length - 1 || cortada;
       boton.textContent = ultima ? 'Ver resultado' : `Siguiente ${etiqueta.toLowerCase()}`;
       boton.onclick = () => ultima ? final() : ronda(n + 1);
     };

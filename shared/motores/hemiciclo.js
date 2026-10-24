@@ -104,6 +104,8 @@ export const ronda = (datos, listo, rotulo) => {
   const resolver = () => {
     datos.error = candidaturas.reduce((s, _, i) => s + Math.abs(reparto[i] - real[i]), 0) / candidaturas.length;
     quedan.remove();
+    // Deja de ser fijo para no tapar la explicación al bajar (diseño del 24-10)
+    dibujo.closest('.fija').classList.add('suelta');
 
     // De trama a sólido en una pasada de 600 ms por pasos
     const pasos = reducido() ? [TOTAL] : [1, 2, 3, 4, 5, 6].map(k => Math.round(TOTAL * k / 6));

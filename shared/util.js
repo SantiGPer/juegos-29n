@@ -28,6 +28,7 @@ const glifos = {
   6: '00110010001000011110100011000101110', 7: '11111000010001000100010000100001000',
   8: '01110100011000101110100011000101110', 9: '01110100011000101111000010001001100',
   '/': '00001000010001000100010001000010000', '+': '00000001000010011111001000010000000',
+  '−': '00000000000000011111000000000000000',
   '?': '01110100010000100010001000000000100',
   V: '10001100011000110001100010101000100', S: '01111100001000001110000010000111110',
   ',': '00000000010110', '.': '00000000001111',
@@ -52,8 +53,9 @@ export const celdas = (estados, actual = [], porGrupo = estados.length, escala) 
 
 // Cabecera compacta (maqueta v8): nombre arriba; debajo, pista con cursor a la izquierda y puntos a la derecha.
 // Con más de seis rondas (maqueta v11), celdas de 18 px, tic y aspa a escala 1,6 y puntos a escala 2.
-// Persiste entre rondas para que el cursor salte y el «+N» salga al sumar.
-export const marcador = (juego, porGrupo) => {
+// Persiste entre rondas para que el cursor salte y el «+N» salga al sumar. extra: nodos entre el nombre y la
+// fila de pista y puntos (barra de vida de A11).
+export const marcador = (juego, porGrupo, ...extra) => {
   const valor = el('span');
   const cifras = el('span', { className: 'cifras' }, valor);
   const puntos = el('div', { className: 'puntos' }, el('span', { className: 'etiqueta', textContent: 'Puntos' }), cifras);
@@ -62,7 +64,7 @@ export const marcador = (juego, porGrupo) => {
   let pista = el('div');
   const zona = el('div', { className: 'zona-pista' }, pista, cursor);
   const nodo = el('header', { className: 'cab' },
-    el('h1', { className: 'nombre', textContent: juego }), el('div', { className: 'cab-fila' }, zona, puntos));
+    el('h1', { className: 'nombre', textContent: juego }), ...extra, el('div', { className: 'cab-fila' }, zona, puntos));
   let antes = 0;
 
   const pinta = (estados, actual, suma) => {

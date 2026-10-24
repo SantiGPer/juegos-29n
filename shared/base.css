@@ -1237,6 +1237,7 @@ details[open] summary { margin-bottom: var(--s1); }
   border-bottom: 1px solid var(--tinta);
 }
 
+.fija.suelta { position: static; }
 .fija .cab { margin-bottom: 6px; }
 .rotulo-hemiciclo { margin: 0 0 var(--s1); }
 
@@ -1337,6 +1338,67 @@ details[open] summary { margin-bottom: var(--s1); }
 }
 
 .quedan .etiqueta { font-size: 0.75rem; }
+
+/* Barra de vida (A11, maqueta v16): corazón, cinco tramos macizos en un marco y la cuenta. El tramo que se pierde
+   parpadea dos veces por pasos y queda en papel; siempre de derecha a izquierda */
+.vida {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--s2);
+  margin: var(--s2) 0;
+}
+
+.vida svg { display: block; }
+
+.vida .tramos {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+  padding: 2px;
+  border: 1px solid var(--tinta);
+}
+
+.vida .tramos i {
+  display: block;
+  height: 14px;
+  background: var(--tinta);
+}
+
+.vida .tramos i.fuera {
+  background: var(--papel);
+  animation: golpe 400ms steps(1);
+}
+
+.vida.quieta .tramos i.fuera { animation: none; }
+
+@keyframes golpe {
+  0%, 50% { background: var(--papel); }
+  25%, 75% { background: var(--tinta); }
+}
+
+.vida .cuenta {
+  min-width: 2.6em;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--lapiz);
+}
+
+.fin-vida {
+  margin-top: var(--s3);
+  padding: var(--s3);
+  border: 1px solid var(--tinta);
+  scroll-margin-bottom: 96px;
+}
+
+.fin-vida p { margin: 0; }
+
+.fin-vida p:first-child {
+  font-size: var(--pregunta);
+  font-weight: 800;
+  line-height: 1.15;
+}
 
 /* M8 afinidad (maqueta v15): ordenar compacto con el número de puesto, para que los ocho temas quepan en 375 × 560 */
 .pregunta-afinidad {
@@ -1542,7 +1604,7 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
 
 @media (prefers-reduced-motion: reduce) {
   .marca::before { animation: none; }
-  .entra .lado, .entra .vs, .llena i.on { animation: none; }
+  .entra .lado, .entra .vs, .llena i.on, .vida .tramos i.fuera { animation: none; }
   .mas { display: none; }
   .cursor { transition: none; }
 }

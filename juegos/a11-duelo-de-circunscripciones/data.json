@@ -1,0 +1,136 @@
+{
+  "juego": "Duelo de circunscripciones",
+  "fuente": "Ministerio del Interior (infoelectoral), elecciones generales del 23-07-2023; INE, cifras oficiales de población a 1-1-2023 y 1-1-2025.",
+  "portada": {
+    "texto": "Cincuenta y dos circunscripciones, diez combates y una sola pregunta: ¿quién tiene más? Cada fallo te quita vida, y al quinto te quedas fuera del hemiciclo.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "10 duelos: elige qué circunscripción tiene más." },
+      { "icono": "lleno", "texto": "Cada fallo te quita vida; con 5 fallos, fin de la partida." },
+      { "icono": "urna", "texto": "1 punto por acierto." }
+    ]
+  },
+  "etiqueta": "Duelo",
+  "vida": { "total": 5, "fin": "Fuera del hemiciclo" },
+  "rondas": [
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde sacó más porcentaje el PSOE?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "barcelona", "nombre": "Barcelona", "contexto": "", "valor": 35.70, "cifra": "35,70" },
+        { "id": "madrid", "nombre": "Madrid", "contexto": "", "valor": 27.84, "cifra": "27,84" }
+      ],
+      "explicacion": "El PSOE, que en Cataluña se presenta como PSC, sacó en Barcelona el 35,7 % y fue su séptima mejor provincia. En Madrid se quedó en el 27,8 %, la 45.ª de 52.",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023 (% sobre voto válido)."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Qué provincia creció más entre 2023 y 2025?",
+      "unidad": "% de variación de la población",
+      "lados": [
+        { "id": "soria", "nombre": "Soria", "contexto": "", "valor": 0.84, "cifra": "+0,84" },
+        { "id": "zamora", "nombre": "Zamora", "contexto": "", "valor": -0.66, "cifra": "−0,66" }
+      ],
+      "explicacion": "Soria ganó un 0,8 % de población en esos dos años y Zamora perdió un 0,7 %, la mayor caída de España. Solo cinco provincias perdieron población: Zamora, Jaén, Córdoba, Badajoz y León.",
+      "fuente": "INE, cifras oficiales de población a 1-1-2023 y 1-1-2025."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde sacó más porcentaje el PP?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "lugo", "nombre": "Lugo", "contexto": "", "valor": 50.24, "cifra": "50,24" },
+        { "id": "madrid", "nombre": "Madrid", "contexto": "", "valor": 40.55, "cifra": "40,55" }
+      ],
+      "explicacion": "Lugo fue la provincia con más voto al PP, el 50,2 %. En Madrid sacó el 40,6 %, casi diez puntos menos.",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023 (% sobre voto válido)."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde hubo más voto en blanco?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "lleida", "nombre": "Lleida", "contexto": "", "valor": 1.12, "cifra": "1,12" },
+        { "id": "valencia", "nombre": "Valencia", "contexto": "", "valor": 0.75, "cifra": "0,75" }
+      ],
+      "explicacion": "Lleida fue la provincia con más voto en blanco, el 1,12 % de los votos válidos; Valencia se quedó en el 0,75 %. El voto en blanco cuenta como válido; el nulo, no.",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023; LOREG, art. 96.5."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde sacó más porcentaje el PP?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "jaen", "nombre": "Jaén", "contexto": "", "valor": 37.32, "cifra": "37,32" },
+        { "id": "sevilla", "nombre": "Sevilla", "contexto": "", "valor": 33.38, "cifra": "33,38" }
+      ],
+      "explicacion": "El PP sacó en Jaén el 37,3 %, casi cuatro puntos más que en Sevilla (33,4 %), y además superó al PSOE (36,3 %). Aun así, Jaén fue la quinta provincia con más voto al PSOE.",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023 (% sobre voto válido)."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Qué provincia creció más entre 2023 y 2025?",
+      "unidad": "% de variación de la población",
+      "lados": [
+        { "id": "guadalajara", "nombre": "Guadalajara", "contexto": "", "valor": 3.93, "cifra": "+3,93" },
+        { "id": "barcelona", "nombre": "Barcelona", "contexto": "", "valor": 3.06, "cifra": "+3,06" }
+      ],
+      "explicacion": "Guadalajara creció un 3,9 % en dos años, casi un punto más que Barcelona (3,1 %). Solo Alicante (4,1 %) y Madrid (4,0 %) crecieron más.",
+      "fuente": "INE, cifras oficiales de población a 1-1-2023 y 1-1-2025."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde vive en el extranjero una parte mayor del censo?",
+      "unidad": "% del censo electoral que vive en el extranjero",
+      "lados": [
+        { "id": "soria", "nombre": "Soria", "contexto": "", "valor": 9.64, "cifra": "9,64" },
+        { "id": "madrid", "nombre": "Madrid", "contexto": "", "valor": 7.21, "cifra": "7,21" }
+      ],
+      "explicacion": "El 9,6 % de los electores de Soria vive en el extranjero, frente al 7,2 % de Madrid. Ourense encabeza la lista: casi tres de cada diez (28,9 %).",
+      "fuente": "Ministerio del Interior, censo electoral de las generales del 23-07-2023 (CERA sobre censo total)."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde sacó más porcentaje el PSOE?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "badajoz", "nombre": "Badajoz", "contexto": "", "valor": 39.21, "cifra": "39,21" },
+        { "id": "sevilla", "nombre": "Sevilla", "contexto": "", "valor": 36.60, "cifra": "36,60" }
+      ],
+      "explicacion": "Badajoz fue la provincia con más voto al PSOE (39,2 %), por delante de Sevilla (36,6 %). Las dos extremeñas encabezan la lista: Cáceres fue la segunda (38,9 %).",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023 (% sobre voto válido)."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde sacó más porcentaje PACMA?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "tenerife", "nombre": "Santa Cruz de Tenerife", "contexto": "", "valor": 1.24, "cifra": "1,24" },
+        { "id": "barcelona", "nombre": "Barcelona", "contexto": "", "valor": 1.06, "cifra": "1,06" }
+      ],
+      "explicacion": "Santa Cruz de Tenerife fue la provincia donde PACMA sacó más porcentaje, el 1,24 %; en Barcelona, el 1,06 %. No logró escaño en ninguna.",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023 (% sobre voto válido)."
+    },
+    {
+      "tipo": "duelo",
+      "barajar": true,
+      "pregunta": "¿Dónde sacó más porcentaje el PP?",
+      "unidad": "% sobre voto válido",
+      "lados": [
+        { "id": "ourense", "nombre": "Ourense", "contexto": "", "valor": 50.02, "cifra": "50,02" },
+        { "id": "melilla", "nombre": "Melilla", "contexto": "", "valor": 49.16, "cifra": "49,16" }
+      ],
+      "explicacion": "Ourense (50,0 %) y Lugo (50,2 %) fueron las dos únicas provincias donde el PP pasó del 50 %. Melilla se quedó a menos de un punto del 50 %, con el 49,2 %.",
+      "fuente": "Ministerio del Interior, Congreso, 23-07-2023 (% sobre voto válido)."
+    }
+  ]
+}

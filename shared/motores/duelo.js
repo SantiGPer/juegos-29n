@@ -1,4 +1,4 @@
-import { cifra, el, muestra } from '../util.js';
+import { baraja, cifra, el, muestra } from '../util.js';
 
 const escala = texto => texto.length > 5 ? 2 : 3;
 
@@ -20,9 +20,10 @@ const energia = lado => el('div', { className: `energia-lado ${lado}` }, ...Arra
 
 // Duelo con «VS» (maqueta v13): dos fichas enfrentadas que son a la vez los botones de elección, con barras de
 // energía que se llenan en proporción al dato al resolver. Gana el lado con más valor. Los lados no se barajan:
-// un cara a cara se lee en el orden del contenido. La muestra de color va junto a la afiliación (contexto) o,
-// si la ficha es un partido (partido: true), junto al nombre.
-export const ronda = ({ pregunta, unidad, lados, explicacion, fuente }, listo) => {
+// un cara a cara se lee en el orden del contenido, salvo con barajar (lados nominales, A11). La muestra de color va
+// junto a la afiliación (contexto) o, si la ficha es un partido (partido: true), junto al nombre.
+export const ronda = ({ pregunta, unidad, lados: enOrden, barajar, explicacion, fuente }, listo) => {
+  const lados = barajar ? baraja(enOrden) : enOrden;
   const ganador = lados[0].valor > lados[1].valor ? lados[0] : lados[1];
   let elegida;
 
