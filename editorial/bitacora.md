@@ -2,6 +2,17 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-24 (5) — A5 con tope de 350 y A7 con el año de cada mapa
+
+**Hecho**
+- A5 (`hemiciclo.js`): cada candidatura tiene como tope los escaños que no tienen las demás, así que el reparto nunca pasa de 350. Sale de los botones + (también si se mantienen pulsados) y del campo: si se escribe una cifra mayor, se queda en lo que queda libre. El contador ya no dice «Sobran»: solo «Quedan N», y «Comprobar» se activa con 0 escaños libres, como antes.
+- A7 (`mapa.js` y `data.json`): campo `anio` en cada ronda, igual al año que ya da el título. Mientras se juega, encima del mapa sale «Datos de 2023» con el estilo del título; al responder, lo sustituyen el título completo y la leyenda.
+- Capturas en 320, 375×560 y 1280: sin desbordes ni errores.
+
+**Dudas para el autor**
+- A7, habitantes por escaño: la pista dice «Datos de 2026», como el título, aunque la población es la del INE a 1-1-2025 y los escaños los del Real Decreto 806/2026. Si se prefiere «2025-2026» u otra fórmula, se cambia en `data.json`.
+- Cowork: añadir el año de cada mapa al contenido de A7.
+
 ## 2026-10-24 (4) — A8: comprobación de las inventadas cerrada
 
 **Hecho**
