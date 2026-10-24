@@ -59,15 +59,16 @@ export const ronda = (datos, listo, rotulo) => {
   const quedan = el('div', { className: 'quedan', ariaLive: 'polite' });
   const cuenta = () => {
     const resto = TOTAL - reparto.reduce((s, n) => s + n, 0);
-    quedan.replaceChildren(el('span', { className: 'etiqueta', textContent: resto < 0 ? 'Sobran' : 'Quedan' }), cifra(String(Math.abs(resto)), 3),
-      el('span', { className: 'oculto', textContent: `${resto < 0 ? 'Sobran' : 'Quedan'} ${Math.abs(resto)}` }));
+    quedan.replaceChildren(el('span', { className: 'etiqueta', textContent: 'Quedan' }), cifra(String(resto), 3),
+      el('span', { className: 'oculto', textContent: `Quedan ${resto}` }));
     listo(resto === 0, 'Comprobar');
   };
 
   const campos = candidaturas.map((c, i) => {
     const campo = el('input', { inputMode: 'numeric', value: '0', ariaLabel: `Escaños de ${c.siglas}` });
+    // Tope: los escaños que no tienen las demás candidaturas, para que nunca se pase de 350
     const pon = v => {
-      reparto[i] = Math.max(0, Math.min(TOTAL, v));
+      reparto[i] = Math.max(0, Math.min(TOTAL - reparto.reduce((s, n, k) => k === i ? s : s + n, 0), v));
       campo.value = reparto[i];
       pinta(real);
       cuenta();
