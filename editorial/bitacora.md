@@ -55,7 +55,7 @@ Antes, commit aparte con los cambios de Cowork (`3a5a295`): decisiones del 24-10
 - Visto bueno del autor al diff de `shared/` (A5, M8 y A11) antes del push.
 - Días de A5, A11 y A14 en el calendario.
 - A5: la frase de 2015 sigue pendiente del autor.
-- A8: búsqueda de las inventadas en las candidaturas proclamadas del 29-N.
+- ~~A8: búsqueda de las inventadas en las candidaturas proclamadas del 29-N.~~ Hecha por el autor el 24-10: las dos siguen libres. Anotado en `editorial/fuentes/a08-inventadas.md`; A8 ya no tiene pendientes.
 
 ## 2026-10-24 — A5 Hemiciclos montado y motor M8 afinidad con datos de prueba
 
