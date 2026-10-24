@@ -51,7 +51,8 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 09_escanos_generales.R # escaños por candidatura de 1982, 2000, 2015 y 2023 para A5
 │   ├── 10_mapa_provincias.R # trazados SVG de las provincias (es-atlas/IGN) para A7
 │   ├── 11_mapas_a07.R    # valores por provincia de los seis mapas de A7 y sus señuelos
-│   └── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
+│   ├── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
+│   └── cotejo_a05_interior.R # serie de generales 1977–2023 para las explicaciones de A5 → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # fichas completas, calendario, reserva
 │   ├── diseno.md         # reglas visuales: lista negra de estética IA y dirección inicial

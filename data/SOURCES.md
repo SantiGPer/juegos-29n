@@ -22,6 +22,13 @@
 | `--cc` | CC / Coalición Canaria | `#FFD700` |
 | `--upn` | UPN / Unión del Pueblo Navarro | `#2A52BE` |
 | `--ucd` | UCD / Unión de Centro Democrático | `#197E36` |
+| `--ap` | AP / Alianza Popular | `#FFD42A` |
+| `--ciu` | CiU / Convergencia i Unió / Convergència i Unió | `#18307B` |
+| `--iu` | IU / Izquierda Unida (España) | `#DF0022` |
+| `--cs` | Ciudadanos | `#EB6109` |
+| `--dl` | Democràcia i Llibertat | `#212765` |
+
+`--ap`, `--ciu`, `--iu`, `--cs` y `--dl` se añadieron el 24-10-2026 para A5, de la misma revisión 173877042 (descargada y cotejada el 24-10-2026). AP-PDP (1982) usa la entrada de Alianza Popular. ERC-CatSí (2015) no tiene entrada propia y usa `--erc`. «Otros» va en raya (`--otros: var(--raya)`), que no es color de partido.
 
 `--ucd` se añadió el 15-10-2026 para A12, de la misma revisión 173877042.
 
@@ -48,6 +55,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Fuente: Ministerio del Interior, infoelectoral, `02<aaaamm>_MUNI.zip` de 198210, 200003, 201512 y 202307 (ficheros 02, 03 y 08, total nacional). Descargados el 20-10-2026.
 - El total nacional de Interior acumula cada candidatura con su cabecera nacional (PSC en PSOE en 1982, PSUC en PCE…). En 2015, En Comú Podem, Compromís-Podemos y En Marea son candidaturas distintas de PODEMOS; por decisión del 20-10-2026 se agrupan con ella en una sola fila, «Podemos y confluencias» (69 = 42 + 12 + 9 + 6), con el desglose en `desglose`.
 - Siglas y denominación tal como las publica Interior, en mayúsculas. Las candidaturas con menos de cinco escaños se agrupan en `otros`, con su lista. Cada año suma 350.
+- Cotejo de las explicaciones de A5 con las 16 generales de 1977 a 2023 (mismos ficheros, descargados el 24-10-2026): `R/cotejo_a05_interior.R` → `editorial/fuentes/a05-cotejo-interior.md`. No produce JSON.
 
 ## `mapa_provincias.json`
 

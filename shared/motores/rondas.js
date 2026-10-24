@@ -6,13 +6,15 @@ import { ordenOpciones } from './quiz.js';
 import { ronda as duelo } from './duelo.js';
 import { ronda as emparejar } from './emparejar.js';
 import { ronda as estimacion } from './estimacion.js';
+import { ronda as hemiciclo } from './hemiciclo.js';
 import { ronda as mapa } from './mapa.js';
 
 // Encadenador de rondas de mecánicas distintas: una cabecera, una pista, una puntuación y un cierre.
 // Cada tipo de ronda es ronda(datos, listo, rotulo) → { cuerpo, barra?, resolver }: listo(bool, texto?) enciende
 // el botón y puede cambiar su texto; barra va en la barra fija, sobre el botón; resolver() revela la solución y
 // devuelve 0, ½ o 1. Un tipo con casillas(datos) ocupa varias celdas de la pista y su resolver devuelve un
-// punto por celda; uno con rotulo pone él mismo el «Ronda N de M». Una ronda puede traer su rotulo («Duelo»).
+// punto por celda; uno con rotulo pone él mismo el «Ronda N de M»; uno con fija queda pegado arriba con la
+// cabecera y el primer nodo de su cuerpo. Una ronda puede traer su rotulo («Duelo»).
 
 const explicacion = ({ explicacion, fuente }) => el('div', { className: 'explicacion' },
   el('p', { textContent: explicacion }),
@@ -109,14 +111,14 @@ const ordenar = (datos, listo) => {
   };
 };
 
-const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa };
+const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;
 
 // nota: nota metodológica, bajo la puntuación del cierre. etiqueta: «Pregunta» o «Ronda». porGrupo: celdas por
-// tramo de la pista y por línea del recibo.
-const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregunta', porGrupo }, contenedor) => {
+// tramo de la pista y por línea del recibo. resultado(): { puntuacion, unidad } del cierre en lugar de los puntos (A5).
+const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregunta', porGrupo, resultado }, contenedor) => {
   const puntos = [];
   const cab = marcador(juego, porGrupo);
   const inicio = rondas.map((_, i) => rondas.slice(0, i).reduce((s, r) => s + casillas(r), 0));
@@ -134,6 +136,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     dia,
     puntuacion: numero(suma()),
     total,
+    ...resultado?.(),
     nivel: niveles?.find(({ desde, hasta }) => suma() >= desde && suma() <= hasta).etiqueta,
     cuadricula: recibo(),
     fuente,
@@ -159,11 +162,12 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
       boton.onclick = () => ultima ? final() : ronda(n + 1);
     };
 
-    monta(contenedor, [
+    const nodos = [
       cab.nodo,
       ...(tipo.rotulo ? [] : [el('p', { className: 'etiqueta', textContent: rotulo })]),
       ...cuerpo,
-    ], ...barra, boton);
+    ];
+    monta(contenedor, tipo.fija ? [el('div', { className: 'fija' }, ...nodos.splice(0, nodos.indexOf(cuerpo[0]) + 1)), ...nodos] : nodos, ...barra, boton);
     cab.pinta(estados(), [inicio[n]], suma());
     scrollTo(0, 0);
   };

@@ -1,0 +1,87 @@
+{
+  "juego": "Hemiciclos",
+  "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso de las elecciones generales de 1982, 2000, 2015 y 2023.",
+  "portada": {
+    "texto": "Cuatro elecciones, 350 escaños en cada una y ningún ujier que te diga dónde se sienta cada diputado. Reparte el hemiciclo como lo dejaron las urnas.",
+    "reglas": [
+      { "icono": "escano", "texto": "4 elecciones: reparte los 350 escaños entre las candidaturas." },
+      { "icono": "urna", "texto": "Por ronda, celda llena si fallas 4 escaños o menos de media por candidatura, y media celda hasta 8." }
+    ]
+  },
+  "etiqueta": "Ronda",
+  "rondas": [
+    {
+      "tipo": "hemiciclo",
+      "anio": 1982,
+      "pregunta": "Reparte los 350 escaños de 1982.",
+      "umbrales": [4, 8],
+      "candidaturas": [
+        { "siglas": "AP-PDP", "nombre": "Alianza Popular-Partido Demócrata Popular", "color": "--ap", "escanos": 107 },
+        { "siglas": "CiU", "nombre": "Convergència i Unió", "color": "--ciu", "escanos": 12 },
+        { "siglas": "PNV", "nombre": "Partido Nacionalista Vasco", "color": "--pnv", "escanos": 8 },
+        { "siglas": "PSOE", "nombre": "Partido Socialista Obrero Español", "color": "--psoe", "escanos": 202 },
+        { "siglas": "UCD", "nombre": "Unión de Centro Democrático", "color": "--ucd", "escanos": 11 },
+        { "siglas": "Otros", "nombre": "PCE, CDS, HB, ERC y EE", "color": "--otros", "escanos": 10 }
+      ],
+      "explicacion": "El PSOE sacó 202 escaños, la mayoría más amplia de la democracia, y AP-PDP pasó a ser la segunda fuerza con 107. UCD, el partido que gobernaba, se quedó en 11 escaños.",
+      "otros": "PCE 4, CDS 2, HB 2, ERC 1 y EE 1",
+      "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso."
+    },
+    {
+      "tipo": "hemiciclo",
+      "anio": 2000,
+      "pregunta": "Reparte los 350 escaños de 2000.",
+      "umbrales": [4, 8],
+      "candidaturas": [
+        { "siglas": "CiU", "nombre": "Convergència i Unió", "color": "--ciu", "escanos": 15 },
+        { "siglas": "IU", "nombre": "Izquierda Unida", "color": "--iu", "escanos": 8 },
+        { "siglas": "PNV", "nombre": "Partido Nacionalista Vasco", "color": "--pnv", "escanos": 7 },
+        { "siglas": "PP", "nombre": "Partido Popular", "color": "--pp", "escanos": 183 },
+        { "siglas": "PSOE", "nombre": "PSOE-Progresistas", "color": "--psoe", "escanos": 125 },
+        { "siglas": "Otros", "nombre": "CC, BNG, PA, ERC, IC-V, EA y CHA", "color": "--otros", "escanos": 12 }
+      ],
+      "explicacion": "El PP ganó con 183 escaños, su primera mayoría absoluta, y el PSOE se presentó como PSOE-Progresistas. CiU, con 15 escaños, fue la tercera fuerza, por delante de IU (8).",
+      "otros": "CC 4, BNG 3, PA 1, ERC 1, IC-V 1, EA 1 y CHA 1",
+      "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso."
+    },
+    {
+      "tipo": "hemiciclo",
+      "anio": 2015,
+      "pregunta": "Reparte los 350 escaños de 2015.",
+      "umbrales": [4, 8],
+      "candidaturas": [
+        { "siglas": "Cs", "nombre": "Ciudadanos-Partido de la Ciudadanía", "color": "--cs", "escanos": 40 },
+        { "siglas": "DL", "nombre": "Democràcia i Llibertat", "color": "--dl", "escanos": 8 },
+        { "siglas": "ERC-CatSí", "nombre": "Esquerra Republicana de Catalunya-Catalunya Sí", "color": "--erc", "escanos": 9 },
+        { "siglas": "PNV", "nombre": "Partido Nacionalista Vasco", "color": "--pnv", "escanos": 6 },
+        { "siglas": "Podemos", "nombre": "Podemos y confluencias", "color": "--podemos", "escanos": 69 },
+        { "siglas": "PP", "nombre": "Partido Popular", "color": "--pp", "escanos": 123 },
+        { "siglas": "PSOE", "nombre": "Partido Socialista Obrero Español", "color": "--psoe", "escanos": 90 },
+        { "siglas": "Otros", "nombre": "IU-UPeC, EH Bildu y CC-PNC", "color": "--otros", "escanos": 5 }
+      ],
+      "explicacion": "Por primera vez, cuatro candidaturas pasaron de 40 escaños [VERIFICAR con la serie de Interior]: PP, PSOE, Podemos y sus confluencias, y Ciudadanos. Los 69 de Podemos suman Podemos (42), En Comú Podem (12), Compromís-Podemos-És el Moment (9) y En Marea (6).",
+      "otros": "IU-UPeC 2, EH Bildu 2 y CC-PNC 1",
+      "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso."
+    },
+    {
+      "tipo": "hemiciclo",
+      "anio": 2023,
+      "pregunta": "Reparte los 350 escaños de 2023.",
+      "umbrales": [4, 8],
+      "candidaturas": [
+        { "siglas": "EH Bildu", "nombre": "Euskal Herria Bildu", "color": "--bildu", "escanos": 6 },
+        { "siglas": "ERC", "nombre": "Esquerra Republicana de Catalunya", "color": "--erc", "escanos": 7 },
+        { "siglas": "Junts", "nombre": "Junts per Catalunya-Junts", "color": "--junts", "escanos": 7 },
+        { "siglas": "PNV", "nombre": "Partido Nacionalista Vasco", "color": "--pnv", "escanos": 5 },
+        { "siglas": "PP", "nombre": "Partido Popular", "color": "--pp", "escanos": 137 },
+        { "siglas": "PSOE", "nombre": "Partido Socialista Obrero Español", "color": "--psoe", "escanos": 121 },
+        { "siglas": "Sumar", "nombre": "Sumar", "color": "--sumar", "escanos": 31 },
+        { "siglas": "Vox", "nombre": "Vox", "color": "--vox", "escanos": 33 },
+        { "siglas": "Otros", "nombre": "BNG, CC y UPN", "color": "--otros", "escanos": 3 }
+      ],
+      "explicacion": "El PP fue la candidatura con más escaños (137), 16 más que el PSOE. Vox y Sumar quedaron a dos escaños (33 y 31), y ERC y Junts empataron a siete.",
+      "otros": "BNG 1, CC 1 y UPN 1",
+      "fuente": "Ministerio del Interior (infoelectoral), resultados del Congreso."
+    }
+  ]
+}

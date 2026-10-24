@@ -34,6 +34,13 @@
   --upn: #2A52BE;
   --ucd: #197E36;
   --pacma: #00FF7F;
+  /* Candidaturas históricas de A5, de la misma plantilla y revisión */
+  --ap: #FFD42A;
+  --ciu: #18307B;
+  --iu: #DF0022;
+  --cs: #EB6109;
+  --dl: #212765;
+  --otros: var(--raya);
 
   /* Escala de los mapas de A7, «del sepia a la tinta», ajena a los partidos (decisión de diseño del 20-10-2026) */
   --m0: #f3ebdc;
@@ -1219,6 +1226,118 @@ details[open] summary { margin-bottom: var(--s1); }
 
 .barra:has(> .bandeja) { flex-direction: column; gap: var(--s2); }
 
+/* Ronda de hemiciclo (A5, maqueta v11): cabecera y hemiciclo fijos arriba mientras la lista se desplaza */
+.fija {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin-bottom: var(--s1);
+  padding-bottom: var(--s2);
+  background: var(--papel);
+  border-bottom: 1px solid var(--tinta);
+}
+
+.fija .cab { margin-bottom: 6px; }
+.rotulo-hemiciclo { margin: 0 0 var(--s1); }
+
+.hemiciclo {
+  display: block;
+  height: 132px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hemiciclo .libre { stroke: var(--raya); stroke-width: 0.6; }
+
+.error-medio {
+  display: flex;
+  align-items: end;
+  gap: var(--s2);
+  margin: 0 0 var(--s1);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.reparto {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reparto li {
+  display: grid;
+  grid-template-columns: 14px 1fr 44px 64px 44px;
+  gap: var(--s2);
+  align-items: center;
+  padding: var(--s1) 0;
+  border-bottom: 1px solid var(--raya);
+}
+
+.reparto .muestra-partido { width: 14px; height: 14px; margin: 0; }
+
+.reparto .nom {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.reparto .nom small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--lapiz);
+}
+
+.reparto input {
+  width: 64px;
+  height: 44px;
+  padding: 0;
+  font: inherit;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  color: var(--tinta);
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+  border-radius: 0;
+}
+
+.reparto.resuelto li { grid-template-columns: 14px 1fr 64px; }
+
+.barras {
+  display: grid;
+  gap: 2px;
+  margin-top: var(--s1);
+}
+
+.barras span { display: block; height: 10px; }
+
+/* Tu reparto: trama de 2×2 en el color de la candidatura */
+.trama-partido {
+  background: var(--color);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1'/%3E%3Crect x='1' y='1' width='1' height='1'/%3E%3C/svg%3E") 0 0 / 2px 2px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Crect width='1' height='1'/%3E%3Crect x='1' y='1' width='1' height='1'/%3E%3C/svg%3E") 0 0 / 2px 2px;
+}
+
+.dif {
+  font-size: var(--etiqueta);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.dif b { display: block; font-size: 1rem; }
+
+.quedan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s1);
+  min-width: 84px;
+}
+
+.quedan .etiqueta { font-size: 0.75rem; }
+
 /* Cierre */
 .final {
   display: flex;
@@ -1231,6 +1350,12 @@ details[open] summary { margin-bottom: var(--s1); }
   display: inline-flex;
   padding: 5px;
   background: var(--marcador);
+}
+
+.final .unidad {
+  font-size: var(--cuerpo);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .cifra {

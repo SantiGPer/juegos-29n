@@ -6,12 +6,18 @@ import { accion, celdas, cifra, el, monta } from './util.js';
 // resumen: nodos que van encima de la nota (rosco de A13).
 // detalle: nodos que van bajo la nota (ranking de A3, desglose de A4).
 export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricula, fuente, pista, otra, resumen = [], detalle = [] }, contenedor) {
-  const resultado = total === undefined ? puntuacion : `${puntuacion}/${total}${unidad ? ` ${unidad}` : ''}`;
+  const resultado = total === undefined ? [puntuacion, unidad].filter(Boolean).join(' ') : `${puntuacion}/${total}${unidad ? ` ${unidad}` : ''}`;
   const texto = [`Juegos 29N, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
     .filter(Boolean)
     .join('\n');
 
-  const final = total === undefined
+  // Sin total: una palabra (A14) o una cifra con su unidad al lado (A5, error medio)
+  const final = total === undefined && unidad
+    ? el('div', { className: 'final' },
+      el('span', { className: 'banda' }, cifra(puntuacion, 8)),
+      el('span', { className: 'unidad', textContent: unidad }),
+      el('span', { className: 'oculto', textContent: resultado }))
+    : total === undefined
     ? el('p', { className: 'cifra palabra' }, el('span', { className: 'marca', textContent: puntuacion }))
     : el('div', { className: 'final' },
       el('span', { className: 'banda' }, cifra(String(puntuacion), 8)),
