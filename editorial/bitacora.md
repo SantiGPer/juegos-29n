@@ -2,6 +2,16 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-25 — A7: «Ratio habitantes/escaño»
+
+**Hecho**
+- Decisión del autor: el mapa de habitantes por escaño se queda con «Datos de 2026».
+- Decisión del autor: la etiqueta pasa a «Ratio habitantes/escaño» en las dos rondas donde sale (la correcta del mapa 4 y el señuelo del mapa 3) y en el título («Ratio habitantes/escaño, 2026»). La explicación del mapa de Sumar sigue diciendo «al de habitantes por escaño», en prosa.
+- Cabe en el botón de 2 × 2 a 320, 375 y 1280 sin desbordar.
+
+**Falta**
+- Cowork: pasar las dos decisiones al contenido de A7 y a `decisiones.md`.
+
 ## 2026-10-24 (5) — A5 con tope de 350 y A7 con el año de cada mapa
 
 **Hecho**
