@@ -26,12 +26,12 @@ No falta ninguna candidatura con escaño en las tablas.
 | B4 | Catálogo | ERC −7, Junts −7, EH Bildu −6, PNV −5, BNG −1, CC −1, UPN −1, PSOE +14, Sumar +7, PP +5, Vox +2 | PP +5, PSOE +14, Vox +2, Sumar +7, ERC −7, Junts −7, EH Bildu −6, PNV −5, CC −1, BNG −1, UPN −1 | sí |
 | B5 | Catálogo («igual que B4») | ERC −7, Junts −7, EH Bildu −6, PNV −5, BNG −1, CC −1, UPN −1, PSOE +14, Sumar +7, PP +5, Vox +2 | PP +5, PSOE +14, Vox +2, Sumar +7, ERC −7, Junts −7, EH Bildu −6, PNV −5, CC −1, BNG −1, UPN −1 | sí |
 | B6 | Catálogo | nada cambia | nada cambia | sí |
-| F1 | Catálogo | PP −10, PSOE −7, Junts −1, PNV −1, Vox +10, Sumar +6, BNG +1, Nueva Canarias +1, Aragón Existe +1 | PP −10, PSOE −7, Vox +10, Sumar +6, Junts −1, PNV −1, BNG +1, Aragón Existe +1, Nueva Canarias +1 | sí |
+| F1 | Catálogo | PP −10, PSOE −7, Junts −1, PNV −1, Vox +10, Sumar +6, BNG +1, Nueva Canarias +1, Teruel Existe +1 | PP −10, PSOE −7, Vox +10, Sumar +6, Junts −1, PNV −1, BNG +1, Teruel Existe +1, Nueva Canarias +1 | sí |
 | F2 | Catálogo | PP −7, PSOE −2, Junts −1, PNV −1, Vox +5, Sumar +4, BNG +1, Nueva Canarias +1 | PP −7, PSOE −2, Vox +5, Sumar +4, Junts −1, PNV −1, BNG +1, Nueva Canarias +1 | sí |
 | F2 | Explicación de la pregunta 2 («Vox ganaría 5») | Vox +5 | PP −7, PSOE −2, Vox +5, Sumar +4, Junts −1, PNV −1, BNG +1, Nueva Canarias +1 | sí |
-| F3 | Catálogo | PP −13, PSOE −9, Junts −1, PNV −1, Vox +13, Sumar +6, BNG +3, Nueva Canarias +1, Aragón Existe +1 | PP −13, PSOE −9, Vox +13, Sumar +6, Junts −1, PNV −1, BNG +3, Aragón Existe +1, Nueva Canarias +1 | sí |
-| F4 | Catálogo | PP −4, PSOE −4, Junts −1, PNV −1, Vox +4, Sumar +3, BNG +1, Nueva Canarias +1, Aragón Existe +1 | PP −4, PSOE −4, Vox +4, Sumar +3, Junts −1, PNV −1, BNG +1, Aragón Existe +1, Nueva Canarias +1 | sí |
-| F4 | Explicación de la pregunta 3 («el BNG se quedaría en 2») | BNG +1 | PP −4, PSOE −4, Vox +4, Sumar +3, Junts −1, PNV −1, BNG +1, Aragón Existe +1, Nueva Canarias +1 | sí |
+| F3 | Catálogo | PP −13, PSOE −9, Junts −1, PNV −1, Vox +13, Sumar +6, BNG +3, Nueva Canarias +1, Teruel Existe +1 | PP −13, PSOE −9, Vox +13, Sumar +6, Junts −1, PNV −1, BNG +3, Teruel Existe +1, Nueva Canarias +1 | sí |
+| F4 | Catálogo | PP −4, PSOE −4, Junts −1, PNV −1, Vox +4, Sumar +3, BNG +1, Nueva Canarias +1, Teruel Existe +1 | PP −4, PSOE −4, Vox +4, Sumar +3, Junts −1, PNV −1, BNG +1, Teruel Existe +1, Nueva Canarias +1 | sí |
+| F4 | Explicación de la pregunta 3 («el BNG se quedaría en 2») | BNG +1 | PP −4, PSOE −4, Vox +4, Sumar +3, Junts −1, PNV −1, BNG +1, Teruel Existe +1, Nueva Canarias +1 | sí |
 | C1 | Catálogo | PP −12, PSOE −2, Junts −2, EH Bildu −1, Vox +9, Sumar +6, BNG +1, CC +1 | PP −12, PSOE −2, Vox +9, Sumar +6, Junts −2, EH Bildu −1, CC +1, BNG +1 | sí |
 | C2 | Catálogo | ERC −7, Junts −7, EH Bildu −6, PNV −5, BNG −1, CC −1, UPN −1, Sumar +17, Vox +15, PSOE +3, PP −7 | PP −7, PSOE +3, Vox +15, Sumar +17, ERC −7, Junts −7, EH Bildu −6, PNV −5, CC −1, BNG −1, UPN −1 | sí |
 | C3 | Catálogo | PP −17, PSOE −6, Vox +12, Sumar +14, PACMA +2, CUP +1, UPN −1 | PP −17, PSOE −6, Vox +12, Sumar +14, ERC −1, Junts −2, EH Bildu −2, PNV −1, BNG +1, UPN −1, PACMA +2, CUP +1 | sí, pero incompleto |

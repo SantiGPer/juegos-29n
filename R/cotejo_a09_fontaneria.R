@@ -1,7 +1,8 @@
 # Cotejo de las cifras de A9 Fontanería electoral con el cálculo en R -> editorial/fuentes/a09-cotejo.md
 # Encargo del 25-10-2026. Lee data/fontaneria_a09.json (R/12_fontaneria_a09.R) y lo compara con las tablas
 # «Escaños» de editorial/contenido/a09-fontaneria-electoral.md y con las cifras del catálogo
-# (editorial/catalogos/a09-fontaneria-catalogo.md) y de las explicaciones, copiadas abajo tal como están.
+# (editorial/catalogos/a09-fontaneria-catalogo.md) y de las explicaciones, copiadas abajo tal como están, salvo «Aragón Existe»,
+# que pasa a «Teruel Existe» por decisión del autor (25-10).
 
 library(tidyverse)
 library(jsonlite)
@@ -34,7 +35,7 @@ preguntas <- tibble(id = str_match(contenido, "^## \\d · (\\w\\d) ·")[, 2], li
   filter(str_detect(linea, "^\\*\\*Escaños")) |>
   mutate(tabla = map(linea, \(l) {
     m <- str_match_all(str_remove(l, "^\\*\\*Escaños[^*]*\\*\\* "), "([^·]+?) (\\d+) → (\\d+)")[[1]]
-    tibble(candidatura = str_trim(m[, 2]), real = as.integer(m[, 3]), cambio = as.integer(m[, 4]))
+    tibble(candidatura = str_replace(str_trim(m[, 2]), "Aragón Existe", "Teruel Existe"), real = as.integer(m[, 3]), cambio = as.integer(m[, 4]))
   })) |>
   select(id, tabla) |>
   unnest(tabla) |>
@@ -52,11 +53,11 @@ catalogo <- tribble(
   "B4", "Catálogo", "ERC −7, Junts −7, EH Bildu −6, PNV −5, BNG −1, CC −1, UPN −1, PSOE +14, Sumar +7, PP +5, Vox +2", TRUE,
   "B5", "Catálogo («igual que B4»)", "ERC −7, Junts −7, EH Bildu −6, PNV −5, BNG −1, CC −1, UPN −1, PSOE +14, Sumar +7, PP +5, Vox +2", TRUE,
   "B6", "Catálogo", "", TRUE,
-  "F1", "Catálogo", "PP −10, PSOE −7, Junts −1, PNV −1, Vox +10, Sumar +6, BNG +1, Nueva Canarias +1, Aragón Existe +1", TRUE,
+  "F1", "Catálogo", "PP −10, PSOE −7, Junts −1, PNV −1, Vox +10, Sumar +6, BNG +1, Nueva Canarias +1, Teruel Existe +1", TRUE,
   "F2", "Catálogo", "PP −7, PSOE −2, Junts −1, PNV −1, Vox +5, Sumar +4, BNG +1, Nueva Canarias +1", TRUE,
   "F2", "Explicación de la pregunta 2 («Vox ganaría 5»)", "Vox +5", FALSE,
-  "F3", "Catálogo", "PP −13, PSOE −9, Junts −1, PNV −1, Vox +13, Sumar +6, BNG +3, Nueva Canarias +1, Aragón Existe +1", TRUE,
-  "F4", "Catálogo", "PP −4, PSOE −4, Junts −1, PNV −1, Vox +4, Sumar +3, BNG +1, Nueva Canarias +1, Aragón Existe +1", TRUE,
+  "F3", "Catálogo", "PP −13, PSOE −9, Junts −1, PNV −1, Vox +13, Sumar +6, BNG +3, Nueva Canarias +1, Teruel Existe +1", TRUE,
+  "F4", "Catálogo", "PP −4, PSOE −4, Junts −1, PNV −1, Vox +4, Sumar +3, BNG +1, Nueva Canarias +1, Teruel Existe +1", TRUE,
   "F4", "Explicación de la pregunta 3 («el BNG se quedaría en 2»)", "BNG +1", FALSE,
   "C1", "Catálogo", "PP −12, PSOE −2, Junts −2, EH Bildu −1, Vox +9, Sumar +6, BNG +1, CC +1", TRUE,
   "C2", "Catálogo", "ERC −7, Junts −7, EH Bildu −6, PNV −5, BNG −1, CC −1, UPN −1, Sumar +17, Vox +15, PSOE +3, PP −7", TRUE,

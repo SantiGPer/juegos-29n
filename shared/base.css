@@ -40,9 +40,10 @@
   --iu: #DF0022;
   --cs: #EB6109;
   --dl: #212765;
-  /* A9: Nueva Canarias y, para la Coalición Existe, la entrada de Teruel Existe (su escaño sale de Teruel) */
-  --nc: #85BD42;
-  --ae: #007351;
+  /* A9: Teruel Existe, de la plantilla; Nueva Canarias, en un tono claro de su verde (#85BD42 en la plantilla)
+     para no confundirse con Vox (decisión del autor, 25-10) */
+  --nc: #C8E3A0;
+  --te: #007351;
   --otros: var(--raya);
 
   /* Escala de los mapas de A7, «del sepia a la tinta», ajena a los partidos (decisión de diseño del 20-10-2026) */

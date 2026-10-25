@@ -11,7 +11,7 @@ votos <- p |> select(provincia, candidaturas) |> unnest(candidaturas)
 
 etiquetas <- c(`000005` = "PP", `000002` = "PSOE", `000006` = "Vox", `000010` = "Sumar", `000050` = "ERC",
                `000057` = "Junts", `000071` = "EH Bildu", `000075` = "PNV", `000065` = "BNG", `000031` = "CC",
-               `000074` = "UPN", `000032` = "Nueva Canarias", `000023` = "Aragón Existe", `000007` = "PACMA",
+               `000074` = "UPN", `000032` = "Nueva Canarias", `000023` = "Teruel Existe", `000007` = "PACMA",
                `000053` = "CUP", `000001` = "Frente Obrero", `000043` = "Soria ¡Ya!", `000014` = "Escaños en Blanco")
 etiqueta <- \(cabecera) coalesce(etiquetas[cabecera], cabecera)
 

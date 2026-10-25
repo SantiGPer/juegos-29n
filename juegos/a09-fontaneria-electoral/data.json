@@ -24,7 +24,7 @@
     "CC": { "color": "--cc" },
     "UPN": { "color": "--upn" },
     "Nueva Canarias": { "siglas": "NC", "color": "--nc" },
-    "Aragón Existe": { "siglas": "AE", "color": "--ae" }
+    "Teruel Existe": { "siglas": "TE", "color": "--te" }
   },
   "rondas": [
     {
@@ -50,7 +50,7 @@
       "ultima": "a",
       "correcta": "c",
       "destacar": ["Vox"],
-      "explicacion": "Vox pasaría de 33 a 43 escaños y Sumar, de 31 a 37, mientras PP y PSOE perderían 17 entre los dos; además entrarían Nueva Canarias y Aragón Existe. Con la variante escandinava, que divide el primero entre 1,4, el efecto se queda en la mitad: Vox ganaría 5.",
+      "explicacion": "Vox pasaría de 33 a 43 escaños y Sumar, de 31 a 37, mientras PP y PSOE perderían 17 entre los dos; además entrarían Nueva Canarias y Teruel Existe. Con la variante escandinava, que divide el primero entre 1,4, el efecto se queda en la mitad: Vox ganaría 5.",
       "fuente": "LOREG, art. 163; Ministerio del Interior, generales del 23-07-2023. Elaboración propia."
     },
     {

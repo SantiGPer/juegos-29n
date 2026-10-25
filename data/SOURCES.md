@@ -27,10 +27,10 @@
 | `--iu` | IU / Izquierda Unida (España) | `#DF0022` |
 | `--cs` | Ciudadanos | `#EB6109` |
 | `--dl` | Democràcia i Llibertat | `#212765` |
-| `--nc` | NCa / Nueva Canarias / NC-BC / Nueva Canarias-Bloque Canarista | `#85BD42` |
-| `--ae` | TE / Teruel Existe | `#007351` |
+| `--nc` | NCa / Nueva Canarias / NC-BC / Nueva Canarias-Bloque Canarista (plantilla: `#85BD42`) | `#C8E3A0` |
+| `--te` | TE / Teruel Existe | `#007351` |
 
-`--nc` y `--ae` se añadieron el 25-10-2026 para A9, de la misma revisión 173877042 (descargada y cotejada el 25-10-2026). La plantilla no tiene entrada para Aragón Existe ni para Coalición Existe; `--ae` usa la de Teruel Existe porque el escaño de la Coalición Existe en las simulaciones de A9 sale de Teruel, con la lista «Teruel Existe - Coalición Existe».
+`--nc` y `--te` se añadieron el 25-10-2026 para A9, de la misma revisión 173877042 (descargada y cotejada el 25-10-2026). `--te` es la entrada de Teruel Existe, el nombre que usa A9 para la Coalición Existe por decisión del autor (25-10), porque su escaño en las simulaciones sale de Teruel. `--nc` **no es el color de la plantilla** (`#85BD42`, a ΔE2000 4,5 de Vox): por decisión del autor (25-10), Nueva Canarias lleva un tono claro de su verde, `#C8E3A0`, que queda a ΔE2000 17,9 de Vox, su color más cercano en las preguntas de A9. Vox conserva el suyo.
 
 `--ap`, `--ciu`, `--iu`, `--cs` y `--dl` se añadieron el 24-10-2026 para A5, de la misma revisión 173877042 (descargada y cotejada el 24-10-2026). AP-PDP (1982) usa la entrada de Alianza Popular. ERC-CatSí (2015) no tiene entrada propia y usa `--erc`. «Otros» va en raya (`--otros: var(--raya)`), que no es color de partido.
 
