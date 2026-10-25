@@ -45,6 +45,7 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
   - `sin_candidatura`: candidaturas nacionales (con lista en 26 provincias o más) que no se presentaron en la provincia. Su voto es NA, no 0 (decisión del 20-10-2026). Caso relevante: VOX en Santa Cruz de Tenerife (renuncias de última hora; RTVC, 2023).
 - Escaños: anexo del RD 400/2023 (BOE-A-2023-12663, https://www.boe.es/diario_boe/xml.php?id=BOE-A-2023-12663) y del RD 806/2026 (BOE-A-2026-20742, https://www.boe.es/diario_boe/xml.php?id=BOE-A-2026-20742). Leídos el 20-10-2026. Cambian Madrid (37 → 38) y Cádiz (9 → 8).
 - Población: INE, Cifras oficiales de población de los municipios españoles: revisión del Padrón Municipal (operación DPOP), tablas «<provincia>: Población por municipios y sexo», serie del total provincial, a 1-1-2023 y a 1-1-2025 (la revisión más reciente). API: https://servicios.ine.es/wstempus/js/ES/TABLAS_OPERACION/DPOP. Consultado el 20-10-2026.
+  - `poblacion_2022` (a 1-1-2022, misma serie), añadida el 25-10-2026 para A9: es la que fijó los escaños de 2023 en el RD 400/2023. Con la regla del art. 162 de la LOREG reproduce los escaños de las 52 circunscripciones (comprobado en `R/12_fontaneria_a09.R`).
 - Nacidos en el extranjero: INE, Estadística del Padrón Continuo, tabla 68526 («Población por sexo y edad según la relación entre lugar de nacimiento y lugar de residencia»), a 1-1-2023, categoría «Nacido en el extranjero o en antiguos territorios españoles». API: https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/68526. Consultado el 20-10-2026. Su total (`poblacion_padron_2023`) no coincide con las cifras oficiales (387.529 frente a 387.174 en Albacete), y es el denominador que corresponde a esta cifra.
 - Comprobado al generar: las 52 provincias suman el total nacional de Interior en censo, votantes, blancos y nulos (votantes: 24.952.447). Los escaños de Interior coinciden con el anexo del RD 400/2023 y suman 350 por provincia y por candidatura.
 - Cotejo con la resolución de la Junta Electoral Central de 30-08-2023 (BOE-A-2023-18907), Cuadro II: 206 cifras de votos y escaños de los partidos con escaño casan por siglas sin ninguna discrepancia. Las 23 restantes no casan por las variantes de siglas (PSIB-PSOE, SUMAR ARAGÓN…). El Cuadro I va como imagen en el BOE y no se pudo cotejar de forma automática.
@@ -70,6 +71,14 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Fuente: `resultados_2023_prov.json` (Ministerio del Interior, INE y RD 806/2026), sin datos nuevos. Valores por provincia sin redondear.
 - `null` donde la candidatura no se presentó: Vox en Santa Cruz de Tenerife y PACMA en Ceuta. Nunca 0.
 - Cotejado el 21-10-2026 con el contenido: las provincias por tramo con los cortes del método B y los tres distractores de cada ronda, con su ρ de Spearman (población fuera por casi idéntica a habitantes por escaño, ρ = 0,974; ningún señuelo más de tres veces). Sin discrepancias.
+
+## `fontaneria_a09.json`
+
+- Script: `R/12_fontaneria_a09.R`. Juego: A9. Las 18 configuraciones de `editorial/catalogos/a09-fontaneria-catalogo.md` (B1–B6, F1–F4, C1–C4, T1–T4).
+- Fuente: `resultados_2023_prov.json` (votos oficiales por provincia con el CERA, escaños del RD 400/2023 y población a 1-1-2022), sin datos nuevos. Candidaturas agrupadas por su cabecera nacional.
+- Reglas: LOREG, art. 162 (escaños por provincia) y art. 163 (D'Hondt y barrera del 3 % de los válidos, con el blanco). Cuota Droop = parte entera de votos / (escaños + 1), más 1.
+- Comprobado al generar: la regla del art. 162 reproduce los escaños de 2023 con la población de 2022 y los de 2026 con la de 2025; la simulación con las reglas vigentes reproduce el reparto oficial de cada provincia; sin empates en ninguna configuración.
+- Cotejo con el contenido y el catálogo de A9: `R/cotejo_a09_fontaneria.R` → `editorial/fuentes/a09-cotejo.md`. No produce JSON.
 
 ## `actividad_parlamentaria.json`
 

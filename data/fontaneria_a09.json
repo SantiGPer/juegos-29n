@@ -1,0 +1,944 @@
+{
+  "fuente": "Ministerio del Interior (infoelectoral), generales del 23-07-2023; INE, población a 1-1-2022; LOREG, arts. 162 y 163. Elaboración propia.",
+  "notas": {
+    "voto": "Votos oficiales por provincia con el CERA; candidaturas agrupadas por su cabecera nacional.",
+    "barrera": "Porcentaje de los votos válidos (con el blanco) de la circunscripción; una candidatura con el porcentaje justo entra.",
+    "droop": "Cuota Droop = parte entera de votos / (escaños + 1), más 1.",
+    "tamano": "Escaños por provincia con la regla del art. 162 de la LOREG y la población a 1-1-2022, la del RD 400/2023."
+  },
+  "real": {
+    "PP": 137,
+    "PSOE": 121,
+    "Vox": 33,
+    "Sumar": 31,
+    "ERC": 7,
+    "Junts": 7,
+    "EH Bildu": 6,
+    "PNV": 5,
+    "CC": 1,
+    "BNG": 1,
+    "UPN": 1
+  },
+  "configuraciones": [
+    {
+      "id": "B1",
+      "nombre": "Sin barrera",
+      "escanos": {
+        "PP": 137,
+        "PSOE": 121,
+        "Vox": 33,
+        "Sumar": 31,
+        "ERC": 7,
+        "Junts": 7,
+        "EH Bildu": 6,
+        "PNV": 5,
+        "CC": 1,
+        "BNG": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "B2",
+      "nombre": "Barrera del 5 %",
+      "escanos": {
+        "PP": 137,
+        "PSOE": 121,
+        "Vox": 33,
+        "Sumar": 31,
+        "ERC": 7,
+        "Junts": 7,
+        "EH Bildu": 6,
+        "PNV": 5,
+        "CC": 1,
+        "BNG": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "B3",
+      "nombre": "Barrera del 10 %",
+      "escanos": {
+        "PP": 139,
+        "PSOE": 124,
+        "Vox": 31,
+        "Sumar": 31,
+        "ERC": 8,
+        "EH Bildu": 6,
+        "PNV": 5,
+        "Junts": 4,
+        "CC": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "B4",
+      "nombre": "Barrera del 3 % en toda España, además de la provincial",
+      "escanos": {
+        "PP": 142,
+        "PSOE": 135,
+        "Sumar": 38,
+        "Vox": 35
+      }
+    },
+    {
+      "id": "B5",
+      "nombre": "Barrera del 5 % en toda España, además de la provincial",
+      "escanos": {
+        "PP": 142,
+        "PSOE": 135,
+        "Sumar": 38,
+        "Vox": 35
+      }
+    },
+    {
+      "id": "B6",
+      "nombre": "Barrera del 3 % sin contar el voto en blanco",
+      "escanos": {
+        "PP": 137,
+        "PSOE": 121,
+        "Vox": 33,
+        "Sumar": 31,
+        "ERC": 7,
+        "Junts": 7,
+        "EH Bildu": 6,
+        "PNV": 5,
+        "CC": 1,
+        "BNG": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "F1",
+      "nombre": "Sainte-Laguë",
+      "escanos": {
+        "PP": 127,
+        "PSOE": 114,
+        "Vox": 43,
+        "Sumar": 37,
+        "ERC": 7,
+        "Junts": 6,
+        "EH Bildu": 6,
+        "PNV": 4,
+        "BNG": 2,
+        "Aragón Existe": 1,
+        "Nueva Canarias": 1,
+        "CC": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "F2",
+      "nombre": "Sainte-Laguë modificada (primer divisor 1,4)",
+      "escanos": {
+        "PP": 130,
+        "PSOE": 119,
+        "Vox": 38,
+        "Sumar": 35,
+        "ERC": 7,
+        "Junts": 6,
+        "EH Bildu": 6,
+        "PNV": 4,
+        "BNG": 2,
+        "Nueva Canarias": 1,
+        "CC": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "F3",
+      "nombre": "Cuota Hare y restos mayores",
+      "escanos": {
+        "PP": 124,
+        "PSOE": 112,
+        "Vox": 46,
+        "Sumar": 37,
+        "ERC": 7,
+        "Junts": 6,
+        "EH Bildu": 6,
+        "BNG": 4,
+        "PNV": 4,
+        "Aragón Existe": 1,
+        "Nueva Canarias": 1,
+        "CC": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "F4",
+      "nombre": "Cuota Droop y restos mayores",
+      "escanos": {
+        "PP": 133,
+        "PSOE": 117,
+        "Vox": 37,
+        "Sumar": 34,
+        "ERC": 7,
+        "Junts": 6,
+        "EH Bildu": 6,
+        "PNV": 4,
+        "BNG": 2,
+        "Aragón Existe": 1,
+        "Nueva Canarias": 1,
+        "CC": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "C1",
+      "nombre": "Una circunscripción por comunidad autónoma",
+      "escanos": {
+        "PP": 125,
+        "PSOE": 119,
+        "Vox": 42,
+        "Sumar": 37,
+        "ERC": 7,
+        "Junts": 5,
+        "EH Bildu": 5,
+        "PNV": 5,
+        "CC": 2,
+        "BNG": 2,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "C2",
+      "nombre": "Circunscripción única, D'Hondt y barrera del 3 %",
+      "escanos": {
+        "PP": 130,
+        "PSOE": 124,
+        "Vox": 48,
+        "Sumar": 48
+      }
+    },
+    {
+      "id": "C3",
+      "nombre": "Circunscripción única, D'Hondt sin barrera",
+      "escanos": {
+        "PP": 120,
+        "PSOE": 115,
+        "Vox": 45,
+        "Sumar": 45,
+        "ERC": 6,
+        "Junts": 5,
+        "EH Bildu": 4,
+        "PNV": 4,
+        "PACMA": 2,
+        "BNG": 2,
+        "CC": 1,
+        "CUP": 1
+      }
+    },
+    {
+      "id": "C4",
+      "nombre": "Circunscripción única, Sainte-Laguë sin barrera",
+      "escanos": {
+        "PP": 117,
+        "PSOE": 113,
+        "Vox": 44,
+        "Sumar": 44,
+        "ERC": 7,
+        "Junts": 6,
+        "EH Bildu": 5,
+        "PNV": 4,
+        "PACMA": 2,
+        "CC": 2,
+        "BNG": 2,
+        "Frente Obrero": 1,
+        "Nueva Canarias": 1,
+        "CUP": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "T1",
+      "nombre": "300 diputados",
+      "escanos": {
+        "PP": 121,
+        "PSOE": 109,
+        "Vox": 26,
+        "Sumar": 23,
+        "ERC": 6,
+        "Junts": 5,
+        "EH Bildu": 5,
+        "PNV": 3,
+        "CC": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "T2",
+      "nombre": "400 diputados",
+      "escanos": {
+        "PP": 152,
+        "PSOE": 138,
+        "Vox": 40,
+        "Sumar": 38,
+        "ERC": 8,
+        "Junts": 8,
+        "EH Bildu": 6,
+        "PNV": 6,
+        "CC": 1,
+        "Soria ¡Ya!": 1,
+        "BNG": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "T3",
+      "nombre": "Mínimo de 1 diputado por provincia",
+      "escanos": {
+        "PP": 130,
+        "PSOE": 124,
+        "Sumar": 35,
+        "Vox": 32,
+        "ERC": 8,
+        "Junts": 8,
+        "EH Bildu": 6,
+        "PNV": 4,
+        "CC": 1,
+        "BNG": 1,
+        "UPN": 1
+      }
+    },
+    {
+      "id": "T4",
+      "nombre": "400 diputados y mínimo de 1",
+      "escanos": {
+        "PP": 145,
+        "PSOE": 143,
+        "Vox": 40,
+        "Sumar": 40,
+        "ERC": 9,
+        "Junts": 8,
+        "EH Bildu": 6,
+        "PNV": 6,
+        "CC": 1,
+        "BNG": 1,
+        "UPN": 1
+      }
+    }
+  ],
+  "voto_nacional": [
+    {
+      "candidatura": "PP",
+      "votos": 8160837,
+      "pct": 33.055768962577
+    },
+    {
+      "candidatura": "PSOE",
+      "votos": 7821718,
+      "pct": 31.6821550410123
+    },
+    {
+      "candidatura": "Vox",
+      "votos": 3057000,
+      "pct": 12.382490388988
+    },
+    {
+      "candidatura": "Sumar",
+      "votos": 3044996,
+      "pct": 12.3338677476307
+    },
+    {
+      "candidatura": "ERC",
+      "votos": 466020,
+      "pct": 1.88763106675702
+    },
+    {
+      "candidatura": "Junts",
+      "votos": 395429,
+      "pct": 1.60169963756204
+    },
+    {
+      "candidatura": "EH Bildu",
+      "votos": 335129,
+      "pct": 1.35745228052704
+    },
+    {
+      "candidatura": "PNV",
+      "votos": 277289,
+      "pct": 1.12316924353029
+    },
+    {
+      "candidatura": "PACMA",
+      "votos": 169237,
+      "pct": 0.685500662728546
+    },
+    {
+      "candidatura": "BNG",
+      "votos": 153995,
+      "pct": 0.623762383857445
+    },
+    {
+      "candidatura": "CC",
+      "votos": 116363,
+      "pct": 0.471332590491924
+    },
+    {
+      "candidatura": "CUP",
+      "votos": 99644,
+      "pct": 0.403611669061276
+    },
+    {
+      "candidatura": "UPN",
+      "votos": 52188,
+      "pct": 0.211389404128396
+    },
+    {
+      "candidatura": "Frente Obrero",
+      "votos": 46274,
+      "pct": 0.187434530670602
+    },
+    {
+      "candidatura": "Nueva Canarias",
+      "votos": 45595,
+      "pct": 0.184684216318583
+    },
+    {
+      "candidatura": "000055",
+      "votos": 32016,
+      "pct": 0.129681979814799
+    }
+  ],
+  "barrera_10": [
+    {
+      "provincia": "Barcelona",
+      "candidatura": "PSOE",
+      "pct": 35.7021501208257,
+      "real": 13,
+      "con_el_cambio": 15
+    },
+    {
+      "provincia": "Barcelona",
+      "candidatura": "Sumar",
+      "pct": 15.2201067825114,
+      "real": 5,
+      "con_el_cambio": 6
+    },
+    {
+      "provincia": "Barcelona",
+      "candidatura": "PP",
+      "pct": 13.7777706132909,
+      "real": 5,
+      "con_el_cambio": 6
+    },
+    {
+      "provincia": "Barcelona",
+      "candidatura": "ERC",
+      "pct": 12.3223884133252,
+      "real": 4,
+      "con_el_cambio": 5
+    },
+    {
+      "provincia": "Barcelona",
+      "candidatura": "Junts",
+      "pct": 9.67801796303475,
+      "real": 3,
+      "con_el_cambio": 0
+    },
+    {
+      "provincia": "Barcelona",
+      "candidatura": "Vox",
+      "pct": 7.56426107356837,
+      "real": 2,
+      "con_el_cambio": 0
+    },
+    {
+      "provincia": "A Coruña",
+      "candidatura": "PSOE",
+      "pct": 28.1682804536507,
+      "real": 2,
+      "con_el_cambio": 3
+    },
+    {
+      "provincia": "A Coruña",
+      "candidatura": "BNG",
+      "pct": 9.98270626322484,
+      "real": 1,
+      "con_el_cambio": 0
+    },
+    {
+      "provincia": "Murcia",
+      "candidatura": "PP",
+      "pct": 41.1839041879013,
+      "real": 4,
+      "con_el_cambio": 5
+    },
+    {
+      "provincia": "Murcia",
+      "candidatura": "Sumar",
+      "pct": 9.57184904459365,
+      "real": 1,
+      "con_el_cambio": 0
+    }
+  ],
+  "escanos_por_tamano": [
+    {
+      "provincia": "Almería",
+      "poblacion_2022": 740534,
+      "escanos_2023": 6,
+      "t1": 5,
+      "t2": 7,
+      "t3": 6,
+      "t4": 7
+    },
+    {
+      "provincia": "Cádiz",
+      "poblacion_2022": 1246781,
+      "escanos_2023": 9,
+      "t1": 7,
+      "t2": 10,
+      "t3": 9,
+      "t4": 10
+    },
+    {
+      "provincia": "Córdoba",
+      "poblacion_2022": 772464,
+      "escanos_2023": 6,
+      "t1": 5,
+      "t2": 7,
+      "t3": 6,
+      "t4": 7
+    },
+    {
+      "provincia": "Granada",
+      "poblacion_2022": 921987,
+      "escanos_2023": 7,
+      "t1": 6,
+      "t2": 8,
+      "t3": 7,
+      "t4": 8
+    },
+    {
+      "provincia": "Huelva",
+      "poblacion_2022": 528763,
+      "escanos_2023": 5,
+      "t1": 4,
+      "t2": 5,
+      "t3": 4,
+      "t4": 5
+    },
+    {
+      "provincia": "Jaén",
+      "poblacion_2022": 623761,
+      "escanos_2023": 5,
+      "t1": 5,
+      "t2": 6,
+      "t3": 5,
+      "t4": 6
+    },
+    {
+      "provincia": "Málaga",
+      "poblacion_2022": 1717504,
+      "escanos_2023": 11,
+      "t1": 9,
+      "t2": 13,
+      "t3": 12,
+      "t4": 14
+    },
+    {
+      "provincia": "Sevilla",
+      "poblacion_2022": 1948393,
+      "escanos_2023": 12,
+      "t1": 10,
+      "t2": 14,
+      "t3": 13,
+      "t4": 15
+    },
+    {
+      "provincia": "Huesca",
+      "poblacion_2022": 225456,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 3
+    },
+    {
+      "provincia": "Teruel",
+      "poblacion_2022": 134421,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Zaragoza",
+      "poblacion_2022": 966438,
+      "escanos_2023": 7,
+      "t1": 6,
+      "t2": 8,
+      "t3": 7,
+      "t4": 8
+    },
+    {
+      "provincia": "Asturias",
+      "poblacion_2022": 1004686,
+      "escanos_2023": 7,
+      "t1": 6,
+      "t2": 8,
+      "t3": 7,
+      "t4": 8
+    },
+    {
+      "provincia": "Illes Balears",
+      "poblacion_2022": 1176659,
+      "escanos_2023": 8,
+      "t1": 7,
+      "t2": 9,
+      "t3": 8,
+      "t4": 10
+    },
+    {
+      "provincia": "Las Palmas",
+      "poblacion_2022": 1129395,
+      "escanos_2023": 8,
+      "t1": 7,
+      "t2": 9,
+      "t3": 8,
+      "t4": 9
+    },
+    {
+      "provincia": "Santa Cruz de Tenerife",
+      "poblacion_2022": 1048306,
+      "escanos_2023": 7,
+      "t1": 6,
+      "t2": 9,
+      "t3": 8,
+      "t4": 9
+    },
+    {
+      "provincia": "Cantabria",
+      "poblacion_2022": 585402,
+      "escanos_2023": 5,
+      "t1": 4,
+      "t2": 6,
+      "t3": 5,
+      "t4": 5
+    },
+    {
+      "provincia": "Albacete",
+      "poblacion_2022": 385727,
+      "escanos_2023": 4,
+      "t1": 4,
+      "t2": 4,
+      "t3": 3,
+      "t4": 4
+    },
+    {
+      "provincia": "Ciudad Real",
+      "poblacion_2022": 490806,
+      "escanos_2023": 5,
+      "t1": 4,
+      "t2": 5,
+      "t3": 4,
+      "t4": 5
+    },
+    {
+      "provincia": "Cuenca",
+      "poblacion_2022": 195215,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Guadalajara",
+      "poblacion_2022": 268127,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 4,
+      "t3": 3,
+      "t4": 3
+    },
+    {
+      "provincia": "Toledo",
+      "poblacion_2022": 713453,
+      "escanos_2023": 6,
+      "t1": 5,
+      "t2": 7,
+      "t3": 6,
+      "t4": 6
+    },
+    {
+      "provincia": "Ávila",
+      "poblacion_2022": 158140,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Burgos",
+      "poblacion_2022": 355045,
+      "escanos_2023": 4,
+      "t1": 4,
+      "t2": 4,
+      "t3": 3,
+      "t4": 4
+    },
+    {
+      "provincia": "León",
+      "poblacion_2022": 448179,
+      "escanos_2023": 4,
+      "t1": 4,
+      "t2": 5,
+      "t3": 4,
+      "t4": 4
+    },
+    {
+      "provincia": "Palencia",
+      "poblacion_2022": 158008,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Salamanca",
+      "poblacion_2022": 325898,
+      "escanos_2023": 4,
+      "t1": 3,
+      "t2": 4,
+      "t3": 3,
+      "t4": 3
+    },
+    {
+      "provincia": "Segovia",
+      "poblacion_2022": 153803,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Soria",
+      "poblacion_2022": 88377,
+      "escanos_2023": 2,
+      "t1": 2,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Valladolid",
+      "poblacion_2022": 517975,
+      "escanos_2023": 5,
+      "t1": 4,
+      "t2": 5,
+      "t3": 4,
+      "t4": 5
+    },
+    {
+      "provincia": "Zamora",
+      "poblacion_2022": 167215,
+      "escanos_2023": 3,
+      "t1": 3,
+      "t2": 3,
+      "t3": 2,
+      "t4": 2
+    },
+    {
+      "provincia": "Barcelona",
+      "poblacion_2022": 5727615,
+      "escanos_2023": 32,
+      "t1": 26,
+      "t2": 38,
+      "t3": 37,
+      "t4": 43
+    },
+    {
+      "provincia": "Girona",
+      "poblacion_2022": 793478,
+      "escanos_2023": 6,
+      "t1": 5,
+      "t2": 7,
+      "t3": 6,
+      "t4": 7
+    },
+    {
+      "provincia": "Lleida",
+      "poblacion_2022": 441443,
+      "escanos_2023": 4,
+      "t1": 4,
+      "t2": 5,
+      "t3": 4,
+      "t4": 4
+    },
+    {
+      "provincia": "Tarragona",
+      "poblacion_2022": 830075,
+      "escanos_2023": 6,
+      "t1": 6,
+      "t2": 7,
+      "t3": 6,
+      "t4": 7
+    },
+    {
+      "provincia": "Badajoz",
+      "poblacion_2022": 666971,
+      "escanos_2023": 5,
+      "t1": 5,
+      "t2": 6,
+      "t3": 5,
+      "t4": 6
+    },
+    {
+      "provincia": "Cáceres",
+      "poblacion_2022": 387805,
+      "escanos_2023": 4,
+      "t1": 4,
+      "t2": 4,
+      "t3": 3,
+      "t4": 4
+    },
+    {
+      "provincia": "A Coruña",
+      "poblacion_2022": 1119180,
+      "escanos_2023": 8,
+      "t1": 7,
+      "t2": 9,
+      "t3": 8,
+      "t4": 9
+    },
+    {
+      "provincia": "Lugo",
+      "poblacion_2022": 323989,
+      "escanos_2023": 4,
+      "t1": 3,
+      "t2": 4,
+      "t3": 3,
+      "t4": 3
+    },
+    {
+      "provincia": "Ourense",
+      "poblacion_2022": 304280,
+      "escanos_2023": 4,
+      "t1": 3,
+      "t2": 4,
+      "t3": 3,
+      "t4": 3
+    },
+    {
+      "provincia": "Pontevedra",
+      "poblacion_2022": 943015,
+      "escanos_2023": 7,
+      "t1": 6,
+      "t2": 8,
+      "t3": 7,
+      "t4": 8
+    },
+    {
+      "provincia": "Madrid",
+      "poblacion_2022": 6750336,
+      "escanos_2023": 37,
+      "t1": 30,
+      "t2": 45,
+      "t3": 44,
+      "t4": 51
+    },
+    {
+      "provincia": "Navarra",
+      "poblacion_2022": 664117,
+      "escanos_2023": 5,
+      "t1": 5,
+      "t2": 6,
+      "t3": 5,
+      "t4": 6
+    },
+    {
+      "provincia": "Araba/Álava",
+      "poblacion_2022": 334412,
+      "escanos_2023": 4,
+      "t1": 3,
+      "t2": 4,
+      "t3": 3,
+      "t4": 4
+    },
+    {
+      "provincia": "Gipuzkoa",
+      "poblacion_2022": 724418,
+      "escanos_2023": 6,
+      "t1": 5,
+      "t2": 7,
+      "t3": 6,
+      "t4": 6
+    },
+    {
+      "provincia": "Bizkaia",
+      "poblacion_2022": 1149344,
+      "escanos_2023": 8,
+      "t1": 7,
+      "t2": 9,
+      "t3": 8,
+      "t4": 10
+    },
+    {
+      "provincia": "Murcia",
+      "poblacion_2022": 1531878,
+      "escanos_2023": 10,
+      "t1": 8,
+      "t2": 12,
+      "t3": 11,
+      "t4": 12
+    },
+    {
+      "provincia": "La Rioja",
+      "poblacion_2022": 319892,
+      "escanos_2023": 4,
+      "t1": 3,
+      "t2": 4,
+      "t3": 3,
+      "t4": 3
+    },
+    {
+      "provincia": "Alacant/Alicante",
+      "poblacion_2022": 1901594,
+      "escanos_2023": 12,
+      "t1": 10,
+      "t2": 14,
+      "t3": 13,
+      "t4": 15
+    },
+    {
+      "provincia": "Castelló/Castellón",
+      "poblacion_2022": 590616,
+      "escanos_2023": 5,
+      "t1": 4,
+      "t2": 6,
+      "t3": 5,
+      "t4": 5
+    },
+    {
+      "provincia": "València/Valencia",
+      "poblacion_2022": 2605757,
+      "escanos_2023": 16,
+      "t1": 13,
+      "t2": 18,
+      "t3": 17,
+      "t4": 20
+    },
+    {
+      "provincia": "Ceuta",
+      "poblacion_2022": 83117,
+      "escanos_2023": 1,
+      "t1": 1,
+      "t2": 1,
+      "t3": 1,
+      "t4": 1
+    },
+    {
+      "provincia": "Melilla",
+      "poblacion_2022": 85170,
+      "escanos_2023": 1,
+      "t1": 1,
+      "t2": 1,
+      "t3": 1,
+      "t4": 1
+    }
+  ]
+}
