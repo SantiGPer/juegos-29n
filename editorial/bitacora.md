@@ -2,6 +2,19 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-25 (3) — A9: Teruel Existe y color de Nueva Canarias; CLAUDE.md
+
+**Hecho** (decisiones del autor en sesión, 25-10)
+- «Aragón Existe» pasa a «Teruel Existe» en A9: etiqueta en `R/12_fontaneria_a09.R` y `data/fontaneria_a09.json`, siglas «TE» en el gráfico, explicación de la pregunta 2 («entrarían Nueva Canarias y Teruel Existe») y token `--te` (#007351, entrada de Teruel Existe de la plantilla). El cotejo traduce el nombre al leer el contenido: sigue con 0 diferencias en las preguntas 1 a 5.
+- Nueva Canarias deja el color de la plantilla (#85BD42, a ΔE2000 4,5 de Vox) y pasa a un tono claro de su verde, `--nc` #C8E3A0, a ΔE2000 17,9 de Vox, que es su color más cercano entre las candidaturas de A9. Vox conserva el suyo. Anotado en `data/SOURCES.md`.
+- CLAUDE.md: «M5» fuera de la fila del 12 nov del calendario de entregas.
+- Commit aparte con el calendario de publicación de Cowork (25-10).
+- Capturas en 320, 375×560 y 1280, sin desbordes ni errores.
+
+**Falta**
+- Cowork: pasar «Teruel Existe» al contenido y al catálogo de A9, y los colores a `decisiones.md`.
+- Encargo del calendario (25-10): pasar el reparto a `data/calendario.json` y el `dia` a cada `data.json`. Pendiente de que el autor lo pida en sesión.
+
 ## 2026-10-25 (2) — A9 Fontanería electoral: datos, cotejo y juego; A11 y A5; CLAUDE.md
 
 **Hecho**
