@@ -946,3 +946,68 @@ Aprobado por el autor. Referencia: docs/maquetas/maqueta-vida-a11-v16.html.
   - Montar A11 en `juegos/a11-duelo-de-circunscripciones/` con esta barra de vida (encargo del 24-10), con la vida como parte del encadenador o de la ronda de duelo, según convenga.
   - Aplicar el cambio de A5 (sticky al comprobar).
   - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.
+
+## 2026-10-25 (decisiones del autor en sesión con Code, pasadas por Cowork)
+
+- A5, ronda 2015 (24-10, tras el cotejo de Code: Ciudadanos sacó 40 justos): «Por primera vez, cuatro candidaturas alcanzaron 40 escaños o más: PP, PSOE, Podemos y sus confluencias, y Ciudadanos.» El récord de 1982 queda confirmado. Contenido actualizado.
+- A11 (24-10): se aprueba la línea de unidad bajo cada pregunta tal como la escribió Code («% sobre voto válido», «% de variación de la población», «% del censo electoral que vive en el extranjero»). Contenido actualizado.
+- A7 (24 y 25-10): encima del mapa, mientras se juega, «Datos de AAAA»; en el ratio, «Datos de 2026» (población a 1-1-2025 y escaños del RD 806/2026). La etiqueta «Habitantes por escaño» pasa a «Ratio habitantes/escaño» en opciones y título; la prosa de las explicaciones no cambia. Contenido actualizado.
+- A8 (24-10): el autor da por cerrada la comprobación de las inventadas sin esperar a la proclamación. Queda sin efecto el pendiente de repetirla en las candidaturas proclamadas.
+- Push a Pages del 24-10 con el diff de `shared/` de A5, M8 y A11 aprobado por el autor.
+- A11, duelo 4 (decisión del autor, 25-10): la explicación añade que Lleida supera a Cádiz por una centésima: «Lleida fue la provincia con más voto en blanco, el 1,12 % de los votos válidos, una centésima más que Cádiz; Valencia se quedó en el 0,75 %.»
+- A5, «Otros» de 2015 (decisión del autor, 25-10): la sigla es «CCa-PNC», como la publica Interior, en lugar de «CC-PNC».
+- **Encargo para Code:** pasar estos dos cambios a los `data.json` de A11 y A5.
+- **A9 se replantea como «Fontanería electoral»** (decisión del autor, 25-10). Sigue siendo ingeniería electoral con el voto de 2023 invariable, pero con formato de adivinar: cada pregunta propone un cambio en el sistema (barrera, fórmula, circunscripción, tamaño de la cámara…) y el jugador elige entre varias opciones cómo afecta al resultado. La portada y las explicaciones usan el símil de la fontanería (tuberías, llaves de paso) para entrar en las tripas del sistema. Los cambios tienen que ser metodológicamente correctos: listas cerradas, solo sistemas proporcionales y mismo electorado. Catálogo de configuraciones en editorial/catalogos/a09-fontaneria-catalogo.md, pendiente de selección. Sustituye a la ficha anterior de A9 («Mismo voto, otras reglas», con predicción de ganador y perdedor por regla y motor M5).
+- **A9 Fontanería electoral, decisiones del autor (25-10):**
+  - Entran B3, F1, F3, C1, C2, T1 y T3 del catálogo. Las variantes que no entran se citan en la explicación de su pregunta más cercana (F2 en F1, F4 en F3, B1 y B2 en B3, B4 y C3 en C2, T2 en T1, T4 en T3).
+  - Formato: el cambio, una explicación breve con botón de ayuda y debajo las consecuencias como opciones.
+  - Para T1 y T3 se usa la población oficial a 1-1-2022, la que fijó los escaños de 2023.
+  - Al resolver, un gráfico con los escaños de cada partido, real frente a con el cambio.
+  - Borrador del contenido en editorial/contenido/a09-fontaneria-electoral.md, pendiente del autor.
+- **Encargo para el chat de diseño (A9):**
+  - Botón de ayuda en cada pregunta, con estética de recreativa (el autor piensa en algo como «Help»; la serie escribe en castellano, así que conviene «?» o «Ayuda»). Abre un panel dentro de la página con el texto de ayuda del contenido, nunca un `alert()` del navegador. Definir el aspecto, cómo se cierra y el icono «?» para la regla de portada.
+  - Gráfico al resolver: escaños por candidatura, real frente a con el cambio (por ejemplo, barras dobles o diferencias divergentes, o el hemiciclo de A5 en dos estados). Tiene que funcionar con 4 a 13 candidaturas, con partidos que entran (0 → N) y que salen (N → 0), y con los colores de partido.
+- **Encargo para Code (A9):**
+  1. Añadir la población oficial por provincia a 1-1-2022 (INE; la que usó el RD de convocatoria de 2023) y comprobar que, con la regla de la LOREG (art. 162), reproduce los escaños de 2023.
+  2. Repetir en R todas las configuraciones del catálogo (también las variantes que solo se citan en las explicaciones) y cotejarlas con el contenido; T1, T2, T3 y T4, con la población de 2022. Las discrepancias, a la bitácora.
+  3. Montar A9 cuando estén el diseño y el contenido aprobado.
+- **A9, contenido aprobado por el autor (25-10):** portada, siete preguntas, ayudas, explicaciones y nota metodológica de editorial/contenido/a09-fontaneria-electoral.md. T1 y T3 siguen provisionales hasta el cálculo de Code con la población de 2022: si cambia la respuesta correcta o una cifra de la explicación, Code lo anota en la bitácora y Cowork ajusta el contenido.
+- **Encargo para Code (CLAUDE.md):** ficha de A9 «Fontanería electoral» (siete cambios del sistema con el voto de 2023, opciones de consecuencia, ayuda y gráfico de escaños al resolver; encadenador); M5 D'Hondt deja de ser un motor de juego (el reparto se calcula en R y llega en el `data.json`).
+
+## 2026-10-25 (diseño, A9 Fontanería electoral)
+
+Respuesta al encargo de diseño del 25-10, aprobada por el autor. Referencia: docs/maquetas/maqueta-fontaneria-v17.html.
+
+- Diseño, A9, botón de ayuda:
+  - **Botón:** cuadrado de 44 × 44 px con borde de 1 px tinta y un «?» en cifras de casillas a escala 3, a la derecha del título del cambio (rejilla `1fr 44px` con 12 px de separación).
+    - Cerrado: papel con «?» en tinta.
+    - Abierto: invertido (tinta con «?» en papel).
+    - `aria-label="Ayuda: cómo funciona este cambio"`, `aria-expanded` y `aria-controls`.
+  - **Panel:**
+    - Dentro de la página, en el flujo, justo debajo del cambio y encima de las opciones, a las que empuja hacia abajo. Nunca `alert()` ni ventana superpuesta.
+    - Borde de 3 px tinta, 12 px de relleno, texto de la ayuda del contenido a 1 rem.
+    - Cola de píxeles (triángulo de 7 × 4 en tinta, escala 3) sobre el borde superior, apuntando al botón.
+    - Título «Cómo funciona» en 0,875 rem y 800, con el icono «ayuda» delante.
+    - Aparece sin animación.
+  - **Cierre:** con el mismo botón, con «Cerrar» (botón de texto en 800, subrayado, abajo a la derecha del panel, 32 px de alto como mínimo) o con Escape. Al abrir, el foco pasa al título del panel; al cerrar, vuelve al botón. Responder no cierra la ayuda.
+  - **Icono «ayuda»:** nuevo icono de 10×10 (cuadro con «?»; matriz en la maqueta) en `shared/iconos.js`, para la regla de portada y el título del panel.
+- Diseño, A9, gráfico al resolver (bajo las opciones y antes de la explicación):
+  - **Título:** «Escaños, real y con el cambio» (1 rem, 800), con un borde superior de 1 px tinta.
+  - **Tiras:**
+    - Dos de 350 escaños, de 16 px de alto y con borde de 1 px tinta, rotuladas «Real 2023» y «Con el cambio» (0,75 rem, lápiz).
+    - Segmentos en el color de cada partido, separados por 1 px de papel (borde, no sombra).
+    - El orden de los partidos es el mismo en las dos.
+  - **Tabla:**
+    - Columnas: muestra de 12 px y siglas en 800; «Real»; «Cambio» (en 800); «Diferencia». Cifras tabulares a 0,875 rem.
+    - En «Diferencia», una barra divergente de 14 px en el color del partido, con el eje de 1 px tinta en 0: a la derecha si gana y a la izquierda si pierde. La cifra va al final de la barra («+10», «−3»), en 0,75 rem y 800.
+    - Sin cambio: «=» en lápiz junto al eje y sin barra.
+    - Bajo la tabla, la escala («−20 · 0 · +20») en 0,6875 rem y lápiz.
+  - **Escala común:** ±20 escaños en todas las preguntas. Si una diferencia la supera, la escala de esa pregunta sube al múltiplo de 5 siguiente.
+  - **Orden de filas y de tiras:** de más a menos escaños reales; los que entran (real 0), al final.
+  - **Entran y salen:** «entra» o «sale» junto a la sigla (0,6875 rem, lápiz), con el 0 en su columna. Sin otro color.
+  - **Filas protagonistas:** las que responden a la pregunta llevan la sigla subrayada (2 px) y la línea inferior de la fila en 2 px tinta. Sin marcador en el gráfico. El contenido lo indica con un campo `destacar` por pregunta (1: Junts; 2: Vox; 3: BNG; 4: PP; 5: los siete que salen; 6 y 7: según el cálculo).
+  - **Entre 4 y 13 filas:** la tabla mide de 130 a 360 px y se lee bajando. La barra fija sigue visible.
+- Colores nuevos para A9: Nueva Canarias y Aragón Existe, de la Plantilla:Color político (revisión ya citada) como `--nc` y `--ae`, citados en data/SOURCES.md. Si alguno coincide casi con otro de la misma pregunta (ΔE2000 por debajo de 10), a la bitácora.
+- Encargo para Code:
+  - Montar A9 con esto cuando estén el cálculo en R y el contenido final de T1 y T3 (encargo del 25-10). El campo `destacar` lo añade Code al `data.json` con los valores de arriba, y Cowork lo pasa al contenido.
+  - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.

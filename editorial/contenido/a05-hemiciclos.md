@@ -1,6 +1,6 @@
 # A5 · Hemiciclos
 
-Estado: **aprobado por el autor** (2026-10-22), salvo los dos [VERIFICAR] de las explicaciones (cotejo de Code con la serie de Interior).
+Estado: **aprobado por el autor** (2026-10-22; frase de 2015 corregida el 24-10 tras el cotejo de Code con la serie de Interior, editorial/fuentes/a05-cotejo-interior.md).
 
 - Rondas (decisión del 20-10): generales de 1982, 2000, 2015 y 2023. Candidaturas con cinco escaños o más; el resto, en «Otros». 2015 con «Podemos y confluencias» (decisión del 20-10).
 - Diseño del 20-10 (maqueta v11): lista y hemiciclo en orden alfabético de siglas, con «Otros» al final; siglas en 800 y nombre de la época debajo.
@@ -42,7 +42,7 @@ En pantalla: siglas (800) y nombre de la época debajo (lápiz). Decisión del a
 | UCD | Unión de Centro Democrático | UCD · UNION DE CENTRO DEMOCRATICO | 11 |
 | Otros | PCE, CDS, HB, ERC y EE | — | 10 |
 
-**Explicación:** El PSOE sacó 202 escaños, la mayoría más amplia de la democracia [VERIFICAR con la serie de Interior], y AP-PDP pasó a ser la segunda fuerza con 107. UCD, el partido que gobernaba, se quedó en 11 escaños.
+**Explicación:** El PSOE sacó 202 escaños, la mayoría más amplia de la democracia, y AP-PDP pasó a ser la segunda fuerza con 107. UCD, el partido que gobernaba, se quedó en 11 escaños.
 
 **Otros:** PCE 4, CDS 2, HB 2, ERC 1 y EE 1.
 
@@ -72,11 +72,11 @@ En pantalla: siglas (800) y nombre de la época debajo (lápiz). Decisión del a
 | Podemos | Podemos y confluencias | PODEMOS, EN COMÚ, PODEMOS-COM y PODEMOS-En (agrupadas el 20-10) | 69 |
 | PP | Partido Popular | PP · PARTIDO POPULAR | 123 |
 | PSOE | Partido Socialista Obrero Español | PSOE · PARTIDO SOCIALISTA OBRERO ESPAÑOL | 90 |
-| Otros | IU-UPeC, EH Bildu y CC-PNC | — | 5 |
+| Otros | IU-UPeC, EH Bildu y CCa-PNC | — | 5 |
 
-**Explicación:** Por primera vez, cuatro candidaturas pasaron de 40 escaños [VERIFICAR con la serie de Interior]: PP, PSOE, Podemos y sus confluencias, y Ciudadanos. Los 69 de Podemos suman Podemos (42), En Comú Podem (12), Compromís-Podemos-És el Moment (9) y En Marea (6).
+**Explicación:** Por primera vez, cuatro candidaturas alcanzaron 40 escaños o más: PP, PSOE, Podemos y sus confluencias, y Ciudadanos. Los 69 de Podemos suman Podemos (42), En Comú Podem (12), Compromís-Podemos-És el Moment (9) y En Marea (6).
 
-**Otros:** IU-UPeC 2, EH Bildu 2 y CC-PNC 1.
+**Otros:** IU-UPeC 2, EH Bildu 2 y CCa-PNC 1.
 
 ### Ronda 4 · 2023
 

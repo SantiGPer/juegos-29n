@@ -5,6 +5,7 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 - Selección del autor (24-10) sobre editorial/catalogos/a11-catalogo.md: P1, P2, P3, P4, P5, P6, P7, P9, P10 y P11.
 - Estructura (decisión del autor, 24-10): diez duelos seguidos con el duelo con «VS» del encadenador (maqueta v13).
 - Vida (decisión del autor, 24-10; sustituye a la racha): barra de vida que se vacía con cada fallo; con 5 fallos llega a cero y la partida termina. Puntos = aciertos sobre 10. Estética de barra de juego de lucha arcade, pendiente del chat de diseño.
+- Línea de unidad bajo cada pregunta (escrita por Code, aprobada por el autor el 24-10), porque las cifras de casillas no llevan «%».
 - Lados de cada duelo: nominales, se barajan (criterio del 19-10). Cifra con dos decimales, como en los datos.
 - Orden (propuesta de Cowork): dificultad creciente, sin dos duelos seguidos con la misma provincia ni la misma variable.
 - Datos: `data/mapas_a07.json` y `data/resultados_2023_prov.json`.
@@ -25,6 +26,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 
 **Pregunta:** ¿Dónde sacó más porcentaje el PSOE?
 
+**Unidad (bajo la pregunta):** % sobre voto válido
+
 **Lados:** Barcelona 35,70 % · Madrid 27,84 %
 
 **Correcta:** Barcelona
@@ -38,6 +41,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 ## Duelo 2 · P10
 
 **Pregunta:** ¿Qué provincia creció más entre 2023 y 2025?
+
+**Unidad (bajo la pregunta):** % de variación de la población
 
 **Lados:** Soria +0,84 % · Zamora −0,66 %
 
@@ -53,6 +58,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 
 **Pregunta:** ¿Dónde sacó más porcentaje el PP?
 
+**Unidad (bajo la pregunta):** % sobre voto válido
+
 **Lados:** Lugo 50,24 % · Madrid 40,55 %
 
 **Correcta:** Lugo
@@ -67,11 +74,13 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 
 **Pregunta:** ¿Dónde hubo más voto en blanco?
 
+**Unidad (bajo la pregunta):** % sobre voto válido
+
 **Lados:** Lleida 1,12 % · Valencia 0,75 %
 
 **Correcta:** Lleida
 
-**Explicación:** Lleida fue la provincia con más voto en blanco, el 1,12 % de los votos válidos; Valencia se quedó en el 0,75 %. El voto en blanco cuenta como válido; el nulo, no.
+**Explicación:** Lleida fue la provincia con más voto en blanco, el 1,12 % de los votos válidos, una centésima más que Cádiz; Valencia se quedó en el 0,75 %. El voto en blanco cuenta como válido; el nulo, no.
 
 **Fuente:** Ministerio del Interior, Congreso, 23-07-2023; LOREG, art. 96.5.
 
@@ -80,6 +89,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 ## Duelo 5 · P3 (reformulado, 24-10)
 
 **Pregunta:** ¿Dónde sacó más porcentaje el PP?
+
+**Unidad (bajo la pregunta):** % sobre voto válido
 
 **Lados:** Jaén 37,32 % · Sevilla 33,38 %
 
@@ -95,6 +106,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 
 **Pregunta:** ¿Qué provincia creció más entre 2023 y 2025?
 
+**Unidad (bajo la pregunta):** % de variación de la población
+
 **Lados:** Guadalajara +3,93 % · Barcelona +3,06 %
 
 **Correcta:** Guadalajara
@@ -108,6 +121,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 ## Duelo 7 · P7
 
 **Pregunta:** ¿Dónde vive en el extranjero una parte mayor del censo?
+
+**Unidad (bajo la pregunta):** % del censo electoral que vive en el extranjero
 
 **Lados:** Soria 9,64 % · Madrid 7,21 %
 
@@ -123,6 +138,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 
 **Pregunta:** ¿Dónde sacó más porcentaje el PSOE?
 
+**Unidad (bajo la pregunta):** % sobre voto válido
+
 **Lados:** Badajoz 39,21 % · Sevilla 36,60 %
 
 **Correcta:** Badajoz
@@ -137,6 +154,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 
 **Pregunta:** ¿Dónde sacó más porcentaje PACMA?
 
+**Unidad (bajo la pregunta):** % sobre voto válido
+
 **Lados:** Santa Cruz de Tenerife 1,24 % · Barcelona 1,06 %
 
 **Correcta:** Santa Cruz de Tenerife
@@ -150,6 +169,8 @@ Estado: **en la serie** (vuelve de la reserva por decisión del autor, 24-10). *
 ## Duelo 10 · P2
 
 **Pregunta:** ¿Dónde sacó más porcentaje el PP?
+
+**Unidad (bajo la pregunta):** % sobre voto válido
 
 **Lados:** Ourense 50,02 % · Melilla 49,16 %
 

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fontanería electoral v17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap">
+<style>
+:root { color-scheme: light; --papel:#fff; --tinta:#000; --lapiz:#575757; --raya:#bdbdbd; --marcador:#f2c200; --fuente: Archivo, system-ui, sans-serif;
+  --pp:#1E4B8F; --psoe:#FF0000; --vox:#63BE21; --sumar:#E51C55; --erc:#FFB32E; --junts:#20C0C2; --bildu:#00D0B6; --pnv:#008000; --bng:#ADCFEF; --cc:#FFD700; --upn:#2A52BE; --nc:#7FA7D9; --ae:#8A9A3B;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; }
+*, *::before, *::after { box-sizing:border-box; }
+body { margin:0; padding:2rem 16px 4rem; background:var(--papel); color:var(--tinta); font:400 1rem/1.45 var(--fuente); }
+.envoltura { max-width:1240px; margin:0 auto; }
+.envoltura > h1 { font-size:2rem; font-weight:800; margin:0 0 .5rem; line-height:1.1; }
+.intro { max-width:46em; color:var(--lapiz); margin:0 0 1rem; }
+.intro b { color:var(--tinta); }
+h2.sec { font-size:1.25rem; font-weight:800; margin:3rem 0 .4rem; }
+h3.sec { font-size:.875rem; font-weight:800; margin:0 0 .5rem; }
+.porque { max-width:46em; margin:0 0 1.25rem; color:var(--lapiz); }
+.fila { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%,375px),375px)); gap:2rem; align-items:start; }
+.notas { font-size:.875rem; color:var(--lapiz); margin:.75rem 0 0; padding-left:1.1em; max-width:46em; }
+.notas li { margin-bottom:.3rem; }
+.f { width:100%; max-width:375px; height:560px; border:1px solid var(--raya); overflow:auto; display:flex; flex-direction:column; font-size:1.125rem; }
+.f.alto { height:auto; }
+.cuerpo { flex:1; padding:var(--s4) var(--s4) var(--s5); }
+.barra { position:sticky; bottom:0; background:var(--papel); border-top:1px solid var(--tinta); padding:var(--s3) var(--s4); display:flex; }
+.btn { flex:1; font:inherit; font-weight:800; min-height:52px; border:1px solid var(--tinta); background:var(--papel); border-radius:0; }
+.btn.off { color:var(--lapiz); border-color:var(--raya); }
+.et { font-size:.875rem; color:var(--lapiz); }
+p { margin:0 0 var(--s3); }
+.digitos { display:inline-flex; gap:var(--p); align-items:end; }
+.digito { display:grid; grid-template-columns:repeat(5,var(--p)); grid-auto-rows:var(--p); gap:1px; }
+.digito i.on { background:currentColor; }
+.cab { display:flex; justify-content:space-between; align-items:end; margin-bottom:var(--s3); }
+.nombre { font-size:1rem; font-weight:800; display:block; margin-bottom:8px; }
+.pista { display:flex; gap:3px; }
+.celda { width:22px; height:22px; border:1px solid var(--tinta); }
+.celda.a { background:var(--marcador); }
+.celda.actual { border-width:3px; }
+
+/* Cambio + ayuda */
+.cambio { display:grid; grid-template-columns:1fr 44px; gap:var(--s3); align-items:start; margin:0 0 var(--s3); }
+.cambio h2 { font-size:1.25rem; font-weight:800; line-height:1.2; margin:0 0 var(--s1); }
+.cambio p { font-size:1rem; margin:0; }
+.ayuda { width:44px; height:44px; border:1px solid var(--tinta); background:var(--papel); color:var(--tinta); display:grid; place-items:center; padding:0; cursor:pointer; }
+.ayuda[aria-expanded="true"] { background:var(--tinta); color:var(--papel); }
+.panel { position:relative; border:3px solid var(--tinta); padding:var(--s3) var(--s3) var(--s2); margin:6px 0 var(--s3); font-size:1rem; background:var(--papel); }
+.panel .cola { position:absolute; top:-13px; right:12px; line-height:0; }
+.panel .tit { display:flex; align-items:center; gap:8px; font-weight:800; font-size:.875rem; margin-bottom:6px; }
+.panel .cerrar { display:block; margin:var(--s2) 0 0 auto; font:inherit; font-size:.875rem; font-weight:800; background:none; border:0; border-bottom:1px solid var(--tinta); padding:4px 0; min-height:32px; cursor:pointer; }
+.preg { font-size:1rem; font-weight:800; margin:var(--s2) 0 var(--s2); }
+.ops { display:grid; gap:var(--s2); }
+.ops button { min-height:52px; font:inherit; font-size:1rem; text-align:left; padding:0 var(--s4); border:1px solid var(--tinta); background:var(--papel); }
+.ops .ok { background:var(--marcador); }
+.ops .ko { text-decoration:line-through; color:var(--lapiz); border-color:var(--raya); }
+
+/* Gráfico */
+.graf { margin:var(--s4) 0 var(--s3); border-top:1px solid var(--tinta); padding-top:var(--s3); }
+.graf h3 { font-size:1rem; font-weight:800; margin:0 0 var(--s2); }
+.tiras { display:grid; grid-template-columns:5.6rem 1fr; gap:6px 8px; align-items:center; font-size:.75rem; color:var(--lapiz); margin-bottom:var(--s3); }
+.tira { display:flex; height:16px; border:1px solid var(--tinta); }
+.tira span { display:block; height:100%; }
+.tira span + span { border-left:1px solid var(--papel); }
+.tabla { width:100%; border-collapse:collapse; font-size:.875rem; font-variant-numeric:tabular-nums; }
+.tabla th { font-weight:400; color:var(--lapiz); font-size:.6875rem; text-align:right; padding:0 0 4px; }
+.tabla th:first-child { text-align:left; }
+.tabla td { padding:4px 0; border-bottom:1px solid var(--raya); vertical-align:middle; }
+.tabla td.n { text-align:right; width:2.2rem; }
+.tabla td.n.b { font-weight:800; }
+.tabla .sig { display:flex; align-items:center; gap:6px; font-weight:800; white-space:nowrap; }
+.tabla .sig small { font-weight:400; color:var(--lapiz); font-size:.6875rem; }
+.chip { width:12px; height:12px; border:1px solid var(--tinta); display:inline-block; flex:none; }
+.tabla tr.dest td { border-bottom:2px solid var(--tinta); }
+.tabla tr.dest .sig { text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:3px; }
+.div { position:relative; height:14px; margin-left:10px; }
+.div::before { content:""; position:absolute; left:50%; top:-4px; bottom:-4px; width:1px; background:var(--tinta); }
+.div span { position:absolute; top:0; height:14px; }
+.div em { position:absolute; top:-1px; font-style:normal; font-size:.75rem; font-weight:800; }
+.esc { display:flex; justify-content:space-between; font-size:.6875rem; color:var(--lapiz); margin:4px 0 0 calc(100% - 46%); width:46%; }
+table.res { border-collapse:collapse; font-size:.875rem; width:100%; max-width:56em; }
+.res th, .res td { text-align:left; padding:.5rem .75rem .5rem 0; border-bottom:1px solid var(--raya); vertical-align:top; }
+.res th { border-bottom-color:var(--tinta); }
+</style>
+</head>
+<body>
+<div class="envoltura">
+<h1>A9 · Fontanería electoral</h1>
+<p class="intro">Respuesta al encargo de diseño del 25-10: el botón de ayuda y el gráfico al resolver. Contenido real de las preguntas 1 (barrera del 10 %), 2 (Sainte-Laguë, con dos partidos que entran) y 5 (circunscripción única, con siete que salen). El botón «?» de los marcos se puede tocar.</p>
+<p class="intro"><b>Colores:</b> Nueva Canarias y Aragón Existe no están en la paleta; en esta maqueta llevan un tono provisional. Code los saca de la misma plantilla de Wikipedia.</p>
+
+<h2 class="sec">1. Botón de ayuda</h2>
+<p class="porque">Un botón cuadrado de 44 px con un «?» de píxel, de la misma rejilla que las cifras, a la derecha del título del cambio. Abre, debajo del cambio y dentro de la página, una caja de diálogo de recreativa: borde de 3 px en tinta y una cola de píxeles que apunta al botón, como los bocadillos de texto de los juegos de 8 bits. No es una ventana encima ni un <code>alert()</code>: empuja las opciones hacia abajo y se lee junto al cambio.</p>
+<div class="fila">
+<div><h3 class="sec">a. Pregunta, ayuda cerrada</h3><div class="f" id="q1"></div></div>
+<div><h3 class="sec">b. Ayuda abierta</h3><div class="f" id="q2"></div></div>
+<div><h3 class="sec">Icono para la regla de portada</h3><div class="f alto" id="ico"></div>
+<ul class="notas">
+  <li><b>Abierta:</b> el botón se invierte (tinta) y lleva <code>aria-expanded="true"</code>; el panel, <code>aria-controls</code> y el foco pasa a su título.</li>
+  <li><b>Cerrar:</b> tocando otra vez el «?», con «Cerrar» abajo a la derecha del panel o con Escape. Al cerrar, el foco vuelve al botón. Responder no cierra la ayuda.</li>
+  <li>El panel aparece sin animación: es texto para leer.</li>
+</ul></div>
+</div>
+
+<h2 class="sec">2. Gráfico al resolver</h2>
+<p class="porque">De las tres opciones del encargo, el hemiciclo en dos estados no deja ver cambios de 1 a 3 escaños entre 350 casillas, y las barras dobles con 13 partidos ocupan dos pantallas. Propongo dos piezas juntas. Arriba, dos tiras de 350 escaños, real y con el cambio, para ver la foto de un vistazo (en la circunscripción única se ve cómo desaparecen siete partidos). Debajo, una tabla con las cifras y una barra divergente con la diferencia, que es lo que pregunta el juego.</p>
+<div class="fila">
+<div><h3 class="sec">P1 · Barrera del 10 % (11 candidaturas)</h3><div class="f alto" id="g1"></div></div>
+<div><h3 class="sec">P2 · Sainte-Laguë (13, dos entran)</h3><div class="f alto" id="g2"></div></div>
+<div><h3 class="sec">P5 · Circunscripción única (7 salen)</h3><div class="f alto" id="g5"></div></div>
+</div>
+<ul class="notas">
+  <li><b>Tiras:</b> 350 escaños cada una, 16 px de alto, segmentos en el color del partido separados por 1 px de papel, en el mismo orden en las dos (de más a menos escaños reales; los que entran, al final). Rótulos «Real 2023» y «Con el cambio».</li>
+  <li><b>Tabla:</b> muestra y siglas; columnas «Real» y «Cambio» con cifras tabulares (la del cambio en 800); barra divergente en el color del partido con eje en 0, a la derecha si gana y a la izquierda si pierde, con la diferencia escrita al final («+10», «−3»). Sin cambio: un «=» junto al eje y sin barra.</li>
+  <li><b>Escala común:</b> ±20 escaños en todas las preguntas, para que un +10 mida lo mismo en la 2 que en la 5. Si alguna diferencia pasa de 20, la escala de esa pregunta sube al múltiplo de 5 siguiente.</li>
+  <li><b>Entran y salen:</b> los que entran llevan «entra» junto a la sigla y «0» en «Real»; los que salen, «sale» y «0» en «Cambio». No hace falta otro color: la palabra y el cero lo dicen.</li>
+  <li><b>Lo que pregunta el juego:</b> la fila o las filas que responden a la pregunta (Junts en la 1, Vox en la 2…) van subrayadas y con la línea inferior en 2 px de tinta. No se usa el marcador, que no entra en gráficos con colores de partido. Lo indica el contenido con un campo <code>destacar</code>.</li>
+  <li><b>Orden de filas:</b> de más a menos escaños reales, y los que entran al final. Con 4 a 13 filas, la tabla mide de 130 a 360 px; se lee bajando, después de la explicación.</li>
+</ul>
+
+<h2 class="sec">Qué decidir</h2>
+<table class="res">
+<tr><th></th><th>Propuesta</th></tr>
+<tr><td>1</td><td>Botón «?» de píxel de 44 px junto al título del cambio; panel en línea con borde de 3 px y cola hacia el botón; se cierra con el mismo botón, con «Cerrar» o con Escape.</td></tr>
+<tr><td>2</td><td>Icono «ayuda» de 10 × 10 (cuadro con «?») para la regla de portada.</td></tr>
+<tr><td>3</td><td>Gráfico: dos tiras de 350 escaños (real y con el cambio) y tabla con cifras y barra divergente en escala común de ±20.</td></tr>
+<tr><td>4</td><td>Entran y salen marcados con palabra y cero; filas protagonistas subrayadas con <code>destacar</code>.</td></tr>
+</table>
+</div>
+
+<script>
+const D = {"0":"01110100011001110101110011000101110","1":"00100011000010000100001000010001110","2":"01110100010000100010001000100011111","?":"01110100010000100010001000000000100"};
+const px = (s, p) => `<span class="digitos" style="--p:${p}px">${[...s].map(c => `<span class="digito">${[...D[c]].map(b => `<i class="${b === "1" ? "on" : ""}"></i>`).join("")}</span>`).join("")}</span>`;
+const svg = (m, s, c = "currentColor") => `<svg width="${m[0].length*s}" height="${m.length*s}" viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" aria-hidden="true">${m.flatMap((r, y) => [...r].map((v, x) => v === "X" ? `<rect x="${x}" y="${y}" width="1" height="1" fill="${c}"/>` : "")).join("")}</svg>`;
+const AYUDA = ["XXXXXXXXXX","X..XXXX..X","X.X....X.X","X......X.X","X.....X..X","X....X...X","X....X...X","X........X","X....X...X","XXXXXXXXXX"];
+const COLA = ["XXXXXXX",".XXXXX.","..XXX..","...X..."].reverse();
+const PAPELETA = ["XXXXXXXX..","X......XX.","X......X.X","X.XXXX.XXX","X........X","X.XXXXXX.X","X........X","X.XXXX...X","X........X","XXXXXXXXXX"];
+const URNA = ["..XXXXXX..","..X....X..","..X.XX.X..","XXXXXXXXXX","X........X","X.XXXXXX.X","X........X","X........X","X........X","XXXXXXXXXX"];
+
+const Q1 = { titulo: "Barrera del 10 %", texto: "Para optar a escaño en una provincia hace falta el 10 % de los votos válidos, en lugar del 3 %. Habría que reformar la LOREG.",
+  ayuda: "Hoy, una candidatura que no llega al 3 % de los votos válidos de una provincia (con el voto en blanco incluido) queda fuera del reparto de esa provincia. Con el cambio, ese mínimo sube al 10 %.",
+  ops: ["No cambia nada", "Junts pierde 3 escaños", "Vox pierde 10 escaños", "Desaparecen todos los partidos territoriales"] };
+const cab = n => `<span class="nombre">Fontanería electoral</span><div class="cab"><div class="pista">${Array.from({length: 7}, (_, i) => `<span class="celda${i === n ? " actual" : ""}"></span>`).join("")}</div><span class="et" style="display:flex;gap:6px;align-items:center;font-size:.75rem">Puntos ${px("00", 3)}</span></div>`;
+const pregunta = (id, abierta) => {
+  const el = document.getElementById(id);
+  el.innerHTML = `<div class="cuerpo">${cab(0)}<span class="et">Cambio 1 de 7</span>
+    <div class="cambio"><div><h2>${Q1.titulo}</h2><p>${Q1.texto}</p></div><button class="ayuda" aria-label="Ayuda: cómo funciona este cambio" aria-expanded="${abierta}" aria-controls="p-${id}">${px("?", 3)}</button></div>
+    ${abierta ? `<div class="panel" id="p-${id}" role="region" aria-label="Ayuda"><span class="cola">${svg(COLA, 3)}</span><span class="tit">${svg(AYUDA, 1.6)}Cómo funciona</span>${Q1.ayuda}<button class="cerrar">Cerrar</button></div>` : ""}
+    <p class="preg">¿Qué pasaría?</p><div class="ops">${Q1.ops.map(o => `<button>${o}</button>`).join("")}</div></div>
+    <div class="barra"><button class="btn off">Responder</button></div>`;
+  el.querySelector(".ayuda").onclick = () => pregunta(id, !abierta);
+  el.querySelector(".cerrar")?.addEventListener("click", () => pregunta(id, false));
+};
+pregunta("q1", false); pregunta("q2", true);
+document.getElementById("ico").innerHTML = `<div style="display:flex;gap:24px;align-items:end">${svg(AYUDA, 4)}${svg(AYUDA, 2)}</div>
+  <ul style="list-style:none;padding:0;margin:16px 0 0;font-size:1rem;border-top:1px solid #000">
+  ${[[PAPELETA, "7 cambios en el sistema electoral, con el voto de 2023: elige qué pasaría."], [AYUDA, "Pulsa la ayuda para ver cómo funciona cada cambio."], [URNA, "1 punto por acierto."]].map(([i, t]) => `<li style="display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #bdbdbd">${svg(i, 2)}<span>${t}</span></li>`).join("")}</ul>`;
+
+/* Gráficos */
+const C = { PP: "--pp", PSOE: "--psoe", Vox: "--vox", Sumar: "--sumar", ERC: "--erc", Junts: "--junts", "EH Bildu": "--bildu", PNV: "--pnv", BNG: "--bng", CC: "--cc", UPN: "--upn", "Nueva Canarias": "--nc", "Aragón Existe": "--ae" };
+const grafico = (titulo, filas, destacar, ops, ok, mal) => {
+  const ESC = Math.max(20, Math.ceil(Math.max(...filas.map(([, r, c]) => Math.abs(c - r))) / 5) * 5);
+  const orden = [...filas].sort((a, b) => (b[1] > 0) - (a[1] > 0) || b[1] - a[1]);
+  const tira = k => `<div class="tira">${orden.filter(f => f[k] > 0).map(f => `<span style="width:${f[k] / 3.5}%;background:var(${C[f[0]]})"></span>`).join("")}</div>`;
+  const filaH = ([p, r, c]) => {
+    const d = c - r, w = Math.abs(d) / ESC * 50;
+    const etq = r === 0 ? "entra" : c === 0 ? "sale" : "";
+    return `<tr class="${destacar.includes(p) ? "dest" : ""}"><td><span class="sig"><i class="chip" style="background:var(${C[p]})"></i>${p.replace("Nueva Canarias", "NC").replace("Aragón Existe", "AE")}${etq ? `<small>${etq}</small>` : ""}</span></td><td class="n">${r}</td><td class="n b">${c}</td>
+      <td style="width:46%"><div class="div">${d === 0 ? `<em style="left:calc(50% + 4px);color:#575757">=</em>` : `<span style="background:var(${C[p]});${d > 0 ? `left:50%;width:${w}%` : `right:50%;width:${w}%`}"></span><em style="${d > 0 ? `left:calc(50% + ${w}% + 4px)` : `right:calc(50% + ${w}% + 4px)`}">${d > 0 ? "+" : "−"}${Math.abs(d)}</em>`}</div></td></tr>`;
+  };
+  return `<div class="cuerpo"><span class="nombre">Fontanería electoral</span><span class="et">${titulo}</span>
+    <div class="ops" style="margin-top:8px">${ops.map(o => `<button class="${o === ok ? "ok" : o === mal ? "ko" : ""}" style="min-height:44px;font-size:.9375rem">${o}</button>`).join("")}</div>
+    <div class="graf"><h3>Escaños, real y con el cambio</h3>
+      <div class="tiras"><span>Real 2023</span>${tira(1)}<span>Con el cambio</span>${tira(2)}</div>
+      <table class="tabla"><tr><th></th><th>Real</th><th>Cambio</th><th style="text-align:center">Diferencia</th></tr>${orden.map(filaH).join("")}</table>
+      <div class="esc"><span>−${ESC}</span><span>0</span><span>+${ESC}</span></div></div>
+    <p class="et" style="margin-top:12px">Explicación y fuente debajo, como en el resto de la serie.</p></div>
+    <div class="barra"><button class="btn">Siguiente cambio</button></div>`;
+};
+document.getElementById("g1").innerHTML = grafico("Cambio 1 de 7. Barrera del 10 %",
+  [["PP",137,139],["PSOE",121,124],["Vox",33,31],["Sumar",31,31],["ERC",7,8],["Junts",7,4],["EH Bildu",6,6],["PNV",5,5],["BNG",1,0],["CC",1,1],["UPN",1,1]],
+  ["Junts"], ["No cambia nada","Junts pierde 3 escaños","Vox pierde 10 escaños","Desaparecen todos los partidos territoriales"], "Junts pierde 3 escaños", "Vox pierde 10 escaños");
+document.getElementById("g2").innerHTML = grafico("Cambio 2 de 7. Sainte-Laguë en lugar de D'Hondt",
+  [["PP",137,127],["PSOE",121,114],["Vox",33,43],["Sumar",31,37],["ERC",7,7],["Junts",7,6],["EH Bildu",6,6],["PNV",5,4],["BNG",1,2],["CC",1,1],["UPN",1,1],["Nueva Canarias",0,1],["Aragón Existe",0,1]],
+  ["Vox"], ["No cambia nada","El PP gana 10 escaños","Vox gana 10 escaños","Entran cinco partidos nuevos"], "Vox gana 10 escaños", null);
+document.getElementById("g5").innerHTML = grafico("Cambio 5 de 7. Circunscripción única",
+  [["PP",137,130],["PSOE",121,124],["Vox",33,48],["Sumar",31,48],["ERC",7,0],["Junts",7,0],["EH Bildu",6,0],["PNV",5,0],["BNG",1,0],["CC",1,0],["UPN",1,0]],
+  ["ERC","Junts","EH Bildu","PNV","BNG","CC","UPN"], ["11","8","6","4"], "4", "6");
+</script>
+</body>
+</html>

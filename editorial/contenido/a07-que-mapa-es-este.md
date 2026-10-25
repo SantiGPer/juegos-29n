@@ -22,10 +22,12 @@ Estado: **aprobado por el autor** (2026-10-21): portada, orden de rondas, distra
 
 ## Definiciones
 
+Mientras se juega, encima del mapa: «Datos de AAAA» (2023 en todos salvo el ratio habitantes/escaño, «Datos de 2026»; decisión del autor, 24 y 25-10). La etiqueta «Habitantes por escaño» pasa a «Ratio habitantes/escaño» en las opciones y el título (25-10); en la prosa de las explicaciones se mantiene «habitantes por escaño».
+
 | Mapa | Etiqueta (opción) | Título al resolver | Cálculo |
 | --- | --- | --- | --- |
 | Abstención | Abstención | Abstención (% del censo residente), 2023 | 1 − votantes residentes / censo residente (sin CERA) |
-| Habitantes por escaño | Habitantes por escaño | Habitantes por escaño, 2026 | Población a 1-1-2025 / escaños de 2026 |
+| Habitantes por escaño | Ratio habitantes/escaño | Ratio habitantes/escaño, 2026 | Población a 1-1-2025 / escaños de 2026 |
 | Voto nulo | Voto nulo | Voto nulo (% de votantes), 2023 | Nulos / votantes (con CERA) |
 | Voto a Sumar | Voto a Sumar | Voto a Sumar (% del voto válido), 2023 | Votos de la candidatura de acumulación de Sumar / válidos |
 | Nacidos en el extranjero | Nacidos en el extranjero | Nacidos en el extranjero (% de la población), 2023 | Nacidos en el extranjero / total del Padrón Continuo a 1-1-2023 |
@@ -105,7 +107,7 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 3 · Abstención
 
-**Opciones:** Abstención · Voto a PACMA · Habitantes por escaño · Población
+**Opciones:** Abstención · Voto a PACMA · Ratio habitantes/escaño · Población
 
 **Parecido de los distractores (Spearman):** PACMA 0,60 · Habitantes por escaño 0,44 · Población 0,35
 
@@ -119,7 +121,7 @@ Leyenda: «menos de X», «X–Y», …, «Z o más». Un valor igual al corte v
 
 ## Ronda 4 · Habitantes por escaño
 
-**Opciones:** Habitantes por escaño · Voto a Sumar · Crecimiento de la población · Voto en blanco
+**Opciones:** Ratio habitantes/escaño · Voto a Sumar · Crecimiento de la población · Voto en blanco
 
 **Parecido de los distractores (Spearman):** Sumar 0,79 · Crecimiento 0,47 · Blanco 0,12
 
