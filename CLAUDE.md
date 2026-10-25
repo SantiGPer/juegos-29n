@@ -153,7 +153,7 @@ Cada script de R escribe un único JSON y anota fuente, URL y fecha en `data/SOU
 | 2 nov | JSON base listos; M9; A3, A4, A11, A13 jugables (8 en total) |
 | 6 nov | **Corte:** lo que no esté encaminado se sustituye por un suplente de la reserva |
 | 9 nov | M3, mapa SVG, M2; A5, A6, A7, A8 jugables (12 en total) |
-| 12 nov | M5 y A9; A14 con programas; plantilla de B1; QA en móvil de los 13; reparto de días fijado |
+| 12 nov | A9; A14 con programas; plantilla de B1; QA en móvil de los 13; reparto de días fijado |
 | 13–27 nov | Un juego al día a hora fija. Bingo la víspera de cada debate, Quién dijo qué al día siguiente |
 
 Contexto electoral: campaña del 13 al 27 de noviembre, reflexión el 28, votación el 29. Primer cara a cara Sánchez–Feijóo propuesto para el 16 de noviembre; debates de RTVE por fijar. Candidaturas cerradas el 26 de octubre; programas previstos entre finales de octubre y el inicio de campaña.
