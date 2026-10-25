@@ -32,10 +32,10 @@ Resultado real de 2023: PP 137, PSOE 121, Vox 33, Sumar 31, ERC 7, Junts 7, EH B
 
 | # | Cambio | Resultado | Gancho | Norma |
 | --- | --- | --- | --- | --- |
-| F1 | Sainte-Laguë (divisores 1, 3, 5…) | PP −10, PSOE −7, Junts −1, PNV −1; Vox +10, Sumar +6, BNG +1, Nueva Canarias +1, Aragón Existe +1 (13 candidaturas) | D'Hondt premia a los grandes: con otra fórmula, Vox gana diez escaños | LOREG |
+| F1 | Sainte-Laguë (divisores 1, 3, 5…) | PP −10, PSOE −7, Junts −1, PNV −1; Vox +10, Sumar +6, BNG +1, Nueva Canarias +1, Teruel Existe +1 (13 candidaturas) | D'Hondt premia a los grandes: con otra fórmula, Vox gana diez escaños | LOREG |
 | F2 | Sainte-Laguë modificada (primer divisor 1,4, como en Suecia y Noruega) | PP −7, PSOE −2, Junts −1, PNV −1; Vox +5, Sumar +4, BNG +1, Nueva Canarias +1 | Un solo decimal en el primer divisor mueve siete escaños del PP | LOREG |
-| F3 | Cuota Hare y restos mayores | PP −13, PSOE −9, Junts −1, PNV −1; Vox +13, Sumar +6, BNG +3, Nueva Canarias +1, Aragón Existe +1 | La más proporcional: el BNG pasa de 1 a 4 | LOREG |
-| F4 | Cuota Droop y restos mayores | PP −4, PSOE −4, Junts −1, PNV −1; Vox +4, Sumar +3, BNG +1, Nueva Canarias +1, Aragón Existe +1 | Punto medio | LOREG |
+| F3 | Cuota Hare y restos mayores | PP −13, PSOE −9, Junts −1, PNV −1; Vox +13, Sumar +6, BNG +3, Nueva Canarias +1, Teruel Existe +1 | La más proporcional: el BNG pasa de 1 a 4 | LOREG |
+| F4 | Cuota Droop y restos mayores | PP −4, PSOE −4, Junts −1, PNV −1; Vox +4, Sumar +3, BNG +1, Nueva Canarias +1, Teruel Existe +1 | Punto medio | LOREG |
 
 ### Circunscripción (CE, art. 68.2: hoy es la provincia)
 

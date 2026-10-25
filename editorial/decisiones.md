@@ -1013,3 +1013,13 @@ Respuesta al encargo de diseño del 25-10, aprobada por el autor. Referencia: do
   - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.
 - **Calendario de publicación (decisión del autor, 25-10):** reparto de los 15 días en editorial/calendario.md. Bloques: fin de semana (viernes a domingo) y entre semana (lunes a jueves); los juegos más llamativos, entre semana. B1 va el día siguiente al debate que cubra y su fecha queda provisional hasta que se confirme; al moverlo, el resto se recoloca respetando los bloques. Sustituye al día 5 provisional de A8 (21-10), que pasa al día 6.
 - **Encargo para Code:** pasar el reparto a `data/calendario.json` (B1 con `"provisional": true`) y el `dia` de cada juego a su `data.json`.
+
+## 2026-10-25 (tarde, dudas de la bitácora del 25-10 (2) y (3))
+
+- **A9, T1 y T3 con la población de 2022** (cotejo de Code): las respuestas correctas no cambian (BNG en T1; PP en T3), pero sí algunas cifras de las explicaciones. Quedan así:
+  - T1: «PP y PSOE perderían 16 y 12 escaños, Sumar 8 y Vox 7, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya!.»
+  - T3: «El PP perdería 7 escaños, y Sumar y el PSOE ganarían 4 y 3, porque sus votos pesan más en las provincias más pobladas. Con 400 diputados y un mínimo de 1, el PSOE ganaría 22.»
+  - Tablas de escaños de T1 y T3 completas en el contenido, desde `data/fontaneria_a09.json`. Fuera los [VERIFICAR].
+- A9, decisiones del autor en sesión con Code (25-10), pasadas al contenido: «Teruel Existe» (siglas TE) en lugar de «Aragón Existe»; color `--te` #007351 (entrada de Teruel Existe de la Plantilla:Color político); Nueva Canarias con un tono claro de su verde, `--nc` #C8E3A0, en lugar del #85BD42 de la plantilla, porque quedaba a ΔE2000 4,5 de Vox. «No cambia nada» siempre al final; `destacar` por pregunta, según el diseño del 25-10.
+- Calendario: Code ya ha pasado el reparto a `calendario.json` y el `dia` a cada juego (25-10 (4)); B1 y A6, en `TODO` hasta que tengan carpeta.
+- **Encargo para Code (A9):** regenerar las explicaciones de T1 y T3 en el `data.json` desde el contenido y quitar los [VERIFICAR] del juego. Push con la confirmación del autor.

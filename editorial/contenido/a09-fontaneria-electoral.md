@@ -1,11 +1,13 @@
 # A9 · Fontanería electoral
 
-Estado: **aprobado por el autor** (2026-10-25). Las cifras son el cálculo exploratorio de Cowork y Code tiene que repetirlas en R; T1 y T3 están marcadas como provisionales hasta tener la población oficial a 1-1-2022.
+Estado: **aprobado por el autor** (2026-10-25). Cifras cotejadas por Code en R (editorial/fuentes/a09-cotejo.md); T1 y T3 recalculadas con la población oficial a 1-1-2022 (25-10).
 
 - Selección del autor (25-10) sobre editorial/catalogos/a09-fontaneria-catalogo.md: B3, F1, F3, C1, C2, T1 y T3. Siete preguntas, 1 punto cada una.
 - Formato (decisión del autor, 25-10): el cambio a aplicar, una explicación breve con botón de ayuda («?», diseño pendiente) y, debajo, las posibles consecuencias como opciones. Las variantes que no entran se mencionan en la explicación de su pregunta más cercana.
 - Al resolver: gráfico de escaños real frente a escaños con el cambio, por candidatura (diseño pendiente). Los datos de cada gráfico van en la tabla «Escaños» de cada pregunta.
-- Opciones: una sola correcta; nominales, se barajan, salvo las cifras, que van de mayor a menor (criterio del 19-10).
+- Opciones: una sola correcta; nominales, se barajan, salvo las cifras, que van de mayor a menor, y «No cambia nada», que va siempre al final (criterio del 19-10).
+- Filas destacadas en el gráfico (`destacar`, diseño del 25-10): 1, Junts; 2, Vox; 3, BNG; 4, PP; 5, los siete partidos que salen; 6, BNG; 7, PP.
+- Teruel Existe (decisión del autor, 25-10): la candidatura de la Coalición Existe se llama así porque el escaño que gana en F1, F3 y F4 sale de Teruel, con la lista «Teruel Existe - Coalición Existe». Siglas en el gráfico: TE.
 - Mismo voto: el oficial de las generales del 23-07-2023 por provincia, con el CERA. Candidaturas por su cabecera nacional.
 - Fuente general: Ministerio del Interior (infoelectoral), generales del 23-07-2023; Constitución, art. 68; LOREG, arts. 162 y 163; INE, población a 1-1-2022. Elaboración propia.
 
@@ -52,9 +54,9 @@ Todas las preguntas reparten los mismos votos de las generales de 2023 con otra 
 
 **Correcta:** Vox gana 10 escaños
 
-**Explicación:** Vox pasaría de 33 a 43 escaños y Sumar, de 31 a 37, mientras PP y PSOE perderían 17 entre los dos; además entrarían Nueva Canarias y Aragón Existe. Con la variante escandinava, que divide el primero entre 1,4, el efecto se queda en la mitad: Vox ganaría 5.
+**Explicación:** Vox pasaría de 33 a 43 escaños y Sumar, de 31 a 37, mientras PP y PSOE perderían 17 entre los dos; además entrarían Nueva Canarias y Teruel Existe. Con la variante escandinava, que divide el primero entre 1,4, el efecto se queda en la mitad: Vox ganaría 5.
 
-**Escaños:** PP 137 → 127 · PSOE 121 → 114 · Vox 33 → 43 · Sumar 31 → 37 · ERC 7 → 7 · Junts 7 → 6 · EH Bildu 6 → 6 · PNV 5 → 4 · BNG 1 → 2 · CC 1 → 1 · UPN 1 → 1 · Nueva Canarias 0 → 1 · Aragón Existe 0 → 1
+**Escaños:** PP 137 → 127 · PSOE 121 → 114 · Vox 33 → 43 · Sumar 31 → 37 · ERC 7 → 7 · Junts 7 → 6 · EH Bildu 6 → 6 · PNV 5 → 4 · BNG 1 → 2 · CC 1 → 1 · UPN 1 → 1 · Nueva Canarias 0 → 1 · Teruel Existe 0 → 1
 
 **Fuente:** LOREG, art. 163; Ministerio del Interior, generales del 23-07-2023. Elaboración propia.
 
@@ -74,7 +76,7 @@ Todas las preguntas reparten los mismos votos de las generales de 2023 con otra 
 
 **Explicación:** El BNG pasaría de 1 a 4 escaños, y Vox ganaría 13, los mismos que perdería el PP. Con la cuota Droop, algo menos proporcional, el BNG se quedaría en 2.
 
-**Escaños:** PP 137 → 124 · PSOE 121 → 112 · Vox 33 → 46 · Sumar 31 → 37 · ERC 7 → 7 · Junts 7 → 6 · EH Bildu 6 → 6 · PNV 5 → 4 · BNG 1 → 4 · CC 1 → 1 · UPN 1 → 1 · Nueva Canarias 0 → 1 · Aragón Existe 0 → 1
+**Escaños:** PP 137 → 124 · PSOE 121 → 112 · Vox 33 → 46 · Sumar 31 → 37 · ERC 7 → 7 · Junts 7 → 6 · EH Bildu 6 → 6 · PNV 5 → 4 · BNG 1 → 4 · CC 1 → 1 · UPN 1 → 1 · Nueva Canarias 0 → 1 · Teruel Existe 0 → 1
 
 **Fuente:** Ministerio del Interior, generales del 23-07-2023. Elaboración propia.
 
@@ -118,7 +120,7 @@ Todas las preguntas reparten los mismos votos de las generales de 2023 con otra 
 
 ---
 
-## 6 · T1 · Un Congreso de 300 diputados [PROVISIONAL: población a 1-1-2022 pendiente]
+## 6 · T1 · Un Congreso de 300 diputados
 
 **Cambio:** El Congreso pasa de 350 a 300 diputados, el mínimo que permite la Constitución. Se reparten por provincias con la regla de siempre: 2 por provincia, 1 en Ceuta y otro en Melilla, y el resto por población. Basta con reformar la LOREG.
 
@@ -128,17 +130,17 @@ Todas las preguntas reparten los mismos votos de las generales de 2023 con otra 
 
 **Opciones:** BNG · CC · UPN · PNV
 
-**Correcta:** BNG [VERIFICAR con la población de 2022]
+**Correcta:** BNG
 
-**Explicación:** PP y PSOE perderían 15 y 14 escaños, Vox y Sumar 7 cada uno, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya! [VERIFICAR con la población de 2022].
+**Explicación:** PP y PSOE perderían 16 y 12 escaños, Sumar 8 y Vox 7, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya!.
 
-**Escaños:** [pendiente del cálculo de Code con la población de 2022]
+**Escaños:** PP 137 → 121 · PSOE 121 → 109 · Vox 33 → 26 · Sumar 31 → 23 · ERC 7 → 6 · Junts 7 → 5 · EH Bildu 6 → 5 · PNV 5 → 3 · BNG 1 → 0 · CC 1 → 1 · UPN 1 → 1
 
 **Fuente:** Constitución, art. 68.1; LOREG, art. 162; INE, población a 1-1-2022. Elaboración propia.
 
 ---
 
-## 7 · T3 · Un diputado mínimo por provincia [PROVISIONAL: población a 1-1-2022 pendiente]
+## 7 · T3 · Un diputado mínimo por provincia
 
 **Cambio:** Cada provincia parte de 1 diputado en lugar de 2 y el resto se reparte por población, con los mismos 350. Basta con reformar la LOREG.
 
@@ -148,10 +150,10 @@ Todas las preguntas reparten los mismos votos de las generales de 2023 con otra 
 
 **Opciones:** PP · PSOE · Vox · PNV
 
-**Correcta:** PP [VERIFICAR con la población de 2022]
+**Correcta:** PP
 
-**Explicación:** El PP perdería 6 escaños y el PNV 2, y Sumar ganaría 4, porque sus votos están en las provincias más pobladas. Con 400 diputados y un mínimo de 1, el PSOE ganaría 21 [VERIFICAR con la población de 2022].
+**Explicación:** El PP perdería 7 escaños, y Sumar y el PSOE ganarían 4 y 3, porque sus votos pesan más en las provincias más pobladas. Con 400 diputados y un mínimo de 1, el PSOE ganaría 22.
 
-**Escaños:** [pendiente del cálculo de Code con la población de 2022]
+**Escaños:** PP 137 → 130 · PSOE 121 → 124 · Vox 33 → 32 · Sumar 31 → 35 · ERC 7 → 8 · Junts 7 → 8 · EH Bildu 6 → 6 · PNV 5 → 4 · BNG 1 → 1 · CC 1 → 1 · UPN 1 → 1
 
 **Fuente:** LOREG, art. 162.2; INE, población a 1-1-2022. Elaboración propia.
