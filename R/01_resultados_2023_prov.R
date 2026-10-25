@@ -1,5 +1,5 @@
 # Resultados de las generales del 23-07-2023 por provincia, con población y escaños -> data/resultados_2023_prov.json
-# Encargo del 20-10-2026 (A7; sirve también para A9 y A11).
+# Encargo del 20-10-2026 (A7; sirve también para A9 y A11). Población de 2022 añadida el 25-10 para A9.
 # Fuentes:
 # - Ministerio del Interior, infoelectoral: ficheros 03, 05, 07 y 08 del proceso 02202307.
 # - INE, Cifras oficiales de población (revisión del Padrón), tablas provinciales «Población por municipios y sexo».
@@ -29,7 +29,7 @@ votos <- votos_ambitos(eleccion) |>
   left_join(cand, "codigo") |>
   arrange(provincia, -votos)
 
-# INE: cifras oficiales a 1-1-2023 y la más reciente ------------------------------------------------
+# INE: cifras oficiales a 1-1-2022 (las del RD 400/2023, para A9), a 1-1-2023 y la más reciente ------------------------------------------------
 
 tablas_dpop <- ine("TABLAS_OPERACION/DPOP") |>
   keep(\(t) str_detect(t$Nombre, ":\\s*Población por municipios y sexo")) |>
@@ -44,7 +44,7 @@ poblacion <- map(tablas_dpop, \(id) {
 
 anyo_reciente <- max(poblacion$anyo)
 pob <- poblacion |>
-  filter(anyo %in% c(2023, anyo_reciente)) |>
+  filter(anyo %in% c(2022, 2023, anyo_reciente)) |>
   pivot_wider(names_from = anyo, values_from = valor, names_prefix = "poblacion_")
 
 # INE: nacidos en el extranjero a 1-1-2023 (Padrón Continuo, tabla 68526) ------------------------
@@ -153,7 +153,7 @@ list(
     votos = "Votos oficiales de cada candidatura, con el CERA. validos = blancos + votos a candidaturas.",
     candidaturas = "Siglas de la candidatura en la provincia; cabecera es el código de su candidatura de acumulación nacional.",
     sin_candidatura = "Siglas nacionales de las candidaturas presentes en 26 provincias o más que no se presentaron en esta. Su voto es NA (sin candidatura), no 0: en los mapas se pinta como sin dato.",
-    poblacion = str_glue("Cifras oficiales del INE a 1 de enero de 2023 y de {anyo_reciente} (la revisión más reciente)."),
+    poblacion = str_glue("Cifras oficiales del INE a 1 de enero de 2022 (las que fijaron los escaños de 2023, RD 400/2023), de 2023 y de {anyo_reciente} (la revisión más reciente)."),
     nacidos_extranjero_2023 = "INE, Estadística del Padrón Continuo a 1-1-2023 (tabla 68526), categoría «Nacido en el extranjero o en antiguos territorios españoles»; poblacion_padron_2023 es su total, el denominador del mismo origen."
   ),
   nacional = list(censo = nacional$censo, votantes = sum(salida$votantes), blancos = nacional$blancos,
