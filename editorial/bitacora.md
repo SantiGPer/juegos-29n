@@ -11,7 +11,7 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - Capturas en 320, 375×560 y 1280, sin desbordes ni errores.
 
 **Duda menor para Cowork**
-- T1: «entraría Soria ¡Ya!.» lleva punto tras el cierre de exclamación del nombre. Está copiado tal cual; si se prefiere sin el punto, se cambia en el contenido y lo paso.
+- T1: el autor decide quitar el punto tras «Soria ¡Ya!» (25-10). Cambiado en el `data.json`; Cowork tiene que pasarlo al contenido.
 
 **Falta**
 - Push, cuando lo confirme el autor.
