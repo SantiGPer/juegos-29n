@@ -57,7 +57,7 @@
         { "id": "lleida", "nombre": "Lleida", "contexto": "", "valor": 1.12, "cifra": "1,12" },
         { "id": "valencia", "nombre": "Valencia", "contexto": "", "valor": 0.75, "cifra": "0,75" }
       ],
-      "explicacion": "Lleida fue la provincia con más voto en blanco, el 1,12 % de los votos válidos; Valencia se quedó en el 0,75 %. El voto en blanco cuenta como válido; el nulo, no.",
+      "explicacion": "Lleida fue la provincia con más voto en blanco, el 1,12 % de los votos válidos, una centésima más que Cádiz; Valencia se quedó en el 0,75 %. El voto en blanco cuenta como válido; el nulo, no.",
       "fuente": "Ministerio del Interior, Congreso, 23-07-2023; LOREG, art. 96.5."
     },
     {
