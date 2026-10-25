@@ -14,6 +14,9 @@ const matrices = {
   pasar: ['..........', '...X......', '...XX.....', 'XXXXXX....', 'XXXXXXX...', 'XXXXXX....', '...XX.....', '...X......', '..........', '..........'],
   // Papeleta nula: la ficha «No existe» y la candidatura inventada de M10 (maqueta v12)
   nula: ['XXXXXXXXXX', 'X........X', 'X.X....X.X', 'X..X..X..X', 'X...XX...X', 'X...XX...X', 'X..X..X..X', 'X.X....X.X', 'X........X', 'XXXXXXXXXX'],
+  // Ayuda de A9 (maqueta v17): cuadro con «?» y cola del panel, que apunta al botón
+  ayuda: ['XXXXXXXXXX', 'X..XXXX..X', 'X.X....X.X', 'X......X.X', 'X.....X..X', 'X....X...X', 'X....X...X', 'X........X', 'X....X...X', 'XXXXXXXXXX'],
+  cola: ['...X...', '..XXX..', '.XXXXX.', 'XXXXXXX'],
   subir: ['..X..', '.XXX.', 'XXXXX'],
   bajar: ['XXXXX', '.XXX.', '..X..'],
   // Días de debate en el selector (maqueta v3): contorno en tinta y relleno «o» en señal

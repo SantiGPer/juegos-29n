@@ -27,6 +27,10 @@
 | `--iu` | IU / Izquierda Unida (España) | `#DF0022` |
 | `--cs` | Ciudadanos | `#EB6109` |
 | `--dl` | Democràcia i Llibertat | `#212765` |
+| `--nc` | NCa / Nueva Canarias / NC-BC / Nueva Canarias-Bloque Canarista | `#85BD42` |
+| `--ae` | TE / Teruel Existe | `#007351` |
+
+`--nc` y `--ae` se añadieron el 25-10-2026 para A9, de la misma revisión 173877042 (descargada y cotejada el 25-10-2026). La plantilla no tiene entrada para Aragón Existe ni para Coalición Existe; `--ae` usa la de Teruel Existe porque el escaño de la Coalición Existe en las simulaciones de A9 sale de Teruel, con la lista «Teruel Existe - Coalición Existe».
 
 `--ap`, `--ciu`, `--iu`, `--cs` y `--dl` se añadieron el 24-10-2026 para A5, de la misma revisión 173877042 (descargada y cotejada el 24-10-2026). AP-PDP (1982) usa la entrada de Alianza Popular. ERC-CatSí (2015) no tiene entrada propia y usa `--erc`. «Otros» va en raya (`--otros: var(--raya)`), que no es color de partido.
 

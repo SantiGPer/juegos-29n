@@ -40,6 +40,9 @@
   --iu: #DF0022;
   --cs: #EB6109;
   --dl: #212765;
+  /* A9: Nueva Canarias y, para la Coalición Existe, la entrada de Teruel Existe (su escaño sale de Teruel) */
+  --nc: #85BD42;
+  --ae: #007351;
   --otros: var(--raya);
 
   /* Escala de los mapas de A7, «del sepia a la tinta», ajena a los partidos (decisión de diseño del 20-10-2026) */
@@ -1601,6 +1604,206 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
 }
 
 .manana svg { display: block; }
+
+/* A9 Fontanería electoral (maqueta v17): cambio con botón de ayuda y panel en la página */
+.cambio {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  gap: var(--s3);
+  align-items: start;
+  margin: 0 0 var(--s3);
+}
+
+.cambio h2 {
+  margin: 0 0 var(--s1);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cambio p { margin: 0; font-size: 1rem; }
+
+.ayuda {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+
+.ayuda[aria-expanded="true"] {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+.panel-ayuda {
+  position: relative;
+  margin: 6px 0 var(--s3);
+  padding: var(--s3) var(--s3) var(--s2);
+  border: 3px solid var(--tinta);
+  font-size: 1rem;
+}
+
+.panel-ayuda[hidden] { display: none; }
+
+.panel-ayuda .cola {
+  position: absolute;
+  top: -13px;
+  right: 12px;
+  line-height: 0;
+}
+
+.panel-ayuda p { margin: 0; }
+
+.panel-ayuda .titulo-ayuda {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: 6px;
+  font-size: var(--etiqueta);
+  font-weight: 800;
+}
+
+.cerrar-ayuda {
+  display: block;
+  min-height: 32px;
+  margin: var(--s2) 0 0 auto;
+  padding: var(--s1) 0;
+  border: 0;
+  background: none;
+  font-size: var(--etiqueta);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.pregunta-fontaneria {
+  margin: var(--s2) 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* Gráfico al resolver: dos tiras de 350 escaños y tabla con barra divergente en escala común de ±20 */
+.grafico-escanos {
+  margin: var(--s4) 0 0;
+  padding-top: var(--s3);
+  border-top: 1px solid var(--tinta);
+  scroll-margin-bottom: 96px;
+}
+
+.grafico-escanos h3 {
+  margin: 0 0 var(--s2);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.tiras {
+  display: grid;
+  grid-template-columns: 5.6rem 1fr;
+  gap: 6px var(--s2);
+  align-items: center;
+  margin-bottom: var(--s3);
+  font-size: 0.75rem;
+  color: var(--lapiz);
+}
+
+.tira-escanos {
+  display: flex;
+  height: 16px;
+  border: 1px solid var(--tinta);
+}
+
+.tira-escanos span + span { border-left: 1px solid var(--papel); }
+
+.tabla-escanos {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--etiqueta);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabla-escanos th {
+  padding: 0 0 var(--s1);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--lapiz);
+  text-align: right;
+}
+
+.tabla-escanos th:last-child { text-align: center; }
+
+.tabla-escanos td {
+  padding: var(--s1) 0;
+  border-bottom: 1px solid var(--raya);
+  vertical-align: middle;
+}
+
+.tabla-escanos td:last-child { width: 46%; }
+
+.tabla-escanos .n { width: 2.4rem; text-align: right; }
+.tabla-escanos th:not(:first-child), .tabla-escanos .n { padding-left: var(--s2); }
+.tabla-escanos .cambio-n { font-weight: 800; }
+
+.tabla-escanos .sig {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.tabla-escanos .muestra-partido { width: 12px; height: 12px; margin: 0; flex: none; }
+
+.tabla-escanos .sig small {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--lapiz);
+}
+
+.tabla-escanos .destacada td { border-bottom: 2px solid var(--tinta); }
+
+.tabla-escanos .destacada .nombre-sig {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.diferencia {
+  position: relative;
+  height: 14px;
+  margin-left: 10px;
+}
+
+.diferencia::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  bottom: -4px;
+  width: 1px;
+  background: var(--tinta);
+}
+
+.diferencia span { position: absolute; top: 0; height: 14px; }
+
+.diferencia em {
+  position: absolute;
+  top: -1px;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.diferencia em.igual { left: calc(50% + 4px); color: var(--lapiz); }
+
+.escala-escanos {
+  display: flex;
+  justify-content: space-between;
+  width: calc(46% - 10px);
+  margin: var(--s1) 0 0 auto;
+  font-size: 0.6875rem;
+  color: var(--lapiz);
+}
 
 @media (prefers-reduced-motion: reduce) {
   .marca::before { animation: none; }

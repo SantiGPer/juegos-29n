@@ -6,6 +6,7 @@ import { ordenOpciones } from './quiz.js';
 import { ronda as duelo } from './duelo.js';
 import { ronda as emparejar } from './emparejar.js';
 import { ronda as estimacion } from './estimacion.js';
+import { ronda as fontaneria } from './fontaneria.js';
 import { ronda as hemiciclo } from './hemiciclo.js';
 import { ronda as mapa } from './mapa.js';
 
@@ -111,7 +112,7 @@ const ordenar = (datos, listo) => {
   };
 };
 
-const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo };
+const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;

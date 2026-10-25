@@ -1,0 +1,124 @@
+{
+  "juego": "Fontanería electoral",
+  "fuente": "Ministerio del Interior (infoelectoral), generales del 23-07-2023; Constitución, art. 68; LOREG, arts. 162 y 163; INE, población a 1-1-2022. Elaboración propia.",
+  "portada": {
+    "texto": "Mismos votos, otras tuberías: abre y cierra las llaves del sistema electoral y mira por dónde se van los escaños. Bienvenido a la sala de calderas del Congreso.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "7 cambios en el sistema electoral, con el voto de 2023: elige qué pasaría." },
+      { "icono": "ayuda", "texto": "Pulsa la ayuda para ver cómo funciona cada cambio." },
+      { "icono": "urna", "texto": "1 punto por acierto." }
+    ]
+  },
+  "nota": "Todas las preguntas reparten los mismos votos de las generales de 2023 con otra regla. En la realidad, con otras reglas los votantes y los partidos se habrían comportado de otra manera (voto útil, coaliciones, candidaturas nuevas), así que el juego enseña cómo funciona la mecánica, no lo que habría pasado. Solo se prueban sistemas proporcionales con listas cerradas, como exige la Constitución para el Congreso (art. 68.3). Todos los partidos se miden con el mismo cálculo.",
+  "etiqueta": "Cambio",
+  "candidaturas": {
+    "PP": { "color": "--pp" },
+    "PSOE": { "color": "--psoe" },
+    "Vox": { "color": "--vox" },
+    "Sumar": { "color": "--sumar" },
+    "ERC": { "color": "--erc" },
+    "Junts": { "color": "--junts" },
+    "EH Bildu": { "color": "--bildu" },
+    "PNV": { "color": "--pnv" },
+    "BNG": { "color": "--bng" },
+    "CC": { "color": "--cc" },
+    "UPN": { "color": "--upn" },
+    "Nueva Canarias": { "siglas": "NC", "color": "--nc" },
+    "Aragón Existe": { "siglas": "AE", "color": "--ae" }
+  },
+  "rondas": [
+    {
+      "tipo": "fontaneria",
+      "id": "B3",
+      "titulo": "Barrera del 10 %",
+      "cambio": "Para optar a escaño en una provincia hace falta el 10 % de los votos válidos, en lugar del 3 %. Habría que reformar la LOREG.",
+      "ayuda": "Hoy, una candidatura que no llega al 3 % de los votos válidos de una provincia (con el voto en blanco incluido) queda fuera del reparto de esa provincia. Con el cambio, ese mínimo sube al 10 %.",
+      "opciones": { "a": "No cambia nada", "b": "Junts pierde 3 escaños", "c": "Vox pierde 10 escaños", "d": "Desaparecen todos los partidos territoriales" },
+      "ultima": "a",
+      "correcta": "b",
+      "destacar": ["Junts"],
+      "explicacion": "La barrera solo muerde en tres provincias: en Barcelona deja fuera a Junts (9,7 %) y a Vox (7,6 %), en A Coruña al BNG (9,98 %, por dos centésimas) y en Murcia a Sumar (9,6 %). Con el 5 %, o sin barrera, no cambiaría ni un escaño: en España la barrera de verdad es el tamaño de la provincia.",
+      "fuente": "LOREG, art. 163.1.a; Ministerio del Interior, generales del 23-07-2023. Elaboración propia."
+    },
+    {
+      "tipo": "fontaneria",
+      "id": "F1",
+      "titulo": "Sainte-Laguë en lugar de D'Hondt",
+      "cambio": "Los escaños de cada provincia se reparten con el método Sainte-Laguë en lugar del D'Hondt; la barrera del 3 % se mantiene. Habría que reformar la LOREG.",
+      "ayuda": "Con el D'Hondt, los votos de cada candidatura se dividen entre 1, 2, 3, 4… y los escaños van a los cocientes más altos. Con el Sainte-Laguë se dividen entre 1, 3, 5, 7…: cada escaño extra le cuesta más a quien ya tiene muchos, y eso ayuda a los partidos medianos.",
+      "opciones": { "a": "No cambia nada", "b": "El PP gana 10 escaños", "c": "Vox gana 10 escaños", "d": "Entran cinco partidos nuevos" },
+      "ultima": "a",
+      "correcta": "c",
+      "destacar": ["Vox"],
+      "explicacion": "Vox pasaría de 33 a 43 escaños y Sumar, de 31 a 37, mientras PP y PSOE perderían 17 entre los dos; además entrarían Nueva Canarias y Aragón Existe. Con la variante escandinava, que divide el primero entre 1,4, el efecto se queda en la mitad: Vox ganaría 5.",
+      "fuente": "LOREG, art. 163; Ministerio del Interior, generales del 23-07-2023. Elaboración propia."
+    },
+    {
+      "tipo": "fontaneria",
+      "id": "F3",
+      "titulo": "Cuota Hare y restos mayores",
+      "cambio": "Los escaños de cada provincia se reparten por cuota (votos entre escaños) en lugar de con el D'Hondt; la barrera del 3 % se mantiene. Habría que reformar la LOREG.",
+      "ayuda": "Se suman los votos de las candidaturas que superan la barrera del 3 % en la provincia y se dividen entre sus escaños: esa es la cuota. Cada candidatura se lleva tantos escaños como cuotas enteras tenga, y los que sobran van a los restos más altos. Es el método de reparto más proporcional.",
+      "pregunta": "¿Cuántos escaños tendría el BNG?",
+      "opciones": { "a": "6", "b": "4", "c": "2", "d": "1" },
+      "orden": ["a", "b", "c", "d"],
+      "correcta": "b",
+      "destacar": ["BNG"],
+      "explicacion": "El BNG pasaría de 1 a 4 escaños, y Vox ganaría 13, los mismos que perdería el PP. Con la cuota Droop, algo menos proporcional, el BNG se quedaría en 2.",
+      "fuente": "Ministerio del Interior, generales del 23-07-2023. Elaboración propia."
+    },
+    {
+      "tipo": "fontaneria",
+      "id": "C1",
+      "titulo": "Una circunscripción por comunidad autónoma",
+      "cambio": "En lugar de 52 provincias, se vota en 17 comunidades autónomas más Ceuta y Melilla, cada una con la suma de los escaños de sus provincias, con D'Hondt y la barrera del 3 %. Habría que reformar la Constitución (art. 68.2).",
+      "ayuda": "Cuantos más escaños reparte una circunscripción, más proporcional es el resultado. Juntar provincias pequeñas en una comunidad hace que los votos que antes no llegaban a escaño en ninguna provincia empiecen a contar.",
+      "opciones": { "a": "No cambia nada", "b": "El PSOE pierde 12 escaños", "c": "El PP pierde 12 escaños", "d": "Vox pierde 9 escaños" },
+      "ultima": "a",
+      "correcta": "c",
+      "destacar": ["PP"],
+      "explicacion": "El PP bajaría de 137 a 125 y Vox subiría de 33 a 42, porque sus votos en las provincias pequeñas, que antes se perdían, empezarían a sumar. Sumar ganaría 6, y BNG y CC, uno cada uno.",
+      "fuente": "Constitución, art. 68.2; Ministerio del Interior, generales del 23-07-2023. Elaboración propia."
+    },
+    {
+      "tipo": "fontaneria",
+      "id": "C2",
+      "titulo": "Circunscripción única",
+      "cambio": "Toda España es una sola circunscripción de 350 escaños, con D'Hondt y una barrera del 3 % del voto válido nacional. Habría que reformar la Constitución (art. 68.2).",
+      "ayuda": "Los votos se suman en todo el país y los 350 escaños se reparten de una vez. La barrera se mide sobre el voto de toda España, así que un partido que solo se presenta en una comunidad tiene muy difícil llegar.",
+      "pregunta": "¿Cuántas candidaturas tendrían escaño? (hoy, 11)",
+      "opciones": { "a": "11", "b": "8", "c": "6", "d": "4" },
+      "orden": ["a", "b", "c", "d"],
+      "correcta": "d",
+      "destacar": ["ERC", "Junts", "EH Bildu", "PNV", "BNG", "CC", "UPN"],
+      "explicacion": "Solo PP, PSOE, Vox y Sumar pasan del 3 % nacional: ERC, la siguiente, se queda en el 1,9 %, y los siete partidos territoriales desaparecen. Sin barrera, en cambio, entrarían PACMA (2 escaños) y la CUP (1); y una barrera nacional del 3 % que mantuviera las provincias borraría a los mismos siete.",
+      "fuente": "Constitución, art. 68.2; Ministerio del Interior, generales del 23-07-2023. Elaboración propia."
+    },
+    {
+      "tipo": "fontaneria",
+      "id": "T1",
+      "titulo": "Un Congreso de 300 diputados",
+      "cambio": "El Congreso pasa de 350 a 300 diputados, el mínimo que permite la Constitución. Se reparten por provincias con la regla de siempre: 2 por provincia, 1 en Ceuta y otro en Melilla, y el resto por población. Basta con reformar la LOREG.",
+      "ayuda": "Con menos escaños, cada provincia reparte menos, y en una provincia que reparte pocos escaños solo entran los partidos más votados.",
+      "pregunta": "¿Qué partido se queda sin escaño?",
+      "opciones": { "a": "BNG", "b": "CC", "c": "UPN", "d": "PNV" },
+      "correcta": "a",
+      "destacar": ["BNG"],
+      "explicacion": "PP y PSOE perderían 15 y 14 escaños, Vox y Sumar 7 cada uno, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya! [VERIFICAR con la población de 2022].",
+      "fuente": "Constitución, art. 68.1; LOREG, art. 162; INE, población a 1-1-2022. Elaboración propia."
+    },
+    {
+      "tipo": "fontaneria",
+      "id": "T3",
+      "titulo": "Un diputado mínimo por provincia",
+      "cambio": "Cada provincia parte de 1 diputado en lugar de 2 y el resto se reparte por población, con los mismos 350. Basta con reformar la LOREG.",
+      "ayuda": "Hoy cada provincia tiene 2 escaños asegurados antes de mirar su población, así que las pequeñas eligen más diputados de los que les tocarían. Con un mínimo de 1, los escaños se mueven hacia las provincias más pobladas.",
+      "pregunta": "¿Qué partido pierde más escaños?",
+      "opciones": { "a": "PP", "b": "PSOE", "c": "Vox", "d": "PNV" },
+      "correcta": "a",
+      "destacar": ["PP"],
+      "explicacion": "El PP perdería 6 escaños y el PNV 2, y Sumar ganaría 4, porque sus votos están en las provincias más pobladas. Con 400 diputados y un mínimo de 1, el PSOE ganaría 21 [VERIFICAR con la población de 2022].",
+      "fuente": "LOREG, art. 162.2; INE, población a 1-1-2022. Elaboración propia."
+    }
+  ]
+}
