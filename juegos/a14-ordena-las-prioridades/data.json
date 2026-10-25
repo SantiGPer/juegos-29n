@@ -1,6 +1,7 @@
 {
   "nota": "DATOS DE PRUEBA para montar M8 (encargo del 24-10-2026). Temas de la ficha de A14; perfiles inventados. Los perfiles reales salen de los programas del 29-N.",
   "juego": "Ordena las prioridades",
+  "dia": 15,
   "fuente": "TODO: datos de prueba inventados, no son los programas del 29-N. Afinidad: correlación de Spearman entre tu orden y el peso de cada tema en cada programa.",
   "portada": {
     "texto": "TODO: datos de prueba. El texto de portada llega con el contenido de A14.",

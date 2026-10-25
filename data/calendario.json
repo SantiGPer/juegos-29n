@@ -1,20 +1,20 @@
 {
-  "nota": "Reparto de los 15 días de campaña. Solo el día 1 está fijado (Plenopedia, decisión del 16-10-2026). A8 va el día 5 como provisional (21-10-2026): si el 17-11 pasa a ser día de «Quién dijo qué», se mueve al 6. El resto se asigna conforme se cierran los juegos. debate: texto del recuadro de la ficha en los días con bingo o «Quién dijo qué».",
+  "nota": "Reparto de los 15 días de campaña aprobado por el autor el 25-10-2026 (editorial/calendario.md). Día 5: B1 Quién dijo qué, provisional hasta que se fije el debate que cubra; día 14: A6 Completa el gráfico. Los dos están en TODO hasta que tengan carpeta. debate: texto del recuadro de la ficha en los días con «Quién dijo qué».",
   "dias": [
     { "dia": 1, "fecha": "2026-11-13", "carpeta": "a03-plenopedia" },
-    { "dia": 2, "fecha": "2026-11-14", "carpeta": "TODO" },
-    { "dia": 3, "fecha": "2026-11-15", "carpeta": "TODO" },
-    { "dia": 4, "fecha": "2026-11-16", "carpeta": "TODO" },
-    { "dia": 5, "fecha": "2026-11-17", "carpeta": "a08-fondo-de-la-urna", "provisional": true },
-    { "dia": 6, "fecha": "2026-11-18", "carpeta": "TODO" },
-    { "dia": 7, "fecha": "2026-11-19", "carpeta": "TODO" },
-    { "dia": 8, "fecha": "2026-11-20", "carpeta": "TODO" },
-    { "dia": 9, "fecha": "2026-11-21", "carpeta": "TODO" },
-    { "dia": 10, "fecha": "2026-11-22", "carpeta": "TODO" },
-    { "dia": 11, "fecha": "2026-11-23", "carpeta": "TODO" },
-    { "dia": 12, "fecha": "2026-11-24", "carpeta": "TODO" },
-    { "dia": 13, "fecha": "2026-11-25", "carpeta": "TODO" },
+    { "dia": 2, "fecha": "2026-11-14", "carpeta": "a11-duelo-de-circunscripciones" },
+    { "dia": 3, "fecha": "2026-11-15", "carpeta": "a01-quiz-sistema-electoral" },
+    { "dia": 4, "fecha": "2026-11-16", "carpeta": "a07-que-mapa-es-este" },
+    { "dia": 5, "fecha": "2026-11-17", "carpeta": "TODO", "provisional": true },
+    { "dia": 6, "fecha": "2026-11-18", "carpeta": "a08-fondo-de-la-urna" },
+    { "dia": 7, "fecha": "2026-11-19", "carpeta": "a09-fontaneria-electoral" },
+    { "dia": 8, "fecha": "2026-11-20", "carpeta": "a10-agrupar-16" },
+    { "dia": 9, "fecha": "2026-11-21", "carpeta": "a12-presidentle" },
+    { "dia": 10, "fecha": "2026-11-22", "carpeta": "a04-promesas-2023" },
+    { "dia": 11, "fecha": "2026-11-23", "carpeta": "a05-hemiciclos" },
+    { "dia": 12, "fecha": "2026-11-24", "carpeta": "a13-rosco-politologo" },
+    { "dia": 13, "fecha": "2026-11-25", "carpeta": "a02-cronologia-legislatura" },
     { "dia": 14, "fecha": "2026-11-26", "carpeta": "TODO" },
-    { "dia": 15, "fecha": "2026-11-27", "carpeta": "TODO" }
+    { "dia": 15, "fecha": "2026-11-27", "carpeta": "a14-ordena-las-prioridades" }
   ]
 }

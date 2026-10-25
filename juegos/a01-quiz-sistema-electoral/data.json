@@ -1,5 +1,6 @@
 {
   "juego": "ElectoQuiz",
+  "dia": 3,
   "fuente": "Constitución Española y LOREG, textos consolidados del BOE",
   "portada": {
     "texto": "¿Eres todo un experto en el sistema electoral español? Diez preguntas del ElectoQuiz para demostrarlo antes de que abran los colegios.",
