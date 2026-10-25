@@ -2,6 +2,18 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-25 (4) — Calendario de publicación en el índice y push
+
+**Hecho**
+- `data/calendario.json` con el reparto aprobado el 25-10 (editorial/calendario.md). Día 5, B1, en `TODO` con `"provisional": true`; día 14, A6, en `TODO`, porque los dos aún no tienen carpeta.
+- `dia` en el `data.json` de los trece juegos montados. A8 pasa del día 5 al 6. Las portadas ya no dicen «día TODO».
+- Índice probado con `?hoy=15`: los 15 días salen con su juego (TODO en el 5 y el 14). Sin errores.
+- Push a Pages con la confirmación del autor.
+
+**Falta**
+- B1 y A6: poner su carpeta en el calendario cuando existan. Si el debate mueve B1, recolocar según la regla de bloques de editorial/calendario.md.
+- A14 va el día 15 con datos de prueba (TODO visible) hasta que lleguen los perfiles reales.
+
 ## 2026-10-25 (3) — A9: Teruel Existe y color de Nueva Canarias; CLAUDE.md
 
 **Hecho** (decisiones del autor en sesión, 25-10)
