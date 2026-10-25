@@ -27,7 +27,7 @@ coincide <- \(dicho, calculado, completo) {
   if (!iguales) "**no**" else if (completo && length(setdiff(names(calculado), names(dicho))) > 0) "sí, pero incompleto" else "sí"
 }
 
-# 1. Tablas «Escaños» del contenido (preguntas 1 a 5) ---------------------------------------------------
+# 1. Tablas «Escaños» del contenido (preguntas 1 a 7) ---------------------------------------------------
 
 contenido <- read_lines("editorial/contenido/a09-fontaneria-electoral.md")
 preguntas <- tibble(id = str_match(contenido, "^## \\d · (\\w\\d) ·")[, 2], linea = contenido) |>
@@ -64,10 +64,10 @@ catalogo <- tribble(
   "C3", "Catálogo", "PP −17, PSOE −6, Vox +12, Sumar +14, PACMA +2, CUP +1, UPN −1", TRUE,
   "C3", "Explicación de la pregunta 5 («entrarían PACMA (2 escaños) y la CUP (1)»)", "PACMA +2, CUP +1", FALSE,
   "C4", "Catálogo", "PP −20, PSOE −8, Vox +11, Sumar +13, PACMA +2, CUP +1, Frente Obrero +1, Nueva Canarias +1", TRUE,
-  "T1", "Explicación de la pregunta 6", "PP −15, PSOE −14, Vox −7, Sumar −7, BNG −1", TRUE,
+  "T1", "Explicación de la pregunta 6", "PP −16, PSOE −12, Sumar −8, Vox −7, BNG −1", FALSE,
   "T2", "Explicación de la pregunta 6 («entraría Soria ¡Ya!»)", "Soria ¡Ya! +1", FALSE,
-  "T3", "Explicación de la pregunta 7", "PP −6, PNV −2, Sumar +4", TRUE,
-  "T4", "Explicación de la pregunta 7 («el PSOE ganaría 21»)", "PSOE +21", FALSE
+  "T3", "Explicación de la pregunta 7", "PP −7, Sumar +4, PSOE +3", FALSE,
+  "T4", "Explicación de la pregunta 7 («el PSOE ganaría 22»)", "PSOE +22", FALSE
 ) |>
   mutate(calculado = map(id, \(i) diferencias(conf[[i]])),
          resultado = pmap_chr(list(map(dicho, lee), calculado, completo), coincide),
@@ -129,7 +129,7 @@ c(
   "- La simulación con las reglas vigentes (D'Hondt y barrera del 3 % de los válidos con el blanco, en cada provincia) reproduce el reparto oficial de 2023 provincia a provincia.",
   "- Ninguna configuración tiene empates en el último escaño ni en los restos.",
   "",
-  "## 1. Tablas «Escaños» del contenido (preguntas 1 a 5)",
+  "## 1. Tablas «Escaños» del contenido (preguntas 1 a 7)",
   "",
   str_glue("Filas cotejadas: {nrow(preguntas)}. Distintas del cálculo: {sum(preguntas$real != preguntas$real_r | preguntas$cambio != preguntas$cambio_r)}."),
   if (any(lengths(faltan$fuera) > 0)) str_c("Candidaturas con escaño que faltan en la tabla: ", str_c(faltan$id, ": ", map_chr(faltan$fuera, str_c, collapse = ", "), collapse = "; "), ".") else "No falta ninguna candidatura con escaño en las tablas.",

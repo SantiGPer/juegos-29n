@@ -8,9 +8,9 @@ Generado por `R/cotejo_a09_fontaneria.R` el 25-10-2026 sobre `data/fontaneria_a0
 - La simulación con las reglas vigentes (D'Hondt y barrera del 3 % de los válidos con el blanco, en cada provincia) reproduce el reparto oficial de 2023 provincia a provincia.
 - Ninguna configuración tiene empates en el último escaño ni en los restos.
 
-## 1. Tablas «Escaños» del contenido (preguntas 1 a 5)
+## 1. Tablas «Escaños» del contenido (preguntas 1 a 7)
 
-Filas cotejadas: 59. Distintas del cálculo: 0.
+Filas cotejadas: 81. Distintas del cálculo: 0.
 No falta ninguna candidatura con escaño en las tablas.
 
 
@@ -37,10 +37,10 @@ No falta ninguna candidatura con escaño en las tablas.
 | C3 | Catálogo | PP −17, PSOE −6, Vox +12, Sumar +14, PACMA +2, CUP +1, UPN −1 | PP −17, PSOE −6, Vox +12, Sumar +14, ERC −1, Junts −2, EH Bildu −2, PNV −1, BNG +1, UPN −1, PACMA +2, CUP +1 | sí, pero incompleto |
 | C3 | Explicación de la pregunta 5 («entrarían PACMA (2 escaños) y la CUP (1)») | PACMA +2, CUP +1 | PP −17, PSOE −6, Vox +12, Sumar +14, ERC −1, Junts −2, EH Bildu −2, PNV −1, BNG +1, UPN −1, PACMA +2, CUP +1 | sí |
 | C4 | Catálogo | PP −20, PSOE −8, Vox +11, Sumar +13, PACMA +2, CUP +1, Frente Obrero +1, Nueva Canarias +1 | PP −20, PSOE −8, Vox +11, Sumar +13, Junts −1, EH Bildu −1, PNV −1, CC +1, BNG +1, PACMA +2, Frente Obrero +1, Nueva Canarias +1, CUP +1 | sí, pero incompleto |
-| T1 | Explicación de la pregunta 6 | PP −15, PSOE −14, Vox −7, Sumar −7, BNG −1 | PP −16, PSOE −12, Vox −7, Sumar −8, ERC −1, Junts −2, EH Bildu −1, PNV −2, BNG −1 | **no** |
+| T1 | Explicación de la pregunta 6 | PP −16, PSOE −12, Sumar −8, Vox −7, BNG −1 | PP −16, PSOE −12, Vox −7, Sumar −8, ERC −1, Junts −2, EH Bildu −1, PNV −2, BNG −1 | sí |
 | T2 | Explicación de la pregunta 6 («entraría Soria ¡Ya!») | Soria ¡Ya! +1 | PP +15, PSOE +17, Vox +7, Sumar +7, ERC +1, Junts +1, PNV +1, Soria ¡Ya! +1 | sí |
-| T3 | Explicación de la pregunta 7 | PP −6, PNV −2, Sumar +4 | PP −7, PSOE +3, Vox −1, Sumar +4, ERC +1, Junts +1, PNV −1 | **no** |
-| T4 | Explicación de la pregunta 7 («el PSOE ganaría 21») | PSOE +21 | PP +8, PSOE +22, Vox +7, Sumar +9, ERC +2, Junts +1, PNV +1 | **no** |
+| T3 | Explicación de la pregunta 7 | PP −7, Sumar +4, PSOE +3 | PP −7, PSOE +3, Vox −1, Sumar +4, ERC +1, Junts +1, PNV −1 | sí |
+| T4 | Explicación de la pregunta 7 («el PSOE ganaría 22») | PSOE +22 | PP +8, PSOE +22, Vox +7, Sumar +9, ERC +2, Junts +1, PNV +1 | sí |
 
 ## 3. Cifras sueltas de las explicaciones
 

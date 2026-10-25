@@ -105,7 +105,7 @@
       "opciones": { "a": "BNG", "b": "CC", "c": "UPN", "d": "PNV" },
       "correcta": "a",
       "destacar": ["BNG"],
-      "explicacion": "PP y PSOE perderían 15 y 14 escaños, Vox y Sumar 7 cada uno, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya! [VERIFICAR con la población de 2022].",
+      "explicacion": "PP y PSOE perderían 16 y 12 escaños, Sumar 8 y Vox 7, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya!.",
       "fuente": "Constitución, art. 68.1; LOREG, art. 162; INE, población a 1-1-2022. Elaboración propia."
     },
     {
@@ -118,7 +118,7 @@
       "opciones": { "a": "PP", "b": "PSOE", "c": "Vox", "d": "PNV" },
       "correcta": "a",
       "destacar": ["PP"],
-      "explicacion": "El PP perdería 6 escaños y el PNV 2, y Sumar ganaría 4, porque sus votos están en las provincias más pobladas. Con 400 diputados y un mínimo de 1, el PSOE ganaría 21 [VERIFICAR con la población de 2022].",
+      "explicacion": "El PP perdería 7 escaños, y Sumar y el PSOE ganarían 4 y 3, porque sus votos pesan más en las provincias más pobladas. Con 400 diputados y un mínimo de 1, el PSOE ganaría 22.",
       "fuente": "LOREG, art. 162.2; INE, población a 1-1-2022. Elaboración propia."
     }
   ]
