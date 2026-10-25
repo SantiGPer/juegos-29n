@@ -51,8 +51,10 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 09_escanos_generales.R # escaños por candidatura de 1982, 2000, 2015 y 2023 para A5
 │   ├── 10_mapa_provincias.R # trazados SVG de las provincias (es-atlas/IGN) para A7
 │   ├── 11_mapas_a07.R    # valores por provincia de los seis mapas de A7 y sus señuelos
+│   ├── 12_fontaneria_a09.R # escaños de 2023 con otras reglas (catálogo de A9)
 │   ├── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 │   ├── cotejo_a05_interior.R # serie de generales 1977–2023 para las explicaciones de A5 → editorial/fuentes/
+│   ├── cotejo_a09_fontaneria.R # cifras del contenido y del catálogo de A9 frente al cálculo → editorial/fuentes/
 │   └── cotejo_a11_datos.R # cifras y puestos de los duelos de A11 → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # fichas completas, calendario, reserva
@@ -84,13 +86,12 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 | M2 estimación | Deslizadores / entrada numérica; error respecto a la referencia | A3 |
 | M3 gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | A6 |
 | M4 más-o-menos | Rondas de comparar dos cifras, cadena "mayor o menor", ordenar seis ítems; racha y ranking final | Sin uso desde el 24-10 (A11 pasa a duelos del encadenador) |
-| M5 D'Hondt | Reparto provincial a partir de votos con reglas editables | A9 |
 | M6 agrupar | 16 ítems en 4 grupos de 4; 4 fallos; cuadrícula de colores | A10 |
 | M7 atributos | Adivinar un ítem; feedback ✓/✗ y ↑↓ por atributo; autocompletado | Sin uso desde el 15-10 (A12 pasa a M1) |
 | M8 afinidad | El usuario ordena ítems; Spearman con el perfil de cada partido | A14 |
 | M9 rosco | Una definición por letra en círculo; respuesta escrita con variantes aceptadas; pasar y volver | A13 |
 | M10 emparejar | Filas de ítems con hueco y bandeja de respuestas en la barra, con una respuesta especial sin dato («No existe») por configuración; se corrige al final, 1 punto por pareja. Es un tipo de ronda del encadenador | A8 (candidatos de B1, A9 y «Lemas de campaña» si entra) |
-| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7; hemiciclo para A5) con una cabecera, una pista, una puntuación y un cierre; barra de vida opcional (A11) | A3, A5, A7, A8, A11 |
+| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7; hemiciclo para A5) con una cabecera, una pista, una puntuación y un cierre; barra de vida opcional (A11) | A3, A5, A7, A8, A9, A11 |
 
 Cada motor expone una función `iniciar(config, contenedor)` y delega el final en `shared/cierre.js`. El contenido del juego vive en JSON, nunca en el JS del motor.
 
@@ -108,7 +109,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 - **A6 Completa el gráfico parlamentario** (medio). 6-8 métricas de actividad del Congreso, generales y por grupo; el usuario dibuja barras. Cierre: grado de acierto.
 - **A7 ¿Qué mapa es este?** (medio). Seis mapas provinciales sin leyenda (abstención, habitantes por escaño, voto nulo, voto a Sumar, nacidos en el extranjero y voto a Vox), con cuatro etiquetas por mapa; ronda de tipo mapa en el encadenador y geometría de `mapa_provincias.json`. Cierre: aciertos sobre 6.
 - **A8 El fondo de la urna** (bajo). Candidaturas sin escaño del 23-J. Encadenador con dos rondas de M10 emparejar (cinco candidaturas, una inventada, contra cuatro cifras de votos y «No existe»; cada candidatura con sus provincias) y un duelo final (PACMA, 0 escaños, frente a UPN, 1 escaño). Datos de `resultados_2023_prov.json`. Las inventadas se comprueban antes en el Registro de Partidos y en las candidaturas proclamadas del 29-N. Cierre: puntos sobre 11. Sustituye a «Demografía del voto» (21-10).
-- **A9 Mismo voto, otras reglas** (medio). Resultado real 2023 con circunscripción única, autonómica, barrera 5 %. El usuario predice ganador/perdedor por regla. Cierre: aciertos.
+- **A9 Fontanería electoral** (medio). Siete cambios del sistema electoral con el voto de 2023 invariable (barrera del 10 %, Sainte-Laguë, cuota Hare, circunscripción autonómica, circunscripción única, 300 diputados y mínimo de 1 por provincia), solo proporcionales y con listas cerradas. Cada pregunta es una ronda de opciones del encadenador: el cambio, un botón de ayuda que abre un panel en la página y las consecuencias como opciones; al resolver, gráfico de escaños real frente a con el cambio. El reparto se calcula en R (`fontaneria_a09.json`; M5 deja de ser motor de juego). Cierre: aciertos sobre 7.
 - **A10 Agrupar 16** (muy bajo). Nombres, leyes, lemas, fechas en 4 grupos de 4 con grupos trampa. Una sola edición. Cierre: resuelto + fallos.
 - **A11 Duelo de circunscripciones** (muy bajo). Diez duelos con «VS» en el encadenador: ¿qué circunscripción tiene más? Barra de vida de cinco tramos; al quinto fallo, fin de la partida. Datos de `resultados_2023_prov.json`. Cierre: aciertos sobre 10.
 - **A12 Presidentle** (bajo). M1 pistas progresivas. Adivinar uno de los 7 presidentes del Gobierno (siempre visibles como opciones) con 5 pistas: edad en la primera toma de posesión, tiempo en el cargo, formación, provincia de nacimiento, partido y año. Una ronda por partida con presidente aleatorio. Suárez desde 1977 (nota sobre 1976); tiempo en años y meses, Sánchez con corte el 29-11-2026. Datos: siete fichas a mano (La Moncloa y BOE). Cierre: 5 a 1 puntos según la pista; 0 si se agotan.
@@ -128,6 +129,7 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | JSON | Fuente | Juegos |
 | --- | --- | --- |
 | `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral), INE y BOE | A7, A8, A9, A11 || `escanos_generales.json` | Ministerio del Interior (infoelectoral) | A5 |
+| `fontaneria_a09.json` | Derivado de `resultados_2023_prov.json` (población a 1-1-2022) | A9 |
 | `mapa_provincias.json` | IGN vía es-atlas 0.6.0, proyectado en R | A7 |
 | `mapas_a07.json` | Derivado de `resultados_2023_prov.json` | A7 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
