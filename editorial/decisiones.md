@@ -1011,3 +1011,5 @@ Respuesta al encargo de diseño del 25-10, aprobada por el autor. Referencia: do
 - Encargo para Code:
   - Montar A9 con esto cuando estén el cálculo en R y el contenido final de T1 y T3 (encargo del 25-10). El campo `destacar` lo añade Code al `data.json` con los valores de arriba, y Cowork lo pasa al contenido.
   - Captura a 320, 375 × 560 y 1280; revisión contra la lista negra; commit y entrada en la bitácora.
+- **Calendario de publicación (decisión del autor, 25-10):** reparto de los 15 días en editorial/calendario.md. Bloques: fin de semana (viernes a domingo) y entre semana (lunes a jueves); los juegos más llamativos, entre semana. B1 va el día siguiente al debate que cubra y su fecha queda provisional hasta que se confirme; al moverlo, el resto se recoloca respetando los bloques. Sustituye al día 5 provisional de A8 (21-10), que pasa al día 6.
+- **Encargo para Code:** pasar el reparto a `data/calendario.json` (B1 con `"provisional": true`) y el `dia` de cada juego a su `data.json`.
