@@ -2,6 +2,35 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-25 (2) — A9 Fontanería electoral: datos, cotejo y juego; A11 y A5; CLAUDE.md
+
+**Hecho**
+- Commit aparte con los cambios de Cowork del 25-10 (decisiones, contenido de A5, A7, A11 y A9, catálogo de A9 y maqueta v17).
+- A11, duelo 4: «una centésima más que Cádiz» en la explicación. A5, 2015: «CCa-PNC» en «Otros».
+- A9, datos: `poblacion_2022` (INE, cifras oficiales a 1-1-2022) en `data/resultados_2023_prov.json`. Con la regla del art. 162 de la LOREG reproduce los escaños de las 52 circunscripciones de 2023; con la de 2025, los de 2026.
+- A9, cálculo: `R/12_fontaneria_a09.R` → `data/fontaneria_a09.json`, con las 18 configuraciones del catálogo. La simulación con las reglas vigentes reproduce el reparto oficial de cada provincia, y ninguna configuración tiene empates.
+- A9, cotejo: `R/cotejo_a09_fontaneria.R` → `editorial/fuentes/a09-cotejo.md`.
+- CLAUDE.md: ficha de A9 «Fontanería electoral», A9 en el encadenador, M5 fuera de la tabla de motores, `fontaneria_a09.json` en la tabla de datos y los dos scripts nuevos en el árbol.
+- A9, juego: `juegos/a09-fontaneria-electoral/`, con un tipo de ronda nuevo del encadenador (`shared/motores/fontaneria.js`). Lleva el botón «?» con panel en la página (se cierra con el botón, con «Cerrar» o con Escape, y el foco va al título y vuelve al botón) y el gráfico al resolver (tiras de 350 y tabla con barra divergente en ±20). Iconos «ayuda» y «cola» en `shared/iconos.js`. `destacar`: Junts, Vox, BNG, PP, los siete que salen, BNG (T1) y PP (T3). Escaños leídos de `data/fontaneria_a09.json`, no copiados a mano.
+- «No cambia nada» va anclada al final en las preguntas 1, 2 y 4 (criterio del 18-10: las opciones de cierre van al final). Las de cifras (3 y 5) van fijas de mayor a menor; el resto se baraja.
+- Capturas en 320, 375×560 y 1280: sin desbordes ni errores. Prueba de humo del índice y de los demás juegos sin errores.
+
+**Cotejo de A9: discrepancias (no he cambiado el texto)**
+- Preguntas 1 a 5: las 59 cifras de las tablas «Escaños» coinciden. También coinciden todas las cifras sueltas de las explicaciones (9,7 %, 7,6 %, 9,98 %, 9,6 %, 1,9 %, «17 entre los dos», «los mismos que el PP»…) y las variantes citadas (F2: Vox +5; F4: BNG 2; C3: PACMA 2 y CUP 1; B1 y B2: nada cambia; B4: los mismos siete).
+- **T1 (pregunta 6), con la población de 2022 y frente al real de 2023:** PP −16 (el contenido dice −15), PSOE −12 (dice −14), Vox −7 (bien) y Sumar −8 (dice −7). Además pierden ERC 1, Junts 2, EH Bildu 1 y PNV 2. La respuesta correcta se mantiene: solo el BNG se queda sin escaño. T2: Soria ¡Ya! entra, bien.
+- **T3 (pregunta 7):** PP −7 (dice −6), PNV −1 (dice −2) y Sumar +4 (bien); además PSOE +3, Vox −1, ERC +1 y Junts +1. La correcta se mantiene: PP es el que más pierde. **T4:** PSOE +22 (dice +21).
+- El catálogo, en C3 y C4, nombra solo parte de los cambios: son correctos, pero faltan los partidos territoriales que pierden o ganan uno o dos escaños. No afecta al contenido.
+- En el juego, las explicaciones de T1 y T3 siguen tal como están en el contenido, con los [VERIFICAR] visibles, hasta que Cowork las ajuste.
+
+**Dudas para el autor**
+- «Aragón Existe»: en las tres simulaciones donde entra (F1, F3 y F4), el escaño sale de Teruel, con la lista «Teruel Existe - Coalición Existe» (11.348 votos); en Huesca y Zaragoza se llamó «Aragón Existe». La candidatura de acumulación es la Coalición Existe. ¿«Aragón Existe», «Teruel Existe» o «Existe»? Las siglas del gráfico («AE») siguen la maqueta.
+- Colores de A9: `--nc` #85BD42 (Nueva Canarias) sale de la plantilla. Para `--ae` uso la entrada de Teruel Existe (#007351), porque la plantilla no tiene Aragón Existe ni Coalición Existe.
+- Para diseño: Nueva Canarias y Vox quedan a ΔE2000 4,5, por debajo de 10, y salen juntos en las preguntas 2 y 3. Teruel Existe y PNV quedan a 15,4.
+
+**Falta**
+- Cowork: ajustar las cifras de las explicaciones de T1 y T3 y quitar los [VERIFICAR]; pasar `destacar` y el «No cambia nada» al final al contenido; día de A9 en el calendario.
+- Push, cuando lo confirme el autor.
+
 ## 2026-10-25 — A7: «Ratio habitantes/escaño»
 
 **Hecho**
