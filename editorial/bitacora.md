@@ -2,6 +2,20 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-10-25 (5) — A9: T1 y T3 definitivas
+
+**Hecho**
+- Commit aparte con los cambios de Cowork (25-10, tarde): T1 y T3 con la población de 2022, sus tablas de escaños, Teruel Existe en el contenido y el catálogo, y `destacar` y «No cambia nada» en el contenido.
+- `data.json` de A9: explicaciones de T1 y T3 copiadas del contenido; el juego ya no tiene ningún [VERIFICAR].
+- Cotejo regenerado con el texto nuevo: las 81 filas de las tablas «Escaños» (preguntas 1 a 7) y las cifras de T1, T3 y T4 coinciden con el cálculo.
+- Capturas en 320, 375×560 y 1280, sin desbordes ni errores.
+
+**Duda menor para Cowork**
+- T1: «entraría Soria ¡Ya!.» lleva punto tras el cierre de exclamación del nombre. Está copiado tal cual; si se prefiere sin el punto, se cambia en el contenido y lo paso.
+
+**Falta**
+- Push, cuando lo confirme el autor.
+
 ## 2026-10-25 (4) — Calendario de publicación en el índice y push
 
 **Hecho**
