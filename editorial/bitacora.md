@@ -13,8 +13,20 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
   - `data/calendario.json`: días 14 y 15 en `TODO`; la nota dice qué carpeta irá en cada uno (A15 y A16). El índice ya no enlaza A14. Fuera el `dia` del `data.json` de A14 (su recibo diría «día TODO» si se juega por la URL directa).
   - `CLAUDE.md`: A6 y A14 a la reserva; fichas de A15 y A16; M3 y M8 sin uso desde el 01-11; A15 y A16 en el encadenador; `resultados_2023_mun.json` y `senado_2023.json` en la tabla de datos; calendario de entregas con A15 y A16 el 12-11. De paso, la fila de campaña ya no habla del bingo de la víspera (encargo del 24-10 que había quedado a medias) y se arregla una fila de la tabla de datos que estaba pegada a la anterior.
 
+- Push de lo anterior con confirmación del autor (`b95681a..9d4dbc8`).
+- A16, viabilidad, paso 1 (ley y papeleta): `R/cotejo_a16_loreg.R` → `editorial/fuentes/a16-papeleta-loreg.md`, con el art. 172.3 de la LOREG en sus dos versiones y el modelo P.2 del RD 605/1999, en texto literal.
+
+**Hallazgo que afecta a A16 (para el autor)**
+- Desde la LO 8/2010 (en vigor el 05-11-2010), cada partido coloca a sus candidatos al Senado «en el orden que libremente establezca». Antes, de 1986 a 2008, iban por orden alfabético del primer apellido. El modelo P.2 vigente dice lo mismo que la ley actual.
+- En 2023, por tanto, que el primero de la papeleta sea el más votado no aísla el efecto del orden: el partido pone primero a quien quiere que salga (cabeza de cartel, más conocido). La pregunta «¿pesa el orden en la papeleta?» no se puede responder con 2023 solo.
+- Con orden alfabético (2008 y antes), la posición no la elige el partido y el efecto sí se puede medir. Opciones para que decida el autor: a) A16 con 2008 (orden alfabético) como prueba del efecto, con 2023 como contraste; b) A16 con 2023, sin afirmar que el orden causa nada (el final mostraría cuánto sigue el votante el orden del partido); c) otro planteamiento.
+
+**Bloqueo**
+- Interior (infoelectoral) responde con un desafío de Cloudflare (403) a la descarga de `03202307_MUNI.zip` (Senado 2023). Las descargas del 20 y el 24-10 funcionaron; ahora no. No lo he forzado. Hace falta que el autor baje los zips desde el navegador: el de 2023 y, si se elige la opción a), el de 2008 (`03200803_MUNI.zip`).
+
 **Falta**
-- Encargos de viabilidad de A16 y de datos y catálogo de A15.
+- A16: votos por candidato, medición del orden, catálogo de duelos y `editorial/fuentes/a16-viabilidad.md`, en cuanto estén los zips y la decisión sobre el planteamiento.
+- A15: datos y catálogo (también dependen de Interior).
 
 **Duda para el autor**
 - Nombres de los JSON nuevos (`resultados_2023_mun.json` para A15 y `senado_2023.json` para A16): los he puesto yo; se cambian si se prefieren otros.
