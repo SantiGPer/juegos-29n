@@ -2,6 +2,53 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-11-01 (3) — Métricas de uso con Umami: comprobación previa
+
+Encargo de decisiones.md (01-11, «métricas de uso»). No he montado nada: sin la confirmación del autor no se activa.
+
+**1. Plan Hobby (documentación oficial, leída el 01-11)**
+- Límites: hasta 100.000 eventos al mes, un sitio, seis meses de datos y sin coste. No incluye API ni miembros de equipo. Los eventos personalizados y sus propiedades sí están incluidos.
+- Cómo se cuenta (FAQ de precios): «Each website pageview counts as one event. If you save event properties, each data property stored counts as one event.» Cada página vista es un evento, cada evento personalizado otro y cada propiedad, otro más.
+- Descarga de datos:
+  - Hay exportación a CSV comprimido desde el panel (Settings → Data → Export), con un enlace que llega por correo. Incluye «page views, events, sessions, and event data», es decir, también las propiedades. La página no dice si está en el plan Hobby.
+  - La API, no: según la documentación de Cloud es solo de Pro en adelante.
+  - Así que la condición del encargo depende de esa exportación. Hay que comprobarlo en la cuenta, en Settings → Data. Si no aparece en Hobby, se queda solo la medición por juego.
+- Al llegar a 100.000 en el mes:
+  - La documentación no dice qué pasa en Hobby.
+  - La FAQ general dice que lo que exceda se cobra por evento y que no se interrumpe la recogida, pero la tabla no da precio por evento adicional para Hobby.
+  - El corte de recogida que describe la documentación solo se aplica a los presupuestos de Pro y Business.
+  - Duda abierta: hay que preguntarlo a Umami o mirarlo en la página de uso de la cuenta.
+- Sin cookies, según su FAQ. Sobre localStorage, la documentación no dice nada.
+
+**2. Llamadas propuestas (dos puntos únicos del código, sin tocar los motores)**
+- Inicio, en `shared/portada.js`, al pulsar «Jugar» (todos los motores pasan por ahí): `window.umami?.track('partida-empezada')`. Sin propiedades: el evento ya lleva la ruta (`urlPath`), que identifica el juego.
+- Fin, en `shared/cierre.js`, dentro de `cerrar()`: `window.umami?.track('partida-terminada', { puntos, detalle })`.
+  - `puntos` es la puntuación como número (Umami guarda hasta 4 decimales; A15 va con un decimal).
+  - `detalle` es una cadena con una letra por pregunta, sacada de `pista.estados`, que ya pasan quiz, rondas y masomenos: 1 si acierta, m si acierta a medias, 0 si falla y «-» si no la juega (A11 cortado). Por ejemplo, «1011m01101».
+  - Los juegos que no encajan en esa cadena pasarían su propio `detalle` a `cerrar()`: las 27 letras del rosco de A13, los kilómetros por ronda de A15 y el error por ronda de A5. Es un parámetro opcional más en `cerrar()`.
+- El `?.` hace que, si el script de Umami no carga (bloqueador, sin red), el juego funcione igual.
+- Script en cada página, con el código del panel: `<script defer src="…" data-website-id="…" data-domains="santigper.github.io" data-do-not-track="true"></script>`.
+  - `data-domains` evita que cuenten las pruebas en local.
+  - `data-do-not-track` respeta la preferencia de no rastreo del navegador. Si se quiere, lo decide el autor.
+  - El `src` exacto de Cloud lo da el panel; la documentación lo enseña solo como imagen.
+  - Choca con «librerías solo desde CDN pinneado»: el script de Umami no tiene versión fija. Es una excepción que tendría que aprobar el autor.
+- A12 «Otro presidente» llama otra vez a `cerrar()`: cada partida extra cuenta como una partida terminada sin evento de inicio. Si se quiere simétrico, `otra.accion` también enviaría el inicio.
+
+**3. Eventos por partida**
+- Propuesta (una sola propiedad con el detalle), partida completa: página del juego 1 + inicio 1 + fin con dos propiedades 3 = 5 eventos. Con la página del índice, unos 6. Una partida abandonada cuesta 2 o 3.
+- Un evento por pregunta, con dos propiedades cada uno (número y resultado): 3 por pregunta. En un juego de 10 preguntas, 30 más inicio y fin, unos 35 por partida.
+- Con 100.000 al mes, salen unas 16.000 partidas completas en noviembre con la propuesta, frente a unas 2.800 con un evento por pregunta. Las pruebas de noviembre anteriores al 13 cuentan para el mismo mes (con `data-domains`, las locales no).
+- Si la serie supera unas 1.000 partidas al día, se acerca al límite incluso con la propuesta. Una forma de ahorrar sería quitar `puntos`, que se puede reconstruir desde `detalle` en casi todos los juegos: 4 eventos por partida.
+
+**4. CLAUDE.md**
+- Principio cambiado: «Sin backend propio ni cuentas; solo métricas anónimas de uso (Umami Cloud, decisión del 01-11), sin cookies ni almacenamiento en el navegador.»
+
+**Dudas para el autor**
+- Comprobar en la cuenta de Umami si Hobby tiene exportación de datos (Settings → Data → Export) y qué pasa al llegar a 100.000.
+- Excepción al CDN pinneado para el script de Umami.
+- Si se usa `data-do-not-track`.
+- Texto del aviso al pie (pendiente según decisiones).
+
 ## 2026-11-01 (2) — A15: datos y catálogo
 
 **Hecho**

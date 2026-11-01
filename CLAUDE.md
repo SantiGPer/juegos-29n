@@ -4,7 +4,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 
 ## Principios innegociables
 
-- **100 % estático.** Sin backend, sin cuentas, sin almacenar respuestas. Todo corre en el navegador. Si una idea necesita servidor, se descarta.
+- **100 % estático.** Sin backend propio ni cuentas; solo métricas anónimas de uso (Umami Cloud, decisión del 01-11), sin cookies ni almacenamiento en el navegador. Todo el juego corre en el navegador. Si una idea necesita servidor, se descarta.
 - **Un juego = una pantalla.** Interfaz mínima tipo Wordle / Connections / Higher or Lower. Funciona en móvil primero.
 - **Todo juego termina en un cierre comparable:** puntuación (juegos de acierto/error) o afinidad con un partido (juegos de opinión). Nunca termina "en nada".
 - **Una sola edición por juego.** La serie no repite juegos: cada uno se publica una vez. Rejugar solo dentro de la misma edición (p. ej., el presidente aleatorio de A12).
