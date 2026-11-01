@@ -54,6 +54,19 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Comprobado al generar: las 52 provincias suman el total nacional de Interior en censo, votantes, blancos y nulos (votantes: 24.952.447). Los escaños de Interior coinciden con el anexo del RD 400/2023 y suman 350 por provincia y por candidatura.
 - Cotejo con la resolución de la Junta Electoral Central de 30-08-2023 (BOE-A-2023-18907), Cuadro II: 206 cifras de votos y escaños de los partidos con escaño casan por siglas sin ninguna discrepancia. Las 23 restantes no casan por las variantes de siglas (PSIB-PSOE, SUMAR ARAGÓN…). El Cuadro I va como imagen en el BOE y no se pudo cotejar de forma automática.
 
+## `resultados_2023_mun.json`
+
+- Script: `R/13_resultados_2023_mun.R` (lector común en `R/infoelectoral.R`). Juego: A15. Catálogo: `R/catalogo_a15.R` → `editorial/catalogos/a15-catalogo.md`.
+- Resultados del Congreso por municipio: Ministerio del Interior, infoelectoral, ficheros 03 (candidaturas), 05 (municipios) y 06 (votos por candidatura y municipio), total municipal (distrito 99):
+  - 23-07-2023: https://infoelectoral.interior.gob.es/estaticos/docxl/apliextr/02202307_MUNI.zip (descargado el 20-10-2026).
+  - 10-11-2019, 28-04-2019 y 09-03-2008, solo para el ganador de cada municipio: `02201911_MUNI.zip`, `02201904_MUNI.zip` y `02200803_MUNI.zip` en la misma ruta (descargados el 24-10-2026).
+  - Los zips no se versionan (caché de R). Los ficheros municipales no incluyen el CERA, que Interior solo publica por provincia.
+- Población: INE, Cifras oficiales de población de los municipios españoles: revisión del Padrón Municipal, a 1-1-2023, `pobmun23.xlsx` del zip https://www.ine.es/pob_xls/pobmun.zip (todos los años). Descargado el 01-11-2026.
+- Coordenadas: IGN/CNIG, Nomenclátor Geográfico de Municipios y Entidades de Población, versión 202603, `MUNICIPIOS.csv` (longitud y latitud del núcleo capital, ETRS89 en la península y REGCAN95 en Canarias). Centro de Descargas del CNIG, https://centrodedescargas.cnig.es/CentroDescargas/index.jsp (zip `BD_Municipios-Entidades.zip`, bajado a mano por el autor el 01-11-2026 tras aceptar las condiciones de uso; no se versiona).
+- `ganador_cabecera` y el catálogo agrupan por la candidatura de acumulación nacional (03): PSC, PSIB-PSOE… en PSOE; SUMAR - ECP, MÉS PER MALLORCA-MÉS PER MENORCA-SUMAR… en SUMAR.
+- 23 municipios creados después de 2008 no tienen ganador en 2008, y uno no lo tiene en abril de 2019. Los municipios de los que se segregaron conservan su código, pero en 2008 tenían otro territorio.
+- Comprobado al generar: 8.131 municipios, los mismos que en el padrón de 2023, todos con población, coordenadas y ganador. Los votos por candidatura suman los votos a candidaturas del 05 en cada municipio, y por provincia no superan los del 08 (que llevan el CERA).
+
 ## `escanos_generales.json`
 
 - Script: `R/09_escanos_generales.R` (lector común en `R/infoelectoral.R`). Juego: A5.

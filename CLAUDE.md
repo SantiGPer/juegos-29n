@@ -52,10 +52,13 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 10_mapa_provincias.R # trazados SVG de las provincias (es-atlas/IGN) para A7
 │   ├── 11_mapas_a07.R    # valores por provincia de los seis mapas de A7 y sus señuelos
 │   ├── 12_fontaneria_a09.R # escaños de 2023 con otras reglas (catálogo de A9)
+│   ├── 13_resultados_2023_mun.R # resultados de 2023 por municipio con población, coordenadas y ganador en 2019 y 2008 para A15
+│   ├── catalogo_a15.R    # municipios más extremos por indicador y umbral → editorial/catalogos/
 │   ├── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 │   ├── cotejo_a05_interior.R # serie de generales 1977–2023 para las explicaciones de A5 → editorial/fuentes/
 │   ├── cotejo_a09_fontaneria.R # cifras del contenido y del catálogo de A9 frente al cálculo → editorial/fuentes/
-│   └── cotejo_a11_datos.R # cifras y puestos de los duelos de A11 → editorial/fuentes/
+│   ├── cotejo_a11_datos.R # cifras y puestos de los duelos de A11 → editorial/fuentes/
+│   └── cotejo_a16_loreg.R # orden de los candidatos en la papeleta del Senado (LOREG y modelo P.2) → editorial/fuentes/
 ├── docs/
 │   ├── documento-base.md # histórico (15-10): fichas iniciales; no rige
 │   ├── diseno.md         # reglas visuales: lista negra de estética IA y dirección inicial

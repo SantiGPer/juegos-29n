@@ -2,6 +2,28 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-11-01 (2) — A15: datos y catálogo
+
+**Hecho**
+- `R/13_resultados_2023_mun.R` → `data/resultados_2023_mun.json` (4,7 MB, sin sangría para que pese menos). Contiene los 8.131 municipios con el resultado del Congreso del 23-J (votos por candidatura, blancos, nulos, censo y participación), la población a 1-1-2023, las coordenadas del núcleo capital y el ganador en 2023, en noviembre y abril de 2019 y en 2008. Fuentes y comprobaciones, en `data/SOURCES.md`.
+- `R/catalogo_a15.R` → `editorial/catalogos/a15-catalogo.md`: los cinco municipios más extremos para cada indicador (voto a PP, PSOE, Vox y Sumar sobre voto válido; participación más alta y más baja) en los umbrales de 1.000, 5.000 y 20.000 habitantes, con provincia, población, valor y puesto. El mismo método para los cuatro partidos, agrupando por la candidatura de acumulación nacional.
+- `CLAUDE.md`: los tres scripts nuevos en el árbol (13, catálogo de A15 y cotejo de A16).
+
+**Capas de pista (ampliación del encargo)**
+- Capa 3. El tamaño sale del padrón, y el fichero 05 también trae censo, número de mesas, blancos y nulos. El voto exterior no existe por municipio: Interior publica el CERA solo por provincia (el «CERE» del 05 es el censo de extranjeros residentes de las municipales y en las generales va vacío). Si se quiere el peso del voto exterior, la fuente sería el censo CERA por municipio de inscripción de la Oficina del Censo Electoral (INE); no lo he comprobado ni descargado. Sin esa fuente, la capa 3 se queda en tamaño, censo y quizá voto en blanco o nulo.
+- Capa 4. Hay resultados municipales comparables de 2019 (abril y noviembre) y de 2008. Faltan 23 municipios creados después de 2008 y uno en abril de 2019. Los municipios de los que se segregaron conservan su código, aunque en 2008 tenían más territorio.
+
+**Propuesta para el recuadro de Canarias**
+- El jugador toca primero una provincia, así que un clic «cruzado» solo ocurre si elige una provincia del otro lado. Propongo medir siempre la distancia real: el clic se pasa a longitud y latitud invirtiendo la proyección de su panel (cónica conforme de la península o de Canarias, más el encaje en el SVG, como en `R/10_mapa_provincias.R`) y se calcula la distancia sobre la esfera hasta el municipio. Un municipio canario marcado en la península (o al revés) queda a más de 1.000 km: 1 punto, sin regla especial.
+- Para eso, el `data.json` de A15 llevará los parámetros de las dos proyecciones y del encaje (salen de R/10) y el juego hará la inversión en JS. Es un cambio en `shared/` (ronda de clic en el mapa): diff para el autor antes del commit.
+
+**Dudas para el autor**
+- Ceuta y Melilla salen en el mapa como casillas, no en su posición real. ¿Se excluyen de la selección de A15, o un clic en su casilla cuenta como su posición exacta? Melilla encabeza la participación más baja en los tres umbrales.
+- Umbral y regla de selección: con el catálogo a la vista.
+
+**Falta**
+- Montar A15, cuando estén la selección, el diseño de la ronda de clic en el mapa y las decisiones pendientes (reloj, revelación).
+
 ## 2026-11-01 — Cabos sueltos: A9 y documento base
 
 **Hecho**
@@ -21,12 +43,19 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - En 2023, por tanto, que el primero de la papeleta sea el más votado no aísla el efecto del orden: el partido pone primero a quien quiere que salga (cabeza de cartel, más conocido). La pregunta «¿pesa el orden en la papeleta?» no se puede responder con 2023 solo.
 - Con orden alfabético (2008 y antes), la posición no la elige el partido y el efecto sí se puede medir. Opciones para que decida el autor: a) A16 con 2008 (orden alfabético) como prueba del efecto, con 2023 como contraste; b) A16 con 2023, sin afirmar que el orden causa nada (el final mostraría cuánto sigue el votante el orden del partido); c) otro planteamiento.
 
+**A16 en pausa: idea nueva del autor para que la examine Cowork (01-11)**
+- El autor cambia el enfoque y deja A16 en pausa. Lo que sigue es solo una idea, no una decisión.
+- La idea: un análisis de nombres y apellidos en política. La mecánica enseñaría los nombres más votados y los apellidos más frecuentes entre los candidatos.
+- Fuente: el Senado, porque es de lista abierta y cada candidato tiene sus propios votos.
+- Para Cowork: viabilidad, mecánica y métrica (votos por nombre, frecuencia de apellidos, el mismo método para todos los partidos). También qué parte del hallazgo sobre el orden de la papeleta sigue valiendo, por ejemplo si se usa más de una elección.
+- Code no avanza en A16 hasta que haya decisión. Los datos del Senado siguen bloqueados por el desafío de Cloudflare.
+
 **Bloqueo**
 - Interior (infoelectoral) responde con un desafío de Cloudflare (403) a la descarga de `03202307_MUNI.zip` (Senado 2023). Las descargas del 20 y el 24-10 funcionaron; ahora no. No lo he forzado. Hace falta que el autor baje los zips desde el navegador: el de 2023 y, si se elige la opción a), el de 2008 (`03200803_MUNI.zip`).
 
 **Falta**
 - A16: votos por candidato, medición del orden, catálogo de duelos y `editorial/fuentes/a16-viabilidad.md`, en cuanto estén los zips y la decisión sobre el planteamiento.
-- A15: datos y catálogo (también dependen de Interior).
+- A15: datos y catálogo. No dependen del bloqueo de Interior, porque los ficheros municipales del Congreso de 2023, 2019 y 2008 ya están en la caché (descargados el 20 y el 24-10). El padrón del INE se descarga directamente. Falta el Nomenclátor del IGN, que baja el autor desde el Centro de Descargas del CNIG.
 
 **Duda para el autor**
 - Nombres de los JSON nuevos (`resultados_2023_mun.json` para A15 y `senado_2023.json` para A16): los he puesto yo; se cambian si se prefieren otros.
