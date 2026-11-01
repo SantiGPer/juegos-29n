@@ -8,9 +8,16 @@ Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor 
 - Contenido de A9: quitado el punto tras «Soria ¡Ya!» en la explicación de T1, como en el `data.json`. Cierra la duda menor de la entrada 2026-10-25 (5); Cowork ya no tiene que hacerlo. La cita literal de decisiones.md (25-10, tarde) conserva el punto como registro.
 - `docs/documento-base.md` marcado como histórico (decisión del autor, 1-11): nota al principio y «Superada» con fecha en la tabla de motores, A3, A5, A7, A8, A9, A11, B1, B2, la tabla de fuentes y el plan de producción. El resto del texto no cambia.
 - `CLAUDE.md`: el árbol, la sección de juegos y «Cómo trabajar conmigo» ya no mandan a las fichas de documento-base, sino a la ficha de `CLAUDE.md`, a decisiones.md y al contenido del juego.
+- Push a Pages de lo anterior con confirmación del autor (`fa0bb4b..b95681a`).
+- Encargo del 01-11 (calendario, índice y CLAUDE.md):
+  - `data/calendario.json`: días 14 y 15 en `TODO`; la nota dice qué carpeta irá en cada uno (A15 y A16). El índice ya no enlaza A14. Fuera el `dia` del `data.json` de A14 (su recibo diría «día TODO» si se juega por la URL directa).
+  - `CLAUDE.md`: A6 y A14 a la reserva; fichas de A15 y A16; M3 y M8 sin uso desde el 01-11; A15 y A16 en el encadenador; `resultados_2023_mun.json` y `senado_2023.json` en la tabla de datos; calendario de entregas con A15 y A16 el 12-11. De paso, la fila de campaña ya no habla del bingo de la víspera (encargo del 24-10 que había quedado a medias) y se arregla una fila de la tabla de datos que estaba pegada a la anterior.
 
 **Falta**
-- Push, cuando lo confirme el autor.
+- Encargos de viabilidad de A16 y de datos y catálogo de A15.
+
+**Duda para el autor**
+- Nombres de los JSON nuevos (`resultados_2023_mun.json` para A15 y `senado_2023.json` para A16): los he puesto yo; se cambian si se prefieren otros.
 
 ## 2026-10-25 (5) — A9: T1 y T3 definitivas
 

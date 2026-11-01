@@ -34,7 +34,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 ├── juegos/
 │   ├── a01-quiz-sistema-electoral/
 │   ├── a02-cronologia-legislatura/
-│   └── ...               # a01–a14 y b01; nombre = id + slug
+│   └── ...               # a01–a16 y b01; nombre = id + slug
 ├── data/
 │   ├── *.json            # datos consumidos por los juegos
 │   └── SOURCES.md        # fuente, URL y fecha de descarga de cada JSON
@@ -84,14 +84,14 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 | --- | --- | --- |
 | M1 quiz | N preguntas, explicación, puntuación; variantes "ordena" y "pistas progresivas" | A1, A2, A4, A12, B1 |
 | M2 estimación | Deslizadores / entrada numérica; error respecto a la referencia | A3 |
-| M3 gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | A6 |
+| M3 gráfico | Gráfico incompleto que el usuario rellena; se superpone el real; grado de acierto | Sin uso desde el 01-11 (A6 pasa a la reserva y, si vuelve, va en el encadenador) |
 | M4 más-o-menos | Rondas de comparar dos cifras, cadena "mayor o menor", ordenar seis ítems; racha y ranking final | Sin uso desde el 24-10 (A11 pasa a duelos del encadenador) |
 | M6 agrupar | 16 ítems en 4 grupos de 4; 4 fallos; cuadrícula de colores | A10 |
 | M7 atributos | Adivinar un ítem; feedback ✓/✗ y ↑↓ por atributo; autocompletado | Sin uso desde el 15-10 (A12 pasa a M1) |
-| M8 afinidad | El usuario ordena ítems; Spearman con el perfil de cada partido | A14 |
+| M8 afinidad | El usuario ordena ítems; Spearman con el perfil de cada partido | Sin uso desde el 01-11 (A14 pasa a la reserva) |
 | M9 rosco | Una definición por letra en círculo; respuesta escrita con variantes aceptadas; pasar y volver | A13 |
 | M10 emparejar | Filas de ítems con hueco y bandeja de respuestas en la barra, con una respuesta especial sin dato («No existe») por configuración; se corrige al final, 1 punto por pareja. Es un tipo de ronda del encadenador | A8 (candidatos de B1, A9 y «Lemas de campaña» si entra) |
-| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7; hemiciclo para A5) con una cabecera, una pista, una puntuación y un cierre; barra de vida opcional (A11) | A3, A5, A7, A8, A9, A11 |
+| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7; hemiciclo para A5; clic en el mapa para A15, por montar) con una cabecera, una pista, una puntuación y un cierre; barra de vida opcional (A11) | A3, A5, A7, A8, A9, A11, A15, A16 |
 
 Cada motor expone una función `iniciar(config, contenedor)` y delega el final en `shared/cierre.js`. El contenido del juego vive en JSON, nunca en el JS del motor.
 
@@ -106,7 +106,6 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 - **A3 Plenopedia** (medio en datos). Diez preguntas sobre el Pleno de la XV (203 sesiones, 2023–2026) con mecánicas mezcladas en el encadenador: opción múltiple, ordenar, estimación (M2) y duelo. Indicadores del Diario de Sesiones: palabras por diputado, rumores, aplausos y risas por cada 10.000 palabras, llamadas al orden, duración y hora de cierre de las sesiones, minutos de silencio y léxico. El Gobierno cuenta como categoría propia. Primer juego de la serie (13-N). Cierre: puntos sobre 10. Sustituye al Crispómetro (20-10).
 - **A4 Promesas de 2023** (bajo-medio). Cumplida / incumplida / bloqueada, con la votación que la bloqueó documentada.
 - **A5 Hemiciclos** (medio). Cuatro rondas (generales de 1982, 2000, 2015 y 2023) de ronda tipo hemiciclo en el encadenador: el usuario reparte 350 escaños entre las candidaturas con cinco o más, con el nombre de la época, y el resto en «Otros». Datos de `escanos_generales.json`. Cierre: escaños de error medio.
-- **A6 Completa el gráfico parlamentario** (medio). 6-8 métricas de actividad del Congreso, generales y por grupo; el usuario dibuja barras. Cierre: grado de acierto.
 - **A7 ¿Qué mapa es este?** (medio). Seis mapas provinciales sin leyenda (abstención, habitantes por escaño, voto nulo, voto a Sumar, nacidos en el extranjero y voto a Vox), con cuatro etiquetas por mapa; ronda de tipo mapa en el encadenador y geometría de `mapa_provincias.json`. Cierre: aciertos sobre 6.
 - **A8 El fondo de la urna** (bajo). Candidaturas sin escaño del 23-J. Encadenador con dos rondas de M10 emparejar (cinco candidaturas, una inventada, contra cuatro cifras de votos y «No existe»; cada candidatura con sus provincias) y un duelo final (PACMA, 0 escaños, frente a UPN, 1 escaño). Datos de `resultados_2023_prov.json`. Las inventadas se comprueban antes en el Registro de Partidos y en las candidaturas proclamadas del 29-N. Cierre: puntos sobre 11. Sustituye a «Demografía del voto» (21-10).
 - **A9 Fontanería electoral** (medio). Siete cambios del sistema electoral con el voto de 2023 invariable (barrera del 10 %, Sainte-Laguë, cuota Hare, circunscripción autonómica, circunscripción única, 300 diputados y mínimo de 1 por provincia), solo proporcionales y con listas cerradas. Cada pregunta es una ronda de opciones del encadenador: el cambio, un botón de ayuda que abre un panel en la página y las consecuencias como opciones; al resolver, gráfico de escaños real frente a con el cambio. El reparto se calcula en R (`fontaneria_a09.json`; M5 deja de ser motor de juego). Cierre: aciertos sobre 7.
@@ -114,13 +113,14 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 - **A11 Duelo de circunscripciones** (muy bajo). Diez duelos con «VS» en el encadenador: ¿qué circunscripción tiene más? Barra de vida de cinco tramos; al quinto fallo, fin de la partida. Datos de `resultados_2023_prov.json`. Cierre: aciertos sobre 10.
 - **A12 Presidentle** (bajo). M1 pistas progresivas. Adivinar uno de los 7 presidentes del Gobierno (siempre visibles como opciones) con 5 pistas: edad en la primera toma de posesión, tiempo en el cargo, formación, provincia de nacimiento, partido y año. Una ronda por partida con presidente aleatorio. Suárez desde 1977 (nota sobre 1976); tiempo en años y meses, Sánchez con corte el 29-11-2026. Datos: siete fichas a mano (La Moncloa y BOE). Cierre: 5 a 1 puntos según la pista; 0 si se agotan.
 - **A13 Rosco del politólogo** (bajo-medio). Motor nuevo M9. Una definición por letra (empieza por o contiene; Ñ, K, W, X, Y por "contiene") con vocabulario electoral, político y de ciencia política, cada una con fuente. Cronómetro opcional que elige el jugador al empezar. Cierre: aciertos sobre el total de letras + rosco compartible.
-- **A14 Ordena las prioridades** (motor muy bajo, datos medio). Único juego de opinión. El usuario ordena 8 temas; Spearman contra el perfil de cada programa del 29-N. Perfil = proporción de medidas numeradas por tema (capítulo + reclasificación LLM, validada con muestra manual y con conteo léxico). Cierre: "tu agenda se parece a la de X" (saliencia, no posición). Plan B: programas 2023 (Manifesto Project) o iniciativas por tema de la XV.
+- **A15 ¿Dónde está este pueblo?** (nombre provisional). Se enseña el resultado de un municipio en las generales de 2023 y el jugador marca en el mapa dónde está: toca la provincia, el mapa se amplía y clava el punto, que puede mover hasta confirmar. Ronda nueva de clic en el mapa en el encadenador, con la geometría de `mapa_provincias.json`. Pistas por capas: 1, ganador y participación (siempre visible); 2, reparto completo, con los partidos territoriales por su nombre; 3, tamaño del municipio y voto exterior; 4, ganador en 2019 o 2008 (3 y 4, según los datos). Abrir la capa 2, 3 o 4 deja la ronda en el 80, el 60 o el 40 % de sus puntos. Distancia en km sobre coordenadas reales, por tramos: hasta 10 km, 5 puntos; hasta 50, 4; hasta 150, 3; hasta 400, 2; más, 1. Cinco rondas, con municipios elegidos por una regla común a todos los partidos. Datos de `resultados_2023_mun.json`. Cierre: puntos sobre 25, con un decimal. Selección de municipios, reloj, Canarias y revelación, pendientes.
+- **A16 El efecto papeleta** (nombre provisional). Listas abiertas del Senado: duelos con «VS» del encadenador entre candidatos de la misma candidatura y circunscripción («¿cuál sacó más votos?»); el final revela si el orden en la papeleta pesa. Datos de `senado_2023.json`. Depende de la viabilidad (`editorial/fuentes/a16-viabilidad.md`): si el patrón no es claro, decide el autor. Número de duelos y barra de vida, pendientes. Cierre: aciertos sobre el número de duelos.
 
 **Campaña (motor listo antes; contenido en 24-48 h)**
 
 - **B1 Quién dijo qué**. Una sola pieza, el día siguiente a un debate (cuál, pendiente de las fechas): atribuir frases y una ronda de bingo, «¿Lo dijeron o no?», en la que el jugador marca en un cartón lo que cree que ocurrió y se corrige con la transcripción. El bingo ya no es un juego propio (24-10). Casillas, peso del cartón y mecánica del resto, pendientes.
 
-**Reserva:** mitos electorales V/F, titular a medio, Politle, léxico del Congreso (descalificativos de todos los grupos + cifra a estimar), artículo censurado, dibuja la curva, proximidad semántica.
+**Reserva:** A6 Completa el gráfico parlamentario (01-11; datos en `actividad_parlamentaria.json`, métricas 1, 2, 5 y 6; si vuelve, en el encadenador y sin M3), A14 Ordena las prioridades (01-11; motor M8 y carpeta con datos de prueba, sin enlace en el índice; la serie se queda sin juego de opinión), mitos electorales V/F, titular a medio, Politle, léxico del Congreso (descalificativos de todos los grupos + cifra a estimar), artículo censurado, dibuja la curva, proximidad semántica.
 
 **Descartados:** afinidad por votaciones reales, predicción del 29-N, coste de ir separados, última papeleta, forma gobierno, encuestas en vivo.
 
@@ -128,18 +128,21 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 
 | JSON | Fuente | Juegos |
 | --- | --- | --- |
-| `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral), INE y BOE | A7, A8, A9, A11 || `escanos_generales.json` | Ministerio del Interior (infoelectoral) | A5 |
+| `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral), INE y BOE | A7, A8, A9, A11 |
+| `resultados_2023_mun.json` | Ministerio del Interior (infoelectoral), INE (padrón a 1-1-2023) e IGN/CNIG (Nomenclátor) | A15 |
+| `senado_2023.json` | Ministerio del Interior (infoelectoral), votos por candidato al Senado | A16 |
+| `escanos_generales.json` | Ministerio del Interior (infoelectoral) | A5 |
 | `fontaneria_a09.json` | Derivado de `resultados_2023_prov.json` (población a 1-1-2022) | A9 |
 | `mapa_provincias.json` | IGN vía es-atlas 0.6.0, proyectado en R | A7 |
 | `mapas_a07.json` | Derivado de `resultados_2023_prov.json` | A7 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
-| `actividad_parlamentaria.json` | Datos abiertos del Congreso | A6, plan B A14 |
+| `actividad_parlamentaria.json` | Datos abiertos del Congreso | Reserva (A6) |
 | `presidentes.json` | La Moncloa y BOE; siete fichas a mano, sin script | A12 |
 | `llamadas_al_orden.json` | Diario de Sesiones (regex: "le llamo al orden", "retire esa expresión"); ParlaMint-ES para texto limpio de legislaturas anteriores | A3 (vía `plenopedia_xv.json`); VIII–XV en reserva para A11 o posts |
 | `diputados_xv.json` | Datos abiertos del Congreso (diputados activos y de baja) | A3 |
 | `plenopedia_xv.json` | Diario de Sesiones de la XV: palabras, acotaciones, horas y menciones por orador y grupo | A3 |
 | `cis_postelectoral_2023.json` | CIS, microdato | Reserva (era el A8 anterior) |
-| `programas_29n.json` | Webs de los partidos; MARPOR como plan B | A14 |
+| `programas_29n.json` | Webs de los partidos; MARPOR como plan B | Reserva (A14) |
 | `encuestas.json` | Agregadores públicos | contexto |
 
 Cada script de R escribe un único JSON y anota fuente, URL y fecha en `data/SOURCES.md`. Los JSON son la única frontera entre R y los juegos.
@@ -152,9 +155,9 @@ Cada script de R escribe un único JSON y anota fuente, URL y fecha en `data/SOU
 | 26 oct | M1, M4, M6, M8; A1, A2, A10, A12 jugables; llamadas al orden de todas las legislaturas del rango |
 | 2 nov | JSON base listos; M9; A3, A4, A11, A13 jugables (8 en total) |
 | 6 nov | **Corte:** lo que no esté encaminado se sustituye por un suplente de la reserva |
-| 9 nov | M3, mapa SVG, M2; A5, A6, A7, A8 jugables (12 en total) |
-| 12 nov | A9; A14 con programas; plantilla de B1; QA en móvil de los 13; reparto de días fijado |
-| 13–27 nov | Un juego al día a hora fija. Bingo la víspera de cada debate, Quién dijo qué al día siguiente |
+| 9 nov | Mapa SVG, M2; A5, A7, A8 jugables |
+| 12 nov | A9, A15 y A16; plantilla de B1; QA en móvil de los 14; reparto de días fijado |
+| 13–27 nov | Un juego al día a hora fija. Quién dijo qué, el día siguiente al debate que cubra |
 
 Contexto electoral: campaña del 13 al 27 de noviembre, reflexión el 28, votación el 29. Primer cara a cara Sánchez–Feijóo propuesto para el 16 de noviembre; debates de RTVE por fijar. Candidaturas cerradas el 26 de octubre; programas previstos entre finales de octubre y el inicio de campaña.
 
