@@ -2,6 +2,8 @@
 
 Oct 13, 2026 · @Santi
 
+> **Documento histórico, congelado a 15-10-2026. No rige.** Las fichas vigentes de juegos, motores y datos están en `CLAUDE.md`; las decisiones posteriores, en `editorial/decisiones.md`, y el contenido de cada juego, en `editorial/contenido/`. Las fichas superadas llevan una nota con la fecha del cambio; las demás no se han revisado desde el 15-10.
+
 ## Objetivo y principios de diseño
 
 Publicar un juego político sencillo cada día de campaña, del 13 al 27 de noviembre de 2026, en LinkedIn, alojado en GitHub Pages, como serie de contenido de un analista cuantitativo.
@@ -55,6 +57,8 @@ El coste se concentra en el primer juego de cada tipo; a partir de ahí, cada ju
 
 **Motores**
 
+*Superada: M2 pasa a A3, M3 queda solo para A6, M4 sin uso desde el 24-10, M5 deja de ser motor de juego (25-10); entran M10 emparejar y el encadenador. Tabla vigente en `CLAUDE.md`.*
+
 | Motor | Qué hace | Coste técnico | Juegos que lo usan |
 | --- | --- | --- | --- |
 | M1 Quiz | N preguntas, puntuación, explicación por pregunta, nivel final; variantes "ordena" y "pistas progresivas" | Bajo | A1, A2, A4, A12, B1 |
@@ -91,6 +95,8 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 
 ### A3 · Crispómetro: llamadas al orden por legislatura
 
+*Superada (20-10): sustituido por A3 Plenopedia. Ficha vigente en `CLAUDE.md`.*
+
 - **Idea:** las llamadas al orden de la Presidencia como proxy de crispación parlamentaria, comparadas entre legislaturas.
 - **Mecánica:** M4 en cadena. Se parte de una legislatura y el usuario decide, una a una, si la siguiente tuvo más o menos llamadas al orden por sesión plenaria, hasta llegar a la XV. Al final, ranking completo con el acierto del usuario.
 - **Métrica:** llamadas al orden por cada 100 sesiones plenarias (normaliza las legislaturas cortas XI y XIII). Posible segunda ronda con retiradas de palabras y expulsiones.
@@ -110,6 +116,8 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 
 ### A5 · Hemiciclos por legislatura
 
+*Superada (20-10): cuatro generales (1982, 2000, 2015 y 2023) en el encadenador, por candidaturas y no por grupos. Ficha vigente en `CLAUDE.md`.*
+
 - **Idea:** se muestra el hemiciclo de una legislatura y el usuario asigna escaños a cada grupo con grupo parlamentario propio (se omite el Mixto).
 - **Mecánica:** M3 con hemiciclo en SVG; entrada numérica por grupo; se revela el real y el error por grupo.
 - **Cierre:** grado de acierto (error absoluto medio).
@@ -126,6 +134,8 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 
 ### A7 · ¿Qué mapa es este?
 
+*Superada (20-10): otros seis mapas, sin renta, en el encadenador. Ficha vigente en `CLAUDE.md`.*
+
 - **Idea:** mapas provinciales sin leyenda (voto PP, Vox, PSOE, abstención, voto por correo, renta media); el usuario identifica cuál es cuál.
 - **Mecánica:** M3 + mapa SVG provincial.
 - **Cierre:** aciertos.
@@ -134,6 +144,8 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 
 ### A8 · Demografía del voto
 
+*Superada (21-10): sustituido por A8 El fondo de la urna. Ficha vigente en `CLAUDE.md`.*
+
 - **Idea:** estimar el voto a cada partido por edad, sexo y hábitat y compararlo con el postelectoral.
 - **Mecánica:** M2 con deslizadores por segmento.
 - **Cierre:** error medio respecto al dato.
@@ -141,6 +153,8 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 - **Coste:** medio.
 
 ### A9 · Mismo voto, otras reglas
+
+*Superada (25-10): sustituido por A9 Fontanería electoral, sin M5. Ficha vigente en `CLAUDE.md`.*
 
 - **Idea:** el resultado real de 2023 repartido con circunscripción única, autonómica, o barrera del 5 %: quién gana y quién pierde escaños con el mismo voto.
 - **Mecánica:** M5. El usuario elige la regla y, antes de ver el reparto, estima qué partido gana más.
@@ -157,6 +171,8 @@ Catorce juegos aprobados. Cada ficha recoge idea, mecánica, cierre, datos, cost
 - **Coste:** muy bajo.
 
 ### A11 · Más o menos / Ordena
+
+*Superada (24-10): sustituido por A11 Duelo de circunscripciones, en el encadenador. Ficha vigente en `CLAUDE.md`.*
 
 - **Idea:** rondas de "¿qué provincia tuvo más abstención?", "¿qué grupo registró más iniciativas?", y rondas de ordenar seis ítems (CCAA por participación, leyes por fecha, partidos por votos por escaño).
 - **Mecánica:** M4, diez rondas, racha.
@@ -208,6 +224,8 @@ Dependen de hechos que aún no han ocurrido; el motor y la plantilla quedan list
 
 ### B1 · Quién dijo qué (post-debate)
 
+*Superada (24-10): una sola pieza, con el bingo dentro como ronda. Ficha vigente en `CLAUDE.md`.*
+
 - **Idea:** el día siguiente a cada debate, atribuir frases a su autor y adivinar cuál fue el tema más repetido, con recuento de palabras del debate.
 - **Mecánica:** M1; 10 frases más una pregunta de tema.
 - **Cierre:** puntuación.
@@ -216,6 +234,8 @@ Dependen de hechos que aún no han ocurrido; el motor y la plantilla quedan list
 - **Coste:** 2-3 horas de contenido por debate.
 
 ### B2 · Bingo del debate
+
+*Superada (24-10): deja de ser un juego propio y pasa a ronda de B1.*
 
 - **Idea:** cartón de 16-25 casillas con frases y gestos previsibles ("ultraderecha", "sanchismo", "Waterloo", mirar al reloj, citar a Trump). Se publica la víspera para jugar en directo; al día siguiente, el cartón marcado con lo que de verdad ocurrió.
 - **Mecánica:** página estática; marcar casillas en el navegador.
@@ -249,6 +269,8 @@ Dependen de hechos que aún no han ocurrido; el motor y la plantilla quedan list
 
 Todas públicas. Cada JSON del repositorio cita su fuente y su fecha de descarga.
 
+*Superada: tabla vigente en `CLAUDE.md` y fuentes en `data/SOURCES.md`.*
+
 | Dato | Fuente | Juegos | Trabajo |
 | --- | --- | --- | --- |
 | Resultados 2023 por provincia (votos, escaños, abstención, voto por correo, CERA) | Ministerio del Interior (infoelectoral) | A7, A9, A11 | Descarga y limpieza en R |
@@ -266,6 +288,8 @@ Todas públicas. Cada JSON del repositorio cita su fuente y su fecha de descarga
 | LOREG, Constitución, Reglamento del Congreso | BOE | A1, A3 | Redacción |
 
 ## Plan de producción y próximos pasos
+
+*Superado: plan y calendario de trabajo del 15-10, conservados como registro. Calendario vigente en `CLAUDE.md`; reparto de días en `editorial/calendario.md`.*
 
 Orden de producción, de lo que más riesgo tiene a lo que menos. Las fases son secuenciales por dependencia; el ritmo lo fija el tiempo disponible, que solo conoce el autor.
 

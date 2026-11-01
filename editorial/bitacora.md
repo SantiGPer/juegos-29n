@@ -2,6 +2,16 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-11-01 — Cabos sueltos: A9 y documento base
+
+**Hecho**
+- Contenido de A9: quitado el punto tras «Soria ¡Ya!» en la explicación de T1, como en el `data.json`. Cierra la duda menor de la entrada 2026-10-25 (5); Cowork ya no tiene que hacerlo. La cita literal de decisiones.md (25-10, tarde) conserva el punto como registro.
+- `docs/documento-base.md` marcado como histórico (decisión del autor, 1-11): nota al principio y «Superada» con fecha en la tabla de motores, A3, A5, A7, A8, A9, A11, B1, B2, la tabla de fuentes y el plan de producción. El resto del texto no cambia.
+- `CLAUDE.md`: el árbol, la sección de juegos y «Cómo trabajar conmigo» ya no mandan a las fichas de documento-base, sino a la ficha de `CLAUDE.md`, a decisiones.md y al contenido del juego.
+
+**Falta**
+- Push, cuando lo confirme el autor.
+
 ## 2026-10-25 (5) — A9: T1 y T3 definitivas
 
 **Hecho**

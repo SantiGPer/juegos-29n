@@ -57,7 +57,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── cotejo_a09_fontaneria.R # cifras del contenido y del catálogo de A9 frente al cálculo → editorial/fuentes/
 │   └── cotejo_a11_datos.R # cifras y puestos de los duelos de A11 → editorial/fuentes/
 ├── docs/
-│   ├── documento-base.md # fichas completas, calendario, reserva
+│   ├── documento-base.md # histórico (15-10): fichas iniciales; no rige
 │   ├── diseno.md         # reglas visuales: lista negra de estética IA y dirección inicial
 │   └── diseno-plan.md    # plan de diseño aprobado antes de escribir CSS
 └── editorial/            # territorio de Cowork; aquí solo lees y escribes la bitácora
@@ -97,7 +97,7 @@ Cada motor expone una función `iniciar(config, contenedor)` y delega el final e
 
 ## Juegos
 
-Orden de construcción = orden del calendario. Coste relativo entre paréntesis. Ficha completa en `docs/documento-base.md`.
+Orden de construcción = orden del calendario. Coste relativo entre paréntesis. La ficha vigente es la de abajo, con el detalle en `editorial/decisiones.md` y en `editorial/contenido/<id-juego>.md`; `docs/documento-base.md` es histórico.
 
 **Precampaña (listos antes del 13-N)**
 
@@ -160,7 +160,7 @@ Contexto electoral: campaña del 13 al 27 de noviembre, reflexión el 28, votaci
 
 ## Cómo trabajar conmigo en este repo
 
-- Una sesión por tarea del calendario. Empieza leyendo la ficha del juego en `docs/documento-base.md` y el motor que reutiliza.
+- Una sesión por tarea del calendario. Empieza leyendo la ficha del juego en este fichero, sus entradas en `editorial/decisiones.md`, su contenido en `editorial/contenido/` y el motor que reutiliza.
 - Antes de crear un motor nuevo, comprueba si uno existente lo cubre con configuración.
 - Prueba cada juego en viewport móvil (375 px) antes de darlo por terminado.
 - No publiques en Pages ni hagas push sin confirmación explícita.
