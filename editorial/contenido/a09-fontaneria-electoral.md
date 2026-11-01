@@ -132,7 +132,7 @@ Todas las preguntas reparten los mismos votos de las generales de 2023 con otra 
 
 **Correcta:** BNG
 
-**Explicación:** PP y PSOE perderían 16 y 12 escaños, Sumar 8 y Vox 7, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya!.
+**Explicación:** PP y PSOE perderían 16 y 12 escaños, Sumar 8 y Vox 7, y el BNG se quedaría fuera. Con 400, el máximo constitucional, entraría Soria ¡Ya!
 
 **Escaños:** PP 137 → 121 · PSOE 121 → 109 · Vox 33 → 26 · Sumar 31 → 23 · ERC 7 → 6 · Junts 7 → 5 · EH Bildu 6 → 5 · PNV 5 → 3 · BNG 1 → 0 · CC 1 → 1 · UPN 1 → 1
 
