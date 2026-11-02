@@ -1,8 +1,8 @@
 # Calendario de publicación
 
-Reparto aprobado por el autor el 25-10-2026. Provisional en B1: su día depende de la fecha del debate que cubra.
+Reparto aprobado por el autor el 25-10-2026; días 14 y 15 cambiados el 01-11-2026 (A6 y A14 pasan a la reserva). Provisional en B1: su día depende de la fecha del debate que cubra.
 
-Bloques (decisión del autor, 25-10): **fin de semana** = viernes, sábado y domingo; **entre semana** = lunes a jueves. Los juegos más llamativos van entre semana. Los juegos se abren a las 00:00 (hora peninsular). Hora del post: pendiente.
+Bloques (decisión del autor, 25-10): **fin de semana** = viernes, sábado y domingo; **entre semana** = lunes a jueves. Los juegos más llamativos van entre semana. Los juegos se abren a las 00:00 (hora peninsular). Hora del post (decisión del autor, 02-11): de lunes a viernes, 8:30; sábado y domingo, 10:00. B1, a las 13:00 del día siguiente al debate. Post de «El Tribunal de Cuentas»: sábado 28-11 a las 10:00.
 
 | Día | Fecha | Bloque | Juego | Post listo |
 | --- | --- | --- | --- | --- |
@@ -19,8 +19,8 @@ Bloques (decisión del autor, 25-10): **fin de semana** = viernes, sábado y dom
 | 11 | lun 23-11 | Entre semana | A5 Hemiciclos | |
 | 12 | mar 24-11 | Entre semana | A13 Rosco del politólogo | |
 | 13 | mié 25-11 | Entre semana | A2 Cronología de la legislatura | |
-| 14 | jue 26-11 | Entre semana | A6 Completa el gráfico | |
-| 15 | vie 27-11 | Fin de semana | A14 Ordena las prioridades | |
+| 14 | jue 26-11 | Entre semana | A15 ¿Dónde está este pueblo? (nombre provisional) | |
+| 15 | vie 27-11 | Fin de semana | A16 El efecto papeleta (nombre provisional) | |
 
 ## Regla de B1
 

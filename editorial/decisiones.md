@@ -1023,3 +1023,206 @@ Respuesta al encargo de diseño del 25-10, aprobada por el autor. Referencia: do
 - A9, decisiones del autor en sesión con Code (25-10), pasadas al contenido: «Teruel Existe» (siglas TE) en lugar de «Aragón Existe»; color `--te` #007351 (entrada de Teruel Existe de la Plantilla:Color político); Nueva Canarias con un tono claro de su verde, `--nc` #C8E3A0, en lugar del #85BD42 de la plantilla, porque quedaba a ΔE2000 4,5 de Vox. «No cambia nada» siempre al final; `destacar` por pregunta, según el diseño del 25-10.
 - Calendario: Code ya ha pasado el reparto a `calendario.json` y el `dia` a cada juego (25-10 (4)); B1 y A6, en `TODO` hasta que tengan carpeta.
 - **Encargo para Code (A9):** regenerar las explicaciones de T1 y T3 en el `data.json` desde el contenido y quitar los [VERIFICAR] del juego. Push con la confirmación del autor.
+
+## 2026-11-01
+
+- **A6 Completa el gráfico pasa a la reserva** (decisión del autor, 01-11). Se conservan `data/actividad_parlamentaria.json` (métricas 1, 2, 5 y 6 en VIII, IX, X, XII, XIV y XV) y `editorial/fuentes/a06-viabilidad.md`. Si vuelve, se monta con el encadenador, sin M3. Las métricas 3 y 4 y la validación manual de la 5 quedan sin hacer.
+- **A14 Ordena las prioridades pasa a la reserva** (decisión del autor, 01-11). Se conservan el motor M8 (`shared/motores/afinidad.js`), su diseño (24-10) y la carpeta con los datos de prueba, sin enlace en el índice. La serie se queda sin juego de opinión: las quince piezas cierran con puntuación.
+- **Dos juegos nuevos** (decisión del autor, 01-11), con id propio para no pisar el historial de A6 y A14:
+  - **A15 ¿Dónde está este pueblo?** (nombre provisional). Se enseña el resultado de un municipio en las generales de 2023 (barras de voto, participación y habitantes) y el jugador marca en el mapa dónde cree que está. Puntúa por la distancia en kilómetros. Unas cinco rondas, con municipios elegidos por una regla común a todos los partidos. Usa la geometría provincial de A7. Novedad de la serie: el dato municipal y la mecánica de situar en el mapa. Carpeta: `juegos/a15-donde-esta-este-pueblo/`.
+  - **A16 El efecto papeleta** (nombre provisional). En las listas abiertas del Senado, los candidatos de una misma candidatura reciben votos distintos. Duelos con «VS» del encadenador entre candidatos de la misma candidatura y circunscripción («¿cuál sacó más votos?»), y el final revela si el orden en la papeleta pesa. Novedad de la serie: el Senado. Carpeta: `juegos/a16-efecto-papeleta/`.
+- **Calendario** (decisión del autor, 01-11): día 14 (jue 26-11, entre semana), A15; día 15 (vie 27-11, fin de semana), A16. Respeta los bloques. Actualizado en editorial/calendario.md.
+- Pendiente del autor, cuando lleguen los datos: selección de municipios y número de rondas de A15; escala de puntos por distancia; nombres definitivos y portadas de A15 y A16; número de duelos de A16 y si lleva barra de vida; qué hacer con A16 si el efecto no sale claro.
+- **Encargo para Code (calendario, índice y CLAUDE.md):**
+  1. `data/calendario.json`: día 14 → `a15-donde-esta-este-pueblo` y día 15 → `a16-efecto-papeleta`, en `TODO` hasta que existan las carpetas. Quitar el `dia` del `data.json` de A14.
+  2. CLAUDE.md: A6 y A14 a la reserva; fichas de A15 y A16; tabla de motores (M8 sin uso desde el 01-11; A16 en el encadenador; A15 con la ronda nueva de clic en el mapa); tabla de datos con los dos JSON nuevos; calendario de entregas (A15 y A16 jugables el 12 nov, en lugar de A6 el 9 y A14 el 12).
+- **Encargo para Code (A15, datos y catálogo; sin montar el juego):**
+  1. Resultados por municipio del Congreso del 23-J de 2023 (Ministerio del Interior, infoelectoral), con `R/infoelectoral.R`. Población oficial del padrón por municipio a 1-1-2023 (INE). Coordenadas del núcleo capital de cada municipio, del Nomenclátor Geográfico de Municipios y Entidades de Población (IGN/CNIG). Un script, un JSON, y fuente, URL y fecha en `data/SOURCES.md`.
+  2. Catálogo en editorial/catalogos/a15-catalogo.md para que el autor elija: para cada indicador (voto a PP, PSOE, Vox y Sumar sobre voto válido; participación más alta y más baja), los cinco municipios con el valor más extremo en tres umbrales de población (1.000, 5.000 y 20.000 habitantes o más), con provincia, población, valor y puesto. El mismo método para los cuatro partidos.
+  3. Distancia: en kilómetros sobre las coordenadas reales (no sobre el plano proyectado). Proponer en la bitácora cómo se trata el recuadro de Canarias al hacer clic (municipio canario con clic en la península y al revés).
+- **Encargo para Code (A16, viabilidad; sin montar el juego):**
+  1. Comprobar en la LOREG y en el modelo oficial de papeleta del Senado cómo se ordenan los candidatos dentro de cada candidatura. Cita literal en editorial/fuentes/a16-papeleta-loreg.md.
+  2. Votos por candidato al Senado del 23-J de 2023 (Ministerio del Interior), en todas las circunscripciones senatoriales (provincias, islas, Ceuta y Melilla), con el mismo método en todas.
+  3. Medir, en cada candidatura con dos o más candidatos en una circunscripción, qué posición de la papeleta ocupa el más votado: porcentaje de casos en que es el primero, frente al que daría el azar (1/n), y diferencia media en votos y en porcentaje entre el primero y el último, por partido y por número de candidatos. Listar los casos en que el más votado no es el primero.
+  4. Catálogo de duelos posibles (misma candidatura y circunscripción, con votos, posición y diferencia), incluidos los que van contra el patrón.
+  
+  Salida en editorial/fuentes/a16-viabilidad.md y resumen en la bitácora. Si el patrón no es claro, no se escribe contenido: decide el autor.
+- **Encargo para el chat de diseño (A15):** ronda de mapa con clic, dentro de las reglas de la serie: cómo se marca el punto del jugador; qué se revela al responder (el municipio, la línea hasta el punto y la distancia); el recuadro de Canarias; el área táctil a 375 px en las provincias pequeñas; el icono de la regla de portada; el recibo. A16 usa el duelo con «VS» que ya existe.
+
+## 2026-11-01 (A15, jugabilidad)
+
+Mecánica inspirada en GeoGuessr con referencias electorales (decisión del autor, 01-11). Configuración aprobada:
+
+- **Pistas con nombre real:** los partidos territoriales salen con su nombre (EH Bildu, BNG, CC, Teruel Existe…), no agrupados en «Otros». Situar la región es parte del razonamiento; lo difícil es afinar dentro de ella.
+- **Pistas por capas:** la ronda empieza con poca información y cada capa desbloqueada rebaja la puntuación máxima de la ronda. Composición de las capas y cuánto resta cada una: pendiente.
+- **Marcar en dos pasos:** el jugador toca una provincia, el mapa se amplía a ella y clava el punto; el punto se puede mover hasta confirmar. Canarias: pendiente.
+- **Puntuación por tramos fijos de distancia** (no curva continua). Cortes de los tramos, puntos de cada uno y escala del cierre: pendiente.
+- Pendiente del autor: número de rondas (propuesta: cinco iguales para todos) y «Otra partida» aleatoria; regla de selección y umbral de población (al ver el catálogo); reloj; contenido de la revelación (propuesta: alfiler, municipio real, línea, kilómetros, nombre, provincia, explicación de dos frases y fuente).
+- **Encargo para Code (A15, ampliación del encargo de datos del 01-11):** comprobar qué variables trae por municipio el fichero de Interior que sirvan de capa de pista (voto CERA, blanco, nulo, censo) y si hay resultados municipales de 2019 y 2008 comparables con 2023 (cambios de municipios). Resumen en la bitácora; no se monta el juego.
+- **Encargo para el chat de diseño (A15, sustituye en parte al del 01-11):** el marcado en dos pasos (provincia → ampliación → punto, mover y confirmar, volver al mapa entero) a 375 px; cómo se ven y se desbloquean las capas de pista y su coste en puntos; el recibo con una casilla por ronda según el tramo y los kilómetros.
+- **A15, capas, tramos y cierre (decisión del autor, 01-11):**
+  - Capa 1, siempre visible: partido ganador y participación. Capa 2: reparto completo del 23-J. Capa 3: tamaño del municipio y peso del voto exterior. Capa 4: ganador en 2019 o en 2008. Las capas 3 y 4, sujetas a lo que encuentre Code en los datos.
+  - Coste de las capas: con la capa 1 sola, la ronda vale el 100 % de sus puntos; al abrir la 2, el 80 %; la 3, el 60 %; la 4, el 40 %.
+  - Tramos de distancia: hasta 10 km, 5 puntos; hasta 50 km, 4; hasta 150 km, 3; hasta 400 km, 2; más de 400 km, 1.
+  - Cinco rondas. Cierre: puntos sobre 25.
+  - Reloj: sigue pendiente (el «7» del mensaje anterior era una errata, no una aprobación).
+  - Decimales (decisión del autor, 01-11): el coste de las capas da puntos con decimales (4 × 0,8 = 3,2); se muestran con un decimal en la ronda, en el total y en el recibo, con coma decimal. Cierre sobre 25.
+
+## 2026-11-01 (métricas de uso y «El Tribunal de Cuentas»)
+
+- **Métricas de uso con Umami Cloud** (decisión del autor, 01-11), plan gratuito (Hobby: hasta 100.000 eventos al mes, un sitio, seis meses de datos, sin cookies; cada propiedad cuenta como un evento). Cambia el principio «sin backend, sin cuentas, sin almacenar respuestas» por «sin backend propio ni cuentas; solo métricas anónimas de uso, sin cookies ni almacenamiento en el navegador».
+- Se mide: partida empezada (juego) y partida terminada (juego y puntos).
+- **Medición por pregunta** (decisión del autor, 01-11): un solo evento al terminar la partida, con el detalle de cada pregunta codificado en una propiedad (cadena de aciertos, letras del rosco en A13, kilómetros por ronda en A15, error por ronda en A5…), no un evento por pregunta. Condicionada a que el plan Hobby permita descargar los datos de eventos (exportación o API) para analizarlos en R: si no lo permite, se queda solo la medición por juego.
+- Aviso al pie de cada juego: «Medimos partidas y puntuaciones de forma anónima, sin cookies.» Texto final, pendiente del autor.
+- **«El Tribunal de Cuentas»** (nombre provisional): post con las métricas de la serie, sábado 28-11 (jornada de reflexión). No es un juego y no ocupa día del calendario. Sin escudo ni elementos de la institución. Datos hasta un corte fijo (hora pendiente), con A16 solo con un día de partidas.
+- Criterio para el post del 28-11: sin rankings ni lecturas sobre partidos ni candidatos (por ejemplo, «la pregunta sobre X que más se falló»); solo uso, abandono, puntuaciones y preguntas descritas por su tema. Ninguna métrica es de opinión ni de intención de voto.
+- **Encargo para Code (Umami, comprobación antes de montar):**
+  1. En el plan Hobby: si los datos de eventos con propiedades se pueden descargar (exportación o API) para analizarlos en R; qué pasa al llegar a 100.000 eventos en el mes.
+  2. Proponer en la bitácora la llamada única en `cierre.js` y la de inicio de partida, con el número de eventos por partida.
+  3. Estimar cuántos eventos gasta una partida con medición por pregunta codificada en una sola propiedad (cadena de aciertos al terminar, p. ej. «1011011101») frente a un evento por pregunta.
+  4. CLAUDE.md: cambiar el principio de «100 % estático» según la primera línea de esta entrada.
+  
+  Tiene que estar en producción antes del 13-11. No se activa sin la confirmación del autor.
+
+## 2026-11-01 (A15, dudas de la bitácora del 01-11 (2))
+
+Decisiones del autor (01-11):
+
+- **Ceuta y Melilla** quedan fuera de la selección de A15: en el mapa son casillas, no su posición real, y la distancia a ellas no significa nada. En A15 sus casillas no se pueden marcar.
+- **Capa 3:** tamaño del municipio (población del INE a 1-1-2023) y voto en blanco y nulo. El voto exterior no entra: Interior solo lo publica por provincia.
+- **Capa 4:** ganador en 2008. Los 23 municipios creados después de 2008 no entran en la selección.
+- **Recuadro de Canarias:** se aprueba la propuesta de Code. La distancia es siempre la real: el clic se pasa a longitud y latitud invirtiendo la proyección de su panel y se mide sobre la esfera. Un municipio canario marcado en la península, o al revés, queda a más de 1.000 km: 1 punto, sin regla especial. Diff de `shared/` para el autor antes del commit.
+- **Umbral:** 5.000 habitantes o más.
+- **Regla de selección:** cinco rondas de dificultad creciente y nunca dos en la misma comunidad autónoma. Ronda 1: feudo de un partido territorial. Rondas 2 a 4: extremos de los partidos estatales o de la participación. Ronda 5: «España en pequeño», el municipio cuyo reparto se parece más al nacional. Los municipios los elige el autor sobre el catálogo ampliado.
+- **Reloj:** no hay.
+- **Revelación** de cada ronda: alfiler del jugador, punto del municipio real, línea entre los dos, kilómetros, tramo y puntos de la ronda, nombre del municipio y provincia, explicación de dos frases y fuente.
+- Nombres de los JSON nuevos y A16: pendientes.
+
+**Encargo para Code (A15, catálogo ampliado):** con el mismo método y el umbral de 5.000 habitantes, sin Ceuta, Melilla ni los municipios creados después de 2008, añadir a editorial/catalogos/a15-catalogo.md:
+1. Feudos de los partidos territoriales: los cinco municipios con mayor voto a EH Bildu, BNG, ERC, Junts, PNV y CC sobre voto válido.
+2. «España en pequeño»: los diez municipios cuyo reparto se parece más al nacional del 23-J. Proponer en la bitácora la medida de distancia entre repartos (por ejemplo, suma de diferencias absolutas en puntos sobre las candidaturas de ámbito nacional y «Otros») antes de dar la lista.
+3. Empate más ajustado entre PP y PSOE: los cinco municipios con menor diferencia en votos y en puntos.
+4. En todas las tablas, la comunidad autónoma de cada municipio, para aplicar la regla de no repetir comunidad.
+
+**Encargo para el chat de diseño (A15 completo; sustituye a los encargos de diseño de A15 del 01-11):** diseñar la parte estética de A15 ¿Dónde está este pueblo? con lo decidido, dentro de las reglas de docs/diseno.md y de la serie (píxel, tinta, papel y marcador, sin degradados, sombras ni radios, colores de partido solo cuando codifican partido). Maqueta en docs/maquetas/maqueta-pueblo-v18.html con valores inventados y marcados como tales.
+
+1. **Portada:** icono nuevo «ubicación» (alfiler de píxel) para la regla de portada. Las reglas que tiene que poder contar: cinco rondas, pistas por capas que restan puntos, marcar en el mapa y puntos por distancia.
+2. **Cabecera:** la común de la serie, con una pista de cinco celdas (una por ronda, según el tramo) y los puntos con un decimal sobre 25.
+3. **Ficha del municipio, por capas:**
+   - Capa 1, siempre visible: partido ganador (nombre sobre su color) y participación.
+   - Capa 2: reparto completo del 23-J, con los partidos territoriales con su nombre real. Decidir cuántas candidaturas se pintan antes de «Otros» y cómo se rotulan las siglas.
+   - Capa 3: población, voto en blanco y voto nulo.
+   - Capa 4: ganador en 2008.
+   - Cómo se ven las capas bloqueadas, cómo se desbloquean (botón por capa, en orden) y cómo se anuncia el coste antes de abrir: la ronda pasa a valer el 100, 80, 60 o 40 % según la última capa abierta. El valor máximo vigente de la ronda tiene que estar a la vista.
+4. **Marcado en dos pasos:**
+   - Paso 1, mapa de España con las provincias (geometría de A7, con el recuadro de Canarias): tocar una provincia. Las casillas de Ceuta y Melilla no se pueden marcar (ocultas o desactivadas, a elegir).
+   - Paso 2, la provincia ampliada: clavar el alfiler, moverlo libremente y «Confirmar» en la barra. Botón para volver al mapa entero y elegir otra provincia.
+   - Área táctil mínima de 44 px a 375 px, también en las provincias pequeñas del paso 1.
+   - Si la ficha y el mapa no caben juntos a 375 × 560, cómo se pasa de uno a otro sin perder la ficha.
+5. **Revelación:** alfiler del jugador y punto del municipio, con la línea entre los dos (si están en provincias distintas, la vista vuelve al mapa entero); kilómetros; tramo y puntos de la ronda con el descuento por capas a la vista (p. ej., «4 × 0,8 = 3,2»); nombre del municipio y provincia; explicación y fuente. Botón «Siguiente ronda».
+6. **Cierre y recibo:** puntos sobre 25 con un decimal y coma decimal. Recibo en texto: una casilla por ronda según el tramo de distancia (cinco niveles: hasta 10 km, 50, 150, 400 y más de 400) y los kilómetros de cada ronda. Proponer la escala de emojis de los cinco niveles.
+7. **Animación:** por pasos, sin movimiento con `prefers-reduced-motion`.
+
+Capturas a 320, 375 × 560 y 1280 y revisión contra la lista negra antes de dar la maqueta por buena.
+
+**Encargo para el chat de diseño (toda la serie, aviso de métricas):** lugar y estilo del aviso al pie de cada juego, «Medimos partidas y puntuaciones de forma anónima, sin cookies.» (texto provisional, pendiente del autor), en portada y cierre.
+
+## 2026-11-01 (A16, planteamiento)
+
+- **A16 se plantea como experimento natural con las generales de 2008** (decisión del autor, 01-11; opción a de la bitácora del 01-11). Hasta la LO 8/2010, los candidatos de cada partido iban en la papeleta del Senado por orden alfabético del primer apellido (art. 172.3 de la LOREG en su versión anterior; texto literal en editorial/fuentes/a16-papeleta-loreg.md): la posición no la elegía el partido, así que en 2008 sí se puede medir si el orden pesa. 2023, cuando el partido ordena libremente, sirve de contraste.
+- Mecánica: duelos con «VS» del encadenador entre candidatos de la misma candidatura y circunscripción («¿cuál sacó más votos?»), con la revelación final del efecto del orden. Número de duelos, mezcla de 2008 y 2023, barra de vida, nombre y portada: pendientes, con los datos a la vista.
+- La idea de los nombres y apellidos en política (bitácora del 01-11) no entra en A16. Queda como idea sin decidir.
+- **Pieza aparte:** el hallazgo puede dar un artículo breve, además del juego (idea del autor, 01-11). Formato, extensión y fecha, pendientes; se decide con los resultados de la medición.
+- **Encargo para el autor:** bajar desde el navegador los ficheros del Senado de Interior de 2008 (`03200803_MUNI.zip`) y de 2023 (`03202307_MUNI.zip`) y dejarlos donde indique Code.
+- **Encargo para Code (A16, viabilidad; sustituye a los pasos 2 a 4 del encargo de A16 del 01-11), en cuanto estén los ficheros:**
+  1. Votos por candidato al Senado en 2008 y 2023, en todas las circunscripciones senatoriales, con el mismo método. Comprobar en los datos de 2008 que el orden de cada candidatura coincide con el alfabético del primer apellido (y cómo se trataron los empates de apellido).
+  2. Medir en cada elección, en cada candidatura con dos o más candidatos en una circunscripción: porcentaje de casos en que el primero de la papeleta es el más votado, frente al que daría el azar (1/n); diferencia media en votos y en porcentaje entre el primero y el último; por partido y por número de candidatos. Listar los casos en que el más votado no es el primero.
+  3. Catálogo de duelos posibles de 2008 y de 2023 (misma candidatura y circunscripción, con votos, posición y diferencia), incluidos los que van contra el patrón.
+  
+  Salida en editorial/fuentes/a16-viabilidad.md y resumen en la bitácora. Si en 2008 el efecto no sale claro, no se escribe contenido: decide el autor.
+
+## 2026-11-02 (hora de publicación)
+
+- **Hora de los posts** (decisión del autor, 02-11), hora peninsular (CET): de lunes a viernes, 8:30; sábado y domingo, 10:00. Para la hora del post, el viernes cuenta como laborable, aunque en el calendario esté en el bloque de fin de semana. Los juegos siguen abriéndose a las 00:00.
+- Excepciones: B1 Quién dijo qué, a las 13:00 del día siguiente al debate (tiempo para transcribir); el post de «El Tribunal de Cuentas» del sábado 28-11, a las 10:00.
+- **Enlace:** en LinkedIn, en el cuerpo del post (publicación desde el perfil personal); en X, en una respuesta al post, no en el post.
+- Base: análisis de Cowork del 02-11 sobre estudios de Sprout Social y Buffer (días de martes a jueves, fin de semana flojo; la hora exacta es una hipótesis, sin datos españoles sólidos) y sobre la penalización de enlaces en X (Buffer, 2025) y en LinkedIn (Ordinal). Los juegos de LinkedIn se renuevan a las 09:00 en España.
+
+## 2026-11-02 (diseño, A15 ¿Dónde está este pueblo?)
+
+Respuesta a los encargos de diseño del 01-11 (A15 completo y aviso de métricas). Maquetas en docs/maquetas: `maqueta-pueblo-v18.html` (ronda, marcado, revelación, cierre, escritorio y aviso) y `maqueta-energia-v23.html` (pila de energía). La `maqueta-pueblo-v19.html` (una pantalla con lupa) y las `maqueta-energia-v20` a `v22` son alternativas descartadas. Datos de las maquetas inventados. Aprobado por el autor el 02-11.
+
+- **Ayudas y energía** (cambia el nombre, no la mecánica del 01-11): las capas 2 a 4 pasan a llamarse «Ayuda 1 · Reparto del 23-J», «Ayuda 2 · Tamaño, blanco y nulo» y «Ayuda 3 · Ganador en 2008». La capa 1 pasa a llamarse «Ficha del municipio» y es gratis. La energía cuenta ayudas; los puntos siguen igual: la ronda vale el 100, 80, 60 o 40 % según las ayudas usadas. Durante la ronda no se muestra lo que vale.
+- **Pila de energía** (v23): en la cabecera, entre la pista y las pestañas, con el rótulo «Energía» delante (0,6875 rem, 800, mayúsculas, espaciado 0,08 em). Marco de 2 px de tinta con borne a la derecha (3 × 8 px). Dentro, tres rayos de píxel (icono nuevo «energía», 10 × 10, a 16 px) sobre papel: en tinta si queda energía y en raya si se ha gastado. Se gasta desde el borne, de derecha a izquierda. Sin energía, los rayos, el marco y el borne pasan a raya, sin texto. `role="img"` con `aria-label` «Energía: N de 3».
+- **Animación de la pila:** al gastar, el rayo parpadea dos veces (tinta y papel, 360 ms, `steps(1)`) y queda en raya; al empezar cada ronda, los rayos se encienden de izquierda a derecha (tres pasos de 120 ms). Con `prefers-reduced-motion`, sin animación.
+- **Botón de ayuda:** 52 px, el nombre de la ayuda a la izquierda y el coste a la derecha: «−1» y una pila pequeña (marco de 1 px, borne y un rayo de 10 px). Solo está activa la siguiente ayuda; las demás, con el texto y la pila en raya. Un toque abre la ayuda, sin confirmación. Al abrirse, el botón se sustituye por el contenido de la ayuda, con una línea de tinta y el título en lápiz.
+- **Ficha y mapa a 375 px:** dos pestañas, «Ficha» y «Mapa», de 44 px (la seleccionada en tinta con texto en papel). La ronda abre en la ficha, con «Marcar en el mapa» en la barra. En la pestaña del mapa, una línea de resumen: ganador sobre su color y participación.
+- **Ficha del municipio:** el ganador, con el nombre sobre su color (texto en papel o en tinta según el contraste, mínimo 4,5:1), y la participación. Ayuda 1: barras en el color de cada candidatura, por orden de votos, con el porcentaje sobre el voto válido con un decimal. Se pintan todas las que tengan un 1 % o más, hasta siete; el resto va a «Otros» en raya. Rótulo de 6,2 rem: si no cabe, se corta con puntos suspensivos y el nombre completo va en `title`. Ayuda 2: tres filas de dato (población, en blanco, nulos). Ayuda 3: el ganador de 2008 en el mismo bloque que el de 2023, más pequeño.
+- **Marcado en dos pasos:**
+  - Paso 1, el mapa entero sin Ceuta ni Melilla (no se dibujan). Un toque elige la provincia que queda bajo el dedo. Si cae en el mar o en un borde, elige la que tenga más superficie en un círculo de 44 px.
+  - Paso 2, la vista se amplía a la provincia: su caja más un 30 %, con un mínimo de 72 unidades del mapa y la proporción del mapa. La ampliación es en cuatro pasos de 70 ms. El alfiler se clava en cualquier punto de la vista, también en una provincia vecina, y se mueve tocando otra vez o arrastrando.
+  - Con Las Palmas o Santa Cruz de Tenerife, la vista se amplía sobre el recuadro y la península se oculta; con una provincia de la península, se oculta el recuadro.
+- **Colores del mapa:** tierra en senado, bordes de provincia en papel (1 px, `vector-effect: non-scaling-stroke`) y mar en papel. Provincia elegida, con contorno de 2 px de tinta. Alfiler en tinta: 9 × 12 píxeles, con la punta en el píxel inferior, a 2 px por píxel.
+- **Elementos de la vista ampliada:**
+  - Escala abajo a la izquierda: 10, 20, 50 o 100 km, la que mida entre 40 y 110 px. En el recuadro de Canarias, Code la calcula con la proyección de Canarias.
+  - A 375 px, «Mapa entero» (44 px, flecha de píxel) va arriba a la izquierda y el nombre de la provincia arriba a la derecha, los dos sobre el mapa y sobre papel. El nombre, con puntos suspensivos si no cabe.
+  - «Mapa entero» vuelve al paso 1 y quita el alfiler.
+- **Mapa y barra a 375 px:** el mapa ocupa el alto que queda entre el resumen y la barra, centrado. La barra dice lo que toca: «Toca una provincia» y «Clava el alfiler», desactivados, y «Confirmar» cuando hay alfiler.
+- **Revelación:**
+  - Arriba, «Ronda N de 5», el nombre del municipio (1,5 rem, 800) y «Provincia · Comunidad». Debajo, una franja con «Te has quedado a» y los kilómetros en cifras de casillas, y «Puntos de la ronda» con un decimal.
+  - La cuenta: «Hasta 50 km: 4 puntos × 0,8 por una ayuda = 3,2», con la cifra final sobre marcador. Sin ayudas: «Hasta 50 km: 4 puntos». Con varias ayudas: «por dos ayudas», «por tres ayudas».
+  - Mapa: el municipio, en una casilla de 12 px en marcador con borde de 2 px de tinta; la línea, de 2 px de tinta desde la punta del alfiler. Si los dos están en la provincia ampliada, la vista no cambia; si no, vuelve al mapa entero.
+  - Debajo del mapa: leyenda de una línea («Tu alfiler» y el municipio), explicación, fuente y la ficha completa, con las tres ayudas abiertas y sin coste. Barra: «Siguiente ronda».
+  - Animación: el alfiler cae en dos pasos al clavarse; la línea se traza en seis pasos (0,48 s) y luego aparece el municipio.
+- **Cabecera:** la común. La pista tiene cinco celdas, cada una llena de abajo arriba en marcador según el tramo: 5/5 hasta 10 km, 4/5 hasta 50, 3/5 hasta 150, 2/5 hasta 400 y 1/5 a más de 400. Los puntos van con un decimal y coma estrecha, sobre 25.
+- **Escritorio (desde 720 px):** sin pestañas.
+  - Cabecera en una fila (nombre, pista y puntos) con una raya debajo. Ficha en una columna de 360 px a la izquierda; mapa a la derecha, del tamaño menor entre el ancho de su columna y el alto libre hasta la barra.
+  - Encima del mapa, una fila de 44 px del ancho del mapa: en el paso 1, la instrucción en lápiz; en el paso 2, «Mapa entero», la provincia y la instrucción; en la revelación, la leyenda. Sobre el mapa solo va la escala.
+  - En la revelación, el resultado, la explicación, la fuente y la ficha completa, a la izquierda.
+  - Barra fija con el botón de 360 px alineado a la derecha.
+- **Portada:** tres reglas con icono.
+  - Papeleta: «Cinco pueblos de 5.000 habitantes o más, nunca dos de la misma comunidad.»
+  - Ubicación (icono nuevo, alfiler de 10 × 10): «Toca una provincia, clava el alfiler y confirma. Hasta 5 puntos si te quedas a menos de 10 km.»
+  - Pila pequeña con un rayo: «Tienes energía para tres ayudas por ronda. Cada una rebaja lo que vale la ronda: 80, 60 y 40 %.»
+  - Textos provisionales: el nombre del juego y la portada siguen pendientes del autor.
+- **Cierre:** total con un decimal en cifras de casillas, sobre 25. Tabla de rondas con la celda del tramo, el municipio y la provincia, los kilómetros y los puntos («4 × 0,8 = 3,2» si hubo ayudas). Recibo y «Copiar resultado».
+- **Recibo B, una fila por ronda:** el autor no ha elegido entre A y B; Code monta B, la que se propuso (cambiarla a A es tocar una sola función). Formato: en la primera línea, «¿Dónde está este pueblo? · 14,4/25». Después, una línea por ronda con tantas 🟨 como puntos del tramo, el resto en ⬜ y los kilómetros («🟨🟨🟨🟨⬜ 38 km»). Al final, el enlace. La alternativa A, una casilla por ronda (🟨 ≤ 10 km, 🟧 ≤ 50, 🟫 ≤ 150, ⬛ ≤ 400, ⬜ más de 400) y los kilómetros en otra línea, queda descartada salvo que el autor diga lo contrario.
+- **Aviso de métricas (toda la serie):** una línea al pie del contenido de la portada y del cierre, después de todo lo demás y antes de la barra fija. 0,75 rem, lápiz, con una raya encima (1 px de raya) y 8 px de margen superior interior. Sin icono, enlace ni caja. No va en las rondas. Texto provisional: «Medimos partidas y puntuaciones de forma anónima, sin cookies.»
+- Pendiente del autor (editorial): si las candidaturas de la ayuda 1 se rotulan como iban en la papeleta de cada provincia (PSC, En Comú…) o con la cabecera nacional; el diseño sirve para las dos. Color de Teruel Existe (en las maquetas, el provisional de Aragón Existe).
+
+**Encargo para Code (A15, diseño):**
+1. Montar A15 con lo de arriba, sobre la ronda de clic en el mapa del 01-11, con la distancia real sobre la esfera. Los cambios en `shared/` (ronda de mapa, pila de energía, alfiler, escala), con diff para el autor antes del commit.
+2. Iconos nuevos en `shared/iconos.js`: «ubicacion» (10 × 10), «alfiler» (9 × 12) y «energia» (rayo, 10 × 10). Las matrices están en las maquetas v18 y v23.
+3. Aviso de métricas en `shared/portada.js` y `shared/cierre.js`, para toda la serie; se activa con Umami, cuando el autor lo confirme.
+4. Capturas a 320, 375 × 560 y 1280 de la ficha, los dos pasos, la revelación y el cierre, y revisión contra la lista negra de docs/diseno.md. Dudas, a la bitácora.
+
+## 2026-11-02 (A15, rótulos y color de Teruel Existe)
+
+- **Rótulos de la ayuda 1** (decisión del autor, 02-11): los partidos de ámbito estatal se rotulan con su cabecera nacional (PSC → PSOE, En Comú / Sumar → Sumar…), sumando sus votos como en el catálogo. Los partidos territoriales van con su nombre real, como se decidió el 01-11.
+- **Color de Teruel Existe:** ya existe el token `--te: #007351` en `shared/base.css`, sacado de la plantilla de Wikipedia por Code para A9 (bitácora del 25-10 (3)). Lo había dado por pendiente por error. Se usa ese mismo color en A15: no coincide con ningún otro partido y mantiene A9 y A15 iguales. Su verde oscuro se parece al del PNV (#008000), pero nunca salen juntos en un mismo municipio. Si el autor prefiere un color distinto del de la plantilla, se cambia el token y afecta también a A9.
+- **Encargo para Code:** usar `--te` en A15. No hay que añadir ningún color.
+
+## 2026-11-02 (métricas: respuesta a la bitácora del 01-11 (3))
+
+Decisiones del autor (02-11) sobre la propuesta de Code para Umami:
+
+1. **Se mantiene `puntos`** en el evento `partida-terminada`, aunque se pueda reconstruir desde `detalle`: si el plan Hobby no permite exportar, el panel sigue dando el recuento por valor de puntos. Solo se quita si el uso se acerca a los 100.000 eventos del mes.
+2. **`detalle` de A15:** kilómetros y ayudas usadas en cada ronda, separados por punto y coma (p. ej., `12k2;340k1;…`), para reconstruir los puntos y medir el uso de las ayudas.
+3. **Script de Umami:** copia fija en `shared/` que envía a Umami Cloud con `data-host-url`, en lugar de una excepción a la regla de librerías con versión fija. Code confirma que Umami lo admite; si no, vuelve a la bitácora.
+4. **`data-do-not-track`:** sí.
+5. **A12 «Otro presidente»:** cada partida extra envía también `partida-empezada`.
+6. **Análisis desde el 13-11 a las 00:00:** no se retrasa la activación; las pruebas en Pages anteriores se excluyen por fecha.
+7. **Code comprueba en el script de Umami** si lee o escribe en localStorage o sessionStorage, y lo anota en la bitácora antes de activar. Si lo hace, el autor decide.
+8. **Texto del aviso al pie:** «Medimos partidas y puntuaciones de forma anónima, sin cookies, con Umami.» Sustituye al provisional del diseño del 02-11.
+
+Comprobación de Cowork en la documentación pública de Umami (02-11): la exportación a CSV (incluidas las propiedades de los eventos) está documentada sin restricción de plan, pero sin confirmar en Hobby; no consta qué pasa en Hobby al superar los 100.000 eventos; hay región UE, que se elige al crear la cuenta y no se cambia después sin soporte; el autor es responsable del tratamiento y Umami, encargado (DPA con cláusulas tipo de la UE). Fuentes: docs.umami.is/docs/cloud/export-data, umami.is/pricing, docs.umami.is/docs/cloud/faq, umami.is/privacy, umami.is/dpa.
+
+- **Encargo para el autor:** crear la cuenta de Umami Cloud eligiendo la **región UE**; comprobar si aparece Settings → Data → Export (si no aparece, se queda solo la medición por juego); pasar a Code el identificador del sitio.
+- **Encargo para Code (Umami):** aplicar los puntos 1 a 8 cuando tenga el identificador del sitio; comprobación del punto 3 y del 7 en la bitácora antes de activar; capturas del aviso en portada y cierre. Activación y push, con la confirmación del autor, antes del 13-11.
+
+## 2026-11-02 (métricas: cuenta de Umami creada)
+
+- Cuenta de Umami Cloud creada por el autor (02-11), con **región UE**. Sitio dado de alta con el dominio `santigper.github.io`.
+- **Exportación disponible en Hobby:** el autor ve Settings → Data → Export en su cuenta. Se confirma la medición por pregunta con un solo evento al terminar (condición del 01-11 cumplida).
+- **Identificador del sitio:** `d990effc-7628-4bd3-8e9a-b5d35e03b973`. Código de seguimiento que da el panel: `<script defer src="https://cloud.umami.is/script.js" data-website-id="d990effc-7628-4bd3-8e9a-b5d35e03b973"></script>`.
+- **Encargo para Code:** montar Umami con este identificador según las decisiones de las 02-11 (métricas, puntos 1 a 8): copia fija del script en `shared/` con `data-host-url` hacia Umami Cloud, `data-domains="santigper.github.io"` y `data-do-not-track="true"`. Comprobaciones del punto 3 (`data-host-url`) y del 7 (almacenamiento en el navegador) en la bitácora antes de activar. Activación y push, con la confirmación del autor, antes del 13-11.
