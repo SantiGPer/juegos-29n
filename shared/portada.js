@@ -1,5 +1,5 @@
 import { icono } from './iconos.js';
-import { accion, avisoMetricas, el, monta } from './util.js';
+import { accion, avisoMetricas, el, mide, monta } from './util.js';
 
 // Reglas con icono de 10×10; las comparten la portada y la ficha del índice
 export const reglas = lista => el('ul', { className: 'reglas' }, ...lista.map(r => {
@@ -10,7 +10,10 @@ export const reglas = lista => el('ul', { className: 'reglas' }, ...lista.map(r 
 
 // Portada común (G1, maqueta v7): mismo texto que la ficha del índice, en portada.texto y portada.reglas
 export function portada({ juego, dia, fuente, portada: { texto, reglas: lista } }, contenedor, empezar) {
-  const jugar = accion('Jugar', empezar);
+  const jugar = accion('Jugar', () => {
+    mide('partida-empezada');
+    empezar();
+  });
   jugar.classList.add('jugar');
 
   monta(contenedor, [

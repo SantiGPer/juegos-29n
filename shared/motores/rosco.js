@@ -1,6 +1,6 @@
 import { cerrar } from '../cierre.js';
 import { portada } from '../portada.js';
-import { cifra, el } from '../util.js';
+import { cifra, el, letraMetrica } from '../util.js';
 
 export const iniciar = (config, contenedor) => portada(config, contenedor, () => partida(config, contenedor));
 
@@ -69,6 +69,7 @@ function partida({ juego, dia, fuente, letras }, contenedor) {
     total: letras.length,
     cuadricula: [0, 9, 18].map(k => estados.slice(k, k + 9).map(e => e === 'acierto' ? '🟨' : '⬜').join('')).join('\n'),
     fuente,
+    medida: estados.map(letraMetrica).join(''),
     ...rosco(letras, estados),
   }, contenedor);
 

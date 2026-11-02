@@ -1,12 +1,19 @@
 import { icono } from './iconos.js';
-import { accion, avisoMetricas, celdas, cifra, el, monta } from './util.js';
+import { accion, avisoMetricas, celdas, cifra, el, letraMetrica, mide, monta } from './util.js';
 
 // pista: { estados, porGrupo } de la partida, que queda fija bajo la cifra.
 // otra: { texto, accion } para volver a jugar dentro de la misma edición (A12).
 // resumen: nodos que van encima de la nota (rosco de A13).
 // detalle: nodos que van bajo la nota (ranking de A3, desglose de A4).
 // sinCifra: sin nota en pantalla; la puntuación solo va en el recibo (M8, que pinta su resultado en resumen).
-export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricula, fuente, pista, otra, sinCifra, resumen = [], detalle = [] }, contenedor) {
+// medida: detalle de la partida para las métricas; si falta, una letra por celda de la pista.
+export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricula, fuente, pista, otra, sinCifra, resumen = [], detalle = [], medida }, contenedor) {
+  const puntos = parseFloat(String(puntuacion).replace(',', '.'));
+  mide('partida-terminada', {
+    ...(Number.isNaN(puntos) ? {} : { puntos }),
+    detalle: medida ?? pista?.estados.map(letraMetrica).join('') ?? '',
+  });
+
   const resultado = total === undefined ? [puntuacion, unidad].filter(Boolean).join(' ') : `${puntuacion}/${total}${unidad ? ` ${unidad}` : ''}`;
   const texto = [`Juegos 29N, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
     .filter(Boolean)

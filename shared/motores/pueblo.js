@@ -387,6 +387,7 @@ export const ronda = ({ municipio: m, explicacion, fuente, geometria }, listo, r
       puntos,
       estado: `tramo-${t}`,
       recibo: `${'🟨'.repeat(t)}${'⬜'.repeat(5 - t)} ${km} km`,
+      medida: km,
       fila: el('tr', {},
         el('td', { className: 'c' }, celda(`tramo-${t}`)),
         el('td', {}, el('b', { textContent: m.nombre }), el('small', { textContent: m.provincia })),

@@ -2,6 +2,26 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-11-02 (3) — Métricas de Umami escritas y apagadas; push de A15
+
+- Push a Pages con confirmación del autor (`4df765d..4fc9dc6`): catálogo ampliado y A15 con municipios provisionales.
+- A16 sigue bloqueado: Interior devuelve 403 (Cloudflare) a `03200803_MUNI.zip` y `03202307_MUNI.zip`.
+
+**Hecho (Umami, a petición del autor: código listo y apagado)**
+- `util.js`: `conMetricas = false` enciende a la vez las llamadas y el aviso al pie. `mide(evento, datos)` llama a `window.umami?.track` solo si está encendido.
+- Inicio: `partida-empezada`, sin propiedades, al pulsar «Jugar» (`portada.js`).
+- Fin: `partida-terminada` en `cerrar()` (`cierre.js`), con dos propiedades:
+  - `puntos`, como número, o nada si la puntuación no es una cifra (A14);
+  - `detalle`, que por defecto es una letra por celda de la pista: 1 acierto, m medio, 0 fallo, p pasada, - sin jugar (A11 cortado).
+- Detalle propio: A15, los kilómetros por ronda («29,41,74,71,94»); A5, el error medio por ronda; A13, una letra por letra del rosco. El de A5 y A15 sale de `medida` en el resolver de su ronda (`rondas.js`).
+- Probado encendido, con un Umami simulado, en A1, A5, A11, A12 y A15: un evento al empezar y otro al terminar con los datos esperados. Luego lo he vuelto a apagar. Prueba de humo de toda la serie sin errores.
+
+**Para activarlo, cuando lo confirme el autor**
+1. `conMetricas = true` en `shared/util.js`.
+2. El script de Umami, con el `src` y el `data-website-id` del panel y `data-domains="santigper.github.io"`, en el `<head>` del índice y de cada juego.
+
+**Dudas que siguen abiertas** (entrada 2026-11-01 (3)): exportación en el plan Hobby y qué pasa al llegar al límite; excepción al CDN pinneado; `data-do-not-track`; texto final del aviso. A12 «Otro presidente» cuenta como partida terminada sin evento de inicio.
+
 ## 2026-11-02 (2) — A15 montado con cinco municipios provisionales
 
 Encargo de decisiones.md (02-11, A15 diseño), con el plan confirmado por el autor en sesión. Sin commit de `shared/` hasta que el autor vea el diff.

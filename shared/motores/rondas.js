@@ -18,8 +18,9 @@ import { ronda as pueblo } from './pueblo.js';
 // punto por celda; uno con rotulo pone él mismo el «Ronda N de M»; uno con fija queda pegado arriba con la
 // cabecera y el primer nodo de su cuerpo. Una ronda puede traer su rotulo («Duelo»).
 // Un tipo con maximo vale esos puntos en el total del cierre; su resolver puede devolver { puntos, estado, recibo,
-// fila }: estado es la clase de su celda, recibo su línea del texto copiable y fila su fila de la tabla del cierre
-// (A15). Un tipo con pulsa() la llama antes de resolver y solo resuelve si devuelve true.
+// fila, medida }: estado es la clase de su celda, recibo su línea del texto copiable, fila su fila de la tabla del
+// cierre (A15) y medida su dato para las métricas (km en A15, error en A5). Un tipo con pulsa() la llama antes de
+// resolver y solo resuelve si devuelve true.
 
 const explicacion = ({ explicacion, fuente }) => el('div', { className: 'explicacion' },
   el('p', { textContent: explicacion }),
@@ -177,6 +178,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     cuadricula: [recibo(), ...(vida ? [cortada ? `${vida.fin} en el ${etiqueta.toLowerCase()} ${cortada}` : `Vida: ${vida.quedan()}/${vida.total}`] : [])].join('\n'),
     fuente,
     pista: { estados: estados(), porGrupo },
+    ...(hechas.every(h => h.medida !== undefined) ? { medida: hechas.map(h => h.medida).join(',') } : {}),
     detalle: [
       ...(vida ? [Object.assign(vida.nodo.cloneNode(true), { className: 'vida quieta' })] : []),
       ...(hechas.some(h => h.fila) ? [el('table', { className: 'rondas-cierre' }, el('tbody', {}, ...hechas.map(h => h.fila)))] : []),

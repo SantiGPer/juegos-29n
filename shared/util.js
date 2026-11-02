@@ -14,9 +14,15 @@ export const monta = (contenedor, cuerpo, ...botones) =>
 
 export const accion = (textContent, onclick) => el('button', { className: 'accion', textContent, onclick });
 
-// Aviso de métricas al pie de portada y cierre (diseño del 02-11); se enciende con Umami cuando lo confirme el autor
+// Métricas anónimas con Umami (decisión del 01-11), apagadas hasta que lo confirme el autor: un evento al empezar
+// y otro al terminar, con los puntos y el detalle de la partida en una sola propiedad. Si el script de Umami no
+// carga, el juego sigue igual. El aviso va al pie de portada y cierre (diseño del 02-11).
 const conMetricas = false;
+export const mide = (evento, datos) => { if (conMetricas) window.umami?.track(evento, datos); };
 export const avisoMetricas = () => conMetricas ? [el('p', { className: 'metricas', textContent: 'Medimos partidas y puntuaciones de forma anónima, sin cookies.' })] : [];
+
+// Una letra por pregunta para el detalle: 1 acierto, m medio, 0 fallo, p pasada, - sin jugar
+export const letraMetrica = estado => ({ acierto: '1', media: 'm', fallo: '0', pasada: 'p' })[estado] ?? '-';
 
 export const muestra = nodo => nodo.scrollIntoView({
   behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',

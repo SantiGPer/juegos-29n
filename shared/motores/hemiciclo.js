@@ -131,7 +131,7 @@ export const ronda = (datos, listo, rotulo) => {
       el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` })));
     // Arriba y no hasta la explicación: lo que se revela es el hemiciclo y las barras de cada fila
     scrollTo({ top: 0, behavior: reducido() ? 'instant' : 'smooth' });
-    return datos.error <= umbrales[0] ? 1 : datos.error <= umbrales[1] ? 0.5 : 0;
+    return { puntos: datos.error <= umbrales[0] ? 1 : datos.error <= umbrales[1] ? 0.5 : 0, medida: Math.round(datos.error * 10) / 10 };
   };
 
   return { cuerpo: [fija, lista, pie], barra: [quedan], resolver };
