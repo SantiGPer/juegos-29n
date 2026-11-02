@@ -2,6 +2,26 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-11-02 — A15: catálogo ampliado
+
+Encargo de decisiones.md (01-11, dudas de la bitácora). Encargos pendientes revisados por prioridad: A16 sigue bloqueado (los zips del Senado de 2008 y 2023 no están en el repo ni en Descargas); el montaje de A15 espera la selección de municipios y la confirmación del plan.
+
+**Hecho**
+- Commit aparte con los cambios de Cowork (decisiones del 01 y 02-11, calendario con la hora de los posts) y las maquetas v18–v23.
+- `R/catalogo_a15.R` → `editorial/catalogos/a15-catalogo.md`, con columna de comunidad autónoma en todas las tablas (también en las del 01-11, que no cambian de contenido) y una sección nueva solo con los 1.310 municipios seleccionables (5.000 habitantes o más, sin Ceuta, Melilla ni los 23 creados después de 2008):
+  1. Feudos: los cinco con más voto a EH Bildu, BNG, ERC, Junts, PNV y CC sobre voto válido.
+  2. «España en pequeño»: los diez más parecidos al reparto nacional. Medida elegida por el autor en sesión (02-11): suma de diferencias absolutas en puntos sobre cinco bloques (PP, PSOE, Vox, Sumar por cabecera nacional, y Otros con el resto y el blanco). Referencia nacional: la suma de todos los municipios sin CERA (PP 33,06; PSOE 31,70; Vox 12,39; Sumar 12,31; Otros 10,53 %). Gana Tías (Las Palmas), a 7,13 puntos.
+  3. Empate PP-PSOE: los cinco con menor diferencia en votos y los cinco con menor diferencia en puntos. Mota del Cuervo (Cuenca) empata exacto: 1.243 a 1.243.
+
+**Dudas para el autor**
+- «España en pequeño»: el bloque Otros mezcla partidos distintos. En Tías, Santa Brígida, Las Palmas de Gran Canaria y Yaiza, Otros es sobre todo CC y NC; en el reparto nacional son ERC, Junts, Bildu, PNV… El parecido es aritmético, no de composición. Cuatro de los diez son canarios y cuatro aragoneses, y la regla de no repetir comunidad deja elegir uno de cada.
+- Mota del Cuervo: con el empate exacto, `ganador` en `resultados_2023_mun.json` dice PSOE porque `R/13` rompe el empate por orden de fila (`with_ties = FALSE`). Si se elige, la ficha tendría que decir «empate» y no «ganador PSOE»; se corrige en el JSON antes de usarlo.
+
+**Falta**
+- A15: montaje, con plan pendiente de confirmación del autor (afecta a `shared/`). Contenido de A15 (municipios, explicaciones, fuente) cuando el autor elija sobre el catálogo; no hay `editorial/contenido/a15-*.md`.
+- A16: viabilidad, en cuanto el autor deje los zips `03200803_MUNI.zip` y `03202307_MUNI.zip` en `%LOCALAPPDATA%\R\cache\R\juegos29n\senado\` (junto a la caché de Interior que usa `R/infoelectoral.R`, fuera del repo).
+- Umami: se monta cuando el autor confirme (dudas de la entrada 2026-11-01 (3)).
+
 ## 2026-11-01 (3) — Métricas de uso con Umami: comprobación previa
 
 Encargo de decisiones.md (01-11, «métricas de uso»). No he montado nada: sin la confirmación del autor no se activa.
