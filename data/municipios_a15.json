@@ -1,0 +1,251 @@
+{
+  "nota": "Fichas de A15. SELECCIÓN PROVISIONAL de Code (02-11), pendiente del autor. Porcentajes con un decimal: reparto, otros y blanco sobre voto válido; nulo sobre votantes; participación, votantes sobre censo sin CERA. Reparto por cabecera nacional, hasta siete candidaturas con un 1 % o más; el resto, en otros. lon y lat: núcleo capital (IGN). Ganador de 2008: candidatura más votada en las generales del 09-03-2008.",
+  "fuente": "Ministerio del Interior (generales de 2023 y 2008); INE, padrón a 1-1-2023; IGN, Nomenclátor",
+  "municipios": [
+    {
+      "ine": "20063",
+      "nombre": "Oiartzun",
+      "provincia": "Gipuzkoa",
+      "ccaa": "País Vasco",
+      "criterio": "Feudo de EH Bildu (1.º en voto a EH Bildu, 5.000 habitantes o más)",
+      "lon": -1.860292156,
+      "lat": 43.29917099,
+      "ganador": {
+        "etiqueta": "EH Bildu",
+        "color": "--bildu"
+      },
+      "participacion": 67.1,
+      "reparto": [
+        {
+          "etiqueta": "EH Bildu",
+          "color": "--bildu",
+          "pct": 59.3
+        },
+        {
+          "etiqueta": "PNV",
+          "color": "--pnv",
+          "pct": 18.1
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 9.4
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 8.1
+        },
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 3.2
+        }
+      ],
+      "otros": 1.6,
+      "poblacion": 10331,
+      "blanco": 0.4,
+      "nulo": 0.7,
+      "ganador_2008": {
+        "etiqueta": "PNV",
+        "color": "--pnv"
+      }
+    },
+    {
+      "ine": "36024",
+      "nombre": "Lalín",
+      "provincia": "Pontevedra",
+      "ccaa": "Galicia",
+      "criterio": "Extremo del PP (1.º en voto al PP, 5.000 habitantes o más)",
+      "lon": -8.11660872,
+      "lat": 42.66061168,
+      "ganador": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      },
+      "participacion": 76.6,
+      "reparto": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 59.4
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 20.1
+        },
+        {
+          "etiqueta": "BNG",
+          "color": "--bng",
+          "pct": 9.2
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 5.3
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 5.1
+        }
+      ],
+      "otros": 0.4,
+      "poblacion": 20282,
+      "blanco": 0.6,
+      "nulo": 1.1,
+      "ganador_2008": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      }
+    },
+    {
+      "ine": "41013",
+      "nombre": "Aznalcóllar",
+      "provincia": "Sevilla",
+      "ccaa": "Andalucía",
+      "criterio": "Extremo del PSOE (1.º en voto al PSOE, 5.000 habitantes o más)",
+      "lon": -6.269614271,
+      "lat": 37.52351234,
+      "ganador": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      },
+      "participacion": 64,
+      "reparto": [
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 59.5
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 15.9
+        },
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 15.9
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 6.9
+        }
+      ],
+      "otros": 1,
+      "poblacion": 6057,
+      "blanco": 0.9,
+      "nulo": 1.5,
+      "ganador_2008": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      }
+    },
+    {
+      "ine": "19220",
+      "nombre": "Pioz",
+      "provincia": "Guadalajara",
+      "ccaa": "Castilla-La Mancha",
+      "criterio": "Extremo de Vox (1.º en voto a Vox, 5.000 habitantes o más)",
+      "lon": -3.175610648,
+      "lat": 40.46359124,
+      "ganador": {
+        "etiqueta": "Vox",
+        "color": "--vox"
+      },
+      "participacion": 64.4,
+      "reparto": [
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 31.6
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 27.3
+        },
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 26.5
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 11.5
+        },
+        {
+          "etiqueta": "PACMA",
+          "color": "--pacma",
+          "pct": 1.6
+        }
+      ],
+      "otros": 0.7,
+      "poblacion": 5131,
+      "blanco": 0.8,
+      "nulo": 1.5,
+      "ganador_2008": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      }
+    },
+    {
+      "ine": "35028",
+      "nombre": "Tías",
+      "provincia": "Las Palmas",
+      "ccaa": "Canarias",
+      "criterio": "«España en pequeño» (1.º, 7,13 puntos de distancia al reparto nacional)",
+      "lon": -13.65435451,
+      "lat": 28.95221093,
+      "ganador": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      },
+      "participacion": 58.8,
+      "reparto": [
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 33.3
+        },
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 31.8
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 14.3
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 10.6
+        },
+        {
+          "etiqueta": "CC",
+          "color": "--cc",
+          "pct": 6.5
+        },
+        {
+          "etiqueta": "NC",
+          "color": "--nc",
+          "pct": 2.1
+        }
+      ],
+      "otros": 0.8,
+      "poblacion": 21433,
+      "blanco": 0.5,
+      "nulo": 1.2,
+      "ganador_2008": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      }
+    }
+  ]
+}

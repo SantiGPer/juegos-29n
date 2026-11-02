@@ -21,6 +21,12 @@ const matrices = {
   bajar: ['XXXXX', '.XXX.', '..X..'],
   // Días de debate en el selector (maqueta v3): contorno en tinta y relleno «o» en señal
   bocadillo: ['XXXXXXXXXX', 'XooooooooX', 'XoXXXXXXoX', 'XooooooooX', 'XoXXXXoooX', 'XooooooooX', 'XXXXXXXXXX', '..XX......', '..X.......', '..........'],
+  // A15 (maquetas pueblo v18 y energía v23): regla de portada, alfiler del mapa con la punta en el píxel inferior,
+  // rayo de la pila de energía y «Mapa entero»
+  ubicacion: ['..XXXXXX..', '.XXXXXXXX.', 'XXX....XXX', 'XX......XX', 'XX......XX', 'XXX....XXX', '.XXXXXXXX.', '..XXXXXX..', '...XXXX...', '....XX....'],
+  alfiler: ['..XXXXX..', '.XXXXXXX.', 'XXX...XXX', 'XX.....XX', 'XX.....XX', 'XXX...XXX', '.XXXXXXX.', '..XXXXX..', '...XXX...', '...XXX...', '....X....', '....X....'],
+  energia: ['......XX..', '.....XX...', '....XX....', '...XXXXX..', '..XXXXX...', '.....XX...', '....XX....', '...XX.....', '..X.......', '.X........'],
+  volver: ['...X....', '..XX....', '.XXXXXXX', 'XXXXXXXX', '.XXXXXXX', '..XX....', '...X....'],
 };
 
 export const icono = (nombre, escala, color = 'currentColor', relleno) => {

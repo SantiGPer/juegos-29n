@@ -9,6 +9,7 @@ import { ronda as estimacion } from './estimacion.js';
 import { ronda as fontaneria } from './fontaneria.js';
 import { ronda as hemiciclo } from './hemiciclo.js';
 import { ronda as mapa } from './mapa.js';
+import { ronda as pueblo } from './pueblo.js';
 
 // Encadenador de rondas de mecánicas distintas: una cabecera, una pista, una puntuación y un cierre.
 // Cada tipo de ronda es ronda(datos, listo, rotulo) → { cuerpo, barra?, resolver }: listo(bool, texto?) enciende
@@ -16,6 +17,9 @@ import { ronda as mapa } from './mapa.js';
 // devuelve 0, ½ o 1. Un tipo con casillas(datos) ocupa varias celdas de la pista y su resolver devuelve un
 // punto por celda; uno con rotulo pone él mismo el «Ronda N de M»; uno con fija queda pegado arriba con la
 // cabecera y el primer nodo de su cuerpo. Una ronda puede traer su rotulo («Duelo»).
+// Un tipo con maximo vale esos puntos en el total del cierre; su resolver puede devolver { puntos, estado, recibo,
+// fila }: estado es la clase de su celda, recibo su línea del texto copiable y fila su fila de la tabla del cierre
+// (A15). Un tipo con pulsa() la llama antes de resolver y solo resuelve si devuelve true.
 
 const explicacion = ({ explicacion, fuente }) => el('div', { className: 'explicacion' },
   el('p', { textContent: explicacion }),
@@ -112,10 +116,11 @@ const ordenar = (datos, listo) => {
   };
 };
 
-const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria };
+const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria, pueblo };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;
+const maximo = r => tipos[r.tipo].maximo ?? casillas(r);
 
 // Barra de vida (A11, maqueta v16): corazón, cinco tramos en un marco y la cuenta. Cada ronda sin puntos vacía el
 // tramo de más a la derecha, que parpadea dos veces.
@@ -142,17 +147,21 @@ const barraVida = ({ total, fin }) => {
 
 // nota: nota metodológica, bajo la puntuación del cierre. etiqueta: «Pregunta» o «Ronda». porGrupo: celdas por
 // tramo de la pista y por línea del recibo. resultado(): { puntuacion, unidad } del cierre en lugar de los puntos (A5).
-// vida: { total, fin }: la partida termina al perder la última vida, con el texto fin (A11).
-const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregunta', porGrupo, resultado, vida: conVida }, contenedor) => {
+// vida: { total, fin }: la partida termina al perder la última vida, con el texto fin (A11). decimales: los puntos
+// se muestran siempre con esos decimales (A15).
+const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregunta', porGrupo, resultado, vida: conVida, decimales }, contenedor) => {
   const puntos = [];
+  const hechas = [];
   const vida = conVida && barraVida(conVida);
   let cortada;
+  const formato = decimales ? n => n.toLocaleString('es-ES', { minimumFractionDigits: decimales, maximumFractionDigits: decimales }) : numero;
   const cab = marcador(juego, porGrupo, ...(vida ? [vida.nodo] : []));
   const inicio = rondas.map((_, i) => rondas.slice(0, i).reduce((s, r) => s + casillas(r), 0));
-  const total = rondas.reduce((s, r) => s + casillas(r), 0);
-  const estados = () => rondas.flatMap((r, i) => i < puntos.length ? [puntos[i]].flat().map(estado) : Array(casillas(r)).fill(''));
+  const total = rondas.reduce((s, r) => s + maximo(r), 0);
+  const estados = () => rondas.flatMap((r, i) => i < puntos.length ? (hechas[i].estado ? [hechas[i].estado] : [puntos[i]].flat().map(estado)) : Array(casillas(r)).fill(''));
   const suma = () => puntos.flat().reduce((s, p) => s + p, 0);
   const recibo = () => {
+    if (hechas.every(h => h.recibo)) return hechas.map(h => h.recibo).join('\n');
     const marcas = puntos.flat().map(p => p === 1 ? '🟨' : '⬜');
     const tramo = porGrupo ?? marcas.length;
     return Array.from({ length: Math.ceil(marcas.length / tramo) }, (_, t) => marcas.slice(t * tramo, (t + 1) * tramo).join('')).join('\n');
@@ -161,7 +170,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
   const final = () => cerrar({
     juego,
     dia,
-    puntuacion: numero(suma()),
+    puntuacion: formato(suma()),
     total,
     ...resultado?.(),
     nivel: niveles?.find(({ desde, hasta }) => suma() >= desde && suma() <= hasta).etiqueta,
@@ -170,6 +179,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     pista: { estados: estados(), porGrupo },
     detalle: [
       ...(vida ? [Object.assign(vida.nodo.cloneNode(true), { className: 'vida quieta' })] : []),
+      ...(hechas.some(h => h.fila) ? [el('table', { className: 'rondas-cierre' }, el('tbody', {}, ...hechas.map(h => h.fila)))] : []),
       ...(nota ? [el('div', { className: 'explicacion' }, el('p', { className: 'etiqueta', textContent: 'Cómo se ha contado' }), el('p', { textContent: nota }))] : []),
     ],
   }, contenedor);
@@ -179,16 +189,20 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     boton.disabled = true;
     const tipo = tipos[rondas[n].tipo];
     const rotulo = rondas[n].rotulo ?? `${etiqueta} ${n + 1} de ${rondas.length}`;
-    const { cuerpo, barra = [], resolver } = tipo(rondas[n], (ok, texto) => {
+    const { cuerpo, barra = [], resolver, pulsa } = tipo(rondas[n], (ok, texto) => {
       boton.disabled = !ok;
       if (texto) boton.textContent = texto;
     }, rotulo);
 
     boton.onclick = () => {
-      const p = resolver();
+      if (pulsa && !pulsa()) return;
+      const r = resolver();
+      const hecha = r.puntos === undefined ? { puntos: r } : r;
+      const p = hecha.puntos;
       puntos.push(p);
+      hechas.push(hecha);
       if (vida && p === 0) vida.quita();
-      cab.pinta(estados(), [inicio[n]], suma());
+      cab.pinta(estados(), [inicio[n]], suma(), formato);
       if (vida?.quedan() === 0) {
         cortada = n + 1;
         const aviso = el('div', { className: 'fin-vida' }, el('p', { textContent: vida.fin }),
@@ -207,7 +221,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
       ...cuerpo,
     ];
     monta(contenedor, tipo.fija ? [el('div', { className: 'fija' }, ...nodos.splice(0, nodos.indexOf(cuerpo[0]) + 1)), ...nodos] : nodos, ...barra, boton);
-    cab.pinta(estados(), [inicio[n]], suma());
+    cab.pinta(estados(), [inicio[n]], suma(), formato);
     scrollTo(0, 0);
   };
 

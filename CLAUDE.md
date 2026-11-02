@@ -53,6 +53,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 │   ├── 11_mapas_a07.R    # valores por provincia de los seis mapas de A7 y sus señuelos
 │   ├── 12_fontaneria_a09.R # escaños de 2023 con otras reglas (catálogo de A9)
 │   ├── 13_resultados_2023_mun.R # resultados de 2023 por municipio con población, coordenadas y ganador en 2019 y 2008 para A15
+│   ├── 14_municipios_a15.R # fichas de los cinco municipios de A15
 │   ├── catalogo_a15.R    # municipios más extremos por indicador y umbral → editorial/catalogos/
 │   ├── cotejo_a01_boe.R  # texto literal del BOE para A1 → editorial/fuentes/
 │   ├── cotejo_a05_interior.R # serie de generales 1977–2023 para las explicaciones de A5 → editorial/fuentes/
@@ -94,7 +95,7 @@ Serie de juegos políticos sencillos, uno por cada día de campaña de las elecc
 | M8 afinidad | El usuario ordena ítems; Spearman con el perfil de cada partido | Sin uso desde el 01-11 (A14 pasa a la reserva) |
 | M9 rosco | Una definición por letra en círculo; respuesta escrita con variantes aceptadas; pasar y volver | A13 |
 | M10 emparejar | Filas de ítems con hueco y bandeja de respuestas en la barra, con una respuesta especial sin dato («No existe») por configuración; se corrige al final, 1 punto por pareja. Es un tipo de ronda del encadenador | A8 (candidatos de B1, A9 y «Lemas de campaña» si entra) |
-| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7; hemiciclo para A5; clic en el mapa para A15, por montar) con una cabecera, una pista, una puntuación y un cierre; barra de vida opcional (A11) | A3, A5, A7, A8, A9, A11, A15, A16 |
+| Encadenador (`rondas.js`) | Rondas de mecánicas distintas (opciones, ordenar, estimación, duelo, emparejar; mapa para A7; hemiciclo para A5; clic en el mapa para A15, con pila de energía) con una cabecera, una pista, una puntuación y un cierre; barra de vida opcional (A11) | A3, A5, A7, A8, A9, A11, A15, A16 |
 
 Cada motor expone una función `iniciar(config, contenedor)` y delega el final en `shared/cierre.js`. El contenido del juego vive en JSON, nunca en el JS del motor.
 
@@ -133,10 +134,11 @@ Orden de construcción = orden del calendario. Coste relativo entre paréntesis.
 | --- | --- | --- |
 | `resultados_2023_prov.json` | Ministerio del Interior (infoelectoral), INE y BOE | A7, A8, A9, A11 |
 | `resultados_2023_mun.json` | Ministerio del Interior (infoelectoral), INE (padrón a 1-1-2023) e IGN/CNIG (Nomenclátor) | A15 |
+| `municipios_a15.json` | Derivado de `resultados_2023_mun.json` | A15 |
 | `senado_2023.json` | Ministerio del Interior (infoelectoral), votos por candidato al Senado | A16 |
 | `escanos_generales.json` | Ministerio del Interior (infoelectoral) | A5 |
 | `fontaneria_a09.json` | Derivado de `resultados_2023_prov.json` (población a 1-1-2022) | A9 |
-| `mapa_provincias.json` | IGN vía es-atlas 0.6.0, proyectado en R | A7 |
+| `mapa_provincias.json` | IGN vía es-atlas 0.6.0, proyectado en R | A7, A15 |
 | `mapas_a07.json` | Derivado de `resultados_2023_prov.json` | A7 |
 | `legislaturas.json` | Congreso; Wikipedia como contraste | A5, A3 (presidencias) |
 | `actividad_parlamentaria.json` | Datos abiertos del Congreso | Reserva (A6) |

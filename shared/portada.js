@@ -1,5 +1,5 @@
 import { icono } from './iconos.js';
-import { accion, el, monta } from './util.js';
+import { accion, avisoMetricas, el, monta } from './util.js';
 
 // Reglas con icono de 10×10; las comparten la portada y la ficha del índice
 export const reglas = lista => el('ul', { className: 'reglas' }, ...lista.map(r => {
@@ -19,5 +19,6 @@ export function portada({ juego, dia, fuente, portada: { texto, reglas: lista } 
     el('p', { className: 'entradilla', textContent: texto }),
     reglas(lista),
     el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
+    ...avisoMetricas(),
   ], jugar);
 }

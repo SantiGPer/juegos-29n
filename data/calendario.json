@@ -1,5 +1,5 @@
 {
-  "nota": "Reparto de los 15 días de campaña aprobado por el autor el 25-10-2026 y cambiado el 01-11-2026 (editorial/calendario.md). Día 5: B1 Quién dijo qué, provisional hasta que se fije el debate que cubra; día 14: A15 (a15-donde-esta-este-pueblo); día 15: A16 (a16-efecto-papeleta). Los tres están en TODO hasta que tengan carpeta. debate: texto del recuadro de la ficha en los días con «Quién dijo qué».",
+  "nota": "Reparto de los 15 días de campaña aprobado por el autor el 25-10-2026 y cambiado el 01-11-2026 (editorial/calendario.md). Día 5: B1 Quién dijo qué, provisional hasta que se fije el debate que cubra; día 15: A16 (a16-efecto-papeleta). Los dos están en TODO hasta que tengan carpeta. debate: texto del recuadro de la ficha en los días con «Quién dijo qué».",
   "dias": [
     { "dia": 1, "fecha": "2026-11-13", "carpeta": "a03-plenopedia" },
     { "dia": 2, "fecha": "2026-11-14", "carpeta": "a11-duelo-de-circunscripciones" },
@@ -14,7 +14,7 @@
     { "dia": 11, "fecha": "2026-11-23", "carpeta": "a05-hemiciclos" },
     { "dia": 12, "fecha": "2026-11-24", "carpeta": "a13-rosco-politologo" },
     { "dia": 13, "fecha": "2026-11-25", "carpeta": "a02-cronologia-legislatura" },
-    { "dia": 14, "fecha": "2026-11-26", "carpeta": "TODO" },
+    { "dia": 14, "fecha": "2026-11-26", "carpeta": "a15-donde-esta-este-pueblo" },
     { "dia": 15, "fecha": "2026-11-27", "carpeta": "TODO" }
   ]
 }

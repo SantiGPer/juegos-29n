@@ -1806,6 +1806,407 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
   color: var(--lapiz);
 }
 
+/* Aviso de métricas (diseño del 02-11): al pie de portada y cierre, antes de la barra */
+.metricas {
+  margin: var(--s5) 0 0;
+  padding-top: var(--s2);
+  font-size: 0.75rem;
+  color: var(--lapiz);
+  border-top: 1px solid var(--raya);
+}
+
+/* A15 ¿Dónde está este pueblo? (maquetas pueblo v18 y energía v23, diseño del 02-11) */
+
+/* Celda de la pista llena de abajo arriba según el tramo de distancia */
+.celda[class*="tramo-"]::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  background: var(--marcador);
+}
+
+.celda.tramo-1::after { height: 20%; }
+.celda.tramo-2::after { height: 40%; }
+.celda.tramo-3::after { height: 60%; }
+.celda.tramo-4::after { height: 80%; }
+.celda.tramo-5::after { height: 100%; }
+
+.cuerpo:has(.pueblo) .cab { margin-bottom: var(--s3); }
+.cuerpo:has(.pueblo[data-pestana="mapa"]:not(.revelada)) { padding-bottom: var(--s2); }
+
+.pueblo { display: grid; grid-template-columns: minmax(0, 1fr); }
+
+/* Pila de energía: marco de 2 px con borne y tres rayos; se gasta desde el borne */
+.energia-pila {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 var(--s3);
+}
+
+.energia-pila .rotulo {
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pila {
+  position: relative;
+  display: inline-flex;
+  padding: 1px;
+  border: 2px solid var(--tinta);
+  margin-right: 6px;
+  line-height: 0;
+}
+
+.pila::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  width: 3px;
+  height: 8px;
+  margin-top: -4px;
+  background: var(--tinta);
+}
+
+.pila i {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 20px;
+  color: var(--tinta);
+}
+
+.pila i.gastado { color: var(--raya); }
+.pila i.golpe { animation: rayo 360ms steps(1) both; }
+.pila.vacia { border-color: var(--raya); }
+.pila.vacia::after { background: var(--raya); }
+
+@keyframes rayo {
+  0%, 50% { color: var(--papel); }
+  25%, 75% { color: var(--tinta); }
+  100% { color: var(--raya); }
+}
+
+/* Al empezar la ronda, los rayos se encienden de izquierda a derecha en tres pasos de 120 ms */
+.pila.recarga i { animation: enciende 0s both; }
+.pila.recarga i:nth-child(1) { animation-delay: 120ms; }
+.pila.recarga i:nth-child(2) { animation-delay: 240ms; }
+.pila.recarga i:nth-child(3) { animation-delay: 360ms; }
+
+@keyframes enciende {
+  from { color: var(--raya); }
+  to { color: var(--tinta); }
+}
+
+.pila.mini { padding: 0; border-width: 1px; margin-right: 3px; }
+.pila.mini::after { right: -3px; width: 2px; height: 5px; margin-top: -2.5px; }
+.pila.mini i { width: 14px; height: 12px; }
+
+/* Pestañas «Ficha» y «Mapa» (solo a 375 px) */
+.pestanas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 0 var(--s3);
+}
+
+.pestanas button {
+  min-height: 44px;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.pestanas button + button { border-left: 0; }
+.pestanas button[aria-selected="true"] { background: var(--tinta); color: var(--papel); }
+
+/* Ficha del municipio y ayudas */
+.capa {
+  padding: var(--s2) 0 var(--s3);
+  border-top: 1px solid var(--tinta);
+}
+
+.capa h3 {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--lapiz);
+}
+
+.capa .fuente { margin: 6px 0 0; font-size: 0.75rem; }
+
+.dato-mun {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s3);
+  padding: 4px 0;
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  border-bottom: 1px solid var(--raya);
+}
+
+.dato-mun:last-child { border-bottom: 0; }
+
+.ganador {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 1.125rem;
+  font-weight: 800;
+  border: 1px solid var(--tinta);
+}
+
+.ganador.pequeno { padding: 2px 10px; font-size: 1rem; }
+
+.reparto-mun {
+  display: grid;
+  grid-template-columns: 6.2rem 1fr 3.6rem;
+  gap: 4px 8px;
+  align-items: center;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.reparto-mun .sig { overflow: hidden; font-weight: 800; white-space: nowrap; text-overflow: ellipsis; }
+.reparto-mun .sig.otros { font-weight: 400; color: var(--lapiz); }
+.reparto-mun .b { height: 12px; }
+.reparto-mun .n { text-align: right; }
+
+.ayuda-pueblo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s3);
+  width: 100%;
+  min-height: 52px;
+  margin: 0 0 var(--s2);
+  padding: var(--s2) var(--s3);
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.ayuda-pueblo .coste { display: inline-flex; flex: none; align-items: center; gap: 6px; }
+.ayuda-pueblo:disabled .pila { border-color: var(--raya); }
+.ayuda-pueblo:disabled .pila::after { background: var(--raya); }
+.ayuda-pueblo:disabled .pila i { color: var(--raya); }
+
+.resumen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0 0 var(--s2);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.resumen .ganador { padding: 1px 8px; font-size: 0.875rem; }
+
+/* Mapa: tierra en senado, bordes en papel; provincia elegida con contorno de 2 px de tinta */
+.lienzo {
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid var(--raya);
+  touch-action: none;
+}
+
+.lienzo svg { display: block; width: 100%; height: auto; }
+
+.lienzo .pr {
+  fill: var(--senado);
+  stroke: var(--papel);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+}
+
+.lienzo .pr.sel { stroke: var(--tinta); stroke-width: 2; }
+.lienzo .borde { fill: none; stroke: var(--lapiz); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.lienzo .fuera { display: none; }
+.lienzo .alfiler { fill: var(--tinta); }
+
+.lienzo .linea { stroke: var(--tinta); }
+
+.lienzo .real {
+  fill: var(--marcador);
+  stroke: var(--tinta);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.encima[hidden], .escala-km[hidden], .volver[hidden] { display: none; }
+
+.encima .volver { position: absolute; top: 6px; left: 6px; }
+
+.prov-et {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  max-width: 45%;
+  overflow: hidden;
+  padding: 2px 6px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+}
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  min-height: 44px;
+  padding: 0 var(--s3);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+
+.volver svg { display: block; }
+
+.escala-km {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 2px 4px 3px;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--papel);
+}
+
+.escala-km i {
+  display: block;
+  height: 4px;
+  margin-bottom: 3px;
+  background: var(--tinta);
+}
+
+.fila-mapa { display: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .lienzo .alfiler.anim { animation: clava 160ms steps(2, end); }
+  .lienzo .linea.anim { stroke-dasharray: 1; stroke-dashoffset: 1; animation: trazo 480ms steps(6, end) forwards; }
+  .lienzo .real.anim { visibility: hidden; animation: aparece 0s 480ms forwards; }
+}
+
+@keyframes clava { from { transform: translateY(-3px); } }
+@keyframes trazo { to { stroke-dashoffset: 0; } }
+@keyframes aparece { to { visibility: visible; } }
+
+/* Revelación */
+.rev h2 { margin: 0; font-size: 1.5rem; font-weight: 800; line-height: 1.15; }
+.rev > .etiqueta { margin: 0; }
+.rev .donde { margin: 0 0 var(--s3); font-size: 1rem; color: var(--lapiz); }
+
+.resultado {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 0 var(--s2);
+  border-top: 1px solid var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+}
+
+.resultado > div { padding: var(--s2) 0; }
+.resultado > div + div { padding-left: var(--s3); border-left: 1px solid var(--raya); }
+.resultado .etiqueta { display: block; margin-bottom: 4px; font-size: 0.75rem; }
+.resultado .valor { display: inline-flex; align-items: end; gap: 6px; }
+.resultado .valor .etiqueta { display: inline; margin: 0; font-size: 0.875rem; }
+
+.cuenta-km { margin: 0 0 var(--s3); font-size: 0.875rem; font-variant-numeric: tabular-nums; }
+.cuenta-km b { padding: 0 3px; background: var(--marcador); }
+
+.revelada .encima, .revelada .resumen { display: none; }
+.revelada .fila-mapa { display: flex; order: 2; margin: 6px 0 var(--s3); }
+
+.leyenda-pueblo { display: flex; flex-wrap: wrap; gap: var(--s4); font-size: 0.75rem; color: var(--lapiz); }
+.leyenda-pueblo > span { display: inline-flex; align-items: center; gap: 6px; }
+.leyenda-pueblo svg { display: block; }
+
+.muestra-real {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: var(--marcador);
+  border: 2px solid var(--tinta);
+}
+
+.col-mapa { display: flex; flex-direction: column; }
+.resto .explicacion { margin-top: 0; }
+.resto .capa:first-of-type { margin-top: var(--s5); }
+
+/* Tabla de rondas del cierre */
+.rondas-cierre {
+  width: 100%;
+  margin: 0 0 var(--s4);
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.rondas-cierre td { padding: 6px 0; vertical-align: middle; border-bottom: 1px solid var(--raya); }
+.rondas-cierre td.c { width: 30px; }
+.rondas-cierre td.n { padding-left: var(--s2); text-align: right; white-space: nowrap; }
+.rondas-cierre .celda { width: 18px; height: 18px; }
+.rondas-cierre small { display: block; font-size: 0.75rem; color: var(--lapiz); }
+
+@media (max-width: 719px) {
+  .pueblo[data-pestana="ficha"]:not(.revelada) .col-mapa,
+  .pueblo[data-pestana="mapa"]:not(.revelada) .col-ficha { display: none; }
+}
+
+/* Escritorio: cabecera en una fila; ficha en 360 px a la izquierda y mapa a la derecha; sin pestañas */
+@media (min-width: 720px) {
+  main:has(.pueblo) { max-width: 1200px; }
+
+  main:has(.pueblo) .cab {
+    display: flex;
+    align-items: center;
+    gap: var(--s6);
+    margin-bottom: var(--s4);
+    padding-bottom: var(--s3);
+    border-bottom: 1px solid var(--tinta);
+  }
+
+  main:has(.pueblo) .cab .nombre { margin: 0; font-size: 1.125rem; }
+  main:has(.pueblo) .cab-fila { flex: 1; }
+  main:has(.pueblo) .barra { position: sticky; justify-content: flex-end; }
+  main:has(.pueblo) .barra .accion { flex: none; width: 360px; }
+
+  .pueblo {
+    grid-template-columns: 360px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "energia mapa" "ficha mapa";
+    column-gap: 40px;
+  }
+
+  .pueblo .energia-pila { grid-area: energia; }
+  .pueblo .col-ficha { grid-area: ficha; }
+  .pueblo .col-mapa { grid-area: mapa; }
+  .pueblo .pestanas, .pueblo .resumen, .pueblo .encima { display: none; }
+
+  .pueblo .fila-mapa {
+    display: flex;
+    align-items: center;
+    gap: var(--s4);
+    min-height: 44px;
+    margin: 0 0 var(--s2);
+  }
+
+  .fila-mapa .prov { font-size: 1.125rem; font-weight: 800; }
+  .fila-mapa .etiqueta { margin-left: auto; }
+  .pueblo .lienzo { margin: 0; }
+
+  .pueblo.revelada { grid-template-areas: "rev mapa" "resto mapa"; }
+  .pueblo .rev { grid-area: rev; }
+  .pueblo .resto { grid-area: resto; }
+  .revelada .fila-mapa { order: 0; margin: 0 0 var(--s2); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marca::before { animation: none; }
   .entra .lado, .entra .vs, .llena i.on, .vida .tramos i.fuera { animation: none; }

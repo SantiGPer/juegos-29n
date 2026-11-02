@@ -1,5 +1,5 @@
 import { icono } from './iconos.js';
-import { accion, celdas, cifra, el, monta } from './util.js';
+import { accion, avisoMetricas, celdas, cifra, el, monta } from './util.js';
 
 // pista: { estados, porGrupo } de la partida, que queda fija bajo la cifra.
 // otra: { texto, accion } para volver a jugar dentro de la misma edición (A12).
@@ -49,6 +49,7 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
     el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
     manana,
     el('p', {}, el('a', { href: '../../', textContent: 'Todos los juegos' })),
+    ...avisoMetricas(),
   ], copiar);
   scrollTo(0, 0);
 }

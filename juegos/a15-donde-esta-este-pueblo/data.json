@@ -1,0 +1,22 @@
+{
+  "juego": "¿Dónde está este pueblo?",
+  "dia": 14,
+  "fuente": "Ministerio del Interior (infoelectoral), elecciones generales del 23-07-2023 y del 09-03-2008; INE, cifras oficiales de población a 1-1-2023; IGN, Nomenclátor Geográfico de Municipios y Entidades de Población; mapa de es-atlas 0.6.0 (IGN).",
+  "portada": {
+    "texto": "Cinco municipios y su resultado del 23-J. Tú pones el alfiler.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "Cinco pueblos de 5.000 habitantes o más, nunca dos de la misma comunidad." },
+      { "icono": "ubicacion", "texto": "Toca una provincia, clava el alfiler y confirma. Hasta 5 puntos si te quedas a menos de 10 km." },
+      { "icono": "energia", "texto": "Tienes energía para tres ayudas por ronda. Cada una rebaja lo que vale la ronda: 80, 60 y 40 %." }
+    ]
+  },
+  "etiqueta": "Ronda",
+  "decimales": 1,
+  "rondas": [
+    { "tipo": "pueblo", "ine": "20063", "explicacion": "TODO: explicación de Cowork (selección provisional de Code).", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 09-03-2008; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "36024", "explicacion": "TODO: explicación de Cowork (selección provisional de Code).", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 09-03-2008; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "41013", "explicacion": "TODO: explicación de Cowork (selección provisional de Code).", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 09-03-2008; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "19220", "explicacion": "TODO: explicación de Cowork (selección provisional de Code).", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 09-03-2008; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "35028", "explicacion": "TODO: explicación de Cowork (selección provisional de Code).", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 09-03-2008; INE, padrón a 1-1-2023." }
+  ]
+}

@@ -2,6 +2,38 @@
 
 Una entrada por sesión, la más reciente arriba. Formato: fecha · juego/motor · hecho · falta · dudas para el autor.
 
+## 2026-11-02 (2) — A15 montado con cinco municipios provisionales
+
+Encargo de decisiones.md (02-11, A15 diseño), con el plan confirmado por el autor en sesión. Sin commit de `shared/` hasta que el autor vea el diff.
+
+**Hecho**
+- Ronda nueva del encadenador, `shared/motores/pueblo.js`:
+  - Ficha del municipio y tres ayudas con pila de energía (v23).
+  - Pestañas «Ficha» y «Mapa» a 375 px, y dos columnas desde 720 px.
+  - Marcado en dos pasos: toque con tolerancia de 44 px y ampliación de la caja más un 30 %, con un mínimo de 72 unidades, en cuatro pasos. El alfiler se puede arrastrar. «Mapa entero». Canarias y la península nunca salen juntas en la vista ampliada. Escala de 10, 20, 50 o 100 km.
+  - Revelación con línea, municipio, cuenta y ficha completa.
+  - Celdas de la pista llenas según el tramo, tabla de rondas en el cierre y recibo B.
+- `rondas.js`: lo justo para A15. Puntos con decimales (`decimales`); `maximo` por tipo para el total sobre 25; el resolver puede devolver `{ puntos, estado, recibo, fila }`; `pulsa()` hace que «Marcar en el mapa» cambie de pestaña en lugar de resolver. `marcador` en `util.js` acepta el formato de los puntos. Los demás juegos no cambian.
+- Iconos `ubicacion`, `alfiler`, `energia` y `volver` en `shared/iconos.js`.
+- Aviso de métricas en `portada.js` y `cierre.js` para toda la serie, apagado (`conMetricas = false` en `util.js`) hasta que se active Umami.
+- Distancia real: `R/10` guarda ahora en `mapa_provincias.json` los parámetros de las dos cónicas y de su encaje (los trazados no cambian). La cónica en JS da el mismo punto que `sf` y la vuelta recupera la longitud y la latitud exactas.
+- `R/14_municipios_a15.R` → `data/municipios_a15.json`, con cinco fichas. **Selección provisional de Code**, una por comunidad y de menos a más difícil: Oiartzun (feudo de EH Bildu), Lalín (extremo del PP), Aznalcóllar (extremo del PSOE), Pioz (extremo de Vox) y Tías («España en pequeño», en Canarias para probar el recuadro).
+- `juegos/a15-donde-esta-este-pueblo/`, con las explicaciones en `TODO` visible. Día 14 en `calendario.json`. `SOURCES.md` y `CLAUDE.md` al día.
+- Capturas a 320, 375 × 560 y 1280, también con `prefers-reduced-motion`: partida completa sin errores y sin desbordes. Prueba de humo de los demás juegos y del índice, sin errores. Revisión contra la lista negra: las mayúsculas de «Energía» y la flecha de «Mapa entero» son excepciones aprobadas en el diseño del 02-11.
+
+**Dudas para el autor**
+- Kilómetros: el tramo se calcula con los kilómetros redondeados que ve el jugador (10,4 km se muestra como «10 km» y da 5 puntos), para que la pantalla y la puntuación no se contradigan.
+- Recibo: la decisión pide «¿Dónde está este pueblo? · 14,4/25» en la primera línea. He dejado el formato común de `cierre.js` («Juegos 29N, día 14», el nombre y «14,4/25» en líneas separadas) para no romper la serie. Si se quiere la línea única, es un cambio en `cierre.js` para todos o una excepción para A15.
+- Regla de portada de la energía: lleva el rayo de 10 × 10, no la pila pequeña con un rayo del diseño, porque las reglas usan iconos de 10 × 10 y la pila no cabe en esa rejilla.
+- Reparto (ayuda 1): las barras usan una escala común en la que 100 % es el ancho completo. La maqueta escalaba por 2,2.
+- Accesibilidad: el marcado en el mapa solo funciona con puntero (toque o ratón), no con teclado.
+- Selección de municipios, explicaciones y nombre del juego: pendientes.
+
+**Falta**
+- Commit de `shared/`, cuando el autor vea el diff.
+- Contenido de A15 (`editorial/contenido/a15-*.md`) cuando el autor elija los municipios. Se cambian los `ine` de `R/14` y del `data.json`.
+- Medición de Umami en el cierre (kilómetros por ronda como `detalle`), cuando se active.
+
 ## 2026-11-02 — A15: catálogo ampliado
 
 Encargo de decisiones.md (01-11, dudas de la bitácora). Encargos pendientes revisados por prioridad: A16 sigue bloqueado (los zips del Senado de 2008 y 2023 no están en el repo ni en Descargas); el montaje de A15 espera la selección de municipios y la confirmación del plan.

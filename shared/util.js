@@ -14,6 +14,10 @@ export const monta = (contenedor, cuerpo, ...botones) =>
 
 export const accion = (textContent, onclick) => el('button', { className: 'accion', textContent, onclick });
 
+// Aviso de métricas al pie de portada y cierre (diseño del 02-11); se enciende con Umami cuando lo confirme el autor
+const conMetricas = false;
+export const avisoMetricas = () => conMetricas ? [el('p', { className: 'metricas', textContent: 'Medimos partidas y puntuaciones de forma anónima, sin cookies.' })] : [];
+
 export const muestra = nodo => nodo.scrollIntoView({
   behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
   block: 'nearest',
@@ -67,7 +71,7 @@ export const marcador = (juego, porGrupo, ...extra) => {
     el('h1', { className: 'nombre', textContent: juego }), ...extra, el('div', { className: 'cab-fila' }, zona, puntos));
   let antes = 0;
 
-  const pinta = (estados, actual, suma) => {
+  const pinta = (estados, actual, suma, formato = numero) => {
     const larga = estados.length > 6;
     nodo.classList.toggle('larga', larga);
     const nueva = celdas(estados, actual, porGrupo, larga ? 1.6 : 2);
@@ -82,11 +86,11 @@ export const marcador = (juego, porGrupo, ...extra) => {
       cursor.style.top = `${enCurso.offsetTop + enCurso.offsetHeight + 3}px`;
     }
 
-    const [entero, decimal] = numero(suma).split(',');
-    valor.replaceChildren(cifra(entero.padStart(2, '0') + (decimal ? `,${decimal}` : ''), larga ? 2 : 3), el('span', { className: 'oculto', textContent: numero(suma) }));
+    const [entero, decimal] = formato(suma).split(',');
+    valor.replaceChildren(cifra(entero.padStart(2, '0') + (decimal ? `,${decimal}` : ''), larga ? 2 : 3), el('span', { className: 'oculto', textContent: formato(suma) }));
     if (suma > antes) {
       cifras.querySelector('.mas')?.remove();
-      cifras.append(el('span', { className: 'mas' }, cifra(`+${numero(suma - antes)}`, 2)));
+      cifras.append(el('span', { className: 'mas' }, cifra(`+${formato(suma - antes)}`, 2)));
     }
     antes = suma;
   };

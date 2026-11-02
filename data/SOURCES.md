@@ -81,6 +81,13 @@ Se usa siempre el color vigente de cada partido, en todas las legislaturas (deci
 - Fuente: es-atlas 0.6.0 (Martín González, licencia MIT), `es/provinces.json` (https://cdn.jsdelivr.net/npm/es-atlas@0.6.0/es/provinces.json), TopoJSON generado a partir de la Base de Datos de Líneas Límite Jurisdiccionales del IGN (CNIG, CC BY 4.0). Códigos INE de provincia. Descargado el 21-10-2026.
 - Sin Gibraltar (id 54). Península, Baleares, Ceuta y Melilla: cónica conforme sobre la esfera (paralelos 37 y 43, meridiano central −3,5), la misma que `d3.geoConicConformal().rotate([3.5, 0]).parallels([37, 43])`, ajustada a 343 px de ancho. Canarias: cónica conforme propia (paralelos 27,5 y 29,5, meridiano central −15,75), en el recuadro de abajo a la izquierda. Coordenadas SVG con dos decimales.
 - Cotejado con la geometría de la maqueta: diferencia máxima de 0,005 px en las cajas de las 50 provincias de la península, Baleares, Ceuta y Melilla, y de 0,12 px en las dos de Canarias.
+- `proyecciones` (02-11-2026, para A15): parámetros de las dos cónicas y de su encaje en el SVG, para pasar el clic a longitud y latitud en el navegador. Los trazados no cambian al regenerar. Comprobado: la cónica de `shared/motores/pueblo.js` da el mismo punto que `sf` en la península y en Canarias, y la vuelta recupera la longitud y la latitud.
+
+## `municipios_a15.json`
+
+- Script: `R/14_municipios_a15.R`. Juego: A15. Derivado de `resultados_2023_mun.json` (mismas fuentes y fechas) y del nombre de provincia de `resultados_2023_prov.json`.
+- Cinco fichas: ganador, participación, reparto por cabecera nacional (hasta siete candidaturas con un 1 % o más; el resto, en «Otros»), población, voto en blanco (sobre voto válido), votos nulos (sobre votantes), ganador en 2008 y coordenadas del núcleo capital.
+- **Selección provisional de Code (02-11-2026)**, pendiente del autor sobre `editorial/catalogos/a15-catalogo.md`.
 
 ## `mapas_a07.json`
 

@@ -7,7 +7,7 @@ import { baraja, el, muestra } from '../util.js';
 // (sin dato, que nunca se pinta como 0). cortes: cuatro, y un valor igual al corte va al tramo superior.
 
 const ns = 'http://www.w3.org/2000/svg';
-const svg = (tag, attrs) => {
+export const svg = (tag, attrs) => {
   const n = document.createElementNS(ns, tag);
   Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
   return n;
