@@ -44,7 +44,7 @@ export async function indice(contenedor) {
 
   const casillas = dias.map(d => {
     if (!abierto(d)) {
-      const nodo = el('span', { className: 'nivel cerrado', role: 'img', ariaLabel: `Día ${d.dia}, ${fecha(d.fecha)}, cerrado` });
+      const nodo = el('span', { className: 'nivel cerrado', role: 'img', ariaLabel: `Día ${d.dia}, ${fecha(d.fecha)}, cerrado${d.hora ? `, se abre a las ${d.hora}` : ''}` });
       nodo.innerHTML = icono('candado', 2, 'var(--lapiz)');
       if (d.debate) esquina(nodo);
       return nodo;
@@ -76,10 +76,14 @@ export async function indice(contenedor) {
     jugar.onclick = () => { location.href = `juegos/${d.carpeta}/`; };
   };
 
+  // Un día con hora de apertura (B1, a las 13:00) sigue cerrado hasta que la Action lo publica
+  const espera = dias.find(d => d.fecha === hoy && d.hora && !abierto(d));
+
   monta(contenedor, [
     el('h1', { textContent: 'Juegos de campaña 29N' }),
     el('p', { className: 'etiqueta', textContent: 'Un juego al día del 13 al 27 de noviembre.' }),
     el('div', { className: 'niveles' }, ...casillas),
+    ...(espera ? [el('p', { className: 'etiqueta', textContent: `Hoy, ${fecha(espera.fecha)}: se abre a las ${espera.hora}.` })] : []),
     zona,
   ], que, jugar);
 
