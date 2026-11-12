@@ -1,12 +1,12 @@
 import { icono } from './iconos.js';
-import { reglas } from './portada.js';
+import { recuadro, reglas } from './portada.js';
 import { accion, cifra, el, monta } from './util.js';
 
 // Selector de días (decisiones de diseño del 15-10; maquetas v5 y v6). Cada día se abre a las 00:00, hora peninsular.
 // ?hoy=N simula el día N para probarlo.
 const hoyEn = dias => {
   const simulado = new URLSearchParams(location.search).get('hoy');
-  return simulado ? dias[simulado - 1].fecha : new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Madrid' });
+  return dias[simulado - 1]?.fecha ?? new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Madrid' });
 };
 
 const fecha = iso => new Date(iso).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', timeZone: 'UTC' });
@@ -15,19 +15,6 @@ const fecha = iso => new Date(iso).toLocaleDateString('es-ES', { day: 'numeric',
 const ficha = d => d.carpeta === 'TODO'
   ? Promise.resolve({ juego: 'TODO', portada: { texto: 'TODO', reglas: [] } })
   : fetch(`juegos/${d.carpeta}/data.json`).then(r => r.json());
-
-const esquina = nodo => {
-  const esq = el('span', { className: 'esq' });
-  esq.innerHTML = icono('bocadillo', 1.4, 'var(--tinta)', 'var(--senal)');
-  nodo.append(esq);
-};
-
-// Aviso de contenido de debate en la ficha, en un recuadro de 1 px de tinta
-const recuadro = texto => {
-  const nodo = el('p', { className: 'recuadro' }, el('span'), el('span', { textContent: texto }));
-  nodo.firstChild.innerHTML = icono('bocadillo', 2, 'var(--tinta)', 'var(--senal)');
-  return nodo;
-};
 
 export async function indice(contenedor) {
   const { dias } = await fetch('data/calendario.json').then(r => r.json());
@@ -46,16 +33,13 @@ export async function indice(contenedor) {
     if (!abierto(d)) {
       const nodo = el('span', { className: 'nivel cerrado', role: 'img', ariaLabel: `Día ${d.dia}, ${fecha(d.fecha)}, cerrado${d.hora ? `, se abre a las ${d.hora}` : ''}` });
       nodo.innerHTML = icono('candado', 2, 'var(--lapiz)');
-      if (d.debate) esquina(nodo);
       return nodo;
     }
-    const nodo = el('button', {
+    return el('button', {
       className: `nivel${d.fecha === hoy ? ' hoy' : ''}`,
       ariaLabel: `Día ${d.dia}, ${fecha(d.fecha)}`,
       onclick: () => elige(d.dia),
     }, cifra(String(d.dia), 3));
-    if (d.debate) esquina(nodo);
-    return nodo;
   });
 
   const elige = n => {
@@ -68,7 +52,7 @@ export async function indice(contenedor) {
     zona.replaceChildren(
       el('p', { className: 'etiqueta', textContent: esHoy ? `Hoy, ${fecha(d.fecha)}` : fecha(d.fecha) }),
       el('h2', { textContent: f.juego }),
-      el('p', { className: 'entradilla', textContent: f.portada.texto }),
+      ...(f.portada.texto ? [el('p', { className: 'entradilla', textContent: f.portada.texto })] : []),
       reglas(f.portada.reglas),
       ...(d.debate ? [recuadro(d.debate)] : []));
     que.replaceChildren(el('span', { className: 'etiqueta', textContent: esHoy ? 'Hoy' : `Día ${d.dia}` }), el('b', { textContent: f.juego }));
@@ -80,7 +64,7 @@ export async function indice(contenedor) {
   const espera = dias.find(d => d.fecha === hoy && d.hora && !abierto(d));
 
   monta(contenedor, [
-    el('h1', { textContent: 'Juegos de campaña 29N' }),
+    el('h1', { textContent: 'Recreativos electorales' }),
     el('p', { className: 'etiqueta', textContent: 'Un juego al día del 13 al 27 de noviembre.' }),
     el('div', { className: 'niveles' }, ...casillas),
     ...(espera ? [el('p', { className: 'etiqueta', textContent: `Hoy, ${fecha(espera.fecha)}: se abre a las ${espera.hora}.` })] : []),

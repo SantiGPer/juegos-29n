@@ -18,7 +18,7 @@ const lento = () => !matchMedia('(prefers-reduced-motion: reduce)').matches;
 const escritorio = matchMedia('(min-width: 720px)');
 
 const decimal = n => n.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-const pct = n => `${decimal(n)} %`;
+const pct = n => `${decimal(n)}\u00a0%`;
 
 // Cónica conforme sobre la esfera con lat0 = 0, como en R/10, y su encaje en el SVG
 const R = 6371008.8;
@@ -164,9 +164,12 @@ export const ronda = ({ municipio: m, explicacion, fuente, geometria, escala }, 
   const regla = el('i');
   const reglaTexto = el('span');
   const escalaKm = el('span', { className: 'escala-km', hidden: true }, regla, reglaTexto);
+  // El toque que elige provincia hace aparecer «Mapa entero» bajo el dedo: el clic que lo sigue no cuenta
+  let elegidaEn = 0;
   const volver = () => {
     const b = el('button', { className: 'volver', ariaLabel: 'Volver al mapa entero' }, el('span', { innerHTML: icono('volver', 1.6) }), 'Mapa entero');
     b.onclick = () => {
+      if (performance.now() - elegidaEn < 500) return;
       pin = null;
       sel = null;
       actualiza();
@@ -295,6 +298,7 @@ export const ronda = ({ municipio: m, explicacion, fuente, geometria, escala }, 
       const id = provinciaEn(e);
       if (!id) return;
       sel = id;
+      elegidaEn = performance.now();
       actualiza();
       anima(encuadre(id));
       return;
@@ -404,11 +408,11 @@ export const ronda = ({ municipio: m, explicacion, fuente, geometria, escala }, 
 
     return {
       puntos,
-      estado: `tramo-${t}`,
+      estado: t / 5,
       recibo: `${'🟨'.repeat(t)}${'⬜'.repeat(5 - t)} ${km} km`,
       medida: `${km}k${usadas}`,
       fila: el('tr', {},
-        el('td', { className: 'c' }, celda(`tramo-${t}`)),
+        el('td', { className: 'c' }, celda(t / 5)),
         el('td', {}, el('b', { textContent: m.nombre }), el('small', { textContent: m.provincia })),
         el('td', { className: 'n', textContent: `${km} km` }),
         el('td', { className: 'n' }, usadas ? `${t} × ${decimal(f)} = ` : '', el('b', { textContent: decimal(puntos) }))),

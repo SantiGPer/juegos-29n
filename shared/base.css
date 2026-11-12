@@ -1,6 +1,10 @@
 /* Plan en docs/diseno-plan.md; disposición en docs/maquetas/maqueta-disposicion-v6.html.
-   Archivo se carga con <link> en cada página:
-   https://fonts.googleapis.com/css2?family=Archivo:wght@400;800&display=swap */
+   Archivo (OFL, fuentes/OFL.txt) alojada aquí: @fontsource/archivo 5.3.0, pesos 400 y 800 (SH-09). */
+
+@font-face { font-family: Archivo; font-weight: 400; font-display: swap; src: url(fuentes/archivo-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: Archivo; font-weight: 400; font-display: swap; src: url(fuentes/archivo-latin-ext-400-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: Archivo; font-weight: 800; font-display: swap; src: url(fuentes/archivo-latin-800-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: Archivo; font-weight: 800; font-display: swap; src: url(fuentes/archivo-latin-ext-800-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
 
 :root {
   color-scheme: light;
@@ -134,6 +138,8 @@ a { color: var(--tinta); }
   color: var(--lapiz);
 }
 
+.cuerpo:focus { outline: none; }
+
 .oculto {
   position: absolute;
   width: 1px;
@@ -151,6 +157,7 @@ button {
   border-radius: 0;
   padding: var(--s3) var(--s4);
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 button:disabled {
@@ -581,6 +588,7 @@ details[open] summary { margin-bottom: var(--s1); }
 @keyframes carga { from { background: var(--papel); border-color: var(--raya); } }
 
 .duelo { position: relative; }
+.ring { overflow-x: clip; }
 
 .duelo .lado {
   display: flex;
@@ -635,13 +643,13 @@ details[open] summary { margin-bottom: var(--s1); }
 }
 
 /* Entrada, una vez por duelo: las fichas desde los lados y el «VS» cae en el centro */
-.entra .lado { animation: desde-izq 280ms steps(4) both; }
+.entra .lado { animation: desde-izq 280ms steps(4) backwards; }
 .entra .lado.der { animation-name: desde-der; }
-.entra .vs { animation: golpe 360ms steps(3) 200ms both; }
+.entra .vs { animation: cae 360ms steps(3) 200ms both; }
 
 @keyframes desde-izq { from { transform: translateX(-40px); opacity: 0; } }
 @keyframes desde-der { from { transform: translateX(40px); opacity: 0; } }
-@keyframes golpe {
+@keyframes cae {
   0% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
   60% { transform: translate(-50%, -50%) scale(0.9); opacity: 1; }
 }
@@ -853,13 +861,6 @@ details[open] summary { margin-bottom: var(--s1); }
 .nivel.cerrado { background: var(--senado); border-color: var(--senado); }
 .nivel svg { display: block; }
 
-.nivel .esq {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  line-height: 0;
-}
-
 .ficha {
   margin-top: var(--s6);
   padding-top: var(--s4);
@@ -1045,6 +1046,11 @@ details[open] summary { margin-bottom: var(--s1); }
   .mapa.jugando { max-height: max(200px, calc(100dvh - 368px)); }
 }
 
+/* Pantallas bajas (320 × 568 y apaisado): el mapa cede sitio para que las opciones queden sobre la barra */
+@media (max-height: 600px) and (max-width: 767px) {
+  .mapa.jugando { max-height: max(120px, calc(100dvh - 364px)); }
+}
+
 .mapa:not(.jugando) [data-id] { cursor: pointer; }
 
 .mapa .provincia { stroke: var(--papel); stroke-width: 0.6; }
@@ -1183,7 +1189,7 @@ details[open] summary { margin-bottom: var(--s1); }
 .con-icono svg { display: block; flex: none; }
 
 .hueco, .pieza {
-  height: 38px;
+  height: 44px;
   padding: 0 var(--s1);
   white-space: nowrap;
 }
@@ -1255,6 +1261,10 @@ details[open] summary { margin-bottom: var(--s1); }
 }
 
 .fija.suelta { position: static; }
+
+/* Móvil en apaisado: la parte fija no deja sitio a la lista */
+@media (max-height: 450px) { .fija { position: static; } }
+
 .fija .cab { margin-bottom: 6px; }
 .rotulo-hemiciclo { margin: 0 0 var(--s1); }
 
@@ -1619,6 +1629,8 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
 
 .manana svg { display: block; }
 
+.todos { display: inline-block; min-height: 44px; line-height: 44px; }
+
 /* A9 Fontanería electoral (maqueta v17): cambio con botón de ayuda y panel en la página */
 .cambio {
   display: grid;
@@ -1680,7 +1692,8 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
 
 .cerrar-ayuda {
   display: block;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   margin: var(--s2) 0 0 auto;
   padding: var(--s1) 0;
   border: 0;
@@ -1828,21 +1841,16 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
   border-top: 1px solid var(--raya);
 }
 
-/* A15 ¿Dónde está este pueblo? (maquetas pueblo v18 y energía v23, diseño del 02-11) */
-
-/* Celda de la pista llena de abajo arriba según el tramo de distancia */
-.celda[class*="tramo-"]::after {
+/* Celda de la pista llena de abajo arriba en proporción a los puntos de la ronda (A6, A15, B1) */
+.celda.llena::after {
   content: "";
   position: absolute;
   inset: auto 0 0;
+  height: var(--lleno);
   background: var(--marcador);
 }
 
-.celda.tramo-1::after { height: 20%; }
-.celda.tramo-2::after { height: 40%; }
-.celda.tramo-3::after { height: 60%; }
-.celda.tramo-4::after { height: 80%; }
-.celda.tramo-5::after { height: 100%; }
+/* A15 ¿Dónde está este pueblo? (maquetas pueblo v18 y energía v23, diseño del 02-11) */
 
 .cuerpo:has(.pueblo) .cab { margin-bottom: var(--s3); }
 .cuerpo:has(.pueblo[data-pestana="mapa"]:not(.revelada)) { padding-bottom: var(--s2); }
@@ -2243,4 +2251,252 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
   .entra .lado, .entra .vs, .llena i.on, .vida .tramos i.fuera { animation: none; }
   .mas { display: none; }
   .cursor { transition: none; }
+}
+
+/* B1 Quién dijo qué (maqueta v26, diseño del 11-11) */
+.subtitulo { margin: 0 0 var(--s3); }
+
+/* Ronda 1: frases con casilla vacía, como una papeleta; los candidatos salen en la barra al elegir frase */
+.frases {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.frase {
+  display: grid;
+  grid-template-columns: 1fr 96px;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 10px 8px 10px 12px;
+  text-align: left;
+  border: 1px solid var(--tinta);
+}
+
+.frase.elegida { border-width: 3px; padding: 8px 6px 8px 10px; }
+.frase q { display: block; font-size: 0.9375rem; line-height: 1.35; quotes: "«" "»"; }
+.frase .debia { text-align: left; }
+.frase .minuto { display: block; margin-top: 4px; font-size: 0.75rem; color: var(--lapiz); }
+
+.casilla-voto {
+  display: block;
+  height: 40px;
+  border: 1px solid var(--tinta);
+}
+
+.frase.elegida .casilla-voto { border-width: 2px; }
+
+.candidato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  padding: 0 4px;
+  overflow: hidden;
+  font-size: var(--etiqueta);
+  font-weight: 800;
+  white-space: nowrap;
+  border: 1px solid var(--tinta);
+}
+
+.candidato .muestra { flex: none; width: 12px; height: 12px; border: 1px solid var(--tinta); }
+.candidato.acierto { background: var(--marcador); }
+.candidato.fallo { color: var(--lapiz); text-decoration: line-through; border-color: var(--raya); }
+
+.barra:has(> .bandeja-voto) { flex-direction: column; gap: var(--s2); }
+.bandeja-voto .etiqueta { margin: 0; font-size: 0.75rem; }
+.candidatos { display: grid; gap: 6px; }
+.candidatos:empty { display: none; }
+.candidatos button { padding: 0; border: 0; }
+.candidatos .candidato { height: 44px; }
+
+/* Ronda 2: cartón de 4 × 4. Comprobado, el fondo dice el acierto; el borde y la etiqueta, si pasó */
+.carton {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.casilla-carton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  min-height: 44px;
+  padding: 4px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-align: center;
+  hyphens: auto;
+}
+
+.casilla-carton[aria-pressed="true"] { color: var(--papel); background: var(--tinta); }
+.casilla-carton.resuelta { padding-bottom: 16px; }
+.casilla-carton.acierto { background: var(--marcador); }
+.casilla-carton.paso-si { border: 2px solid var(--tinta); }
+.casilla-carton.no-paso { color: var(--lapiz); border: 1px dashed var(--raya); }
+.casilla-carton.no-paso.acierto { color: var(--tinta); }
+.casilla-carton.abierta { outline: 3px solid var(--tinta); outline-offset: -3px; }
+.marca-carton { position: absolute; top: 2px; right: 2px; line-height: 0; color: var(--tinta); }
+
+.que-paso {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 2px 0;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tinta);
+}
+
+.no-paso .que-paso { color: var(--lapiz); }
+
+.panel-cita {
+  margin: 10px 0 var(--s4);
+  padding: 10px 12px;
+  font-size: 0.9375rem;
+  border: 3px solid var(--tinta);
+  scroll-margin-bottom: 96px;
+}
+
+.panel-cita p { margin: 0; }
+.panel-cita .etiqueta { margin-bottom: 4px; font-size: 0.75rem; }
+
+.por-minutos {
+  margin: var(--s2) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--etiqueta);
+  border-top: 1px solid var(--tinta);
+}
+
+.por-minutos li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: var(--s2);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--raya);
+}
+
+.por-minutos b { font-variant-numeric: tabular-nums; }
+
+@media (max-width: 359px) {
+  .casilla-carton { aspect-ratio: auto; min-height: 84px; padding: 3px; font-size: 0.625rem; }
+  .frase { grid-template-columns: 1fr 80px; }
+  .frase q { font-size: 0.875rem; }
+}
+
+@media (min-width: 720px) {
+  .casilla-carton { font-size: 0.875rem; }
+}
+
+/* A6 Sesión de control (maqueta v25, diseño del 11-11): gráfico de seis columnas; la primera, referencia fija */
+.g-unidad { margin: 0; font-size: 0.75rem; color: var(--lapiz); }
+
+.grafico {
+  position: relative;
+  height: 250px;
+  margin-top: 22px;
+  border-bottom: 2px solid var(--tinta);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.g-linea { position: absolute; left: 0; right: 0; border-top: 1px solid var(--raya); }
+
+.g-linea span {
+  position: absolute;
+  left: 0;
+  top: -14px;
+  padding-right: 3px;
+  font-size: 0.625rem;
+  color: var(--lapiz);
+  font-variant-numeric: tabular-nums;
+  background: var(--papel);
+}
+
+.g-fila {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 6px;
+  padding-left: 26px;
+}
+
+.g-cols { position: absolute; inset: 0; touch-action: none; }
+.g-col { position: relative; height: 100%; cursor: ns-resize; }
+/* Área táctil de 44 px a 320, sobre el hueco entre columnas (A06-04) */
+.g-col:not(.referencia)::before { content: ''; position: absolute; inset: 0 -1px; }
+.g-col.referencia, .comprobado .g-col { cursor: default; }
+.g-barra, .g-dif, .g-margen { position: absolute; bottom: 0; }
+.g-barra { left: 4px; right: 4px; }
+.g-barra.real { background: var(--tinta); }
+.g-barra.tu { border: 2px solid var(--tinta); border-bottom: 0; }
+.g-barra.tu.vacia { height: 6px; border: 2px dashed var(--raya); border-bottom: 0; }
+.g-asa { position: absolute; left: 50%; width: 28px; height: 10px; margin-left: -14px; background: var(--tinta); }
+.g-dif { left: 35%; right: 35%; background: var(--marcador); }
+
+.g-margen { left: 0; right: 0; border: 2px solid var(--tinta); }
+
+.g-val {
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.grafico:not(.final) :is(.g-margen, .g-val.real), .g-resultado:not(.final) { visibility: hidden; }
+
+.g-rotulos { margin-top: 4px; }
+.g-rotulos > span { font-size: 0.6875rem; line-height: 1.15; text-align: center; color: var(--lapiz); }
+.g-rotulos span span { display: block; }
+.g-rotulos b { display: block; font-size: 0.8125rem; color: var(--tinta); }
+
+.g-resultado { margin-top: 6px; }
+
+.g-resultado > span {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.g-resultado svg { display: block; }
+
+.g-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  color: var(--lapiz);
+}
+
+.g-leyenda span { display: inline-flex; align-items: center; gap: 6px; }
+.g-leyenda i { display: inline-block; width: 14px; height: 12px; }
+.g-leyenda .real { background: var(--tinta); }
+.g-leyenda .tu { border: 2px solid var(--tinta); }
+.g-leyenda .dif { background: var(--marcador); }
+.g-leyenda .margen { width: 12px; border: 2px solid var(--tinta); }
+
+@media (max-width: 359px) {
+  .g-fila { gap: 3px; padding-left: 22px; }
+  .g-rotulos > span { font-size: 0.5625rem; }
+  .g-rotulos b { font-size: 0.75rem; }
+  .g-val { font-size: 0.6875rem; }
+  .g-barra { left: 2px; right: 2px; }
 }

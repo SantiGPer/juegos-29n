@@ -45,6 +45,8 @@ export const ronda = (datos, listo) => {
     listo(true);
   };
   deslizador.oninput = mueve;
+  // Un toque en el valor inicial no dispara `input`: también cuenta como elección
+  deslizador.onpointerup = () => deslizador.disabled || mueve();
 
   const pasoBoton = (signo, verbo) => el('button', {
     className: 'paso',

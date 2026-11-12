@@ -2,6 +2,12 @@ import { icono } from './iconos.js';
 
 export const baraja = lista => lista.map(x => [Math.random(), x]).sort((a, b) => a[0] - b[0]).map(([, x]) => x);
 
+// Para las rondas de ordenar: nunca sale ya resuelta
+export const desordena = lista => {
+  const orden = baraja(lista);
+  return orden.every((x, i) => x === lista[i]) ? desordena(lista) : orden;
+};
+
 export const el = (tag, props = {}, ...hijos) => {
   const nodo = Object.assign(document.createElement(tag), props);
   nodo.append(...hijos);
@@ -13,6 +19,20 @@ export const monta = (contenedor, cuerpo, ...botones) =>
   contenedor.replaceChildren(el('div', { className: 'cuerpo' }, ...cuerpo), el('div', { className: 'barra' }, ...botones));
 
 export const accion = (textContent, onclick) => el('button', { className: 'accion', textContent, onclick });
+
+// Lector de pantalla: al montar una ronda el foco va a su cuerpo, y `voz` anuncia el resultado al resolver
+export const enfoca = contenedor => {
+  const cuerpo = contenedor.querySelector('.cuerpo');
+  cuerpo.tabIndex = -1;
+  cuerpo.focus({ preventScroll: true });
+};
+export const voz = () => el('p', { className: 'oculto', role: 'status' });
+
+// El botón que resuelve pasa a «Siguiente»: un doble toque no debe saltarse la corrección
+export const trasPausa = fn => {
+  const desde = performance.now();
+  return () => performance.now() - desde > 400 && fn();
+};
 
 // Métricas anónimas con Umami (decisión del 01-11), apagadas hasta que lo confirme el autor: un evento al empezar
 // y otro al terminar, con los puntos y el detalle de la partida en una sola propiedad. Si el script de Umami no
@@ -61,8 +81,11 @@ export const cifra = (texto, p) => el('span', { className: 'digitos', ariaHidden
 
 export const numero = n => n.toLocaleString('es-ES');
 
+// Un estado numérico (de 0 a 1) llena la celda de abajo arriba en esa proporción, a pasos del 5 % (A6, A15, B1)
 export const celda = (estado, enCurso, escala = 2) => {
-  const nodo = el('span', { className: `celda ${estado}${enCurso ? ' actual' : ''}` });
+  const lleno = typeof estado === 'number';
+  const nodo = el('span', { className: `celda ${lleno ? 'llena' : estado}${enCurso ? ' actual' : ''}` });
+  if (lleno) nodo.style.setProperty('--lleno', `${Math.round(estado * 20) * 5}%`);
   nodo.innerHTML = { acierto: icono('tic', escala), fallo: icono('aspa', escala) }[estado] ?? '';
   return nodo;
 };

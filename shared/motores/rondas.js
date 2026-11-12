@@ -1,12 +1,15 @@
 import { cerrar } from '../cierre.js';
 import { icono } from '../iconos.js';
 import { portada } from '../portada.js';
-import { accion, baraja, celda, el, marcador, monta, muestra, numero } from '../util.js';
+import { accion, celda, desordena, el, enfoca, marcador, monta, muestra, numero, trasPausa, voz } from '../util.js';
 import { ordenOpciones } from './quiz.js';
+import { ronda as atribuir } from './atribuir.js';
+import { ronda as carton } from './carton.js';
 import { ronda as duelo } from './duelo.js';
 import { ronda as emparejar } from './emparejar.js';
 import { ronda as estimacion } from './estimacion.js';
 import { ronda as fontaneria } from './fontaneria.js';
+import { ronda as grafico } from './grafico.js';
 import { ronda as hemiciclo } from './hemiciclo.js';
 import { ronda as mapa } from './mapa.js';
 import { ronda as pueblo } from './pueblo.js';
@@ -17,8 +20,9 @@ import { ronda as pueblo } from './pueblo.js';
 // devuelve 0, ½ o 1. Un tipo con casillas(datos) ocupa varias celdas de la pista y su resolver devuelve un
 // punto por celda; uno con rotulo pone él mismo el «Ronda N de M»; uno con fija queda pegado arriba con la
 // cabecera y el primer nodo de su cuerpo. Una ronda puede traer su rotulo («Duelo»).
-// Un tipo con maximo vale esos puntos en el total del cierre; su resolver puede devolver { puntos, estado, recibo,
-// fila, medida }: estado es la clase de su celda, recibo su línea del texto copiable, fila su fila de la tabla del
+// Un tipo con maximo (cifra o función de los datos) vale esos puntos en el total del cierre; su resolver puede
+// devolver { puntos, estado, recibo, fila, medida }: estado es la clase de su celda o, si es un número de 0 a 1, su
+// llenado (pista proporcional de A6, A15 y B1), recibo su línea del texto copiable, fila su fila de la tabla del
 // cierre (A15) y medida su dato para las métricas, separado por punto y coma (km y ayudas en A15, error en A5).
 // Un tipo con pulsa() la llama antes de resolver y solo resuelve si devuelve true.
 
@@ -60,7 +64,7 @@ const opciones = (datos, listo) => {
 // posición exacta (por defecto, la mitad); 0 en otro caso.
 const ordenar = (datos, listo) => {
   const correcto = [...datos.items].sort((a, b) => b.valor - a.valor);
-  const orden = baraja(correcto);
+  const orden = desordena(correcto);
   const lista = el('ol', { className: 'orden' });
   const [arriba, abajo] = datos.extremos ?? ['Más', 'Menos'];
   listo(true);
@@ -117,11 +121,14 @@ const ordenar = (datos, listo) => {
   };
 };
 
-const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria, pueblo };
+const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria, pueblo, atribuir, carton, grafico };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;
-const maximo = r => tipos[r.tipo].maximo ?? casillas(r);
+const maximo = r => {
+  const m = tipos[r.tipo].maximo;
+  return typeof m === 'function' ? m(r) : m ?? casillas(r);
+};
 
 // Barra de vida (A11, maqueta v16): corazón, cinco tramos en un marco y la cuenta. Cada ronda sin puntos vacía el
 // tramo de más a la derecha, que parpadea dos veces.
@@ -160,7 +167,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
   const inicio = rondas.map((_, i) => rondas.slice(0, i).reduce((s, r) => s + casillas(r), 0));
   const total = rondas.reduce((s, r) => s + maximo(r), 0);
   if (rondas.some(r => tipos[r.tipo].maximo)) cab.sobre(total);
-  const estados = () => rondas.flatMap((r, i) => i < puntos.length ? (hechas[i].estado ? [hechas[i].estado] : [puntos[i]].flat().map(estado)) : Array(casillas(r)).fill(''));
+  const estados = () => rondas.flatMap((r, i) => i < puntos.length ? (hechas[i].estado !== undefined ? [hechas[i].estado] : [puntos[i]].flat().map(estado)) : Array(casillas(r)).fill(''));
   const suma = () => puntos.flat().reduce((s, p) => s + p, 0);
   const recibo = () => {
     if (hechas.every(h => h.recibo)) return hechas.map(h => h.recibo).join('\n');
@@ -192,6 +199,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
     boton.disabled = true;
     const tipo = tipos[rondas[n].tipo];
     const rotulo = rondas[n].rotulo ?? `${etiqueta} ${n + 1} de ${rondas.length}`;
+    const anuncio = voz();
     const { cuerpo, barra = [], resolver, pulsa } = tipo(rondas[n], (ok, texto) => {
       boton.disabled = !ok;
       if (texto) boton.textContent = texto;
@@ -206,6 +214,7 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
       hechas.push(hecha);
       if (vida && p === 0) vida.quita();
       cab.pinta(estados(), [inicio[n]], suma(), formato);
+      anuncio.textContent = `${etiqueta} ${n + 1}: ${formato([p].flat().reduce((s, x) => s + x, 0))} de ${maximo(rondas[n])} punto${maximo(rondas[n]) === 1 ? '' : 's'}.`;
       if (vida?.quedan() === 0) {
         cortada = n + 1;
         const aviso = el('div', { className: 'fin-vida' }, el('p', { textContent: vida.fin }),
@@ -215,17 +224,19 @@ const partida = ({ juego, dia, fuente, rondas, niveles, nota, etiqueta = 'Pregun
       }
       const ultima = n === rondas.length - 1 || cortada;
       boton.textContent = ultima ? 'Ver resultado' : `Siguiente ${etiqueta.toLowerCase()}`;
-      boton.onclick = () => ultima ? final() : ronda(n + 1);
+      boton.onclick = trasPausa(() => ultima ? final() : ronda(n + 1));
     };
 
     const nodos = [
       cab.nodo,
       ...(tipo.rotulo ? [] : [el('p', { className: 'etiqueta', textContent: rotulo })]),
       ...cuerpo,
+      anuncio,
     ];
     monta(contenedor, tipo.fija ? [el('div', { className: 'fija' }, ...nodos.splice(0, nodos.indexOf(cuerpo[0]) + 1)), ...nodos] : nodos, ...barra, boton);
     cab.pinta(estados(), [inicio[n]], suma(), formato);
     scrollTo(0, 0);
+    enfoca(contenedor);
   };
 
   ronda(0);

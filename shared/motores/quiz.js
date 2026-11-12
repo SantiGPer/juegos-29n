@@ -1,7 +1,7 @@
 import { cerrar } from '../cierre.js';
 import { icono } from '../iconos.js';
 import { portada } from '../portada.js';
-import { accion, baraja, celda, el, marcador, mide, monta, muestra, numero } from '../util.js';
+import { accion, baraja, celda, desordena, el, enfoca, marcador, mide, monta, muestra, numero, trasPausa, voz } from '../util.js';
 
 const fechaEs = iso => iso.split('-').reverse().join('-');
 const mayuscula = texto => texto[0].toUpperCase() + texto.slice(1);
@@ -46,6 +46,7 @@ const opciones = ({ juego, dia, fuente, preguntas, niveles, columnas, desglose }
     const boton = accion('Responder');
     boton.disabled = true;
     const pie = el('div');
+    const anuncio = voz();
 
     const botones = ordenOpciones(p).map(letra => {
       const opcion = el('button', { className: 'opcion', textContent: p.opciones[letra] });
@@ -68,10 +69,11 @@ const opciones = ({ juego, dia, fuente, preguntas, niveles, columnas, desglose }
         b.classList.toggle('fallada', !acierto && b.dataset.letra === elegida);
       });
       cab.pinta(estados(), [n], aciertos());
+      anuncio.textContent = acierto ? 'Correcto.' : `Incorrecto. Era: ${p.opciones[p.correcta]}.`;
 
       const ultima = n === preguntas.length - 1;
       boton.textContent = ultima ? 'Ver resultado' : 'Siguiente pregunta';
-      boton.onclick = () => ultima ? final() : pregunta(n + 1);
+      boton.onclick = trasPausa(() => ultima ? final() : pregunta(n + 1));
       pie.append(explicacion(
         el('p', { textContent: p.explicacion }),
         el('p', { className: 'fuente', textContent: `Fuente: ${p.fuente}` })));
@@ -84,9 +86,11 @@ const opciones = ({ juego, dia, fuente, preguntas, niveles, columnas, desglose }
       el('p', { className: 'pregunta', textContent: p.pregunta }),
       el('div', columnas ? { className: 'opciones fila', style: `--columnas: ${columnas}` } : { className: 'opciones' }, ...botones),
       pie,
+      anuncio,
     ], boton);
     cab.pinta(estados(), [n], aciertos());
     scrollTo(0, 0);
+    enfoca(contenedor);
   };
 
   pregunta(0);
@@ -115,9 +119,10 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
 
   const ronda = n => {
     const correcto = [...rondas[n].hitos].sort((a, b) => a.fecha.localeCompare(b.fecha));
-    const orden = baraja(correcto);
+    const orden = desordena(correcto);
     const enCurso = Array.from({ length: porRonda }, (_, k) => n * porRonda + k);
     const lista = el('ol', { className: 'orden' });
+    const anuncio = voz();
 
     const mover = (i, paso) => {
       const boton = el('button', {
@@ -147,6 +152,7 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
       const valor = h => [1, 0.5][Math.abs(orden.indexOf(h) - correcto.indexOf(h))] ?? 0;
       puntos.push(...correcto.map(valor));
       cab.pinta(estados(), enCurso, suma());
+      anuncio.textContent = `Ronda ${n + 1}: ${numero(correcto.map(valor).reduce((s, x) => s + x, 0))} de ${correcto.length} puntos.`;
 
       // La lista se queda como la dejó el jugador; los mal colocados llevan su posición real y, con 0 puntos, aspa (decisión del 20-10)
       const resuelta = el('ol', { className: 'orden resuelta' }, ...orden.map(h => {
@@ -167,7 +173,7 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
 
       const ultima = n === rondas.length - 1;
       boton.textContent = ultima ? 'Ver resultado' : 'Siguiente ronda';
-      boton.onclick = () => ultima ? final() : ronda(n + 1);
+      boton.onclick = trasPausa(() => ultima ? final() : ronda(n + 1));
       boton.focus();
     });
 
@@ -178,9 +184,11 @@ const ordenar = ({ juego, dia, fuente, instruccion, rondas }, contenedor) => {
       el('p', { className: 'etiqueta extremo', textContent: 'Más antiguo' }),
       lista,
       el('p', { className: 'etiqueta extremo', textContent: 'Más reciente' }),
+      anuncio,
     ], boton);
     cab.pinta(estados(), enCurso, suma());
     scrollTo(0, 0);
+    enfoca(contenedor);
   };
 
   ronda(0);

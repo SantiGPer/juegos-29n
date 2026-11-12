@@ -4,8 +4,8 @@ import { cifra, el, letraMetrica } from '../util.js';
 
 export const iniciar = (config, contenedor) => portada(config, contenedor, () => partida(config, contenedor));
 
-// Sin mayúsculas ni tildes; el apóstrofo tipográfico del teclado del móvil cuenta como recto
-const normaliza = texto => texto.normalize('NFD').replace(/\p{M}/gu, '').replace(/[‘’]/g, "'").toLowerCase().trim().replace(/\s+/g, ' ');
+// Sin mayúsculas, tildes ni puntuación final, pero con ñ (A13-02); el apóstrofo tipográfico, el acento suelto (´) y el grave (`) cuentan como recto
+const normaliza = texto => texto.normalize('NFD').replace(/(?!\u0303)\p{M}/gu, '').normalize('NFC').replace(/[‘’´`]/g, "'").toLowerCase().replace(/[.,;:!?]+\s*$/, '').trim().replace(/\s+/g, ' ');
 
 // «Empieza por la F, …» con la letra destacada
 const pista = texto => {

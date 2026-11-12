@@ -15,7 +15,7 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
   });
 
   const resultado = total === undefined ? [puntuacion, unidad].filter(Boolean).join(' ') : `${puntuacion}/${total}${unidad ? ` ${unidad}` : ''}`;
-  const texto = [`Juegos 29N, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
+  const texto = [`Recreativos electorales, día ${dia ?? 'TODO'}`, juego, resultado, cuadricula, location.host + location.pathname]
     .filter(Boolean)
     .join('\n');
 
@@ -35,13 +35,20 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
   const manana = el('p', { className: 'manana' }, el('span'), 'Mañana, otro juego.');
   manana.firstChild.innerHTML = icono('candado', 2, 'var(--lapiz)');
 
+  const recibo = el('p', { className: 'recibo', textContent: texto });
+
+  // Sin portapapeles (navegador interno de LinkedIn), el recibo queda seleccionado y a la vista
   const copiar = accion('Copiar resultado', () => Promise.resolve()
     .then(() => navigator.clipboard.writeText(texto))
     .then(() => {
       copiar.textContent = 'Copiado';
       setTimeout(() => { copiar.textContent = 'Copiar resultado'; }, 2000);
     })
-    .catch(() => { copiar.textContent = 'Selecciona y copia el texto'; }));
+    .catch(() => {
+      copiar.textContent = 'Copia el texto seleccionado';
+      getSelection().selectAllChildren(recibo);
+      recibo.scrollIntoView({ block: 'nearest' });
+    }));
 
   monta(contenedor, [
     el('h1', { textContent: juego }),
@@ -51,11 +58,11 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
     ...(pista ? [celdas(pista.estados, [], pista.porGrupo)] : []),
     ...(nivel ? [el('p', { className: 'etiqueta', textContent: nivel })] : []),
     ...detalle,
-    el('p', { className: 'recibo', textContent: texto }),
+    recibo,
     ...(otra ? [el('p', {}, el('button', { className: 'secundario', textContent: otra.texto, onclick: otra.accion }))] : []),
     el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
     manana,
-    el('p', {}, el('a', { href: '../../', textContent: 'Todos los juegos' })),
+    el('p', {}, el('a', { className: 'todos', href: '../../', textContent: 'Todos los juegos' })),
     ...avisoMetricas(),
   ], copiar);
   scrollTo(0, 0);

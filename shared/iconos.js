@@ -26,6 +26,8 @@ const matrices = {
   ubicacion: ['..XXXXXX..', '.XXXXXXXX.', 'XXX....XXX', 'XX......XX', 'XX......XX', 'XXX....XXX', '.XXXXXXXX.', '..XXXXXX..', '...XXXX...', '....XX....'],
   alfiler: ['..XXXXX..', '.XXXXXXX.', 'XXX...XXX', 'XX.....XX', 'XX.....XX', 'XXX...XXX', '.XXXXXXX.', '..XXXXX..', '...XXX...', '...XXX...', '....X....', '....X....'],
   energia: ['......XX..', '.....XX...', '....XX....', '...XXXXX..', '..XXXXX...', '.....XX...', '....XX....', '...XX.....', '..X.......', '.X........'],
+  // Regla de portada de A6 (maqueta v25)
+  grafico: ['..........', '......XX..', '......XX..', '......XX..', '...XX.XX..', '...XX.XX..', 'XX.XX.XX..', 'XX.XX.XX..', 'XX.XX.XX..', 'XXXXXXXXXX'],
   volver: ['...X....', '..XX....', '.XXXXXXX', 'XXXXXXXX', '.XXXXXXX', '..XX....', '...X....'],
 };
 

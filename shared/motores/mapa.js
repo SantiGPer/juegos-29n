@@ -17,7 +17,7 @@ const tramo = (v, cortes) => cortes.filter(c => v >= c).length;
 const relleno = (v, cortes) => v === null ? 'var(--papel)' : `var(--m${tramo(v, cortes)})`;
 
 const formatos = {
-  pct: v => `${v.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} %`,
+  pct: v => `${v.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}\u00a0%`,
   entero: v => v.toLocaleString('es-ES', { maximumFractionDigits: 0 }),
 };
 

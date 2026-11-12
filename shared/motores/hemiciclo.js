@@ -113,6 +113,7 @@ export const ronda = (datos, listo, rotulo) => {
     pasos.forEach((hasta, k) => setTimeout(() => pinta(real, hasta), k * 100));
 
     titular.replaceWith(el('p', { className: 'error-medio' }, cifra(decimal(datos.error), 4),
+      el('span', { className: 'oculto', textContent: decimal(datos.error) }),
       el('span', { textContent: 'escaños de error medio' })));
 
     const tope = Math.max(...reparto, ...real);
