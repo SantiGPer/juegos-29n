@@ -21,7 +21,7 @@
     },
     {
       "tipo": "opciones",
-      "pregunta": "Cuando toma la palabra, ¿quién levanta más murmullos en el hemiciclo?",
+      "pregunta": "En ocasiones los diputados cuchichean entre ellos en mitad de los discursos. ¿Durante qué intervenciones se producen más murmullos en el hemiciclo?",
       "opciones": { "a": "Gobierno", "b": "PSOE", "c": "PP", "d": "Vox" },
       "correcta": "a",
       "explicacion": "El Diario de Sesiones anota «(Rumores)» cada vez que el hemiciclo murmulla: durante las intervenciones del Gobierno salen 13,2 por cada 10.000 palabras, más que con cualquier grupo. Le siguen el PSOE (8,4) y el PP (7,3).",
