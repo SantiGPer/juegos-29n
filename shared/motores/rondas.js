@@ -57,7 +57,13 @@ const opciones = (datos, listo) => {
     return acierto ? 1 : 0;
   };
 
-  return { cuerpo: [el('p', { className: 'pregunta', textContent: datos.pregunta }), el('div', { className: 'opciones' }, ...botones), pie], resolver };
+  return {
+    cuerpo: [
+      el('p', { className: 'pregunta', textContent: datos.pregunta }),
+      ...(datos.nota ? [el('p', { className: 'etiqueta subtitulo', textContent: datos.nota })] : []),
+      el('div', { className: 'opciones' }, ...botones), pie],
+    resolver
+  };
 };
 
 // Ordenar de mayor a menor valor. 1 punto con todo en su sitio; ½ con al menos `medio` ítems en su
