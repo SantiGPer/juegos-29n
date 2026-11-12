@@ -56,7 +56,7 @@ export const pie = () => el('footer', { className: 'pie' },
   el('p', { className: 'firma' },
     el('span', { textContent: 'Un proyecto de Santiago García Pérez' }),
     el('span', { className: 'enlaces' }, el('a', { href: 'https://www.linkedin.com/in/santigper', target: '_blank', rel: 'noopener', textContent: 'LinkedIn' }))),
-  ...(conMetricas ? [el('p', { className: 'metricas' }, 'Medimos partidas y puntuaciones de forma anónima, sin cookies, con Umami. ',
+  ...(conMetricas ? [el('p', { className: 'metricas' }, 'Se miden partidas y puntuaciones de forma anónima, sin cookies, con Umami. ',
     el('a', { href: new URL('../privacidad.html', import.meta.url), textContent: 'Privacidad' }))] : []));
 
 // Una letra por pregunta para el detalle: 1 acierto, m medio, 0 fallo, p pasada, - sin jugar
