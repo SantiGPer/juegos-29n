@@ -1832,13 +1832,37 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
   color: var(--lapiz);
 }
 
-/* Aviso de métricas (diseño del 02-11): al pie de portada y cierre, antes de la barra */
-.metricas {
+/* Pie común (diseño del 12-11): firma y aviso de métricas al final de índice, portada y cierre, antes de la barra */
+.pie {
   margin: var(--s5) 0 0;
   padding-top: var(--s2);
   font-size: 0.75rem;
   color: var(--lapiz);
   border-top: 1px solid var(--raya);
+}
+
+.firma {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  margin: 0;
+}
+
+.firma .enlaces {
+  white-space: nowrap;
+}
+
+.firma a {
+  display: inline-block;
+  padding: 10px 0;
+  margin: -10px 0;
+  color: var(--tinta);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pie .metricas {
+  margin: 4px 0 0;
 }
 
 /* Celda de la pista llena de abajo arriba en proporción a los puntos de la ronda (A6, A15, B1) */

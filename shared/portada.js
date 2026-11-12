@@ -1,5 +1,5 @@
 import { icono } from './iconos.js';
-import { accion, avisoMetricas, el, mide, monta } from './util.js';
+import { accion, el, mide, monta, pie } from './util.js';
 
 // Reglas con icono de 10×10; las comparten la portada y la ficha del índice. «pila» pinta la pila de energía de
 // A15 con un rayo (diseño del 09-11), la misma pieza que la cabecera y el coste de las ayudas.
@@ -32,6 +32,6 @@ export function portada({ juego, dia, fuente, debate, portada: { texto, reglas: 
     ...(texto ? [el('p', { className: 'entradilla', textContent: texto })] : []),
     reglas(lista),
     el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
-    ...avisoMetricas(),
+    pie(),
   ], jugar);
 }

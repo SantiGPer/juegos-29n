@@ -50,7 +50,12 @@ if (conMetricas) {
   document.head.append(script);
 }
 export const mide = (evento, datos) => { if (conMetricas) window.umami?.track(evento, datos); };
-export const avisoMetricas = () => conMetricas ? [el('p', { className: 'metricas', textContent: 'Medimos partidas y puntuaciones de forma anónima, sin cookies, con Umami.' })] : [];
+// Pie común de índice, portada y cierre (diseño del 12-11): la firma y, debajo, el aviso de métricas si está activo
+export const pie = () => el('footer', { className: 'pie' },
+  el('p', { className: 'firma' },
+    el('span', { textContent: 'Un proyecto de Santiago García Pérez' }),
+    el('span', { className: 'enlaces' }, el('a', { href: 'https://www.linkedin.com/in/santigper', target: '_blank', rel: 'noopener', textContent: 'LinkedIn' }))),
+  ...(conMetricas ? [el('p', { className: 'metricas', textContent: 'Medimos partidas y puntuaciones de forma anónima, sin cookies, con Umami.' })] : []));
 
 // Una letra por pregunta para el detalle: 1 acierto, m medio, 0 fallo, p pasada, - sin jugar
 export const letraMetrica = estado => ({ acierto: '1', media: 'm', fallo: '0', pasada: 'p' })[estado] ?? '-';

@@ -1,6 +1,6 @@
 import { icono } from './iconos.js';
 import { recuadro, reglas } from './portada.js';
-import { accion, cifra, el, monta } from './util.js';
+import { accion, cifra, el, monta, pie } from './util.js';
 
 // Selector de días (decisiones de diseño del 15-10; maquetas v5 y v6). Cada día se abre a las 00:00, hora peninsular.
 // ?hoy=N simula el día N para probarlo.
@@ -69,6 +69,7 @@ export async function indice(contenedor) {
     el('div', { className: 'niveles' }, ...casillas),
     ...(espera ? [el('p', { className: 'etiqueta', textContent: `Hoy, ${fecha(espera.fecha)}: se abre a las ${espera.hora}.` })] : []),
     zona,
+    pie(),
   ], que, jugar);
 
   // Antes del 13-N no hay ningún día abierto
