@@ -1852,7 +1852,7 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
   white-space: nowrap;
 }
 
-.firma a {
+.pie a {
   display: inline-block;
   padding: 10px 0;
   margin: -10px 0;
@@ -1863,6 +1863,14 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
 
 .pie .metricas {
   margin: 4px 0 0;
+}
+
+/* Página de privacidad (12-11): un titulillo por apartado */
+.legal h2 {
+  margin: var(--s5) 0 var(--s2);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
 }
 
 /* Celda de la pista llena de abajo arriba en proporción a los puntos de la ronda (A6, A15, B1) */
