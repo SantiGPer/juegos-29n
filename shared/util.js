@@ -34,11 +34,11 @@ export const trasPausa = fn => {
   return () => performance.now() - desde > 400 && fn();
 };
 
-// Métricas anónimas con Umami (decisión del 01-11), apagadas hasta que lo confirme el autor: un evento al empezar
+// Métricas anónimas con Umami (decisión del 01-11), encendidas por el autor el 12-11: un evento al empezar
 // y otro al terminar, con los puntos y el detalle de la partida en una sola propiedad. Si el script de Umami no
 // carga, el juego sigue igual. El aviso va al pie de portada y cierre (diseño del 02-11). Este mismo interruptor
 // carga la copia fija del script (shared/umami.js, decisión del 02-11), así que apagado no se cuenta ni la página.
-const conMetricas = false;
+const conMetricas = true;
 if (conMetricas) {
   const script = Object.assign(document.createElement('script'), { src: new URL('umami.js', import.meta.url), defer: true });
   Object.assign(script.dataset, {
