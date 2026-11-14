@@ -1,0 +1,125 @@
+{
+  "juego": "ElectoQuiz",
+  "dia": 3,
+  "fuente": "Constitución Española y LOREG, textos consolidados del BOE.",
+  "portada": {
+    "texto": "¿Eres todo un experto en el sistema electoral español? Diez preguntas del ElectoQuiz para demostrarlo antes de que abran los colegios.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "10 preguntas con cuatro opciones." },
+      { "icono": "urna", "texto": "Un punto por acierto; al final, tu nivel." }
+    ]
+  },
+  "preguntas": [
+    {
+      "pregunta": "¿Cuántos diputados tiene el Congreso?",
+      "opciones": { "a": "300", "b": "350", "c": "400", "d": "450" },
+      "orden": ["d", "c", "b", "a"],
+      "correcta": "b",
+      "explicacion": "La Constitución fija una horquilla de entre 300 y 400 diputados. La LOREG la concreta en 350.",
+      "fuente": "Constitución Española, art. 68.1; LOREG, art. 162.1."
+    },
+    {
+      "pregunta": "¿Cuántos diputados tiene garantizados cada provincia antes de repartir el resto por población?",
+      "opciones": { "a": "Ninguno", "b": "1", "c": "2", "d": "3" },
+      "orden": ["d", "c", "b", "a"],
+      "correcta": "c",
+      "explicacion": "Cada provincia parte con dos diputados (Ceuta y Melilla, con uno) y solo el resto se reparte según población. Por eso Soria elige dos diputados y Madrid, treinta y ocho.",
+      "fuente": "LOREG, art. 162.2 y 162.3; Real Decreto 806/2026, anexo."
+    },
+    {
+      "pregunta": "Respecto a 2023, una provincia gana un diputado el 29-N y otra lo pierde. ¿Cuáles?",
+      "opciones": {
+        "a": "Gana Madrid y pierde Cádiz",
+        "b": "Gana Madrid y pierde Barcelona",
+        "c": "Gana Málaga y pierde Asturias",
+        "d": "Ninguna: el reparto es idéntico al de 2023"
+      },
+      "ultima": "d",
+      "correcta": "a",
+      "explicacion": "El reparto de escaños se recalcula en cada convocatoria según la población: Madrid pasa de 37 a 38 diputados y Cádiz, de 9 a 8. Las otras cincuenta circunscripciones eligen los mismos que en 2023.",
+      "fuente": "Real Decreto 806/2026, de 5 de octubre, anexo; Real Decreto 400/2023, de 29 de mayo, anexo."
+    },
+    {
+      "pregunta": "¿Cuántos días dura la campaña electoral?",
+      "opciones": { "a": "10", "b": "15", "c": "21", "d": "30" },
+      "orden": ["d", "c", "b", "a"],
+      "correcta": "b",
+      "explicacion": "La campaña dura quince días y termina a las cero horas del día anterior a la votación, que es la jornada de reflexión. Esta serie publica un juego por cada uno de esos quince días.",
+      "fuente": "LOREG, art. 51."
+    },
+    {
+      "pregunta": "¿Qué exige la Constitución al sistema electoral del Congreso?",
+      "opciones": {
+        "a": "Que sea mayoritario",
+        "b": "Que siga criterios de representación proporcional",
+        "c": "Que reparta los escaños con el método D’Hondt",
+        "d": "Una barrera mínima del 3 %"
+      },
+      "correcta": "b",
+      "explicacion": "La Constitución solo exige criterios de representación proporcional en cada circunscripción. El método D’Hondt y la barrera del 3 % los fija la LOREG, que se puede cambiar sin reformar la Constitución.",
+      "fuente": "Constitución Española, art. 68.3; LOREG, art. 163.1."
+    },
+    {
+      "pregunta": "Para optar a escaño en el Congreso, una candidatura necesita al menos el 3 % de…",
+      "opciones": {
+        "a": "los votos válidos emitidos en su circunscripción",
+        "b": "los votos válidos emitidos en toda España",
+        "c": "el censo electoral de su circunscripción",
+        "d": "los votos a candidaturas en su circunscripción, sin contar el voto en blanco"
+      },
+      "correcta": "a",
+      "explicacion": "La barrera se mide en cada provincia y sobre los votos válidos, que incluyen el voto en blanco. En la práctica solo pesa en las circunscripciones grandes: en las pequeñas, el umbral real para sacar escaño es muy superior al 3 %.",
+      "fuente": "LOREG, arts. 163.1.a y 96.5."
+    },
+    {
+      "pregunta": "En una provincia peninsular se eligen cuatro senadores. ¿A cuántos puede votar cada elector?",
+      "opciones": { "a": "1", "b": "2", "c": "3", "d": "4" },
+      "orden": ["d", "c", "b", "a"],
+      "correcta": "c",
+      "explicacion": "Es un sistema de voto limitado: se marcan hasta tres nombres para cuatro puestos. Por eso lo habitual es que el partido más votado saque tres senadores y el segundo, uno.",
+      "fuente": "Constitución Española, art. 69.2; LOREG, art. 166.1.a."
+    },
+    {
+      "pregunta": "Desde la reforma de 2022, ¿qué cambió para los españoles residentes en el extranjero (CERA)?",
+      "opciones": {
+        "a": "Perdieron el derecho de voto en las generales",
+        "b": "Ya no tienen que solicitar previamente el voto",
+        "c": "Solo pueden votar presencialmente en el consulado",
+        "d": "Eligen sus propios diputados en una circunscripción exterior"
+      },
+      "correcta": "b",
+      "explicacion": "La reforma suprimió el llamado voto rogado, que obligaba a pedir el voto antes de cada elección. Ahora la documentación se envía de oficio a los inscritos en el CERA.",
+      "fuente": "Ley Orgánica 12/2022, de 30 de septiembre, de reforma de la LOREG (art. 75)."
+    },
+    {
+      "pregunta": "¿Entre quiénes se sortean los miembros de una mesa electoral?",
+      "opciones": {
+        "a": "Entre todos los electores de la mesa",
+        "b": "Entre los electores de la mesa menores de 70 años que sepan leer y escribir",
+        "c": "Entre los voluntarios inscritos en el ayuntamiento",
+        "d": "Entre los electores de la mesa con estudios universitarios"
+      },
+      "correcta": "b",
+      "explicacion": "La mesa, con un presidente y dos vocales, se sortea entre los electores de esa mesa menores de 70 años que sepan leer y escribir, aunque desde los 65 se puede renunciar. El cargo es obligatorio y al presidente se le exige además una titulación mínima.",
+      "fuente": "LOREG, arts. 25.1, 26.2 y 27."
+    },
+    {
+      "pregunta": "Si el candidato no logra la mayoría absoluta en la primera votación de investidura, ¿qué pasa?",
+      "opciones": {
+        "a": "Se vota de nuevo 48 horas después y basta la mayoría simple",
+        "b": "Se vota de nuevo una semana después y sigue haciendo falta la absoluta",
+        "c": "El Rey propone de inmediato a otro candidato",
+        "d": "Se convocan elecciones"
+      },
+      "correcta": "a",
+      "explicacion": "La segunda votación llega cuarenta y ocho horas después y en ella basta con más síes que noes. Solo si también fracasa se tramitan nuevas propuestas.",
+      "fuente": "Constitución Española, art. 99.3 y 99.4."
+    }
+  ],
+  "niveles": [
+    { "desde": 0, "hasta": 3, "etiqueta": "Has votado, que no es poco" },
+    { "desde": 4, "hasta": 6, "etiqueta": "Lector de la papeleta" },
+    { "desde": 7, "hasta": 8, "etiqueta": "Interventor de mesa" },
+    { "desde": 9, "hasta": 10, "etiqueta": "Junta Electoral Central" }
+  ]
+}
