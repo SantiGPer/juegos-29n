@@ -1,0 +1,103 @@
+{
+  "juego": "Cronología de la legislatura",
+  "dia": 5,
+  "variante": "ordenar",
+  "fuente": "Diario de Sesiones del Congreso, BOE, La Moncloa y prensa citada en cada hito",
+  "portada": {
+    "texto": "Dicen que el electorado tiene la memoria de Dory, la de Buscando a Nemo. Ordena doce momentos de la legislatura y demuestra que tú eres la excepción.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "3 rondas de 4 hitos: ordénalos del más antiguo al más reciente." },
+      { "icono": "urna", "texto": "1 punto por hito en su sitio y medio si queda a una posición." }
+    ]
+  },
+  "instruccion": "Ordena los cuatro hitos del más antiguo al más reciente.",
+  "rondas": [
+    {
+      "titulo": "uno por cada año de legislatura",
+      "hitos": [
+        {
+          "texto": "Alberto Núñez Feijóo pierde su investidura",
+          "fecha": "2023-09-29",
+          "explicacion": "En la segunda votación, en la que bastaba con más síes que noes, logró 172 síes frente a 177 noes, con un voto nulo. Fue el primer candidato que se sometió a la investidura en la XV legislatura, tras ganar las elecciones del 23-J.",
+          "fuente": "Diario de Sesiones del Congreso, 29-09-2023; RTVC, 29-09-2023."
+        },
+        {
+          "texto": "PP y PSOE pactan la renovación del CGPJ",
+          "fecha": "2024-06-25",
+          "explicacion": "El acuerdo se firmó en Bruselas, con mediación de la Comisión Europea, y desbloqueó un órgano con el mandato caducado desde 2018. Los nuevos vocales se eligieron en julio.",
+          "fuente": "Orain, 25-06-2024; RTVC, 25-06-2024; texto del acuerdo publicado por Newtral."
+        },
+        {
+          "texto": "El Constitucional avala la amnistía",
+          "fecha": "2025-06-26",
+          "explicacion": "El pleno declaró constitucional la ley en lo esencial, con votos particulares en contra. No se pronunció entonces sobre la malversación.",
+          "fuente": "Tribunal Constitucional, nota informativa 61/2025; BOE-A-2025-15939 (STC 137/2025)."
+        },
+        {
+          "texto": "El Congreso tumba el decreto antidesahucios",
+          "fecha": "2026-02-26",
+          "explicacion": "PP, Vox y Junts derogaron el Real Decreto-ley 2/2026, que prorrogaba la suspensión de desahucios de familias vulnerables (177 votos en contra, 172 a favor). Era la segunda vez en un mes que caía la moratoria.",
+          "fuente": "BOE, 28-02-2026 (BOE-A-2026-4667); Idealista, 26-02-2026."
+        }
+      ]
+    },
+    {
+      "titulo": "parejas cercanas, lejos entre sí",
+      "hitos": [
+        {
+          "texto": "Pedro Sánchez, investido presidente",
+          "fecha": "2023-11-16",
+          "explicacion": "Fue investido en primera votación con 179 votos a favor, entre ellos los siete de Junts. Fue la investidura que abrió la XV legislatura.",
+          "fuente": "Diario de Sesiones del Congreso, 16-11-2023."
+        },
+        {
+          "texto": "Podemos deja el grupo de Sumar",
+          "fecha": "2023-12-05",
+          "explicacion": "Sus cinco diputados pasaron al Grupo Mixto menos de tres semanas después de la investidura. La coalición de Gobierno perdió así votos seguros en el Congreso.",
+          "fuente": "BOCG, Congreso de los Diputados, serie D, núm. 51, 15-12-2023 (altas y bajas en los grupos con fecha 05-12-2023); La Marea, 05-12-2023; RTVC, 05-12-2023."
+        },
+        {
+          "texto": "El Congreso tumba los decretos de vivienda",
+          "fecha": "2026-10-02",
+          "explicacion": "El Congreso no convalidó los dos decretos-ley de vivienda aprobados esa semana. Tres días después, Pedro Sánchez anunció elecciones.",
+          "fuente": "Civio, 02-10-2026."
+        },
+        {
+          "texto": "Pedro Sánchez anuncia elecciones para el 29 de noviembre",
+          "fecha": "2026-10-05",
+          "explicacion": "Lo anunció en una declaración institucional en La Moncloa. El decreto de convocatoria se publicó en el BOE al día siguiente.",
+          "fuente": "La Moncloa, 05-10-2026; Real Decreto 806/2026."
+        }
+      ]
+    },
+    {
+      "titulo": "tres de ellos en menos de dos meses",
+      "hitos": [
+        {
+          "texto": "España reconoce el Estado de Palestina",
+          "fecha": "2024-05-28",
+          "explicacion": "El Consejo de Ministros aprobó el reconocimiento el mismo día que Irlanda y Noruega. Pedro Sánchez lo anunció en una declaración institucional.",
+          "fuente": "La Moncloa, declaración institucional y rueda de prensa del Consejo de Ministros, 28-05-2024."
+        },
+        {
+          "texto": "Junts rompe con el PSOE",
+          "fecha": "2025-10-27",
+          "explicacion": "Carles Puigdemont anunció que su partido pasaba a la oposición. Sin sus siete votos, el Gobierno perdió la mayoría de la investidura.",
+          "fuente": "Orain, 27-10-2025."
+        },
+        {
+          "texto": "Carlos Mazón anuncia su dimisión",
+          "fecha": "2025-11-03",
+          "explicacion": "Dejó la presidencia de la Generalitat Valenciana un año después de la dana. Le sucedió Juanfran Pérez Llorca, investido con los votos de PP y Vox.",
+          "fuente": "Maldita, 03-11-2025; RTVC, 03-11-2025; El Debate, 07-11-2025 (cese en el BOE)."
+        },
+        {
+          "texto": "Elecciones en Extremadura",
+          "fecha": "2025-12-21",
+          "explicacion": "Las ganó el PP de María Guardiola sin mayoría absoluta, con Vox como socio necesario. El PSOE se hundió en uno de sus feudos históricos.",
+          "fuente": "El Salto, 21-12-2025; El Debate, 21-12-2025."
+        }
+      ]
+    }
+  ]
+}
