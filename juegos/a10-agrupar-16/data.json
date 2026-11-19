@@ -1,0 +1,40 @@
+{
+  "juego": "Agrupar 16",
+  "dia": 8,
+  "fuente": "Congreso de los Diputados; Unión Interparlamentaria; BOE; Ministerio de Educación; Generalitat de Catalunya; El Independiente; La Moncloa; RTVC",
+  "portada": {
+    "texto": "La política es enrevesada y este juego no iba a ser menos. Tira del hilo para encontrar los cuatro grupos ocultos.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "Marca cuatro que tengan algo en común y comprueba." },
+      { "icono": "lleno", "texto": "4 vidas: cada grupo equivocado cuesta una." },
+      { "icono": "urna", "texto": "Gana quien resuelve los cuatro grupos; cuentan los fallos." }
+    ]
+  },
+  "vidas": 4,
+  "grupos": [
+    {
+      "nombre": "Presidieron el Congreso",
+      "items": ["Francina Armengol", "Ana Pastor", "Jesús Posada", "José Bono"],
+      "explicacion": "José Bono (2008), Jesús Posada (2011), Ana Pastor (2016) y Francina Armengol (2023) presidieron la Cámara. Bono había presidido antes Castilla-La Mancha y fue ministro de Defensa.",
+      "fuente": "Congreso de los Diputados; Unión Interparlamentaria, registro histórico de presidentes de cámara."
+    },
+    {
+      "nombre": "Apodos de leyes",
+      "items": ["Mordaza", "Wert", "Solo sí es sí", "Zerolo"],
+      "explicacion": "Son la Ley de Seguridad Ciudadana de 2015, la LOMCE de 2013, la ley de garantía integral de la libertad sexual de 2022 y la ley de igualdad de trato de 2022. Zerolo no fue ministro: la ley lleva el nombre del activista y concejal socialista Pedro Zerolo.",
+      "fuente": "LO 4/2015; LO 8/2013; LO 10/2022; Ley 15/2022 (BOE)."
+    },
+    {
+      "nombre": "Fueron ministros y después presidieron su comunidad",
+      "items": ["Esperanza Aguirre", "Francisco Álvarez-Cascos", "José Montilla", "Salvador Illa"],
+      "explicacion": "Esperanza Aguirre (Madrid), Francisco Álvarez-Cascos (Asturias), José Montilla y Salvador Illa (Cataluña) fueron ministros antes de presidir su comunidad. José Bono y Alberto Núñez Feijóo también presidieron la suya, pero Bono fue ministro después y Feijóo nunca lo fue.",
+      "fuente": "Ministerio de Educación (Aguirre); Generalitat de Catalunya (Montilla); El Independiente, 10-08-2024 (Illa); La Moncloa, Gobiernos por legislaturas, VI legislatura (Álvarez-Cascos)."
+    },
+    {
+      "nombre": "Perdieron una votación de investidura en el Congreso",
+      "items": ["Leopoldo Calvo-Sotelo", "José Luis Rodríguez Zapatero", "Mariano Rajoy", "Alberto Núñez Feijóo"],
+      "explicacion": "Leopoldo Calvo-Sotelo (1981), José Luis Rodríguez Zapatero (2008) y Mariano Rajoy (2016) perdieron una votación y fueron investidos después; Alberto Núñez Feijóo (2023) no llegó a serlo. Zapatero cayó en la primera votación de 2008 y ganó en la segunda.",
+      "fuente": "Congreso de los Diputados, archivo de investiduras de todas las legislaturas; RTVC, 29-09-2023 (Feijóo)."
+    }
+  ]
+}

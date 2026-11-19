@@ -38,8 +38,7 @@
     {
       "dia": 8,
       "fecha": "2026-11-20",
-      "hora": "13:00",
-      "debate": "Hecho con el cara a cara Sánchez–Feijóo del 19 de noviembre: frases y gestos comprobados con la grabación."
+      "carpeta": "a10-agrupar-16"
     },
     {
       "dia": 9,
@@ -67,7 +66,9 @@
     },
     {
       "dia": 15,
-      "fecha": "2026-11-27"
+      "fecha": "2026-11-27",
+      "hora": "13:00",
+      "debate": "Hecho con el debate a cuatro del 26 de noviembre: frases y gestos comprobados con la grabación."
     }
   ]
 }
