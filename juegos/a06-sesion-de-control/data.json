@@ -1,0 +1,71 @@
+{
+  "juego": "Sesión de control",
+  "dia": 10,
+  "fuente": "BOE (leyes, decretos-ley y reales decretos de disolución), Diario de Sesiones del Pleno del Congreso (preguntas al presidente) y buscador de iniciativas del Congreso (comparecencias), consultados el 09-11-2026. Elaboración propia (data/actividad_parlamentaria.json).",
+  "portada": {
+    "texto": "En esta sesión de control, el que responde eres tú: leyes, decretos-ley, preguntas y comparecencias de seis legislaturas. ¿Sabrás responder correctamente?",
+    "reglas": [
+      { "icono": "grafico", "texto": "Cuatro gráficos, seis legislaturas: sube o baja cada barra hasta donde creas." },
+      { "icono": "candado", "texto": "La VIII legislatura viene dada: es tu referencia." },
+      { "icono": "urna", "texto": "1 punto por barra si te desvías un 15 % o menos del dato. 20 en total." }
+    ]
+  },
+  "etiqueta": "Ronda",
+  "columnas": [
+    { "nombre": "VIII", "presidentes": ["Zapatero"] },
+    { "nombre": "IX", "presidentes": ["Zapatero"] },
+    { "nombre": "X", "presidentes": ["Rajoy"] },
+    { "nombre": "XII", "presidentes": ["Rajoy", "Sánchez"] },
+    { "nombre": "XIV", "presidentes": ["Sánchez"] },
+    { "nombre": "XV", "presidentes": ["Sánchez"] }
+  ],
+  "rondas": [
+    {
+      "tipo": "grafico",
+      "metrica": "leyes_por_ano",
+      "pregunta": "Leyes por año",
+      "subtitulo": "la VIII es tu referencia",
+      "unidad": "Leyes y leyes orgánicas publicadas por año de legislatura",
+      "maximo": 80,
+      "paso": 1,
+      "decimales": 1,
+      "explicacion": "Las tres primeras legislaturas rondan las 40 leyes al año y las tres últimas se quedan por debajo de 35. La XV, con 10,5, no llega a la cuarta parte del ritmo de la VIII (44,1).",
+      "fuente": "BOE, sección I (Jefatura del Estado): leyes y leyes orgánicas publicadas de la sesión constitutiva al real decreto de disolución de cada legislatura, divididas entre los años de legislatura. Consulta del 09-11-2026."
+    },
+    {
+      "tipo": "grafico",
+      "metrica": "pct_decretos_ley",
+      "pregunta": "Decretos-ley",
+      "subtitulo": "la VIII es tu referencia",
+      "unidad": "% de decretos-ley sobre las normas con rango de ley",
+      "maximo": 100,
+      "paso": 1,
+      "decimales": 1,
+      "sufijo": " %",
+      "explicacion": "En la XV, casi dos de cada tres normas con rango de ley fueron decretos-ley (63,7 %), por encima incluso de la XII (62,9 %); en la VIII no llegaban a una de cada cuatro. Ojo: la XV aprobó menos decretos-ley que la XIV (58 frente a 96); el porcentaje sube porque salieron muchas menos leyes.",
+      "fuente": "BOE, sección I (Jefatura del Estado): decretos-ley sobre la suma de leyes, leyes orgánicas y decretos-ley publicados de la sesión constitutiva a la disolución. Sin reales decretos legislativos. Consulta del 09-11-2026."
+    },
+    {
+      "tipo": "grafico",
+      "metrica": "preguntas_presidente",
+      "pregunta": "Preguntas al presidente",
+      "subtitulo": "la VIII es tu referencia",
+      "unidad": "Preguntas orales al presidente en el Pleno, por legislatura",
+      "maximo": 400,
+      "paso": 5,
+      "explicacion": "La VIII acumula más preguntas al presidente (242) y la XII menos (129), que además fue la legislatura más corta (2,6 años). Por sesión, la cifra apenas se mueve: entre dos y media y tres preguntas en todas; lo que cambia es cuántas sesiones de control hubo.",
+      "fuente": "Diario de Sesiones del Pleno del Congreso, sumarios: preguntas orales al presidente del Gobierno, sin las que contestó un ministro. Recuento propio; las sesiones con más de tres preguntas, validadas a mano el 09-11-2026."
+    },
+    {
+      "tipo": "grafico",
+      "metrica": "comparecencias",
+      "pregunta": "Comparecencias de ministros",
+      "subtitulo": "la VIII es tu referencia",
+      "unidad": "Comparecencias atendidas en Pleno y Comisión, por legislatura",
+      "maximo": 2000,
+      "paso": 10,
+      "explicacion": "La XIV se dispara hasta 1.136 comparecencias atendidas, más de 400 por encima de cualquier otra, y casi todas en comisión (1.108). La XV es la más baja del gráfico (514), aunque es la que más llevó al Pleno (89).",
+      "fuente": "Congreso de los Diputados, buscador de iniciativas: solicitudes de comparecencia de miembros del Gobierno presentadas hasta la disolución y tramitadas, en Pleno y en Comisión. Consulta del 09-11-2026."
+    }
+  ]
+}
