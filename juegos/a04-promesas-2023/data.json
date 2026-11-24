@@ -1,0 +1,124 @@
+{
+  "juego": "Promesas de 2023",
+  "dia": 13,
+  "fuente": "Acuerdo PSOE-Sumar (24-10-2023), programa electoral del PSOE de 2023, acuerdos de investidura, BOE, Diario de Sesiones del Congreso y prensa citada en cada promesa.",
+  "portada": {
+    "texto": "Entre prometer y cumplir hay un Consejo de Ministros y 350 diputados. Doce promesas de 2023: ¿cuáles salieron adelante, cuáles se quedaron en el cajón y cuáles tumbó el Congreso?",
+    "reglas": [
+      { "icono": "papeleta", "texto": "12 promesas: cumplida, incumplida o bloqueada en el Congreso." },
+      { "icono": "urna", "texto": "Un punto por acierto; al final, tus aciertos por tipo." }
+    ]
+  },
+  "columnas": 3,
+  "desglose": { "a": "Cumplidas", "b": "Incumplidas", "c": "Bloqueadas" },
+  "preguntas": [
+    {
+      "pregunta": "La reducción de la jornada laboral a 37,5 horas",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "c",
+      "explicacion": "El acuerdo PSOE-Sumar la fijaba para 2025. El 10-09-2025 el Congreso aprobó las enmiendas a la totalidad de PP, Vox y Junts, por 178 votos a 170, y el proyecto decayó.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023; Diario de Sesiones del Congreso, Pleno, núm. 135, 10-09-2025; The Objective, 10-09-2025."
+    },
+    {
+      "pregunta": "Revalorizar las pensiones con el IPC",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "a",
+      "explicacion": "Las pensiones subieron con la inflación cada año, un 2,8 % en 2025 y un 2,7 % en 2026, aunque el Congreso tumbó dos veces el decreto que lo hacía (22-01-2025 y 27-01-2026). Las dos veces el Gobierno aprobó otro decreto y la subida se aplicó: se bloqueó el vehículo, no la medida.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023; Newtral, Pactocheck (balance de junio de 2026); Cuatrecasas, sobre la no convalidación del RDL 9/2024 (22-01-2025); The Objective, 27-01-2026."
+    },
+    {
+      "pregunta": "Poder hablar catalán, euskera y gallego en el Congreso",
+      "origen": "Acuerdo para la Mesa del Congreso",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "a",
+      "explicacion": "El Congreso aprobó el 21-09-2023 la reforma de su Reglamento que lo permite. Formaba parte del acuerdo con ERC y Junts para elegir la Mesa de la Cámara.",
+      "fuente": "Acuerdo para la Mesa del Congreso, agosto de 2023; The Objective, 21-09-2023."
+    },
+    {
+      "pregunta": "Derogar o reformar la «ley mordaza»",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "b",
+      "explicacion": "La reforma de la Ley de Seguridad Ciudadana se registró en octubre de 2024, pero seguía en ponencia en la Comisión de Interior al disolverse las Cortes. No hubo ninguna votación que la tumbara.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023; El Español, 06-10-2026; Moncloa.com, 25-08-2026."
+    },
+    {
+      "pregunta": "Mantener el impuesto a las energéticas",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "c",
+      "explicacion": "El 22-01-2025 el Congreso derogó el decreto que prorrogaba el gravamen, con 183 votos en contra (PP, Vox, Junts, PNV y UPN) y 165 a favor.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023, pág. 38; Diario de Sesiones del Congreso, Pleno, núm. 92, 22-01-2025; Bolsamanía, 22-01-2025."
+    },
+    {
+      "pregunta": "Delegar a Cataluña las competencias de inmigración",
+      "origen": "Acuerdo PSOE-Junts",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "c",
+      "explicacion": "La proposición de ley pactada con Junts cayó el 23-09-2025 en su primer trámite: 177 votos en contra (PP, Vox, UPN, Podemos y dos diputados del grupo de Sumar) y 173 a favor.",
+      "fuente": "Acuerdo PSOE-Junts; Diario de Sesiones del Congreso, Pleno, núm. 138, 23-09-2025; Infobae, 23-09-2025."
+    },
+    {
+      "pregunta": "Aprobar el Estatuto del Becario",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "b",
+      "explicacion": "El proyecto llegó al Congreso en marzo de 2026 y no terminó su tramitación antes de la disolución. No hubo votación en contra.",
+      "fuente": "El Español, 06-10-2026; Newtral, Pactocheck."
+    },
+    {
+      "pregunta": "Cambiar «disminuidos» por «personas con discapacidad» en la Constitución",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "a",
+      "explicacion": "La reforma del artículo 49, pactada por PSOE y PP, entró en vigor el 17-02-2024. Fue la tercera reforma de la Constitución desde 1978.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023, pág. 24; BOE-A-2024-3099."
+    },
+    {
+      "pregunta": "Aprobar una ley abolicionista que persiga el proxenetismo en todas sus formas",
+      "origen": "Programa del PSOE 2023",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "c",
+      "explicacion": "El 21-05-2024 el Congreso rechazó tramitar la proposición de ley del PSOE, con 184 votos en contra (PP, Sumar, ERC, Junts, PNV y EH Bildu), 122 a favor y 36 abstenciones. Su propio socio de Gobierno votó en contra.",
+      "fuente": "Programa del PSOE 2023, pág. 153; Diario de Sesiones del Congreso, 21-05-2024; RTVC, 21-05-2024; Valencia Plaza, 21-05-2024."
+    },
+    {
+      "pregunta": "Aprobar un nuevo modelo de financiación autonómica",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "b",
+      "explicacion": "El Consejo de Política Fiscal y Financiera aprobó el modelo el 04-09-2026, con más de dos años de retraso, pero la ley no llegó a votarse. No hubo votación que lo tumbara.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023, pág. 40; El Español, 06-10-2026."
+    },
+    {
+      "pregunta": "Que el catalán sea lengua oficial de la UE",
+      "origen": "Acuerdo PSOE-Junts",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "b",
+      "explicacion": "El Gobierno lo pidió en el Consejo de Asuntos Generales, que exige unanimidad, y varios Estados mantuvieron reservas. El bloqueo fue europeo, no del Congreso, y por eso cuenta como incumplida.",
+      "fuente": "Acuerdo PSOE-Junts; El Español, 06-10-2026."
+    },
+    {
+      "pregunta": "Aprobar una ley de representación paritaria entre mujeres y hombres",
+      "origen": "Acuerdo PSOE-Sumar",
+      "opciones": { "a": "Cumplida", "b": "Incumplida", "c": "Bloqueada" },
+      "orden": ["a", "b", "c"],
+      "correcta": "a",
+      "explicacion": "Se aprobó como Ley Orgánica 2/2024, de 1 de agosto. Exige una presencia equilibrada de mujeres y hombres en las listas electorales, el Gobierno y los consejos de administración de las sociedades cotizadas, entre otros órganos.",
+      "fuente": "Acuerdo PSOE-Sumar, 24-10-2023, pág. 34; BOE-A-2024-15936 (LO 2/2024)."
+    }
+  ]
+}
