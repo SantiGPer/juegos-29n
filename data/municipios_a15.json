@@ -1,0 +1,286 @@
+{
+  "fuente": "Ministerio del Interior (generales de 2023 y 2008); INE, padrón a 1-1-2023; IGN, Nomenclátor",
+  "municipios": [
+    {
+      "ine": "20063",
+      "nombre": "Oiartzun",
+      "provincia": "Gipuzkoa",
+      "ccaa": "País Vasco",
+      "lon": -1.860292156,
+      "lat": 43.29917099,
+      "ganador": {
+        "etiqueta": "EH Bildu",
+        "color": "--bildu"
+      },
+      "participacion": 67.1,
+      "nacionales": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 3.2
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 9.4
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 1
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 8.1
+        }
+      ],
+      "resto": [
+        {
+          "etiqueta": "EH Bildu",
+          "color": "--bildu",
+          "pct": 59.3
+        },
+        {
+          "etiqueta": "PNV",
+          "color": "--pnv",
+          "pct": 18.1
+        }
+      ],
+      "otros": 0.6,
+      "poblacion": 10331,
+      "blanco": 0.4,
+      "nulo": 0.7,
+      "ganador_2008": {
+        "etiqueta": "PNV",
+        "color": "--pnv"
+      }
+    },
+    {
+      "ine": "28115",
+      "nombre": "Pozuelo de Alarcón",
+      "provincia": "Madrid",
+      "ccaa": "Comunidad de Madrid",
+      "lon": -3.813932585,
+      "lat": 40.43437971,
+      "ganador": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      },
+      "participacion": 81.9,
+      "nacionales": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 58.9
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 15.3
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 17.4
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 6.7
+        }
+      ],
+      "resto": [],
+      "otros": 0.8,
+      "poblacion": 88784,
+      "blanco": 0.8,
+      "nulo": 0.4,
+      "ganador_2008": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      }
+    },
+    {
+      "ine": "41013",
+      "nombre": "Aznalcóllar",
+      "provincia": "Sevilla",
+      "ccaa": "Andalucía",
+      "lon": -6.269614271,
+      "lat": 37.52351234,
+      "ganador": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      },
+      "participacion": 64,
+      "nacionales": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 15.9
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 59.5
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 6.9
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 15.9
+        }
+      ],
+      "resto": [],
+      "otros": 1,
+      "poblacion": 6057,
+      "blanco": 0.9,
+      "nulo": 1.5,
+      "ganador_2008": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      }
+    },
+    {
+      "ine": "30021",
+      "nombre": "Fuente Álamo de Murcia",
+      "provincia": "Murcia",
+      "ccaa": "Región de Murcia",
+      "lon": -1.170094669,
+      "lat": 37.72335766,
+      "ganador": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      },
+      "participacion": 65.1,
+      "nacionales": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 40.1
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 21.4
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 31.5
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 5.5
+        }
+      ],
+      "resto": [],
+      "otros": 0.9,
+      "poblacion": 18063,
+      "blanco": 0.6,
+      "nulo": 1.2,
+      "ganador_2008": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      }
+    },
+    {
+      "ine": "03021",
+      "nombre": "Banyeres de Mariola",
+      "provincia": "Alacant/Alicante",
+      "ccaa": "Comunitat Valenciana",
+      "lon": -0.65698564,
+      "lat": 38.71636768,
+      "ganador": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      },
+      "participacion": 82.4,
+      "nacionales": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 37.2
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 29.7
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 14.3
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 17.2
+        }
+      ],
+      "resto": [],
+      "otros": 1,
+      "poblacion": 7255,
+      "blanco": 0.7,
+      "nulo": 1.6,
+      "ganador_2008": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      }
+    },
+    {
+      "ine": "44013",
+      "nombre": "Alcañiz",
+      "provincia": "Teruel",
+      "ccaa": "Aragón",
+      "lon": -0.132663702,
+      "lat": 41.05032329,
+      "ganador": {
+        "etiqueta": "PP",
+        "color": "--pp"
+      },
+      "participacion": 72,
+      "nacionales": [
+        {
+          "etiqueta": "PP",
+          "color": "--pp",
+          "pct": 35.6
+        },
+        {
+          "etiqueta": "PSOE",
+          "color": "--psoe",
+          "pct": 31.7
+        },
+        {
+          "etiqueta": "Vox",
+          "color": "--vox",
+          "pct": 14.5
+        },
+        {
+          "etiqueta": "Sumar",
+          "color": "--sumar",
+          "pct": 6.7
+        }
+      ],
+      "resto": [
+        {
+          "etiqueta": "Teruel Existe",
+          "color": "--te",
+          "pct": 9.4
+        }
+      ],
+      "otros": 1.5,
+      "poblacion": 16151,
+      "blanco": 0.6,
+      "nulo": 0.8,
+      "ganador_2008": {
+        "etiqueta": "PSOE",
+        "color": "--psoe"
+      }
+    }
+  ]
+}

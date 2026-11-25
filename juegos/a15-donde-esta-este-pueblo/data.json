@@ -1,0 +1,23 @@
+{
+  "juego": "ElectoguessR",
+  "dia": 14,
+  "fuente": "Ministerio del Interior (infoelectoral), elecciones generales del 23-07-2023, del 10-11-2019 y del 09-03-2008; INE, cifras oficiales de población a 1-1-2023; IGN, Nomenclátor Geográfico de Municipios y Entidades de Población. Mapa: obra derivada de la BDLJE (IGN-CNIG), CC BY 4.0 ign.es, vía es-atlas 0.6.0 (MIT).",
+  "portada": {
+    "texto": "El GeoGuessr es para aficionados. Mira el escrutinio del 23-J y adivina dónde está cada pueblo.",
+    "reglas": [
+      { "icono": "papeleta", "texto": "Seis pueblos de 5.000 habitantes o más, nunca dos de la misma comunidad." },
+      { "icono": "ubicacion", "texto": "Toca una provincia, clava el alfiler y confirma. Hasta 5 puntos si te quedas a 10 km o menos." },
+      { "icono": "pila", "texto": "Tienes energía para tres ayudas por ronda. Cada una rebaja lo que vale la ronda: 80, 60 y 40 %." }
+    ]
+  },
+  "etiqueta": "Ronda",
+  "decimales": 1,
+  "rondas": [
+    { "tipo": "pueblo", "ine": "20063", "explicacion": "Oiartzun es el municipio de 5.000 habitantes o más donde EH Bildu sacó más voto el 23-J: el 59,3 % del voto válido, más del triple que el PNV (18,1 %). En 2008, la candidatura más votada aquí había sido la del PNV.", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 09-03-2008; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "28115", "explicacion": "El PP sacó en Pozuelo el 58,9 % del voto válido, uno de los tres porcentajes más altos entre los municipios de 5.000 habitantes o más, y Vox quedó segundo, por delante del PSOE. Su participación, del 81,9 %, fue la segunda más alta entre los municipios de 20.000 habitantes o más, solo por detrás de la vecina Boadilla del Monte.", "fuente": "Ministerio del Interior, generales del 23-07-2023; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "41013", "explicacion": "Aznalcóllar es el municipio de 5.000 habitantes o más donde el PSOE sacó más voto el 23-J: el 59,5 % del voto válido. Por detrás, Sumar y el PP empataron casi al voto: 485 a 484.", "fuente": "Ministerio del Interior, generales del 23-07-2023; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "30021", "explicacion": "Vox sacó en Fuente Álamo el 31,5 % del voto válido, el segundo porcentaje más alto entre los municipios de 5.000 habitantes o más, solo por detrás de Pioz (Guadalajara). Ganó el PP, pero en noviembre de 2019 la candidatura más votada aquí había sido Vox.", "fuente": "Ministerio del Interior, generales del 23-07-2023 y del 10-11-2019; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "03021", "explicacion": "Con el 82,4 %, Banyeres de Mariola tuvo la cuarta participación más alta entre los municipios de 5.000 habitantes o más; solo la superaron Peal de Becerro, Porcuna y Boadilla del Monte. Sumar, que en la Comunitat Valenciana concurrió con Compromís, sacó aquí el 17,2 %, casi cinco puntos más que en el conjunto de España.", "fuente": "Ministerio del Interior, generales del 23-07-2023; INE, padrón a 1-1-2023." },
+    { "tipo": "pueblo", "ine": "44013", "explicacion": "Alcañiz es el municipio peninsular de 5.000 habitantes o más cuyo reparto más se parece al nacional del 23-J: PP, PSOE y Vox sacaron el 35,6, el 31,7 y el 14,5 %, frente al 33,1, el 31,7 y el 12,4 % del conjunto de España. Donde se separa es en Sumar, con el 6,7 %, y en Teruel Existe, que con el 9,4 % ocupa el hueco que en el país llenan los partidos territoriales.", "fuente": "Ministerio del Interior, generales del 23-07-2023; INE, padrón a 1-1-2023." }
+  ]
+}
