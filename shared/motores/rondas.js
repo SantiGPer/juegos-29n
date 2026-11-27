@@ -4,6 +4,7 @@ import { portada } from '../portada.js';
 import { accion, celda, desordena, el, enfoca, marcador, monta, muestra, numero, trasPausa, voz } from '../util.js';
 import { ordenOpciones } from './quiz.js';
 import { ronda as atribuir } from './atribuir.js';
+import { ronda as atriles } from './atriles.js';
 import { ronda as carton } from './carton.js';
 import { ronda as duelo } from './duelo.js';
 import { ronda as emparejar } from './emparejar.js';
@@ -127,7 +128,7 @@ const ordenar = (datos, listo) => {
   };
 };
 
-const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria, pueblo, atribuir, carton, grafico };
+const tipos = { opciones, ordenar, duelo, estimacion, emparejar, mapa, hemiciclo, fontaneria, pueblo, atribuir, carton, grafico, atriles };
 
 const estado = p => p === 1 ? 'acierto' : p > 0 ? 'media' : 'fallo';
 const casillas = r => tipos[r.tipo].casillas?.(r) ?? 1;

@@ -32,6 +32,7 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
       cifra(`/${total}`, 4),
       el('span', { className: 'oculto', textContent: `${puntuacion} de ${total}` }));
 
+  // El día 15 es el último de la serie: no hay «mañana»
   const manana = el('p', { className: 'manana' }, el('span'), 'Mañana, otro juego.');
   manana.firstChild.innerHTML = icono('candado', 2, 'var(--lapiz)');
 
@@ -61,7 +62,7 @@ export function cerrar({ juego, dia, puntuacion, total, unidad, nivel, cuadricul
     recibo,
     ...(otra ? [el('p', {}, el('button', { className: 'secundario', textContent: otra.texto, onclick: otra.accion }))] : []),
     el('p', { className: 'fuente', textContent: `Fuente: ${fuente}` }),
-    manana,
+    ...(dia === 15 ? [] : [manana]),
     el('p', {}, el('a', { className: 'todos', href: '../../', textContent: 'Todos los juegos' })),
     pie(),
   ], copiar);

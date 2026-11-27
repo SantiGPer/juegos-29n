@@ -28,6 +28,8 @@
   --psoe: #FF0000;
   --vox: #63BE21;
   --sumar: #E51C55;
+  /* B1: Frente Amplio (Colau), fijado por el autor el 26-11; --sumar se queda para A7 */
+  --frente-amplio: #F03C00;
   --podemos: #9370DB;
   --erc: #FFB32E;
   --junts: #20C0C2;
@@ -2531,4 +2533,47 @@ p:has(> .banda-partido) { margin: 0 0 var(--s2); }
   .g-rotulos b { font-size: 0.75rem; }
   .g-val { font-size: 0.6875rem; }
   .g-barra { left: 2px; right: 2px; }
+}
+
+/* B1, ronda de atriles (maqueta v28): cuatro atriles fijos en el orden del plató sobre una raya de suelo */
+.plato {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  align-items: end;
+  max-width: 420px;
+  border-bottom: 2px solid var(--lapiz);
+}
+
+.atril {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: center;
+}
+
+.atril svg { display: block; width: 100%; height: auto; }
+
+.atril .apellido {
+  display: block;
+  padding: 5px 0 6px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.atril.sel .apellido { background: var(--tinta); color: var(--papel); }
+.atril.sel .tablero { stroke: var(--tinta); stroke-width: 3px; vector-effect: non-scaling-stroke; }
+.atril:disabled { color: var(--tinta); }
+.atril.correcta { background: var(--marcador); }
+.atril.fallada .apellido { color: var(--lapiz); text-decoration: line-through; }
+.atril.fuera { opacity: 0.35; }
+
+.cifras-atril { color: var(--lapiz); font-size: var(--etiqueta); }
+.cifras-atril b { color: var(--tinta); }
+
+@media (max-width: 359px) {
+  .atril .apellido { font-size: 0.75rem; }
 }
